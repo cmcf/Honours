@@ -4,11 +4,10 @@ using static Damage;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    [Header("References")]
     public GameObject bulletPrefab;
     public Transform playerTransform;
     public Transform spawnPoint;
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     [Header("Bullet Settings")]
     [SerializeField] float attackRange = 5f;
@@ -16,7 +15,6 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float nextFireTime = 0f;
 
-    
     public float Health { get; set; }
     [SerializeField] float maxHealth = 45f;
     float currentHealth;

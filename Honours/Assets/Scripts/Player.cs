@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static Damage;
 
 public class Player : MonoBehaviour
 {
-    public enum PlayerState { Normal, Enhanced }
+    public enum PlayerState { Normal, Enhanced, EnemyTransformed }
     public PlayerState currentState = PlayerState.Normal;
 
     public GameObject bulletPrefab;
     public Transform spawnPoint;
+    public Enemy currentEnemy;
+    SpriteRenderer spriteRenderer;
 
     [SerializeField] float bulletSpeed = 10f;
     float lastFireTime = 0f;
@@ -19,11 +22,12 @@ public class Player : MonoBehaviour
     float enhancedBulletDamage = 15f;
     float defaultBulletDamage = 10f;
     [SerializeField] float fireDelay = 0.5f;
-
+    SpriteRenderer enemySpriteRenderer;
     PlayerMovement playerMovement; // Reference to PlayerMovement
 
     void Start()
     {
+        spriteRenderer= GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
         StartCoroutine(RandomlyChangeState());
     }
@@ -98,5 +102,36 @@ public class Player : MonoBehaviour
 
         // Call the PlayerMovement script to change speed based on the new state
         playerMovement.ChangeSpeed(newState == PlayerState.Enhanced);
+    }
+
+    // Called when player collides with the trigger
+    public void TransformIntoEnemy(Enemy enemy)
+    {
+        if (enemy != null)
+        {
+            currentEnemy = enemy;
+            currentState = PlayerState.EnemyTransformed;
+
+            // Gets enemies sprite renderer
+            enemySpriteRenderer = currentEnemy.GetComponent<SpriteRenderer>();
+
+            if (enemySpriteRenderer != null)
+            {
+                // Change appearance to enemy sprite
+                spriteRenderer.sprite = enemySpriteRenderer.sprite; 
+                CopyEnemyAbilities();
+            }
+        }
+    }
+
+    void CopyEnemyAbilities()
+    {
+        // Changes player sprite renderer to the same colour as enemies
+        if (currentEnemy != null)
+        {
+            spriteRenderer.color = enemySpriteRenderer.color;
+
+            // Could also transfer enemy abilities to player here
+        }
     }
 }
