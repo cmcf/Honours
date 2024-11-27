@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IdentityTrigger : MonoBehaviour
 {
-    public Enemy enemyToTransformInto; // Set this in the inspector to the specific enemy
+    public Enemy enemyToTransformInto;
 
     void OnTriggerEnter2D(Collider2D other)
     {
