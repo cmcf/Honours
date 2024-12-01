@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     {
         spriteRenderer= GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
-        StartCoroutine(RandomlyChangeState());
+        //StartCoroutine(RandomlyChangeState());
     }
 
     void Update()
