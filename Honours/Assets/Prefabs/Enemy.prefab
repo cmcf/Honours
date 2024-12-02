@@ -147,15 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfada832f5293c64c8e6cb9b8c3302a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   spriteRenderer: {fileID: 7440780272706730979}
-  player: {fileID: 0}
   maxHealth: 45
   bulletPrefab: {fileID: 4040207891986179867, guid: a1779c5a7f85cff43858f51b4dbc37a0, type: 3}
   spawnPoint: {fileID: 8346416027446157132}
   attackRange: 5
   fireRate: 2
-  projectileSpeed: 15
+  projectileSpeed: 20
   nextFireTime: 0
 --- !u!1 &2028987238495395174
 GameObject:

@@ -10,8 +10,12 @@ public class EnemyBullet : MonoBehaviour
         Destroy(gameObject, bulletLife);
     }
 
-    void Update()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        // Destroys bullet if it hits a wall
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
