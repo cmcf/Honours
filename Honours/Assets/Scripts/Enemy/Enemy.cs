@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour, IDamageable
     void Die()
     {
         Debug.Log("Die");
+        FindObjectOfType<EnemyManager>().OnEnemyDefeated();
         Destroy(gameObject);
     }
 }

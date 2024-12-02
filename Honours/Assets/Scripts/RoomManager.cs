@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    public GameObject[] rooms; // Assign room GameObjects in the inspector
+    public static RoomManager Instance;
+    public GameObject[] rooms; 
     private int currentRoomIndex = 0;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -14,22 +20,33 @@ public class RoomManager : MonoBehaviour
 
     public void OnRoomCleared()
     {
-        if (currentRoomIndex < rooms.Length - 1)
+        // Ensure the room is cleared of enemies
+        if (EnemyManager.Instance.enemyCount <= 0) 
         {
-            currentRoomIndex++;
-            UpdateRoomVisibility();
-        }
-        else
-        {
-            Debug.Log("All rooms cleared!");
+            if (currentRoomIndex < rooms.Length - 1)
+            {
+                currentRoomIndex++;
+                UpdateRoomVisibility();
+            }
+            else
+            {
+                Debug.Log("All rooms clear!");
+            }
         }
     }
 
     void UpdateRoomVisibility()
     {
-        for (int i = 0; i < rooms.Length; i++)
+        // Disable previous room enemies
+        foreach (var room in rooms)
         {
-            rooms[i].SetActive(i == currentRoomIndex); // Only show the current room
+            if (room != rooms[currentRoomIndex])
+            {
+                // Disable any active room
+                room.SetActive(false); 
+            }
         }
+        // Only show the current room
+        rooms[currentRoomIndex].SetActive(true); 
     }
 }
