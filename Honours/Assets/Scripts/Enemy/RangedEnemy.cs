@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
+    Transform playerLocation;
     public GameObject bulletPrefab;
     public Transform spawnPoint;
 
@@ -15,13 +16,13 @@ public class RangedEnemy : Enemy
 
     void Start()
     {
-        
+        playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
         // Check the distance to the player
-        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 
         // If the player is within range and it's time to fire - spawn bullet 
         if (distanceToPlayer <= attackRange && Time.time >= nextFireTime)
@@ -35,7 +36,7 @@ public class RangedEnemy : Enemy
     void FireProjectile()
     {
         // Calculate the direction to the player
-        Vector2 direction = (playerTransform.position - spawnPoint.position).normalized;
+        Vector2 direction = (playerLocation.position - spawnPoint.position).normalized;
 
         // Instantiate the projectile at the fire point
         GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);

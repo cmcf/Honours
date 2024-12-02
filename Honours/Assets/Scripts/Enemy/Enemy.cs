@@ -3,10 +3,8 @@ using UnityEngine;
 using static Damage;
 
 public class Enemy : MonoBehaviour, IDamageable
-{ 
-    public Transform playerTransform;
+{
     public SpriteRenderer spriteRenderer;
-    public Player player;
 
     public float Health { get; set; }
     [SerializeField] float maxHealth = 45f;
@@ -16,8 +14,7 @@ public class Enemy : MonoBehaviour, IDamageable
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        currentHealth = maxHealth;
-        player = FindObjectOfType<Player>();
+        currentHealth = maxHealth;     
     }
 
 
