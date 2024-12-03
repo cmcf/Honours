@@ -72,15 +72,16 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void ChangePlayerState()
+    {
+        StartCoroutine(RandomlyChangeState());
+    }
+
     IEnumerator RandomlyChangeState()
     {
-        while (true)
-        {
-            // Wait for a random interval
-            float randomInterval = Random.Range(5, 15);
-            yield return new WaitForSeconds(randomInterval);
+        Debug.Log("Called");
 
-            // Change to Enhanced state
+           // Change to Enhanced state
             ChangeState(PlayerState.Enhanced);
             Debug.Log("Enhanced");
 
@@ -88,7 +89,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(enhancedStateDuration);
             ChangeState(PlayerState.Normal);
             Debug.Log("Normal");
-        }
+        
     }
 
     public void ChangeState(PlayerState newState)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1601789957142054983}
   - component: {fileID: 7440780272706730979}
   - component: {fileID: 7893117136063839857}
-  - component: {fileID: 5305764208512750235}
+  - component: {fileID: -7668288653603643390}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -135,7 +135,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5305764208512750235
+--- !u!114 &-7668288653603643390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,17 +144,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1164709598715183366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d2d56353bd991458d3c7ee7590d666, type: 3}
+  m_Script: {fileID: 11500000, guid: bfada832f5293c64c8e6cb9b8c3302a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 4040207891986179867, guid: a1779c5a7f85cff43858f51b4dbc37a0, type: 3}
-  playerTransform: {fileID: 0}
-  spawnPoint: {fileID: 8346416027446157132}
-  attackRange: 10
-  fireRate: 1
-  projectileSpeed: 8
-  nextFireTime: 0.2
+  spriteRenderer: {fileID: 7440780272706730979}
   maxHealth: 45
+  bulletPrefab: {fileID: 4040207891986179867, guid: a1779c5a7f85cff43858f51b4dbc37a0, type: 3}
+  spawnPoint: {fileID: 8346416027446157132}
+  attackRange: 5
+  fireRate: 2
+  projectileSpeed: 20
+  nextFireTime: 0
 --- !u!1 &2028987238495395174
 GameObject:
   m_ObjectHideFlags: 0
