@@ -16,19 +16,28 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
-        // Set doors to inactive
-        foreach (var room in rooms)
+        // Set doors to inactive except for the first room
+        for (int i = 0; i < rooms.Length; i++)
         {
-            Transform doorTransform = room.transform.Find("Door");
+            Transform doorTransform = rooms[i].transform.Find("Door");
             GameObject doorObject = null;
 
             if (doorTransform != null)
             {
                 doorObject = doorTransform.gameObject;
             }
+
             if (doorObject != null)
             {
-                doorObject.SetActive(false);  
+                // Always show the door for the first room
+                if (i == 0)
+                {
+                    doorObject.SetActive(true);
+                }
+                else
+                {
+                    doorObject.SetActive(false);
+                }
             }
         }
 
@@ -59,6 +68,7 @@ public class RoomManager : MonoBehaviour
     {
         if (currentRoomIndex < rooms.Length - 1)
         {
+            
             currentRoomIndex++;
             // Spawn player at the room spawn point
             Transform nextRoomSpawn = rooms[currentRoomIndex].transform.Find("SpawnPoint");
