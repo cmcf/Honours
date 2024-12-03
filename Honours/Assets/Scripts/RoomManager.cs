@@ -71,7 +71,8 @@ public class RoomManager : MonoBehaviour
                     player.transform.position = nextRoomSpawn.position;
                 }
             }
-
+            // Trigger a random mechanic for the new room
+            TriggerRandomMechanic();
             UpdateRoomVisibility();
         }
         else
@@ -93,5 +94,57 @@ public class RoomManager : MonoBehaviour
 
         // Only show the current room
         rooms[currentRoomIndex].SetActive(true);
+    }
+
+    void TriggerRandomMechanic()
+    {
+        int randomEffect = Random.Range(0, 3);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        switch (randomEffect)
+        {
+            case 0:
+                Debug.Log("Player state change");
+       
+                if (player != null)
+                {
+                    // Player changes state
+                    player.GetComponent<Player>().ChangePlayerState();
+                }
+                break;
+            case 1:
+                Debug.Log("Transform enemy");
+                StartCoroutine(WaitAndTransform(1f));
+                break;
+            case 2:
+                
+                Debug.Log("Change state!");
+                // Player changes state
+                player.GetComponent<Player>().ChangePlayerState();
+                break;
+        }
+    }
+
+    IEnumerator WaitAndTransform(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        TransformPlayerIntoEnemy();
+    }
+
+    void TransformPlayerIntoEnemy()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            // Find all active enemy objects that inherit from the Enemy class
+            Enemy[] enemies = FindObjectsOfType<Enemy>();
+
+            if (enemies.Length > 0)
+            {
+                // Randomly select an enemy from the active enemies
+                Enemy randomEnemy = enemies[Random.Range(0, enemies.Length)];
+                player.GetComponent<Player>().TransformIntoEnemy(randomEnemy);
+            }
+
+        }
     }
 }
