@@ -10,6 +10,13 @@ public class Room : MonoBehaviour
     public int x;
     public int y;
 
+    bool updatedDoors = false;
+    public Room(int X, int Y)
+    {
+        X = x;
+        Y = y;
+    }
+
     public Door leftDoor;
     public Door rightDoor;
     public Door topDoor;
@@ -43,6 +50,15 @@ public class Room : MonoBehaviour
             }
         }
         RoomController.Instance.RegisterRoom(this);
+    }
+
+    void Update()
+    {
+        if (name.Contains("WinScene") && !updatedDoors)
+        {
+            RemoveUnConnectedDoors();
+            updatedDoors = true;
+        }
     }
 
     public void RemoveUnConnectedDoors()

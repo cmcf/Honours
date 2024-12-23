@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using System.Linq;
 public class RoomInfo
 {
     public string name;
@@ -18,9 +18,11 @@ public class RoomController : MonoBehaviour
     Room currentRoom;
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
-    public List<Room> loadedRooms= new List<Room>();
+    public List<Room> loadedRooms = new List<Room>();
 
     bool isLoadingRoom = false;
+    bool hasSpawnedBossRoom = false;
+    bool updatedRooms = false;
 
     void Awake()
     {
@@ -44,7 +46,7 @@ public class RoomController : MonoBehaviour
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
     {
-        string roomName = currentWorldName+ info.name;
+        string roomName = currentWorldName + info.name;
         AsyncOperation loadRoom = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
         while (loadRoom.isDone == false)
         {
@@ -61,7 +63,7 @@ public class RoomController : MonoBehaviour
         // Only spawn room if it does not already exist
         if (!DoesRoomExist(currentLoadRoomData.x, currentLoadRoomData.y))
         {
-            
+
             room.transform.position = new Vector3(currentLoadRoomData.x * room.width, currentLoadRoomData.y * room.height, 0);
 
             room.x = currentLoadRoomData.x;
@@ -77,17 +79,16 @@ public class RoomController : MonoBehaviour
             }
 
             loadedRooms.Add(room);
-            room.RemoveUnConnectedDoors();
         }
         else
         {
             Destroy(room.gameObject);
             isLoadingRoom = false;
         }
-        
+
     }
 
-    public bool DoesRoomExist(int x,  int y)
+    public bool DoesRoomExist(int x, int y)
     {
         return loadedRooms.Find(item => item.x == x && item.y == y) != null;
     }
@@ -106,7 +107,7 @@ public class RoomController : MonoBehaviour
 
     void Start()
     {
-       // LoadRoom("Main", 0, 0);
+        // LoadRoom("Main", 0, 0);
         //LoadRoom("Start", 1, 0);
         //LoadRoom("Start", -1, 0);
     }
@@ -125,8 +126,20 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        if (loadRoomQueue.Count == 0) 
+        if (loadRoomQueue.Count == 0)
         {
+            if (!hasSpawnedBossRoom)
+            {
+                StartCoroutine(SpawnBossRoom());
+            }
+            else if (hasSpawnedBossRoom && !updatedRooms)
+            {
+                foreach (Room room in loadedRooms)
+                {
+                    room.RemoveUnConnectedDoors();
+                }
+                updatedRooms = true;
+            }
             return;
         }
 
@@ -134,5 +147,31 @@ public class RoomController : MonoBehaviour
         isLoadingRoom = true;
 
         StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
+    }
+
+    IEnumerator SpawnBossRoom()
+    {
+        // Check if the boss room has already been spawned
+        if (hasSpawnedBossRoom)
+            yield break;
+
+        hasSpawnedBossRoom = true;
+
+        yield return new WaitForSeconds(0.5f);
+
+        // Ensure the queue is empty before spawning the boss room.
+        if (loadRoomQueue.Count == 0 && loadedRooms.Count > 0)
+        {
+            // Identify the last room to replace with the boss room
+            Room lastRoom = loadedRooms.Last();
+            Vector2Int tempRoom = new Vector2Int(lastRoom.x, lastRoom.y);
+
+            // Remove the last room
+            Destroy(lastRoom.gameObject);
+            loadedRooms.Remove(lastRoom);
+
+            // Load the boss room
+            LoadRoom("Boss", tempRoom.x, tempRoom.y);
+        }
     }
 }
