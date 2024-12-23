@@ -227,6 +227,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2019253176}
   - component: {fileID: 2019253175}
+  - component: {fileID: 2019253177}
   m_Layer: 0
   m_Name: RoomManager
   m_TagString: Untagged
@@ -247,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadedRooms:
-  - {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+  - {fileID: 3050642866106379700}
 --- !u!4 &2019253176
 Transform:
   m_ObjectHideFlags: 0
@@ -263,6 +264,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2019253177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019253174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52af0959c6ba1f944b8181a1046babb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonGenerationData: {fileID: 11400000, guid: 8b1f29dca6b69504bbf2c0dc7db82acd, type: 2}
 --- !u!1001 &2068680074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -509,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a7322945516ba439de3b07b1056f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorType: 0
   roomIndexToLoad: 0
 --- !u!212 &1903973200710370179
 SpriteRenderer:
@@ -1180,6 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a7322945516ba439de3b07b1056f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorType: 1
   roomIndexToLoad: 0
 --- !u!212 &6969487434320711051
 SpriteRenderer:

@@ -58,26 +58,43 @@ public class RoomController : MonoBehaviour
         {
             return;
         }
-        room.transform.position = new Vector3(currentLoadRoomData.x * room.width, currentLoadRoomData.y * room.height, 0);
-
-        room.x = currentLoadRoomData.x;
-        room.y =currentLoadRoomData.y;
-        room.name = currentWorldName + room.name + " " + room.x + ", " + room.y;
-        room.transform.parent = transform;
-
-        isLoadingRoom = false;
-
-        if (loadedRooms.Count == 0)
+        // Only spawn room if it does not already exist
+        if (!DoesRoomExist(currentLoadRoomData.x, currentLoadRoomData.y))
         {
-            CameraController.Instance.currentRoom = room;
-        }
+            
+            room.transform.position = new Vector3(currentLoadRoomData.x * room.width, currentLoadRoomData.y * room.height, 0);
 
-        loadedRooms.Add(room);
+            room.x = currentLoadRoomData.x;
+            room.y = currentLoadRoomData.y;
+            room.name = currentWorldName + room.name + " " + room.x + ", " + room.y;
+            room.transform.parent = transform;
+
+            isLoadingRoom = false;
+
+            if (loadedRooms.Count == 0)
+            {
+                CameraController.Instance.currentRoom = room;
+            }
+
+            loadedRooms.Add(room);
+            room.RemoveUnConnectedDoors();
+        }
+        else
+        {
+            Destroy(room.gameObject);
+            isLoadingRoom = false;
+        }
+        
     }
 
     public bool DoesRoomExist(int x,  int y)
     {
         return loadedRooms.Find(item => item.x == x && item.y == y) != null;
+    }
+
+    public Room FindRoom(int x, int y)
+    {
+        return loadedRooms.Find(item => item.x == x && item.y == y);
     }
 
     public void OnEnterRoom(Room room)
@@ -89,9 +106,9 @@ public class RoomController : MonoBehaviour
 
     void Start()
     {
-        LoadRoom("Main", 0, 0);
-        LoadRoom("Start", 1, 0);
-        LoadRoom("Start", -1, 0);
+       // LoadRoom("Main", 0, 0);
+        //LoadRoom("Start", 1, 0);
+        //LoadRoom("Start", -1, 0);
     }
 
 
