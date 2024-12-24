@@ -10,27 +10,36 @@ public class Door : MonoBehaviour
     }
 
     public DoorType doorType;
+    public GameObject doorCollider;
 
-    RoomManager roomManager;
-    public int roomIndexToLoad;      
+    public int roomIndexToLoad;
+    float widthOffset = 1.75f;
+    GameObject player;
 
-    void Start()
+    private void Start()
     {
-        if (roomManager == null)
-        {
-            roomManager = RoomManager.Instance; 
-        }
+        player = GameObject.FindGameObjectWithTag("Player");
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         // Only trigger interaction when player collides with door
         if (other.CompareTag("Player"))
         {
-            // Move the player to the next room when they interact with the door
-            if (roomManager != null)
+            switch(doorType)
             {
-                roomManager.MoveToNextRoom();
+                case DoorType.left:
+                    player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                    break;
+                case DoorType.right:
+                    player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                    break;
+                case DoorType.top:
+                    player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                    break;
+                case DoorType.bottom:
+                    player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
+                    break;
+
             }
         }
     }

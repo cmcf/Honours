@@ -119,6 +119,21 @@ public class RoomController : MonoBehaviour
 
     }
 
+    void UpdateRooms()
+    {
+        foreach (Room room in loadedRooms)
+        {
+            Debug.Log(room.name);
+        }
+        //foreach(Door door in room.GetComponentsInChildren<Door>())
+        {
+            //door.doorCollider.SetActive(false);
+        }
+        {
+
+        }
+    }
+
     void UpdateRoomQueue()
     {
         if (isLoadingRoom)

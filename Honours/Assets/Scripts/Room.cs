@@ -54,7 +54,7 @@ public class Room : MonoBehaviour
 
     void Update()
     {
-        if (name.Contains("WinScene") && !updatedDoors)
+        if (name.Contains("GameBoss") && !updatedDoors)
         {
             RemoveUnConnectedDoors();
             updatedDoors = true;
