@@ -14,7 +14,7 @@ public class GridController : MonoBehaviour
 
     public Grid grid;
     public GameObject gridTile;
-    public List<Vector2> avaiblePoints = new List<Vector2>();
+    public List<Vector2> availablePoints = new List<Vector2>();
 
     void Awake()
     {
@@ -36,9 +36,12 @@ public class GridController : MonoBehaviour
                 GameObject go = Instantiate(gridTile, transform);
                 go.transform.localPosition = new Vector2(x - (grid.columns - grid.horizontalOffset), y - (grid.rows - grid.verticalOffset));
                 go.name = "X: " + x + "Y: " + y;
-                avaiblePoints.Add(go.transform.position);
+                availablePoints.Add(go.transform.position);
+                go.SetActive(false);
 
             }
         }
+
+        GetComponentInParent<ObjectRoomSpawner>().InitialiseObjectSpawning();
     }
 }

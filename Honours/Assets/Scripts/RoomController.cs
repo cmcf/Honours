@@ -105,6 +105,17 @@ public class RoomController : MonoBehaviour
 
     }
 
+    public string GetRandomRoomName()
+    {
+        string[] possibleRooms = new string[]
+        {
+            "Empty",
+            "Default",
+        };
+
+        return possibleRooms[Random.Range(0, possibleRooms.Length)];
+    }
+
     void Start()
     {
         // LoadRoom("Main", 0, 0);
