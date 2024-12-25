@@ -29,6 +29,12 @@ public class RoomController : MonoBehaviour
         Instance = this;
     }
 
+    void Update()
+    {
+        UpdateRoomQueue();
+
+    }
+
     public void LoadRoom(string name, int x, int y)
     {
         if (DoesRoomExist(x, y))
@@ -124,20 +130,6 @@ public class RoomController : MonoBehaviour
         return possibleRooms[Random.Range(0, possibleRooms.Length)];
     }
 
-    void Start()
-    {
-        // LoadRoom("Main", 0, 0);
-        //LoadRoom("Start", 1, 0);
-        //LoadRoom("Start", -1, 0);
-    }
-
-
-    void Update()
-    {
-        UpdateRoomQueue();
-
-    }
-
     public void UpdateRooms()
     {
         foreach (Room room in loadedRooms)
@@ -150,7 +142,6 @@ public class RoomController : MonoBehaviour
                     foreach (MeleeEnemy enemy in enemies)
                     {
                         enemy.notInRoom = true;
-                        Debug.Log("Not in room");
                     }
 
                     foreach (Door door in room.GetComponentsInChildren<Door>())
@@ -174,7 +165,6 @@ public class RoomController : MonoBehaviour
                     foreach (MeleeEnemy enemy in enemies)
                     {
                         enemy.notInRoom = false;
-                        Debug.Log("In room");
                     }
 
                     foreach (Door door in room.GetComponentsInChildren<Door>())
@@ -194,7 +184,7 @@ public class RoomController : MonoBehaviour
     }
 
 
-    void UpdateRoomQueue()
+void UpdateRoomQueue()
     {
         if (isLoadingRoom)
         {

@@ -25,6 +25,7 @@ public class Door : MonoBehaviour
         // Only trigger interaction when player collides with door
         if (other.CompareTag("Player"))
         {
+            // Players transform is set to the door position 
             switch(doorType)
             {
                 case DoorType.left:

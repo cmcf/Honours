@@ -397,6 +397,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.48014987
       objectReference: {fileID: 0}
+    - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: leftDoor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: rightDoor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802657590789073232, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: gridTile
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2432576161522629161, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.34
@@ -479,6 +491,8 @@ PrefabInstance:
     - {fileID: 3021994316170048069, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
     - {fileID: 5070958389913636336, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
     - {fileID: 1464011256131743250, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+    - {fileID: 3359648426761644602, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+    - {fileID: 7371151657563360139, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       insertIndex: -1
