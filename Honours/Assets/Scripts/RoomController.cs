@@ -103,6 +103,25 @@ public class RoomController : MonoBehaviour
         CameraController.Instance.currentRoom = room;
         currentRoom = room;
 
+        StartCoroutine(RoomCoroutine());
+
+    }
+
+    public IEnumerator RoomCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        UpdateRooms();
+    }
+
+    public string GetRandomRoomName()
+    {
+        string[] possibleRooms = new string[]
+        {
+            "Empty",
+            "Default",
+        };
+
+        return possibleRooms[Random.Range(0, possibleRooms.Length)];
     }
 
     void Start()
@@ -119,20 +138,61 @@ public class RoomController : MonoBehaviour
 
     }
 
-    void UpdateRooms()
+    public void UpdateRooms()
     {
         foreach (Room room in loadedRooms)
         {
-            Debug.Log(room.name);
-        }
-        //foreach(Door door in room.GetComponentsInChildren<Door>())
-        {
-            //door.doorCollider.SetActive(false);
-        }
-        {
+            if (currentRoom != room)
+            {
+                MeleeEnemy[] enemies = room.GetComponentsInChildren<MeleeEnemy>();
+                if (enemies != null)
+                {
+                    foreach (MeleeEnemy enemy in enemies)
+                    {
+                        enemy.notInRoom = true;
+                        Debug.Log("Not in room");
+                    }
 
+                    foreach (Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false);
+                    }
+                }
+                else
+                {
+                    foreach (Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false);
+                    }
+                }
+            }
+            else
+            {
+                MeleeEnemy[] enemies = room.GetComponentsInChildren<MeleeEnemy>();
+                if (enemies.Length > 0)
+                {
+                    foreach (MeleeEnemy enemy in enemies)
+                    {
+                        enemy.notInRoom = false;
+                        Debug.Log("In room");
+                    }
+
+                    foreach (Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(true);
+                    }
+                }
+                else
+                {
+                    foreach (Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false);
+                    }
+                }
+            }
         }
     }
+
 
     void UpdateRoomQueue()
     {
@@ -153,6 +213,7 @@ public class RoomController : MonoBehaviour
                 {
                     room.RemoveUnConnectedDoors();
                 }
+                UpdateRooms();
                 updatedRooms = true;
             }
             return;
