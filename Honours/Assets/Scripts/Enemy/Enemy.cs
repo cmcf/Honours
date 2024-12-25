@@ -54,7 +54,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         RoomController.Instance.StartCoroutine(RoomController.Instance.RoomCoroutine());
         Debug.Log("Die");
-        FindObjectOfType<EnemyManager>().OnEnemyDefeated();
+        //FindObjectOfType<EnemyManager>().OnEnemyDefeated();
         Destroy(gameObject);
     }
 }
