@@ -33,10 +33,16 @@ public class ObjectRoomSpawner : MonoBehaviour
 
         for (int i = 0; i < randomIteration; i++)
         {
+            if (grid.availablePoints.Count == 0)
+            {
+                Debug.LogWarning("No available points to spawn objects");
+                return;
+            }
+
             int randomPos = Random.Range(0, grid.availablePoints.Count - 1);
             GameObject go = Instantiate(data.spawnerData.itemToSpawn, grid.availablePoints[randomPos], Quaternion.identity, transform) as GameObject;
-            grid.availablePoints.RemoveAt(randomPos);
-            Debug.Log("Spawned object");
+            grid.availablePoints.RemoveAt(randomPos); // Remove used point
+            Debug.Log("Spawned Object!");
         }
     }
 

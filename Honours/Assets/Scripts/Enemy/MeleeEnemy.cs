@@ -8,6 +8,7 @@ public class MeleeEnemy : Enemy
     Transform playerLocation;
     Rigidbody2D rb;
     public int damage;
+    public bool notInRoom = false;
 
     [Header("Movement")]
     [SerializeField] float stoppingDistance = 10f;
@@ -27,17 +28,17 @@ public class MeleeEnemy : Enemy
         {
             playerLocation = player.transform;
         }
-        else
-        {
-            Debug.LogError("Player GameObject not found! Ensure it is tagged 'Player'.");
-        }
 
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    void Update()
     {
-        MoveTowardsPlayer();
+        if (!notInRoom)
+        {
+            MoveTowardsPlayer();
+        }
+        
     }
 
     void MoveTowardsPlayer()

@@ -33,12 +33,14 @@ public class GridController : MonoBehaviour
         {
             for (int x = 0; x < grid.columns; x++)
             {
-                GameObject go = Instantiate(gridTile, transform);
-                go.transform.localPosition = new Vector2(x - (grid.columns - grid.horizontalOffset), y - (grid.rows - grid.verticalOffset));
-                go.name = "X: " + x + "Y: " + y;
-                availablePoints.Add(go.transform.position);
-                go.SetActive(false);
-
+                if (gridTile != null)
+                {
+                    GameObject go = Instantiate(gridTile, transform);
+                    go.transform.localPosition = new Vector2(x - (grid.columns - grid.horizontalOffset), y - (grid.rows - grid.verticalOffset));
+                    go.name = "X: " + x + "Y: " + y;
+                    availablePoints.Add(go.transform.position);
+                    go.SetActive(false);
+                }
             }
         }
 

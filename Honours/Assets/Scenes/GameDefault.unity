@@ -119,58 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &526613570
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 526613572}
-  - component: {fileID: 526613571}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &526613571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526613570}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c7a52ab4657c64bbdd9328fa310852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  room: {fileID: 987193583}
-  grid:
-    columns: 0
-    rows: 0
-    verticalOffset: 5
-    horizontalOffset: 9.5
-  gridTile: {fileID: 2031751387}
-  availablePoints: []
---- !u!4 &526613572
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526613570}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2079616523}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &987193581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -219,43 +167,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6833967639703508376, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 526613571}
     - target: {fileID: 8000365368922459883, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 526613572}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
---- !u!114 &987193583 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-  m_PrefabInstance: {fileID: 987193581}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b953f12637a65449be79ac64679dcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &2031751387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5070958389913636336, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-  m_PrefabInstance: {fileID: 987193581}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2079616523 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-  m_PrefabInstance: {fileID: 987193581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
