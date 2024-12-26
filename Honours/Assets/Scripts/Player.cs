@@ -47,25 +47,29 @@ public class Player : MonoBehaviour
 
     void OnFire()
     {
-        // Only fire if fire delay has passed
+        // Only fire is fire delay has passed
         if (Time.time > lastFireTime + fireDelay)
         {
+            // Record the time of this shot
             lastFireTime = Time.time;
-
-            // Instantiate the bullet
             GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-            Vector3 direction = spawnPoint.position;
 
-            // Set bullet damage based on player state
+            // Pass the player's state to the bullet for damage adjustment
             Bullet bullet = projectile.GetComponent<Bullet>();
             if (bullet != null)
             {
-                bullet.SetDamage(currentState == PlayerState.Enhanced ? enhancedBulletDamage : defaultBulletDamage);
+                if (currentState == PlayerState.Enhanced)
+                {
+                    bullet.SetDamage(enhancedBulletDamage);
+                }
+                else
+                {
+                    bullet.SetDamage(defaultBulletDamage);
+                }
             }
-
             // Apply velocity to the bullet
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-            rb.velocity = direction * bulletSpeed;
+            rb.velocity = spawnPoint.up * bulletSpeed;
         }
     }
 
