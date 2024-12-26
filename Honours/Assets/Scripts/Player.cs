@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
 
     void OnFire()
     {
+        // Only fire is fire delay has passed
         if (Time.time > lastFireTime + fireDelay)
         {
             // Record the time of this shot
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour
                     bullet.SetDamage(defaultBulletDamage);
                 }
             }
-            // Move the bullet 
+            // Apply velocity to the bullet
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             rb.velocity = spawnPoint.up * bulletSpeed;
         }

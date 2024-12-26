@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7440780272706730979}
   - component: {fileID: 7893117136063839857}
   - component: {fileID: -7668288653603643390}
+  - component: {fileID: 4171604732914402250}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -155,6 +156,20 @@ MonoBehaviour:
   fireRate: 2
   projectileSpeed: 20
   nextFireTime: 0
+--- !u!114 &4171604732914402250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164709598715183366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d2d56353bd991458d3c7ee7590d666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7440780272706730979}
+  maxHealth: 45
 --- !u!1 &2028987238495395174
 GameObject:
   m_ObjectHideFlags: 0
