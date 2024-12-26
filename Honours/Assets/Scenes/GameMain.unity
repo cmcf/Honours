@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 113654299}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,16 +357,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6833967639703508376, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2823573800818945745, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-      insertIndex: 7
+      insertIndex: 6
       addedObject: {fileID: 85359233}
     - targetCorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-      insertIndex: 9
+      insertIndex: 8
       addedObject: {fileID: 2076142900}
     - targetCorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
-      insertIndex: 11
+      insertIndex: 10
       addedObject: {fileID: 726617486}
     - targetCorrespondingSourceObject: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       insertIndex: -1
@@ -613,10 +614,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3558879172675334712, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
-      propertyPath: defaultSpeed
-      value: 6
-      objectReference: {fileID: 0}
+    - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 113654297}
     - target: {fileID: 5213473722867775274, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_Name
       value: Player
@@ -639,15 +640,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6624806211365203056, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6624806211365203056, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6624806211365203056, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6624806211365203056, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
