@@ -61,6 +61,12 @@ public class Room : MonoBehaviour
         }
     }
 
+    public bool AreAllEnemiesDefeated()
+    {
+        Enemy[] enemies = GetComponentsInChildren<Enemy>();
+        return enemies.Length == 0;
+    }
+
     public void RemoveUnConnectedDoors()
     {
         foreach(Door door in doorList)

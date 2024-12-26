@@ -136,10 +136,27 @@ public class RoomController : MonoBehaviour
         {
             if (currentRoom != room)
             {
-                MeleeEnemy[] enemies = room.GetComponentsInChildren<MeleeEnemy>();
-                if (enemies != null)
+                if (currentRoom != room)
                 {
-                    foreach (MeleeEnemy enemy in enemies)
+                    Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
+                    foreach (Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(false); // Lock doors when not in the room
+                    }
+                }
+                else
+                {
+                    Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
+                    foreach (Door door in room.GetComponentsInChildren<Door>())
+                    {
+                        door.doorCollider.SetActive(enemies.Length == 0); // Enable doors only when enemies are defeated
+                    }
+                }
+
+                MeleeEnemy[] meleeEnemies = room.GetComponentsInChildren<MeleeEnemy>();
+                if (meleeEnemies != null)
+                {
+                    foreach (MeleeEnemy enemy in meleeEnemies)
                     {
                         enemy.notInRoom = true;
                     }
