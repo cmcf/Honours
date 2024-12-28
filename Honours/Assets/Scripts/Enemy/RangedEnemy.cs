@@ -13,16 +13,17 @@ public class RangedEnemy : Enemy
     [SerializeField] float fireRate = 2f;
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float nextFireTime = 0f;
-
     void Start()
     {
         playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+
     void Update()
     {
         // Do not fire projectiles if enemy is not active
         if (!IsActive()) return;
+
         // Check the distance to the player
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 
@@ -37,14 +38,15 @@ public class RangedEnemy : Enemy
 
     void FireProjectile()
     {
-        // Calculate the direction to the player
-        Vector2 direction = (playerLocation.position - spawnPoint.position).normalized;
+        // Get the direction the enemy is facing
+        Vector2 direction = transform.up;
 
         // Instantiate the projectile at the fire point
         GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
 
-        // Set the projectile's velocity to move towards the player
+        // Set the projectile's velocity to move in the same direction as the enemy
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         rb.velocity = direction * projectileSpeed;
     }
+
 }
