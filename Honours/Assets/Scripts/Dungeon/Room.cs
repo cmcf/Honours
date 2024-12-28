@@ -80,9 +80,8 @@ public class Room : MonoBehaviour
             if (neighbor == null)
             {
                 // No neighbor exists, block this door
-                AddWallCollider(door);
+                //AddWallCollider(door);
 
-                // Optionally disable the door to prevent interaction
                 door.gameObject.SetActive(false);
             }
             else
@@ -93,31 +92,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    void AddWallCollider(Door door)
-    {
-        // Create a wall GameObject
-        GameObject wall = new GameObject("WallCollider");
-        wall.transform.SetParent(transform);
-        wall.transform.position = door.transform.position;
 
-        // Add a BoxCollider2D to block the player
-        BoxCollider2D collider = wall.AddComponent<BoxCollider2D>();
-
-        // Adjust collider size and alignment based on the door type
-        switch (door.doorType)
-        {
-            case Door.DoorType.left:
-            case Door.DoorType.right:
-                collider.size = new Vector2(0.5f, height);
-                break;
-            case Door.DoorType.top:
-            case Door.DoorType.bottom:
-                collider.size = new Vector2(width, 0.5f);
-                break;
-        }
-
-        collider.isTrigger = false; // Ensure the collider blocks movement
-    }
     public Room GetRight()
     {
         if (RoomController.Instance.DoesRoomExist(x + 1, y))
