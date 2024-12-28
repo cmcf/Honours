@@ -67,36 +67,57 @@ public class Room : MonoBehaviour
         return enemies.Length == 0;
     }
 
-    public void RemoveUnConnectedDoors()
+  public void RemoveUnConnectedDoors()
     {
-        foreach(Door door in doorList)
+        foreach (Door door in GetComponentsInChildren<Door>())
         {
-            switch(door.doorType)
+            // Get the grid position of the neighboring room
+            Vector2Int doorPosition = door.GetGridPosition();
+
+            // Use RoomController to find if the neighbor exists
+            Room neighbor = RoomController.Instance.FindRoom(doorPosition.x, doorPosition.y);
+
+            if (neighbor == null)
             {
-                case Door.DoorType.right:
-                    if (GetRight() == null) 
-                        door.gameObject.SetActive(false);
-                    rightDoor = door;
-                    break;
-                case Door.DoorType.left:
-                    if (GetLeft() == null)
-                        door.gameObject.SetActive(false);
-                    leftDoor = door;
-                    break;
-                case Door.DoorType.bottom:
-                    if (GetBottom() == null)
-                        door.gameObject.SetActive(false);
-                    bottomDoor = door;
-                    break;
-                case Door.DoorType.top:
-                    if (GetTop() == null)
-                        door.gameObject.SetActive(false);
-                    topDoor = door;
-                    break;
+                // No neighbor exists, block this door
+                AddWallCollider(door);
+
+                // Optionally disable the door to prevent interaction
+                door.gameObject.SetActive(false);
+            }
+            else
+            {
+                // Ensure the door is active if a neighbor exists
+                door.gameObject.SetActive(true);
             }
         }
     }
 
+    void AddWallCollider(Door door)
+    {
+        // Create a wall GameObject
+        GameObject wall = new GameObject("WallCollider");
+        wall.transform.SetParent(transform);
+        wall.transform.position = door.transform.position;
+
+        // Add a BoxCollider2D to block the player
+        BoxCollider2D collider = wall.AddComponent<BoxCollider2D>();
+
+        // Adjust collider size and alignment based on the door type
+        switch (door.doorType)
+        {
+            case Door.DoorType.left:
+            case Door.DoorType.right:
+                collider.size = new Vector2(0.5f, height);
+                break;
+            case Door.DoorType.top:
+            case Door.DoorType.bottom:
+                collider.size = new Vector2(width, 0.5f);
+                break;
+        }
+
+        collider.isTrigger = false; // Ensure the collider blocks movement
+    }
     public Room GetRight()
     {
         if (RoomController.Instance.DoesRoomExist(x + 1, y))

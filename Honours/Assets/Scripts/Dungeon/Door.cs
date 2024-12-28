@@ -17,10 +17,18 @@ public class Door : MonoBehaviour
     GameObject player;
     private Room parentRoom;
 
-    private void Start()
+    Vector2Int gridPosition;
+
+    void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        parentRoom = GetComponentInParent<Room>(); // Assuming the door is a child of the room
+        parentRoom = GetComponentInParent<Room>();
+
+        // Get grid position from parent room
+        if (parentRoom != null)
+        {
+            gridPosition = new Vector2Int(parentRoom.x, parentRoom.y); 
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -52,6 +60,23 @@ public class Door : MonoBehaviour
             {
                 Debug.Log("Defeat all enemies before proceeding!");
             }
+        }
+    }
+
+    public Vector2Int GetGridPosition()
+    {
+        switch (doorType)
+        {
+            case DoorType.left:
+                return new Vector2Int(parentRoom.x - 1, parentRoom.y);
+            case DoorType.right:
+                return new Vector2Int(parentRoom.x + 1, parentRoom.y);
+            case DoorType.top:
+                return new Vector2Int(parentRoom.x, parentRoom.y + 1);
+            case DoorType.bottom:
+                return new Vector2Int(parentRoom.x, parentRoom.y - 1);
+            default:
+                return Vector2Int.zero;
         }
     }
 }
