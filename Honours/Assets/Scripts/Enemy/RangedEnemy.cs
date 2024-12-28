@@ -21,6 +21,8 @@ public class RangedEnemy : Enemy
 
     void Update()
     {
+        // Do not fire projectiles if enemy is not active
+        if (!IsActive()) return;
         // Check the distance to the player
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 

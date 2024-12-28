@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] float maxHealth = 45f;
     float currentHealth;
 
+    bool isActive = false;
     bool hit = false;
     void Start()
     {
@@ -17,11 +18,30 @@ public class Enemy : MonoBehaviour, IDamageable
         currentHealth = maxHealth;     
     }
 
+    public void SetActiveState(bool active)
+    {
+        isActive = active;
+
+        if (!isActive)
+        {
+            // Stop all movement or actions if inactive
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+            }
+        }
+    }
+
+    public bool IsActive()
+    {
+        return isActive;
+    }
 
     public void Damage(float damage)
     {
-        // Only deals damage if damage has not already been dealt
-        if (!hit)
+        // Only deals damage if damage has not already been dealt and is active
+        if (!hit && isActive)
         {
             currentHealth -= damage;
 

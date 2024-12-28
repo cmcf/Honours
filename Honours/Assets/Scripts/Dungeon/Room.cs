@@ -71,22 +71,18 @@ public class Room : MonoBehaviour
     {
         foreach (Door door in GetComponentsInChildren<Door>())
         {
-            // Get the grid position of the neighboring room
+            // Get the grid position of the neighbouring room
             Vector2Int doorPosition = door.GetGridPosition();
 
-            // Use RoomController to find if the neighbor exists
+            // Use RoomController to find if the room neighbour exists
             Room neighbor = RoomController.Instance.FindRoom(doorPosition.x, doorPosition.y);
 
             if (neighbor == null)
             {
-                // No neighbor exists, block this door
-                //AddWallCollider(door);
-
                 door.gameObject.SetActive(false);
             }
             else
             {
-                // Ensure the door is active if a neighbor exists
                 door.gameObject.SetActive(true);
             }
         }
@@ -137,7 +133,7 @@ public class Room : MonoBehaviour
         return new Vector3(x * width, y * height);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {

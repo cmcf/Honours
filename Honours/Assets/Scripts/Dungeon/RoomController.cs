@@ -134,68 +134,27 @@ public class RoomController : MonoBehaviour
     {
         foreach (Room room in loadedRooms)
         {
-            if (currentRoom != room)
+            bool isCurrentRoom = (currentRoom == room);
+            bool enemiesDefeated = room.GetComponentsInChildren<Enemy>().Length == 0;
+
+            // Handle door colliders based on room state
+            foreach (Door door in room.GetComponentsInChildren<Door>())
             {
-                if (currentRoom != room)
+                // If the player is in the room and all enemies are defeated, allow the player to go through doors
+                if (isCurrentRoom && enemiesDefeated)
                 {
-                    Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
-                    foreach (Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(false); // Lock doors when not in the room
-                    }
+                    door.wallCollider.SetActive(false); 
                 }
                 else
                 {
-                    Enemy[] enemies = room.GetComponentsInChildren<Enemy>();
-                    foreach (Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(enemies.Length == 0); // Enable doors only when enemies are defeated
-                    }
-                }
-
-                MeleeEnemy[] meleeEnemies = room.GetComponentsInChildren<MeleeEnemy>();
-                if (meleeEnemies != null)
-                {
-                    foreach (MeleeEnemy enemy in meleeEnemies)
-                    {
-                        enemy.notInRoom = true;
-                    }
-
-                    foreach (Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(false);
-                    }
-                }
-                else
-                {
-                    foreach (Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(false);
-                    }
+                    door.wallCollider.SetActive(true); 
                 }
             }
-            else
-            {
-                MeleeEnemy[] enemies = room.GetComponentsInChildren<MeleeEnemy>();
-                if (enemies.Length > 0)
-                {
-                    foreach (MeleeEnemy enemy in enemies)
-                    {
-                        enemy.notInRoom = false;
-                    }
 
-                    foreach (Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(true);
-                    }
-                }
-                else
-                {
-                    foreach (Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(false);
-                    }
-                }
+            // Handle enemies and activate/deactivate them based on room state
+            foreach (Enemy enemy in room.GetComponentsInChildren<Enemy>())
+            {
+                enemy.SetActiveState(isCurrentRoom);
             }
         }
     }
