@@ -389,6 +389,10 @@ PrefabInstance:
       propertyPath: doorList.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3199260662895920614, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -428,6 +432,18 @@ PrefabInstance:
     - target: {fileID: 3862144886598870688, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350366000811573798, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700788404406826824, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969243547429897509, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8000365368922459883, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: m_Name
