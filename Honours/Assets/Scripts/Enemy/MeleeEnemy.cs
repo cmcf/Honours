@@ -34,16 +34,9 @@ public class MeleeEnemy : Enemy
 
     void Update()
     {
-        if (!notInRoom)
-        {
-            MoveTowardsPlayer();
-        }
-        else
-        {
-            // Stop all movement if the enemy is not in the current room
-            rb.velocity = Vector2.zero;
-            return;
-        }
+        if (!IsActive()) return; // Stop execution if not active
+
+        MoveTowardsPlayer();
     }
 
     void MoveTowardsPlayer()

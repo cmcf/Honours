@@ -71,53 +71,24 @@ public class Room : MonoBehaviour
     {
         foreach (Door door in GetComponentsInChildren<Door>())
         {
-            // Get the grid position of the neighboring room
+            // Get the grid position of the neighbouring room
             Vector2Int doorPosition = door.GetGridPosition();
 
-            // Use RoomController to find if the neighbor exists
+            // Use RoomController to find if the room neighbour exists
             Room neighbor = RoomController.Instance.FindRoom(doorPosition.x, doorPosition.y);
 
             if (neighbor == null)
             {
-                // No neighbor exists, block this door
-                AddWallCollider(door);
-
-                // Optionally disable the door to prevent interaction
                 door.gameObject.SetActive(false);
             }
             else
             {
-                // Ensure the door is active if a neighbor exists
                 door.gameObject.SetActive(true);
             }
         }
     }
 
-    void AddWallCollider(Door door)
-    {
-        // Create a wall GameObject
-        GameObject wall = new GameObject("WallCollider");
-        wall.transform.SetParent(transform);
-        wall.transform.position = door.transform.position;
 
-        // Add a BoxCollider2D to block the player
-        BoxCollider2D collider = wall.AddComponent<BoxCollider2D>();
-
-        // Adjust collider size and alignment based on the door type
-        switch (door.doorType)
-        {
-            case Door.DoorType.left:
-            case Door.DoorType.right:
-                collider.size = new Vector2(0.5f, height);
-                break;
-            case Door.DoorType.top:
-            case Door.DoorType.bottom:
-                collider.size = new Vector2(width, 0.5f);
-                break;
-        }
-
-        collider.isTrigger = false; // Ensure the collider blocks movement
-    }
     public Room GetRight()
     {
         if (RoomController.Instance.DoesRoomExist(x + 1, y))
@@ -162,7 +133,7 @@ public class Room : MonoBehaviour
         return new Vector3(x * width, y * height);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {

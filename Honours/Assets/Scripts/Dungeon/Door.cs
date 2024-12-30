@@ -10,7 +10,7 @@ public class Door : MonoBehaviour
     }
 
     public DoorType doorType;
-    public GameObject doorCollider;
+    public GameObject wallCollider;
 
     public int roomIndexToLoad;
     float widthOffset = 4f;
