@@ -22,6 +22,8 @@ public class Room : MonoBehaviour
     public Door topDoor;
     public Door bottomDoor;
 
+    public bool isBossRoom = false;
+
     public List <Door> doorList = new List<Door>();
     void Start()
     {
@@ -71,20 +73,29 @@ public class Room : MonoBehaviour
     {
         foreach (Door door in GetComponentsInChildren<Door>())
         {
-            // Get the grid position of the neighbouring room
-            Vector2Int doorPosition = door.GetGridPosition();
-
-            // Use RoomController to find if the room neighbour exists
-            Room neighbor = RoomController.Instance.FindRoom(doorPosition.x, doorPosition.y);
-
-            if (neighbor == null)
+            // Remove all doors for the boss room
+            if (isBossRoom)
             {
-                door.gameObject.SetActive(false);
+                Destroy(door.gameObject);
             }
             else
             {
-                door.gameObject.SetActive(true);
+                // Get the grid position of the neighbouring room
+                Vector2Int doorPosition = door.GetGridPosition();
+
+                // Use RoomController to find if the room neighbour exists
+                Room neighbor = RoomController.Instance.FindRoom(doorPosition.x, doorPosition.y);
+
+                if (neighbor == null)
+                {
+                    door.gameObject.SetActive(false);
+                }
+                else
+                {
+                    door.gameObject.SetActive(true);
+                }
             }
+            
         }
     }
 

@@ -19,10 +19,14 @@ public class RoomController : MonoBehaviour
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
     public List<Room> loadedRooms = new List<Room>();
+    HashSet<Room> completedRooms = new HashSet<Room>();
 
     bool isLoadingRoom = false;
     bool hasSpawnedBossRoom = false;
     bool updatedRooms = false;
+
+    int roomsCompleted = 0;
+    const int roomsBeforeBoss = 2;
 
     void Awake()
     {
@@ -32,7 +36,11 @@ public class RoomController : MonoBehaviour
     void Update()
     {
         UpdateRoomQueue();
+    }
 
+    void Start()
+    {
+        roomsCompleted = 0;
     }
 
     public void LoadRoom(string name, int x, int y)
@@ -48,6 +56,17 @@ public class RoomController : MonoBehaviour
 
         // Add room data to the queue 
         loadRoomQueue.Enqueue(newRoomData);
+    }
+
+    public void OnRoomCompleted()
+    {
+        roomsCompleted++;
+        Debug.Log("Rooms Completed: " + roomsCompleted);
+        // Ensure the condition triggers after rooms are complete
+        if (roomsCompleted >= roomsBeforeBoss) 
+        {
+            StartCoroutine(SpawnBossRoom());
+        }
     }
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
@@ -143,11 +162,11 @@ public class RoomController : MonoBehaviour
                 // If the player is in the room and all enemies are defeated, allow the player to go through doors
                 if (isCurrentRoom && enemiesDefeated)
                 {
-                    door.wallCollider.SetActive(false); 
+                    door.wallCollider.SetActive(false);
                 }
                 else
                 {
-                    door.wallCollider.SetActive(true); 
+                    door.wallCollider.SetActive(true);
                 }
             }
 
@@ -156,11 +175,20 @@ public class RoomController : MonoBehaviour
             {
                 enemy.SetActiveState(isCurrentRoom);
             }
+
+            // Call the completion check if the current room is active and all enemies are defeated
+            if (isCurrentRoom && enemiesDefeated && !completedRooms.Contains(room))
+            {
+                // Mark room as completed
+                completedRooms.Add(room);
+                // Trigger room completion
+                OnRoomCompleted();  
+            }
         }
     }
 
 
-void UpdateRoomQueue()
+    void UpdateRoomQueue()
     {
         if (isLoadingRoom)
         {
@@ -169,7 +197,8 @@ void UpdateRoomQueue()
 
         if (loadRoomQueue.Count == 0)
         {
-            if (!hasSpawnedBossRoom)
+            // Only spawn if all enemy rooms are cleared
+            if (!hasSpawnedBossRoom && roomsCompleted >= roomsBeforeBoss) 
             {
                 StartCoroutine(SpawnBossRoom());
             }
