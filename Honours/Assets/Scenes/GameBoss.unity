@@ -398,12 +398,24 @@ PrefabInstance:
       value: 0.48014987
       objectReference: {fileID: 0}
     - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: topDoor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: leftDoor
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: rightDoor
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: bottomDoor
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606285805034355480, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
+      propertyPath: isBossRoom
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1802657590789073232, guid: dcfc73cfd857eb043a18c47e05912077, type: 3}
       propertyPath: gridTile

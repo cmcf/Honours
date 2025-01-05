@@ -19,10 +19,14 @@ public class RoomController : MonoBehaviour
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
     public List<Room> loadedRooms = new List<Room>();
+    HashSet<Room> completedRooms = new HashSet<Room>();
 
     bool isLoadingRoom = false;
     bool hasSpawnedBossRoom = false;
     bool updatedRooms = false;
+
+    int roomsCompleted = -1;
+    const int roomsBeforeBoss = 2;
 
     void Awake()
     {
@@ -32,7 +36,11 @@ public class RoomController : MonoBehaviour
     void Update()
     {
         UpdateRoomQueue();
+    }
 
+    void Start()
+    {
+        roomsCompleted = -1;
     }
 
     public void LoadRoom(string name, int x, int y)
@@ -48,6 +56,17 @@ public class RoomController : MonoBehaviour
 
         // Add room data to the queue 
         loadRoomQueue.Enqueue(newRoomData);
+    }
+
+    public void OnRoomCompleted()
+    {
+        roomsCompleted++;
+        Debug.Log("Rooms Completed: " + roomsCompleted);
+        // Ensure the condition triggers after rooms are complete
+        if (roomsCompleted >= roomsBeforeBoss) 
+        {
+            StartCoroutine(SpawnBossRoom());
+        }
     }
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
@@ -135,32 +154,80 @@ public class RoomController : MonoBehaviour
         foreach (Room room in loadedRooms)
         {
             bool isCurrentRoom = (currentRoom == room);
-            bool enemiesDefeated = room.GetComponentsInChildren<Enemy>().Length == 0;
+            // Checks if all enemies are defeated in the room
+            bool enemiesDefeated = room.AreAllEnemiesDefeated();
 
-            // Handle door colliders based on room state
+            // Handle door activation
             foreach (Door door in room.GetComponentsInChildren<Door>())
             {
-                // If the player is in the room and all enemies are defeated, allow the player to go through doors
-                if (isCurrentRoom && enemiesDefeated)
+                Vector2Int doorPosition = door.GetGridPosition();
+                Room adjacentRoom = FindRoom(doorPosition.x, doorPosition.y);
+
+                // If no adjacent room exists, deactivate the door. Activate if so
+                if (adjacentRoom == null)
                 {
-                    door.wallCollider.SetActive(false); 
+                    door.gameObject.SetActive(false);
                 }
                 else
                 {
-                    door.wallCollider.SetActive(true); 
+                    door.gameObject.SetActive(true);
                 }
-            }
 
-            // Handle enemies and activate/deactivate them based on room state
-            foreach (Enemy enemy in room.GetComponentsInChildren<Enemy>())
-            {
-                enemy.SetActiveState(isCurrentRoom);
+
+                if (door.wallCollider != null)
+                {
+                    Collider2D collider = door.wallCollider.GetComponent<Collider2D>();
+
+                    if (collider != null)
+                    {
+                        // Allow the player to go through doors only if all enemies are defeated
+                        if (isCurrentRoom && enemiesDefeated)
+                        {
+                            collider.enabled = false;
+                        }
+                        else
+                        {
+                            collider.enabled = true;
+                        }
+                    }
+
+                }
+
+                // Checks if the room is cleared
+                if (isCurrentRoom && enemiesDefeated && !room.isCompleted)
+                {
+                    // Marks the room as completed
+                    room.isCompleted = true;
+                    OnRoomCompleted();
+                }
+
+                foreach (Collider2D collider in room.GetComponentsInChildren<Collider2D>())
+                {
+                    if (collider != null && collider.gameObject != null && !collider.gameObject.GetComponent<Door>())
+                    {
+                        if (isCurrentRoom)
+                        {
+
+                            collider.enabled = true;
+                        }
+                        else
+                        {
+
+                            collider.enabled = true;
+                        }
+                    }
+                }
+
+                foreach (Enemy enemy in room.GetComponentsInChildren<Enemy>())
+                {
+                    enemy.SetActiveState(isCurrentRoom);
+                }
             }
         }
     }
 
 
-void UpdateRoomQueue()
+    void UpdateRoomQueue()
     {
         if (isLoadingRoom)
         {
@@ -169,7 +236,8 @@ void UpdateRoomQueue()
 
         if (loadRoomQueue.Count == 0)
         {
-            if (!hasSpawnedBossRoom)
+            // Only spawn if all enemy rooms are cleared
+            if (!hasSpawnedBossRoom && roomsCompleted >= roomsBeforeBoss) 
             {
                 StartCoroutine(SpawnBossRoom());
             }
@@ -216,4 +284,5 @@ void UpdateRoomQueue()
             LoadRoom("Boss", tempRoom.x, tempRoom.y);
         }
     }
+
 }
