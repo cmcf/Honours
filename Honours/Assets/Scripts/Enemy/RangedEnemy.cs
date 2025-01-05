@@ -6,6 +6,7 @@ public class RangedEnemy : Enemy
 {
     Transform playerLocation;
     Rigidbody2D rb;
+    Animator animator;
     public GameObject bulletPrefab;
     public Transform spawnPoint;
 
@@ -18,6 +19,7 @@ public class RangedEnemy : Enemy
     {
         playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -34,7 +36,7 @@ public class RangedEnemy : Enemy
         // If the player is within range and it's time to fire - spawn bullet 
         if (distanceToPlayer <= attackRange && Time.time >= nextFireTime)
         {
-
+            animator.SetBool("isAttacking", true);
             FireProjectile();
             // Update the next fire time
             nextFireTime = Time.time + fireRate;
@@ -52,6 +54,12 @@ public class RangedEnemy : Enemy
         // Set the projectile's velocity to move in the same direction as the enemy
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         rb.velocity = direction * projectileSpeed;
+        Invoke("ResetAnimation", 0.3f);
+    }
+
+    void ResetAnimation()
+    {
+        animator.SetBool("isAttacking", false);
     }
 
     void RotateTowardsPlayer()
