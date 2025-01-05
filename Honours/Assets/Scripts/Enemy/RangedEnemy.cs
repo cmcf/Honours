@@ -31,7 +31,7 @@ public class RangedEnemy : Enemy
         // Check the distance to the player
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 
-        RotateTowardsPlayer();
+        UpdateEnemyAndSpawnPoint();
 
         // If the player is within range and it's time to fire - spawn bullet 
         if (distanceToPlayer <= attackRange && Time.time >= nextFireTime)
@@ -45,15 +45,21 @@ public class RangedEnemy : Enemy
 
     void FireProjectile()
     {
-        // Get the direction the enemy is facing
-        Vector2 direction = transform.up;
+        if (spawnPoint == null || bulletPrefab == null) return;
 
-        // Instantiate the projectile at the fire point
+        // Use the spawn point's direction to fire the projectile
+        Vector2 direction = spawnPoint.right;
+
+        // Instantiate the projectile at the spawn point
         GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
 
-        // Set the projectile's velocity to move in the same direction as the enemy
+        // Set the projectile's velocity to move in the direction of the spawn point
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.velocity = direction * projectileSpeed;
+        if (rb != null)
+        {
+            rb.velocity = direction * projectileSpeed;
+        }
+
         Invoke("ResetAnimation", 0.3f);
     }
 
@@ -62,18 +68,39 @@ public class RangedEnemy : Enemy
         animator.SetBool("isAttacking", false);
     }
 
-    void RotateTowardsPlayer()
+    void UpdateEnemyAndSpawnPoint()
     {
         if (playerLocation == null) return;
 
         // Calculates the direction vector from the enemy to the player
         Vector2 direction = (playerLocation.position - transform.position).normalized;
 
-        // Calculates the angle between the enemy's current up direction and the target direction
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+        // Flip the enemy sprite based on the player's position
+        FlipEnemySprite(direction);
 
-        // Rotates enemy towards the player
-        transform.rotation = Quaternion.Euler(0f, 0f, angle);
+        // Rotate the projectile spawn point to face the player
+        RotateSpawnPoint(direction);
+    }
+
+    void FlipEnemySprite(Vector2 direction)
+    {
+        // Flips sprite to face the player
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = direction.x > 0;
+        }
+    }
+
+    void RotateSpawnPoint(Vector2 direction)
+    {
+        if (spawnPoint == null) return;
+
+        // Calculates the angle for the spawn point
+        float spawnPointAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Rotates only the projectile spawn point to face the player
+        spawnPoint.rotation = Quaternion.Euler(0f, 0f, spawnPointAngle);
     }
 
 }
