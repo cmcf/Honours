@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
+    Animator animator;
 
     [Header("Speed Settings")]
     [SerializeField] float defaultSpeed = 3f;
@@ -14,12 +15,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float increasedSpeed = 6f;
 
     Vector2 moveDirection;
+    public Vector2 lastMoveDirection = Vector2.zero;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentSpeed = defaultSpeed;
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -27,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
         // Apply movement to player 
         rb.velocity = moveDirection * currentSpeed;
 
-        // Flip sprite and children based on movement direction
-        RotatePlayer();
+        // Updates animations based on movement direction
+        UpdateAnimation();
     }
 
     void OnMove(InputValue value)
@@ -37,43 +40,32 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = value.Get<Vector2>();
     }
 
-    void RotatePlayer()
+    void UpdateAnimation()
     {
-        // Flip left
-        if (moveDirection.x < 0) 
-        {
-            RotateAllChildren(90f); 
-        }
-        // Flip right
-        else if (moveDirection.x > 0) 
-        {
-            RotateAllChildren(-90); 
-        }
-        // Flip up
-        else if (moveDirection.y > 0) 
-        {
-            RotateAllChildren(0f); 
-        }
-        // Flip down
-        else if (moveDirection.y < 0) 
-        {
-            RotateAllChildren(-180); 
-        }
-    }
+        float speed = moveDirection.magnitude;
 
-    void RotateAllChildren(float rotationZ)
-    {
-        // Rotate the player's Z rotation
-        transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-
-        // Rotate all child objects' Z rotation
-        foreach (Transform child in transform)
+        // Check if the player is moving
+        if (speed > 0)
         {
-            if (child != transform)
-            {
-                child.rotation = Quaternion.Euler(0f, 0f, rotationZ);
-            }
+            // Normalize the direction for consistent facing
+            Vector2 normalizedDirection = moveDirection.normalized;
+
+            // Update parameters for the blend tree
+            animator.SetFloat("animMoveX", normalizedDirection.x);
+            animator.SetFloat("animMoveY", normalizedDirection.y);
+
+            // Save the last direction for idle animations
+            lastMoveDirection = normalizedDirection;
         }
+        else
+        {
+            // Player is idle; use the last movement direction
+            animator.SetFloat("animMoveX", lastMoveDirection.x);
+            animator.SetFloat("animMoveY", lastMoveDirection.y);
+        }
+
+        // Update Speed parameter for switching between run and idle states
+        animator.SetFloat("speed", speed);
     }
 
     public void ChangeSpeed(bool isEnhanced)
