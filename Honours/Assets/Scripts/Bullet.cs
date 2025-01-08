@@ -21,7 +21,6 @@ public class Bullet : MonoBehaviour
             {
                 // Deal damage to the target
                 damageable.Damage(damageAmount);
-                Debug.Log(damageAmount);
             }
         }
     }

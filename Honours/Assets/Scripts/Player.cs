@@ -53,8 +53,14 @@ public class Player : MonoBehaviour
             // Record the time of this shot
             lastFireTime = Time.time;
 
-            // Get the direction to fire in players facing direction
-            Vector3 fireDirection = spawnPoint.up.normalized;
+            // Get the direction to fire in player's facing direction
+            Vector3 fireDirection = playerMovement.lastMoveDirection; 
+
+            // If the player hasn't moved, use the default direction
+            if (fireDirection == Vector3.zero)
+            {
+                fireDirection = -spawnPoint.up.normalized;
+            }
 
             // Instantiate the bullet
             GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
@@ -76,7 +82,9 @@ public class Player : MonoBehaviour
                 rb.velocity = fireDirection * bulletSpeed;
             }
         }
+    
     }
+
 
     public void ChangePlayerState()
     {
