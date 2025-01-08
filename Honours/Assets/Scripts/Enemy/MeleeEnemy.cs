@@ -7,11 +7,12 @@ public class MeleeEnemy : Enemy
 
     Transform playerLocation;
     Rigidbody2D rb;
+    Animator animator;
     public int damage;
     public bool notInRoom = false;
 
     [Header("Movement")]
-    [SerializeField] float stoppingDistance = 10f;
+    [SerializeField] float stoppingDistance = 5f;
     public bool reachedPlayer = false;
     [SerializeField] float moveSpeed;
 
@@ -30,11 +31,13 @@ public class MeleeEnemy : Enemy
         }
 
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (!IsActive()) return; // Stop execution if not active
+        // Only moves towards player if enemy is active
+        if (!IsActive()) return; 
 
         MoveTowardsPlayer();
     }
@@ -43,6 +46,8 @@ public class MeleeEnemy : Enemy
     {
         if (playerLocation == null)
             return;
+
+        animator.SetBool("isAttacking", true);
 
         // Calculate distance between enemy and player
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
