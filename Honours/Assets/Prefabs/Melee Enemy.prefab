@@ -133,11 +133,17 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8561932971203901866}
   maxHealth: 85
   damage: 0
-  notInRoom: 0
-  stoppingDistance: 0.5
   reachedPlayer: 0
+  isDisappearing: 0
+  isAppearing: 0
+  stoppingDistance: 0.3
   moveSpeed: 2
   attackCooldown: 2
+  appearDuration: 0.5
+  disappearDuration: 0.5
+  delayBeforeAttack: 0.5
+  minPosition: {x: 0, y: 0}
+  maxPosition: {x: 0, y: 0}
 --- !u!61 &6089168758926071253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -176,7 +182,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.39, y: 0.35}
+    oldSize: {x: 0.4875, y: 0.4375}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
