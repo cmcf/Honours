@@ -144,4 +144,5 @@ public class Room : MonoBehaviour
             RoomController.Instance.OnEnterRoom(this);
         }
     }
+
 }
