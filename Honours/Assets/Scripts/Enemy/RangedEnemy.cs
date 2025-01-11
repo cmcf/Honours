@@ -6,7 +6,6 @@ public class RangedEnemy : Enemy
 {
     Transform playerLocation;
     Rigidbody2D rb;
-    Animator animator;
     public GameObject bulletPrefab;
     public Transform spawnPoint;
 
@@ -15,17 +14,29 @@ public class RangedEnemy : Enemy
     [SerializeField] float fireRate = 2f;
     [SerializeField] float projectileSpeed = 15f;
     [SerializeField] float nextFireTime = 0f;
+
+    [Header("Movement Settings")]
+    [SerializeField] float moveSpeed = 2f; // Speed at which the enemy moves
+
     void Start()
     {
         playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-    }
 
+        // Ensures the animator is correctly initialized in the base class
+        base.Start();
+
+        // Initializes animator in the derived class
+        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found on this GameObject!");
+        }
+    }
 
     void Update()
     {
-        // Do not fire projectiles if enemy is not active
+        // Do not fire projectiles or move if enemy is not active
         if (!IsActive()) return;
 
         // Check the distance to the player
@@ -33,19 +44,36 @@ public class RangedEnemy : Enemy
 
         UpdateEnemyAndSpawnPoint();
 
-        // If the player is within range and it's time to fire - spawn bullet 
-        if (distanceToPlayer <= attackRange && Time.time >= nextFireTime)
+        if (distanceToPlayer > attackRange)
         {
-            animator.SetBool("isAttacking", true);
+            // Move toward the player if out of attack range
+            MoveTowardsPlayer();
+        }
+        else if (Time.time >= nextFireTime)
+        {
             FireProjectile();
-            // Update the next fire time
             nextFireTime = Time.time + fireRate;
         }
+    }
+
+    void MoveTowardsPlayer()
+    {
+        if (playerLocation == null) return;
+
+        // Calculate direction toward the player
+        Vector2 direction = (playerLocation.position - transform.position).normalized;
+
+        // Move the enemy using the Rigidbody2D
+        rb.velocity = direction * moveSpeed;
     }
 
     void FireProjectile()
     {
         if (spawnPoint == null || bulletPrefab == null) return;
+       
+        // Stop movement while attacking
+        rb.velocity = Vector2.zero;
+        animator.SetBool("isAttacking", true);
 
         // Use the spawn point's direction to fire the projectile
         Vector2 direction = spawnPoint.right;
@@ -54,18 +82,26 @@ public class RangedEnemy : Enemy
         GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
 
         // Set the projectile's velocity to move in the direction of the spawn point
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        if (projectileRb != null)
         {
-            rb.velocity = direction * projectileSpeed;
+            projectileRb.velocity = direction * projectileSpeed;
         }
 
+        // Reset attack animation after a short delay
         Invoke("ResetAnimation", 0.3f);
     }
 
     void ResetAnimation()
     {
         animator.SetBool("isAttacking", false);
+        // Ensure the enemy resumes moving if the player is out of attack range
+        float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
+        if (distanceToPlayer > attackRange)
+        {
+            // Ensure the enemy is moving again after the attack (no "moving" animation required)
+            rb.velocity = (playerLocation.position - transform.position).normalized * moveSpeed;
+        }
     }
 
     void UpdateEnemyAndSpawnPoint()
@@ -102,6 +138,6 @@ public class RangedEnemy : Enemy
         // Rotates only the projectile spawn point to face the player
         spawnPoint.rotation = Quaternion.Euler(0f, 0f, spawnPointAngle);
     }
-
 }
+
 

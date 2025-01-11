@@ -9,6 +9,7 @@ public class MeleeEnemy : Enemy
     Transform playerLocation;
     Rigidbody2D rb;
     Animator animator;
+    Room currentRoom;
     public int damage;
 
     [Header("State Control")]
@@ -115,7 +116,6 @@ public class MeleeEnemy : Enemy
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Damage");
         }
     }
 
@@ -130,8 +130,11 @@ public class MeleeEnemy : Enemy
         animator.SetTrigger("Disappear");
         animator.SetBool("isAttacking", false);
         yield return new WaitForSeconds(disappearDuration);
-
-        Room currentRoom = RoomController.Instance.currentRoom;
+        if (RoomController.Instance != null)
+        {
+            currentRoom = RoomController.Instance.currentRoom;
+        }
+            
         RespawnEnemy(currentRoom);
 
         isDisappearing = false;

@@ -130,7 +130,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.62, y: 0.92}
+    oldSize: {x: 0.3875, y: 0.575}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -151,13 +151,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7440780272706730979}
-  maxHealth: 45
+  maxHealth: 30
+  currentHealth: 30
   bulletPrefab: {fileID: 4040207891986179867, guid: a1779c5a7f85cff43858f51b4dbc37a0, type: 3}
   spawnPoint: {fileID: 8346416027446157132}
-  attackRange: 6
+  attackRange: 8
   fireRate: 2
   projectileSpeed: 20
   nextFireTime: 0
+  moveSpeed: 2
 --- !u!114 &4171604732914402250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +173,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7440780272706730979}
-  maxHealth: 45
+  maxHealth: 80
+  currentHealth: 40
 --- !u!50 &-2637903227089958092
 Rigidbody2D:
   serializedVersion: 4

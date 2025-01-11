@@ -9,17 +9,16 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 8f);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            // Check if the target has a damageable component
             IDamageable damageable = collision.GetComponent<IDamageable>();
             if (damageable != null)
             {
-                // Deal damage to the target
+                // Deal damage to the enemy
                 damageable.Damage(damageAmount);
             }
         }
