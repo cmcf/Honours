@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
+using UnityEditor;
+
 public class RoomInfo
 {
     public string name;
@@ -15,7 +17,7 @@ public class RoomController : MonoBehaviour
     string currentWorldName = "Game";
 
     RoomInfo currentLoadRoomData;
-    Room currentRoom;
+    public Room currentRoom;
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
     public List<Room> loadedRooms = new List<Room>();
@@ -284,5 +286,33 @@ public class RoomController : MonoBehaviour
             LoadRoom("Boss", tempRoom.x, tempRoom.y);
         }
     }
+
+    private Vector3 GetRoomCentre(Room room)
+    {
+        return new Vector3(room.x * room.width, 0, room.y * room.height);
+    }
+
+    public Room GetRoomAtPosition(Vector3 position)
+    {
+        foreach (Room room in loadedRooms)
+        { 
+            if (IsPositionWithinBounds(position))
+            {
+                return room;
+            }
+        }
+        return null;
+    }
+
+    public bool IsPositionWithinBounds(Vector3 position)
+    {
+        Vector3 roomCentre = GetRoomCentre(currentRoom);
+        float halfWidth = currentRoom.width/ 2f;
+        float halfHeight = currentRoom.height / 2f;
+
+        return position.x >= roomCentre.x - halfWidth && position.x <= roomCentre.x + halfWidth &&
+               position.y >= roomCentre.y - halfHeight && position.y <= roomCentre.y + halfHeight;
+    }
+
 
 }

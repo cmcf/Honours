@@ -104,7 +104,6 @@ public class MeleeEnemy : Enemy
     void AttackPlayer()
     {
         if (!reachedPlayer) return;
-        Debug.Log("Last Known Position: " + lastKnownPosition);
         // Disappear upon reaching the player
         rb.velocity = Vector2.zero; // Stop any residual movement
 
@@ -129,35 +128,43 @@ public class MeleeEnemy : Enemy
 
         // Trigger disappear animation
         animator.SetTrigger("Disappear");
-        animator.SetBool("isAttacking", false); 
-        yield return new WaitForSeconds(disappearDuration); 
+        animator.SetBool("isAttacking", false);
+        yield return new WaitForSeconds(disappearDuration);
 
-        RespawnEnemy(); 
+        Room currentRoom = RoomController.Instance.currentRoom;
+        RespawnEnemy(currentRoom);
+
         isDisappearing = false;
 
-        // Respawn
-        StartCoroutine(HandleAppearance()); 
+        // Respawn enemy
+        StartCoroutine(HandleAppearance());
     }
 
-    void RespawnEnemy()
+    void RespawnEnemy(Room currentRoom)
     {
-        float minRepositionDistance = 2.5f; 
-        float maxRepositionDistance = 5.5f; 
+        if (currentRoom == null) return;
 
-        // Generate a random angle
-        float randomAngle = Random.Range(0f, Mathf.PI * 2);
+        // Get room boundaries
+        Vector3 roomCentre = currentRoom.GetRoomCentre();
+        float roomWidth = currentRoom.width;
+        float roomHeight = currentRoom.height;
 
-        // Generate a random distance between min and max
-        float randomDistance = Random.Range(minRepositionDistance, maxRepositionDistance);
+        // Define spawn area bounds
+        float margin = 1.5f; 
 
-        // Calculates the new position based on the random angle and distance
-        float offsetX = Mathf.Cos(randomAngle) * randomDistance;
-        float offsetY = Mathf.Sin(randomAngle) * randomDistance;
+        float minX = roomCentre.x - roomWidth / 2f + margin;
+        float maxX = roomCentre.x + roomWidth / 2f - margin;
+        float minY = roomCentre.y - roomHeight / 2f + margin;
+        float maxY = roomCentre.y + roomHeight / 2f - margin;
 
-        Vector2 newPosition = lastKnownPosition + new Vector2(offsetX, offsetY);
+        // Generates a random spawn position within the room bounds
+        Vector2 spawnPosition = new Vector2(
+            Random.Range(minX, maxX),
+            Random.Range(minY, maxY)
+        );
 
-        // Apply the new position to the enemy
-        transform.position = newPosition;
+        // Update enemy position to the new spawn position
+        transform.position = spawnPosition;
     }
 }
 
