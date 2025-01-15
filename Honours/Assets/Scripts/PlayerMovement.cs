@@ -24,12 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply movement to player 
+        // Apply movement to player character
         rb.velocity = moveDirection * currentSpeed;
     }
 
     void OnMove(InputValue value)
     {
+        // Gets input from player
         moveDirection = value.Get<Vector2>();
     }
 

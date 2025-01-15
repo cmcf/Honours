@@ -131,8 +131,6 @@ public class Player : MonoBehaviour
         if (currentEnemy != null)
         {
             spriteRenderer.color = enemySpriteRenderer.color;
-
-            // Could also transfer enemy abilities to player here
         }
     }
 }
