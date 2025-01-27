@@ -243,6 +243,7 @@ public class RoomController : MonoBehaviour
             {
                 StartCoroutine(SpawnBossRoom());
             }
+            // Removes any doors 
             else if (hasSpawnedBossRoom && !updatedRooms)
             {
                 foreach (Room room in loadedRooms)
@@ -294,6 +295,7 @@ public class RoomController : MonoBehaviour
 
     public Room GetRoomAtPosition(Vector3 position)
     {
+        // Returns the rooms position
         foreach (Room room in loadedRooms)
         { 
             if (IsPositionWithinBounds(position))
@@ -306,6 +308,7 @@ public class RoomController : MonoBehaviour
 
     public bool IsPositionWithinBounds(Vector3 position)
     {
+        // Checks if room is within bounds
         Vector3 roomCentre = GetRoomCentre(currentRoom);
         float halfWidth = currentRoom.width/ 2f;
         float halfHeight = currentRoom.height / 2f;
