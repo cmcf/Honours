@@ -5,7 +5,6 @@ using UnityEngine;
 public class RangedEnemy : Enemy
 {
     Transform playerLocation;
-    Rigidbody2D rb;
     Animator animator;
     public GameObject bulletPrefab;
     public Transform spawnPoint;
@@ -20,6 +19,8 @@ public class RangedEnemy : Enemy
         playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
+
     }
 
 

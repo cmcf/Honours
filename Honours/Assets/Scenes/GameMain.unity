@@ -3665,6 +3665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e870f234f6053c4cbd83cb90f383042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentRoom: {fileID: 0}
   loadedRooms:
   - {fileID: 1606285804524116695}
 --- !u!4 &2019253176
@@ -3703,9 +3704,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 181472975897061487, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 181472975897061487, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181472975897061487, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181472975897061487, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 181472975897061487, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979906299223854921, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d70df0ac57a0a9246be514fdb42414b7, type: 2}
+    - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1454507353135745339, guid: b611d265b86212345885bd78b5fa79d4, type: 3}
+    - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: iceBulletPrefab
+      value: 
+      objectReference: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
+    - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: explosiveBulletPrefab
+      value: 
+      objectReference: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
+    - target: {fileID: 4698030837275859340, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -611850040, guid: a21f6ed6d5885eb4d9a4896180451308, type: 3}
     - target: {fileID: 4698030837275859340, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5213473722867775274, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_Name
@@ -3750,6 +3791,14 @@ PrefabInstance:
     - target: {fileID: 6624806211365203056, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824433779164291841, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824433779164291841, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5032,5 +5081,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 113654298}
   - {fileID: 2019253176}
-  - {fileID: 3862144887162636143}
   - {fileID: 2068680074}
+  - {fileID: 3862144887162636143}

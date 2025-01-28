@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,146 +8,150 @@ using static Damage;
 
 public class Player : MonoBehaviour
 {
-    public enum PlayerState { Normal, Enhanced, EnemyTransformed }
-    public PlayerState currentState = PlayerState.Normal;
-
     public GameObject bulletPrefab;
+    public GameObject iceBulletPrefab;
     public Transform spawnPoint;
     public Enemy currentEnemy;
+
     SpriteRenderer spriteRenderer;
+    PlayerMovement playerMovement;
 
     [SerializeField] float bulletSpeed = 10f;
     float lastFireTime = 0f;
     float stateTimer = 0f;
     float enhancedStateDuration = 9f;
-    float enhancedBulletDamage = 15f;
-    float defaultBulletDamage = 10f;
+    float iceBulletDamage = 15f;
+    int defaultBulletDamage = 10;
     [SerializeField] float fireDelay = 0.5f;
-    SpriteRenderer enemySpriteRenderer;
-    PlayerMovement playerMovement; // Reference to PlayerMovement
+
+    public WeaponType currentWeaponType = WeaponType.Default;
+
+    // Weapon Type Enum
+    public enum WeaponType
+    {
+        Default,    // Fires a single bullet
+        RapidFire,  // Fires bullets with a faster rate
+        SpreadShot, // Fires multiple bullets in a spread
+        Ice   // Fires an ice projectile
+    }
 
     void Start()
     {
-        spriteRenderer= GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         playerMovement = GetComponent<PlayerMovement>();
         //StartCoroutine(RandomlyChangeState());
     }
 
     void Update()
     {
-        // Manage the player state timer
-        if (currentState == PlayerState.Enhanced)
-        {
-            stateTimer -= Time.deltaTime;
-            if (stateTimer <= 0f)
-            {
-                ChangeState(PlayerState.Normal);
-            }
-        }
+
     }
+
 
     void OnFire()
     {
         // Only fire if the fire delay has passed
         if (Time.time > lastFireTime + fireDelay)
         {
-            // Record the time of this shot
             lastFireTime = Time.time;
 
-            // Get the direction to fire in player's facing direction
-            Vector3 fireDirection = playerMovement.lastMoveDirection; 
-
-            // If the player hasn't moved, use the default direction
+            // Determine the fire direction
+            Vector3 fireDirection = playerMovement.lastMoveDirection;
             if (fireDirection == Vector3.zero)
             {
-                fireDirection = -spawnPoint.up.normalized;
+                // Default direction
+                fireDirection = -spawnPoint.up.normalized; 
             }
 
-            // Instantiate the bullet
-            GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
-
-            // Rotate the bullet to match the firing direction
-            projectile.transform.up = fireDirection;
-
-            // Pass the player's state to the bullet for damage adjustment
-            Bullet bullet = projectile.GetComponent<Bullet>();
-            if (bullet != null)
+            // Handle different weapon types
+            switch (currentWeaponType)
             {
-                bullet.SetDamage(currentState == PlayerState.Enhanced ? enhancedBulletDamage : defaultBulletDamage);
-            }
-
-            // Apply velocity to the bullet
-            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = fireDirection * bulletSpeed;
-            }
-        }
-    
-    }
-
-
-    public void ChangePlayerState()
-    {
-        StartCoroutine(RandomlyChangeState());
-    }
-
-    IEnumerator RandomlyChangeState()
-    {
-        Debug.Log("Called");
-
-           // Change to Enhanced state
-            ChangeState(PlayerState.Enhanced);
-            Debug.Log("Enhanced");
-
-            // Wait until the enhanced state has passed then change back to normal
-            yield return new WaitForSeconds(enhancedStateDuration);
-            ChangeState(PlayerState.Normal);
-            Debug.Log("Normal");
-        
-    }
-
-    public void ChangeState(PlayerState newState)
-    {
-        currentState = newState;
-
-        if (newState == PlayerState.Enhanced)
-        {
-            stateTimer = enhancedStateDuration;
-        }
-
-        // Call the PlayerMovement script to change speed based on the new state
-        playerMovement.ChangeSpeed(newState == PlayerState.Enhanced);
-    }
-
-    // Called when player collides with the trigger
-    public void TransformIntoEnemy(Enemy enemy)
-    {
-        if (enemy != null)
-        {
-            currentEnemy = enemy;
-            currentState = PlayerState.EnemyTransformed;
-
-            // Gets enemies sprite renderer
-            enemySpriteRenderer = currentEnemy.GetComponent<SpriteRenderer>();
-
-            if (enemySpriteRenderer != null)
-            {
-                // Change appearance to enemy sprite
-                spriteRenderer.sprite = enemySpriteRenderer.sprite; 
-                CopyEnemyAbilities();
+                case WeaponType.Default:
+                    FireSingleBullet(fireDirection);
+                    break;
+                case WeaponType.RapidFire:
+                    StartCoroutine(FireRapid(fireDirection));
+                    break;
+                case WeaponType.SpreadShot:
+                    FireSpreadBullets(fireDirection, 5, 30f); 
+                    break;
+                case WeaponType.Ice:
+                    FireIceBullet(fireDirection);
+                    break;
             }
         }
     }
 
-    void CopyEnemyAbilities()
+    void FireSingleBullet(Vector3 direction)
     {
-        // Changes player sprite renderer to the same colour as enemies
-        if (currentEnemy != null)
-        {
-            spriteRenderer.color = enemySpriteRenderer.color;
+        // Instantiate the bullet
+        GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
 
-            // Could also transfer enemy abilities to player here
+        // Calculate the rotation angle based on the direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Apply the rotation
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Apply velocity to the projectile
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * bulletSpeed;
+        }
+    }
+
+    IEnumerator FireRapid(Vector3 direction)
+    {
+        // Fire 3 bullets in quick succession
+        for (int i = 0; i < 3; i++) 
+        {
+            // Fire a single bullet in the given direction
+            FireSingleBullet(direction); 
+            yield return new WaitForSeconds(fireDelay / 3);
+        }
+    }
+
+    void FireSpreadBullets(Vector3 direction, int bulletCount, float spreadAngle)
+    {
+        // Calculate angle between each bullet
+        float angleStep = spreadAngle / (bulletCount - 1); 
+        float startAngle = -spreadAngle / 2;
+
+        for (int i = 0; i < bulletCount; i++)
+        {
+            float angle = startAngle + (i * angleStep);
+            // Rotate the direction by angle
+            Vector3 bulletDirection = Quaternion.Euler(0, 0, angle) * direction; 
+            FireSingleBullet(bulletDirection);
+        }
+    }
+
+    void FireIceBullet(Vector3 direction)
+    {
+
+        // Normalise the direction vector to ensure consistent speed
+        direction = direction.normalized;
+
+        // Instantiate the ice bullet at the spawn point
+        GameObject iceBullet = Instantiate(iceBulletPrefab, spawnPoint.position, Quaternion.identity);
+
+        // Rotate the bullet to face the direction it will travel
+        iceBullet.transform.right = direction;
+
+        // Apply velocity to the bullet's Rigidbody2D
+        Rigidbody2D rb = iceBullet.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * bulletSpeed;
+        }
+
+        // Sets the ice bullet behaviour
+        Bullet bullet = iceBullet.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(iceBulletDamage);
+            bullet.isIce = true;
         }
     }
 }
