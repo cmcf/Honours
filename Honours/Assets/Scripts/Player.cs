@@ -9,7 +9,7 @@ using static Damage;
 public class Player : MonoBehaviour
 {
     public GameObject bulletPrefab;
-    public GameObject explosiveBulletPrefab;
+    public GameObject iceBulletPrefab;
     public Transform spawnPoint;
     public Enemy currentEnemy;
 
@@ -129,23 +129,29 @@ public class Player : MonoBehaviour
 
     void FireIceBullet(Vector3 direction)
     {
-        GameObject iceBullet = Instantiate(explosiveBulletPrefab, spawnPoint.position, Quaternion.identity);
-        iceBullet.transform.up = direction;
 
+        // Normalise the direction vector to ensure consistent speed
+        direction = direction.normalized;
+
+        // Instantiate the ice bullet at the spawn point
+        GameObject iceBullet = Instantiate(iceBulletPrefab, spawnPoint.position, Quaternion.identity);
+
+        // Rotate the bullet to face the direction it will travel
+        iceBullet.transform.right = direction;
+
+        // Apply velocity to the bullet's Rigidbody2D
         Rigidbody2D rb = iceBullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
             rb.velocity = direction * bulletSpeed;
         }
 
-        // Configure the ice bullet behaviour
+        // Sets the ice bullet behaviour
         Bullet bullet = iceBullet.GetComponent<Bullet>();
         if (bullet != null)
         {
             bullet.SetDamage(iceBulletDamage);
             bullet.isIce = true;
-            // Set the freeze duration
-            bullet.freezeDuration = 1.5f; 
         }
     }
 }

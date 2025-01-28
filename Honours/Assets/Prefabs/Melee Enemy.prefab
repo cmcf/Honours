@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -5526802796623966242, guid: d6ea732437b98c3418e00773ea2385f3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,14 +131,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8561932971203901866}
+  rb: {fileID: 2956526659463315321}
   maxHealth: 85
+  currentHealth: 0
   damage: 0
-  reachedPlayer: 0
-  isDisappearing: 0
-  isAppearing: 0
   stoppingDistance: 0.3
   moveSpeed: 2
-  attackCooldown: 2
+  damageAmount: 10
   appearDuration: 0.5
   disappearDuration: 0.5
   delayBeforeAttack: 0.5
@@ -203,7 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 8561932971203901866}
+  rb: {fileID: 2956526659463315321}
   maxHealth: 45
+  currentHealth: 0
 --- !u!95 &794100427900891297
 Animator:
   serializedVersion: 7

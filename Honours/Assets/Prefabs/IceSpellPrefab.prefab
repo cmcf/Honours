@@ -151,8 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78be3471fa3841e4d865e8b2346914ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 15
-  freezeDuration: 1.5
+  damageAmount: 20
+  freezeDuration: 0.5
   isIce: 1
 --- !u!70 &1297281602065459045
 CapsuleCollider2D:

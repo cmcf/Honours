@@ -19,7 +19,6 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalColour = GetComponent<SpriteRenderer>().color;
-        rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
 
@@ -48,15 +47,8 @@ public class Enemy : MonoBehaviour, IDamageable
         // Only deal damage if not already hit and the enemy is active
         if (!hit && isActive)
         {
-            Debug.Log("Current Health: " + currentHealth);
-            // Debug the incoming damage
-            Debug.Log("Damage taken: " + damage);
-            
-
-            // Decrease health and make sure it doesn't go below 0
+            // Decrease health
             currentHealth -= damage;
-
-            Debug.Log("Current Health: " + currentHealth);
 
             // healthBar.UpdateHealthBar(currentHealth, maxHealth);
 
@@ -66,21 +58,20 @@ public class Enemy : MonoBehaviour, IDamageable
                 Die();
             }
 
-            // Mark as hit so that we don't process damage again until reset
+            // Mark as hit so that damage does not process more than once
             hit = true;
 
-            // Reset the 'hit' flag after a small delay (e.g., 1 second)
+            // Allow hit after a short delay
             StartCoroutine(ResetHitFlag());
 
         }
       
     }
 
-    // Coroutine to reset the 'hit' flag after a delay
-    private IEnumerator ResetHitFlag()
+    IEnumerator ResetHitFlag()
     {
         // Wait for a short period before allowing another hit
-        yield return new WaitForSeconds(0.5f);  // Adjust the delay as necessary
+        yield return new WaitForSeconds(0.3f);
         hit = false;
     }
 
@@ -90,17 +81,28 @@ public class Enemy : MonoBehaviour, IDamageable
         if (!isFrozen)
         {
             isFrozen = true;
+            isActive = false;
             freezeTimer = duration;
-            // Ensure rb is assigned before using it
+
+            // Stop movement
             if (rb != null)
             {
-                rb.velocity = Vector2.zero; // Stop movement
+                rb.velocity = Vector2.zero; 
             }
-            else
+
+            // Freeze the animator by setting its speed to 0
+            Animator animator = GetComponent<Animator>();
+            if (animator != null)
             {
-                Debug.LogWarning("Rigidbody2D not found on " + gameObject.name);
+                animator.speed = 0;
             }
-            GetComponent<SpriteRenderer>().color = Color.cyan; // Change colour to indicate freezing
+
+            // Set colour to cyan to indicate frozen state
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.cyan;
+            }
+
             Invoke("Unfreeze", freezeTimer);
         }
     }
@@ -108,21 +110,22 @@ public class Enemy : MonoBehaviour, IDamageable
     void Unfreeze()
     {
         isFrozen = false;
-        GetComponent<SpriteRenderer>().color = originalColour; // Reset colour
+        isActive = true;
+
+        // Restore the colour to white to indicate the enemy is no longer frozen
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white;
+        }
+
+        // Restore animator speed
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.speed = 1;
+        }
+
     }
-    IEnumerator HitEffect()
-    {
-        // Change enemy colour
-        spriteRenderer.color = Color.white;
-
-        // Wait until delay has ended
-        yield return new WaitForSeconds(0.2f);
-        hit = false;
-
-        // Revert enemy colour back to original
-        spriteRenderer.color = Color.red;
-    }
-
 
 
     void Die()
@@ -131,4 +134,6 @@ public class Enemy : MonoBehaviour, IDamageable
         //FindObjectOfType<EnemyManager>().OnEnemyDefeated();
         Destroy(gameObject);
     }
+
+
 }
