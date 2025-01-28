@@ -45,6 +45,7 @@ public class MeleeEnemy : Enemy
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
 
         StartCoroutine(HandleAppearance());
     }
@@ -105,7 +106,7 @@ public class MeleeEnemy : Enemy
     {
         if (!reachedPlayer) return;
         // Disappear upon reaching the player
-        rb.velocity = Vector2.zero; // Stop any residual movement
+        rb.velocity = Vector2.zero; 
 
         // Start the disappearance coroutine
         StartCoroutine(HandleDisappearance());
@@ -115,7 +116,7 @@ public class MeleeEnemy : Enemy
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Damage");
+           // Debug.Log("Damage");
         }
     }
 
