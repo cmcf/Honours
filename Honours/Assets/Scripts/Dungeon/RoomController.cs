@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using UnityEditor;
+using static Player;
 
 public class RoomInfo
 {
@@ -129,8 +130,26 @@ public class RoomController : MonoBehaviour
     {
         CameraController.Instance.currentRoom = room;
         currentRoom = room;
+        // Do not trigger random weapon in spawn room
+        if (roomsCompleted >= 1)
+        {
+            // Trigger new weapon after entering a room
+            TriggerRandomWeapon();
+        }
+  
 
         StartCoroutine(RoomCoroutine());
+
+    }
+
+    public void TriggerRandomWeapon()
+    {
+        // Randomly select a weapon type
+        WeaponType newWeapon = (WeaponType)Random.Range(0, 4); // assuming 4 weapon types
+
+        // Assign the selected weapon to the player
+        Player player = FindObjectOfType<Player>(); // Assuming only one player
+        player.currentWeaponType = newWeapon;
 
     }
 
