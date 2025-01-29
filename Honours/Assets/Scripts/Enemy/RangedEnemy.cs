@@ -5,7 +5,6 @@ using UnityEngine;
 public class RangedEnemy : Enemy
 {
     Transform playerLocation;
-    Animator animator;
     public GameObject bulletPrefab;
     public Transform spawnPoint;
 

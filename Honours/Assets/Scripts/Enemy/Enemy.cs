@@ -4,6 +4,7 @@ using static Damage;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
     Color originalColour;
@@ -49,6 +50,9 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             // Decrease health
             currentHealth -= damage;
+
+            // Play hurt animation
+            PlayHitEffect();
 
             // healthBar.UpdateHealthBar(currentHealth, maxHealth);
 
@@ -105,6 +109,17 @@ public class Enemy : MonoBehaviour, IDamageable
 
             Invoke("Unfreeze", freezeTimer);
         }
+    }
+
+    void PlayHitEffect()
+    {
+        animator.SetBool("isHurt", true);
+        Invoke("ResetHit", 0.2f);
+    }
+
+    void ResetHit()
+    {
+        animator.SetBool("isHurt", false);
     }
 
     void Unfreeze()
