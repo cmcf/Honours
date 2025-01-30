@@ -4,6 +4,7 @@ using static Damage;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
     Color originalColour;
@@ -50,11 +51,15 @@ public class Enemy : MonoBehaviour, IDamageable
             // Decrease health
             currentHealth -= damage;
 
+            // Play hurt animation
+            PlayHitEffect();
+
             // healthBar.UpdateHealthBar(currentHealth, maxHealth);
 
             // If health is zero or below, the enemy dies
             if (currentHealth <= 0)
             {
+                isActive = false;
                 Die();
             }
 
@@ -107,6 +112,17 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
+    void PlayHitEffect()
+    {
+        animator.SetBool("isHurt", true);
+        Invoke("ResetHit", 0.2f);
+    }
+
+    void ResetHit()
+    {
+        animator.SetBool("isHurt", false);
+    }
+
     void Unfreeze()
     {
         isFrozen = false;
@@ -131,8 +147,9 @@ public class Enemy : MonoBehaviour, IDamageable
     void Die()
     {
         RoomController.Instance.StartCoroutine(RoomController.Instance.RoomCoroutine());
+        animator.SetTrigger("isDead");
         //FindObjectOfType<EnemyManager>().OnEnemyDefeated();
-        Destroy(gameObject);
+        Destroy(gameObject, 0.8f);
     }
 
 

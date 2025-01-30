@@ -7,8 +7,6 @@ public class MeleeEnemy : Enemy
 {
 
     Transform playerLocation;
-    Rigidbody2D rb;
-    Animator animator;
     public int damage;
 
     [Header("State Control")]

@@ -42,12 +42,6 @@ public class Player : MonoBehaviour
         //StartCoroutine(RandomlyChangeState());
     }
 
-    void Update()
-    {
-
-    }
-
-
     void OnFire()
     {
         // Only fire if the fire delay has passed
