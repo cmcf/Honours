@@ -1,0 +1,3140 @@
+fileFormatVersion: 2
+guid: 779bd57b522b060468f692698e35a392
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6841574271367098331
+    second: Body_Front_Idle_5_0
+  - first:
+      213: 6636380234285343859
+    second: Body_Front_Idle_5_1
+  - first:
+      213: -844349812217464554
+    second: Body_Front_Idle_5_2
+  - first:
+      213: -1549158045202507805
+    second: Body_Front_Idle_5_3
+  - first:
+      213: -596762441643064163
+    second: Body_Front_Idle_5_4
+  - first:
+      213: -4372558417460517996
+    second: Body_Front_Idle_5_5
+  - first:
+      213: 4631533931465867427
+    second: Body_Front_Idle_5_6
+  - first:
+      213: 2556072557422505023
+    second: Body_Front_Idle_5_7
+  - first:
+      213: 5253445694654499091
+    second: Body_Front_Idle_5_8
+  - first:
+      213: -8763443335229131074
+    second: Body_Front_Idle_5_9
+  - first:
+      213: 1946916560807717248
+    second: Body_Front_Idle_5_10
+  - first:
+      213: -369642940290713515
+    second: Body_Front_Idle_5_11
+  - first:
+      213: -5939800632753105467
+    second: Body_Front_Idle_5_12
+  - first:
+      213: 7350734975646846748
+    second: Body_Front_Idle_5_13
+  - first:
+      213: 818397644632112641
+    second: Body_Front_Idle_5_14
+  - first:
+      213: -7462573450726399792
+    second: Body_Front_Idle_5_15
+  - first:
+      213: 1712946119385324202
+    second: Body_Front_Idle_5_16
+  - first:
+      213: -8689346874551906046
+    second: Body_Front_Idle_5_17
+  - first:
+      213: -1717127371329031780
+    second: Body_Front_Idle_5_18
+  - first:
+      213: 4306294244397910147
+    second: Body_Front_Idle_5_19
+  - first:
+      213: -1164381056041651245
+    second: Body_Front_Idle_5_20
+  - first:
+      213: 2276261300246592441
+    second: Body_Front_Idle_5_21
+  - first:
+      213: -5394374617401045200
+    second: Body_Front_Idle_5_22
+  - first:
+      213: 4244597891704241241
+    second: Body_Front_Idle_5_23
+  - first:
+      213: -7313247757083428619
+    second: Body_Front_Idle_5_24
+  - first:
+      213: -4575140606509202211
+    second: Body_Front_Idle_5_25
+  - first:
+      213: -5625650463746137697
+    second: Body_Front_Idle_5_26
+  - first:
+      213: 6321760298172490123
+    second: Body_Front_Idle_5_27
+  - first:
+      213: -2972244727886159362
+    second: Body_Front_Idle_5_28
+  - first:
+      213: 787524386191170648
+    second: Body_Front_Idle_5_29
+  - first:
+      213: -4702514028216666514
+    second: Body_Front_Idle_5_30
+  - first:
+      213: -7203604144658878421
+    second: Body_Front_Idle_5_31
+  - first:
+      213: 2940330625962785407
+    second: Body_Front_Idle_5_32
+  - first:
+      213: 8772930618261647419
+    second: Body_Front_Idle_5_33
+  - first:
+      213: -4587978168602390875
+    second: Body_Front_Idle_5_34
+  - first:
+      213: -6866699935856013823
+    second: Body_Front_Idle_5_35
+  - first:
+      213: 4825622747901243029
+    second: Body_Front_Idle_5_36
+  - first:
+      213: 3674757456531701603
+    second: Body_Front_Idle_5_37
+  - first:
+      213: 3905522406875918352
+    second: Body_Front_Idle_5_38
+  - first:
+      213: 1087052216529026181
+    second: Body_Front_Idle_5_39
+  - first:
+      213: 1007948392573570962
+    second: Body_Front_Idle_5_40
+  - first:
+      213: -6896241036079890746
+    second: Body_Front_Idle_5_41
+  - first:
+      213: -3886143276248996543
+    second: Body_Front_Idle_5_42
+  - first:
+      213: -3169859284969758741
+    second: Body_Front_Idle_5_43
+  - first:
+      213: 251628359426505742
+    second: Body_Front_Idle_5_44
+  - first:
+      213: -3744001191254516851
+    second: Body_Front_Idle_5_45
+  - first:
+      213: 6597298017856319747
+    second: Body_Front_Idle_5_46
+  - first:
+      213: 5253972975821190002
+    second: Body_Front_Idle_5_47
+  - first:
+      213: 8866662238612386079
+    second: Body_Front_Idle_5_48
+  - first:
+      213: 7608900189188991572
+    second: Body_Front_Idle_5_49
+  - first:
+      213: -7767078402158501100
+    second: Body_Front_Idle_5_50
+  - first:
+      213: -4868085227804385472
+    second: Body_Front_Idle_5_51
+  - first:
+      213: -7271713784575571279
+    second: Body_Front_Idle_5_52
+  - first:
+      213: -447784820997430538
+    second: Body_Front_Idle_5_53
+  - first:
+      213: -1811545132883147463
+    second: Body_Front_Idle_5_54
+  - first:
+      213: 999707786005057020
+    second: Body_Front_Idle_5_55
+  - first:
+      213: -7408793100232193348
+    second: Body_Front_Idle_5_56
+  - first:
+      213: -728659677005613786
+    second: Body_Front_Idle_5_57
+  - first:
+      213: -6058695513093164920
+    second: Body_Front_Idle_5_58
+  - first:
+      213: 4267030696238610255
+    second: Body_Front_Idle_5_59
+  - first:
+      213: 5162513168624688498
+    second: Body_Front_Idle_5_60
+  - first:
+      213: 7835984388938665806
+    second: Body_Front_Idle_5_61
+  - first:
+      213: 3977636071640090590
+    second: Body_Front_Idle_5_62
+  - first:
+      213: 5339683116053154786
+    second: Body_Front_Idle_5_63
+  - first:
+      213: -7900960021634209217
+    second: Body_Front_Idle_5_64
+  - first:
+      213: -3193175207547635320
+    second: Body_Front_Idle_5_65
+  - first:
+      213: -6346407381834097089
+    second: Body_Front_Idle_5_66
+  - first:
+      213: 1100216636492563682
+    second: Body_Front_Idle_5_67
+  - first:
+      213: 7407303799680582564
+    second: Body_Front_Idle_5_68
+  - first:
+      213: -6504845507003151714
+    second: Body_Front_Idle_5_69
+  - first:
+      213: -6849190529112587098
+    second: Body_Front_Idle_5_70
+  - first:
+      213: -5746619320702162482
+    second: Body_Front_Idle_5_71
+  - first:
+      213: -2859374077687940542
+    second: Body_Front_Idle_5_72
+  - first:
+      213: -3149493786237072862
+    second: Body_Front_Idle_5_73
+  - first:
+      213: 3036457565699106562
+    second: Body_Front_Idle_5_74
+  - first:
+      213: 1973282892778037206
+    second: Body_Front_Idle_5_75
+  - first:
+      213: -7502091606904303363
+    second: Body_Front_Idle_5_76
+  - first:
+      213: -4903285998444925816
+    second: Body_Front_Idle_5_77
+  - first:
+      213: -4615995969326620274
+    second: Body_Front_Idle_5_78
+  - first:
+      213: -1445746501099786037
+    second: Body_Front_Idle_5_79
+  - first:
+      213: -8181942477528921496
+    second: Body_Front_Idle_5_80
+  - first:
+      213: -5204444667782545455
+    second: Body_Front_Idle_5_81
+  - first:
+      213: 4222351388978487753
+    second: Body_Front_Idle_5_82
+  - first:
+      213: 7606295515854613557
+    second: Body_Front_Idle_5_83
+  - first:
+      213: 1272882077328789912
+    second: Body_Front_Idle_5_84
+  - first:
+      213: 2313319859267468562
+    second: Body_Front_Idle_5_85
+  - first:
+      213: -5394038574516355275
+    second: Body_Front_Idle_5_86
+  - first:
+      213: 3035198047786108277
+    second: Body_Front_Idle_5_87
+  - first:
+      213: 2320150844512700101
+    second: Body_Front_Idle_5_88
+  - first:
+      213: -6060929730688500352
+    second: Body_Front_Idle_5_89
+  - first:
+      213: 4897029329239129851
+    second: Body_Front_Idle_5_90
+  - first:
+      213: -6807425881123967644
+    second: Body_Front_Idle_5_91
+  - first:
+      213: 4562320560707399797
+    second: Body_Front_Idle_5_92
+  - first:
+      213: -3481721432479487178
+    second: Body_Front_Idle_5_93
+  - first:
+      213: 6902637870282436556
+    second: Body_Front_Idle_5_94
+  - first:
+      213: -5210975338461782026
+    second: Body_Front_Idle_5_95
+  - first:
+      213: 6417850889273675794
+    second: Body_Front_Idle_5_96
+  - first:
+      213: -4371857249346265664
+    second: Body_Front_Idle_5_97
+  - first:
+      213: 501831072993372768
+    second: Body_Front_Idle_5_98
+  - first:
+      213: -7755812914109413143
+    second: Body_Front_Idle_5_99
+  - first:
+      213: -3110727776288163953
+    second: Body_Front_Idle_5_100
+  - first:
+      213: 8837208151419929698
+    second: Body_Front_Idle_5_101
+  - first:
+      213: 5993844078460933036
+    second: Body_Front_Idle_5_102
+  - first:
+      213: 6334694630430634211
+    second: Body_Front_Idle_5_103
+  - first:
+      213: -5448589360286737056
+    second: Body_Front_Idle_5_104
+  - first:
+      213: -6274630037139768786
+    second: Body_Front_Idle_5_105
+  - first:
+      213: 6081845850686457014
+    second: Body_Front_Idle_5_106
+  - first:
+      213: 3732074144019677848
+    second: Body_Front_Idle_5_107
+  - first:
+      213: 6007136385857764080
+    second: Body_Front_Idle_5_108
+  - first:
+      213: 716933209833812471
+    second: Body_Front_Idle_5_109
+  - first:
+      213: 4967777662482841721
+    second: Body_Front_Idle_5_110
+  - first:
+      213: 6396033641555989368
+    second: Body_Front_Idle_5_111
+  - first:
+      213: 8798035971976607052
+    second: Body_Front_Idle_5_112
+  - first:
+      213: -2940830093449155038
+    second: Body_Front_Idle_5_113
+  - first:
+      213: -1873482869106239430
+    second: Body_Front_Idle_5_114
+  - first:
+      213: 8522185389814420065
+    second: Body_Front_Idle_5_115
+  - first:
+      213: -1273007167427276271
+    second: Body_Front_Idle_5_116
+  - first:
+      213: 1945242012491926624
+    second: Body_Front_Idle_5_117
+  - first:
+      213: 3188607514130433676
+    second: Body_Front_Idle_5_118
+  - first:
+      213: -7521787090561101141
+    second: Body_Front_Idle_5_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdfa9453d8722fe50800000000000000
+      internalID: 6841574271367098331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 607
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374600b79a8291c50800000000000000
+      internalID: 6636380234285343859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 607
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6193c90c1544844f0800000000000000
+      internalID: -844349812217464554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 607
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e714c637f8408ae0800000000000000
+      internalID: -1549158045202507805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d94029a98bfd7b7f0800000000000000
+      internalID: -596762441643064163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_5
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4932f9f394d8153c0800000000000000
+      internalID: -4372558417460517996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0013e5293864040800000000000000
+      internalID: 4631533931465867427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 575
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3cea45c27ef87320800000000000000
+      internalID: 2556072557422505023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 575
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319cfac760df7e840800000000000000
+      internalID: 5253445694654499091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 575
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb63762a7bef16680800000000000000
+      internalID: -8763443335229131074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_10
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089e44efb46d40b10800000000000000
+      internalID: 1946916560807717248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558bd3a44b3cedaf0800000000000000
+      internalID: -369642940290713515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c55c108bc6919da0800000000000000
+      internalID: -5939800632753105467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_13
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 543
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f4875b38e030660800000000000000
+      internalID: 7350734975646846748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 543
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e305d52588b5b00800000000000000
+      internalID: 818397644632112641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 543
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d021372cfc9f6890800000000000000
+      internalID: -7462573450726399792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_16
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaa98558b6b95c710800000000000000
+      internalID: 1712946119385324202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201de244e0d396780800000000000000
+      internalID: -8689346874551906046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9135d5e0c98b28e0800000000000000
+      internalID: -1717127371329031780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 511
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38885afacc703cb30800000000000000
+      internalID: 4306294244397910147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 511
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d37173499947dfe0800000000000000
+      internalID: -1164381056041651245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 511
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bbba29a797e69f10800000000000000
+      internalID: 2276261300246592441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_22
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f4d68bdd45325b0800000000000000
+      internalID: -5394374617401045200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_23
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95c376d2b47d7ea30800000000000000
+      internalID: 4244597891704241241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f8be9489ef128a90800000000000000
+      internalID: -7313247757083428619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_25
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 479
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4cd87cbd5d180c0800000000000000
+      internalID: -4575140606509202211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_26
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 479
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9166ed85bcade1b0800000000000000
+      internalID: -5625650463746137697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 479
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b812dbf3f776bb750800000000000000
+      internalID: 6321760298172490123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef161d8ea2770c6d0800000000000000
+      internalID: -2972244727886159362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_29
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85cd1eab149ddea00800000000000000
+      internalID: 787524386191170648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_30
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e66bad408605dbeb0800000000000000
+      internalID: -4702514028216666514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_31
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 447
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b20731f5238a70c90800000000000000
+      internalID: -7203604144658878421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_32
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 447
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7ab6b230272ec820800000000000000
+      internalID: 2940330625962785407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_33
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 447
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3032a49ae5bfb970800000000000000
+      internalID: 8772930618261647419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae053fe92a3450c0800000000000000
+      internalID: -4587978168602390875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_35
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10eca182ac494b0a0800000000000000
+      internalID: -6866699935856013823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59ea2bc625e08f240800000000000000
+      internalID: 4825622747901243029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_37
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 415
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f3a40ef6c5ff230800000000000000
+      internalID: 3674757456531701603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_38
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 415
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010fa2ccfe3333630800000000000000
+      internalID: 3905522406875918352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_39
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 415
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58c73824b3cf51f00800000000000000
+      internalID: 1087052216529026181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_40
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f064309b3fcfd00800000000000000
+      internalID: 1007948392573570962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_41
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce7cf6c051ab40a0800000000000000
+      internalID: -6896241036079890746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_42
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145e7e8a745a11ac0800000000000000
+      internalID: -3886143276248996543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_43
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef576366c56204d0800000000000000
+      internalID: -3169859284969758741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_44
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0cf703e8a6fd7300800000000000000
+      internalID: 251628359426505742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_45
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8b92acc0c2aa0cc0800000000000000
+      internalID: -3744001191254516851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_46
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301f6bfd79f4e8b50800000000000000
+      internalID: 6597298017856319747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_47
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273f253b59cd9e840800000000000000
+      internalID: 5253972975821190002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_48
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f117cd31456bc0b70800000000000000
+      internalID: 8866662238612386079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_49
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 351
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a230c886e389960800000000000000
+      internalID: 7608900189188991572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_50
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 351
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413ebb0585bc53490800000000000000
+      internalID: -7767078402158501100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_51
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 351
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f946c0746117cb0800000000000000
+      internalID: -4868085227804385472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_52
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bacf0217dea51b90800000000000000
+      internalID: -7271713784575571279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_53
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f2e2a8e31629c9f0800000000000000
+      internalID: -447784820997430538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_54
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93589e3bc491cd6e0800000000000000
+      internalID: -1811545132883147463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_55
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 319
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd06084fecafdd00800000000000000
+      internalID: 999707786005057020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_56
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 319
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba8b46cdedae2990800000000000000
+      internalID: -7408793100232193348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_57
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 319
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625fde562e743e5f0800000000000000
+      internalID: -728659677005613786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_58
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88034dbf7803beba0800000000000000
+      internalID: -6058695513093164920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_59
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f477dfe7fc9873b30800000000000000
+      internalID: 4267030696238610255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_60
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d962cef5ee4a740800000000000000
+      internalID: 5162513168624688498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_61
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 287
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f0230f8420fbc60800000000000000
+      internalID: 7835984388938665806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_62
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 287
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed743e7cee6633730800000000000000
+      internalID: 3977636071640090590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_63
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 287
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ebcf71d08d5a1a40800000000000000
+      internalID: 5339683116053154786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_64
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a2eeda8b62a5290800000000000000
+      internalID: -7900960021634209217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_65
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889f98021109fa3d0800000000000000
+      internalID: -3193175207547635320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_66
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3e9cd56c180de7a0800000000000000
+      internalID: -6346407381834097089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_67
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 255
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e44d12a331c44f00800000000000000
+      internalID: 1100216636492563682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_68
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 255
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3cc5b6f870cc660800000000000000
+      internalID: 7407303799680582564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_69
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 255
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a084cb9752ab5a0800000000000000
+      internalID: -6504845507003151714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_70
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a446499089c2f0a0800000000000000
+      internalID: -6849190529112587098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_71
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9a62abc28ef30b0800000000000000
+      internalID: -5746619320702162482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_72
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24a337b0d667158d0800000000000000
+      internalID: -2859374077687940542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_73
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 223
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a0a019610ca44d0800000000000000
+      internalID: -3149493786237072862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_74
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 223
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207ea03711aa32a20800000000000000
+      internalID: 3036457565699106562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_75
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 223
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dfd3690652826b10800000000000000
+      internalID: 1973282892778037206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_76
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0970a6e6733e790800000000000000
+      internalID: -7502091606904303363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_77
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88c2b86fc5704fbb0800000000000000
+      internalID: -4903285998444925816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_78
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81e6ab5f10b0ffb0800000000000000
+      internalID: -4615995969326620274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_79
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 191
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc0fea6973dafebe0800000000000000
+      internalID: -1445746501099786037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_80
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 191
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a853e9aa6e37e80800000000000000
+      internalID: -8181942477528921496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_81
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 191
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df35a3262916c7b0800000000000000
+      internalID: -5204444667782545455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_82
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1a0f0a73ec89a30800000000000000
+      internalID: 4222351388978487753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_83
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53c2927c87dfe8960800000000000000
+      internalID: 7606295515854613557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_84
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891d42c518f2aa110800000000000000
+      internalID: 1272882077328789912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_85
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 159
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21d7e7fc7209a1020800000000000000
+      internalID: 2313319859267468562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_86
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 159
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53fb23dce768425b0800000000000000
+      internalID: -5394038574516355275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_87
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 159
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57500451b803f1a20800000000000000
+      internalID: 3035198047786108277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_88
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6808086e4d23020800000000000000
+      internalID: 2320150844512700101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_89
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d35b9a58043eba0800000000000000
+      internalID: -6060929730688500352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_90
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfeb7f7ba3eb5f340800000000000000
+      internalID: 4897029329239129851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_91
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 127
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d2ec87a3a2781a0800000000000000
+      internalID: -6807425881123967644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_92
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 127
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 570fc64b06e905f30800000000000000
+      internalID: 4562320560707399797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_93
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 127
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63b223addc07eafc0800000000000000
+      internalID: -3481721432479487178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_94
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfe75f32981bcf50800000000000000
+      internalID: 6902637870282436556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_95
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff1aa1e985eea7b0800000000000000
+      internalID: -5210975338461782026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_96
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210159c6169c01950800000000000000
+      internalID: 6417850889273675794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_97
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 95
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cddffbaefa0453c0800000000000000
+      internalID: -4371857249346265664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_98
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 95
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ae50bb3bcd6f600800000000000000
+      internalID: 501831072993372768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_99
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 95
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e80f162f31dd5490800000000000000
+      internalID: -7755812914109413143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_100
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87376d919974d4d0800000000000000
+      internalID: -3110727776288163953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_101
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 264429ffdf114aa70800000000000000
+      internalID: 8837208151419929698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_102
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca31ebfbe696e2350800000000000000
+      internalID: 5993844078460933036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_103
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 63
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e07467243b59e750800000000000000
+      internalID: 6334694630430634211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_104
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 63
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06dd22d38d8b264b0800000000000000
+      internalID: -5448589360286737056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_105
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ab943c9390ce8a0800000000000000
+      internalID: -6274630037139768786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_106
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b489d4049e076450800000000000000
+      internalID: 6081845850686457014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_107
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89286bd19adfac330800000000000000
+      internalID: 3732074144019677848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_108
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa306c37b2ad5350800000000000000
+      internalID: 6007136385857764080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_109
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f133d3b4fe03f900800000000000000
+      internalID: 716933209833812471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_110
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970096fa67711f440800000000000000
+      internalID: 4967777662482841721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_111
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873946895b643c850800000000000000
+      internalID: 6396033641555989368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_112
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4536ce3a17e81a70800000000000000
+      internalID: 8798035971976607052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_113
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e2f277c921037d0800000000000000
+      internalID: -2940830093449155038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_114
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a389426b14d0006e0800000000000000
+      internalID: -1873482869106239430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_115
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16299e5a572e44670800000000000000
+      internalID: 8522185389814420065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_116
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11298f4d9be555ee0800000000000000
+      internalID: -1273007167427276271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_117
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c4fb4dd43eefa10800000000000000
+      internalID: 1945242012491926624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_118
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86c2efd3a5304c20800000000000000
+      internalID: 3188607514130433676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Front_Idle_5_119
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba29cf64e7e3d9790800000000000000
+      internalID: -7521787090561101141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Body_Front_Idle_5_0: 6841574271367098331
+      Body_Front_Idle_5_1: 6636380234285343859
+      Body_Front_Idle_5_10: 1946916560807717248
+      Body_Front_Idle_5_100: -3110727776288163953
+      Body_Front_Idle_5_101: 8837208151419929698
+      Body_Front_Idle_5_102: 5993844078460933036
+      Body_Front_Idle_5_103: 6334694630430634211
+      Body_Front_Idle_5_104: -5448589360286737056
+      Body_Front_Idle_5_105: -6274630037139768786
+      Body_Front_Idle_5_106: 6081845850686457014
+      Body_Front_Idle_5_107: 3732074144019677848
+      Body_Front_Idle_5_108: 6007136385857764080
+      Body_Front_Idle_5_109: 716933209833812471
+      Body_Front_Idle_5_11: -369642940290713515
+      Body_Front_Idle_5_110: 4967777662482841721
+      Body_Front_Idle_5_111: 6396033641555989368
+      Body_Front_Idle_5_112: 8798035971976607052
+      Body_Front_Idle_5_113: -2940830093449155038
+      Body_Front_Idle_5_114: -1873482869106239430
+      Body_Front_Idle_5_115: 8522185389814420065
+      Body_Front_Idle_5_116: -1273007167427276271
+      Body_Front_Idle_5_117: 1945242012491926624
+      Body_Front_Idle_5_118: 3188607514130433676
+      Body_Front_Idle_5_119: -7521787090561101141
+      Body_Front_Idle_5_12: -5939800632753105467
+      Body_Front_Idle_5_13: 7350734975646846748
+      Body_Front_Idle_5_14: 818397644632112641
+      Body_Front_Idle_5_15: -7462573450726399792
+      Body_Front_Idle_5_16: 1712946119385324202
+      Body_Front_Idle_5_17: -8689346874551906046
+      Body_Front_Idle_5_18: -1717127371329031780
+      Body_Front_Idle_5_19: 4306294244397910147
+      Body_Front_Idle_5_2: -844349812217464554
+      Body_Front_Idle_5_20: -1164381056041651245
+      Body_Front_Idle_5_21: 2276261300246592441
+      Body_Front_Idle_5_22: -5394374617401045200
+      Body_Front_Idle_5_23: 4244597891704241241
+      Body_Front_Idle_5_24: -7313247757083428619
+      Body_Front_Idle_5_25: -4575140606509202211
+      Body_Front_Idle_5_26: -5625650463746137697
+      Body_Front_Idle_5_27: 6321760298172490123
+      Body_Front_Idle_5_28: -2972244727886159362
+      Body_Front_Idle_5_29: 787524386191170648
+      Body_Front_Idle_5_3: -1549158045202507805
+      Body_Front_Idle_5_30: -4702514028216666514
+      Body_Front_Idle_5_31: -7203604144658878421
+      Body_Front_Idle_5_32: 2940330625962785407
+      Body_Front_Idle_5_33: 8772930618261647419
+      Body_Front_Idle_5_34: -4587978168602390875
+      Body_Front_Idle_5_35: -6866699935856013823
+      Body_Front_Idle_5_36: 4825622747901243029
+      Body_Front_Idle_5_37: 3674757456531701603
+      Body_Front_Idle_5_38: 3905522406875918352
+      Body_Front_Idle_5_39: 1087052216529026181
+      Body_Front_Idle_5_4: -596762441643064163
+      Body_Front_Idle_5_40: 1007948392573570962
+      Body_Front_Idle_5_41: -6896241036079890746
+      Body_Front_Idle_5_42: -3886143276248996543
+      Body_Front_Idle_5_43: -3169859284969758741
+      Body_Front_Idle_5_44: 251628359426505742
+      Body_Front_Idle_5_45: -3744001191254516851
+      Body_Front_Idle_5_46: 6597298017856319747
+      Body_Front_Idle_5_47: 5253972975821190002
+      Body_Front_Idle_5_48: 8866662238612386079
+      Body_Front_Idle_5_49: 7608900189188991572
+      Body_Front_Idle_5_5: -4372558417460517996
+      Body_Front_Idle_5_50: -7767078402158501100
+      Body_Front_Idle_5_51: -4868085227804385472
+      Body_Front_Idle_5_52: -7271713784575571279
+      Body_Front_Idle_5_53: -447784820997430538
+      Body_Front_Idle_5_54: -1811545132883147463
+      Body_Front_Idle_5_55: 999707786005057020
+      Body_Front_Idle_5_56: -7408793100232193348
+      Body_Front_Idle_5_57: -728659677005613786
+      Body_Front_Idle_5_58: -6058695513093164920
+      Body_Front_Idle_5_59: 4267030696238610255
+      Body_Front_Idle_5_6: 4631533931465867427
+      Body_Front_Idle_5_60: 5162513168624688498
+      Body_Front_Idle_5_61: 7835984388938665806
+      Body_Front_Idle_5_62: 3977636071640090590
+      Body_Front_Idle_5_63: 5339683116053154786
+      Body_Front_Idle_5_64: -7900960021634209217
+      Body_Front_Idle_5_65: -3193175207547635320
+      Body_Front_Idle_5_66: -6346407381834097089
+      Body_Front_Idle_5_67: 1100216636492563682
+      Body_Front_Idle_5_68: 7407303799680582564
+      Body_Front_Idle_5_69: -6504845507003151714
+      Body_Front_Idle_5_7: 2556072557422505023
+      Body_Front_Idle_5_70: -6849190529112587098
+      Body_Front_Idle_5_71: -5746619320702162482
+      Body_Front_Idle_5_72: -2859374077687940542
+      Body_Front_Idle_5_73: -3149493786237072862
+      Body_Front_Idle_5_74: 3036457565699106562
+      Body_Front_Idle_5_75: 1973282892778037206
+      Body_Front_Idle_5_76: -7502091606904303363
+      Body_Front_Idle_5_77: -4903285998444925816
+      Body_Front_Idle_5_78: -4615995969326620274
+      Body_Front_Idle_5_79: -1445746501099786037
+      Body_Front_Idle_5_8: 5253445694654499091
+      Body_Front_Idle_5_80: -8181942477528921496
+      Body_Front_Idle_5_81: -5204444667782545455
+      Body_Front_Idle_5_82: 4222351388978487753
+      Body_Front_Idle_5_83: 7606295515854613557
+      Body_Front_Idle_5_84: 1272882077328789912
+      Body_Front_Idle_5_85: 2313319859267468562
+      Body_Front_Idle_5_86: -5394038574516355275
+      Body_Front_Idle_5_87: 3035198047786108277
+      Body_Front_Idle_5_88: 2320150844512700101
+      Body_Front_Idle_5_89: -6060929730688500352
+      Body_Front_Idle_5_9: -8763443335229131074
+      Body_Front_Idle_5_90: 4897029329239129851
+      Body_Front_Idle_5_91: -6807425881123967644
+      Body_Front_Idle_5_92: 4562320560707399797
+      Body_Front_Idle_5_93: -3481721432479487178
+      Body_Front_Idle_5_94: 6902637870282436556
+      Body_Front_Idle_5_95: -5210975338461782026
+      Body_Front_Idle_5_96: 6417850889273675794
+      Body_Front_Idle_5_97: -4371857249346265664
+      Body_Front_Idle_5_98: 501831072993372768
+      Body_Front_Idle_5_99: -7755812914109413143
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

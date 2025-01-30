@@ -1,0 +1,3020 @@
+fileFormatVersion: 2
+guid: f8dc4837ed6131e4f8320c8b72b3e55f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -711932065944315779
+    second: Headwear_Front_Idle_4_0
+  - first:
+      213: -3363794769997779155
+    second: Headwear_Front_Idle_4_1
+  - first:
+      213: -5619618083616195621
+    second: Headwear_Front_Idle_4_2
+  - first:
+      213: -8035244587273837200
+    second: Headwear_Front_Idle_4_3
+  - first:
+      213: -8558524344340467605
+    second: Headwear_Front_Idle_4_4
+  - first:
+      213: -8704454524352031524
+    second: Headwear_Front_Idle_4_5
+  - first:
+      213: -3961054482576646469
+    second: Headwear_Front_Idle_4_6
+  - first:
+      213: -4984176897434692360
+    second: Headwear_Front_Idle_4_7
+  - first:
+      213: 4308403979871437332
+    second: Headwear_Front_Idle_4_8
+  - first:
+      213: 8074744099548549671
+    second: Headwear_Front_Idle_4_9
+  - first:
+      213: -6842420857284217871
+    second: Headwear_Front_Idle_4_10
+  - first:
+      213: -4126765308050179549
+    second: Headwear_Front_Idle_4_11
+  - first:
+      213: 6128537828793632203
+    second: Headwear_Front_Idle_4_12
+  - first:
+      213: 3754038983158838109
+    second: Headwear_Front_Idle_4_13
+  - first:
+      213: -4810788075082792053
+    second: Headwear_Front_Idle_4_14
+  - first:
+      213: -833141583543336480
+    second: Headwear_Front_Idle_4_15
+  - first:
+      213: -7806698487640311991
+    second: Headwear_Front_Idle_4_16
+  - first:
+      213: -8196241482342475891
+    second: Headwear_Front_Idle_4_17
+  - first:
+      213: 3683493114822233242
+    second: Headwear_Front_Idle_4_18
+  - first:
+      213: -7648998560408303437
+    second: Headwear_Front_Idle_4_19
+  - first:
+      213: -4822108766602719978
+    second: Headwear_Front_Idle_4_20
+  - first:
+      213: -7453701914251358654
+    second: Headwear_Front_Idle_4_21
+  - first:
+      213: -3206455732771595994
+    second: Headwear_Front_Idle_4_22
+  - first:
+      213: -6190555818540982675
+    second: Headwear_Front_Idle_4_23
+  - first:
+      213: 7475290429713137910
+    second: Headwear_Front_Idle_4_24
+  - first:
+      213: -2890080451010976448
+    second: Headwear_Front_Idle_4_25
+  - first:
+      213: 6624763818204716426
+    second: Headwear_Front_Idle_4_26
+  - first:
+      213: -4874213720876995871
+    second: Headwear_Front_Idle_4_27
+  - first:
+      213: 1403824105671828290
+    second: Headwear_Front_Idle_4_28
+  - first:
+      213: 1202404941528926037
+    second: Headwear_Front_Idle_4_29
+  - first:
+      213: -2882241015618237573
+    second: Headwear_Front_Idle_4_30
+  - first:
+      213: -756116149804060143
+    second: Headwear_Front_Idle_4_31
+  - first:
+      213: 1215833699219100404
+    second: Headwear_Front_Idle_4_32
+  - first:
+      213: -3525697702126210889
+    second: Headwear_Front_Idle_4_33
+  - first:
+      213: 3609696288698670966
+    second: Headwear_Front_Idle_4_34
+  - first:
+      213: 2340264767741890380
+    second: Headwear_Front_Idle_4_35
+  - first:
+      213: 324125913517200842
+    second: Headwear_Front_Idle_4_36
+  - first:
+      213: 3720653055309613043
+    second: Headwear_Front_Idle_4_37
+  - first:
+      213: 1133844257066396775
+    second: Headwear_Front_Idle_4_38
+  - first:
+      213: 4384126635528757126
+    second: Headwear_Front_Idle_4_39
+  - first:
+      213: 6827406295139090770
+    second: Headwear_Front_Idle_4_40
+  - first:
+      213: 6771101670574921358
+    second: Headwear_Front_Idle_4_41
+  - first:
+      213: -123675571656355872
+    second: Headwear_Front_Idle_4_42
+  - first:
+      213: 6136233329794175146
+    second: Headwear_Front_Idle_4_43
+  - first:
+      213: -337521663891880022
+    second: Headwear_Front_Idle_4_44
+  - first:
+      213: 3380285703477453754
+    second: Headwear_Front_Idle_4_45
+  - first:
+      213: -1801455443711511931
+    second: Headwear_Front_Idle_4_46
+  - first:
+      213: -144320433379851905
+    second: Headwear_Front_Idle_4_47
+  - first:
+      213: -4679171208702546746
+    second: Headwear_Front_Idle_4_48
+  - first:
+      213: -6179387271780049721
+    second: Headwear_Front_Idle_4_49
+  - first:
+      213: 5926466129689372621
+    second: Headwear_Front_Idle_4_50
+  - first:
+      213: -6800158715396601307
+    second: Headwear_Front_Idle_4_51
+  - first:
+      213: -6152243127419570289
+    second: Headwear_Front_Idle_4_52
+  - first:
+      213: -991001690405489919
+    second: Headwear_Front_Idle_4_53
+  - first:
+      213: -2225734494680628947
+    second: Headwear_Front_Idle_4_54
+  - first:
+      213: -8252719276032292577
+    second: Headwear_Front_Idle_4_55
+  - first:
+      213: 4717141760143179283
+    second: Headwear_Front_Idle_4_56
+  - first:
+      213: -6103496335960859037
+    second: Headwear_Front_Idle_4_57
+  - first:
+      213: 1039859462229963017
+    second: Headwear_Front_Idle_4_58
+  - first:
+      213: 2804509546715490562
+    second: Headwear_Front_Idle_4_59
+  - first:
+      213: -1804818527028486236
+    second: Headwear_Front_Idle_4_60
+  - first:
+      213: 5792841282831538541
+    second: Headwear_Front_Idle_4_61
+  - first:
+      213: -7801318845595269871
+    second: Headwear_Front_Idle_4_62
+  - first:
+      213: 4381040954533314551
+    second: Headwear_Front_Idle_4_63
+  - first:
+      213: -8398883111238925960
+    second: Headwear_Front_Idle_4_64
+  - first:
+      213: -6552531402020401722
+    second: Headwear_Front_Idle_4_65
+  - first:
+      213: -5322406915630612980
+    second: Headwear_Front_Idle_4_66
+  - first:
+      213: 6198211955409523894
+    second: Headwear_Front_Idle_4_67
+  - first:
+      213: 434673259376452109
+    second: Headwear_Front_Idle_4_68
+  - first:
+      213: 7601875138049837291
+    second: Headwear_Front_Idle_4_69
+  - first:
+      213: -1575455446072898074
+    second: Headwear_Front_Idle_4_70
+  - first:
+      213: 6441746854326358306
+    second: Headwear_Front_Idle_4_71
+  - first:
+      213: 5907780193164234407
+    second: Headwear_Front_Idle_4_72
+  - first:
+      213: 8816642033835258967
+    second: Headwear_Front_Idle_4_73
+  - first:
+      213: -1088560966421373693
+    second: Headwear_Front_Idle_4_74
+  - first:
+      213: -8349652394471882307
+    second: Headwear_Front_Idle_4_75
+  - first:
+      213: 8105454154413080151
+    second: Headwear_Front_Idle_4_76
+  - first:
+      213: -7904761294153657384
+    second: Headwear_Front_Idle_4_77
+  - first:
+      213: -5550297193344726265
+    second: Headwear_Front_Idle_4_78
+  - first:
+      213: -4391413203449421858
+    second: Headwear_Front_Idle_4_79
+  - first:
+      213: 3267810868460884007
+    second: Headwear_Front_Idle_4_80
+  - first:
+      213: -835462356433493315
+    second: Headwear_Front_Idle_4_81
+  - first:
+      213: 8540886647344612064
+    second: Headwear_Front_Idle_4_82
+  - first:
+      213: 4220177313660722256
+    second: Headwear_Front_Idle_4_83
+  - first:
+      213: -789915219592840083
+    second: Headwear_Front_Idle_4_84
+  - first:
+      213: -552282945579017731
+    second: Headwear_Front_Idle_4_85
+  - first:
+      213: 2202485473600221772
+    second: Headwear_Front_Idle_4_86
+  - first:
+      213: -6033242351774849793
+    second: Headwear_Front_Idle_4_87
+  - first:
+      213: -8649133497988631973
+    second: Headwear_Front_Idle_4_88
+  - first:
+      213: 2033650367070397382
+    second: Headwear_Front_Idle_4_89
+  - first:
+      213: 8834981538123724972
+    second: Headwear_Front_Idle_4_90
+  - first:
+      213: 6710695880643737209
+    second: Headwear_Front_Idle_4_91
+  - first:
+      213: 8113590509404809612
+    second: Headwear_Front_Idle_4_92
+  - first:
+      213: 2848023554008838694
+    second: Headwear_Front_Idle_4_93
+  - first:
+      213: 1253746552076334257
+    second: Headwear_Front_Idle_4_94
+  - first:
+      213: 1745747473161645003
+    second: Headwear_Front_Idle_4_95
+  - first:
+      213: 4198517958134920882
+    second: Headwear_Front_Idle_4_96
+  - first:
+      213: -8110809267014138600
+    second: Headwear_Front_Idle_4_97
+  - first:
+      213: 7726632448365130048
+    second: Headwear_Front_Idle_4_98
+  - first:
+      213: -1537160907815903629
+    second: Headwear_Front_Idle_4_99
+  - first:
+      213: -218086228891869108
+    second: Headwear_Front_Idle_4_100
+  - first:
+      213: 7366794808945494138
+    second: Headwear_Front_Idle_4_101
+  - first:
+      213: -2208677869123030561
+    second: Headwear_Front_Idle_4_102
+  - first:
+      213: -1394554544588195832
+    second: Headwear_Front_Idle_4_103
+  - first:
+      213: -3455698976771154262
+    second: Headwear_Front_Idle_4_104
+  - first:
+      213: -2043396864829647528
+    second: Headwear_Front_Idle_4_105
+  - first:
+      213: 1332029073531189766
+    second: Headwear_Front_Idle_4_106
+  - first:
+      213: 5003907589353083821
+    second: Headwear_Front_Idle_4_107
+  - first:
+      213: -4868049946894819401
+    second: Headwear_Front_Idle_4_108
+  - first:
+      213: 7663936498103178707
+    second: Headwear_Front_Idle_4_109
+  - first:
+      213: -3574539490395735835
+    second: Headwear_Front_Idle_4_110
+  - first:
+      213: 5124868600742383284
+    second: Headwear_Front_Idle_4_111
+  - first:
+      213: -9160249966395683812
+    second: Headwear_Front_Idle_4_112
+  - first:
+      213: -1267883968835271127
+    second: Headwear_Front_Idle_4_113
+  - first:
+      213: 8748230815245519108
+    second: Headwear_Front_Idle_4_114
+  - first:
+      213: -6733293652574327752
+    second: Headwear_Front_Idle_4_115
+  - first:
+      213: -4514859238213224866
+    second: Headwear_Front_Idle_4_116
+  - first:
+      213: 939146230890448157
+    second: Headwear_Front_Idle_4_117
+  - first:
+      213: -597112265305759723
+    second: Headwear_Front_Idle_4_118
+  - first:
+      213: 5288619161081561634
+    second: Headwear_Front_Idle_4_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 615
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d78dd29de85be16f0800000000000000
+      internalID: -711932065944315779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 614
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f27f49a766151d0800000000000000
+      internalID: -3363794769997779155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 614
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdbf1b0802b1302b0800000000000000
+      internalID: -5619618083616195621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 614
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 075a924de931d7090800000000000000
+      internalID: -8035244587273837200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 615
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b60bd0e24730a3980800000000000000
+      internalID: -8558524344340467605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_5
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 615
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd494707ab0933780800000000000000
+      internalID: -8704454524352031524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 583
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbedc064fe18709c0800000000000000
+      internalID: -3961054482576646469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 582
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f452b2e485a4dab0800000000000000
+      internalID: -4984176897434692360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 582
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412cd11c7968acb30800000000000000
+      internalID: 4308403979871437332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 582
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722d5c90af04f0070800000000000000
+      internalID: 8074744099548549671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 583
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f3b9d5ab76da01a0800000000000000
+      internalID: -6842420857284217871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 583
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32a734e11d8cab6c0800000000000000
+      internalID: -4126765308050179549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_12
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 551
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc5c9c55fa0fc0550800000000000000
+      internalID: 6128537828793632203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_13
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 550
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d53b620c096091430800000000000000
+      internalID: 3754038983158838109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_14
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 550
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83410ffbb5ac3db0800000000000000
+      internalID: -4810788075082792053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 550
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e10b49d4261074f0800000000000000
+      internalID: -833141583543336480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_16
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 551
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947be9f461909a390800000000000000
+      internalID: -7806698487640311991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_17
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 551
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d87d7af1cc9114e80800000000000000
+      internalID: -8196241482342475891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 519
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c8391d8756e1330800000000000000
+      internalID: 3683493114822233242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_19
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 518
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8836fd55c49d590800000000000000
+      internalID: -7648998560408303437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_20
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 518
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d095a10ad641db0800000000000000
+      internalID: -4822108766602719978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_21
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 518
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24e0663b9912f8890800000000000000
+      internalID: -7453701914251358654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 519
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6295224ef716083d0800000000000000
+      internalID: -3206455732771595994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_23
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 519
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e13a1384ab61aa0800000000000000
+      internalID: -6190555818540982675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_24
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 487
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f0cdef3a019db760800000000000000
+      internalID: 7475290429713137910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_25
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 486
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 045a031642f54e7d0800000000000000
+      internalID: -2890080451010976448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_26
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 486
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8dd3f8d793efeb50800000000000000
+      internalID: 6624763818204716426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_27
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 486
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eaaacf02705b5cb0800000000000000
+      internalID: -4874213720876995871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_28
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 487
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24323b916926b7310800000000000000
+      internalID: 1403824105671828290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_29
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 487
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55781087ceccfa010800000000000000
+      internalID: 1202404941528926037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_30
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 455
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b830b21193008d0800000000000000
+      internalID: -2882241015618237573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_31
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 454
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1123ef92e5cb185f0800000000000000
+      internalID: -756116149804060143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_32
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 454
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f257e3ce428fd010800000000000000
+      internalID: 1215833699219100404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_33
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 454
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b03b5fae94321fc0800000000000000
+      internalID: -3525697702126210889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_34
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 455
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67f1eea46a7381230800000000000000
+      internalID: 3609696288698670966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_35
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 455
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f0e91386a4a7020800000000000000
+      internalID: 2340264767741890380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 423
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac511b11dc68f7400800000000000000
+      internalID: 324125913517200842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_37
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 422
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f7833ead3a62a330800000000000000
+      internalID: 3720653055309613043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_38
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 422
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c2f0d28593cbf00800000000000000
+      internalID: 1133844257066396775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_39
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 422
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f150962fb87dc30800000000000000
+      internalID: 4384126635528757126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_40
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 423
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251080f2ad1dfbe50800000000000000
+      internalID: 6827406295139090770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_41
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 423
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e861ca43819c7fd50800000000000000
+      internalID: 6771101670574921358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_42
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 391
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef870c09bd984ef0800000000000000
+      internalID: -123675571656355872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_43
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 390
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa05b49c3b7482550800000000000000
+      internalID: 6136233329794175146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_44
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 390
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa7c9bfb5d1e05bf0800000000000000
+      internalID: -337521663891880022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_45
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 390
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab3ea1310ff29ee20800000000000000
+      internalID: 3380285703477453754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_46
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 391
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582b1e681d1fff6e0800000000000000
+      internalID: -1801455443711511931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_47
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 391
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f71409a94554ffdf0800000000000000
+      internalID: -144320433379851905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_48
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 359
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ccac06b39e301fb0800000000000000
+      internalID: -4679171208702546746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_49
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 358
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ccdaff14086e3aa0800000000000000
+      internalID: -6179387271780049721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_50
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 358
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc7e4819b890f3250800000000000000
+      internalID: 5926466129689372621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_51
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 358
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a42885dabf0a1a0800000000000000
+      internalID: -6800158715396601307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_52
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 359
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87715ab877de9aa0800000000000000
+      internalID: -6152243127419570289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_53
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 359
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103b19f86314f32f0800000000000000
+      internalID: -991001690405489919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_54
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 328
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d214a30054a9c11e0800000000000000
+      internalID: -2225734494680628947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_55
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 327
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1983111b83787d80800000000000000
+      internalID: -8252719276032292577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_56
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 327
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ebe783077a67140800000000000000
+      internalID: 4717141760143179283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_57
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 327
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e972f8b660c4ba0800000000000000
+      internalID: -6103496335960859037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_58
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 328
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901bb86eba25e6e00800000000000000
+      internalID: 1039859462229963017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_59
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 328
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2092b25e29e9be620800000000000000
+      internalID: 2804509546715490562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_60
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 294
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4af5c6cac1ff3f6e0800000000000000
+      internalID: -1804818527028486236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_61
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 293
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d695467747e446050800000000000000
+      internalID: 5792841282831538541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_62
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 293
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 115cbb4d7d52cb390800000000000000
+      internalID: -7801318845595269871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_63
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 293
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff756159859ccc30800000000000000
+      internalID: 4381040954533314551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_64
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 294
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871839c3f4c217b80800000000000000
+      internalID: -8398883111238925960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_65
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 294
+        width: 20
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cd4bfa186bb015a0800000000000000
+      internalID: -6552531402020401722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_66
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 263
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e31cb0c130326b0800000000000000
+      internalID: -5322406915630612980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_67
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 262
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b493c41fe8740650800000000000000
+      internalID: 6198211955409523894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_68
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 262
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02ae72c605480600800000000000000
+      internalID: 434673259376452109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_69
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 262
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8855e59294f7960800000000000000
+      internalID: 7601875138049837291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_70
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 263
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6edce517e9bd22ae0800000000000000
+      internalID: -1575455446072898074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_71
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 263
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221dc1952aea56950800000000000000
+      internalID: 6441746854326358306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_72
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 231
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae84a0f8c6acf150800000000000000
+      internalID: 5907780193164234407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_73
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 230
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 754378a97310b5a70800000000000000
+      internalID: 8816642033835258967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_74
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 230
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d19188197a4e0f0800000000000000
+      internalID: -1088560966421373693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_75
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 230
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db18385b263102c80800000000000000
+      internalID: -8349652394471882307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_76
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 231
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e7101eb9b5c7070800000000000000
+      internalID: 8105454154413080151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_77
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 231
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3d6b3fb75ac4290800000000000000
+      internalID: -7904761294153657384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_78
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 199
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b07d00c1269f2b0800000000000000
+      internalID: -5550297193344726265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_79
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 198
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edfdf6a45f09e03c0800000000000000
+      internalID: -4391413203449421858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_80
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 198
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72095c7dba8995d20800000000000000
+      internalID: 3267810868460884007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_81
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 198
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2229dc967d764f0800000000000000
+      internalID: -835462356433493315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_82
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 199
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e24ad97723578670800000000000000
+      internalID: 8540886647344612064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_83
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 199
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05cd8e548e4119a30800000000000000
+      internalID: 4220177313660722256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_84
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 167
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c7e7dfa48a905f0800000000000000
+      internalID: -789915219592840083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_85
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 166
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9914d4695e558f0800000000000000
+      internalID: -552282945579017731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_86
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 166
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4236e47edcc09e10800000000000000
+      internalID: 2202485473600221772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_87
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 166
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff42e9aeb0e954ca0800000000000000
+      internalID: -6033242351774849793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_88
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 167
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b52b47d98ea18f780800000000000000
+      internalID: -8649133497988631973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_89
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 167
+        width: 22
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3e29eeb3af83c10800000000000000
+      internalID: 2033650367070397382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_90
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 135
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8bff036e82c9a70800000000000000
+      internalID: 8834981538123724972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_91
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 134
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9767271495e212d50800000000000000
+      internalID: 6710695880643737209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_92
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 134
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89ed06a493499070800000000000000
+      internalID: 8113590509404809612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_93
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 134
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62274a83556368720800000000000000
+      internalID: 2848023554008838694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_94
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 135
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b471e2b8d3366110800000000000000
+      internalID: 1253746552076334257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_95
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 135
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcbe555d3142a3810800000000000000
+      internalID: 1745747473161645003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_96
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 102
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6fab596d1244a30800000000000000
+      internalID: 4198517958134920882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_97
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 101
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8150daec1fd907f80800000000000000
+      internalID: -8110809267014138600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_98
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 101
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0417fca36438a3b60800000000000000
+      internalID: 7726632448365130048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_99
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 101
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e140f6c48eaaae0800000000000000
+      internalID: -1537160907815903629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_100
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 102
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40ee74fab339fcf0800000000000000
+      internalID: -218086228891869108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_101
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 102
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78436809dc1c3660800000000000000
+      internalID: 7366794808945494138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_102
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 71
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd1b7ab1e233951e0800000000000000
+      internalID: -2208677869123030561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_103
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 70
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 808f9e5c70c85ace0800000000000000
+      internalID: -1394554544588195832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_104
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 70
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaedfd6f614ea00d0800000000000000
+      internalID: -3455698976771154262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_105
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 70
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8559ea8b06564a3e0800000000000000
+      internalID: -2043396864829647528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_106
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 71
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60ab15e82615c7210800000000000000
+      internalID: 1332029073531189766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_107
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 71
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da39540d073717540800000000000000
+      internalID: 5003907589353083821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_108
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 39
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf99768d56317cb0800000000000000
+      internalID: -4868049946894819401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_109
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 38
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d55796c3a5cb5a60800000000000000
+      internalID: 7663936498103178707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_110
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 38
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e83b5fa54fa46ec0800000000000000
+      internalID: -3574539490395735835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_111
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 38
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be8dc3f6d03f1740800000000000000
+      internalID: 5124868600742383284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_112
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 39
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1c833b403140e080800000000000000
+      internalID: -9160249966395683812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_113
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 39
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92649257f32976ee0800000000000000
+      internalID: -1267883968835271127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_114
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 7
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409c5db8395f76970800000000000000
+      internalID: 8748230815245519108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_115
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 6
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c2ae5f8198e82a0800000000000000
+      internalID: -6733293652574327752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_116
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 6
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e56f86f817ff751c0800000000000000
+      internalID: -4514859238213224866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_117
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 6
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d154f5c6584880d00800000000000000
+      internalID: 939146230890448157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_118
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 7
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510eb6fee81a6b7f0800000000000000
+      internalID: -597112265305759723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Headwear_Front_Idle_4_119
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 7
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22247905b13f46940800000000000000
+      internalID: 5288619161081561634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

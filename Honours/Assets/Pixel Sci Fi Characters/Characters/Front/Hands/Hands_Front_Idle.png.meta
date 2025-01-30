@@ -1,0 +1,7916 @@
+fileFormatVersion: 2
+guid: 71faf379c08860f4a84535049edcfb6a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8040499029976258484
+    second: Hands_Front_Idle_0
+  - first:
+      213: 3556088830873263962
+    second: Hands_Front_Idle_1
+  - first:
+      213: -6626692386122097405
+    second: Hands_Front_Idle_2
+  - first:
+      213: 5753515675027487920
+    second: Hands_Front_Idle_3
+  - first:
+      213: 8156225894597733206
+    second: Hands_Front_Idle_4
+  - first:
+      213: 800833588817973838
+    second: Hands_Front_Idle_5
+  - first:
+      213: -366893191421817029
+    second: Hands_Front_Idle_6
+  - first:
+      213: 2590034914464503168
+    second: Hands_Front_Idle_7
+  - first:
+      213: 4751046303049381522
+    second: Hands_Front_Idle_8
+  - first:
+      213: 4615808460192344391
+    second: Hands_Front_Idle_9
+  - first:
+      213: 7795469102590700179
+    second: Hands_Front_Idle_10
+  - first:
+      213: -7397469100720376189
+    second: Hands_Front_Idle_11
+  - first:
+      213: 5630151288360289594
+    second: Hands_Front_Idle_12
+  - first:
+      213: 5672358484770327132
+    second: Hands_Front_Idle_13
+  - first:
+      213: -5691480959343969186
+    second: Hands_Front_Idle_14
+  - first:
+      213: -6043594484028911258
+    second: Hands_Front_Idle_15
+  - first:
+      213: 2771444832462530335
+    second: Hands_Front_Idle_16
+  - first:
+      213: -6854566907161342913
+    second: Hands_Front_Idle_17
+  - first:
+      213: 254256456422436151
+    second: Hands_Front_Idle_18
+  - first:
+      213: -753743637324288986
+    second: Hands_Front_Idle_19
+  - first:
+      213: -2918403435205068913
+    second: Hands_Front_Idle_20
+  - first:
+      213: 8669003736615255119
+    second: Hands_Front_Idle_21
+  - first:
+      213: -8497920015758866549
+    second: Hands_Front_Idle_22
+  - first:
+      213: -2157955857003395053
+    second: Hands_Front_Idle_23
+  - first:
+      213: 9020393086456834875
+    second: Hands_Front_Idle_24
+  - first:
+      213: 3310101621903005394
+    second: Hands_Front_Idle_25
+  - first:
+      213: -4606943618412179442
+    second: Hands_Front_Idle_26
+  - first:
+      213: 2470594242892959427
+    second: Hands_Front_Idle_27
+  - first:
+      213: 828345667090958159
+    second: Hands_Front_Idle_28
+  - first:
+      213: -2812199393508904151
+    second: Hands_Front_Idle_29
+  - first:
+      213: -9007994757857927194
+    second: Hands_Front_Idle_30
+  - first:
+      213: -3997130127236995513
+    second: Hands_Front_Idle_31
+  - first:
+      213: 4493048625395125082
+    second: Hands_Front_Idle_32
+  - first:
+      213: 8940115464669344848
+    second: Hands_Front_Idle_33
+  - first:
+      213: -1202770556540997165
+    second: Hands_Front_Idle_34
+  - first:
+      213: 2977131826987363949
+    second: Hands_Front_Idle_35
+  - first:
+      213: 2032477677384100130
+    second: Hands_Front_Idle_36
+  - first:
+      213: 5569685866519904055
+    second: Hands_Front_Idle_37
+  - first:
+      213: 3685145736373799625
+    second: Hands_Front_Idle_38
+  - first:
+      213: 1983225070402592041
+    second: Hands_Front_Idle_39
+  - first:
+      213: -5209799575692660056
+    second: Hands_Front_Idle_40
+  - first:
+      213: 7958684146084969428
+    second: Hands_Front_Idle_41
+  - first:
+      213: -8628119003960682533
+    second: Hands_Front_Idle_42
+  - first:
+      213: -7253385384424933917
+    second: Hands_Front_Idle_43
+  - first:
+      213: 7232410443150320744
+    second: Hands_Front_Idle_44
+  - first:
+      213: 8038009815171302125
+    second: Hands_Front_Idle_45
+  - first:
+      213: -4128616959838578986
+    second: Hands_Front_Idle_46
+  - first:
+      213: -989641939042623532
+    second: Hands_Front_Idle_47
+  - first:
+      213: 6405281823751457362
+    second: Hands_Front_Idle_48
+  - first:
+      213: -624429527138705362
+    second: Hands_Front_Idle_49
+  - first:
+      213: -15987957992338270
+    second: Hands_Front_Idle_50
+  - first:
+      213: -3400773538249712227
+    second: Hands_Front_Idle_51
+  - first:
+      213: -6106609962976044933
+    second: Hands_Front_Idle_52
+  - first:
+      213: 3503879741650905104
+    second: Hands_Front_Idle_53
+  - first:
+      213: 4849990265868712917
+    second: Hands_Front_Idle_54
+  - first:
+      213: -8896091518460977947
+    second: Hands_Front_Idle_55
+  - first:
+      213: 6930947737862634077
+    second: Hands_Front_Idle_56
+  - first:
+      213: 4486306475162546504
+    second: Hands_Front_Idle_57
+  - first:
+      213: 4149015927112022907
+    second: Hands_Front_Idle_58
+  - first:
+      213: 313865538186257774
+    second: Hands_Front_Idle_59
+  - first:
+      213: 3331665614715491499
+    second: Hands_Front_Idle_60
+  - first:
+      213: -4317762702377923418
+    second: Hands_Front_Idle_61
+  - first:
+      213: 8950577148813773681
+    second: Hands_Front_Idle_62
+  - first:
+      213: -2983720685443364982
+    second: Hands_Front_Idle_63
+  - first:
+      213: 8665346455401827276
+    second: Hands_Front_Idle_64
+  - first:
+      213: 6269848644104110327
+    second: Hands_Front_Idle_65
+  - first:
+      213: 5346243365807583720
+    second: Hands_Front_Idle_66
+  - first:
+      213: 7114622820605462815
+    second: Hands_Front_Idle_67
+  - first:
+      213: -7598004256308910398
+    second: Hands_Front_Idle_68
+  - first:
+      213: 4227931913478291108
+    second: Hands_Front_Idle_69
+  - first:
+      213: 4062973419387274256
+    second: Hands_Front_Idle_70
+  - first:
+      213: 3783125603400640727
+    second: Hands_Front_Idle_71
+  - first:
+      213: 8676694330780772023
+    second: Hands_Front_Idle_72
+  - first:
+      213: -7399044890897152525
+    second: Hands_Front_Idle_73
+  - first:
+      213: -3014288339859679783
+    second: Hands_Front_Idle_74
+  - first:
+      213: 6908613655979432427
+    second: Hands_Front_Idle_75
+  - first:
+      213: 4372948646355194869
+    second: Hands_Front_Idle_76
+  - first:
+      213: -6586292870992850308
+    second: Hands_Front_Idle_77
+  - first:
+      213: -8581731741584871715
+    second: Hands_Front_Idle_78
+  - first:
+      213: -2017241477904069001
+    second: Hands_Front_Idle_79
+  - first:
+      213: 5817116615806133577
+    second: Hands_Front_Idle_80
+  - first:
+      213: 6418744208297993414
+    second: Hands_Front_Idle_81
+  - first:
+      213: 4978496838481430755
+    second: Hands_Front_Idle_82
+  - first:
+      213: 9111327247693724495
+    second: Hands_Front_Idle_83
+  - first:
+      213: -1469140520724905060
+    second: Hands_Front_Idle_84
+  - first:
+      213: -4788557836320291142
+    second: Hands_Front_Idle_85
+  - first:
+      213: 6532035330900675504
+    second: Hands_Front_Idle_86
+  - first:
+      213: 5237784239625339538
+    second: Hands_Front_Idle_87
+  - first:
+      213: -5719210522583819201
+    second: Hands_Front_Idle_88
+  - first:
+      213: 4619436633423380842
+    second: Hands_Front_Idle_89
+  - first:
+      213: 2786365980392448677
+    second: Hands_Front_Idle_90
+  - first:
+      213: 188404938051727262
+    second: Hands_Front_Idle_91
+  - first:
+      213: -1030009342511899473
+    second: Hands_Front_Idle_92
+  - first:
+      213: -7912851737082594051
+    second: Hands_Front_Idle_93
+  - first:
+      213: -877097788690295356
+    second: Hands_Front_Idle_94
+  - first:
+      213: 3199411952818156446
+    second: Hands_Front_Idle_95
+  - first:
+      213: -2639773993573812587
+    second: Hands_Front_Idle_96
+  - first:
+      213: -6537533149521760506
+    second: Hands_Front_Idle_97
+  - first:
+      213: -5854047748825666049
+    second: Hands_Front_Idle_98
+  - first:
+      213: 5694865138755463967
+    second: Hands_Front_Idle_99
+  - first:
+      213: 855788868808402115
+    second: Hands_Front_Idle_100
+  - first:
+      213: -1304374749090331174
+    second: Hands_Front_Idle_101
+  - first:
+      213: 2142254081991152351
+    second: Hands_Front_Idle_102
+  - first:
+      213: 1855867651685637646
+    second: Hands_Front_Idle_103
+  - first:
+      213: 4862139198441534019
+    second: Hands_Front_Idle_104
+  - first:
+      213: -5742082675321987464
+    second: Hands_Front_Idle_105
+  - first:
+      213: -8114871431790972719
+    second: Hands_Front_Idle_106
+  - first:
+      213: 5047953081702956445
+    second: Hands_Front_Idle_107
+  - first:
+      213: 7060080713907247060
+    second: Hands_Front_Idle_108
+  - first:
+      213: -7695421406013111970
+    second: Hands_Front_Idle_109
+  - first:
+      213: 8704320666626786036
+    second: Hands_Front_Idle_110
+  - first:
+      213: -5797861057039222689
+    second: Hands_Front_Idle_111
+  - first:
+      213: -5216157750001929310
+    second: Hands_Front_Idle_112
+  - first:
+      213: 6820765256312926518
+    second: Hands_Front_Idle_113
+  - first:
+      213: 2088441990688125688
+    second: Hands_Front_Idle_114
+  - first:
+      213: -1093917800481677029
+    second: Hands_Front_Idle_115
+  - first:
+      213: -1053043041130214122
+    second: Hands_Front_Idle_116
+  - first:
+      213: 6557098174162049401
+    second: Hands_Front_Idle_117
+  - first:
+      213: 1420174890594475956
+    second: Hands_Front_Idle_118
+  - first:
+      213: -8632594640523376895
+    second: Hands_Front_Idle_119
+  - first:
+      213: -383123544449211922
+    second: Hands_Front_Idle_120
+  - first:
+      213: -2364608028047862986
+    second: Hands_Front_Idle_121
+  - first:
+      213: -2960097391586276540
+    second: Hands_Front_Idle_122
+  - first:
+      213: -3426067961748373942
+    second: Hands_Front_Idle_123
+  - first:
+      213: -1661128507736335139
+    second: Hands_Front_Idle_124
+  - first:
+      213: -1028282772623829986
+    second: Hands_Front_Idle_125
+  - first:
+      213: -4159315990822353106
+    second: Hands_Front_Idle_126
+  - first:
+      213: -7861274441697210644
+    second: Hands_Front_Idle_127
+  - first:
+      213: 1446777541702918522
+    second: Hands_Front_Idle_128
+  - first:
+      213: -625042987141971810
+    second: Hands_Front_Idle_129
+  - first:
+      213: 197825472036216568
+    second: Hands_Front_Idle_130
+  - first:
+      213: -2462010217125532298
+    second: Hands_Front_Idle_131
+  - first:
+      213: -41823035618361566
+    second: Hands_Front_Idle_132
+  - first:
+      213: -7779045926085120638
+    second: Hands_Front_Idle_133
+  - first:
+      213: 3583776074166880773
+    second: Hands_Front_Idle_134
+  - first:
+      213: -4131682508038042617
+    second: Hands_Front_Idle_135
+  - first:
+      213: -3123638530425868494
+    second: Hands_Front_Idle_136
+  - first:
+      213: 4999498287202172840
+    second: Hands_Front_Idle_137
+  - first:
+      213: -7717324401412042884
+    second: Hands_Front_Idle_138
+  - first:
+      213: 2303522052926627749
+    second: Hands_Front_Idle_139
+  - first:
+      213: 2445968861137481750
+    second: Hands_Front_Idle_140
+  - first:
+      213: -283095986155483448
+    second: Hands_Front_Idle_141
+  - first:
+      213: -5035793703247731060
+    second: Hands_Front_Idle_142
+  - first:
+      213: 7527010161085460654
+    second: Hands_Front_Idle_143
+  - first:
+      213: -8280380801103266270
+    second: Hands_Front_Idle_144
+  - first:
+      213: -249193567331775036
+    second: Hands_Front_Idle_145
+  - first:
+      213: -930952357245681032
+    second: Hands_Front_Idle_146
+  - first:
+      213: 783779695250678787
+    second: Hands_Front_Idle_147
+  - first:
+      213: -4082204154197967685
+    second: Hands_Front_Idle_148
+  - first:
+      213: 4535699824937791422
+    second: Hands_Front_Idle_149
+  - first:
+      213: 1232484741648006373
+    second: Hands_Front_Idle_150
+  - first:
+      213: -7462249110214968246
+    second: Hands_Front_Idle_151
+  - first:
+      213: 7721367606526235173
+    second: Hands_Front_Idle_152
+  - first:
+      213: -5979712659829928106
+    second: Hands_Front_Idle_153
+  - first:
+      213: 5044109629874510050
+    second: Hands_Front_Idle_154
+  - first:
+      213: 7472345258023071094
+    second: Hands_Front_Idle_155
+  - first:
+      213: -1793154009239389142
+    second: Hands_Front_Idle_156
+  - first:
+      213: 2857674512463782815
+    second: Hands_Front_Idle_157
+  - first:
+      213: 8906688933801165835
+    second: Hands_Front_Idle_158
+  - first:
+      213: 623898335618092844
+    second: Hands_Front_Idle_159
+  - first:
+      213: -8902632158781886249
+    second: Hands_Front_Idle_160
+  - first:
+      213: 4154975360477140909
+    second: Hands_Front_Idle_161
+  - first:
+      213: 971277715746916853
+    second: Hands_Front_Idle_162
+  - first:
+      213: 2553409845530738728
+    second: Hands_Front_Idle_163
+  - first:
+      213: 1996973400521483290
+    second: Hands_Front_Idle_164
+  - first:
+      213: -5167011224899336551
+    second: Hands_Front_Idle_165
+  - first:
+      213: -3445314893020980503
+    second: Hands_Front_Idle_166
+  - first:
+      213: 4736001684569546722
+    second: Hands_Front_Idle_167
+  - first:
+      213: 3556742077916967205
+    second: Hands_Front_Idle_168
+  - first:
+      213: -6675562593006038924
+    second: Hands_Front_Idle_169
+  - first:
+      213: -616816045998574001
+    second: Hands_Front_Idle_170
+  - first:
+      213: 7928780233679548995
+    second: Hands_Front_Idle_171
+  - first:
+      213: -4420711519386210160
+    second: Hands_Front_Idle_172
+  - first:
+      213: 8604765455904553732
+    second: Hands_Front_Idle_173
+  - first:
+      213: 2151759309573776828
+    second: Hands_Front_Idle_174
+  - first:
+      213: 1202744326784544824
+    second: Hands_Front_Idle_175
+  - first:
+      213: 3370918600798193600
+    second: Hands_Front_Idle_176
+  - first:
+      213: 3401616231813744896
+    second: Hands_Front_Idle_177
+  - first:
+      213: 896586843826598497
+    second: Hands_Front_Idle_178
+  - first:
+      213: -8758179066492284012
+    second: Hands_Front_Idle_179
+  - first:
+      213: 599395453303163455
+    second: Hands_Front_Idle_180
+  - first:
+      213: 8647073729179462215
+    second: Hands_Front_Idle_181
+  - first:
+      213: -8048176928793628355
+    second: Hands_Front_Idle_182
+  - first:
+      213: 359148292284008618
+    second: Hands_Front_Idle_183
+  - first:
+      213: -3238388996780830944
+    second: Hands_Front_Idle_184
+  - first:
+      213: 8152526655100496335
+    second: Hands_Front_Idle_185
+  - first:
+      213: 6980862288507365602
+    second: Hands_Front_Idle_186
+  - first:
+      213: -2931143718904845725
+    second: Hands_Front_Idle_187
+  - first:
+      213: 94784821723730747
+    second: Hands_Front_Idle_188
+  - first:
+      213: -1723591156072894470
+    second: Hands_Front_Idle_189
+  - first:
+      213: 576798992209533573
+    second: Hands_Front_Idle_190
+  - first:
+      213: 7181172187800552183
+    second: Hands_Front_Idle_191
+  - first:
+      213: 5036540604487504144
+    second: Hands_Front_Idle_192
+  - first:
+      213: 9170816056813288670
+    second: Hands_Front_Idle_193
+  - first:
+      213: -4054451554669581627
+    second: Hands_Front_Idle_194
+  - first:
+      213: 5781244752756800803
+    second: Hands_Front_Idle_195
+  - first:
+      213: 3107048914852293556
+    second: Hands_Front_Idle_196
+  - first:
+      213: 483489610780720978
+    second: Hands_Front_Idle_197
+  - first:
+      213: 7650262701122921769
+    second: Hands_Front_Idle_198
+  - first:
+      213: 4526247778656050100
+    second: Hands_Front_Idle_199
+  - first:
+      213: -5524813333777647506
+    second: Hands_Front_Idle_200
+  - first:
+      213: 3336420920229958701
+    second: Hands_Front_Idle_201
+  - first:
+      213: 8453989480669263743
+    second: Hands_Front_Idle_202
+  - first:
+      213: 1238781267471523902
+    second: Hands_Front_Idle_203
+  - first:
+      213: -3463796104231578245
+    second: Hands_Front_Idle_204
+  - first:
+      213: 1103700298014305353
+    second: Hands_Front_Idle_205
+  - first:
+      213: -2320950111190644226
+    second: Hands_Front_Idle_206
+  - first:
+      213: 6497025212939724757
+    second: Hands_Front_Idle_207
+  - first:
+      213: 4949849014925485014
+    second: Hands_Front_Idle_208
+  - first:
+      213: 3925632371775967383
+    second: Hands_Front_Idle_209
+  - first:
+      213: -3675294852131077922
+    second: Hands_Front_Idle_210
+  - first:
+      213: -256507666326814765
+    second: Hands_Front_Idle_211
+  - first:
+      213: 4952120935306403395
+    second: Hands_Front_Idle_212
+  - first:
+      213: -3742115132875756967
+    second: Hands_Front_Idle_213
+  - first:
+      213: 6945656269392258431
+    second: Hands_Front_Idle_214
+  - first:
+      213: -577675986539969873
+    second: Hands_Front_Idle_215
+  - first:
+      213: 8459043288299822184
+    second: Hands_Front_Idle_216
+  - first:
+      213: 6182678540643698276
+    second: Hands_Front_Idle_217
+  - first:
+      213: 3002861927582559328
+    second: Hands_Front_Idle_218
+  - first:
+      213: -2640739971208777146
+    second: Hands_Front_Idle_219
+  - first:
+      213: 7095570367815761376
+    second: Hands_Front_Idle_220
+  - first:
+      213: -3821153483203686137
+    second: Hands_Front_Idle_221
+  - first:
+      213: -9120173918535769823
+    second: Hands_Front_Idle_222
+  - first:
+      213: -2166548427533156087
+    second: Hands_Front_Idle_223
+  - first:
+      213: 198672995546840560
+    second: Hands_Front_Idle_224
+  - first:
+      213: -2443158674136564218
+    second: Hands_Front_Idle_225
+  - first:
+      213: 7996071859307717046
+    second: Hands_Front_Idle_226
+  - first:
+      213: 3176554889949248703
+    second: Hands_Front_Idle_227
+  - first:
+      213: 4066065552756790272
+    second: Hands_Front_Idle_228
+  - first:
+      213: 2670190799817644236
+    second: Hands_Front_Idle_229
+  - first:
+      213: -8430324815010996784
+    second: Hands_Front_Idle_230
+  - first:
+      213: 38340748464703170
+    second: Hands_Front_Idle_231
+  - first:
+      213: -1380209491943783132
+    second: Hands_Front_Idle_232
+  - first:
+      213: 8977566849475910781
+    second: Hands_Front_Idle_233
+  - first:
+      213: 2519364275530515799
+    second: Hands_Front_Idle_234
+  - first:
+      213: -4522299317967313908
+    second: Hands_Front_Idle_235
+  - first:
+      213: -1547304832787440541
+    second: Hands_Front_Idle_236
+  - first:
+      213: 3505686436386096118
+    second: Hands_Front_Idle_237
+  - first:
+      213: -4681953918429201217
+    second: Hands_Front_Idle_238
+  - first:
+      213: 2683650164936478571
+    second: Hands_Front_Idle_239
+  - first:
+      213: 3179674144440503596
+    second: Hands_Front_Idle_240
+  - first:
+      213: 5188203315407831443
+    second: Hands_Front_Idle_241
+  - first:
+      213: -3774715089760416189
+    second: Hands_Front_Idle_242
+  - first:
+      213: 230268426405076365
+    second: Hands_Front_Idle_243
+  - first:
+      213: -7338661948338052366
+    second: Hands_Front_Idle_244
+  - first:
+      213: -1395335820855039774
+    second: Hands_Front_Idle_245
+  - first:
+      213: -2228724057397520569
+    second: Hands_Front_Idle_246
+  - first:
+      213: 2474212806817037624
+    second: Hands_Front_Idle_247
+  - first:
+      213: 7501966561438570891
+    second: Hands_Front_Idle_248
+  - first:
+      213: -2045556628111618780
+    second: Hands_Front_Idle_249
+  - first:
+      213: -6423390377035963101
+    second: Hands_Front_Idle_250
+  - first:
+      213: -7555564975831799476
+    second: Hands_Front_Idle_251
+  - first:
+      213: 9216898897414033521
+    second: Hands_Front_Idle_252
+  - first:
+      213: -6109084999895619518
+    second: Hands_Front_Idle_253
+  - first:
+      213: 2483215425036191591
+    second: Hands_Front_Idle_254
+  - first:
+      213: 7730411030057308724
+    second: Hands_Front_Idle_255
+  - first:
+      213: -2181403862264152269
+    second: Hands_Front_Idle_256
+  - first:
+      213: -4281953224961469258
+    second: Hands_Front_Idle_257
+  - first:
+      213: -1995235587225032870
+    second: Hands_Front_Idle_258
+  - first:
+      213: 3958082596314628853
+    second: Hands_Front_Idle_259
+  - first:
+      213: -4453355436585872632
+    second: Hands_Front_Idle_260
+  - first:
+      213: 3208533866337390509
+    second: Hands_Front_Idle_261
+  - first:
+      213: 5733209172235155189
+    second: Hands_Front_Idle_262
+  - first:
+      213: 2897612108661964253
+    second: Hands_Front_Idle_263
+  - first:
+      213: 7771779685942783370
+    second: Hands_Front_Idle_264
+  - first:
+      213: 950474752642831752
+    second: Hands_Front_Idle_265
+  - first:
+      213: -2860077398581878274
+    second: Hands_Front_Idle_266
+  - first:
+      213: 5686182072953137283
+    second: Hands_Front_Idle_267
+  - first:
+      213: 4731776058521034600
+    second: Hands_Front_Idle_268
+  - first:
+      213: -6618495119094620172
+    second: Hands_Front_Idle_269
+  - first:
+      213: -5521387375979540892
+    second: Hands_Front_Idle_270
+  - first:
+      213: -7579416434291368882
+    second: Hands_Front_Idle_271
+  - first:
+      213: 5433940252794126499
+    second: Hands_Front_Idle_272
+  - first:
+      213: -7337902918290889779
+    second: Hands_Front_Idle_273
+  - first:
+      213: -1891429577598241767
+    second: Hands_Front_Idle_274
+  - first:
+      213: -6648874957912831725
+    second: Hands_Front_Idle_275
+  - first:
+      213: 6130367319469871037
+    second: Hands_Front_Idle_276
+  - first:
+      213: -8026200599314602811
+    second: Hands_Front_Idle_277
+  - first:
+      213: 3673334432972763065
+    second: Hands_Front_Idle_278
+  - first:
+      213: -2817223279136110687
+    second: Hands_Front_Idle_279
+  - first:
+      213: 6328631515408873838
+    second: Hands_Front_Idle_280
+  - first:
+      213: 6565781229110644182
+    second: Hands_Front_Idle_281
+  - first:
+      213: 4106380769626361035
+    second: Hands_Front_Idle_282
+  - first:
+      213: -1753575535774152243
+    second: Hands_Front_Idle_283
+  - first:
+      213: 3535581467349583626
+    second: Hands_Front_Idle_284
+  - first:
+      213: -8889009081124048783
+    second: Hands_Front_Idle_285
+  - first:
+      213: -7492676793255695810
+    second: Hands_Front_Idle_286
+  - first:
+      213: 8790107084467046567
+    second: Hands_Front_Idle_287
+  - first:
+      213: 1974692836684582904
+    second: Hands_Front_Idle_288
+  - first:
+      213: 9114525862166968032
+    second: Hands_Front_Idle_289
+  - first:
+      213: 7054074484643461257
+    second: Hands_Front_Idle_290
+  - first:
+      213: -8657733321985379800
+    second: Hands_Front_Idle_291
+  - first:
+      213: 2471373877097825116
+    second: Hands_Front_Idle_292
+  - first:
+      213: -2064354651496613495
+    second: Hands_Front_Idle_293
+  - first:
+      213: 1000876254032069229
+    second: Hands_Front_Idle_294
+  - first:
+      213: -6342869694456489735
+    second: Hands_Front_Idle_295
+  - first:
+      213: 8407579391924389745
+    second: Hands_Front_Idle_296
+  - first:
+      213: -889126872079822048
+    second: Hands_Front_Idle_297
+  - first:
+      213: 5027052105183654685
+    second: Hands_Front_Idle_298
+  - first:
+      213: -6924094721158063155
+    second: Hands_Front_Idle_299
+  - first:
+      213: -2972552555506438884
+    second: Hands_Front_Idle_300
+  - first:
+      213: -6242938989840808475
+    second: Hands_Front_Idle_301
+  - first:
+      213: -2514162645197968617
+    second: Hands_Front_Idle_302
+  - first:
+      213: -5808024377047827316
+    second: Hands_Front_Idle_303
+  - first:
+      213: 27181992368612261
+    second: Hands_Front_Idle_304
+  - first:
+      213: -9086491416829426863
+    second: Hands_Front_Idle_305
+  - first:
+      213: 1491776268532027035
+    second: Hands_Front_Idle_306
+  - first:
+      213: -1024258449220556323
+    second: Hands_Front_Idle_307
+  - first:
+      213: 5106384576295615566
+    second: Hands_Front_Idle_308
+  - first:
+      213: 3562475242942135110
+    second: Hands_Front_Idle_309
+  - first:
+      213: 2449951650406052760
+    second: Hands_Front_Idle_310
+  - first:
+      213: -86804797669327570
+    second: Hands_Front_Idle_311
+  - first:
+      213: -3447508691104036690
+    second: Hands_Front_Idle_312
+  - first:
+      213: -2948186873023796908
+    second: Hands_Front_Idle_313
+  - first:
+      213: 2066803952681858851
+    second: Hands_Front_Idle_314
+  - first:
+      213: 4128265406942920437
+    second: Hands_Front_Idle_315
+  - first:
+      213: -17005633178397140
+    second: Hands_Front_Idle_316
+  - first:
+      213: 1928046214044134227
+    second: Hands_Front_Idle_317
+  - first:
+      213: -114086834785267925
+    second: Hands_Front_Idle_318
+  - first:
+      213: -8177536858632465505
+    second: Hands_Front_Idle_319
+  - first:
+      213: -3553707443482633511
+    second: Hands_Front_Idle_320
+  - first:
+      213: -1731009829895878174
+    second: Hands_Front_Idle_321
+  - first:
+      213: -7213068386594728730
+    second: Hands_Front_Idle_322
+  - first:
+      213: 2475085411884721732
+    second: Hands_Front_Idle_323
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hands_Front_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 833
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48646d8bb86a6090800000000000000
+      internalID: -8040499029976258484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 833
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f5fe163f3c95130800000000000000
+      internalID: 3556088830873263962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 833
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d186172624904a0800000000000000
+      internalID: -6626692386122097405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 833
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bcb7a3e50898df40800000000000000
+      internalID: 5753515675027487920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b2753dc3cb03170800000000000000
+      internalID: 8156225894597733206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4252b1f7e12d1b00800000000000000
+      internalID: 800833588817973838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3f0bc6169888eaf0800000000000000
+      internalID: -366893191421817029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08514883807a1f320800000000000000
+      internalID: 2590034914464503168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 296f0b4c07b1fe140800000000000000
+      internalID: 4751046303049381522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 749e105c655ae0040800000000000000
+      internalID: 4615808460192344391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39aa37db8d11f2c60800000000000000
+      internalID: 7795469102590700179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 832
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38632aedb09e65990800000000000000
+      internalID: -7397469100720376189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 801
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a354c6654c0522e40800000000000000
+      internalID: 5630151288360289594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 801
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a886b0df348be40800000000000000
+      internalID: 5672358484770327132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 801
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c3764e83cc301b0800000000000000
+      internalID: -5691480959343969186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 801
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66152fc46d6d02ca0800000000000000
+      internalID: -6043594484028911258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1765813466267620800000000000000
+      internalID: 2771444832462530335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c008907bfafd0a0800000000000000
+      internalID: -6854566907161342913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73da8e666ec478300800000000000000
+      internalID: 254256456422436151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c2395c72a2a85f0800000000000000
+      internalID: -753743637324288986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f87725db98fbf77d0800000000000000
+      internalID: -2918403435205068913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4c7c75d7fc7e4870800000000000000
+      internalID: 8669003736615255119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87c20305c2511a80800000000000000
+      internalID: -8497920015758866549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 800
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318c656d4966d02e0800000000000000
+      internalID: -2157955857003395053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 769
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b26a458bfde2d70800000000000000
+      internalID: 9020393086456834875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 769
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d619ff23e7dfed20800000000000000
+      internalID: 3310101621903005394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 769
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e001a4c0039d010c0800000000000000
+      internalID: -4606943618412179442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 769
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce82c7cf50594220800000000000000
+      internalID: 2470594242892959427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f47c036deffde7b00800000000000000
+      internalID: 828345667090958159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92335502d8f09f8d0800000000000000
+      internalID: -2812199393508904151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_30
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ef1c4f7e7c2df280800000000000000
+      internalID: -9007994757857927194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_31
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 746e605b3575788c0800000000000000
+      internalID: -3997130127236995513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_32
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5bcb3b6be38a5e30800000000000000
+      internalID: 4493048625395125082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_33
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054b79af5aba11c70800000000000000
+      internalID: 8940115464669344848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_34
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d133172d86ee4fe0800000000000000
+      internalID: -1202770556540997165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_35
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 768
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6e67158f95e05920800000000000000
+      internalID: 2977131826987363949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 737
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229e366ddafc43c10800000000000000
+      internalID: 2032477677384100130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_37
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 737
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73fbe6049cf7b4d40800000000000000
+      internalID: 5569685866519904055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_38
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 737
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca0b12c584442330800000000000000
+      internalID: 3685145736373799625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_39
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 737
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ddef6a1b4d58b10800000000000000
+      internalID: 1983225070402592041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_40
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2bbdb73e213b7b0800000000000000
+      internalID: -5209799575692660056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_41
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db7dee501de27e60800000000000000
+      internalID: 7958684146084969428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_42
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd75029ca73c24880800000000000000
+      internalID: -8628119003960682533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_43
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e577564c6cc65b90800000000000000
+      internalID: -7253385384424933917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_44
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 864ecc5aafeae5460800000000000000
+      internalID: 7232410443150320744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_45
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de28366f65fbc8f60800000000000000
+      internalID: 8038009815171302125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_46
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d61b27dfb434b6c0800000000000000
+      internalID: -4128616959838578986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_47
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 736
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df198856e51442f0800000000000000
+      internalID: -989641939042623532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 705
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25ac8fec1e124e850800000000000000
+      internalID: 6405281823751457362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_49
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 705
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20e1a747a49557f0800000000000000
+      internalID: -624429527138705362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_50
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 705
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2acce23790337cff0800000000000000
+      internalID: -15987957992338270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_51
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 705
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9dd31b2c760ec0d0800000000000000
+      internalID: -3400773538249712227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_52
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7893f6c796f04ba0800000000000000
+      internalID: -6106609962976044933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_53
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0182ac88f0840a030800000000000000
+      internalID: 3503879741650905104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_54
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dbf4315370ae4340800000000000000
+      internalID: 4849990265868712917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_55
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec94c0c5ebba8480800000000000000
+      internalID: -8896091518460977947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_56
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5a7910fe3caf2060800000000000000
+      internalID: 6930947737862634077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_57
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841399d38ff824e30800000000000000
+      internalID: 4486306475162546504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_58
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b33f6d004449930800000000000000
+      internalID: 4149015927112022907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_59
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 704
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6524d64b031b5400800000000000000
+      internalID: 313865538186257774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_60
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 673
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4108389347c3e20800000000000000
+      internalID: 3331665614715491499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_61
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 673
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac455cd2b93414c0800000000000000
+      internalID: -4317762702377923418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_62
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 673
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17b06c1ae76d63c70800000000000000
+      internalID: 8950577148813773681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_63
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 673
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87c92358d1b796d0800000000000000
+      internalID: -2983720685443364982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_64
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccb8ae1b0be714870800000000000000
+      internalID: 8665346455401827276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_65
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f04a4b6f1af20750800000000000000
+      internalID: 6269848644104110327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_66
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1ffbdf30ca13a40800000000000000
+      internalID: 5346243365807583720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_67
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19831da2c73cb260800000000000000
+      internalID: 7114622820605462815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_68
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c62dc482677e8690800000000000000
+      internalID: -7598004256308910398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_69
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae396dbca1acaa30800000000000000
+      internalID: 4227931913478291108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_70
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 014ce626cc4926830800000000000000
+      internalID: 4062973419387274256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_71
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 672
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d8616341bc508430800000000000000
+      internalID: 3783125603400640727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_72
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 641
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b665d2d58fc96870800000000000000
+      internalID: 8676694330780772023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_73
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 641
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f508e0afdf415990800000000000000
+      internalID: -7399044890897152525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_74
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 641
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d5df0ca9b81b26d0800000000000000
+      internalID: -3014288339859679783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_75
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 641
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be91117448350ef50800000000000000
+      internalID: 6908613655979432427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_76
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3d60fff95dfac30800000000000000
+      internalID: 4372948646355194869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_77
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7298cd8789c894a0800000000000000
+      internalID: -6586292870992850308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_78
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddea321f27097e880800000000000000
+      internalID: -8581731741584871715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_79
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e085b40915104e0800000000000000
+      internalID: -2017241477904069001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_80
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 945a52eddbc8ab050800000000000000
+      internalID: 5817116615806133577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_81
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c4a2b779d5f31950800000000000000
+      internalID: 6418744208297993414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_82
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e847155f7c271540800000000000000
+      internalID: 4978496838481430755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_83
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 640
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b3f1f9bdfe17e70800000000000000
+      internalID: 9111327247693724495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_84
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 609
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c934f01fa709c9be0800000000000000
+      internalID: -1469140520724905060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_85
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 609
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab647bbc400ab8db0800000000000000
+      internalID: -4788557836320291142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_86
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 609
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bbc2a6768376aa50800000000000000
+      internalID: 6532035330900675504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_87
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 609
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2920205d30950b840800000000000000
+      internalID: 5237784239625339538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_88
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c17b5d45841a0b0800000000000000
+      internalID: -5719210522583819201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_89
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6180ada4298b1040800000000000000
+      internalID: 4619436633423380842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_90
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2668ba8192ba620800000000000000
+      internalID: 2786365980392448677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_91
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9fa08efa495d9200800000000000000
+      internalID: 188404938051727262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_92
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac9e30d5fba4b1f0800000000000000
+      internalID: -1030009342511899473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_93
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfcfbdae447ef2290800000000000000
+      internalID: -7912851737082594051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_94
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c595df453ce3d3f0800000000000000
+      internalID: -877097788690295356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_95
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 608
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e937dd94838966c20800000000000000
+      internalID: 3199411952818156446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_96
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 577
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596f7b9f983ad5bd0800000000000000
+      internalID: -2639773993573812587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_97
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 577
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60f2a63ec340645a0800000000000000
+      internalID: -6537533149521760506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_98
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 577
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffd2219a69e32cea0800000000000000
+      internalID: -5854047748825666049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_99
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 577
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b6647cba9380f40800000000000000
+      internalID: 5694865138755463967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_100
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c4ee08217f50eb00800000000000000
+      internalID: 855788868808402115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_101
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad54b7a931ee5ede0800000000000000
+      internalID: -1304374749090331174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_102
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd296b7ccb0dabd10800000000000000
+      internalID: 2142254081991152351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_103
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e5cd0ebcd51c910800000000000000
+      internalID: 1855867651685637646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_104
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3423c9b17d9c97340800000000000000
+      internalID: 4862139198441534019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_105
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e128aca360050b0800000000000000
+      internalID: -5742082675321987464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_106
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d0322e5d6f226f80800000000000000
+      internalID: -8114871431790972719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_107
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 576
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d3eb5259eed0640800000000000000
+      internalID: 5047953081702956445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_108
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 545
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d7170ed0027af160800000000000000
+      internalID: 7060080713907247060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_109
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 545
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e51c6a9d00f543590800000000000000
+      internalID: -7695421406013111970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_110
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 545
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f281616785fbc870800000000000000
+      internalID: 8704320666626786036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_111
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 545
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f583b16461cd98fa0800000000000000
+      internalID: -5797861057039222689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_112
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3fbbaa92c7c97b0800000000000000
+      internalID: -5216157750001929310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_113
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 631bbd6dcd938ae50800000000000000
+      internalID: 6820765256312926518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_114
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f2b9fcece2abfc10800000000000000
+      internalID: 2088441990688125688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_115
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1120d86e8f91d0f0800000000000000
+      internalID: -1093917800481677029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_116
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d8c30fee6d261f0800000000000000
+      internalID: -1053043041130214122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_117
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9799a446c0e7ffa50800000000000000
+      internalID: 6557098174162049401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_118
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf10d0e98975b310800000000000000
+      internalID: 1420174890594475956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_119
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 544
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107c9a179ecd23880800000000000000
+      internalID: -8632594640523376895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_120
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 513
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1240c8a2fdeaaf0800000000000000
+      internalID: -383123544449211922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_121
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 513
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6339b27d6893f2fd0800000000000000
+      internalID: -2364608028047862986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_122
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 513
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44b80f90b1f9be6d0800000000000000
+      internalID: -2960097391586276540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_123
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 513
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e34a347592470d0800000000000000
+      internalID: -3426067961748373942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_124
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcd91a5c6c72f8e0800000000000000
+      internalID: -1661128507736335139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_125
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e145a11344ecab1f0800000000000000
+      internalID: -1028282772623829986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_126
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e278e62b4242746c0800000000000000
+      internalID: -4159315990822353106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_127
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ceec7cccb8427e290800000000000000
+      internalID: -7861274441697210644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_128
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a712732428cf31410800000000000000
+      internalID: 1446777541702918522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_129
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90cd0ef6b66357f0800000000000000
+      internalID: -625042987141971810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_130
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fe1e3cf731deb200800000000000000
+      internalID: 197825472036216568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_131
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 512
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67da9d670ce25ddd0800000000000000
+      internalID: -2462010217125532298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_132
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 481
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22ff982bb2a6b6ff0800000000000000
+      internalID: -41823035618361566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_133
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 481
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28d2f3402f64b0490800000000000000
+      internalID: -7779045926085120638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_134
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 481
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50ac24f0a512cb130800000000000000
+      internalID: 3583776074166880773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_135
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 481
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70c82b746a059a6c0800000000000000
+      internalID: -4131682508038042617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_136
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f2e3b6e4b96a4d0800000000000000
+      internalID: -3123638530425868494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_137
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8affbd72439c16540800000000000000
+      internalID: 4999498287202172840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_138
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7f8165585e86e490800000000000000
+      internalID: -7717324401412042884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_139
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5af58f04a11c7ff10800000000000000
+      internalID: 2303522052926627749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_140
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61034cb48b3d1f120800000000000000
+      internalID: 2445968861137481750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_141
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce0dd353bd321cf0800000000000000
+      internalID: -283095986155483448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_142
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8625c3ce444d1ab0800000000000000
+      internalID: -5035793703247731060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_143
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 480
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea031489cdf457860800000000000000
+      internalID: 7527010161085460654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_144
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 449
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e7641688d261d80800000000000000
+      internalID: -8280380801103266270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_145
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 449
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd80e255cfaa8cf0800000000000000
+      internalID: -249193567331775036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_146
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 449
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8720f8373c79413f0800000000000000
+      internalID: -930952357245681032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_147
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 449
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304a49dea7b80ea00800000000000000
+      internalID: 783779695250678787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_148
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbcf76043f81957c0800000000000000
+      internalID: -4082204154197967685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_149
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebfe739a5fa02fe30800000000000000
+      internalID: 4535699824937791422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_150
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ecb401b75aaa1110800000000000000
+      internalID: 1232484741648006373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_151
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c792098f3c07890800000000000000
+      internalID: -7462249110214968246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_152
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5225437bdeec72b60800000000000000
+      internalID: 7721367606526235173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_153
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f4eeb840bc30da0800000000000000
+      internalID: -5979712659829928106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_154
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e81cc8cbf6400640800000000000000
+      internalID: 5044109629874510050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_155
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 448
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67d2a870c6a13b760800000000000000
+      internalID: 7472345258023071094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_156
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 417
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2cf7bbddef6d17e0800000000000000
+      internalID: -1793154009239389142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_157
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 417
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93671714df78a720800000000000000
+      internalID: 2857674512463782815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_158
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 417
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b040f18456aea9b70800000000000000
+      internalID: 8906688933801165835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_159
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 417
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2f497e0b3888a800800000000000000
+      internalID: 623898335618092844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_160
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d036d1483f737480800000000000000
+      internalID: -8902632158781886249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_161
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da79dbb831079a930800000000000000
+      internalID: 4154975360477140909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_162
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f90959bfebaa7d00800000000000000
+      internalID: 971277715746916853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_163
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82048d8d9b88f6320800000000000000
+      internalID: 2553409845530738728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_164
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a14acf33abca6bb10800000000000000
+      internalID: 1996973400521483290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_165
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9964b6dbaa61b48b0800000000000000
+      internalID: -5167011224899336551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_166
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea1f1edb58cf20d0800000000000000
+      internalID: -3445314893020980503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_167
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 416
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef5b609078a9b140800000000000000
+      internalID: 4736001684569546722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_168
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 385
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521fcef43161c5130800000000000000
+      internalID: 3556742077916967205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_169
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 385
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4705df7b033ab53a0800000000000000
+      internalID: -6675562593006038924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_170
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 385
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f467e7ef211a077f0800000000000000
+      internalID: -616816045998574001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_171
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 385
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342bb923d9fa80e60800000000000000
+      internalID: 7928780233679548995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_172
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090f1888b4a76a2c0800000000000000
+      internalID: -4420711519386210160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_173
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b3eb697944a6770800000000000000
+      internalID: 8604765455904553732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_174
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5e84901b59cdd10800000000000000
+      internalID: 2151759309573776828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_175
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 830fb91c79101b010800000000000000
+      internalID: 1202744326784544824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_176
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c745578b98e7ce20800000000000000
+      internalID: 3370918600798193600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_177
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0090677b0f7f43f20800000000000000
+      internalID: 3401616231813744896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_178
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162b290fbf0517c00800000000000000
+      internalID: 896586843826598497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_179
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 384
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4931776ba82b47680800000000000000
+      internalID: -8758179066492284012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_180
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 353
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a8e123dfa715800800000000000000
+      internalID: 599395453303163455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_181
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 353
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74aaa561eb3900870800000000000000
+      internalID: 8647073729179462215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_182
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 353
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d31f2cd69b12f4090800000000000000
+      internalID: -8048176928793628355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_183
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 353
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8c64f0873fbf400800000000000000
+      internalID: 359148292284008618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_184
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f485a7d5eee03d0800000000000000
+      internalID: -3238388996780830944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_185
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc92b238cc7932170800000000000000
+      internalID: 8152526655100496335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_186
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8e664e34101e060800000000000000
+      internalID: 6980862288507365602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_187
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36a2f09415c7257d0800000000000000
+      internalID: -2931143718904845725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_188
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3311fc0b4eb05100800000000000000
+      internalID: 94784821723730747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_189
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff254cb9f29418e0800000000000000
+      internalID: -1723591156072894470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_190
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58ad37d90a3310800800000000000000
+      internalID: 576798992209533573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_191
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 352
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f244ccae06a8a360800000000000000
+      internalID: 7181172187800552183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_192
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 321
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0111f4bbef265e540800000000000000
+      internalID: 5036540604487504144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_193
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 321
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edcfdc65d98454f70800000000000000
+      internalID: 9170816056813288670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_194
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 321
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5caa3ecdac1bbb7c0800000000000000
+      internalID: -4054451554669581627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_195
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 321
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32df8a7e87b1b3050800000000000000
+      internalID: 5781244752756800803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_196
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bba885b6847e1b20800000000000000
+      internalID: 3107048914852293556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_197
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f3d274d33b5b600800000000000000
+      internalID: 483489610780720978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_198
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9252ad2d4613b2a60800000000000000
+      internalID: 7650262701122921769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_199
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bbd134af5670de30800000000000000
+      internalID: 4526247778656050100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_200
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6877dd6b8be353b0800000000000000
+      internalID: -5524813333777647506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_201
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d241d7b56295d4e20800000000000000
+      internalID: 3336420920229958701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_202
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f773e2a34aa925570800000000000000
+      internalID: 8453989480669263743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_203
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e306c0adff8013110800000000000000
+      internalID: 1238781267471523902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_204
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 289
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7515e09bcf1eefc0800000000000000
+      internalID: -3463796104231578245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_205
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 289
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ca2a9c291215f00800000000000000
+      internalID: 1103700298014305353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_206
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 289
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef90419bb245acfd0800000000000000
+      internalID: -2320950111190644226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_207
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 289
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7670a22021a2a50800000000000000
+      internalID: 6497025212939724757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_208
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d36372247561b440800000000000000
+      internalID: 4949849014925485014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_209
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7901b7ed7d5aa7630800000000000000
+      internalID: 3925632371775967383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_210
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0c7e5fdcabefcc0800000000000000
+      internalID: -3675294852131077922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_211
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dffc62f2a3b07cf0800000000000000
+      internalID: -256507666326814765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_212
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e96b1d0c779b440800000000000000
+      internalID: 4952120935306403395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_213
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95aa35cfc16511cc0800000000000000
+      internalID: -3742115132875756967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_214
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75271dc39de36060800000000000000
+      internalID: 6945656269392258431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_215
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2030b30ceabf7f0800000000000000
+      internalID: -577675986539969873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_216
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 257
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c53c28d0f846570800000000000000
+      internalID: 8459043288299822184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_217
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 257
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4668f7f10694dc550800000000000000
+      internalID: 6182678540643698276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_218
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 257
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06c6a17630f4ca920800000000000000
+      internalID: 3002861927582559328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_219
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 257
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642fce7ccf43a5bd0800000000000000
+      internalID: -2640739971208777146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_220
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed3274d7a7887260800000000000000
+      internalID: 7095570367815761376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_221
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701d561072988fac0800000000000000
+      internalID: -3821153483203686137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_222
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 121a4ef4422ae6180800000000000000
+      internalID: -9120173918535769823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_223
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901843c1fafdee1e0800000000000000
+      internalID: -2166548427533156087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_224
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd380e6904d1c200800000000000000
+      internalID: 198672995546840560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_225
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60efc2a5128281ed0800000000000000
+      internalID: -2443158674136564218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_226
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b1a884bdf0c7fe60800000000000000
+      internalID: 7996071859307717046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_227
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 256
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc74f0a7d3651c20800000000000000
+      internalID: 3176554889949248703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_228
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 225
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0045589c3119d6830800000000000000
+      internalID: 4066065552756790272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_229
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 225
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc895a9926c6e0520800000000000000
+      internalID: 2670190799817644236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_230
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 225
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dddb1c1f38710b80800000000000000
+      internalID: -8430324815010996784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_231
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 225
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c649a425b6388000800000000000000
+      internalID: 38340748464703170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_232
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 425811d97c288dce0800000000000000
+      internalID: -1380209491943783132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_233
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c95520c79b69c70800000000000000
+      internalID: 8977566849475910781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_234
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7554eced57496f220800000000000000
+      internalID: 2519364275530515799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_235
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0421900bb09d31c0800000000000000
+      internalID: -4522299317967313908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_236
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c957ad37ed68ae0800000000000000
+      internalID: -1547304832787440541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_237
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3c2be6d33b6a030800000000000000
+      internalID: 3505686436386096118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_238
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc774d97bb560fb0800000000000000
+      internalID: -4681953918429201217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_239
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 224
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f057e3b9d3e3520800000000000000
+      internalID: 2683650164936478571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_240
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2dced8a9c8702c20800000000000000
+      internalID: 3179674144440503596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_241
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39143655d63300840800000000000000
+      internalID: 5188203315407831443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_242
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e068a00a48d9bc0800000000000000
+      internalID: -3774715089760416189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_243
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ddcdee9e3123300800000000000000
+      internalID: 230268426405076365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_244
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f262a207d5d72a90800000000000000
+      internalID: -7338661948338052366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_245
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8ae87b675c2ace0800000000000000
+      internalID: -1395335820855039774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_246
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7471470374bf111e0800000000000000
+      internalID: -2228724057397520569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_247
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d3d09507b265220800000000000000
+      internalID: 2474212806817037624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_248
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89976b27d65c1860800000000000000
+      internalID: 7501966561438570891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_249
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d0675a519bc93e0800000000000000
+      internalID: -2045556628111618780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_250
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325eb131c788bd6a0800000000000000
+      internalID: -6423390377035963101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_251
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 192
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49a9228fad352790800000000000000
+      internalID: -7555564975831799476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_252
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 161
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1709d07c6b009ef70800000000000000
+      internalID: 9216898897414033521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_253
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 161
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248ed865f8b283ba0800000000000000
+      internalID: -6109084999895619518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_254
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 161
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7678d0eb547267220800000000000000
+      internalID: 2483215425036191591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_255
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 161
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432d356dfdfe74b60800000000000000
+      internalID: 7730411030057308724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_256
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f741eaeb81ab1e0800000000000000
+      internalID: -2181403862264152269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_257
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b455598a327394c0800000000000000
+      internalID: -4281953224961469258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_258
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57eb3cfdcf7f44e0800000000000000
+      internalID: -1995235587225032870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_259
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f24df8862fede630800000000000000
+      internalID: 3958082596314628853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_260
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8039eb743d08232c0800000000000000
+      internalID: -4453355436585872632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_261
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dafc9d84d80078c20800000000000000
+      internalID: 3208533866337390509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_262
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f67616cd53709f40800000000000000
+      internalID: 5733209172235155189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_263
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 160
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dddbaa15cd2663820800000000000000
+      internalID: 2897612108661964253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_264
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 129
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d673d9278eadb60800000000000000
+      internalID: 7771779685942783370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_265
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 129
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885d04f60c3c03d00800000000000000
+      internalID: 950474752642831752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_266
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 129
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef1676362c6fe48d0800000000000000
+      internalID: -2860077398581878274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_267
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 129
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388e09af77069ee40800000000000000
+      internalID: 5686182072953137283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_268
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86f18d45145aaa140800000000000000
+      internalID: 4731776058521034600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_269
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ff55b661c16624a0800000000000000
+      internalID: -6618495119094620172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_270
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ec9636f671063b0800000000000000
+      internalID: -5521387375979540892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_271
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c1e4519e080d690800000000000000
+      internalID: -7579416434291368882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_272
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a08d72aedb396b40800000000000000
+      internalID: 5433940252794126499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_273
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc328f67c288a2a90800000000000000
+      internalID: -7337902918290889779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_274
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 914f69502da40c5e0800000000000000
+      internalID: -1891429577598241767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_275
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 128
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3198d99f3737ab3a0800000000000000
+      internalID: -6648874957912831725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_276
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 97
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbf4aa3d890731550800000000000000
+      internalID: 6130367319469871037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_277
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 97
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c463dd54153d9090800000000000000
+      internalID: -8026200599314602811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_278
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 97
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bf6d82643e4af230800000000000000
+      internalID: 3673334432972763065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_279
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 97
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a7812a9a5637e8d0800000000000000
+      internalID: -2817223279136110687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_280
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e69b94e25d0d3d750800000000000000
+      internalID: 6328631515408873838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_281
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dd411aad375e1b50800000000000000
+      internalID: 6565781229110644182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_282
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcc031ead8bccf830800000000000000
+      internalID: 4106380769626361035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_283
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9cd5f475c0aa7e0800000000000000
+      internalID: -1753575535774152243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_284
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0783dbbc98e01130800000000000000
+      internalID: 3535581467349583626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_285
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17031623655e3a480800000000000000
+      internalID: -8889009081124048783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_286
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a6e29872aa40890800000000000000
+      internalID: -7492676793255695810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_287
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 96
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a88d4342dbbcf970800000000000000
+      internalID: 8790107084467046567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_288
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 65
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ffc71f2ca4876b10800000000000000
+      internalID: 1974692836684582904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_289
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 65
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6b2961bfc4d7e70800000000000000
+      internalID: 9114525862166968032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_290
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 65
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 988f154ae5b15e160800000000000000
+      internalID: 7054074484643461257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_291
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 65
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822bffe0a6d89d780800000000000000
+      internalID: -8657733321985379800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_292
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c53889382751c4220800000000000000
+      internalID: 2471373877097825116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_293
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9897e13c160f953e0800000000000000
+      internalID: -2064354651496613495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_294
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6284b176a3d3ed00800000000000000
+      internalID: 1000876254032069229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_295
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f8945d6e9999f7a0800000000000000
+      internalID: -6342869694456489735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_296
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1774c8469e8bda470800000000000000
+      internalID: 8407579391924389745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_297
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0239d6512df29a3f0800000000000000
+      internalID: -889126872079822048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_298
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13f9d4514da3c540800000000000000
+      internalID: 5027052105183654685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_299
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 64
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb573a598ca8ef90800000000000000
+      internalID: -6924094721158063155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_300
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 33
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1debd4333f5fb6d0800000000000000
+      internalID: -2972552555506438884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_301
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 33
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e54a14b010ac59a0800000000000000
+      internalID: -6242938989840808475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_302
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 33
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b2b611566eb1dd0800000000000000
+      internalID: -2514162645197968617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_303
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 33
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c314fe990c56fa0800000000000000
+      internalID: -5808024377047827316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_304
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a32b67c0e1906000800000000000000
+      internalID: 27181992368612261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_305
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1530f3dd23c46e180800000000000000
+      internalID: -9086491416829426863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_306
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e853acc9ad3b410800000000000000
+      internalID: 1491776268532027035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_307
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd924000e5a19c1f0800000000000000
+      internalID: -1024258449220556323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_308
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c32a4a7b58dd640800000000000000
+      internalID: 5106384576295615566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_309
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b70b0db54707130800000000000000
+      internalID: 3562475242942135110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_310
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893b55fab0afff120800000000000000
+      internalID: 2449951650406052760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_311
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 32
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2dbe161f7b9bcef0800000000000000
+      internalID: -86804797669327570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_312
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea80ca27c1df720d0800000000000000
+      internalID: -3447508691104036690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_313
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45962fdb8afe517d0800000000000000
+      internalID: -2948186873023796908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_314
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 327b9fb9e33ceac10800000000000000
+      internalID: 2066803952681858851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_315
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5febd5fd38b8a4930800000000000000
+      internalID: 4128265406942920437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_316
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26983b777593cff0800000000000000
+      internalID: -17005633178397140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_317
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35b23a201dbc1ca10800000000000000
+      internalID: 1928046214044134227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_318
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f4313d0aeaa6ef0800000000000000
+      internalID: -114086834785267925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_319
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f935c83bd8d838e80800000000000000
+      internalID: -8177536858632465505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_320
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9da5e8398e1beaec0800000000000000
+      internalID: -3553707443482633511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_321
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e9c8522bb73af7e0800000000000000
+      internalID: -1731009829895878174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_322
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e4db64d48806eb90800000000000000
+      internalID: -7213068386594728730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hands_Front_Idle_323
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 446e32c8115495220800000000000000
+      internalID: 2475085411884721732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
