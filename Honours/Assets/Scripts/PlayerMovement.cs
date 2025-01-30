@@ -14,8 +14,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float currentSpeed;
     [SerializeField] float increasedSpeed = 6f;
 
+    [Header("Dash Settings")]
+    [SerializeField] float dashDuration = 0.8f;
+    [SerializeField] float dashSpeed = 7f;
+    [SerializeField] float dashCooldown = 2f;
+
     Vector2 moveDirection;
     public Vector2 lastMoveDirection = Vector2.zero;
+
+    bool isDashing = false;
+    bool canDash = true;
 
     void Start()
     {
@@ -27,10 +35,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply movement to player 
-        rb.velocity = moveDirection * currentSpeed;
+        if (!isDashing)
+        {
+            rb.velocity = moveDirection * currentSpeed;
+        }
 
-        // Updates animations based on movement direction
         UpdateAnimation();
     }
 
@@ -45,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         float speed = moveDirection.magnitude;
 
         // Check if the player is moving
-        if (speed > 0)
+        if (speed > 0 && !isDashing)
         {
             // Normalize the direction for consistent facing
             Vector2 normalizedDirection = moveDirection.normalized;
@@ -66,6 +75,50 @@ public class PlayerMovement : MonoBehaviour
 
         // Update Speed parameter for switching between run and idle states
         animator.SetFloat("speed", speed);
+    }
+
+    void OnDash()
+    {
+        if (canDash)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        Vector2 dashDirection;
+
+        if (moveDirection != Vector2.zero)
+        {
+            dashDirection = moveDirection;
+        }
+        else if (lastMoveDirection != Vector2.zero)
+        {
+            dashDirection = lastMoveDirection;
+        }
+        else
+        {
+            dashDirection = Vector2.right; // Default direction if no movement history
+        }
+
+        if (dashDirection == Vector2.zero)
+        {
+            dashDirection = Vector2.right; 
+        }
+
+        rb.velocity = dashDirection * dashSpeed;
+
+        yield return new WaitForSeconds(dashDuration);
+
+        isDashing = false;
+        rb.velocity = Vector2.zero; 
+
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     public void ChangeSpeed(bool isEnhanced)
