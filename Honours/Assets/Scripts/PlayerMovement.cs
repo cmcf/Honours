@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool isDashing = false;
     bool canDash = true;
+    bool isFacingRight = false;
 
     void Start()
     {
@@ -54,30 +55,36 @@ public class PlayerMovement : MonoBehaviour
     {
         float speed = moveDirection.magnitude;
 
-        // Check if the player is moving
         if (speed > 0 && !isDashing)
         {
-            // Normalize the direction for consistent facing
+            // Normalize the movement direction
             Vector2 normalizedDirection = moveDirection.normalized;
 
-            // Update parameters for the blend tree
+            // Update blend tree parameters
             animator.SetFloat("animMoveX", normalizedDirection.x);
             animator.SetFloat("animMoveY", normalizedDirection.y);
 
-            // Save the last direction for idle animations
+            // Save the player's last movement direction
             lastMoveDirection = normalizedDirection;
 
-            // Flip player
-            if (moveDirection.x > 0)
+            // Flip the player based on horizontal movement
+            if (moveDirection.x > 0) 
             {
-                transform.localScale = new Vector3(-1, 1, 1);
-                weapon.localScale = new Vector3(1, 1, 1); 
+                // Flip player right
+                transform.localScale = new Vector3(-1, 1, 1); 
+                weapon.localScale = new Vector3(1, 1, 1);
+                isFacingRight = true;
             }
-            else if (moveDirection.x < 0)
+            else if (moveDirection.x < 0) 
             {
+                // Flip player left 
                 transform.localScale = new Vector3(1, 1, 1); 
                 weapon.localScale = new Vector3(1, 1, 1); 
+                isFacingRight = false; 
             }
+
+            // Rotate the weapon based on movement direction and facing state
+            RotateWeaponBasedOnMovement(normalizedDirection);
         }
         else
         {
@@ -86,8 +93,60 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("animMoveY", lastMoveDirection.y);
         }
 
-        // Update Speed parameter for switching between run and idle states
+        // Update the speed parameter for animation states
         animator.SetFloat("speed", speed);
+    }
+
+    // Function to handle weapon rotation based on player movement direction
+    void RotateWeaponBasedOnMovement(Vector2 normalizedDirection)
+    {
+        if (isFacingRight) 
+        {
+            // Rotate weapon for up/down movement when facing right
+            if (normalizedDirection.y > 0) // Moving Up
+            {
+                // Rotates the  weapon upwards
+                weapon.rotation = Quaternion.Euler(0, 0, 90f);
+                // Sets weapon postion
+                weapon.localPosition = new Vector3(-0.075f, 0.208f, 0); 
+            }
+            // Moving Down
+            else if (normalizedDirection.y < 0) 
+            {
+                // Rotate weapon downwards
+                weapon.rotation = Quaternion.Euler(0, 0, -90f); 
+                weapon.localPosition = new Vector3(-0.178f, -0.1939f, 0); 
+            }
+
+            else
+            {
+                // Set weapon to default position and rotation
+                weapon.rotation = Quaternion.Euler(0, 0, 0); 
+                weapon.localPosition = new Vector3(-0.335f, 0, 0); 
+            }
+        }
+        else 
+        {
+            // If the player is facing left - rotate weapon for up/down movement
+            if (normalizedDirection.y > 0) // Moving Up
+            {
+                // Rotate weapon upwards
+                weapon.rotation = Quaternion.Euler(0, 0, -90f); 
+                //Set weapon position
+                weapon.localPosition = new Vector3(-0.075f, 0.208f, 0); 
+            }
+            else if (normalizedDirection.y < 0) // Moving Down
+            {
+                // Rotate weapon downwards
+                weapon.rotation = Quaternion.Euler(0, 0, 90f); 
+                weapon.localPosition = new Vector3(-0.161f, -0.1856f, 0); 
+            }
+            else // Neutral horizontal movement
+            {
+                weapon.rotation = Quaternion.Euler(0, 0, 0); 
+                weapon.localPosition = new Vector3(-0.335f, 0, 0); 
+            }
+        }
     }
 
     void OnDash()
