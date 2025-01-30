@@ -145,10 +145,10 @@ public class RoomController : MonoBehaviour
     public void TriggerRandomWeapon()
     {
         // Randomly select a weapon type
-        WeaponType newWeapon = (WeaponType)Random.Range(0, 4); // assuming 4 weapon types
+        WeaponType newWeapon = (WeaponType)Random.Range(0, 4);
 
         // Assign the selected weapon to the player
-        Player player = FindObjectOfType<Player>(); // Assuming only one player
+        Player player = FindObjectOfType<Player>();
         player.currentWeaponType = newWeapon;
 
     }

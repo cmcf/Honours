@@ -59,6 +59,7 @@ public class Enemy : MonoBehaviour, IDamageable
             // If health is zero or below, the enemy dies
             if (currentHealth <= 0)
             {
+                isActive = false;
                 Die();
             }
 
@@ -146,8 +147,9 @@ public class Enemy : MonoBehaviour, IDamageable
     void Die()
     {
         RoomController.Instance.StartCoroutine(RoomController.Instance.RoomCoroutine());
+        animator.SetTrigger("isDead");
         //FindObjectOfType<EnemyManager>().OnEnemyDefeated();
-        Destroy(gameObject);
+        Destroy(gameObject, 0.8f);
     }
 
 
