@@ -1,0 +1,3020 @@
+fileFormatVersion: 2
+guid: e7623a35b47883e4cbf0e066588c9d1f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4691822622931313422
+    second: Hair_Side_Idle_1_5_0
+  - first:
+      213: -4885214663483388060
+    second: Hair_Side_Idle_1_5_1
+  - first:
+      213: -2689964956422356459
+    second: Hair_Side_Idle_1_5_2
+  - first:
+      213: 7772314062551574908
+    second: Hair_Side_Idle_1_5_3
+  - first:
+      213: 2481221798463598190
+    second: Hair_Side_Idle_1_5_4
+  - first:
+      213: 2393139731916009063
+    second: Hair_Side_Idle_1_5_5
+  - first:
+      213: 3001397859275423084
+    second: Hair_Side_Idle_1_5_6
+  - first:
+      213: -727654602352519304
+    second: Hair_Side_Idle_1_5_7
+  - first:
+      213: 8671483209248809555
+    second: Hair_Side_Idle_1_5_8
+  - first:
+      213: -5475477137060712438
+    second: Hair_Side_Idle_1_5_9
+  - first:
+      213: -2636398651896203398
+    second: Hair_Side_Idle_1_5_10
+  - first:
+      213: 7246408949571002498
+    second: Hair_Side_Idle_1_5_11
+  - first:
+      213: -3916179992900515852
+    second: Hair_Side_Idle_1_5_12
+  - first:
+      213: 5457151687418716097
+    second: Hair_Side_Idle_1_5_13
+  - first:
+      213: -1979406616580596202
+    second: Hair_Side_Idle_1_5_14
+  - first:
+      213: -1022775694235552060
+    second: Hair_Side_Idle_1_5_15
+  - first:
+      213: -5979247360600028406
+    second: Hair_Side_Idle_1_5_16
+  - first:
+      213: -6794114981585787822
+    second: Hair_Side_Idle_1_5_17
+  - first:
+      213: -2778697526964588862
+    second: Hair_Side_Idle_1_5_18
+  - first:
+      213: -8703542581148637612
+    second: Hair_Side_Idle_1_5_19
+  - first:
+      213: -3432183190885395335
+    second: Hair_Side_Idle_1_5_20
+  - first:
+      213: -2026844973973727911
+    second: Hair_Side_Idle_1_5_21
+  - first:
+      213: 7021167746360528825
+    second: Hair_Side_Idle_1_5_22
+  - first:
+      213: -2592075641065591225
+    second: Hair_Side_Idle_1_5_23
+  - first:
+      213: -6995734609598918533
+    second: Hair_Side_Idle_1_5_24
+  - first:
+      213: 5125238829955837475
+    second: Hair_Side_Idle_1_5_25
+  - first:
+      213: -2514830448473880835
+    second: Hair_Side_Idle_1_5_26
+  - first:
+      213: -8643154414762904816
+    second: Hair_Side_Idle_1_5_27
+  - first:
+      213: -8709396113242400498
+    second: Hair_Side_Idle_1_5_28
+  - first:
+      213: -3902901468453022362
+    second: Hair_Side_Idle_1_5_29
+  - first:
+      213: -8646363565728838284
+    second: Hair_Side_Idle_1_5_30
+  - first:
+      213: -2900970480271252767
+    second: Hair_Side_Idle_1_5_31
+  - first:
+      213: 3042778609462070948
+    second: Hair_Side_Idle_1_5_32
+  - first:
+      213: 6978637937150622541
+    second: Hair_Side_Idle_1_5_33
+  - first:
+      213: -2578533643185615407
+    second: Hair_Side_Idle_1_5_34
+  - first:
+      213: 5133160593214443353
+    second: Hair_Side_Idle_1_5_35
+  - first:
+      213: 247209602759056377
+    second: Hair_Side_Idle_1_5_36
+  - first:
+      213: 8959791878756280045
+    second: Hair_Side_Idle_1_5_37
+  - first:
+      213: 3355643966384117986
+    second: Hair_Side_Idle_1_5_38
+  - first:
+      213: 8386335878958116552
+    second: Hair_Side_Idle_1_5_39
+  - first:
+      213: -5236481498651824917
+    second: Hair_Side_Idle_1_5_40
+  - first:
+      213: 1157343800216880115
+    second: Hair_Side_Idle_1_5_41
+  - first:
+      213: 4687370963108905271
+    second: Hair_Side_Idle_1_5_42
+  - first:
+      213: 3647198153753897315
+    second: Hair_Side_Idle_1_5_43
+  - first:
+      213: -7200949472087950348
+    second: Hair_Side_Idle_1_5_44
+  - first:
+      213: -1358655136602560112
+    second: Hair_Side_Idle_1_5_45
+  - first:
+      213: 71767671680821634
+    second: Hair_Side_Idle_1_5_46
+  - first:
+      213: -6226200754477982927
+    second: Hair_Side_Idle_1_5_47
+  - first:
+      213: 8770791280300351145
+    second: Hair_Side_Idle_1_5_48
+  - first:
+      213: -4324508851237669958
+    second: Hair_Side_Idle_1_5_49
+  - first:
+      213: -2744598928691389457
+    second: Hair_Side_Idle_1_5_50
+  - first:
+      213: -4479421240388648514
+    second: Hair_Side_Idle_1_5_51
+  - first:
+      213: 6670202032236887190
+    second: Hair_Side_Idle_1_5_52
+  - first:
+      213: -6267945380047467017
+    second: Hair_Side_Idle_1_5_53
+  - first:
+      213: 6309569421516471880
+    second: Hair_Side_Idle_1_5_54
+  - first:
+      213: 7383308946944260416
+    second: Hair_Side_Idle_1_5_55
+  - first:
+      213: -2645161455226628237
+    second: Hair_Side_Idle_1_5_56
+  - first:
+      213: 5511827331824560358
+    second: Hair_Side_Idle_1_5_57
+  - first:
+      213: 212011530476004022
+    second: Hair_Side_Idle_1_5_58
+  - first:
+      213: 1632827538890199701
+    second: Hair_Side_Idle_1_5_59
+  - first:
+      213: -4849277429724799304
+    second: Hair_Side_Idle_1_5_60
+  - first:
+      213: -3727399301178490825
+    second: Hair_Side_Idle_1_5_61
+  - first:
+      213: 4661649387990297378
+    second: Hair_Side_Idle_1_5_62
+  - first:
+      213: -6872684246955049737
+    second: Hair_Side_Idle_1_5_63
+  - first:
+      213: -7701854537991885905
+    second: Hair_Side_Idle_1_5_64
+  - first:
+      213: 4175925169763591926
+    second: Hair_Side_Idle_1_5_65
+  - first:
+      213: 7438929084603443759
+    second: Hair_Side_Idle_1_5_66
+  - first:
+      213: 9148546318608840424
+    second: Hair_Side_Idle_1_5_67
+  - first:
+      213: 5451931118712987231
+    second: Hair_Side_Idle_1_5_68
+  - first:
+      213: 4134567881534369148
+    second: Hair_Side_Idle_1_5_69
+  - first:
+      213: -2353570724691564301
+    second: Hair_Side_Idle_1_5_70
+  - first:
+      213: 6419384289336660517
+    second: Hair_Side_Idle_1_5_71
+  - first:
+      213: 2016350774099300851
+    second: Hair_Side_Idle_1_5_72
+  - first:
+      213: 5471458296030014756
+    second: Hair_Side_Idle_1_5_73
+  - first:
+      213: 1571393634843713883
+    second: Hair_Side_Idle_1_5_74
+  - first:
+      213: -6513394793139693247
+    second: Hair_Side_Idle_1_5_75
+  - first:
+      213: -3712839929022377372
+    second: Hair_Side_Idle_1_5_76
+  - first:
+      213: -8243578493789415672
+    second: Hair_Side_Idle_1_5_77
+  - first:
+      213: -865565688229312755
+    second: Hair_Side_Idle_1_5_78
+  - first:
+      213: -270978943306471139
+    second: Hair_Side_Idle_1_5_79
+  - first:
+      213: -8396256142158241364
+    second: Hair_Side_Idle_1_5_80
+  - first:
+      213: 5723279473808155236
+    second: Hair_Side_Idle_1_5_81
+  - first:
+      213: -6320606027260808573
+    second: Hair_Side_Idle_1_5_82
+  - first:
+      213: 1570739706118250003
+    second: Hair_Side_Idle_1_5_83
+  - first:
+      213: 7794529622248073011
+    second: Hair_Side_Idle_1_5_84
+  - first:
+      213: 5519911351783773946
+    second: Hair_Side_Idle_1_5_85
+  - first:
+      213: -6843208487496443131
+    second: Hair_Side_Idle_1_5_86
+  - first:
+      213: -967812168999942614
+    second: Hair_Side_Idle_1_5_87
+  - first:
+      213: 3574333829962303169
+    second: Hair_Side_Idle_1_5_88
+  - first:
+      213: 7884631853935273647
+    second: Hair_Side_Idle_1_5_89
+  - first:
+      213: 2428056235781940275
+    second: Hair_Side_Idle_1_5_90
+  - first:
+      213: 3322095221143385274
+    second: Hair_Side_Idle_1_5_91
+  - first:
+      213: -2219118063412942177
+    second: Hair_Side_Idle_1_5_92
+  - first:
+      213: -2603697571033781146
+    second: Hair_Side_Idle_1_5_93
+  - first:
+      213: -3302224305080562350
+    second: Hair_Side_Idle_1_5_94
+  - first:
+      213: 5972400807580640483
+    second: Hair_Side_Idle_1_5_95
+  - first:
+      213: -7852885187018306971
+    second: Hair_Side_Idle_1_5_96
+  - first:
+      213: 9081097707240743628
+    second: Hair_Side_Idle_1_5_97
+  - first:
+      213: -6785674930328590833
+    second: Hair_Side_Idle_1_5_98
+  - first:
+      213: -7651011870553096495
+    second: Hair_Side_Idle_1_5_99
+  - first:
+      213: -8513296478268025210
+    second: Hair_Side_Idle_1_5_100
+  - first:
+      213: 819874318306887892
+    second: Hair_Side_Idle_1_5_101
+  - first:
+      213: 7269641485167391942
+    second: Hair_Side_Idle_1_5_102
+  - first:
+      213: 894114127196212808
+    second: Hair_Side_Idle_1_5_103
+  - first:
+      213: 7943913993622983933
+    second: Hair_Side_Idle_1_5_104
+  - first:
+      213: 5713642275717758146
+    second: Hair_Side_Idle_1_5_105
+  - first:
+      213: -3682286638289246790
+    second: Hair_Side_Idle_1_5_106
+  - first:
+      213: 3406720949267889683
+    second: Hair_Side_Idle_1_5_107
+  - first:
+      213: 5548301562492136954
+    second: Hair_Side_Idle_1_5_108
+  - first:
+      213: 3981004471727812691
+    second: Hair_Side_Idle_1_5_109
+  - first:
+      213: 712503199471754057
+    second: Hair_Side_Idle_1_5_110
+  - first:
+      213: 3411044889133923530
+    second: Hair_Side_Idle_1_5_111
+  - first:
+      213: 610856668456055682
+    second: Hair_Side_Idle_1_5_112
+  - first:
+      213: 3481781489273844841
+    second: Hair_Side_Idle_1_5_113
+  - first:
+      213: -3400565650481387995
+    second: Hair_Side_Idle_1_5_114
+  - first:
+      213: -1372955657283304372
+    second: Hair_Side_Idle_1_5_115
+  - first:
+      213: -230789862795378452
+    second: Hair_Side_Idle_1_5_116
+  - first:
+      213: -6551699351868300917
+    second: Hair_Side_Idle_1_5_117
+  - first:
+      213: -7197081832761322790
+    second: Hair_Side_Idle_1_5_118
+  - first:
+      213: -1976220872356905293
+    second: Hair_Side_Idle_1_5_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 615
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc990bce2c43eeb0800000000000000
+      internalID: -4691822622931313422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 614
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46f0b83852b343cb0800000000000000
+      internalID: -4885214663483388060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 614
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512423acf135baad0800000000000000
+      internalID: -2689964956422356459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 614
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79e82dd57eccdb60800000000000000
+      internalID: 7772314062551574908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_4
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 615
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6ee06264121f6220800000000000000
+      internalID: 2481221798463598190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 615
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e2ab228e3263120800000000000000
+      internalID: 2393139731916009063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 583
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6dbabf637b17a920800000000000000
+      internalID: 3001397859275423084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 582
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87799939ef9d6e5f0800000000000000
+      internalID: -727654602352519304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_8
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 582
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3522a0b090c475870800000000000000
+      internalID: 8671483209248809555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_9
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 582
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0039bddd823304b0800000000000000
+      internalID: -5475477137060712438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_10
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 583
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a777863f461a96bd0800000000000000
+      internalID: -2636398651896203398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 583
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2802468eb8a609460800000000000000
+      internalID: 7246408949571002498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 549
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f74ca69b0fe6a9c0800000000000000
+      internalID: -3916179992900515852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 548
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf1406eb82bbbb40800000000000000
+      internalID: 5457151687418716097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_14
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 548
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ed7a86b2cb784e0800000000000000
+      internalID: -1979406616580596202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 548
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c6bf2cccee5ec1f0800000000000000
+      internalID: -1022775694235552060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_16
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 549
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b4e377432750da0800000000000000
+      internalID: -5979247360600028406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 549
+        width: 25
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2546b67cb6476b1a0800000000000000
+      internalID: -6794114981585787822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_18
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 516
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cee40742551079d0800000000000000
+      internalID: -2778697526964588862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_19
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 515
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4562623c22ec63780800000000000000
+      internalID: -8703542581148637612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_20
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 515
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9749537829f6e50d0800000000000000
+      internalID: -3432183190885395335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_21
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 515
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 955928f1c333fd3e0800000000000000
+      internalID: -2026844973973727911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 516
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bfcf369dd2307160800000000000000
+      internalID: 7021167746360528825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_23
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 516
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ea75710f8170cd0800000000000000
+      internalID: -2592075641065591225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_24
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 492
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7053f300782aee90800000000000000
+      internalID: -6995734609598918533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_25
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 491
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e6e88af81802740800000000000000
+      internalID: 5125238829955837475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_26
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 491
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6c0600807891dd0800000000000000
+      internalID: -2514830448473880835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_27
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 491
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01335396ad85d0880800000000000000
+      internalID: -8643154414762904816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_28
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 492
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e09d40e1162022780800000000000000
+      internalID: -8709396113242400498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_29
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 492
+        width: 29
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 665d18bfacb16d9c0800000000000000
+      internalID: -3902901468453022362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_30
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 459
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d4ad9b522f10880800000000000000
+      internalID: -8646363565728838284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_31
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 458
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2a98bd7beadb7d0800000000000000
+      internalID: -2900970480271252767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_32
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 458
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aec423260f1a3a20800000000000000
+      internalID: 3042778609462070948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_33
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 458
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4b7debba3a19d060800000000000000
+      internalID: 6978637937150622541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_34
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 459
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd078c2055373cd0800000000000000
+      internalID: -2578533643185615407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_35
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 459
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f8495ec56ac3740800000000000000
+      internalID: 5133160593214443353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_36
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 419
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbd48de2d34e6300800000000000000
+      internalID: 247209602759056377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_37
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 418
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6a2b22e33975c70800000000000000
+      internalID: 8959791878756280045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_38
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 418
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e812019864a19e20800000000000000
+      internalID: 3355643966384117986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_39
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 418
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ce69689c00426470800000000000000
+      internalID: 8386335878958116552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_40
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 419
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bece3ff22d74457b0800000000000000
+      internalID: -5236481498651824917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_41
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 419
+        width: 22
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f38deeed06bf0010800000000000000
+      internalID: 1157343800216880115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_42
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 388
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73146926e03ec0140800000000000000
+      internalID: 4687370963108905271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_43
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 387
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36926fba5637d9230800000000000000
+      internalID: 3647198153753897315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_44
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 387
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb39ae7b96111c90800000000000000
+      internalID: -7200949472087950348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_45
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 387
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0996b8a0a56152de0800000000000000
+      internalID: -1358655136602560112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_46
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 388
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28964e03158fef000800000000000000
+      internalID: 71767671680821634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_47
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 388
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b1211d6671899a0800000000000000
+      internalID: -6226200754477982927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_48
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 358
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae5565233c18b970800000000000000
+      internalID: 8770791280300351145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_49
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 357
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab332fdac124cf3c0800000000000000
+      internalID: -4324508851237669958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_50
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 357
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb9e6cd0d939e9d0800000000000000
+      internalID: -2744598928691389457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_51
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 357
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb18b476d16e5d1c0800000000000000
+      internalID: -4479421240388648514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_52
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 358
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c71977861519c50800000000000000
+      internalID: 6670202032236887190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_53
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 358
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd48b6c2e8c309a0800000000000000
+      internalID: -6267945380047467017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_54
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 324
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ef72795f7109750800000000000000
+      internalID: 6309569421516471880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_55
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 323
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04973996e58c67660800000000000000
+      internalID: 7383308946944260416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_56
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 323
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37759afcbaf7a4bd0800000000000000
+      internalID: -2645161455226628237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 323
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e821b061c1fd7c40800000000000000
+      internalID: 5511827331824560358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_58
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 324
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b22f4a1d5731f200800000000000000
+      internalID: 212011530476004022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_59
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 324
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592960bdef7f8a610800000000000000
+      internalID: 1632827538890199701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_60
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 290
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be1fe7ced7e3bcb0800000000000000
+      internalID: -4849277429724799304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_61
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 289
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730873d851e954cc0800000000000000
+      internalID: -3727399301178490825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_62
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 289
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b249e7b6181b040800000000000000
+      internalID: 4661649387990297378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_63
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 289
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc32d627125f90a0800000000000000
+      internalID: -6872684246955049737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_64
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 290
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab63479a148d1590800000000000000
+      internalID: -7701854537991885905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_65
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 290
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f62f5021ddd3f930800000000000000
+      internalID: 4175925169763591926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_66
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 261
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a2c1dd6926c3760800000000000000
+      internalID: 7438929084603443759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_67
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 260
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e633ebd76a26fe70800000000000000
+      internalID: 9148546318608840424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_68
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 260
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e19c6877629ab40800000000000000
+      internalID: 5451931118712987231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_69
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 260
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d6896159fe06930800000000000000
+      internalID: 4134567881534369148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_70
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 261
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f8200945ef665fd0800000000000000
+      internalID: -2353570724691564301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_71
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 261
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52292a2fffb361950800000000000000
+      internalID: 6419384289336660517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_72
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 223
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1d5c098548bfb10800000000000000
+      internalID: 2016350774099300851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_73
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 223
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42dab3ac4568eeb40800000000000000
+      internalID: 5471458296030014756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_74
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 223
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b516b2f6f26bec510800000000000000
+      internalID: 1571393634843713883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_75
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 223
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1499701f1f5cb95a0800000000000000
+      internalID: -6513394793139693247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_76
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 223
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4621cba81c7597cc0800000000000000
+      internalID: -3712839929022377372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_77
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 223
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 807d1a7490de89d80800000000000000
+      internalID: -8243578493789415672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_78
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 194
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07435fa794ecf3f0800000000000000
+      internalID: -865565688229312755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_79
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 193
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d196b96361a4d3cf0800000000000000
+      internalID: -270978943306471139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_80
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 193
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca1677326818a7b80800000000000000
+      internalID: -8396256142158241364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_81
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 193
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462ae92bb5c2d6f40800000000000000
+      internalID: 5723279473808155236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_82
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 194
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3823de36e42b848a0800000000000000
+      internalID: -6320606027260808573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_83
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 194
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e97c9c0736cc510800000000000000
+      internalID: 1570739706118250003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_84
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 169
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3372b5de46bbb2c60800000000000000
+      internalID: 7794529622248073011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_85
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 168
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6d7b2f02aaa9c40800000000000000
+      internalID: 5519911351783773946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_86
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 168
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b16d2332a0801a0800000000000000
+      internalID: -6843208487496443131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_87
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 168
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a264571c5f3a192f0800000000000000
+      internalID: -967812168999942614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_88
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 169
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c680934ea59a9130800000000000000
+      internalID: 3574333829962303169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_89
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 169
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa6aa8685e6db6d60800000000000000
+      internalID: 7884631853935273647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_90
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 132
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3346474384032b120800000000000000
+      internalID: 2428056235781940275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_91
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 131
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab4364e90047a1e20800000000000000
+      internalID: 3322095221143385274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_92
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 131
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9a6e93f0eb1431e0800000000000000
+      internalID: -2219118063412942177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_93
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 131
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66cebf7aadecddbd0800000000000000
+      internalID: -2603697571033781146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_94
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 132
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d030f8d742c22d0800000000000000
+      internalID: -3302224305080562350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_95
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 132
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4a91034ea32e250800000000000000
+      internalID: 5972400807580640483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_96
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 107
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ac8dd5782f40390800000000000000
+      internalID: -7852885187018306971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_97
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 106
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc2e2b2404a860e70800000000000000
+      internalID: 9081097707240743628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_98
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 106
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f06ad785a9074d1a0800000000000000
+      internalID: -6785674930328590833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_99
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 106
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1deb2639d3522d590800000000000000
+      internalID: -7651011870553096495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_100
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 107
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 686104955f1bad980800000000000000
+      internalID: -8513296478268025210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_101
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 107
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d8c52f3957c06b00800000000000000
+      internalID: 819874318306887892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_102
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 66
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c478df1a64f2e460800000000000000
+      internalID: 7269641485167391942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_103
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 65
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84e403cbf08886c00800000000000000
+      internalID: 894114127196212808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_104
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 65
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4172440b37e3e60800000000000000
+      internalID: 7943913993622983933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_105
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 65
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ccbfc9a06fea4f40800000000000000
+      internalID: 5713642275717758146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_106
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 66
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab52a93efc3e5ecc0800000000000000
+      internalID: -3682286638289246790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_107
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 66
+        width: 20
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e7efd57aa174f20800000000000000
+      internalID: 3406720949267889683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_108
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 46
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afda61bffd68ffc40800000000000000
+      internalID: 5548301562492136954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_109
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 45
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 350f39a897e5f3730800000000000000
+      internalID: 3981004471727812691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_110
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 45
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94bd7d982e153e900800000000000000
+      internalID: 712503199471754057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_111
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 45
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acc3db11147765f20800000000000000
+      internalID: 3411044889133923530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_112
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 46
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 283700c47e23a7800800000000000000
+      internalID: 610856668456055682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_113
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 46
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 964b2b531d5c15030800000000000000
+      internalID: 3481781489273844841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_114
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52669afce83cec0d0800000000000000
+      internalID: -3400565650481387995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_115
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 2
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44044b9a1842fce0800000000000000
+      internalID: -1372955657283304372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_116
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 2
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce00252b7d11cccf0800000000000000
+      internalID: -230789862795378452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_117
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 2
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81abb0e620b315a0800000000000000
+      internalID: -6551699351868300917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_118
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 3
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad218d27434de1c90800000000000000
+      internalID: -7197081832761322790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hair_Side_Idle_1_5_119
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 3
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be3479469d0394e0800000000000000
+      internalID: -1976220872356905293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

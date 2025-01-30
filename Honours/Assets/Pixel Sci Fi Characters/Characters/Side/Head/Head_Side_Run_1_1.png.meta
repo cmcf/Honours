@@ -1,0 +1,3020 @@
+fileFormatVersion: 2
+guid: 6d1bf3fc5537fdd458ccb52f3481e08f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8255663810056829230
+    second: Head_Side_Run_1_1_0
+  - first:
+      213: -5965090881836883035
+    second: Head_Side_Run_1_1_1
+  - first:
+      213: 1253675301096955249
+    second: Head_Side_Run_1_1_2
+  - first:
+      213: -8854826318645057382
+    second: Head_Side_Run_1_1_3
+  - first:
+      213: -2343053355769731240
+    second: Head_Side_Run_1_1_4
+  - first:
+      213: -449759148442407315
+    second: Head_Side_Run_1_1_5
+  - first:
+      213: 5412769950405534451
+    second: Head_Side_Run_1_1_6
+  - first:
+      213: -8654710184381877093
+    second: Head_Side_Run_1_1_7
+  - first:
+      213: -5335904264167336800
+    second: Head_Side_Run_1_1_8
+  - first:
+      213: 2394643805356051132
+    second: Head_Side_Run_1_1_9
+  - first:
+      213: 6837947211055034072
+    second: Head_Side_Run_1_1_10
+  - first:
+      213: 4564944816486371677
+    second: Head_Side_Run_1_1_11
+  - first:
+      213: -3868085904187976523
+    second: Head_Side_Run_1_1_12
+  - first:
+      213: -8897247145232368971
+    second: Head_Side_Run_1_1_13
+  - first:
+      213: 469932503567062860
+    second: Head_Side_Run_1_1_14
+  - first:
+      213: -4828837456684068659
+    second: Head_Side_Run_1_1_15
+  - first:
+      213: 8064180357103918209
+    second: Head_Side_Run_1_1_16
+  - first:
+      213: -4406145314767906872
+    second: Head_Side_Run_1_1_17
+  - first:
+      213: -7017857179278226074
+    second: Head_Side_Run_1_1_18
+  - first:
+      213: -6894940457344573697
+    second: Head_Side_Run_1_1_19
+  - first:
+      213: -1049204901936988555
+    second: Head_Side_Run_1_1_20
+  - first:
+      213: -6840259079284560103
+    second: Head_Side_Run_1_1_21
+  - first:
+      213: 491313693625296518
+    second: Head_Side_Run_1_1_22
+  - first:
+      213: 8191281503708813070
+    second: Head_Side_Run_1_1_23
+  - first:
+      213: -5636738343300157605
+    second: Head_Side_Run_1_1_24
+  - first:
+      213: 1819695069373534585
+    second: Head_Side_Run_1_1_25
+  - first:
+      213: -4774698514578460835
+    second: Head_Side_Run_1_1_26
+  - first:
+      213: -1182443511927051123
+    second: Head_Side_Run_1_1_27
+  - first:
+      213: -2923024748479849299
+    second: Head_Side_Run_1_1_28
+  - first:
+      213: 7763249033568300722
+    second: Head_Side_Run_1_1_29
+  - first:
+      213: 6058116943718517823
+    second: Head_Side_Run_1_1_30
+  - first:
+      213: 6976391079746391440
+    second: Head_Side_Run_1_1_31
+  - first:
+      213: 1818777784193762727
+    second: Head_Side_Run_1_1_32
+  - first:
+      213: -6213891796891162958
+    second: Head_Side_Run_1_1_33
+  - first:
+      213: -4519311574963899283
+    second: Head_Side_Run_1_1_34
+  - first:
+      213: 7103856068571024788
+    second: Head_Side_Run_1_1_35
+  - first:
+      213: -99458529225274795
+    second: Head_Side_Run_1_1_36
+  - first:
+      213: -6721321008109318443
+    second: Head_Side_Run_1_1_37
+  - first:
+      213: -232963645247437980
+    second: Head_Side_Run_1_1_38
+  - first:
+      213: -282510142482181638
+    second: Head_Side_Run_1_1_39
+  - first:
+      213: 631542297228391831
+    second: Head_Side_Run_1_1_40
+  - first:
+      213: 8498146026152977800
+    second: Head_Side_Run_1_1_41
+  - first:
+      213: 1685989517895227619
+    second: Head_Side_Run_1_1_42
+  - first:
+      213: -3426335083719900431
+    second: Head_Side_Run_1_1_43
+  - first:
+      213: -3293204829023985646
+    second: Head_Side_Run_1_1_44
+  - first:
+      213: 3892483624613524605
+    second: Head_Side_Run_1_1_45
+  - first:
+      213: 5318393413633943081
+    second: Head_Side_Run_1_1_46
+  - first:
+      213: 1357981466522553565
+    second: Head_Side_Run_1_1_47
+  - first:
+      213: 5625127127819143744
+    second: Head_Side_Run_1_1_48
+  - first:
+      213: 6259315386076383511
+    second: Head_Side_Run_1_1_49
+  - first:
+      213: 2178034950810629912
+    second: Head_Side_Run_1_1_50
+  - first:
+      213: 4093273312632269469
+    second: Head_Side_Run_1_1_51
+  - first:
+      213: -8939720664176261509
+    second: Head_Side_Run_1_1_52
+  - first:
+      213: -4900576298296853282
+    second: Head_Side_Run_1_1_53
+  - first:
+      213: 6727517616216528332
+    second: Head_Side_Run_1_1_54
+  - first:
+      213: -6952140685968702216
+    second: Head_Side_Run_1_1_55
+  - first:
+      213: -4064556863869400405
+    second: Head_Side_Run_1_1_56
+  - first:
+      213: 6984300452164984727
+    second: Head_Side_Run_1_1_57
+  - first:
+      213: 4758144431187750897
+    second: Head_Side_Run_1_1_58
+  - first:
+      213: 6327448463951060667
+    second: Head_Side_Run_1_1_59
+  - first:
+      213: 7750756186622392986
+    second: Head_Side_Run_1_1_60
+  - first:
+      213: -7229370645938259812
+    second: Head_Side_Run_1_1_61
+  - first:
+      213: -9131077407650995487
+    second: Head_Side_Run_1_1_62
+  - first:
+      213: -3093925005675482311
+    second: Head_Side_Run_1_1_63
+  - first:
+      213: -698581327046338331
+    second: Head_Side_Run_1_1_64
+  - first:
+      213: -6045234411468346345
+    second: Head_Side_Run_1_1_65
+  - first:
+      213: -530002344042458577
+    second: Head_Side_Run_1_1_66
+  - first:
+      213: 896436476155102409
+    second: Head_Side_Run_1_1_67
+  - first:
+      213: 5882036465113386029
+    second: Head_Side_Run_1_1_68
+  - first:
+      213: -3433803382078830639
+    second: Head_Side_Run_1_1_69
+  - first:
+      213: 385913082972834198
+    second: Head_Side_Run_1_1_70
+  - first:
+      213: 6027489105923927421
+    second: Head_Side_Run_1_1_71
+  - first:
+      213: -3204184828777787232
+    second: Head_Side_Run_1_1_72
+  - first:
+      213: 4327660010940967346
+    second: Head_Side_Run_1_1_73
+  - first:
+      213: 2070763866442721595
+    second: Head_Side_Run_1_1_74
+  - first:
+      213: -6616298297412711234
+    second: Head_Side_Run_1_1_75
+  - first:
+      213: -6602081680935612937
+    second: Head_Side_Run_1_1_76
+  - first:
+      213: -5950849258516805875
+    second: Head_Side_Run_1_1_77
+  - first:
+      213: 3897234315424170772
+    second: Head_Side_Run_1_1_78
+  - first:
+      213: 1196960522628220737
+    second: Head_Side_Run_1_1_79
+  - first:
+      213: 4598536011856378518
+    second: Head_Side_Run_1_1_80
+  - first:
+      213: 5517509208228211471
+    second: Head_Side_Run_1_1_81
+  - first:
+      213: 4187335681385821761
+    second: Head_Side_Run_1_1_82
+  - first:
+      213: 5218880844208050208
+    second: Head_Side_Run_1_1_83
+  - first:
+      213: 9119284074945390792
+    second: Head_Side_Run_1_1_84
+  - first:
+      213: -2314718046087214537
+    second: Head_Side_Run_1_1_85
+  - first:
+      213: 3900448202583204976
+    second: Head_Side_Run_1_1_86
+  - first:
+      213: 7179200003847206477
+    second: Head_Side_Run_1_1_87
+  - first:
+      213: 3201106775589615670
+    second: Head_Side_Run_1_1_88
+  - first:
+      213: 5239575980350619762
+    second: Head_Side_Run_1_1_89
+  - first:
+      213: 9048671840439940475
+    second: Head_Side_Run_1_1_90
+  - first:
+      213: -7803096783979439048
+    second: Head_Side_Run_1_1_91
+  - first:
+      213: -803000827523033677
+    second: Head_Side_Run_1_1_92
+  - first:
+      213: -4487233513846166942
+    second: Head_Side_Run_1_1_93
+  - first:
+      213: 3736756632617296956
+    second: Head_Side_Run_1_1_94
+  - first:
+      213: 679173229727907927
+    second: Head_Side_Run_1_1_95
+  - first:
+      213: -1666435700522530948
+    second: Head_Side_Run_1_1_96
+  - first:
+      213: 5758249140139230534
+    second: Head_Side_Run_1_1_97
+  - first:
+      213: -1395981066653517634
+    second: Head_Side_Run_1_1_98
+  - first:
+      213: 620379355523988276
+    second: Head_Side_Run_1_1_99
+  - first:
+      213: 4794518828090450622
+    second: Head_Side_Run_1_1_100
+  - first:
+      213: 9113252443307308054
+    second: Head_Side_Run_1_1_101
+  - first:
+      213: 1918506749865585457
+    second: Head_Side_Run_1_1_102
+  - first:
+      213: -5026713809550254178
+    second: Head_Side_Run_1_1_103
+  - first:
+      213: -522359940499903036
+    second: Head_Side_Run_1_1_104
+  - first:
+      213: -8400766593881526944
+    second: Head_Side_Run_1_1_105
+  - first:
+      213: 344614718121587518
+    second: Head_Side_Run_1_1_106
+  - first:
+      213: 5034101594095742340
+    second: Head_Side_Run_1_1_107
+  - first:
+      213: -2110945613215823298
+    second: Head_Side_Run_1_1_108
+  - first:
+      213: 8154043859161848288
+    second: Head_Side_Run_1_1_109
+  - first:
+      213: -7796593007122141842
+    second: Head_Side_Run_1_1_110
+  - first:
+      213: -8772508015042275004
+    second: Head_Side_Run_1_1_111
+  - first:
+      213: -2485787648999470660
+    second: Head_Side_Run_1_1_112
+  - first:
+      213: 2122247337850436743
+    second: Head_Side_Run_1_1_113
+  - first:
+      213: -4856651141232372304
+    second: Head_Side_Run_1_1_114
+  - first:
+      213: -7873949953050667359
+    second: Head_Side_Run_1_1_115
+  - first:
+      213: -6839274162149366516
+    second: Head_Side_Run_1_1_116
+  - first:
+      213: 7939348877649178710
+    second: Head_Side_Run_1_1_117
+  - first:
+      213: -2013813267525674834
+    second: Head_Side_Run_1_1_118
+  - first:
+      213: -2713580468511985821
+    second: Head_Side_Run_1_1_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 615
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e293c7fae72029270800000000000000
+      internalID: 8255663810056829230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 617
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3e037827db73da0800000000000000
+      internalID: -5965090881836883035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 616
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17d90994b03f56110800000000000000
+      internalID: 1253675301096955249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 615
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a98a169c0665d1580800000000000000
+      internalID: -8854826318645057382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 617
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857ee8f036dcb7fd0800000000000000
+      internalID: -2343053355769731240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 616
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6eab9aff6222c9f0800000000000000
+      internalID: -449759148442407315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 583
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2a4d087950e1b40800000000000000
+      internalID: 5412769950405534451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_7
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 585
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9476f121fa44e780800000000000000
+      internalID: -8654710184381877093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 584
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a450d2b75f03f5b0800000000000000
+      internalID: -5335904264167336800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 583
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba46d58adb7b3120800000000000000
+      internalID: 2394643805356051132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 585
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8deeecb62c445ee50800000000000000
+      internalID: 6837947211055034072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_11
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 584
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d515eeddf11f95f30800000000000000
+      internalID: 4564944816486371677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 551
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b41e283d5cc15ac0800000000000000
+      internalID: -3868085904187976523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 553
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5baf09d6cd0a68480800000000000000
+      internalID: -8897247145232368971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 552
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4756874f19858600800000000000000
+      internalID: 469932503567062860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 551
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0de3cdae58cfcb0800000000000000
+      internalID: -4828837456684068659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_16
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 553
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18c9cd51f49b9ef60800000000000000
+      internalID: 8064180357103918209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 552
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7d1845e2a3ad2c0800000000000000
+      internalID: -4406145314767906872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 519
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d42b0e3109b9e90800000000000000
+      internalID: -7017857179278226074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_19
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 521
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffed18c5f204050a0800000000000000
+      internalID: -6894940457344573697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_20
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 520
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e727b53b97071f0800000000000000
+      internalID: -1049204901936988555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_21
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 519
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f6a9fcb948211a0800000000000000
+      internalID: -6840259079284560103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_22
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 521
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68622d5833f71d600800000000000000
+      internalID: 491313693625296518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_23
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 520
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e079acbd0274da170800000000000000
+      internalID: 8191281503708813070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 487
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5f25cb675846c1b0800000000000000
+      internalID: -5636738343300157605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 489
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9711a81460bd04910800000000000000
+      internalID: 1819695069373534585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_26
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 488
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5f27f89ffcdcbdb0800000000000000
+      internalID: -4774698514578460835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_27
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 487
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8c6f9804ed179fe0800000000000000
+      internalID: -1182443511927051123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_28
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 489
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dacde256a745f67d0800000000000000
+      internalID: -2923024748479849299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_29
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 488
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2beabb45dd99cbb60800000000000000
+      internalID: 7763249033568300722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 455
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c0e165341c21450800000000000000
+      internalID: 6058116943718517823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_31
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 457
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09dcc7a79be11d060800000000000000
+      internalID: 6976391079746391440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_32
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 456
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a5cd3822c89d3910800000000000000
+      internalID: 1818777784193762727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_33
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 455
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6a6955552d3c9a0800000000000000
+      internalID: -6213891796891162958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_34
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 457
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6437f0211e2841c0800000000000000
+      internalID: -4519311574963899283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_35
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 456
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49dcdaed477f59260800000000000000
+      internalID: 7103856068571024788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_36
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 423
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a05af9ef6ae9ef0800000000000000
+      internalID: -99458529225274795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_37
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 425
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de064a772219b2a0800000000000000
+      internalID: -6721321008109318443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_38
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 424
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46342778cc854ccf0800000000000000
+      internalID: -232963645247437980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_39
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 423
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af197efa582541cf0800000000000000
+      internalID: -282510142482181638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_40
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 425
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795beee8f50b3c800800000000000000
+      internalID: 631542297228391831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_41
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 424
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885ee3229ca7fe570800000000000000
+      internalID: 8498146026152977800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_42
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 391
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e85d25a886d56710800000000000000
+      internalID: 1685989517895227619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_43
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 393
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f2ca6515663370d0800000000000000
+      internalID: -3426335083719900431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_44
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 392
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210ac69f7af2c42d0800000000000000
+      internalID: -3293204829023985646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_45
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 391
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d743d1bbb31e40630800000000000000
+      internalID: 3892483624613524605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_46
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 393
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926ad63b1aabec940800000000000000
+      internalID: 5318393413633943081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_47
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 392
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddc04abe2f488d210800000000000000
+      internalID: 1357981466522553565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_48
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 359
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04ac21ec157701e40800000000000000
+      internalID: 5625127127819143744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_49
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 361
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719483c2e2e8dd650800000000000000
+      internalID: 6259315386076383511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_50
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 360
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817f37f7f3fe93e10800000000000000
+      internalID: 2178034950810629912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_51
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 359
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a6808046a3ec830800000000000000
+      internalID: 4093273312632269469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_52
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 361
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b760e8cab6bbfe380800000000000000
+      internalID: -8939720664176261509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_53
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 360
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc315132d7adfbb0800000000000000
+      internalID: -4900576298296853282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_54
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 327
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc5d4c6c0a1fc5d50800000000000000
+      internalID: 6727517616216528332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_55
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 329
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f48b4051e8058f90800000000000000
+      internalID: -6952140685968702216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_56
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 328
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa40b7311bc797c0800000000000000
+      internalID: -4064556863869400405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_57
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 327
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79fd4efb1483de060800000000000000
+      internalID: 6984300452164984727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_58
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 329
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffe2f28623580240800000000000000
+      internalID: 4758144431187750897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_59
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 328
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbed46c8adc9fc750800000000000000
+      internalID: 6327448463951060667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_60
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 295
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9af94cbfa7309b60800000000000000
+      internalID: 7750756186622392986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_61
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 297
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98b63b43bd1cab90800000000000000
+      internalID: -7229370645938259812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_62
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 296
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e22e5ce975e74180800000000000000
+      internalID: -9131077407650995487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_63
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 295
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933b303899b2015d0800000000000000
+      internalID: -3093925005675482311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_64
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 297
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e89eaafbf32e46f0800000000000000
+      internalID: -698581327046338331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_65
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 296
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71c2670f4530b1ca0800000000000000
+      internalID: -6045234411468346345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_66
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 263
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2299391dad05a8f0800000000000000
+      internalID: -530002344042458577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_67
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 265
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c48decb938c07c00800000000000000
+      internalID: 896436476155102409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_68
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 264
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c4afa200131a150800000000000000
+      internalID: 5882036465113386029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_69
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 263
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d708ae540ea850d0800000000000000
+      internalID: -3433803382078830639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_70
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 265
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69985c087e90b5500800000000000000
+      internalID: 385913082972834198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_71
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 264
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7de1262861f5a350800000000000000
+      internalID: 6027489105923927421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_72
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 231
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0110eefd27883d0800000000000000
+      internalID: -3204184828777787232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_73
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 233
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b9acccd9dfee0c30800000000000000
+      internalID: 4327660010940967346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_74
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 232
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b396801e3c4dcbc10800000000000000
+      internalID: 2070763866442721595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_75
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 231
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebc81bec0cf2e24a0800000000000000
+      internalID: -6616298297412711234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_76
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 233
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fd08b5c0b1b064a0800000000000000
+      internalID: -6602081680935612937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_77
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 232
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d07853ad0265a6da0800000000000000
+      internalID: -5950849258516805875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_78
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 199
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413025126f1c51630800000000000000
+      internalID: 3897234315424170772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_79
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 201
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 147cb69e0457c9010800000000000000
+      internalID: 1196960522628220737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_80
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 200
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a7a81832841df30800000000000000
+      internalID: 4598536011856378518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_81
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 199
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ba3615461229c40800000000000000
+      internalID: 5517509208228211471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_82
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 201
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 146f154ed976c1a30800000000000000
+      internalID: 4187335681385821761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_83
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 200
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0209c1c1a703d6840800000000000000
+      internalID: 5218880844208050208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_84
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 167
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c82ff4dc843e8e70800000000000000
+      internalID: 9119284074945390792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_85
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 169
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a09c3733870efd0800000000000000
+      internalID: -2314718046087214537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_86
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 168
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07468cb89fc212630800000000000000
+      internalID: 3900448202583204976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_87
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 167
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d46bbc0dd54a1a360800000000000000
+      internalID: 7179200003847206477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_88
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 169
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6387d17f6ad9c6c20800000000000000
+      internalID: 3201106775589615670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_89
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 168
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 270c77af796b6b840800000000000000
+      internalID: 5239575980350619762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_90
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 135
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75b082d817539d70800000000000000
+      internalID: 9048671840439940475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_91
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 137
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c99ea41d4d5b390800000000000000
+      internalID: -7803096783979439048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_92
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 136
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b51529700b2bd4f0800000000000000
+      internalID: -803000827523033677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_93
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 135
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26aa8feb4e42ab1c0800000000000000
+      internalID: -4487233513846166942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_94
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 137
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c342d33fb50abd330800000000000000
+      internalID: 3736756632617296956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_95
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 136
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75003ea3478ec6900800000000000000
+      internalID: 679173229727907927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_96
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 103
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77435d3f81afd8e0800000000000000
+      internalID: -1666435700522530948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_97
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 105
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645823e951969ef40800000000000000
+      internalID: 5758249140139230534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_98
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 104
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb832f8bd9a70ace0800000000000000
+      internalID: -1395981066653517634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_99
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 103
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43b3ef7acb70c9800800000000000000
+      internalID: 620379355523988276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_100
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 105
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2e041c87d898240800000000000000
+      internalID: 4794518828090450622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_101
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 104
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614fac720d6c87e70800000000000000
+      internalID: 9113252443307308054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_102
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 71
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13b6dec69b7ef9a10800000000000000
+      internalID: 1918506749865585457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_103
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 73
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9fd4324c668d3ab0800000000000000
+      internalID: -5026713809550254178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_104
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 72
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cdeb95d66430c8f0800000000000000
+      internalID: -522359940499903036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_105
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 71
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06d29b2ca4b7a6b80800000000000000
+      internalID: -8400766593881526944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_106
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 73
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e333202a24158c400800000000000000
+      internalID: 344614718121587518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_107
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 72
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ded4f5ab8bcd540800000000000000
+      internalID: 5034101594095742340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_108
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 39
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a0a18262a64b2e0800000000000000
+      internalID: -2110945613215823298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_109
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 41
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e91c4c10bbf82170800000000000000
+      internalID: 8154043859161848288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_110
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 40
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6da038d7ffecc390800000000000000
+      internalID: -7796593007122141842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_111
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 39
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4495326607ac14680800000000000000
+      internalID: -8772508015042275004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_112
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 41
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb94552bd45b08dd0800000000000000
+      internalID: -2485787648999470660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_113
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 40
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78cf71aa5bcb37d10800000000000000
+      internalID: 2122247337850436743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_114
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 7
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b559d8c485b99cb0800000000000000
+      internalID: -4856651141232372304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_115
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 9
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a616355c3c1ab290800000000000000
+      internalID: -7873949953050667359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_116
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 8
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c056493b2640611a0800000000000000
+      internalID: -6839274162149366516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_117
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 7
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650fc206dbb3e2e60800000000000000
+      internalID: 7939348877649178710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_118
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 9
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea8d929b08f7d04e0800000000000000
+      internalID: -2013813267525674834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Run_1_1_119
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 8
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36fa7e8e0fc675ad0800000000000000
+      internalID: -2713580468511985821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

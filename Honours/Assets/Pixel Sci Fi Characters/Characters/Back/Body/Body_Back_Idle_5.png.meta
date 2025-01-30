@@ -1,0 +1,3140 @@
+fileFormatVersion: 2
+guid: 0e0f3569df727da4e8026f9b599f8822
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4072512698450318857
+    second: Body_Back_Idle_5_0
+  - first:
+      213: 274403906528805176
+    second: Body_Back_Idle_5_1
+  - first:
+      213: 9179944363801718553
+    second: Body_Back_Idle_5_2
+  - first:
+      213: -1603083074827017782
+    second: Body_Back_Idle_5_3
+  - first:
+      213: -1159464195052783335
+    second: Body_Back_Idle_5_4
+  - first:
+      213: -4779393180248257637
+    second: Body_Back_Idle_5_5
+  - first:
+      213: -1151595562152004457
+    second: Body_Back_Idle_5_6
+  - first:
+      213: -8130029118307020218
+    second: Body_Back_Idle_5_7
+  - first:
+      213: -5332576732493855995
+    second: Body_Back_Idle_5_8
+  - first:
+      213: -4333797479016193748
+    second: Body_Back_Idle_5_9
+  - first:
+      213: 854532384357622981
+    second: Body_Back_Idle_5_10
+  - first:
+      213: -4859897582265485768
+    second: Body_Back_Idle_5_11
+  - first:
+      213: 2896521717047938623
+    second: Body_Back_Idle_5_12
+  - first:
+      213: 3252100217426364693
+    second: Body_Back_Idle_5_13
+  - first:
+      213: -6963239943766342202
+    second: Body_Back_Idle_5_14
+  - first:
+      213: 5901607892127766516
+    second: Body_Back_Idle_5_15
+  - first:
+      213: 4528828863361834770
+    second: Body_Back_Idle_5_16
+  - first:
+      213: -6946828674548701007
+    second: Body_Back_Idle_5_17
+  - first:
+      213: -2856331946580369659
+    second: Body_Back_Idle_5_18
+  - first:
+      213: 325228003591578084
+    second: Body_Back_Idle_5_19
+  - first:
+      213: -5385137303864816170
+    second: Body_Back_Idle_5_20
+  - first:
+      213: 1423790717767083411
+    second: Body_Back_Idle_5_21
+  - first:
+      213: -934072276442036718
+    second: Body_Back_Idle_5_22
+  - first:
+      213: -1667220910500150308
+    second: Body_Back_Idle_5_23
+  - first:
+      213: 7443202488109016348
+    second: Body_Back_Idle_5_24
+  - first:
+      213: -8866197605472212140
+    second: Body_Back_Idle_5_25
+  - first:
+      213: -3951848775445843104
+    second: Body_Back_Idle_5_26
+  - first:
+      213: 4732735946934936405
+    second: Body_Back_Idle_5_27
+  - first:
+      213: 1276188860979601351
+    second: Body_Back_Idle_5_28
+  - first:
+      213: 705054025308147201
+    second: Body_Back_Idle_5_29
+  - first:
+      213: 5698361024992756952
+    second: Body_Back_Idle_5_30
+  - first:
+      213: 1743992155414948251
+    second: Body_Back_Idle_5_31
+  - first:
+      213: -8543083993533355483
+    second: Body_Back_Idle_5_32
+  - first:
+      213: 7239415069512289970
+    second: Body_Back_Idle_5_33
+  - first:
+      213: -2525168476279823590
+    second: Body_Back_Idle_5_34
+  - first:
+      213: -5413944115417166754
+    second: Body_Back_Idle_5_35
+  - first:
+      213: -1705808577743080463
+    second: Body_Back_Idle_5_36
+  - first:
+      213: -8069776115640668015
+    second: Body_Back_Idle_5_37
+  - first:
+      213: 2550761593783136418
+    second: Body_Back_Idle_5_38
+  - first:
+      213: -6190627450825239234
+    second: Body_Back_Idle_5_39
+  - first:
+      213: -6226756015784001042
+    second: Body_Back_Idle_5_40
+  - first:
+      213: 6382147076269480842
+    second: Body_Back_Idle_5_41
+  - first:
+      213: 2775713041713405463
+    second: Body_Back_Idle_5_42
+  - first:
+      213: 5408152037143749642
+    second: Body_Back_Idle_5_43
+  - first:
+      213: 3877816136048890604
+    second: Body_Back_Idle_5_44
+  - first:
+      213: 1200585757881929969
+    second: Body_Back_Idle_5_45
+  - first:
+      213: -6393611153741730649
+    second: Body_Back_Idle_5_46
+  - first:
+      213: 6930539620743066742
+    second: Body_Back_Idle_5_47
+  - first:
+      213: -5596709155044486188
+    second: Body_Back_Idle_5_48
+  - first:
+      213: -7941358245305716486
+    second: Body_Back_Idle_5_49
+  - first:
+      213: -7620065317405817571
+    second: Body_Back_Idle_5_50
+  - first:
+      213: -8459778760140144088
+    second: Body_Back_Idle_5_51
+  - first:
+      213: 3701717056670077329
+    second: Body_Back_Idle_5_52
+  - first:
+      213: -1365105501701057912
+    second: Body_Back_Idle_5_53
+  - first:
+      213: 2523498552002918168
+    second: Body_Back_Idle_5_54
+  - first:
+      213: 8998203687118110521
+    second: Body_Back_Idle_5_55
+  - first:
+      213: -2122967950512330099
+    second: Body_Back_Idle_5_56
+  - first:
+      213: 8389870867861491227
+    second: Body_Back_Idle_5_57
+  - first:
+      213: -293594516038999118
+    second: Body_Back_Idle_5_58
+  - first:
+      213: 3839918687673429890
+    second: Body_Back_Idle_5_59
+  - first:
+      213: -1691640757622380712
+    second: Body_Back_Idle_5_60
+  - first:
+      213: 5505365200525879402
+    second: Body_Back_Idle_5_61
+  - first:
+      213: 1189140174205457338
+    second: Body_Back_Idle_5_62
+  - first:
+      213: 5954465926550372589
+    second: Body_Back_Idle_5_63
+  - first:
+      213: -2020752312784403281
+    second: Body_Back_Idle_5_64
+  - first:
+      213: -7911724864931021758
+    second: Body_Back_Idle_5_65
+  - first:
+      213: -516367427040949366
+    second: Body_Back_Idle_5_66
+  - first:
+      213: 8151559892136625182
+    second: Body_Back_Idle_5_67
+  - first:
+      213: 6509714482451595121
+    second: Body_Back_Idle_5_68
+  - first:
+      213: 8392303838018907401
+    second: Body_Back_Idle_5_69
+  - first:
+      213: 2670629849876727025
+    second: Body_Back_Idle_5_70
+  - first:
+      213: -1806731230822275248
+    second: Body_Back_Idle_5_71
+  - first:
+      213: 4751123591588030478
+    second: Body_Back_Idle_5_72
+  - first:
+      213: -5029257928461761730
+    second: Body_Back_Idle_5_73
+  - first:
+      213: 3097669228111315606
+    second: Body_Back_Idle_5_74
+  - first:
+      213: -2114576730218047153
+    second: Body_Back_Idle_5_75
+  - first:
+      213: 3440659863113241014
+    second: Body_Back_Idle_5_76
+  - first:
+      213: -5897952233957895072
+    second: Body_Back_Idle_5_77
+  - first:
+      213: -8365780885004727855
+    second: Body_Back_Idle_5_78
+  - first:
+      213: 6546501273590487414
+    second: Body_Back_Idle_5_79
+  - first:
+      213: -3752821823140142235
+    second: Body_Back_Idle_5_80
+  - first:
+      213: -1526672332660576645
+    second: Body_Back_Idle_5_81
+  - first:
+      213: 6600336958270003040
+    second: Body_Back_Idle_5_82
+  - first:
+      213: -5370742030089926858
+    second: Body_Back_Idle_5_83
+  - first:
+      213: -4785588014931513664
+    second: Body_Back_Idle_5_84
+  - first:
+      213: 4501417320147934947
+    second: Body_Back_Idle_5_85
+  - first:
+      213: -2232921183485313878
+    second: Body_Back_Idle_5_86
+  - first:
+      213: -4468716233983158534
+    second: Body_Back_Idle_5_87
+  - first:
+      213: 5221687013123729027
+    second: Body_Back_Idle_5_88
+  - first:
+      213: 6475139640273395904
+    second: Body_Back_Idle_5_89
+  - first:
+      213: -1595643792552584937
+    second: Body_Back_Idle_5_90
+  - first:
+      213: 8533956812631367740
+    second: Body_Back_Idle_5_91
+  - first:
+      213: 4139274706589473105
+    second: Body_Back_Idle_5_92
+  - first:
+      213: 3845856438964856500
+    second: Body_Back_Idle_5_93
+  - first:
+      213: -8227147867952564881
+    second: Body_Back_Idle_5_94
+  - first:
+      213: -483275735842497276
+    second: Body_Back_Idle_5_95
+  - first:
+      213: -3475715319114901076
+    second: Body_Back_Idle_5_96
+  - first:
+      213: 2364670842157682390
+    second: Body_Back_Idle_5_97
+  - first:
+      213: -4406080053575148029
+    second: Body_Back_Idle_5_98
+  - first:
+      213: 3378501824502930731
+    second: Body_Back_Idle_5_99
+  - first:
+      213: -4463671467969728981
+    second: Body_Back_Idle_5_100
+  - first:
+      213: 246537850867994432
+    second: Body_Back_Idle_5_101
+  - first:
+      213: 5633872039752895486
+    second: Body_Back_Idle_5_102
+  - first:
+      213: 5993111057210119847
+    second: Body_Back_Idle_5_103
+  - first:
+      213: -5345628935029483585
+    second: Body_Back_Idle_5_104
+  - first:
+      213: -8879489055624212876
+    second: Body_Back_Idle_5_105
+  - first:
+      213: -2968994262120039908
+    second: Body_Back_Idle_5_106
+  - first:
+      213: -4408897284756698744
+    second: Body_Back_Idle_5_107
+  - first:
+      213: 853505521983798088
+    second: Body_Back_Idle_5_108
+  - first:
+      213: -2343200078484826585
+    second: Body_Back_Idle_5_109
+  - first:
+      213: -309602885699313737
+    second: Body_Back_Idle_5_110
+  - first:
+      213: 3431059781905714435
+    second: Body_Back_Idle_5_111
+  - first:
+      213: -8790819390869088081
+    second: Body_Back_Idle_5_112
+  - first:
+      213: 6446439516617854346
+    second: Body_Back_Idle_5_113
+  - first:
+      213: -3746936548396414589
+    second: Body_Back_Idle_5_114
+  - first:
+      213: -8751255736831856586
+    second: Body_Back_Idle_5_115
+  - first:
+      213: -2148596711920681601
+    second: Body_Back_Idle_5_116
+  - first:
+      213: 7879723895648524708
+    second: Body_Back_Idle_5_117
+  - first:
+      213: -4923994122661340224
+    second: Body_Back_Idle_5_118
+  - first:
+      213: -6501652510616839642
+    second: Body_Back_Idle_5_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f9e99127478b77c0800000000000000
+      internalID: -4072512698450318857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 607
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83101ad26e0eec300800000000000000
+      internalID: 274403906528805176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 607
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91f204ee2c6b56f70800000000000000
+      internalID: 9179944363801718553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 607
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1ae7bdf64b0c9e0800000000000000
+      internalID: -1603083074827017782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919381c2571c8efe0800000000000000
+      internalID: -1159464195052783335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_5
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bc061993f2cadb0800000000000000
+      internalID: -4779393180248257637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794730900f5b400f0800000000000000
+      internalID: -1151595562152004457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 575
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6425ab577955c2f80800000000000000
+      internalID: -8130029118307020218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 575
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503c03a07b1eef5b0800000000000000
+      internalID: -5332576732493855995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 575
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c21a1ce77224bd3c0800000000000000
+      internalID: -4333797479016193748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_10
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c424b21da8ebdb00800000000000000
+      internalID: 854532384357622981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8363944d5ec2e8cb0800000000000000
+      internalID: -4859897582265485768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3ec8dcb723823820800000000000000
+      internalID: 2896521717047938623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_13
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 543
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5194ba9dae7c12d20800000000000000
+      internalID: 3252100217426364693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 543
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c50ff9f92a9d5f90800000000000000
+      internalID: -6963239943766342202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 543
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7daed1c19b6e150800000000000000
+      internalID: 5901607892127766516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_16
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21fd7314bd1a9de30800000000000000
+      internalID: 4528828863361834770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b8e60a5028e79f90800000000000000
+      internalID: -6946828674548701007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50f1a736a354c58d0800000000000000
+      internalID: -2856331946580369659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 511
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1e5196521738400800000000000000
+      internalID: 325228003591578084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 511
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddce6067262445b0800000000000000
+      internalID: -5385137303864816170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 511
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395610f3d1252c310800000000000000
+      internalID: 1423790717767083411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_22
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 216c128a6328903f0800000000000000
+      internalID: -934072276442036718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_23
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd3098b4a67dcd8e0800000000000000
+      internalID: -1667220910500150308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15aa072a319b4760800000000000000
+      internalID: 7443202488109016348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_25
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 479
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45be861c040f4f480800000000000000
+      internalID: -8866197605472212140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_26
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 479
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 063fc7df9763829c0800000000000000
+      internalID: -3951848775445843104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 479
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55367c4c44e0ea140800000000000000
+      internalID: 4732735946934936405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cfdffce10fe5b110800000000000000
+      internalID: 1276188860979601351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_29
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e83f586ead8c900800000000000000
+      internalID: 705054025308147201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_30
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4cf983925a41f40800000000000000
+      internalID: 5698361024992756952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_31
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 447
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99639210a7e33810800000000000000
+      internalID: 1743992155414948251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_32
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 447
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a6e1ffe5ed07980800000000000000
+      internalID: -8543083993533355483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_33
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 447
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bec3ef46a1977460800000000000000
+      internalID: 7239415069512289970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a13a35556acc4fcd0800000000000000
+      internalID: -2525168476279823590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_35
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c4eb6e28ecdd4b0800000000000000
+      internalID: -5413944115417166754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f33fc4e220c358e0800000000000000
+      internalID: -1705808577743080463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_37
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 415
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1907e4ad065620090800000000000000
+      internalID: -8069776115640668015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_38
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 415
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a03720b720266320800000000000000
+      internalID: 2550761593783136418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_39
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 415
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3597c00229761aa0800000000000000
+      internalID: -6190627450825239234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_40
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee10b28f46e1699a0800000000000000
+      internalID: -6226756015784001042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_41
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b1759a3f0f19850800000000000000
+      internalID: 6382147076269480842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_42
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71e1fb91e40558620800000000000000
+      internalID: 2775713041713405463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_43
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a042249cf9d9d0b40800000000000000
+      internalID: 5408152037143749642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_44
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2d87dea35c0d530800000000000000
+      internalID: 3877816136048890604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_45
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 383
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f012f4c26659a010800000000000000
+      internalID: 1200585757881929969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_46
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7acaf3dc7845547a0800000000000000
+      internalID: -6393611153741730649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_47
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6743924c0193e2060800000000000000
+      internalID: 6930539620743066742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_48
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d395661dae7452b0800000000000000
+      internalID: -5596709155044486188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_49
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 351
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0fe6240c0aac190800000000000000
+      internalID: -7941358245305716486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_50
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 351
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1580c677f6104690800000000000000
+      internalID: -7620065317405817571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_51
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 351
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 822c37b1a04d89a80800000000000000
+      internalID: -8459778760140144088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_52
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19113ddec042f5330800000000000000
+      internalID: 3701717056670077329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_53
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8825d2267cb2e0de0800000000000000
+      internalID: -1365105501701057912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_54
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817b85f1094450320800000000000000
+      internalID: 2523498552002918168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_55
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 319
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ff843349a00ec70800000000000000
+      internalID: 8998203687118110521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_56
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 319
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a6c20a5e3b982e0800000000000000
+      internalID: -2122967950512330099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_57
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 319
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1e48465a1fce6470800000000000000
+      internalID: 8389870867861491227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_58
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b32e7bd751fcebf0800000000000000
+      internalID: -293594516038999118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_59
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28fa821a3b12a4530800000000000000
+      internalID: 3839918687673429890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_60
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857685291b51688e0800000000000000
+      internalID: -1691640757622380712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_61
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 287
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6864203b7cf66c40800000000000000
+      internalID: 5505365200525879402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_62
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 287
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab399a720bca08010800000000000000
+      internalID: 1189140174205457338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_63
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 287
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de0c33b463382a250800000000000000
+      internalID: 5954465926550372589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_64
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4cf695a78d4f3e0800000000000000
+      internalID: -2020752312784403281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_65
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c39294728e33290800000000000000
+      internalID: -7911724864931021758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_66
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8b44a99f8e75d8f0800000000000000
+      internalID: -516367427040949366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_67
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 255
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1400287888202170800000000000000
+      internalID: 8151559892136625182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_68
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 255
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f3eb3f4d6275a50800000000000000
+      internalID: 6509714482451595121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_69
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 255
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90da34850e3777470800000000000000
+      internalID: 8392303838018907401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_70
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f40578e2bbff0520800000000000000
+      internalID: 2670629849876727025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_71
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 057eb3e94833de6e0800000000000000
+      internalID: -1806731230822275248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_72
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e082598ebb16fe140800000000000000
+      internalID: 4751123591588030478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_73
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 223
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e33483a6f8c743ab0800000000000000
+      internalID: -5029257928461761730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_74
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 223
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692cb3530c12dfa20800000000000000
+      internalID: 3097669228111315606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_75
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 223
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49db09daa387a2e0800000000000000
+      internalID: -2114576730218047153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_76
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b11fc58aedafbf20800000000000000
+      internalID: 3440659863113241014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_77
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 064d7b021b3462ea0800000000000000
+      internalID: -5897952233957895072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_78
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d94a80eb96c6eb80800000000000000
+      internalID: -8365780885004727855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_79
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 191
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679d0063938d9da50800000000000000
+      internalID: 6546501273590487414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_80
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 191
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563e5666f6c4bebc0800000000000000
+      internalID: -3752821823140142235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_81
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 191
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7e69532a9b20dae0800000000000000
+      internalID: -1526672332660576645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_82
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067d0935e7b199b50800000000000000
+      internalID: 6600336958270003040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_83
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 637ca3c349a4775b0800000000000000
+      internalID: -5370742030089926858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_84
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cee3a83e0d269db0800000000000000
+      internalID: -4785588014931513664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_85
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 159
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee5531043f387e30800000000000000
+      internalID: 4501417320147934947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_86
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 159
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aacb9ee93021301e0800000000000000
+      internalID: -2232921183485313878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_87
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 159
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6996fe24eebf1c0800000000000000
+      internalID: -4468716233983158534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_88
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386a2893ca8277840800000000000000
+      internalID: 5221687013123729027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_89
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0eb8132315cd950800000000000000
+      internalID: 6475139640273395904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_90
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71998dcbc622bd9e0800000000000000
+      internalID: -1595643792552584937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_91
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 127
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30ea699184be6670800000000000000
+      internalID: 8533956812631367740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_92
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 127
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15956023a68a17930800000000000000
+      internalID: 4139274706589473105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_93
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 127
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b626a51e0a3f5530800000000000000
+      internalID: 3845856438964856500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_94
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6533187a9c43dd80800000000000000
+      internalID: -8227147867952564881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_95
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40dda8c574f0b49f0800000000000000
+      internalID: -483275735842497276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_96
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca9d5c71557c3cfc0800000000000000
+      internalID: -3475715319114901076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_97
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 95
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6de48853a9ff0d020800000000000000
+      internalID: 2364670842157682390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_98
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 95
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e18b229857ad2c0800000000000000
+      internalID: -4406080053575148029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_99
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 95
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d91826289d2ee20800000000000000
+      internalID: 3378501824502930731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_100
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e2e9d037add02c0800000000000000
+      internalID: -4463671467969728981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_101
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04fcca08ed0eb6300800000000000000
+      internalID: 246537850867994432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_102
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efb0a7745c88f2e40800000000000000
+      internalID: 5633872039752895486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_103
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 63
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a69970f0cecb2350800000000000000
+      internalID: 5993111057210119847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_104
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 63
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb794825ec280d5b0800000000000000
+      internalID: -5345628935029483585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_105
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47ecc8cdfb7b5c480800000000000000
+      internalID: -8879489055624212876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_106
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a7922f2730cc6d0800000000000000
+      internalID: -2968994262120039908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_107
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88984e2674370d2c0800000000000000
+      internalID: -4408897284756698744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_108
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84bbdab00c248db00800000000000000
+      internalID: 853505521983798088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_109
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7269e3481f74b7fd0800000000000000
+      internalID: -2343200078484826585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_110
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfd478d0d114bbf0800000000000000
+      internalID: -309602885699313737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_111
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 31
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d8e9f61b29d9f20800000000000000
+      internalID: 3431059781905714435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_112
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8d1aaf65cb00680800000000000000
+      internalID: -8790819390869088081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_113
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d4c0ee59a567950800000000000000
+      internalID: 6446439516617854346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_114
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38947e4bf05300cc0800000000000000
+      internalID: -3746936548396414589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_115
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630b983064b4d8680800000000000000
+      internalID: -8751255736831856586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_116
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d356c9ca6ae22e0800000000000000
+      internalID: -2148596711920681601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_117
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9994072276a5d60800000000000000
+      internalID: 7879723895648524708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_118
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cbd8a21f657aabb0800000000000000
+      internalID: -4923994122661340224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Idle_5_119
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62a18a32d7d75c5a0800000000000000
+      internalID: -6501652510616839642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Body_Back_Idle_5_0: -4072512698450318857
+      Body_Back_Idle_5_1: 274403906528805176
+      Body_Back_Idle_5_10: 854532384357622981
+      Body_Back_Idle_5_100: -4463671467969728981
+      Body_Back_Idle_5_101: 246537850867994432
+      Body_Back_Idle_5_102: 5633872039752895486
+      Body_Back_Idle_5_103: 5993111057210119847
+      Body_Back_Idle_5_104: -5345628935029483585
+      Body_Back_Idle_5_105: -8879489055624212876
+      Body_Back_Idle_5_106: -2968994262120039908
+      Body_Back_Idle_5_107: -4408897284756698744
+      Body_Back_Idle_5_108: 853505521983798088
+      Body_Back_Idle_5_109: -2343200078484826585
+      Body_Back_Idle_5_11: -4859897582265485768
+      Body_Back_Idle_5_110: -309602885699313737
+      Body_Back_Idle_5_111: 3431059781905714435
+      Body_Back_Idle_5_112: -8790819390869088081
+      Body_Back_Idle_5_113: 6446439516617854346
+      Body_Back_Idle_5_114: -3746936548396414589
+      Body_Back_Idle_5_115: -8751255736831856586
+      Body_Back_Idle_5_116: -2148596711920681601
+      Body_Back_Idle_5_117: 7879723895648524708
+      Body_Back_Idle_5_118: -4923994122661340224
+      Body_Back_Idle_5_119: -6501652510616839642
+      Body_Back_Idle_5_12: 2896521717047938623
+      Body_Back_Idle_5_13: 3252100217426364693
+      Body_Back_Idle_5_14: -6963239943766342202
+      Body_Back_Idle_5_15: 5901607892127766516
+      Body_Back_Idle_5_16: 4528828863361834770
+      Body_Back_Idle_5_17: -6946828674548701007
+      Body_Back_Idle_5_18: -2856331946580369659
+      Body_Back_Idle_5_19: 325228003591578084
+      Body_Back_Idle_5_2: 9179944363801718553
+      Body_Back_Idle_5_20: -5385137303864816170
+      Body_Back_Idle_5_21: 1423790717767083411
+      Body_Back_Idle_5_22: -934072276442036718
+      Body_Back_Idle_5_23: -1667220910500150308
+      Body_Back_Idle_5_24: 7443202488109016348
+      Body_Back_Idle_5_25: -8866197605472212140
+      Body_Back_Idle_5_26: -3951848775445843104
+      Body_Back_Idle_5_27: 4732735946934936405
+      Body_Back_Idle_5_28: 1276188860979601351
+      Body_Back_Idle_5_29: 705054025308147201
+      Body_Back_Idle_5_3: -1603083074827017782
+      Body_Back_Idle_5_30: 5698361024992756952
+      Body_Back_Idle_5_31: 1743992155414948251
+      Body_Back_Idle_5_32: -8543083993533355483
+      Body_Back_Idle_5_33: 7239415069512289970
+      Body_Back_Idle_5_34: -2525168476279823590
+      Body_Back_Idle_5_35: -5413944115417166754
+      Body_Back_Idle_5_36: -1705808577743080463
+      Body_Back_Idle_5_37: -8069776115640668015
+      Body_Back_Idle_5_38: 2550761593783136418
+      Body_Back_Idle_5_39: -6190627450825239234
+      Body_Back_Idle_5_4: -1159464195052783335
+      Body_Back_Idle_5_40: -6226756015784001042
+      Body_Back_Idle_5_41: 6382147076269480842
+      Body_Back_Idle_5_42: 2775713041713405463
+      Body_Back_Idle_5_43: 5408152037143749642
+      Body_Back_Idle_5_44: 3877816136048890604
+      Body_Back_Idle_5_45: 1200585757881929969
+      Body_Back_Idle_5_46: -6393611153741730649
+      Body_Back_Idle_5_47: 6930539620743066742
+      Body_Back_Idle_5_48: -5596709155044486188
+      Body_Back_Idle_5_49: -7941358245305716486
+      Body_Back_Idle_5_5: -4779393180248257637
+      Body_Back_Idle_5_50: -7620065317405817571
+      Body_Back_Idle_5_51: -8459778760140144088
+      Body_Back_Idle_5_52: 3701717056670077329
+      Body_Back_Idle_5_53: -1365105501701057912
+      Body_Back_Idle_5_54: 2523498552002918168
+      Body_Back_Idle_5_55: 8998203687118110521
+      Body_Back_Idle_5_56: -2122967950512330099
+      Body_Back_Idle_5_57: 8389870867861491227
+      Body_Back_Idle_5_58: -293594516038999118
+      Body_Back_Idle_5_59: 3839918687673429890
+      Body_Back_Idle_5_6: -1151595562152004457
+      Body_Back_Idle_5_60: -1691640757622380712
+      Body_Back_Idle_5_61: 5505365200525879402
+      Body_Back_Idle_5_62: 1189140174205457338
+      Body_Back_Idle_5_63: 5954465926550372589
+      Body_Back_Idle_5_64: -2020752312784403281
+      Body_Back_Idle_5_65: -7911724864931021758
+      Body_Back_Idle_5_66: -516367427040949366
+      Body_Back_Idle_5_67: 8151559892136625182
+      Body_Back_Idle_5_68: 6509714482451595121
+      Body_Back_Idle_5_69: 8392303838018907401
+      Body_Back_Idle_5_7: -8130029118307020218
+      Body_Back_Idle_5_70: 2670629849876727025
+      Body_Back_Idle_5_71: -1806731230822275248
+      Body_Back_Idle_5_72: 4751123591588030478
+      Body_Back_Idle_5_73: -5029257928461761730
+      Body_Back_Idle_5_74: 3097669228111315606
+      Body_Back_Idle_5_75: -2114576730218047153
+      Body_Back_Idle_5_76: 3440659863113241014
+      Body_Back_Idle_5_77: -5897952233957895072
+      Body_Back_Idle_5_78: -8365780885004727855
+      Body_Back_Idle_5_79: 6546501273590487414
+      Body_Back_Idle_5_8: -5332576732493855995
+      Body_Back_Idle_5_80: -3752821823140142235
+      Body_Back_Idle_5_81: -1526672332660576645
+      Body_Back_Idle_5_82: 6600336958270003040
+      Body_Back_Idle_5_83: -5370742030089926858
+      Body_Back_Idle_5_84: -4785588014931513664
+      Body_Back_Idle_5_85: 4501417320147934947
+      Body_Back_Idle_5_86: -2232921183485313878
+      Body_Back_Idle_5_87: -4468716233983158534
+      Body_Back_Idle_5_88: 5221687013123729027
+      Body_Back_Idle_5_89: 6475139640273395904
+      Body_Back_Idle_5_9: -4333797479016193748
+      Body_Back_Idle_5_90: -1595643792552584937
+      Body_Back_Idle_5_91: 8533956812631367740
+      Body_Back_Idle_5_92: 4139274706589473105
+      Body_Back_Idle_5_93: 3845856438964856500
+      Body_Back_Idle_5_94: -8227147867952564881
+      Body_Back_Idle_5_95: -483275735842497276
+      Body_Back_Idle_5_96: -3475715319114901076
+      Body_Back_Idle_5_97: 2364670842157682390
+      Body_Back_Idle_5_98: -4406080053575148029
+      Body_Back_Idle_5_99: 3378501824502930731
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

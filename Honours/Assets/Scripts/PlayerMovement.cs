@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
+    public Transform weapon;
 
     [Header("Speed Settings")]
     [SerializeField] float defaultSpeed = 3f;
@@ -65,6 +66,18 @@ public class PlayerMovement : MonoBehaviour
 
             // Save the last direction for idle animations
             lastMoveDirection = normalizedDirection;
+
+            // Flip player
+            if (moveDirection.x > 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+                weapon.localScale = new Vector3(1, 1, 1); 
+            }
+            else if (moveDirection.x < 0)
+            {
+                transform.localScale = new Vector3(1, 1, 1); 
+                weapon.localScale = new Vector3(1, 1, 1); 
+            }
         }
         else
         {
@@ -102,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            dashDirection = Vector2.right; // Default direction if no movement history
+            dashDirection = Vector2.right; 
         }
 
         if (dashDirection == Vector2.zero)

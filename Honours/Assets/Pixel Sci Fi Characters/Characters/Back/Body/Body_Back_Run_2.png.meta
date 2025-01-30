@@ -1,0 +1,3020 @@
+fileFormatVersion: 2
+guid: 239d28aaafa88af47aa7a9549443854a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7817900367307893677
+    second: Body_Back_Run_2_0
+  - first:
+      213: -4061708709420377219
+    second: Body_Back_Run_2_1
+  - first:
+      213: -1430542673991232003
+    second: Body_Back_Run_2_2
+  - first:
+      213: 5478898134695807266
+    second: Body_Back_Run_2_3
+  - first:
+      213: 4898041185466675269
+    second: Body_Back_Run_2_4
+  - first:
+      213: 2755323182689102803
+    second: Body_Back_Run_2_5
+  - first:
+      213: 2850170756559097594
+    second: Body_Back_Run_2_6
+  - first:
+      213: 4549511211133294744
+    second: Body_Back_Run_2_7
+  - first:
+      213: 110086717440766687
+    second: Body_Back_Run_2_8
+  - first:
+      213: -8635263730992788728
+    second: Body_Back_Run_2_9
+  - first:
+      213: 927835720943101744
+    second: Body_Back_Run_2_10
+  - first:
+      213: 7087205601203609089
+    second: Body_Back_Run_2_11
+  - first:
+      213: 7438604987844547173
+    second: Body_Back_Run_2_12
+  - first:
+      213: 6631201403390665999
+    second: Body_Back_Run_2_13
+  - first:
+      213: -5220330869254554957
+    second: Body_Back_Run_2_14
+  - first:
+      213: 3807487592859985385
+    second: Body_Back_Run_2_15
+  - first:
+      213: 3942952052242114463
+    second: Body_Back_Run_2_16
+  - first:
+      213: -8840810322913201530
+    second: Body_Back_Run_2_17
+  - first:
+      213: -5226081333821078314
+    second: Body_Back_Run_2_18
+  - first:
+      213: 1024225718216150767
+    second: Body_Back_Run_2_19
+  - first:
+      213: -4926225072513547464
+    second: Body_Back_Run_2_20
+  - first:
+      213: 5387769329980006648
+    second: Body_Back_Run_2_21
+  - first:
+      213: -135983626746033967
+    second: Body_Back_Run_2_22
+  - first:
+      213: -6173102477991290705
+    second: Body_Back_Run_2_23
+  - first:
+      213: 280444983763831711
+    second: Body_Back_Run_2_24
+  - first:
+      213: -8241044153791584158
+    second: Body_Back_Run_2_25
+  - first:
+      213: 145425362539983889
+    second: Body_Back_Run_2_26
+  - first:
+      213: -3321865284281914485
+    second: Body_Back_Run_2_27
+  - first:
+      213: 2614745416848390152
+    second: Body_Back_Run_2_28
+  - first:
+      213: 1538620936529445753
+    second: Body_Back_Run_2_29
+  - first:
+      213: -8519266781120176815
+    second: Body_Back_Run_2_30
+  - first:
+      213: 4007021161722948801
+    second: Body_Back_Run_2_31
+  - first:
+      213: 8029754798612780818
+    second: Body_Back_Run_2_32
+  - first:
+      213: 2669599726248227537
+    second: Body_Back_Run_2_33
+  - first:
+      213: 36212100001214071
+    second: Body_Back_Run_2_34
+  - first:
+      213: 8849824463756762057
+    second: Body_Back_Run_2_35
+  - first:
+      213: -6873309566039356484
+    second: Body_Back_Run_2_36
+  - first:
+      213: -6672149997184974527
+    second: Body_Back_Run_2_37
+  - first:
+      213: -3484117777948670681
+    second: Body_Back_Run_2_38
+  - first:
+      213: 6035563513523422222
+    second: Body_Back_Run_2_39
+  - first:
+      213: 2822188652247972757
+    second: Body_Back_Run_2_40
+  - first:
+      213: 1094240357486292231
+    second: Body_Back_Run_2_41
+  - first:
+      213: 6113649434749325095
+    second: Body_Back_Run_2_42
+  - first:
+      213: -5136766734448279053
+    second: Body_Back_Run_2_43
+  - first:
+      213: -3319582445336402457
+    second: Body_Back_Run_2_44
+  - first:
+      213: -7342829895003772340
+    second: Body_Back_Run_2_45
+  - first:
+      213: 3042451323874099729
+    second: Body_Back_Run_2_46
+  - first:
+      213: 6965728898175409218
+    second: Body_Back_Run_2_47
+  - first:
+      213: 680258238156344151
+    second: Body_Back_Run_2_48
+  - first:
+      213: 2245779646704174297
+    second: Body_Back_Run_2_49
+  - first:
+      213: 8785852938582299559
+    second: Body_Back_Run_2_50
+  - first:
+      213: 8915476627996880024
+    second: Body_Back_Run_2_51
+  - first:
+      213: -6979154770119219114
+    second: Body_Back_Run_2_52
+  - first:
+      213: 9105566287116178876
+    second: Body_Back_Run_2_53
+  - first:
+      213: 6189093030682968991
+    second: Body_Back_Run_2_54
+  - first:
+      213: 1653260680566895640
+    second: Body_Back_Run_2_55
+  - first:
+      213: 2388095530897465251
+    second: Body_Back_Run_2_56
+  - first:
+      213: -7945051442732571137
+    second: Body_Back_Run_2_57
+  - first:
+      213: -2715101713926966631
+    second: Body_Back_Run_2_58
+  - first:
+      213: 9038891045389333575
+    second: Body_Back_Run_2_59
+  - first:
+      213: -5587088277043211011
+    second: Body_Back_Run_2_60
+  - first:
+      213: 3755706762278275345
+    second: Body_Back_Run_2_61
+  - first:
+      213: -2078745945490584738
+    second: Body_Back_Run_2_62
+  - first:
+      213: 2907365763374341892
+    second: Body_Back_Run_2_63
+  - first:
+      213: 4753393864939150606
+    second: Body_Back_Run_2_64
+  - first:
+      213: 6785057171406229702
+    second: Body_Back_Run_2_65
+  - first:
+      213: 6857053988662117967
+    second: Body_Back_Run_2_66
+  - first:
+      213: -4250924665299850951
+    second: Body_Back_Run_2_67
+  - first:
+      213: 8850029687424101860
+    second: Body_Back_Run_2_68
+  - first:
+      213: 7820995833145173184
+    second: Body_Back_Run_2_69
+  - first:
+      213: 3702803037139603703
+    second: Body_Back_Run_2_70
+  - first:
+      213: 494979218963436561
+    second: Body_Back_Run_2_71
+  - first:
+      213: -7041291935643986493
+    second: Body_Back_Run_2_72
+  - first:
+      213: -4725233441897299398
+    second: Body_Back_Run_2_73
+  - first:
+      213: -4415494160050596553
+    second: Body_Back_Run_2_74
+  - first:
+      213: -2612807618194749049
+    second: Body_Back_Run_2_75
+  - first:
+      213: 912227020148078931
+    second: Body_Back_Run_2_76
+  - first:
+      213: -8687053021322265402
+    second: Body_Back_Run_2_77
+  - first:
+      213: -5988299767225553126
+    second: Body_Back_Run_2_78
+  - first:
+      213: -1324135947816800707
+    second: Body_Back_Run_2_79
+  - first:
+      213: -4338753737712343884
+    second: Body_Back_Run_2_80
+  - first:
+      213: -8827558756016216035
+    second: Body_Back_Run_2_81
+  - first:
+      213: 7814209445494377440
+    second: Body_Back_Run_2_82
+  - first:
+      213: -1725476073217172245
+    second: Body_Back_Run_2_83
+  - first:
+      213: -3921718021109558367
+    second: Body_Back_Run_2_84
+  - first:
+      213: -3479568488976660978
+    second: Body_Back_Run_2_85
+  - first:
+      213: 258530065170387316
+    second: Body_Back_Run_2_86
+  - first:
+      213: 8281444352855795457
+    second: Body_Back_Run_2_87
+  - first:
+      213: 5477409037303456570
+    second: Body_Back_Run_2_88
+  - first:
+      213: 3834396836755956270
+    second: Body_Back_Run_2_89
+  - first:
+      213: 2504193074232479347
+    second: Body_Back_Run_2_90
+  - first:
+      213: 4544994665840140483
+    second: Body_Back_Run_2_91
+  - first:
+      213: 7309074529547765438
+    second: Body_Back_Run_2_92
+  - first:
+      213: -3371652172748583595
+    second: Body_Back_Run_2_93
+  - first:
+      213: 4256526962987663194
+    second: Body_Back_Run_2_94
+  - first:
+      213: -1718132929269258593
+    second: Body_Back_Run_2_95
+  - first:
+      213: -3517299921835380845
+    second: Body_Back_Run_2_96
+  - first:
+      213: 5032001510104044107
+    second: Body_Back_Run_2_97
+  - first:
+      213: 9191232682569606886
+    second: Body_Back_Run_2_98
+  - first:
+      213: -3724678443302439159
+    second: Body_Back_Run_2_99
+  - first:
+      213: 8703881285803284819
+    second: Body_Back_Run_2_100
+  - first:
+      213: 8901762464107838924
+    second: Body_Back_Run_2_101
+  - first:
+      213: -2370456784078707183
+    second: Body_Back_Run_2_102
+  - first:
+      213: -918570145908267811
+    second: Body_Back_Run_2_103
+  - first:
+      213: -2726342969249914123
+    second: Body_Back_Run_2_104
+  - first:
+      213: 2131339717909370812
+    second: Body_Back_Run_2_105
+  - first:
+      213: -2511525896854974090
+    second: Body_Back_Run_2_106
+  - first:
+      213: 379608526868888754
+    second: Body_Back_Run_2_107
+  - first:
+      213: -965777272982518418
+    second: Body_Back_Run_2_108
+  - first:
+      213: 2427279566999596914
+    second: Body_Back_Run_2_109
+  - first:
+      213: -843518059662491091
+    second: Body_Back_Run_2_110
+  - first:
+      213: -4965007997247069125
+    second: Body_Back_Run_2_111
+  - first:
+      213: -2726265603959664237
+    second: Body_Back_Run_2_112
+  - first:
+      213: 865917338926984536
+    second: Body_Back_Run_2_113
+  - first:
+      213: -4837941111206982257
+    second: Body_Back_Run_2_114
+  - first:
+      213: 670928240269858266
+    second: Body_Back_Run_2_115
+  - first:
+      213: -7787460661432265567
+    second: Body_Back_Run_2_116
+  - first:
+      213: -9065569319836985317
+    second: Body_Back_Run_2_117
+  - first:
+      213: 5501166623321989469
+    second: Body_Back_Run_2_118
+  - first:
+      213: -7960923092772705685
+    second: Body_Back_Run_2_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Body_Back_Run_2_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3549735790d318390800000000000000
+      internalID: -7817900367307893677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 610
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b53e9d279e1a7c0800000000000000
+      internalID: -4061708709420377219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 608
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df517b07401b52ce0800000000000000
+      internalID: -1430542673991232003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 607
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 229081733d4f80c40800000000000000
+      internalID: 5478898134695807266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 610
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54079fad18659f340800000000000000
+      internalID: 4898041185466675269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_5
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 608
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3db259916dfdc3620800000000000000
+      internalID: 2755323182689102803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afe49e5c337dd8720800000000000000
+      internalID: 2850170756559097594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_7
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 578
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 898d149975c132f30800000000000000
+      internalID: 4549511211133294744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 576
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2bb87494b178100800000000000000
+      internalID: 110086717440766687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 575
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b4c546361692880800000000000000
+      internalID: -8635263730992788728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_10
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 578
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0376bbc1ca550ec00800000000000000
+      internalID: 927835720943101744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 576
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10e56e5d1ffca5260800000000000000
+      internalID: 7087205601203609089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_12
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5625ce433db3b3760800000000000000
+      internalID: 7438604987844547173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_13
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 546
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f052c23fa82c60c50800000000000000
+      internalID: 6631201403390665999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_14
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 544
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba7310abb8ad87b0800000000000000
+      internalID: -5220330869254554957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_15
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 543
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e56023fac9e6d430800000000000000
+      internalID: 3807487592859985385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_16
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 546
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97e948300e28b630800000000000000
+      internalID: 3942952052242114463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_17
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 544
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 682f6281ad12f4580800000000000000
+      internalID: -8840810322913201530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_18
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d48b4247ba3977b0800000000000000
+      internalID: -5226081333821078314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_19
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 514
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feec7183dd7c63e00800000000000000
+      internalID: 1024225718216150767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_20
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 512
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8330535956882abb0800000000000000
+      internalID: -4926225072513547464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 511
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f0e335f8a335ca40800000000000000
+      internalID: 5387769329980006648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_22
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 514
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d88888ac93ec1ef0800000000000000
+      internalID: -135983626746033967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_23
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 512
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa8de35b00cb45aa0800000000000000
+      internalID: -6173102477991290705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_24
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b88441a3754e300800000000000000
+      internalID: 280444983763831711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_25
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 482
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26861fa410ee1ad80800000000000000
+      internalID: -8241044153791584158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_26
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 480
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1143783c897a40200800000000000000
+      internalID: 145425362539983889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_27
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 479
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bacaabf1d56e1d0800000000000000
+      internalID: -3321865284281914485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_28
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 482
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80834556a11794420800000000000000
+      internalID: 2614745416848390152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_29
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 480
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97301ddf6974a5510800000000000000
+      internalID: 1538620936529445753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_30
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ddb84effb75c980800000000000000
+      internalID: -8519266781120176815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_31
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 450
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cc28f7348ccb9730800000000000000
+      internalID: 4007021161722948801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_32
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 448
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2179dc4227b6f6f60800000000000000
+      internalID: 8029754798612780818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_33
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 447
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2718f8ec25c0520800000000000000
+      internalID: 2669599726248227537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 450
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77ea42d86b6a08000800000000000000
+      internalID: 36212100001214071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_35
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 448
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb98ce1674e0da70800000000000000
+      internalID: 8849824463756762057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_36
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb0ee4bd591d90a0800000000000000
+      internalID: -6873309566039356484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_37
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 418
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1418aa99de2c763a0800000000000000
+      internalID: -6672149997184974527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_38
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 416
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7250fb1375de5afc0800000000000000
+      internalID: -3484117777948670681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_39
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 415
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e044fdaa901a2c350800000000000000
+      internalID: 6035563513523422222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_40
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 418
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bf06a60ad6a2720800000000000000
+      internalID: 2822188652247972757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_41
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 416
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70deddebec58f2f00800000000000000
+      internalID: 1094240357486292231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_42
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f4087f4cb08d450800000000000000
+      internalID: 6113649434749325095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_43
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 386
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f1ca2beed986b8b0800000000000000
+      internalID: -5136766734448279053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_44
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 384
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e5e9179a597ee1d0800000000000000
+      internalID: -3319582445336402457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_45
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 383
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a6e2e4d17091a90800000000000000
+      internalID: -7342829895003772340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_46
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 386
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112cee50c55f83a20800000000000000
+      internalID: 3042451323874099729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_47
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 384
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c1b61e68d3ba060800000000000000
+      internalID: 6965728898175409218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_48
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75b87d07343c07900800000000000000
+      internalID: 680258238156344151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_49
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 354
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4ca95a0bc9a2f10800000000000000
+      internalID: 2245779646704174297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_50
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 352
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3150db2be9de970800000000000000
+      internalID: 8785852938582299559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_51
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 351
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c2d07c1c22abb70800000000000000
+      internalID: 8915476627996880024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_52
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 354
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6582296b6bf052f90800000000000000
+      internalID: -6979154770119219114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_53
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 352
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb515567b487d5e70800000000000000
+      internalID: 9105566287116178876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_54
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9344b7f15314e550800000000000000
+      internalID: 6189093030682968991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_55
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 322
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8147f4264df81f610800000000000000
+      internalID: 1653260680566895640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_56
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 320
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af57d09b38342120800000000000000
+      internalID: 2388095530897465251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_57
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 319
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff568b9bec18db190800000000000000
+      internalID: -7945051442732571137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_58
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 322
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 992345c5065025ad0800000000000000
+      internalID: -2715101713926966631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_59
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 320
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744f3e30487907d70800000000000000
+      internalID: 9038891045389333575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_60
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4171e40dca672b0800000000000000
+      internalID: -5587088277043211011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_61
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 290
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1190126d663fe1430800000000000000
+      internalID: 3755706762278275345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_62
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 288
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b00c4839fc623e0800000000000000
+      internalID: -2078745945490584738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_63
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 287
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f5f0602c9095820800000000000000
+      internalID: 2907365763374341892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_64
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 290
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d183d198277f140800000000000000
+      internalID: 4753393864939150606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_65
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 288
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c092627c8d592e50800000000000000
+      internalID: 6785057171406229702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_66
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4681efb546292f50800000000000000
+      internalID: 6857053988662117967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_67
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 258
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9392bdd0a8ea105c0800000000000000
+      internalID: -4250924665299850951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_68
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 256
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ed239a7c1f91da70800000000000000
+      internalID: 8850029687424101860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_69
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c4ad68d542c98c60800000000000000
+      internalID: 7820995833145173184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_70
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 258
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f091f57ebff26330800000000000000
+      internalID: 3702803037139603703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_71
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 256
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11414852af48ed600800000000000000
+      internalID: 494979218963436561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_72
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c51e187a4e484e90800000000000000
+      internalID: -7041291935643986493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_73
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 226
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a324aee48399c6eb0800000000000000
+      internalID: -4725233441897299398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_74
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 224
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7355f5aa47309b2c0800000000000000
+      internalID: -4415494160050596553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_75
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 223
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789411380517dbbd0800000000000000
+      internalID: -2612807618194749049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_76
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 226
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 359707244a1e8ac00800000000000000
+      internalID: 912227020148078931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_77
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 224
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc3a179d43617780800000000000000
+      internalID: -8687053021322265402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_78
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f67fdc61945eca0800000000000000
+      internalID: -5988299767225553126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_79
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 194
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3eed0cfe59bf9de0800000000000000
+      internalID: -1324135947816800707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_80
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 192
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4e1c79676a9c3c0800000000000000
+      internalID: -4338753737712343884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_81
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 191
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18a3c1f4163e7580800000000000000
+      internalID: -8827558756016216035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_82
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 194
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ebc137d616a17c60800000000000000
+      internalID: 7814209445494377440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_83
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 192
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec547347a0ed08e0800000000000000
+      internalID: -1725476073217172245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_84
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3548aec324399c0800000000000000
+      internalID: -3921718021109558367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_85
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 162
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0647e215e616bfc0800000000000000
+      internalID: -3479568488976660978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_86
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 160
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4715d3a79bb769300800000000000000
+      internalID: 258530065170387316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_87
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 159
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107622f03c99de270800000000000000
+      internalID: 8281444352855795457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_88
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 162
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33acf5bf7aa30c40800000000000000
+      internalID: 5477409037303456570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_89
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 160
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2268b68b93863530800000000000000
+      internalID: 3834396836755956270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_90
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ece9e455ea0c220800000000000000
+      internalID: 2504193074232479347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_91
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 130
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c062737190131f30800000000000000
+      internalID: 4544994665840140483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_92
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 128
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6cc8a3f8c0f6560800000000000000
+      internalID: 7309074529547765438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_93
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 127
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d8521763c7531d0800000000000000
+      internalID: -3371652172748583595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_94
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 130
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5f70c588b8321b30800000000000000
+      internalID: 4256526962987663194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_95
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 128
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9621023437f728e0800000000000000
+      internalID: -1718132929269258593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_96
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f2e764b5a003fc0800000000000000
+      internalID: -3517299921835380845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_97
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 98
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b421bf676b245d540800000000000000
+      internalID: 5032001510104044107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_98
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 96
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e6a5847d61dd8f70800000000000000
+      internalID: 9191232682569606886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_99
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 95
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9073764a0b84f4cc0800000000000000
+      internalID: -3724678443302439159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_100
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 98
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 359997f0ae56ac870800000000000000
+      internalID: 8703881285803284819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_101
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 96
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccdbd0c2cc9698b70800000000000000
+      internalID: 8901762464107838924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_102
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116e2953d127a1fd0800000000000000
+      internalID: -2370456784078707183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_103
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 66
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd4ebdfa1559043f0800000000000000
+      internalID: -918570145908267811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_104
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 64
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f2a9f5a3851a2ad0800000000000000
+      internalID: -2726342969249914123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_105
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb75bad5e2a049d10800000000000000
+      internalID: 2131339717909370812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_106
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 66
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 671d3c1e084452dd0800000000000000
+      internalID: -2511525896854974090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_107
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 64
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bcbab5a1f3a44500800000000000000
+      internalID: 379608526868888754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_108
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e654bb7efaed892f0800000000000000
+      internalID: -965777272982518418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_109
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 34
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f2399e7ed6fa120800000000000000
+      internalID: 2427279566999596914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_110
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 32
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d22c03c3bc83b44f0800000000000000
+      internalID: -843518059662491091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_111
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 31
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b346d11488fb81bb0800000000000000
+      internalID: -4965007997247069125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_112
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 34
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3915e98a0eb5a2ad0800000000000000
+      internalID: -2726265603959664237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_113
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 32
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85d289f5b3b540c00800000000000000
+      internalID: 865917338926984536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_114
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dcf3e113e2cdcb0800000000000000
+      internalID: -4837941111206982257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_115
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 2
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad510170ead9f4900800000000000000
+      internalID: 670928240269858266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_116
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a45005c9c16de390800000000000000
+      internalID: -7787460661432265567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_117
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 0
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18df6c2cb0a03280800000000000000
+      internalID: -9065569319836985317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_118
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 2
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d51a751c5e1185c40800000000000000
+      internalID: 5501166623321989469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Body_Back_Run_2_119
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a241b30ae158190800000000000000
+      internalID: -7960923092772705685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

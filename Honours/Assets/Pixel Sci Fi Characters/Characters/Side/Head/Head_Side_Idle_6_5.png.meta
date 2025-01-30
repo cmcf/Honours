@@ -1,0 +1,3020 @@
+fileFormatVersion: 2
+guid: b2bce611eebef4647977b2e32d43bfde
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1663638124309200053
+    second: Head_Side_Idle_6_5_0
+  - first:
+      213: -6552864695236963267
+    second: Head_Side_Idle_6_5_1
+  - first:
+      213: -6458467939361065633
+    second: Head_Side_Idle_6_5_2
+  - first:
+      213: -682711062003268295
+    second: Head_Side_Idle_6_5_3
+  - first:
+      213: 2132524959633200909
+    second: Head_Side_Idle_6_5_4
+  - first:
+      213: 6237632202645649278
+    second: Head_Side_Idle_6_5_5
+  - first:
+      213: 3207833839572572960
+    second: Head_Side_Idle_6_5_6
+  - first:
+      213: -8791798341968690142
+    second: Head_Side_Idle_6_5_7
+  - first:
+      213: -3414298300381168947
+    second: Head_Side_Idle_6_5_8
+  - first:
+      213: 766075364235574535
+    second: Head_Side_Idle_6_5_9
+  - first:
+      213: 8704383550277903188
+    second: Head_Side_Idle_6_5_10
+  - first:
+      213: 9174453764775964004
+    second: Head_Side_Idle_6_5_11
+  - first:
+      213: 4280710712910897636
+    second: Head_Side_Idle_6_5_12
+  - first:
+      213: 6702769298992007844
+    second: Head_Side_Idle_6_5_13
+  - first:
+      213: 5950655147174250655
+    second: Head_Side_Idle_6_5_14
+  - first:
+      213: 3885969290326813166
+    second: Head_Side_Idle_6_5_15
+  - first:
+      213: 5710845979251375534
+    second: Head_Side_Idle_6_5_16
+  - first:
+      213: 6141303258476029184
+    second: Head_Side_Idle_6_5_17
+  - first:
+      213: -3636499806576589727
+    second: Head_Side_Idle_6_5_18
+  - first:
+      213: -928718628965486344
+    second: Head_Side_Idle_6_5_19
+  - first:
+      213: 7524636065063779800
+    second: Head_Side_Idle_6_5_20
+  - first:
+      213: -772506003889244163
+    second: Head_Side_Idle_6_5_21
+  - first:
+      213: 6934022142655225942
+    second: Head_Side_Idle_6_5_22
+  - first:
+      213: -1268923792838692458
+    second: Head_Side_Idle_6_5_23
+  - first:
+      213: -7511782152781913182
+    second: Head_Side_Idle_6_5_24
+  - first:
+      213: 5322051463470850314
+    second: Head_Side_Idle_6_5_25
+  - first:
+      213: -5038486428965948961
+    second: Head_Side_Idle_6_5_26
+  - first:
+      213: 2693791660662374178
+    second: Head_Side_Idle_6_5_27
+  - first:
+      213: 8470464309759856955
+    second: Head_Side_Idle_6_5_28
+  - first:
+      213: 6498258320919718776
+    second: Head_Side_Idle_6_5_29
+  - first:
+      213: 6380397089567435314
+    second: Head_Side_Idle_6_5_30
+  - first:
+      213: 1458253880955337662
+    second: Head_Side_Idle_6_5_31
+  - first:
+      213: -8025908815622397997
+    second: Head_Side_Idle_6_5_32
+  - first:
+      213: -8559643373539420443
+    second: Head_Side_Idle_6_5_33
+  - first:
+      213: -2717374684260252146
+    second: Head_Side_Idle_6_5_34
+  - first:
+      213: -4176616280825988496
+    second: Head_Side_Idle_6_5_35
+  - first:
+      213: -5093773096972489504
+    second: Head_Side_Idle_6_5_36
+  - first:
+      213: -1656729195033557840
+    second: Head_Side_Idle_6_5_37
+  - first:
+      213: -6593370344318047542
+    second: Head_Side_Idle_6_5_38
+  - first:
+      213: -8855309580015799792
+    second: Head_Side_Idle_6_5_39
+  - first:
+      213: 6759888150121482317
+    second: Head_Side_Idle_6_5_40
+  - first:
+      213: -8133626960791539209
+    second: Head_Side_Idle_6_5_41
+  - first:
+      213: -6279149752580478261
+    second: Head_Side_Idle_6_5_42
+  - first:
+      213: 6153923675943024162
+    second: Head_Side_Idle_6_5_43
+  - first:
+      213: -8593175411476325167
+    second: Head_Side_Idle_6_5_44
+  - first:
+      213: 3253352840181757236
+    second: Head_Side_Idle_6_5_45
+  - first:
+      213: 5645618154048462647
+    second: Head_Side_Idle_6_5_46
+  - first:
+      213: -1809084061737257725
+    second: Head_Side_Idle_6_5_47
+  - first:
+      213: 8041146142500614484
+    second: Head_Side_Idle_6_5_48
+  - first:
+      213: 7707158500922524059
+    second: Head_Side_Idle_6_5_49
+  - first:
+      213: -4836186430935555475
+    second: Head_Side_Idle_6_5_50
+  - first:
+      213: -8246095177037601859
+    second: Head_Side_Idle_6_5_51
+  - first:
+      213: 1804492655709001532
+    second: Head_Side_Idle_6_5_52
+  - first:
+      213: 4407254958789906025
+    second: Head_Side_Idle_6_5_53
+  - first:
+      213: -8828353523568079836
+    second: Head_Side_Idle_6_5_54
+  - first:
+      213: 8277033929861765660
+    second: Head_Side_Idle_6_5_55
+  - first:
+      213: -7104960644980804994
+    second: Head_Side_Idle_6_5_56
+  - first:
+      213: -5575554454757328145
+    second: Head_Side_Idle_6_5_57
+  - first:
+      213: 3574668628058697192
+    second: Head_Side_Idle_6_5_58
+  - first:
+      213: 488017976784099054
+    second: Head_Side_Idle_6_5_59
+  - first:
+      213: 8667895242042258262
+    second: Head_Side_Idle_6_5_60
+  - first:
+      213: 1664263905710588875
+    second: Head_Side_Idle_6_5_61
+  - first:
+      213: -106727693847823317
+    second: Head_Side_Idle_6_5_62
+  - first:
+      213: -7537631092396271587
+    second: Head_Side_Idle_6_5_63
+  - first:
+      213: 4046252453738115486
+    second: Head_Side_Idle_6_5_64
+  - first:
+      213: 1544089871690045736
+    second: Head_Side_Idle_6_5_65
+  - first:
+      213: 372180356100834462
+    second: Head_Side_Idle_6_5_66
+  - first:
+      213: -8952070231080383703
+    second: Head_Side_Idle_6_5_67
+  - first:
+      213: 5643125427254070155
+    second: Head_Side_Idle_6_5_68
+  - first:
+      213: -8045597958976725818
+    second: Head_Side_Idle_6_5_69
+  - first:
+      213: 2907764262897115121
+    second: Head_Side_Idle_6_5_70
+  - first:
+      213: 4009479249196691543
+    second: Head_Side_Idle_6_5_71
+  - first:
+      213: -3637041245179741164
+    second: Head_Side_Idle_6_5_72
+  - first:
+      213: 2720309361972080156
+    second: Head_Side_Idle_6_5_73
+  - first:
+      213: 7345561004138325631
+    second: Head_Side_Idle_6_5_74
+  - first:
+      213: 6033242672661730093
+    second: Head_Side_Idle_6_5_75
+  - first:
+      213: 7158504284801872246
+    second: Head_Side_Idle_6_5_76
+  - first:
+      213: -4235877100036748178
+    second: Head_Side_Idle_6_5_77
+  - first:
+      213: 3773633450069612748
+    second: Head_Side_Idle_6_5_78
+  - first:
+      213: -7533796520398445496
+    second: Head_Side_Idle_6_5_79
+  - first:
+      213: -1285503292829637162
+    second: Head_Side_Idle_6_5_80
+  - first:
+      213: -5922660600991392056
+    second: Head_Side_Idle_6_5_81
+  - first:
+      213: 6713466274962781006
+    second: Head_Side_Idle_6_5_82
+  - first:
+      213: -1589828617557460193
+    second: Head_Side_Idle_6_5_83
+  - first:
+      213: 1853789176631691924
+    second: Head_Side_Idle_6_5_84
+  - first:
+      213: -3573437715430027994
+    second: Head_Side_Idle_6_5_85
+  - first:
+      213: -6251676547835176479
+    second: Head_Side_Idle_6_5_86
+  - first:
+      213: -6136159673321834515
+    second: Head_Side_Idle_6_5_87
+  - first:
+      213: -8409649516131000802
+    second: Head_Side_Idle_6_5_88
+  - first:
+      213: -620445469212394517
+    second: Head_Side_Idle_6_5_89
+  - first:
+      213: -1305993633265553677
+    second: Head_Side_Idle_6_5_90
+  - first:
+      213: 2727879230733035336
+    second: Head_Side_Idle_6_5_91
+  - first:
+      213: -7866230339160282601
+    second: Head_Side_Idle_6_5_92
+  - first:
+      213: 887411735926608894
+    second: Head_Side_Idle_6_5_93
+  - first:
+      213: 9010962082096511178
+    second: Head_Side_Idle_6_5_94
+  - first:
+      213: -9096181167466432698
+    second: Head_Side_Idle_6_5_95
+  - first:
+      213: 8779701639110559372
+    second: Head_Side_Idle_6_5_96
+  - first:
+      213: 7631448513567153225
+    second: Head_Side_Idle_6_5_97
+  - first:
+      213: 638680788261536119
+    second: Head_Side_Idle_6_5_98
+  - first:
+      213: 6744449795153097277
+    second: Head_Side_Idle_6_5_99
+  - first:
+      213: -5404967644811099259
+    second: Head_Side_Idle_6_5_100
+  - first:
+      213: -2932685395901737498
+    second: Head_Side_Idle_6_5_101
+  - first:
+      213: -8955345155685664136
+    second: Head_Side_Idle_6_5_102
+  - first:
+      213: -1380617803056870291
+    second: Head_Side_Idle_6_5_103
+  - first:
+      213: -3580177746794737561
+    second: Head_Side_Idle_6_5_104
+  - first:
+      213: -8057020123437603316
+    second: Head_Side_Idle_6_5_105
+  - first:
+      213: -5232210130695825948
+    second: Head_Side_Idle_6_5_106
+  - first:
+      213: -3945244187753309142
+    second: Head_Side_Idle_6_5_107
+  - first:
+      213: -660699053010452876
+    second: Head_Side_Idle_6_5_108
+  - first:
+      213: 2960661876479164402
+    second: Head_Side_Idle_6_5_109
+  - first:
+      213: 3126803197197503530
+    second: Head_Side_Idle_6_5_110
+  - first:
+      213: -6560444043699321078
+    second: Head_Side_Idle_6_5_111
+  - first:
+      213: -155757627699466414
+    second: Head_Side_Idle_6_5_112
+  - first:
+      213: -3384989555290141913
+    second: Head_Side_Idle_6_5_113
+  - first:
+      213: 3604889525969910286
+    second: Head_Side_Idle_6_5_114
+  - first:
+      213: 781690512115102247
+    second: Head_Side_Idle_6_5_115
+  - first:
+      213: -4738591050638813997
+    second: Head_Side_Idle_6_5_116
+  - first:
+      213: 1801276114133625822
+    second: Head_Side_Idle_6_5_117
+  - first:
+      213: 7350180087398262937
+    second: Head_Side_Idle_6_5_118
+  - first:
+      213: 6587667612977177159
+    second: Head_Side_Idle_6_5_119
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 615
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43c0c5b0f199e8e0800000000000000
+      internalID: -1663638124309200053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 614
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d34d33b374c8f05a0800000000000000
+      internalID: -6552864695236963267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 614
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f557229a0a9ee56a0800000000000000
+      internalID: -6458467939361065633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 614
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935c01108e58686f0800000000000000
+      internalID: -682711062003268295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 615
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d075795f620489d10800000000000000
+      internalID: 2132524959633200909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_5
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 615
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e773b3e9075809650800000000000000
+      internalID: 6237632202645649278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_6
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 583
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b533a91e3848c20800000000000000
+      internalID: 3207833839572572960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_7
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 582
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224861a2df14df580800000000000000
+      internalID: -8791798341968690142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 582
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca7f8819c9fd90d0800000000000000
+      internalID: -3414298300381168947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 582
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d70742c75a1aa00800000000000000
+      internalID: 766075364235574535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 583
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 453611f98be2cc870800000000000000
+      internalID: 8704383550277903188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_11
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 583
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46d67b93715325f70800000000000000
+      internalID: 9174453764775964004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_12
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 551
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e1634596b3286b30800000000000000
+      internalID: 4280710712910897636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_13
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 550
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aa00d52a25050d50800000000000000
+      internalID: 6702769298992007844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_14
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 550
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f98cb241459f49250800000000000000
+      internalID: 5950655147174250655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 550
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee9a1061b7cbde530800000000000000
+      internalID: 3885969290326813166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_16
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 551
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eadfe382920014f40800000000000000
+      internalID: 5710845979251375534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_17
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 551
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 005a96b86ca4a3550800000000000000
+      internalID: 6141303258476029184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 519
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164c93361be888dc0800000000000000
+      internalID: -3636499806576589727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_19
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 518
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f07938d3578c13f0800000000000000
+      internalID: -928718628965486344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_20
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 518
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dd383a42a0ec6860800000000000000
+      internalID: 7524636065063779800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_21
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 518
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df73353e1e18745f0800000000000000
+      internalID: -772506003889244163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_22
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 519
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65068a596689a3060800000000000000
+      internalID: 6934022142655225942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_23
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 519
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 691fec09880e36ee0800000000000000
+      internalID: -1268923792838692458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_24
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 487
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a3a0516ee9c0c790800000000000000
+      internalID: -7511782152781913182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_25
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 486
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01278ccb99bbd940800000000000000
+      internalID: 5322051463470850314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_26
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 486
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd1bbd3b943b31ab0800000000000000
+      internalID: -5038486428965948961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_27
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 486
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22fb0b83e35426520800000000000000
+      internalID: 2693791660662374178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_28
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 487
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b315cd949622d8570800000000000000
+      internalID: 8470464309759856955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_29
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 487
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b652d73837e2a50800000000000000
+      internalID: 6498258320919718776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 455
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23a6a912959bb8850800000000000000
+      internalID: 6380397089567435314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_31
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 454
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb7da6bd22cc3410800000000000000
+      internalID: 1458253880955337662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_32
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 454
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df962d847e3e9090800000000000000
+      internalID: -8025908815622397997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_33
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 454
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e61824e3b9063980800000000000000
+      internalID: -8559643373539420443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_34
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 455
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0647073f12f94ad0800000000000000
+      internalID: -2717374684260252146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_35
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 455
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07af04a0f9da906c0800000000000000
+      internalID: -4176616280825988496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_36
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 423
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec63843b584f49b0800000000000000
+      internalID: -5093773096972489504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_37
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 422
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b48109239d1209e0800000000000000
+      internalID: -1656729195033557840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_38
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 422
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acae352ea94af74a0800000000000000
+      internalID: -6593370344318047542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_39
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 422
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0127b0bbade9b1580800000000000000
+      internalID: -8855309580015799792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_40
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 423
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d480d550572ffcd50800000000000000
+      internalID: 6759888150121482317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_41
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 423
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f1fa7a7f5d8f1f80800000000000000
+      internalID: -8133626960791539209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_42
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 391
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bca65f1819afbd8a0800000000000000
+      internalID: -6279149752580478261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_43
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 390
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22633777af0276550800000000000000
+      internalID: 6153923675943024162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_44
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 390
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc155aed78eeb880800000000000000
+      internalID: -8593175411476325167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_45
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 390
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 435ba00db2b362d20800000000000000
+      internalID: 3253352840181757236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_46
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 391
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73f1e81acc3495e40800000000000000
+      internalID: 5645618154048462647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_47
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 391
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305745b71a7d4e6e0800000000000000
+      internalID: -1809084061737257725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_48
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 359
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45170c210d3e79f60800000000000000
+      internalID: 8041146142500614484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_49
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 358
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b918e1382d355fa60800000000000000
+      internalID: 7707158500922524059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_50
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 358
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62a584701a62ecb0800000000000000
+      internalID: -4836186430935555475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_51
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 358
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db3ac9c402cff8d80800000000000000
+      internalID: -8246095177037601859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_52
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 359
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c37165f7288da0910800000000000000
+      internalID: 1804492655709001532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_53
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 359
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96e404dc807b92d30800000000000000
+      internalID: 4407254958789906025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_54
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 327
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c0824be336b7580800000000000000
+      internalID: -8828353523568079836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_55
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 326
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a144f618eedd270800000000000000
+      internalID: 8277033929861765660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_56
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 326
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72f9c4efeb166d90800000000000000
+      internalID: -7104960644980804994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_57
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 326
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feab75293c6af92b0800000000000000
+      internalID: -5575554454757328145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_58
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 327
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8edeb258d26cb9130800000000000000
+      internalID: 3574668628058697192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_59
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 327
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee69836a3c9c5c600800000000000000
+      internalID: 488017976784099054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_60
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 295
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6533a345ccc8a4870800000000000000
+      internalID: 8667895242042258262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_61
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 294
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc342606437a81710800000000000000
+      internalID: 1664263905710588875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_62
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 294
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cf0885ab3d48ef0800000000000000
+      internalID: -106727693847823317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_63
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 294
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d18d7c12574f46790800000000000000
+      internalID: -7537631092396271587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_64
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 295
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91fc903b2d272830800000000000000
+      internalID: 4046252453738115486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_65
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 295
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8291d5fae85bd6510800000000000000
+      internalID: 1544089871690045736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_66
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 263
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94c4cddf004a2500800000000000000
+      internalID: 372180356100834462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_67
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 262
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92bca101e8bd3c380800000000000000
+      internalID: -8952070231080383703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_68
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 262
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b04727da8605e40800000000000000
+      internalID: 5643125427254070155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_69
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 262
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc9591a84b485090800000000000000
+      internalID: -8045597958976725818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_70
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 263
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffde8ce0347a5820800000000000000
+      internalID: 2907764262897115121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_71
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 263
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7503bae422884a730800000000000000
+      internalID: 4009479249196691543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_72
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 231
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41cfd93e142a68dc0800000000000000
+      internalID: -3637041245179741164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_73
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 230
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1ee38fa3fa70c520800000000000000
+      internalID: 2720309361972080156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_74
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 230
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7660a790dca0f560800000000000000
+      internalID: 7345561004138325631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_75
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 230
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d231bbbce326ab350800000000000000
+      internalID: 6033242672661730093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_76
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 231
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6713aba38bd185360800000000000000
+      internalID: 7158504284801872246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_77
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 231
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6c091c58342735c0800000000000000
+      internalID: -4235877100036748178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_78
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 199
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc85ee711a3ae5430800000000000000
+      internalID: 3773633450069612748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_79
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 198
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844a39ffaf3927790800000000000000
+      internalID: -7533796520398445496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_80
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 198
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d56b49e099f82ee0800000000000000
+      internalID: -1285503292829637162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_81
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 198
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ced4b0209b7ecda0800000000000000
+      internalID: -5922660600991392056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_82
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 199
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e43b8b2f1060b2d50800000000000000
+      internalID: 6713466274962781006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_83
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 199
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1bbcbcab4bcfe9e0800000000000000
+      internalID: -1589828617557460193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_84
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 167
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49a88913f6bf9b910800000000000000
+      internalID: 1853789176631691924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_85
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 166
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62d4fc8a459986ec0800000000000000
+      internalID: -3573437715430027994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_86
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 166
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9d4a37d459d39a0800000000000000
+      internalID: -6251676547835176479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_87
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 166
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de73392b94bf7daa0800000000000000
+      internalID: -6136159673321834515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_88
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 167
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ed971425cea4b80800000000000000
+      internalID: -8409649516131000802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_89
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 167
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beb381d022cb367f0800000000000000
+      internalID: -620445469212394517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_90
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 135
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fee842c5bd20ede0800000000000000
+      internalID: -1305993633265553677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_91
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 134
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847220a15bf5bd520800000000000000
+      internalID: 2727879230733035336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_92
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 134
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a63f00f2985d290800000000000000
+      internalID: -7866230339160282601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_93
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 134
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef31b69a548b05c00800000000000000
+      internalID: 887411735926608894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_94
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 135
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac870e3854e5d0d70800000000000000
+      internalID: 9010962082096511178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_95
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 135
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 647b09cfb6fd3c180800000000000000
+      internalID: -9096181167466432698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_96
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 103
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c868919bf14c7d970800000000000000
+      internalID: 8779701639110559372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_97
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 102
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c5adc6df958e960800000000000000
+      internalID: 7631448513567153225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_98
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 102
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77102350bcc0dd800800000000000000
+      internalID: 638680788261536119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_99
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 102
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d327e85ea59199d50800000000000000
+      internalID: 6744449795153097277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_100
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 103
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5830e845092bdf4b0800000000000000
+      internalID: -5404967644811099259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_101
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 103
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e51d43ab220d47d0800000000000000
+      internalID: -2932685395901737498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_102
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 71
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a3752470938b380800000000000000
+      internalID: -8955345155685664136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_103
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 70
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c07364c6f07dce0800000000000000
+      internalID: -1380617803056870291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_104
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 70
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7609a81de47a05ec0800000000000000
+      internalID: -3580177746794737561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_105
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 70
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06e35ab2e6bf2090800000000000000
+      internalID: -8057020123437603316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_106
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 71
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e5dca98b947367b0800000000000000
+      internalID: -5232210130695825948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_107
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 71
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c1ac4605daf39c0800000000000000
+      internalID: -3945244187753309142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_108
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 39
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47effd936b9b4d6f0800000000000000
+      internalID: -660699053010452876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_109
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 38
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fff4975a42661920800000000000000
+      internalID: 2960661876479164402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_110
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 38
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c438bf0f2a46b20800000000000000
+      internalID: 3126803197197503530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_111
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 38
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a078976a6ee94f4a0800000000000000
+      internalID: -6560444043699321078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_112
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 39
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25f6ae94343a6ddf0800000000000000
+      internalID: -155757627699466414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_113
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 39
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b06841fe91601d0800000000000000
+      internalID: -3384989555290141913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_114
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 7
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a76f1ace3270230800000000000000
+      internalID: 3604889525969910286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_115
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722f9e2116f19da00800000000000000
+      internalID: 781690512115102247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_116
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 6
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d414daab842d3eb0800000000000000
+      internalID: -4738591050638813997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_117
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 6
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edba45d051b6ff810800000000000000
+      internalID: 1801276114133625822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_118
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 7
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 998e588b8d5110660800000000000000
+      internalID: 7350180087398262937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Head_Side_Idle_6_5_119
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 7
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 742a9d18ac81c6b50800000000000000
+      internalID: 6587667612977177159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
