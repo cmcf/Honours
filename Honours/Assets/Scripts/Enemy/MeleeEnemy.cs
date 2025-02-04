@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Damage;
+using static UnityEngine.GraphicsBuffer;
 
 public class MeleeEnemy : Enemy
 {
@@ -20,6 +22,7 @@ public class MeleeEnemy : Enemy
 
     [Header("Attack")]
     public float damageAmount = 10f;
+    bool hitPlayer = false;
 
     [Header("Animation Timing")]
     [SerializeField] float appearDuration = 0.5f; 
@@ -112,10 +115,24 @@ public class MeleeEnemy : Enemy
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !hitPlayer)
         {
-           // Debug.Log("Damage");
+            // Check if the target has a damageable component
+            IDamageable damageable = collision.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                hitPlayer = true;
+                // Deal damage to the player
+                damageable.Damage(damageAmount);
+            }
+
+
         }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        hitPlayer = false;
     }
 
     IEnumerator HandleDisappearance()

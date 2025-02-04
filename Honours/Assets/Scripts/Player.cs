@@ -6,8 +6,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Damage;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
+    [Header("References")]
     public GameObject bulletPrefab;
     public GameObject iceBulletPrefab;
     public Transform spawnPoint;
@@ -15,14 +16,22 @@ public class Player : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
+    Animator animator;
 
+    [Header("Health")]
+    [SerializeField] float currentHealth = 50f;
+    [SerializeField] float health = 50f;
+    public float Health { get; set; }
+
+    [Header("Projectile")]
     [SerializeField] float bulletSpeed = 10f;
     float lastFireTime = 0f;
-    float stateTimer = 0f;
-    float enhancedStateDuration = 9f;
     float iceBulletDamage = 15f;
     int defaultBulletDamage = 10;
     [SerializeField] float fireDelay = 0.5f;
+
+    [Header("State")]
+    bool isDead = false; 
 
     public WeaponType currentWeaponType = WeaponType.Default;
 
@@ -38,8 +47,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
-        //StartCoroutine(RandomlyChangeState());
+        currentHealth = health;
     }
 
     void OnFire()
@@ -57,7 +67,7 @@ public class Player : MonoBehaviour
                 fireDirection = -spawnPoint.up.normalized; 
             }
 
-            // Handle different weapon types
+            // Handle different weapon type behaviour
             switch (currentWeaponType)
             {
                 case WeaponType.Default:
@@ -147,5 +157,30 @@ public class Player : MonoBehaviour
             bullet.SetDamage(iceBulletDamage);
             bullet.isIce = true;
         }
+    }
+
+    public void Damage(float damage)
+    {
+        if (isDead) { return; }
+        // Current health is decreased by the damage received
+        currentHealth -= damage;
+        // Player dies when current health reaches 0
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        // Only enter death state once
+        if (isDead) { return; }
+        // Disable player move input
+        playerMovement.enabled = false;
+        // Set player to death state
+        isDead = true;
+        // Play death animation
+        animator.SetTrigger("isDead");
+
     }
 }
