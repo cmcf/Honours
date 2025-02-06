@@ -28,22 +28,11 @@ public class Room : MonoBehaviour
 
     public List <Door> doorList = new List<Door>();
 
-    private void Awake()
-    {
-        gridController = GetComponentInChildren<GridController>();
-        if (gridController == null)
-        {
-            Debug.LogError("GridController is missing on room: " + gameObject.name);
-        }
 
-        spawner = GetComponent<ObjectRoomSpawner>();
-        if (spawner == null)
-        {
-            Debug.LogError("ObjectRoomSpawner is missing on room: " + gameObject.name);
-        }
-    }
     void Start()
     {
+        gridController = GetComponentInChildren<GridController>();
+
         if (RoomController.Instance == null)
         {
             return;
@@ -68,31 +57,22 @@ public class Room : MonoBehaviour
                     break;
             }
         }
+
         RoomController.Instance.RegisterRoom(this);
+        
     }
 
     public void SpawnEnemies()
     {
+        spawner = GetComponent<ObjectRoomSpawner>();
         // Ensure the room and spawner exist before trying to spawn
         if (spawner != null)
         {
             // Trigger the spawning for this room
             spawner.InitialiseObjectSpawning(this);
         }
-        else
-        {
-            Debug.LogWarning("ObjectRoomSpawner is missing on the room.");
-        }
     }
 
-    void Update()
-    {
-        if (name.Contains("GameBoss") && !updatedDoors)
-        {
-            RemoveUnConnectedDoors();
-            updatedDoors = true;
-        }
-    }
 
     public bool AreAllEnemiesDefeated()
     {

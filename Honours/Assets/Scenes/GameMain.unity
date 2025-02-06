@@ -3589,6 +3589,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &611193947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 611193948}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &611193948
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611193947}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3862144887162636143}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1195378504
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,6 +3742,14 @@ PrefabInstance:
     - target: {fileID: 1182252616593982996, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_Size.y
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: health
+      value: 1e+14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: currentHealth
+      value: 1e+10
       objectReference: {fileID: 0}
     - target: {fileID: 5213473722867775274, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_Name
@@ -3980,6 +4019,8 @@ MonoBehaviour:
   height: 12
   x: 0
   y: 0
+  gridController: {fileID: 0}
+  spawner: {fileID: 0}
   leftDoor: {fileID: 2651132676674440909}
   rightDoor: {fileID: 7291843011298625903}
   topDoor: {fileID: 2847396516445709904}
@@ -4266,6 +4307,7 @@ Transform:
   - {fileID: 9160692994439800990}
   - {fileID: 1278310930330872785}
   - {fileID: 1195378506}
+  - {fileID: 611193948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3871113142270735623

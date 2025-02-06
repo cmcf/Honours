@@ -14,6 +14,9 @@ public class ObjectRoomSpawner : MonoBehaviour
     public GridController grid;
     public RandomSpawner[] spawnerData;
 
+    [SerializeField] int minAmountOfEnemies = 1;
+    [SerializeField] int maxAmountOfEnemies = 3;
+
     void Start()
     {
         grid = GetComponentInChildren<GridController>();
@@ -40,7 +43,7 @@ public class ObjectRoomSpawner : MonoBehaviour
         }
     }
 
-    private void SpawnEnemiesForGrid(GridController gridController, Room room)
+    void SpawnEnemiesForGrid(GridController gridController, Room room)
     {
         // Check if there are available points in the grid
         if (gridController.availablePoints.Count == 0)
@@ -49,8 +52,8 @@ public class ObjectRoomSpawner : MonoBehaviour
             return;
         }
 
-        // Decide on how many enemies to spawn (e.g. random between min and max spawn count)
-        int spawnCount = Random.Range(1, gridController.availablePoints.Count + 1); 
+        // Decide on how many enemies to spawn
+        int spawnCount = Random.Range(minAmountOfEnemies, maxAmountOfEnemies); 
 
         // Loop to spawn a limited number of enemies
         for (int i = 0; i < spawnCount; i++)
@@ -67,7 +70,7 @@ public class ObjectRoomSpawner : MonoBehaviour
                 // Choose a random index from the spawnerData array
                 int randomIndex = Random.Range(0, spawnerData.Length);
 
-                // Get the random GameObject (enemy or object) to spawn from the selected spawner data
+                // Get the random GameObject to spawn from the selected spawner data
                 GameObject randomEnemy = spawnerData[randomIndex].spawnerData.itemToSpawn;
 
                 // Instantiate the random GameObject at the grid point
