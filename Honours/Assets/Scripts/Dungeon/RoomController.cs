@@ -15,6 +15,7 @@ public class RoomInfo
 public class RoomController : MonoBehaviour
 {
     public static RoomController Instance;
+    SpawnRateManager spawnRate;
     string currentWorldName = "Game";
 
     RoomInfo currentLoadRoomData;
@@ -30,6 +31,7 @@ public class RoomController : MonoBehaviour
 
     int roomsCompleted = -1;
     const int roomsBeforeBoss = 2;
+
     bool leftSpawnRoom = false;
 
     void Awake()
@@ -39,12 +41,14 @@ public class RoomController : MonoBehaviour
 
     void Update()
     {
+        UpdateRooms();
         UpdateRoomQueue();
     }
 
     void Start()
     {
         roomsCompleted = -1;
+        spawnRate = FindObjectOfType<SpawnRateManager>();
     }
 
     public void LoadRoom(string name, int x, int y)
@@ -67,6 +71,13 @@ public class RoomController : MonoBehaviour
         leftSpawnRoom = true;
         roomsCompleted++;
         Debug.Log("Rooms Completed: " + roomsCompleted);
+
+        // Increase enemy spawn rate
+        if (SpawnRateManager.Instance != null)
+        {
+            spawnRate.IncreaseSpawnRate();
+        }
+
         // Ensure the condition triggers after rooms are complete
         if (roomsCompleted >= roomsBeforeBoss) 
         {
@@ -182,79 +193,90 @@ public class RoomController : MonoBehaviour
 
     public void UpdateRooms()
     {
+        HandlesDoorFunctionality();
+    }
+
+    void HandlesDoorFunctionality()
+    {
         foreach (Room room in loadedRooms)
+            ChecksIfRoomIsCleared(room);
+    }
+
+    void ChecksIfRoomIsCleared(Room room)
+    {
+        bool isCurrentRoom = (currentRoom == room);
+        bool enemiesDefeated = room.AreAllEnemiesDefeated();
+
+        foreach (Door door in room.doorList)
         {
-            bool isCurrentRoom = (currentRoom == room);
-            bool enemiesDefeated = room.AreAllEnemiesDefeated();
+            Vector2Int doorPosition = door.GetGridPosition();
+            Room adjacentRoom = FindRoom(doorPosition.x, doorPosition.y);
 
-            foreach (Door door in room.doorList)
+            // Disable door if no adjacent room
+            if (adjacentRoom == null)
             {
-                Vector2Int doorPosition = door.GetGridPosition();
-                Room adjacentRoom = FindRoom(doorPosition.x, doorPosition.y);
-
-                // Disable door if no adjacent room
-                if (adjacentRoom == null)
-                {
-                    door.gameObject.SetActive(false); 
-                }
-                else
-                {
-                    // Enable door if adjacent room exists
-                    door.gameObject.SetActive(true); 
-                }
-
-                if (door.wallCollider != null)
-                {
-                    Collider2D collider = door.wallCollider.GetComponent<Collider2D>();
-
-                    if (collider != null)
-                    {
-                        // If current room and enemies are defeated, allow passing
-                        if (isCurrentRoom && enemiesDefeated)
-                        {
-                            collider.enabled = false;  
-                        }
-                        else
-                        {
-                            collider.enabled = true;  
-                        }
-                    }
-                }
+                door.gameObject.SetActive(false);
+            }
+            else
+            {
+                // Enable door if adjacent room exists
+                door.gameObject.SetActive(true);
             }
 
-            // Checks if the room is cleared
-            if (isCurrentRoom && enemiesDefeated && !room.isCompleted)
-                {
-                    // Marks the room as completed
-                    room.isCompleted = true;
-                    OnRoomCompleted();
-                }
+            if (door.wallCollider != null)
+            {
+                Collider2D collider = door.wallCollider.GetComponent<Collider2D>();
 
-                foreach (Collider2D collider in room.GetComponentsInChildren<Collider2D>())
+                if (collider != null)
                 {
-                    if (collider != null && collider.gameObject != null && !collider.gameObject.GetComponent<Door>())
+                    // If current room and enemies are defeated, allow passing
+                    if (isCurrentRoom && enemiesDefeated)
                     {
-                        if (isCurrentRoom)
-                        {
-
-                            collider.enabled = true;
-                        }
-                        else
-                        {
-
-                            collider.enabled = true;
-                        }
+                        collider.enabled = false;
                     }
-                }
-
-                foreach (Enemy enemy in room.GetComponentsInChildren<Enemy>())
-                {
-                    enemy.SetActiveState(isCurrentRoom);
+                    else
+                    {
+                        collider.enabled = true;
+                    }
                 }
             }
         }
-    
 
+        // Reset isCompleted when entering a new room but enemies are still alive
+        if (isCurrentRoom && !enemiesDefeated)
+        {
+            room.isCompleted = false;
+        }
+
+        // Checks if the room is cleared
+        if (isCurrentRoom && enemiesDefeated && !room.isCompleted)
+        {
+            Debug.Log("Room cleared: " + room.name);
+            room.isCompleted = true;
+            OnRoomCompleted();
+        }
+        foreach (Collider2D collider in room.GetComponentsInChildren<Collider2D>())
+        {
+            if (collider != null && collider.gameObject != null && !collider.gameObject.GetComponent<Door>())
+            {
+                if (isCurrentRoom)
+                {
+
+                    collider.enabled = true;
+                }
+                else
+                {
+
+                    collider.enabled = true;
+                }
+            }
+        }
+
+        foreach (Enemy enemy in room.GetComponentsInChildren<Enemy>())
+        {
+            enemy.SetActiveState(isCurrentRoom);
+        }
+    }
 
     void UpdateRoomQueue()
     {
