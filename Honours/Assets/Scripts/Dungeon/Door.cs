@@ -39,27 +39,32 @@ public class Door : MonoBehaviour
             // Check if all enemies in the current room are defeated
             if (parentRoom.AreAllEnemiesDefeated())
             {
-                // Move the player to the other side of the door
-                switch (doorType)
-                {
-                    case DoorType.left:
-                        player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
-                        break;
-                    case DoorType.right:
-                        player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
-                        break;
-                    case DoorType.top:
-                        player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
-                        break;
-                    case DoorType.bottom:
-                        player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
-                        break;
-                }
+                MovePlayer();
             }
             else
             {
                 Debug.Log("Defeat all enemies before proceeding!");
             }
+        }
+    }
+
+    void MovePlayer()
+    {
+        // Move the player to the other side of the door
+        switch (doorType)
+        {
+            case DoorType.left:
+                player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                break;
+            case DoorType.right:
+                player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                break;
+            case DoorType.top:
+                player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                break;
+            case DoorType.bottom:
+                player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
+                break;
         }
     }
 
