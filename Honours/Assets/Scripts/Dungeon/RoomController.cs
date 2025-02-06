@@ -30,6 +30,7 @@ public class RoomController : MonoBehaviour
 
     int roomsCompleted = -1;
     const int roomsBeforeBoss = 2;
+    bool leftSpawnRoom = false;
 
     void Awake()
     {
@@ -63,6 +64,7 @@ public class RoomController : MonoBehaviour
 
     public void OnRoomCompleted()
     {
+        leftSpawnRoom = true;
         roomsCompleted++;
         Debug.Log("Rooms Completed: " + roomsCompleted);
         // Ensure the condition triggers after rooms are complete
@@ -126,21 +128,29 @@ public class RoomController : MonoBehaviour
         return loadedRooms.Find(item => item.x == x && item.y == y);
     }
 
+
     public void OnEnterRoom(Room room)
     {
         CameraController.Instance.currentRoom = room;
         currentRoom = room;
-        // Do not trigger random weapon in spawn room
+
         if (roomsCompleted >= 1)
         {
             // Trigger new weapon after entering a room
             TriggerRandomWeapon();
         }
-  
+
+        // Only spawn enemies in the room if it is not the spawn room
+        if (leftSpawnRoom)
+        {
+            currentRoom.SpawnEnemies();
+
+        }
 
         StartCoroutine(RoomCoroutine());
 
     }
+
 
     public void TriggerRandomWeapon()
     {
@@ -175,25 +185,23 @@ public class RoomController : MonoBehaviour
         foreach (Room room in loadedRooms)
         {
             bool isCurrentRoom = (currentRoom == room);
-            // Checks if all enemies are defeated in the room
             bool enemiesDefeated = room.AreAllEnemiesDefeated();
 
-            // Handle door activation
-            foreach (Door door in room.GetComponentsInChildren<Door>())
+            foreach (Door door in room.doorList)
             {
                 Vector2Int doorPosition = door.GetGridPosition();
                 Room adjacentRoom = FindRoom(doorPosition.x, doorPosition.y);
 
-                // If no adjacent room exists, deactivate the door. Activate if so
+                // Disable door if no adjacent room
                 if (adjacentRoom == null)
                 {
-                    door.gameObject.SetActive(false);
+                    door.gameObject.SetActive(false); 
                 }
                 else
                 {
-                    door.gameObject.SetActive(true);
+                    // Enable door if adjacent room exists
+                    door.gameObject.SetActive(true); 
                 }
-
 
                 if (door.wallCollider != null)
                 {
@@ -201,21 +209,21 @@ public class RoomController : MonoBehaviour
 
                     if (collider != null)
                     {
-                        // Allow the player to go through doors only if all enemies are defeated
+                        // If current room and enemies are defeated, allow passing
                         if (isCurrentRoom && enemiesDefeated)
                         {
-                            collider.enabled = false;
+                            collider.enabled = false;  
                         }
                         else
                         {
-                            collider.enabled = true;
+                            collider.enabled = true;  
                         }
                     }
-
                 }
+            }
 
-                // Checks if the room is cleared
-                if (isCurrentRoom && enemiesDefeated && !room.isCompleted)
+            // Checks if the room is cleared
+            if (isCurrentRoom && enemiesDefeated && !room.isCompleted)
                 {
                     // Marks the room as completed
                     room.isCompleted = true;
@@ -245,7 +253,7 @@ public class RoomController : MonoBehaviour
                 }
             }
         }
-    }
+    
 
 
     void UpdateRoomQueue()

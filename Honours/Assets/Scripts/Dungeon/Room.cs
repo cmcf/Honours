@@ -9,7 +9,8 @@ public class Room : MonoBehaviour
     public int height;
     public int x;
     public int y;
-
+    public GridController gridController;
+    public ObjectRoomSpawner spawner;
     bool updatedDoors = false;
     public Room(int X, int Y)
     {
@@ -26,8 +27,12 @@ public class Room : MonoBehaviour
     public bool isCompleted { get; set; } = false;
 
     public List <Door> doorList = new List<Door>();
+
+
     void Start()
     {
+        gridController = GetComponentInChildren<GridController>();
+
         if (RoomController.Instance == null)
         {
             return;
@@ -52,17 +57,22 @@ public class Room : MonoBehaviour
                     break;
             }
         }
+
         RoomController.Instance.RegisterRoom(this);
+        
     }
 
-    void Update()
+    public void SpawnEnemies()
     {
-        if (name.Contains("GameBoss") && !updatedDoors)
+        spawner = GetComponent<ObjectRoomSpawner>();
+        // Ensure the room and spawner exist before trying to spawn
+        if (spawner != null)
         {
-            RemoveUnConnectedDoors();
-            updatedDoors = true;
+            // Trigger the spawning for this room
+            spawner.InitialiseObjectSpawning(this);
         }
     }
+
 
     public bool AreAllEnemiesDefeated()
     {

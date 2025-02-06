@@ -52,8 +52,5 @@ public class GridController : MonoBehaviour
                 }
             }
         }
-
-        // Trigger object spawning after grid has been generated
-        GetComponentInParent<ObjectRoomSpawner>().InitialiseObjectSpawning();
     }
 }

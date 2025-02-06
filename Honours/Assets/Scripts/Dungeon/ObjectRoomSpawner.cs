@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObjectRoomSpawner : MonoBehaviour
 {
     [System.Serializable]
-    public struct RandomSpawner 
+    public struct RandomSpawner
     {
         public string name;
         public SpawnerData spawnerData;
@@ -14,35 +14,81 @@ public class ObjectRoomSpawner : MonoBehaviour
     public GridController grid;
     public RandomSpawner[] spawnerData;
 
+    [SerializeField] int minAmountOfEnemies = 1;
+    [SerializeField] int maxAmountOfEnemies = 3;
+
     void Start()
     {
         grid = GetComponentInChildren<GridController>();
     }
 
-    public void InitialiseObjectSpawning()
+    public void InitialiseObjectSpawning(Room room)
     {
-        foreach(RandomSpawner rs in spawnerData)
+        // Spawn enemies or objects only for the provided room
+        if (room != null)
         {
-            SpawnObjects(rs);
-        }
-    }
-
-    void SpawnObjects(RandomSpawner data)
-    {
-        int randomIteration = Random.Range(data.spawnerData.minSpawn, data.spawnerData.maxSpawn + 1);
-
-        for (int i = 0; i < randomIteration; i++)
-        {
-            if (grid.availablePoints.Count == 0)
+            GridController gridController = room.GetComponentInChildren<GridController>();
+            if (gridController != null)
             {
-                return;
+                SpawnEnemiesForGrid(gridController, room); 
             }
-
-            int randomPos = Random.Range(0, grid.availablePoints.Count - 1);
-            GameObject go = Instantiate(data.spawnerData.itemToSpawn, grid.availablePoints[randomPos], Quaternion.identity, transform) as GameObject;
-            // Remove used point
-            grid.availablePoints.RemoveAt(randomPos); 
+            else
+            {
+                Debug.Log("No grid found in room: " + room.name);
+            }
+        }
+        else
+        {
+            Debug.Log("No room found.");
         }
     }
 
+    void SpawnEnemiesForGrid(GridController gridController, Room room)
+    {
+        // Check if there are available points in the grid
+        if (gridController.availablePoints.Count == 0)
+        {
+            Debug.LogWarning("No available points to spawn enemies.");
+            return;
+        }
+
+        // Decide on how many enemies to spawn
+        int spawnCount = Random.Range(minAmountOfEnemies, maxAmountOfEnemies); 
+
+        // Loop to spawn a limited number of enemies
+        for (int i = 0; i < spawnCount; i++)
+        {
+            // Choose a random index from the available points
+            int randomPointIndex = Random.Range(0, gridController.availablePoints.Count);
+
+            // Get the random grid point
+            Vector2 point = gridController.availablePoints[randomPointIndex];
+
+            // Checks if there is any spawner data available
+            if (spawnerData.Length > 0)
+            {
+                // Choose a random index from the spawnerData array
+                int randomIndex = Random.Range(0, spawnerData.Length);
+
+                // Get the random GameObject to spawn from the selected spawner data
+                GameObject randomEnemy = spawnerData[randomIndex].spawnerData.itemToSpawn;
+
+                // Instantiate the random GameObject at the grid point
+                GameObject spawnedEnemy = Instantiate(randomEnemy, point, Quaternion.identity);
+
+                // Set the room as the parent of the spawned enemy to keep the hierarchy clean
+                spawnedEnemy.transform.SetParent(room.transform);
+
+                // Reset the enemy's local position to ensure it's correctly placed within the room
+                spawnedEnemy.transform.localPosition = point;
+
+                // Remove the used point to avoid spawning multiple enemies at the same location
+                gridController.availablePoints.RemoveAt(randomPointIndex);
+            }
+            else
+            {
+                Debug.LogWarning("Spawner data is empty.");
+            }
+        }
+    }
 }
