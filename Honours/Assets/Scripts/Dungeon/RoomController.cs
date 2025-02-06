@@ -71,6 +71,49 @@ public class RoomController : MonoBehaviour
             StartCoroutine(SpawnBossRoom());
         }
     }
+    public void OnEnterRoom(Room room)
+    {
+        CameraController.Instance.currentRoom = room;
+        currentRoom = room;
+
+        if (roomsCompleted >= 1)
+        {
+            // Trigger new weapon after entering a room
+            TriggerRandomWeapon();
+        }
+
+        GridController gridController = currentRoom.GetComponent<GridController>();
+        if (gridController != null)
+        {
+            Debug.Log("Successfully got grid controller for room: " + currentRoom.name);
+        }
+        else
+        {
+            Debug.LogError("GridController missing in room: " + currentRoom.name);
+        }
+
+        currentRoom.SpawnEnemies();
+
+        StartCoroutine(RoomCoroutine());
+
+        StartCoroutine(DelayEnemySpawn(currentRoom));
+    }
+
+
+    private IEnumerator DelayEnemySpawn(Room room)
+    {
+        // Wait until the grid is ready
+        yield return new WaitUntil(() => room.GetComponent<GridController>() != null);
+
+        ObjectRoomSpawner objectRoomSpawner = room.GetComponentInChildren<ObjectRoomSpawner>();
+        if (objectRoomSpawner != null)
+        {
+            // Call the method with the correct room reference
+            objectRoomSpawner.InitialiseObjectSpawning(room);
+        }
+
+    }
+
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
     {
@@ -126,21 +169,8 @@ public class RoomController : MonoBehaviour
         return loadedRooms.Find(item => item.x == x && item.y == y);
     }
 
-    public void OnEnterRoom(Room room)
-    {
-        CameraController.Instance.currentRoom = room;
-        currentRoom = room;
-        // Do not trigger random weapon in spawn room
-        if (roomsCompleted >= 1)
-        {
-            // Trigger new weapon after entering a room
-            TriggerRandomWeapon();
-        }
-  
 
-        StartCoroutine(RoomCoroutine());
 
-    }
 
     public void TriggerRandomWeapon()
     {

@@ -9,7 +9,8 @@ public class Room : MonoBehaviour
     public int height;
     public int x;
     public int y;
-
+    public GridController gridController;
+    public ObjectRoomSpawner spawner;
     bool updatedDoors = false;
     public Room(int X, int Y)
     {
@@ -26,6 +27,12 @@ public class Room : MonoBehaviour
     public bool isCompleted { get; set; } = false;
 
     public List <Door> doorList = new List<Door>();
+
+    private void Awake()
+    {
+        gridController = GetComponent<GridController>();
+        spawner = GetComponent<ObjectRoomSpawner>();
+    }
     void Start()
     {
         if (RoomController.Instance == null)
@@ -53,6 +60,20 @@ public class Room : MonoBehaviour
             }
         }
         RoomController.Instance.RegisterRoom(this);
+    }
+
+    public void SpawnEnemies()
+    {
+        // Ensure the room and spawner exist before trying to spawn
+        if (spawner != null)
+        {
+            // Trigger the spawning for this room
+            spawner.InitialiseObjectSpawning(this);
+        }
+        else
+        {
+            Debug.LogWarning("ObjectRoomSpawner is missing on the room.");
+        }
     }
 
     void Update()

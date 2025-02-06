@@ -4092,21 +4092,6 @@ MonoBehaviour:
   doorType: 0
   wallCollider: {fileID: 3199260663393313833}
   roomIndexToLoad: 0
---- !u!4 &2751402572475998135
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2823573800238649118}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3862144887162636143}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2814143248477225445
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4161,22 +4146,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &2823573800238649118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2751402572475998135}
-  m_Layer: 0
-  m_Name: Grid
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!114 &2847396516445709904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4292,7 +4261,6 @@ Transform:
   - {fileID: 297825433490559641}
   - {fileID: 2236100435036822769}
   - {fileID: 2196696599922764040}
-  - {fileID: 2751402572475998135}
   - {fileID: 5542772182041417350}
   - {fileID: 8415906610738972172}
   - {fileID: 9160692994439800990}
@@ -4842,7 +4810,7 @@ GameObject:
   - component: {fileID: 3795320298754502227}
   m_Layer: 0
   m_Name: SpawnRoom
-  m_TagString: Untagged
+  m_TagString: SpawnRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
