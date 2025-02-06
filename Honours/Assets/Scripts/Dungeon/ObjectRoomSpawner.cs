@@ -14,8 +14,8 @@ public class ObjectRoomSpawner : MonoBehaviour
     public GridController grid;
     public RandomSpawner[] spawnerData;
 
-    [SerializeField] int minAmountOfEnemies = 1;
-    [SerializeField] int maxAmountOfEnemies = 3;
+    public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
+    public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
 
     void Start()
     {
@@ -53,7 +53,7 @@ public class ObjectRoomSpawner : MonoBehaviour
         }
 
         // Decide on how many enemies to spawn
-        int spawnCount = Random.Range(minAmountOfEnemies, maxAmountOfEnemies); 
+        int spawnCount = Random.Range(minEnemies, maxEnemies + 1); 
 
         // Loop to spawn a limited number of enemies
         for (int i = 0; i < spawnCount; i++)
@@ -84,10 +84,6 @@ public class ObjectRoomSpawner : MonoBehaviour
 
                 // Remove the used point to avoid spawning multiple enemies at the same location
                 gridController.availablePoints.RemoveAt(randomPointIndex);
-            }
-            else
-            {
-                Debug.LogWarning("Spawner data is empty.");
             }
         }
     }
