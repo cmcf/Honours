@@ -82,7 +82,7 @@ public class RoomController : MonoBehaviour
             TriggerRandomWeapon();
         }
 
-        GridController gridController = currentRoom.GetComponent<GridController>();
+        GridController gridController = currentRoom.GetComponentInChildren<GridController>();
         if (gridController != null)
         {
             Debug.Log("Successfully got grid controller for room: " + currentRoom.name);
@@ -92,18 +92,23 @@ public class RoomController : MonoBehaviour
             Debug.LogError("GridController missing in room: " + currentRoom.name);
         }
 
+        if (roomsCompleted > 0)
+        {
+            currentRoom.SpawnEnemies();
+            StartCoroutine(DelayEnemySpawn(currentRoom));
+        }
+
         currentRoom.SpawnEnemies();
 
         StartCoroutine(RoomCoroutine());
-
-        StartCoroutine(DelayEnemySpawn(currentRoom));
+        
     }
 
 
     private IEnumerator DelayEnemySpawn(Room room)
     {
         // Wait until the grid is ready
-        yield return new WaitUntil(() => room.GetComponent<GridController>() != null);
+        yield return new WaitUntil(() => room.GetComponentInChildren<GridController>() != null);
 
         ObjectRoomSpawner objectRoomSpawner = room.GetComponentInChildren<ObjectRoomSpawner>();
         if (objectRoomSpawner != null)

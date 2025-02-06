@@ -30,8 +30,17 @@ public class Room : MonoBehaviour
 
     private void Awake()
     {
-        gridController = GetComponent<GridController>();
+        gridController = GetComponentInChildren<GridController>();
+        if (gridController == null)
+        {
+            Debug.LogError("GridController is missing on room: " + gameObject.name);
+        }
+
         spawner = GetComponent<ObjectRoomSpawner>();
+        if (spawner == null)
+        {
+            Debug.LogError("ObjectRoomSpawner is missing on room: " + gameObject.name);
+        }
     }
     void Start()
     {
