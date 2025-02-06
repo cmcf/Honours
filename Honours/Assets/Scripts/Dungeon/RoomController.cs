@@ -31,6 +31,7 @@ public class RoomController : MonoBehaviour
 
     int roomsCompleted = -1;
     const int roomsBeforeBoss = 2;
+
     bool leftSpawnRoom = false;
 
     void Awake()
