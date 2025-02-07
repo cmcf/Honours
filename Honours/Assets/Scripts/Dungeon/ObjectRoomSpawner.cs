@@ -27,19 +27,14 @@ public class ObjectRoomSpawner : MonoBehaviour
         // Spawn enemies or objects only for the provided room
         if (room != null)
         {
+            
             GridController gridController = room.GetComponentInChildren<GridController>();
-            if (gridController != null)
+            if (gridController != null && !room.hasSpawnedEnemies)
             {
-                SpawnEnemiesForGrid(gridController, room); 
+                SpawnEnemiesForGrid(gridController, room);
+                // Mark the room as spawned
+                room.hasSpawnedEnemies = true;
             }
-            else
-            {
-                Debug.Log("No grid found in room: " + room.name);
-            }
-        }
-        else
-        {
-            Debug.Log("No room found.");
         }
     }
 

@@ -24,6 +24,7 @@ public class Room : MonoBehaviour
     public Door bottomDoor;
 
     public bool isBossRoom = false;
+    public bool hasSpawnedEnemies = false;
     public bool isCompleted { get; set; } = false;
 
     public List <Door> doorList = new List<Door>();
