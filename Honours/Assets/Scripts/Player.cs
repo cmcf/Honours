@@ -34,6 +34,7 @@ public class Player : MonoBehaviour, IDamageable
     bool isDead = false; 
 
     public WeaponType currentWeaponType = WeaponType.Default;
+    bool isAutoFiring = false;
 
     // Weapon Type Enum
     public enum WeaponType
@@ -41,7 +42,8 @@ public class Player : MonoBehaviour, IDamageable
         Default,    // Fires a single bullet
         RapidFire,  // Fires bullets with a faster rate
         SpreadShot, // Fires multiple bullets in a spread
-        Ice   // Fires an ice projectile
+        Ice,   // Fires an ice projectile
+        AutoFire
     }
 
     void Start()
@@ -54,37 +56,74 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFire()
     {
-        // Only fire if the fire delay has passed
-        if (Time.time > lastFireTime + fireDelay)
+        if (currentWeaponType == WeaponType.AutoFire)
         {
-            lastFireTime = Time.time;
-
-            // Determine the fire direction
-            Vector3 fireDirection = playerMovement.lastMoveDirection;
-            if (fireDirection == Vector3.zero)
+            // If AutoFire is enabled, start or ensure the coroutine is running
+            if (!isAutoFiring) 
             {
-                // Default direction
-                fireDirection = -spawnPoint.up.normalized; 
+                isAutoFiring = true;
+                StartCoroutine(AutoFireCoroutine());
             }
-
-            // Handle different weapon type behaviour
-            switch (currentWeaponType)
+        }
+        else
+        {
+            // Only fire if the fire delay has passed for non-AutoFire weapons
+            if (Time.time > lastFireTime + fireDelay)
             {
-                case WeaponType.Default:
-                    FireSingleBullet(fireDirection);
-                    break;
-                case WeaponType.RapidFire:
-                    StartCoroutine(FireRapid(fireDirection));
-                    break;
-                case WeaponType.SpreadShot:
-                    FireSpreadBullets(fireDirection, 5, 30f); 
-                    break;
-                case WeaponType.Ice:
-                    FireIceBullet(fireDirection);
-                    break;
+                lastFireTime = Time.time;
+
+                // Determine the fire direction
+                Vector3 fireDirection = playerMovement.lastMoveDirection;
+                if (fireDirection == Vector3.zero)
+                {
+                    fireDirection = -spawnPoint.up.normalized;
+                }
+
+                // Handle different weapon type behaviour
+                switch (currentWeaponType)
+                {
+                    case WeaponType.Default:
+                        FireSingleBullet(fireDirection);
+                        break;
+                    case WeaponType.RapidFire:
+                        StartCoroutine(FireRapid(fireDirection));
+                        break;
+                    case WeaponType.SpreadShot:
+                        FireSpreadBullets(fireDirection, 5, 30f);
+                        break;
+                    case WeaponType.Ice:
+                        FireIceBullet(fireDirection);
+                        break;
+                }
             }
         }
     }
+
+    IEnumerator AutoFireCoroutine()
+    {
+        // Keep firing as long as AutoFire is active
+        while (currentWeaponType == WeaponType.AutoFire) 
+        {
+            if (Time.time > lastFireTime + fireDelay)
+            {
+                lastFireTime = Time.time;
+
+                Vector3 fireDirection = playerMovement.lastMoveDirection;
+                if (fireDirection == Vector3.zero)
+                {
+                    fireDirection = -spawnPoint.up.normalized;
+                }
+
+                FireSingleBullet(fireDirection);
+            }
+
+            yield return null;
+        }
+
+        // Once AutoFire is no longer active, stop firing
+        isAutoFiring = false;
+    }
+
 
     void FireSingleBullet(Vector3 direction)
     {
