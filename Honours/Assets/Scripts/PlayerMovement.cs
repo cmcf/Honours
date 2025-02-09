@@ -16,9 +16,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float increasedSpeed = 6f;
 
     [Header("Dash Settings")]
+    [SerializeField] float dashDistance = 3f; // How far the dash moves the player
     [SerializeField] float dashDuration = 0.8f;
     [SerializeField] float dashSpeed = 7f;
     [SerializeField] float dashCooldown = 2f;
+
+    [Header("Effects")]
+    [SerializeField] Color dashColor = new Color(1, 1, 1, 0.5f); // Semi-transparent during dash
+    [SerializeField] ParticleSystem dashEffect; // Optional particle effect
 
     Vector2 moveDirection;
     public Vector2 lastMoveDirection = Vector2.zero;
@@ -162,33 +167,52 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        Vector2 dashDirection;
+        Vector2 dashDirection = (moveDirection != Vector2.zero) ? moveDirection.normalized : lastMoveDirection;
+        if (dashDirection != Vector2.zero)
+        {
+            lastMoveDirection = dashDirection;
+        }
 
-        if (moveDirection != Vector2.zero)
+        // Store the current facing direction before the dash
+        bool wasFacingRight = isFacingRight;
+
+        // Sprite stretch effect
+        spriteRenderer.transform.localScale = new Vector3(1.2f, 0.8f, 1f);
+        // Make player semi-transparent
+        spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f); 
+
+        float elapsedTime = 0f;
+        Vector2 startPosition = rb.position;
+        Vector2 endPosition = startPosition + (dashDirection * dashDistance);
+
+        // Move smoothly over dashDuration
+        while (elapsedTime < dashDuration)
         {
-            dashDirection = moveDirection;
+            elapsedTime += Time.deltaTime;
+            rb.MovePosition(Vector2.Lerp(startPosition, endPosition, elapsedTime / dashDuration));
+            yield return null;
         }
-        else if (lastMoveDirection != Vector2.zero)
+
+        // Reset scale
+        spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
+        // Restore full opacity
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f); 
+
+        // Ensure the player keeps their facing direction after the dash
+        isFacingRight = wasFacingRight;
+        // Face right
+        if (isFacingRight)
         {
-            dashDirection = lastMoveDirection;
+            transform.localScale = new Vector3(-1, 1, 1); 
         }
+       
         else
         {
-            dashDirection = Vector2.right; 
+            transform.localScale = new Vector3(1, 1, 1); 
         }
-
-        if (dashDirection == Vector2.zero)
-        {
-            dashDirection = Vector2.right; 
-        }
-
-        rb.velocity = dashDirection * dashSpeed;
-
-        yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
-        rb.velocity = Vector2.zero; 
-
+        // Enable dash when cooldown has passed
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
