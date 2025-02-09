@@ -174,6 +174,9 @@ public class PlayerMovement : MonoBehaviour
         // Store the current facing direction before the dash
         bool wasFacingRight = isFacingRight;
 
+        // Make player invincible
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
+
         // Sprite stretch effect
         spriteRenderer.transform.localScale = new Vector3(1.2f, 0.8f, 1f);
         // Make player semi-transparent
@@ -200,6 +203,10 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer.color = new Color(1f, 1f, 1f, 1f); 
         // Disable dash effect
         trailRenderer.emitting = false;
+
+        // Re-enable collision after dash ends
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
+
 
         // Ensure the player keeps their facing direction after the dash
         isFacingRight = wasFacingRight;
