@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4171604732914402250}
   - component: {fileID: -2637903227089958092}
   - component: {fileID: 98956588036350151}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfada832f5293c64c8e6cb9b8c3302a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   spriteRenderer: {fileID: 7440780272706730979}
   rb: {fileID: 0}
   maxHealth: 45
@@ -172,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d2d56353bd991458d3c7ee7590d666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   spriteRenderer: {fileID: 7440780272706730979}
   rb: {fileID: 0}
   maxHealth: 45
@@ -234,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8346416027446157132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

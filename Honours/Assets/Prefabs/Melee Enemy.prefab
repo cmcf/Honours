@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6089168758926071253}
   - component: {fileID: 7944123459317094608}
   - component: {fileID: 794100427900891297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Melee Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63793bf84100f54ab812b0598d206ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   spriteRenderer: {fileID: 8561932971203901866}
   rb: {fileID: 2956526659463315321}
   maxHealth: 85
@@ -201,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d2d56353bd991458d3c7ee7590d666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   spriteRenderer: {fileID: 8561932971203901866}
   rb: {fileID: 2956526659463315321}
   maxHealth: 45
