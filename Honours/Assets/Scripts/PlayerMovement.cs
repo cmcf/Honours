@@ -17,9 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float increasedSpeed = 6f;
 
     [Header("Dash Settings")]
-    [SerializeField] float dashDistance = 3f; // How far the dash moves the player
+    [SerializeField] float dashDistance = 3f;
     [SerializeField] float dashDuration = 0.8f;
-    [SerializeField] float dashSpeed = 7f;
     [SerializeField] float dashCooldown = 2f;
 
 
