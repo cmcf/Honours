@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
+    TrailRenderer trailRenderer;
     public Transform weapon;
 
     [Header("Speed Settings")]
@@ -21,9 +22,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float dashSpeed = 7f;
     [SerializeField] float dashCooldown = 2f;
 
-    [Header("Effects")]
-    [SerializeField] Color dashColor = new Color(1, 1, 1, 0.5f); // Semi-transparent during dash
-    [SerializeField] ParticleSystem dashEffect; // Optional particle effect
 
     Vector2 moveDirection;
     public Vector2 lastMoveDirection = Vector2.zero;
@@ -38,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentSpeed = defaultSpeed;
         animator = GetComponent<Animator>();
+        trailRenderer = GetComponentInChildren<TrailRenderer>();
     }
 
     void FixedUpdate()
@@ -179,7 +178,10 @@ public class PlayerMovement : MonoBehaviour
         // Sprite stretch effect
         spriteRenderer.transform.localScale = new Vector3(1.2f, 0.8f, 1f);
         // Make player semi-transparent
-        spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f); 
+        spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
+        // Enable dash trail
+        trailRenderer.emitting = true;
+
 
         float elapsedTime = 0f;
         Vector2 startPosition = rb.position;
@@ -197,6 +199,8 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
         // Restore full opacity
         spriteRenderer.color = new Color(1f, 1f, 1f, 1f); 
+        // Disable dash effect
+        trailRenderer.emitting = false;
 
         // Ensure the player keeps their facing direction after the dash
         isFacingRight = wasFacingRight;

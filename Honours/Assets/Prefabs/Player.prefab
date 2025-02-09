@@ -290,8 +290,8 @@ MonoBehaviour:
   iceBulletPrefab: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
   spawnPoint: {fileID: 181472975897061487}
   currentEnemy: {fileID: 0}
-  currentHealth: 200
-  health: 200
+  currentHealth: 1e+10
+  health: 1e+14
   bulletSpeed: 15
   fireDelay: 0.5
   currentWeaponType: 0
@@ -311,9 +311,12 @@ MonoBehaviour:
   defaultSpeed: 6
   currentSpeed: 0
   increasedSpeed: 6
-  dashDuration: 0.8
+  dashDistance: 4
+  dashDuration: 0.25
   dashSpeed: 7
-  dashCooldown: 2
+  dashCooldown: 1.5
+  dashColor: {r: 1, g: 1, b: 1, a: 0.5}
+  dashEffect: {fileID: 0}
   lastMoveDirection: {x: 0, y: 0}
 --- !u!114 &4666233367720946802
 MonoBehaviour:
