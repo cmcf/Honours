@@ -100,6 +100,7 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
+
     IEnumerator AutoFireCoroutine()
     {
         // Keep firing as long as AutoFire is active

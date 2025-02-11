@@ -3620,6 +3620,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3862144887162636143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &667555100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6624806211365203056, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+  m_PrefabInstance: {fileID: 2068680074}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &734784267 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8016599293615790252, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
@@ -3786,6 +3791,33 @@ Transform:
   - {fileID: 443167590}
   m_Father: {fileID: 3862144887162636143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1726328911 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1191244183427832258, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+  m_PrefabInstance: {fileID: 2068680074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1726328912 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3067323939636054020, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+  m_PrefabInstance: {fileID: 2068680074}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1726328914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726328911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0f2f703b8466d47b35b910d1d46c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponTransform: {fileID: 1726328912}
+  playerMovement: {fileID: 667555100}
+  minAngle: -60
+  maxAngle: 60
+  smoothRotationSpeed: 10
 --- !u!1 &2019253174
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +3903,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2423823982936496150, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423823982936496150, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4499495830242124069, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: health
       value: 150
@@ -3930,6 +3970,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8016599293615790252, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       insertIndex: -1
       addedObject: {fileID: 734784270}
+    - targetCorrespondingSourceObject: {fileID: 1191244183427832258, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1726328914}
   m_SourcePrefab: {fileID: 100100000, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
 --- !u!1 &2143930539
 GameObject:
