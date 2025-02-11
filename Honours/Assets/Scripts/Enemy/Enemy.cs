@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour, IDamageable
     bool isActive = false;
     bool hit = false;
     bool isFrozen = false;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
