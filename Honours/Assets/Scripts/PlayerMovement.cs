@@ -61,31 +61,38 @@ public class PlayerMovement : MonoBehaviour
     {
         float speed = moveDirection.magnitude;
 
+        // Update speed parameter for movement animation
+        animator.SetFloat("speed", speed);
+
+        // If the player is moving and not dashing, update movement animations
         if (speed > 0 && !isDashing)
         {
             // Normalize the movement direction
             Vector2 normalizedDirection = moveDirection.normalized;
 
-            // Update blend tree parameters
+            // Update blend tree parameters for movement
             animator.SetFloat("animMoveX", normalizedDirection.x);
             animator.SetFloat("animMoveY", normalizedDirection.y);
 
-            // Save the player's last movement direction
+            // Save the last movement direction for idle state
             lastMoveDirection = normalizedDirection;
-
-            // Flip the player based on horizontal movement
-            if (moveDirection.x == 0 && moveDirection.x == 0)
-            {
-                // Player is idle; use the last movement direction
-                animator.SetFloat("animMoveX", lastMoveDirection.x);
-                animator.SetFloat("animMoveY", lastMoveDirection.y);
-            }
         }
-        // Update the speed parameter for animation states
-        animator.SetFloat("speed", speed);
+        // If player is idle, use the last movement direction for idle animation
+        else if (speed == 0) 
+        {
+            animator.SetFloat("animMoveX", lastMoveDirection.x);
+            animator.SetFloat("animMoveY", lastMoveDirection.y);
+        }
+    }
 
+    public void UpdatePlayerAnimation(Vector3 direction)
+    {
+        // Normalize direction to get the correct animation
+        Vector2 normalizedDirection = direction.normalized;
 
-
+        // Update animation values based on the aiming direction
+        animator.SetFloat("animMoveX", normalizedDirection.x);
+        animator.SetFloat("animMoveY", normalizedDirection.y);
     }
 
     void OnDash()
