@@ -215,14 +215,25 @@ public class Player : MonoBehaviour, IDamageable
     {
         // Only enter death state once
         if (isDead) { return; }
+
         // Disable player move input
         playerMovement.enabled = false;
+
+        // Stop movement to prevent sliding
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         // Set player to death state
         isDead = true;
+
         // Increase death counter
         numberOfDeaths++;
+
         // Play death animation
         animator.SetTrigger("isDead");
-
     }
+
 }
