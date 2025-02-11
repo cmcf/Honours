@@ -135,9 +135,11 @@ MonoBehaviour:
   rb: {fileID: 2956526659463315321}
   maxHealth: 85
   currentHealth: 0
+  moveSpeed: 1.7
+  freezeTimer: 0
+  level: 0
   damage: 0
   stoppingDistance: 0.3
-  moveSpeed: 1.7
   damageAmount: 10
   appearDuration: 0.5
   disappearDuration: 0.5
@@ -207,6 +209,9 @@ MonoBehaviour:
   rb: {fileID: 2956526659463315321}
   maxHealth: 45
   currentHealth: 0
+  moveSpeed: 1.7
+  freezeTimer: 0.5
+  level: 0
 --- !u!95 &794100427900891297
 Animator:
   serializedVersion: 7
