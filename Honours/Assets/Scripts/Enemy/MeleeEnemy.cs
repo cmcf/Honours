@@ -10,6 +10,7 @@ public class MeleeEnemy : Enemy
 
     Transform playerLocation;
     public int damage;
+    int health;
 
     [Header("State Control")]
     bool reachedPlayer = false;
@@ -18,7 +19,6 @@ public class MeleeEnemy : Enemy
 
     [Header("Movement")]
     [SerializeField] float stoppingDistance = 5f;
-    [SerializeField] float moveSpeed;
 
     [Header("Attack")]
     public float damageAmount = 10f;
@@ -43,11 +43,8 @@ public class MeleeEnemy : Enemy
         {
             playerLocation = player.transform;
         }
-
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-
         StartCoroutine(HandleAppearance());
     }
 
@@ -58,6 +55,7 @@ public class MeleeEnemy : Enemy
 
         MoveTowardsPlayer();
     }
+
 
     IEnumerator HandleAppearance()
     {
@@ -76,7 +74,7 @@ public class MeleeEnemy : Enemy
 
     void MoveTowardsPlayer()
     {
-        if (playerLocation == null) return;
+        if (playerLocation == null || !IsActive()) return;
 
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 

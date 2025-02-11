@@ -45,6 +45,7 @@ public class RoomController : MonoBehaviour
         UpdateRoomQueue();
     }
 
+    [System.Obsolete]
     void Start()
     {
         roomsCompleted = -1;
@@ -76,6 +77,11 @@ public class RoomController : MonoBehaviour
         if (SpawnRateManager.Instance != null)
         {
             spawnRate.IncreaseSpawnRate();
+        }
+
+        if (DifficultyManager.Instance != null)
+        {
+            DifficultyManager.Instance.IncreaseDifficulty();
         }
 
         // Ensure the condition triggers after rooms are complete

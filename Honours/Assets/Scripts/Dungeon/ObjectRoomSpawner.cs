@@ -27,7 +27,6 @@ public class ObjectRoomSpawner : MonoBehaviour
         // Spawn enemies or objects only for the provided room
         if (room != null)
         {
-            
             GridController gridController = room.GetComponentInChildren<GridController>();
             if (gridController != null && !room.hasSpawnedEnemies)
             {
@@ -48,7 +47,10 @@ public class ObjectRoomSpawner : MonoBehaviour
         }
 
         // Decide on how many enemies to spawn
-        int spawnCount = Random.Range(minEnemies, maxEnemies + 1); 
+        int spawnCount = Random.Range(minEnemies, maxEnemies + 1);
+
+        // Get the current difficulty level
+        int difficultyLevel = DifficultyManager.Instance.GetCurrentDifficultyLevel();
 
         // Loop to spawn a limited number of enemies
         for (int i = 0; i < spawnCount; i++)
@@ -76,6 +78,13 @@ public class ObjectRoomSpawner : MonoBehaviour
 
                 // Reset the enemy's local position to ensure it's correctly placed within the room
                 spawnedEnemy.transform.localPosition = point;
+
+                // Apply difficulty-based adjustments to the spawned enemy
+                Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
+                if (enemyScript != null)
+                {
+                    enemyScript.SetDifficultyLevel(difficultyLevel);
+                }
 
                 // Remove the used point to avoid spawning multiple enemies at the same location
                 gridController.availablePoints.RemoveAt(randomPointIndex);

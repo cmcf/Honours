@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour, IDamageable
     public float Health { get; set; }
     public float maxHealth = 45f;
     public float currentHealth;
-    float freezeTimer;
+    public float moveSpeed;
+    public float freezeTimer;
+    public int level;
 
     bool isActive = false;
     bool hit = false;
@@ -41,6 +43,29 @@ public class Enemy : MonoBehaviour, IDamageable
     public bool IsActive()
     {
         return isActive;
+    }
+
+    public void SetDifficultyLevel(int difficulty)
+    {
+        level = Mathf.Min(difficulty, 4);
+        // Enemy stats are adjusted based on difficulty setting
+        switch (level)
+        {
+            case 1:
+                moveSpeed += 0.1f;
+                break;
+            case 2:
+                moveSpeed += 0.1f;
+                break;
+            case 3:
+                moveSpeed += 0.2f;
+                break;
+
+            case 4:
+                moveSpeed += 0.2f;
+                break;
+
+        }
     }
 
     public void Damage(float damage)
@@ -90,9 +115,11 @@ public class Enemy : MonoBehaviour, IDamageable
             freezeTimer = duration;
 
             // Stop movement
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.velocity = Vector2.zero; 
+                rb.velocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
             }
 
             // Freeze the animator by setting its speed to 0
@@ -139,6 +166,12 @@ public class Enemy : MonoBehaviour, IDamageable
         if (animator != null)
         {
             animator.speed = 1;
+        }
+
+        // Remove position constraints 
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;  
         }
 
     }

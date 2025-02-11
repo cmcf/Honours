@@ -35,6 +35,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public WeaponType currentWeaponType = WeaponType.Default;
     bool isAutoFiring = false;
+    [SerializeField] int numberOfDeaths = 0;
 
     // Weapon Type Enum
     public enum WeaponType
@@ -218,6 +219,8 @@ public class Player : MonoBehaviour, IDamageable
         playerMovement.enabled = false;
         // Set player to death state
         isDead = true;
+        // Increase death counter
+        numberOfDeaths++;
         // Play death animation
         animator.SetTrigger("isDead");
 
