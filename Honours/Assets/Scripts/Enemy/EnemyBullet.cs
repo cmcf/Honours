@@ -26,7 +26,6 @@ public class EnemyBullet : MonoBehaviour
         {
             // Deals damage to player if hit
             hitPlayer = true;
-            Debug.Log("Hit");
             DealDamage(collision.transform);
             Destroy(gameObject);
         }

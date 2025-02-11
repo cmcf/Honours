@@ -31,7 +31,7 @@ public class RangedEnemy : Enemy
 
         // Check the distance to the player
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
-
+         
         UpdateEnemyAndSpawnPoint();
 
         // If the player is within range and it's time to fire - spawn bullet 
