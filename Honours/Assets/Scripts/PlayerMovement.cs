@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     TrailRenderer trailRenderer;
     public Transform weapon;
+    public Transform bulletSpawn;
 
     [Header("Speed Settings")]
     [SerializeField] float defaultSpeed = 3f;
@@ -30,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     bool canDash = true;
     bool isFacingRight = false;
     float rotationSpeed = 1f;
+
+    public float weaponDistance = 1f;
 
     void Start()
     {
@@ -56,6 +59,29 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = value.Get<Vector2>();
     }
 
+    void OnLook(InputValue value)
+    {
+       
+        // Get the aim input values from the player (both horizontal and vertical)
+        Vector2 aimInput = value.Get<Vector2>();
+
+        // Calculate the aim direction from the input
+        Vector3 aimDirection = new Vector3(aimInput.x, aimInput.y, 0f).normalized;
+
+        // Calculate the angle between the player and the aim direction
+        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+
+        // Update the gun's rotation based on the angle
+        weapon.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Calculate the new position of the gun relative to the player
+        Vector3 gunNewPosition = transform.position + Quaternion.Euler(0, 0, angle) * new Vector3(weaponDistance, 0, 0);
+        gunNewPosition.y = transform.position.y; // Maintain the gun's Y position relative to the player
+
+        // Update the gun's position
+        weapon.position = gunNewPosition;
+    }
+
 
     void UpdateAnimation()
     {
@@ -77,8 +103,7 @@ public class PlayerMovement : MonoBehaviour
             // Save the last movement direction for idle state
             lastMoveDirection = normalizedDirection;
 
-            // Adjust weapon position based on direction (facing up/down)
-            AdjustWeaponPosition(normalizedDirection);
+
         }
         // If player is idle, use the last movement direction for idle animation
         else if (speed == 0)
@@ -86,8 +111,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("animMoveX", lastMoveDirection.x);
             animator.SetFloat("animMoveY", lastMoveDirection.y);
 
-            // Adjust weapon position for idle state
-            AdjustWeaponPosition(lastMoveDirection);
+
         }
     }
 
@@ -101,22 +125,6 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("animMoveY", normalizedDirection.y);
     }
 
-    // Adjust weapon position when the player is facing up or down
-    public void AdjustWeaponPosition(Vector2 direction)
-    {
-        if (direction.y > 0)  // Facing up
-        {
-            weapon.localPosition = new Vector3(-0.137f, 0.195f, 0); // Slightly in front of the player
-        }
-        else if (direction.y < 0)  // Facing down
-        {
-            weapon.localPosition = new Vector3(-0.147f, -0.134f, 0); // Below player
-        }
-        else  // Horizontal movement (left/right)
-        {
-            weapon.localPosition = new Vector3(-0.335f, 0f, 0f);  // Centered
-        }
-    }
 
 
     void OnDash()

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3067323939636054020}
   - component: {fileID: 2423823982936496150}
+  - component: {fileID: 1197615737921446024}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -88,6 +89,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1197615737921446024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191244183427832258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0f2f703b8466d47b35b910d1d46c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponTransform: {fileID: 3067323939636054020}
+  playerTransform: {fileID: 6624806211365203056}
 --- !u!1 &1821578463410901315
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,8 +128,8 @@ Transform:
   m_GameObject: {fileID: 1821578463410901315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.184, y: 0.033, z: 0}
-  m_LocalScale: {x: 0.27433133, y: 0.6357028, z: 1}
+  m_LocalPosition: {x: -0.284, y: 0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3067323939636054020}
@@ -290,11 +305,12 @@ MonoBehaviour:
   iceBulletPrefab: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
   spawnPoint: {fileID: 181472975897061487}
   currentEnemy: {fileID: 0}
-  currentHealth: 1e+10
-  health: 1e+14
+  currentHealth: 150
+  health: 150
   bulletSpeed: 15
   fireDelay: 0.5
   currentWeaponType: 0
+  numberOfDeaths: 0
 --- !u!114 &3558879172675334712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,13 +324,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3067323939636054020}
+  bulletSpawn: {fileID: 181472975897061487}
   defaultSpeed: 6
   currentSpeed: 0
   increasedSpeed: 6
   dashDistance: 4
   dashDuration: 0.25
   dashCooldown: 1.5
+  moveDirection: {x: 0, y: 0}
   lastMoveDirection: {x: 0, y: 0}
+  weaponDistance: 1
 --- !u!114 &4666233367720946802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8738862857405691413}
   - component: {fileID: 1034517393384126921}
-  - component: {fileID: 2796134238078790166}
+  - component: {fileID: 2457101398420053520}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -640,7 +659,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!96 &2796134238078790166
+--- !u!96 &2457101398420053520
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0

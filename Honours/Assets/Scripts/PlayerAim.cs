@@ -4,7 +4,18 @@ public class PlayerAim : MonoBehaviour
 {
     public Transform weaponTransform;
     public Transform playerTransform;
-    PlayerMovement playerMovementScript;
+    private PlayerMovement playerMovementScript;
+    private Animator animator;
+
+    private Vector3 defaultWeaponOffset = new Vector3(-0.3f, 0f, 0f);
+    private Vector3 weaponUpOffset = new Vector3(-0.1f, 0.15f, 0f);
+    private Vector3 weaponDownOffset = new Vector3(-0.2f, -0.15f, 0f);
+    private Vector3 targetWeaponPosition;
+
+    private bool isFacingUp = false;
+    private bool isFacingDown = false;
+
+    public float weaponMoveSpeed = 10f; 
 
     void Start()
     {
@@ -14,6 +25,9 @@ public class PlayerAim : MonoBehaviour
         }
 
         playerMovementScript = playerTransform.GetComponentInParent<PlayerMovement>();
+        animator = playerTransform.GetComponent<Animator>();
+
+        targetWeaponPosition = defaultWeaponOffset;
     }
 
     void Update()
@@ -25,48 +39,53 @@ public class PlayerAim : MonoBehaviour
             Mathf.Abs(Camera.main.transform.position.z)
         ));
 
-        // Calculate the direction from the player to the mouse
+        // Calculate aim direction
         Vector3 direction = mousePosition - playerTransform.position;
-        direction.z = 0f; // Ensure we ignore Z axis (2D movement)
+        direction.z = 0f; // Ignore Z axis for 2D
 
-        // Calculate the angle between the direction and the X axis
+        // Calculate the angle
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Flip the player based on mouse position for visual direction
+        // Determine player sprite direction
+        bool shouldFaceUp = direction.y > 1.1f;
+        bool shouldFaceDown = direction.y < -0.8f;
+
+        // Flip player and rotate weapon
         if (mousePosition.x > playerTransform.position.x)
         {
-            playerTransform.localScale = new Vector3(-1, 1, 1);  // Player faces right
-            weaponTransform.rotation = Quaternion.Euler(0, 0, angle); // Aim the weapon
-            playerMovementScript.UpdatePlayerAnimation(direction); // Update animation values
+            playerTransform.localScale = new Vector3(-1, 1, 1);
+            weaponTransform.rotation = Quaternion.Euler(0, 0, angle);
         }
         else
         {
-            playerTransform.localScale = new Vector3(1, 1, 1);   // Player faces left
-            weaponTransform.rotation = Quaternion.Euler(0, 0, angle + 180f); // Aim the weapon
-            playerMovementScript.UpdatePlayerAnimation(direction); // Update animation values
+            playerTransform.localScale = new Vector3(1, 1, 1);
+            weaponTransform.rotation = Quaternion.Euler(0, 0, angle + 180f);
         }
 
-        // Adjust weapon position based on player movement
-        Vector2 moveDirection = playerMovementScript.moveDirection; 
-        playerMovementScript.AdjustWeaponPosition(moveDirection);
+        // Update player animation based on movement
+        playerMovementScript.UpdatePlayerAnimation(direction);
 
-
-    }
-
-public void AdjustWeaponPosition(Vector2 direction)
-    {
-        // Adjust weapon position only based on vertical direction (up or down)
-        if (direction.y > 0) // Facing up
+        // Update weapon position when the player sprite changes
+        if (shouldFaceUp && !isFacingUp)
         {
-            weaponTransform.localPosition = new Vector3(-0.137f, 0.195f, 0); // Fixed weapon position when facing up
+            isFacingUp = true;
+            isFacingDown = false;
+            targetWeaponPosition = weaponUpOffset;
         }
-        else if (direction.y < 0) // Facing down
+        else if (shouldFaceDown && !isFacingDown)
         {
-            weaponTransform.localPosition = new Vector3(-0.147f, -0.134f, 0); // Fixed weapon position when facing down
+            isFacingDown = true;
+            isFacingUp = false;
+            targetWeaponPosition = weaponDownOffset;
         }
-        else // Horizontal (left/right) - no change in position
+        else if (!shouldFaceUp && !shouldFaceDown)
         {
-            weaponTransform.localPosition = new Vector3(-0.335f, 0f, 0); // Default horizontal position
+            isFacingUp = false;
+            isFacingDown = false;
+            targetWeaponPosition = defaultWeaponOffset;
         }
+
+        // Smoothly move the weapon towards the target position using Lerp
+        weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
     }
 }

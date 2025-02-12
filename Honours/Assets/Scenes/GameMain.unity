@@ -3814,10 +3814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponTransform: {fileID: 1726328912}
-  playerMovement: {fileID: 667555100}
-  minAngle: -60
-  maxAngle: 60
-  smoothRotationSpeed: 10
+  playerTransform: {fileID: 667555100}
 --- !u!1 &2019253174
 GameObject:
   m_ObjectHideFlags: 0
