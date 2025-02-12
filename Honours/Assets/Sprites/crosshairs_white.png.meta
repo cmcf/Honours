@@ -1,0 +1,2340 @@
+fileFormatVersion: 2
+guid: 751f1703de6315642b571c23df1e0e6c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7056205053545878561
+    second: crosshairs_white_0
+  - first:
+      213: 2881777532375836322
+    second: crosshairs_white_1
+  - first:
+      213: -6502975210526130611
+    second: crosshairs_white_2
+  - first:
+      213: -7721035955966170830
+    second: crosshairs_white_3
+  - first:
+      213: 6317266432025274525
+    second: crosshairs_white_4
+  - first:
+      213: 1100155351578652075
+    second: crosshairs_white_5
+  - first:
+      213: -1624536928683226779
+    second: crosshairs_white_6
+  - first:
+      213: 509753977504799593
+    second: crosshairs_white_7
+  - first:
+      213: 246667202367521530
+    second: crosshairs_white_8
+  - first:
+      213: -5737708465750874549
+    second: crosshairs_white_9
+  - first:
+      213: 5628476157269755866
+    second: crosshairs_white_10
+  - first:
+      213: -2560406781842721101
+    second: crosshairs_white_11
+  - first:
+      213: -4616066197984214751
+    second: crosshairs_white_12
+  - first:
+      213: 2223522778081853113
+    second: crosshairs_white_13
+  - first:
+      213: 4337827763921142679
+    second: crosshairs_white_14
+  - first:
+      213: 4957855396570069104
+    second: crosshairs_white_15
+  - first:
+      213: -6192414729949251749
+    second: crosshairs_white_16
+  - first:
+      213: 5565873664695580210
+    second: crosshairs_white_17
+  - first:
+      213: 1102984455293018323
+    second: crosshairs_white_18
+  - first:
+      213: -3510156087362751776
+    second: crosshairs_white_19
+  - first:
+      213: -8599308745711047855
+    second: crosshairs_white_20
+  - first:
+      213: 7720920307188627237
+    second: crosshairs_white_21
+  - first:
+      213: 7021855753593954012
+    second: crosshairs_white_22
+  - first:
+      213: -6878337631087526453
+    second: crosshairs_white_23
+  - first:
+      213: -2784019619513507058
+    second: crosshairs_white_24
+  - first:
+      213: -3997340907712350231
+    second: crosshairs_white_25
+  - first:
+      213: -4063487729336601454
+    second: crosshairs_white_26
+  - first:
+      213: -6796632133848820499
+    second: crosshairs_white_27
+  - first:
+      213: -7766607659672735865
+    second: crosshairs_white_28
+  - first:
+      213: 3132216731703861778
+    second: crosshairs_white_29
+  - first:
+      213: 1381025626813212389
+    second: crosshairs_white_30
+  - first:
+      213: 4794340755511834601
+    second: crosshairs_white_31
+  - first:
+      213: 2694332278672160100
+    second: crosshairs_white_32
+  - first:
+      213: 7073446899799221797
+    second: crosshairs_white_33
+  - first:
+      213: 6489220331077584524
+    second: crosshairs_white_34
+  - first:
+      213: 2929498949574613459
+    second: crosshairs_white_35
+  - first:
+      213: 8066565906441604408
+    second: crosshairs_white_36
+  - first:
+      213: 2988461432211640431
+    second: crosshairs_white_37
+  - first:
+      213: 8722963288969676575
+    second: crosshairs_white_38
+  - first:
+      213: -4028846930583870550
+    second: crosshairs_white_39
+  - first:
+      213: 8079544205817025085
+    second: crosshairs_white_40
+  - first:
+      213: 3674928965473109836
+    second: crosshairs_white_41
+  - first:
+      213: -2766669342387523828
+    second: crosshairs_white_42
+  - first:
+      213: 4931298588396561377
+    second: crosshairs_white_43
+  - first:
+      213: -3898771460239191783
+    second: crosshairs_white_44
+  - first:
+      213: 8827716329412734793
+    second: crosshairs_white_45
+  - first:
+      213: 7685192650112518041
+    second: crosshairs_white_46
+  - first:
+      213: 1699802776899209452
+    second: crosshairs_white_47
+  - first:
+      213: 5745571822700221796
+    second: crosshairs_white_48
+  - first:
+      213: -2017214719944922672
+    second: crosshairs_white_49
+  - first:
+      213: -5852068868138148189
+    second: crosshairs_white_50
+  - first:
+      213: 5915380036881402594
+    second: crosshairs_white_51
+  - first:
+      213: 4940749254281571551
+    second: crosshairs_white_52
+  - first:
+      213: 4201781589836767425
+    second: crosshairs_white_53
+  - first:
+      213: -2604840597222337767
+    second: crosshairs_white_54
+  - first:
+      213: 308835807361463125
+    second: crosshairs_white_55
+  - first:
+      213: -4053181231894990348
+    second: crosshairs_white_56
+  - first:
+      213: 1233589965703567979
+    second: crosshairs_white_57
+  - first:
+      213: 6041650913786755366
+    second: crosshairs_white_58
+  - first:
+      213: 7357268666123461295
+    second: crosshairs_white_59
+  - first:
+      213: -3856686348409568407
+    second: crosshairs_white_60
+  - first:
+      213: 6465054418125171942
+    second: crosshairs_white_61
+  - first:
+      213: 6484491312021613691
+    second: crosshairs_white_62
+  - first:
+      213: -7895980628264435177
+    second: crosshairs_white_63
+  - first:
+      213: 3052365193491880839
+    second: crosshairs_white_64
+  - first:
+      213: -4384313183159823925
+    second: crosshairs_white_65
+  - first:
+      213: 4987103682511141163
+    second: crosshairs_white_66
+  - first:
+      213: 584809517843396490
+    second: crosshairs_white_67
+  - first:
+      213: 5626314540577462015
+    second: crosshairs_white_68
+  - first:
+      213: 8745188951584821119
+    second: crosshairs_white_69
+  - first:
+      213: -2091522949163899545
+    second: crosshairs_white_70
+  - first:
+      213: 8478370831176746224
+    second: crosshairs_white_71
+  - first:
+      213: 8010441884999111794
+    second: crosshairs_white_72
+  - first:
+      213: -3591894149299737775
+    second: crosshairs_white_73
+  - first:
+      213: 5899996927272183229
+    second: crosshairs_white_74
+  - first:
+      213: 8181154388681548813
+    second: crosshairs_white_75
+  - first:
+      213: 5558535407770414547
+    second: crosshairs_white_76
+  - first:
+      213: 4056479101541373443
+    second: crosshairs_white_77
+  - first:
+      213: -5688929656533311410
+    second: crosshairs_white_78
+  - first:
+      213: -3566772720826652243
+    second: crosshairs_white_79
+  - first:
+      213: -1434035251455522303
+    second: crosshairs_white_80
+  - first:
+      213: -8318615119348020109
+    second: crosshairs_white_81
+  - first:
+      213: 3843261054069242244
+    second: crosshairs_white_82
+  - first:
+      213: -6962972606661255394
+    second: crosshairs_white_83
+  - first:
+      213: -2875866364584316011
+    second: crosshairs_white_84
+  - first:
+      213: -4800707656761607667
+    second: crosshairs_white_85
+  - first:
+      213: -5145299028794484451
+    second: crosshairs_white_86
+  - first:
+      213: -3974709304782012941
+    second: crosshairs_white_87
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: crosshairs_white_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 244
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1241bee5c1dace160800000000000000
+      internalID: 7056205053545878561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 243
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a6a6fab5612ef720800000000000000
+      internalID: 2881777532375836322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 243
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4e3b61108ac0c5a0800000000000000
+      internalID: -6502975210526130611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 242
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2392e92b4be59d490800000000000000
+      internalID: -7721035955966170830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 228
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d98ad5089507ba750800000000000000
+      internalID: 6317266432025274525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_5
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 228
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad2790a679844f00800000000000000
+      internalID: 1100155351578652075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_6
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 228
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5690551454c7479e0800000000000000
+      internalID: -1624536928683226779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_7
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 231
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b1400ba82031700800000000000000
+      internalID: 509753977504799593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_8
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 244
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af20bde73865c6300800000000000000
+      internalID: 246667202367521530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 244
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b46ea22dc809f50b0800000000000000
+      internalID: -5737708465750874549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_10
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 243
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad7c1dc7e3d5c1e40800000000000000
+      internalID: 5628476157269755866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_11
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 243
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b673c7f89b977cd0800000000000000
+      internalID: -2560406781842721101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_12
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 243
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1218679ff3070ffb0800000000000000
+      internalID: -4616066197984214751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_13
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 243
+        width: 24
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9befe899f2a8bde10800000000000000
+      internalID: 2223522778081853113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_14
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 229
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 793c8555e5f033c30800000000000000
+      internalID: 4337827763921142679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_15
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 229
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 078ff402737ddc440800000000000000
+      internalID: 4957855396570069104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_16
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 227
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b577a77ac9f101aa0800000000000000
+      internalID: -6192414729949251749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_17
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 227
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236b1e8db94fd3d40800000000000000
+      internalID: 5565873664695580210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_18
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 229
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d0a48aa4869e4f00800000000000000
+      internalID: 1102984455293018323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_19
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 228
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2719ad2ab694fc0800000000000000
+      internalID: -3510156087362751776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_20
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 227
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15babf1c14e19a880800000000000000
+      internalID: -8599308745711047855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_21
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 233
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 527f319bc18362b60800000000000000
+      internalID: 7720920307188627237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_22
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 229
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde1001ca94a27160800000000000000
+      internalID: 7021855753593954012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_23
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 226
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd73d51e5c3b80a0800000000000000
+      internalID: -6878337631087526453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_24
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 226
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e03ed2b08ec2d59d0800000000000000
+      internalID: -2784019619513507058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_25
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 226
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7faad8f979688c0800000000000000
+      internalID: -3997340907712350231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_26
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 227
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 294bbbf70779b97c0800000000000000
+      internalID: -4063487729336601454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_27
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 227
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de49fe895138da1a0800000000000000
+      internalID: -6796632133848820499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_28
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 227
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78fe0679b77773490800000000000000
+      internalID: -7766607659672735865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_29
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 227
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2126eb4b58ed77b20800000000000000
+      internalID: 3132216731703861778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_30
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 225
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e6a9e79d736a2310800000000000000
+      internalID: 1381025626813212389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_31
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 195
+        width: 59
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7f570048be88240800000000000000
+      internalID: 4794340755511834601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_32
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 195
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4657f19aee0346520800000000000000
+      internalID: 2694332278672160100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_33
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 179
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526ee188a7ee92260800000000000000
+      internalID: 7073446899799221797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_34
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 195
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c864f1f72875e0a50800000000000000
+      internalID: 6489220331077584524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_35
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 209
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9564306cba7a820800000000000000
+      internalID: 2929498949574613459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_36
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 195
+        width: 27
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d8ab214f232ff60800000000000000
+      internalID: 8066565906441604408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_37
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 212
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f601eebc6d5297920800000000000000
+      internalID: 2988461432211640431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_38
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 212
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f178fc325e03e0970800000000000000
+      internalID: 8722963288969676575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_39
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 193
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa32028ff09a618c0800000000000000
+      internalID: -4028846930583870550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_40
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 195
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d321aced5ae402070800000000000000
+      internalID: 8079544205817025085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_41
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 212
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4781d96c68fff230800000000000000
+      internalID: 3674928965473109836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_42
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 195
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f270c34e0da99d0800000000000000
+      internalID: -2766669342387523828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_43
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 212
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e323c260fd7f6440800000000000000
+      internalID: 4931298588396561377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_44
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 196
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91113047308c4e9c0800000000000000
+      internalID: -3898771460239191783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_45
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 196
+        width: 9
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94faf88fa39528a70800000000000000
+      internalID: 8827716329412734793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_46
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 197
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99746645ff947aa60800000000000000
+      internalID: 7685192650112518041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_47
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 196
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8cc41ae99e69710800000000000000
+      internalID: 1699802776899209452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_48
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 163
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4655a83a12f5cbf40800000000000000
+      internalID: 5745571822700221796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_49
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 195
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d96efd56e96104e0800000000000000
+      internalID: -2017214719944922672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_50
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aed089be5649cea0800000000000000
+      internalID: -5852068868138148189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_51
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eac0c17dc6a71250800000000000000
+      internalID: 5915380036881402594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_52
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcaab10541119440800000000000000
+      internalID: 4940749254281571551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_53
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c02ffd081abf4a30800000000000000
+      internalID: 4201781589836767425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_54
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 913db02274fb9dbd0800000000000000
+      internalID: -2604840597222337767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_55
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55373bfc784394400800000000000000
+      internalID: 308835807361463125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_56
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f17e9ee42530c7c0800000000000000
+      internalID: -4053181231894990348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_57
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a5f38b9879e1110800000000000000
+      internalID: 1233589965703567979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_58
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6297c2dfe7148d350800000000000000
+      internalID: 6041650913786755366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_59
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 179
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2a6611fd44a1660800000000000000
+      internalID: 7357268666123461295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_60
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 180
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96303f0233c4a7ac0800000000000000
+      internalID: -3856686348409568407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_61
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 180
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecabed6dbc78b950800000000000000
+      internalID: 6465054418125171942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_62
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 180
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7ca722fd7a8df950800000000000000
+      internalID: 6484491312021613691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_63
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 180
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 712ceea0477db6290800000000000000
+      internalID: -7895980628264435177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_64
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 180
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b99daa8fd2c5a20800000000000000
+      internalID: 3052365193491880839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_65
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 180
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc152b5936ac723c0800000000000000
+      internalID: -4384313183159823925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_66
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 184
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b297e1e5060c53540800000000000000
+      internalID: 4987103682511141163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_67
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 181
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a87b2547829ad1800800000000000000
+      internalID: 584809517843396490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_68
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 178
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff61cb1e34fa41e40800000000000000
+      internalID: 5626314540577462015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_69
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 184
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f42e874072d5970800000000000000
+      internalID: 8745188951584821119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_70
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 181
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 765228785fa69f2e0800000000000000
+      internalID: -2091522949163899545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_71
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 178
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f4c252c95939a570800000000000000
+      internalID: 8478370831176746224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 147
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2745849047eca2f60800000000000000
+      internalID: 8010441884999111794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_73
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 147
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15b6f284d47072ec0800000000000000
+      internalID: -3591894149299737775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_74
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 147
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db564f122fff0e150800000000000000
+      internalID: 5899996927272183229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_75
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 147
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04edf5229c498170800000000000000
+      internalID: 8181154388681548813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_76
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 147
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd2693c082e32d40800000000000000
+      internalID: 5558535407770414547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_77
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 160
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3065b2e20428b4830800000000000000
+      internalID: 4056479101541373443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_78
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e40a52e5e9cdc01b0800000000000000
+      internalID: -5688929656533311410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_79
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9e294ab17408ec0800000000000000
+      internalID: -3566772720826652243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_80
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10a0b916988491ce0800000000000000
+      internalID: -1434035251455522303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_81
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c41147f975e8c80800000000000000
+      internalID: -8318615119348020109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_82
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489f3e2f091065530800000000000000
+      internalID: 3843261054069242244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_83
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1f1e2f3e4d8e5f90800000000000000
+      internalID: -6962972606661255394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_84
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 593357547ced618d0800000000000000
+      internalID: -2875866364584316011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_85
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 161
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0af93842d5706db0800000000000000
+      internalID: -4800707656761607667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_86
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 147
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19da855bc93898b0800000000000000
+      internalID: -5145299028794484451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crosshairs_white_87
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 147
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd370b32fef6d8c0800000000000000
+      internalID: -3974709304782012941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      crosshairs_white_0: 7056205053545878561
+      crosshairs_white_1: 2881777532375836322
+      crosshairs_white_10: 5628476157269755866
+      crosshairs_white_11: -2560406781842721101
+      crosshairs_white_12: -4616066197984214751
+      crosshairs_white_13: 2223522778081853113
+      crosshairs_white_14: 4337827763921142679
+      crosshairs_white_15: 4957855396570069104
+      crosshairs_white_16: -6192414729949251749
+      crosshairs_white_17: 5565873664695580210
+      crosshairs_white_18: 1102984455293018323
+      crosshairs_white_19: -3510156087362751776
+      crosshairs_white_2: -6502975210526130611
+      crosshairs_white_20: -8599308745711047855
+      crosshairs_white_21: 7720920307188627237
+      crosshairs_white_22: 7021855753593954012
+      crosshairs_white_23: -6878337631087526453
+      crosshairs_white_24: -2784019619513507058
+      crosshairs_white_25: -3997340907712350231
+      crosshairs_white_26: -4063487729336601454
+      crosshairs_white_27: -6796632133848820499
+      crosshairs_white_28: -7766607659672735865
+      crosshairs_white_29: 3132216731703861778
+      crosshairs_white_3: -7721035955966170830
+      crosshairs_white_30: 1381025626813212389
+      crosshairs_white_31: 4794340755511834601
+      crosshairs_white_32: 2694332278672160100
+      crosshairs_white_33: 7073446899799221797
+      crosshairs_white_34: 6489220331077584524
+      crosshairs_white_35: 2929498949574613459
+      crosshairs_white_36: 8066565906441604408
+      crosshairs_white_37: 2988461432211640431
+      crosshairs_white_38: 8722963288969676575
+      crosshairs_white_39: -4028846930583870550
+      crosshairs_white_4: 6317266432025274525
+      crosshairs_white_40: 8079544205817025085
+      crosshairs_white_41: 3674928965473109836
+      crosshairs_white_42: -2766669342387523828
+      crosshairs_white_43: 4931298588396561377
+      crosshairs_white_44: -3898771460239191783
+      crosshairs_white_45: 8827716329412734793
+      crosshairs_white_46: 7685192650112518041
+      crosshairs_white_47: 1699802776899209452
+      crosshairs_white_48: 5745571822700221796
+      crosshairs_white_49: -2017214719944922672
+      crosshairs_white_5: 1100155351578652075
+      crosshairs_white_50: -5852068868138148189
+      crosshairs_white_51: 5915380036881402594
+      crosshairs_white_52: 4940749254281571551
+      crosshairs_white_53: 4201781589836767425
+      crosshairs_white_54: -2604840597222337767
+      crosshairs_white_55: 308835807361463125
+      crosshairs_white_56: -4053181231894990348
+      crosshairs_white_57: 1233589965703567979
+      crosshairs_white_58: 6041650913786755366
+      crosshairs_white_59: 7357268666123461295
+      crosshairs_white_6: -1624536928683226779
+      crosshairs_white_60: -3856686348409568407
+      crosshairs_white_61: 6465054418125171942
+      crosshairs_white_62: 6484491312021613691
+      crosshairs_white_63: -7895980628264435177
+      crosshairs_white_64: 3052365193491880839
+      crosshairs_white_65: -4384313183159823925
+      crosshairs_white_66: 4987103682511141163
+      crosshairs_white_67: 584809517843396490
+      crosshairs_white_68: 5626314540577462015
+      crosshairs_white_69: 8745188951584821119
+      crosshairs_white_7: 509753977504799593
+      crosshairs_white_70: -2091522949163899545
+      crosshairs_white_71: 8478370831176746224
+      crosshairs_white_72: 8010441884999111794
+      crosshairs_white_73: -3591894149299737775
+      crosshairs_white_74: 5899996927272183229
+      crosshairs_white_75: 8181154388681548813
+      crosshairs_white_76: 5558535407770414547
+      crosshairs_white_77: 4056479101541373443
+      crosshairs_white_78: -5688929656533311410
+      crosshairs_white_79: -3566772720826652243
+      crosshairs_white_8: 246667202367521530
+      crosshairs_white_80: -1434035251455522303
+      crosshairs_white_81: -8318615119348020109
+      crosshairs_white_82: 3843261054069242244
+      crosshairs_white_83: -6962972606661255394
+      crosshairs_white_84: -2875866364584316011
+      crosshairs_white_85: -4800707656761607667
+      crosshairs_white_86: -5145299028794484451
+      crosshairs_white_87: -3974709304782012941
+      crosshairs_white_9: -5737708465750874549
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

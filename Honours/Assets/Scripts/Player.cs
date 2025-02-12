@@ -32,7 +32,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] float fireDelay = 0.5f;
 
     [Header("State")]
-    bool isDead = false; 
+    public bool isDead = false; 
 
     public WeaponType currentWeaponType = WeaponType.Default;
     bool isAutoFiring = false;
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFire()
     { 
-        if (!isDead) { return; }
+        //if (!isDead) { return; }
 
         if (currentWeaponType == WeaponType.AutoFire)
         {

@@ -29,6 +29,8 @@ public class PlayerAim : MonoBehaviour
         animator = playerTransform.GetComponent<Animator>();
 
         targetWeaponPosition = defaultWeaponOffset;
+
+        Cursor.visible = false;
     }
 
     void Update()
