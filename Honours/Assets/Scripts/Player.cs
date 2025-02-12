@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IDamageable
     public GameObject iceBulletPrefab;
     public Transform spawnPoint;
     public Enemy currentEnemy;
+    PlayerAim playerAim;
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
@@ -52,11 +53,14 @@ public class Player : MonoBehaviour, IDamageable
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
+        playerAim = GetComponentInChildren<PlayerAim>();
         currentHealth = health;
     }
 
     void OnFire()
-    {
+    { 
+        if (!isDead) { return; }
+
         if (currentWeaponType == WeaponType.AutoFire)
         {
             // If AutoFire is enabled, start or ensure the coroutine is running
@@ -233,6 +237,9 @@ public class Player : MonoBehaviour, IDamageable
 
         // Disable player move input
         playerMovement.enabled = false;
+
+        // Disable aim ability
+        playerAim.enabled = false;
 
         // Stop movement to prevent sliding
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
