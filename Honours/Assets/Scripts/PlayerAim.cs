@@ -5,16 +5,13 @@ public class PlayerAim : MonoBehaviour
     public Transform weaponTransform;
     public Transform playerTransform;
     public Transform bulletSpawn;
-    private PlayerMovement playerMovementScript;
-    private Animator animator;
+    Animator animator;
 
-    private Vector3 defaultWeaponOffset = new Vector3(-0.2f, 0f, 0f);
-    private Vector3 weaponUpOffset = new Vector3(-0.1f, 0.12f, 0f);
-    private Vector3 weaponDownOffset = new Vector3(-0.1f, -0.1f, 0f);
-    private Vector3 targetWeaponPosition;
+    Vector3 defaultWeaponOffset = new Vector3(-0.161f, -0.033f, 0f);
+    Vector3 weaponUpOffset = new Vector3(-0.1f, 0.12f, 0f);
+    Vector3 weaponDownOffset = new Vector3(-0.161f, -0.033f, 0f);
+    Vector3 targetWeaponPosition;
 
-    private bool isFacingUp = false;
-    private bool isFacingDown = false;
 
     public float weaponMoveSpeed = 10f; 
 
@@ -25,7 +22,6 @@ public class PlayerAim : MonoBehaviour
             weaponTransform = transform;
         }
 
-        playerMovementScript = playerTransform.GetComponentInParent<PlayerMovement>();
         animator = playerTransform.GetComponent<Animator>();
 
         targetWeaponPosition = defaultWeaponOffset;
@@ -42,19 +38,14 @@ public class PlayerAim : MonoBehaviour
             Mathf.Abs(Camera.main.transform.position.z)
         ));
 
-        // Calculate aim direction
+        // Calculate aim direction (ignoring Z-axis)
         Vector3 direction = mousePosition - playerTransform.position;
-        direction.z = 0f; // Ignore Z axis for 2D
+        direction.z = 0f; 
 
-        // Calculate the angle
+        // Calculate the weapon angle for rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Determine if aiming up, down, or neutral
-        bool shouldFaceUp = direction.y > 1.1f;
-        bool shouldFaceDown = direction.y < -0.8f;
-        bool isNeutralAim = !shouldFaceUp && !shouldFaceDown;
-
-        // Flip player and rotate weapon based on mouse position
+        // Flip player based on mouse position (for left/right aiming)
         if (mousePosition.x > playerTransform.position.x)
         {
             playerTransform.localScale = new Vector3(-1, 1, 1);
@@ -66,47 +57,47 @@ public class PlayerAim : MonoBehaviour
             weaponTransform.rotation = Quaternion.Euler(0, 0, angle + 180f);
         }
 
-        // Update weapon position when aiming
-        if (shouldFaceUp && !isFacingUp)
+        // Set up aiming thresholds
+        bool shouldFaceUp = direction.y > 0.5f;  // Upwards aiming threshold 
+        bool shouldFaceDown = direction.y < -0.5f;  // Downwards aiming threshold
+        bool isNeutralAim = !shouldFaceUp && !shouldFaceDown;
+
+        // Update weapon position based on vertical aiming (only move the weapon when aiming upwards)
+        if (shouldFaceUp)
         {
-            isFacingUp = true;
-            isFacingDown = false;
             targetWeaponPosition = weaponUpOffset;
         }
-        else if (shouldFaceDown && !isFacingDown)
+        else if (shouldFaceDown)
         {
-            isFacingDown = true;
-            isFacingUp = false;
             targetWeaponPosition = weaponDownOffset;
         }
         else if (isNeutralAim)
         {
-            isFacingUp = false;
-            isFacingDown = false;
             targetWeaponPosition = defaultWeaponOffset;
         }
 
         // Smoothly move the weapon towards the target position using Lerp
         weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
 
-        // Set the vertical aiming direction with a threshold to prevent flickering animation
+        // Now handle the animation transitions for up/down aiming
         if (animator != null)
         {
-            float aimThreshold = 0.1f;  // Adjust this value as needed to filter small movements
-            if (direction.y > aimThreshold)
+            // Only set animMoveY to 1f when direction.y exceeds the threshold (controlled up aiming)
+            if (direction.y > 0.5f) // Trigger the "up" animation when aiming significantly up
             {
                 animator.SetFloat("animMoveY", 1f);  // Aiming upwards
             }
-            else if (direction.y < -aimThreshold)
+            else if (direction.y < -0.5f)  // More lenient downward threshold
             {
                 animator.SetFloat("animMoveY", -1f); // Aiming downwards
             }
             else
             {
-                animator.SetFloat("animMoveY", 0f);  // Neutral aim
+                animator.SetFloat("animMoveY", 0f);  // Neutral aiming
             }
         }
     }
+
 
 
 
