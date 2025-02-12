@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Animator animator;
     TrailRenderer trailRenderer;
     public Transform weapon;
+    public Transform bulletSpawn;
 
     [Header("Speed Settings")]
     [SerializeField] float defaultSpeed = 3f;
@@ -21,13 +24,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float dashDuration = 0.8f;
     [SerializeField] float dashCooldown = 2f;
 
-
-    Vector2 moveDirection;
+    public Vector2 moveDirection;
+    Vector2 mouseWorldPosition;
     public Vector2 lastMoveDirection = Vector2.zero;
-
+    Vector2 aimDirection;
     bool isDashing = false;
     bool canDash = true;
     bool isFacingRight = false;
+    float rotationSpeed = 1f;
+
+    public float weaponDistance = 1f;
 
     void Start()
     {
@@ -54,103 +60,86 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = value.Get<Vector2>();
     }
 
+    void OnLook(InputValue value)
+    {
+        // Get the mouse or joystick position for aiming
+        aimDirection = value.Get<Vector2>();
+    }
+
     void UpdateAnimation()
     {
+        // Calculate speed based on the move direction magnitude
         float speed = moveDirection.magnitude;
+        Vector2 normalizedDirection = (speed > 0) ? moveDirection.normalized : Vector2.zero;
 
-        if (speed > 0 && !isDashing)
+        // Update blend tree parameters for horizontal movement (animMoveX)
+        animator.SetFloat("animMoveX", normalizedDirection.x);
+
+        // Save the player's last movement direction (for idle state)
+        lastMoveDirection = normalizedDirection;
+
+        // Flip the player based on movement or aiming direction (horizontal flip)
+        if (aimDirection.x > 0)
         {
-            // Normalize the movement direction
-            Vector2 normalizedDirection = moveDirection.normalized;
+            // Flip player to the right
+            transform.localScale = new Vector3(-1, 1, 1);
+            isFacingRight = true;
+        }
+        else if (aimDirection.x < 0)
+        {
+            // Flip player to the left
+            transform.localScale = new Vector3(1, 1, 1);
+            isFacingRight = false;
+        }
 
-            // Update blend tree parameters
-            animator.SetFloat("animMoveX", normalizedDirection.x);
-            animator.SetFloat("animMoveY", normalizedDirection.y);
+        // Update the speed parameter for animation states (run/idle)
+        animator.SetFloat("speed", speed);
 
-            // Save the player's last movement direction
-            lastMoveDirection = normalizedDirection;
+        // If not moving, use the last direction (idle state)
+        if (speed == 0 && aimDirection.magnitude == 0)
+        {
+            animator.SetFloat("animMoveX", lastMoveDirection.x);
+        }
 
-            // Flip the player based on horizontal movement
-            if (moveDirection.x > 0) 
-            {
-                // Flip player right
-                transform.localScale = new Vector3(-1, 1, 1); 
-                weapon.localScale = new Vector3(1, 1, 1);
-                isFacingRight = true;
-            }
-            else if (moveDirection.x < 0) 
-            {
-                // Flip player left 
-                transform.localScale = new Vector3(1, 1, 1); 
-                weapon.localScale = new Vector3(1, 1, 1); 
-                isFacingRight = false; 
-            }
-
-            // Rotate the weapon based on movement direction and facing state
-            RotateWeaponBasedOnMovement(normalizedDirection);
+        // Update vertical aim based on the direction of the aim (aimDirection.y)
+        if (aimDirection.y > 0.85)
+        {
+            // Aiming upwards
+            animator.SetFloat("animMoveY", aimDirection.y);  // Trigger the "up" animation
+        }
+        else if (aimDirection.y < 0)
+        {
+            // Aiming downwards
+            animator.SetFloat("animMoveY", -1f); // Trigger the "down" animation
         }
         else
         {
-            // Player is idle; use the last movement direction
-            animator.SetFloat("animMoveX", lastMoveDirection.x);
-            animator.SetFloat("animMoveY", lastMoveDirection.y);
-        }
-
-        // Update the speed parameter for animation states
-        animator.SetFloat("speed", speed);
-    }
-
-    // Function to handle weapon rotation based on player movement direction
-    void RotateWeaponBasedOnMovement(Vector2 normalizedDirection)
-    {
-        if (isFacingRight) 
-        {
-            // Rotate weapon for up/down movement when facing right
-            if (normalizedDirection.y > 0) // Moving Up
+            // Neutral vertical aim (no up/down aiming)
+            if (speed == 0)
             {
-                // Rotates the  weapon upwards
-                weapon.rotation = Quaternion.Euler(0, 0, 90f);
-                // Sets weapon postion
-                weapon.localPosition = new Vector3(-0.075f, 0.208f, 0); 
+                // If idle, keep the last vertical direction (or set to zero if idle)
+                animator.SetFloat("animMoveY", lastMoveDirection.y);
             }
-            // Moving Down
-            else if (normalizedDirection.y < 0) 
-            {
-                // Rotate weapon downwards
-                weapon.rotation = Quaternion.Euler(0, 0, -90f); 
-                weapon.localPosition = new Vector3(-0.178f, -0.1939f, 0); 
-            }
-
             else
             {
-                // Set weapon to default position and rotation
-                weapon.rotation = Quaternion.Euler(0, 0, 0); 
-                weapon.localPosition = new Vector3(-0.335f, 0, 0); 
-            }
-        }
-        else 
-        {
-            // If the player is facing left - rotate weapon for up/down movement
-            if (normalizedDirection.y > 0) // Moving Up
-            {
-                // Rotate weapon upwards
-                weapon.rotation = Quaternion.Euler(0, 0, -90f); 
-                //Set weapon position
-                weapon.localPosition = new Vector3(-0.075f, 0.208f, 0); 
-            }
-            else if (normalizedDirection.y < 0) // Moving Down
-            {
-                // Rotate weapon downwards
-                weapon.rotation = Quaternion.Euler(0, 0, 90f); 
-                weapon.localPosition = new Vector3(-0.161f, -0.1856f, 0); 
-            }
-            else // Neutral horizontal movement
-            {
-                weapon.rotation = Quaternion.Euler(0, 0, 0); 
-                weapon.localPosition = new Vector3(-0.335f, 0, 0); 
+                // If moving horizontally, reset vertical aim to zero
+                animator.SetFloat("animMoveY", 0f);
             }
         }
     }
+
+
+    public void UpdatePlayerAnimation(Vector3 direction)
+    {
+        // Normalize direction to get the correct animation
+        Vector2 normalizedDirection = direction.normalized;
+
+        // Update animation values based on the aiming direction
+        animator.SetFloat("animMoveX", normalizedDirection.x);
+        animator.SetFloat("animMoveY", normalizedDirection.y);
+    }
+
+
 
     void OnDash()
     {
@@ -184,7 +173,6 @@ public class PlayerMovement : MonoBehaviour
         // Enable dash trail
         trailRenderer.emitting = true;
 
-
         float elapsedTime = 0f;
         Vector2 startPosition = rb.position;
         Vector2 endPosition = startPosition + (dashDirection * dashDistance);
@@ -200,25 +188,23 @@ public class PlayerMovement : MonoBehaviour
         // Reset scale
         spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
         // Restore full opacity
-        spriteRenderer.color = new Color(1f, 1f, 1f, 1f); 
+        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
         // Disable dash effect
         trailRenderer.emitting = false;
 
         // Re-enable collision after dash ends
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
 
-
         // Ensure the player keeps their facing direction after the dash
         isFacingRight = wasFacingRight;
         // Face right
         if (isFacingRight)
         {
-            transform.localScale = new Vector3(-1, 1, 1); 
+            transform.localScale = new Vector3(-1, 1, 1);
         }
-       
         else
         {
-            transform.localScale = new Vector3(1, 1, 1); 
+            transform.localScale = new Vector3(1, 1, 1);
         }
 
         isDashing = false;
@@ -233,14 +219,13 @@ public class PlayerMovement : MonoBehaviour
         if (isEnhanced)
         {
             currentSpeed = increasedSpeed;
-            spriteRenderer.color = Color.green;  
+            spriteRenderer.color = Color.green;
         }
         // Default color
         else
         {
             currentSpeed = defaultSpeed;
-            spriteRenderer.color = Color.white;  
+            spriteRenderer.color = Color.white;
         }
     }
-
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3067323939636054020}
   - component: {fileID: 2423823982936496150}
+  - component: {fileID: 1197615737921446024}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Untagged
@@ -25,14 +26,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191244183427832258}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.335, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.175, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 181472975897061487}
-  - {fileID: 5510960655129044663}
-  m_Father: {fileID: 6624806211365203056}
+  - {fileID: 3738425012207385031}
+  m_Father: {fileID: 5510960655129044663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2423823982936496150
 SpriteRenderer:
@@ -88,6 +89,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1197615737921446024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191244183427832258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0f2f703b8466d47b35b910d1d46c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponTransform: {fileID: 3067323939636054020}
+  playerTransform: {fileID: 6624806211365203056}
+  bulletSpawn: {fileID: 181472975897061487}
+  weaponMoveSpeed: 10
 --- !u!1 &1821578463410901315
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,8 +130,8 @@ Transform:
   m_GameObject: {fileID: 1821578463410901315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.184, y: 0.033, z: 0}
-  m_LocalScale: {x: 0.27433133, y: 0.6357028, z: 1}
+  m_LocalPosition: {x: -0.284, y: 0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3067323939636054020}
@@ -145,11 +162,12 @@ Transform:
   m_GameObject: {fileID: 2073097028690575635}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17300001, y: -0.024, z: 0.06392828}
+  m_LocalPosition: {x: -0.161, y: -0.033, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3067323939636054020}
+  m_Children:
+  - {fileID: 3067323939636054020}
+  m_Father: {fileID: 6624806211365203056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5409880739409349586
 SpriteRenderer:
@@ -244,7 +262,7 @@ Transform:
   - {fileID: 2151018312664812741}
   - {fileID: 3245743100842745427}
   - {fileID: 8738862857405691413}
-  - {fileID: 3067323939636054020}
+  - {fileID: 5510960655129044663}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7264892676347375459
@@ -290,11 +308,13 @@ MonoBehaviour:
   iceBulletPrefab: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
   spawnPoint: {fileID: 181472975897061487}
   currentEnemy: {fileID: 0}
-  currentHealth: 1e+10
-  health: 1e+14
+  currentHealth: 150
+  health: 150
   bulletSpeed: 15
   fireDelay: 0.5
+  isDead: 0
   currentWeaponType: 0
+  numberOfDeaths: 0
 --- !u!114 &3558879172675334712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,13 +328,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3067323939636054020}
+  bulletSpawn: {fileID: 181472975897061487}
   defaultSpeed: 6
   currentSpeed: 0
   increasedSpeed: 6
   dashDistance: 4
   dashDuration: 0.25
   dashCooldown: 1.5
+  moveDirection: {x: 0, y: 0}
   lastMoveDirection: {x: 0, y: 0}
+  weaponDistance: 1
 --- !u!114 &4666233367720946802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +478,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -541,7 +564,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 5966735367020287630, guid: ae68da5b261030645ad64fd4edb4685c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -563,7 +586,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8738862857405691413}
   - component: {fileID: 1034517393384126921}
-  - component: {fileID: 2796134238078790166}
+  - component: {fileID: 2457101398420053520}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -628,7 +651,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1811545132883147463, guid: 779bd57b522b060468f692698e35a392, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -640,7 +663,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!96 &2796134238078790166
+--- !u!96 &2457101398420053520
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -829,13 +852,99 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6575364291433486491, guid: caa7c4e3a1f04e3438673b1a7971cd9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.17}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &8828860589294589646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3738425012207385031}
+  - component: {fileID: 1265135646479069491}
+  m_Layer: 0
+  m_Name: Crosshair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3738425012207385031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828860589294589646}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.518, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3067323939636054020}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1265135646479069491
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8828860589294589646}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2766669342387523828, guid: 751f1703de6315642b571c23df1e0e6c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.11, y: 0.11}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
