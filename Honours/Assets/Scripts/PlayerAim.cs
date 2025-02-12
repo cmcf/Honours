@@ -7,9 +7,9 @@ public class PlayerAim : MonoBehaviour
     private PlayerMovement playerMovementScript;
     private Animator animator;
 
-    private Vector3 defaultWeaponOffset = new Vector3(-0.3f, 0f, 0f);
-    private Vector3 weaponUpOffset = new Vector3(-0.1f, 0.15f, 0f);
-    private Vector3 weaponDownOffset = new Vector3(-0.2f, -0.15f, 0f);
+    private Vector3 defaultWeaponOffset = new Vector3(-0.2f, 0f, 0f);
+    private Vector3 weaponUpOffset = new Vector3(-0.1f, 0.12f, 0f);
+    private Vector3 weaponDownOffset = new Vector3(-0.1f, -0.1f, 0f);
     private Vector3 targetWeaponPosition;
 
     private bool isFacingUp = false;
@@ -46,11 +46,12 @@ public class PlayerAim : MonoBehaviour
         // Calculate the angle
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Determine player sprite direction
+        // Determine if aiming up, down, or neutral
         bool shouldFaceUp = direction.y > 1.1f;
         bool shouldFaceDown = direction.y < -0.8f;
+        bool isNeutralAim = !shouldFaceUp && !shouldFaceDown;
 
-        // Flip player and rotate weapon
+        // Flip player and rotate weapon based on mouse position
         if (mousePosition.x > playerTransform.position.x)
         {
             playerTransform.localScale = new Vector3(-1, 1, 1);
@@ -62,10 +63,7 @@ public class PlayerAim : MonoBehaviour
             weaponTransform.rotation = Quaternion.Euler(0, 0, angle + 180f);
         }
 
-        // Update player animation based on movement
-        playerMovementScript.UpdatePlayerAnimation(direction);
-
-        // Update weapon position when the player sprite changes
+        // Update weapon position when aiming
         if (shouldFaceUp && !isFacingUp)
         {
             isFacingUp = true;
@@ -78,7 +76,7 @@ public class PlayerAim : MonoBehaviour
             isFacingUp = false;
             targetWeaponPosition = weaponDownOffset;
         }
-        else if (!shouldFaceUp && !shouldFaceDown)
+        else if (isNeutralAim)
         {
             isFacingUp = false;
             isFacingDown = false;
@@ -87,5 +85,13 @@ public class PlayerAim : MonoBehaviour
 
         // Smoothly move the weapon towards the target position using Lerp
         weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
+
+        // Pass the vertical aiming direction to PlayerMovement 
+        if (animator != null)
+        {
+            animator.SetFloat("animMoveY", direction.y); 
+        }
     }
+
+
 }

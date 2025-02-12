@@ -2,6 +2,7 @@ using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDirection;
     Vector2 mouseWorldPosition;
     public Vector2 lastMoveDirection = Vector2.zero;
-
+    Vector2 aimDirection;
     bool isDashing = false;
     bool canDash = true;
     bool isFacingRight = false;
@@ -61,59 +62,72 @@ public class PlayerMovement : MonoBehaviour
 
     void OnLook(InputValue value)
     {
-       
-        // Get the aim input values from the player (both horizontal and vertical)
-        Vector2 aimInput = value.Get<Vector2>();
-
-        // Calculate the aim direction from the input
-        Vector3 aimDirection = new Vector3(aimInput.x, aimInput.y, 0f).normalized;
-
-        // Calculate the angle between the player and the aim direction
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-
-        // Update the gun's rotation based on the angle
-        weapon.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Calculate the new position of the gun relative to the player
-        Vector3 gunNewPosition = transform.position + Quaternion.Euler(0, 0, angle) * new Vector3(weaponDistance, 0, 0);
-        gunNewPosition.y = transform.position.y; // Maintain the gun's Y position relative to the player
-
-        // Update the gun's position
-        weapon.position = gunNewPosition;
+        // Get the mouse or joystick position for aiming
+        aimDirection = value.Get<Vector2>();
     }
-
 
     void UpdateAnimation()
     {
+        // Calculate speed based on the move direction magnitude
         float speed = moveDirection.magnitude;
+        Vector2 normalizedDirection = (speed > 0) ? moveDirection.normalized : Vector2.zero;
 
-        // Update speed parameter for movement animation
+        // Update blend tree parameters for horizontal movement (animMoveX)
+        animator.SetFloat("animMoveX", normalizedDirection.x);
+
+        // Save the player's last movement direction (for idle state)
+        lastMoveDirection = normalizedDirection;
+
+        // Flip the player based on movement or aiming direction (horizontal flip)
+        if (aimDirection.x > 0)
+        {
+            // Flip player to the right
+            transform.localScale = new Vector3(-1, 1, 1);
+            isFacingRight = true;
+        }
+        else if (aimDirection.x < 0)
+        {
+            // Flip player to the left
+            transform.localScale = new Vector3(1, 1, 1);
+            isFacingRight = false;
+        }
+
+        // Update the speed parameter for animation states (run/idle)
         animator.SetFloat("speed", speed);
 
-        // If the player is moving and not dashing, update movement animations
-        if (speed > 0 && !isDashing)
-        {
-            // Normalize the movement direction
-            Vector2 normalizedDirection = moveDirection.normalized;
-
-            // Update blend tree parameters for movement
-            animator.SetFloat("animMoveX", normalizedDirection.x);
-            animator.SetFloat("animMoveY", normalizedDirection.y);
-
-            // Save the last movement direction for idle state
-            lastMoveDirection = normalizedDirection;
-
-
-        }
-        // If player is idle, use the last movement direction for idle animation
-        else if (speed == 0)
+        // If not moving, use the last direction (idle state)
+        if (speed == 0 && aimDirection.magnitude == 0)
         {
             animator.SetFloat("animMoveX", lastMoveDirection.x);
-            animator.SetFloat("animMoveY", lastMoveDirection.y);
+        }
 
-
+        // Update vertical aim based on the direction of the aim (aimDirection.y)
+        if (aimDirection.y > 0)
+        {
+            // Aiming upwards
+            animator.SetFloat("animMoveY", 1f);  // Trigger the "up" animation
+        }
+        else if (aimDirection.y < 0)
+        {
+            // Aiming downwards
+            animator.SetFloat("animMoveY", -1f); // Trigger the "down" animation
+        }
+        else
+        {
+            // Neutral vertical aim (no up/down aiming)
+            if (speed == 0)
+            {
+                // If idle, keep the last vertical direction (or set to zero if idle)
+                animator.SetFloat("animMoveY", lastMoveDirection.y);
+            }
+            else
+            {
+                // If moving horizontally, reset vertical aim to zero
+                animator.SetFloat("animMoveY", 0f);
+            }
         }
     }
+
 
     public void UpdatePlayerAnimation(Vector3 direction)
     {
