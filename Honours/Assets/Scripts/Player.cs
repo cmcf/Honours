@@ -44,7 +44,7 @@ public class Player : MonoBehaviour, IDamageable
         RapidFire,  // Fires bullets with a faster rate
         SpreadShot, // Fires multiple bullets in a spread
         Ice,   // Fires an ice projectile
-        AutoFire
+        AutoFire // Autofire projectiles
     }
 
     void Start()
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour, IDamageable
         if (currentWeaponType == WeaponType.AutoFire)
         {
             // If AutoFire is enabled, start or ensure the coroutine is running
-            if (!isAutoFiring) 
+            if (!isAutoFiring)
             {
                 isAutoFiring = true;
                 StartCoroutine(AutoFireCoroutine());
@@ -73,12 +73,16 @@ public class Player : MonoBehaviour, IDamageable
             {
                 lastFireTime = Time.time;
 
-                // Determine the fire direction
-                Vector3 fireDirection = playerMovement.lastMoveDirection;
-                if (fireDirection == Vector3.zero)
-                {
-                    fireDirection = -spawnPoint.up.normalized;
-                }
+                // Get the mouse position in world space
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
+                    Input.mousePosition.x,
+                    Input.mousePosition.y,
+                    Mathf.Abs(Camera.main.transform.position.z)
+                ));
+
+                // Calculate the fire direction towards the mouse
+                Vector3 fireDirection = mousePosition - spawnPoint.position;
+                fireDirection.z = 0f; // Ignore Z axis for 2D
 
                 // Handle different weapon type behaviour
                 switch (currentWeaponType)
@@ -97,6 +101,33 @@ public class Player : MonoBehaviour, IDamageable
                         break;
                 }
             }
+        }
+    }
+
+    void FireSingleBullet(Vector3 direction)
+    {
+        // Ensure the direction is normalized
+        direction.Normalize();
+
+        // Calculate the spawn point near the end of the weapon
+        Vector3 weaponDirection = direction; // Direction already normalized
+        Vector3 bulletSpawnPosition = spawnPoint.position + weaponDirection * 0.5f; 
+
+        // Instantiate the bullet at the adjusted spawn point
+        GameObject projectile = Instantiate(bulletPrefab, bulletSpawnPosition, Quaternion.identity);
+
+        // Calculate the rotation angle based on the direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Apply the rotation to the bullet to face the correct direction
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Apply velocity to the projectile based on the direction
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            // Ensures consistent velocity
+            rb.velocity = direction * bulletSpeed; 
         }
     }
 
@@ -127,24 +158,7 @@ public class Player : MonoBehaviour, IDamageable
     }
 
 
-    void FireSingleBullet(Vector3 direction)
-    {
-        // Instantiate the bullet
-        GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, Quaternion.identity);
 
-        // Calculate the rotation angle based on the direction
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Apply the rotation
-        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Apply velocity to the projectile
-        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.velocity = direction * bulletSpeed;
-        }
-    }
 
     IEnumerator FireRapid(Vector3 direction)
     {

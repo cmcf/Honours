@@ -4,6 +4,7 @@ public class PlayerAim : MonoBehaviour
 {
     public Transform weaponTransform;
     public Transform playerTransform;
+    public Transform bulletSpawn;
     private PlayerMovement playerMovementScript;
     private Animator animator;
 
@@ -82,7 +83,7 @@ public class PlayerAim : MonoBehaviour
             isFacingDown = false;
             targetWeaponPosition = defaultWeaponOffset;
         }
-
+      
         // Smoothly move the weapon towards the target position using Lerp
         weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
 
