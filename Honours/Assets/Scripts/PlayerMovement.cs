@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float dashDuration = 0.8f;
     [SerializeField] float dashCooldown = 2f;
 
-    Vector2 moveDirection;
+    public Vector2 moveDirection;
     Vector2 mouseWorldPosition;
     public Vector2 lastMoveDirection = Vector2.zero;
 
@@ -76,12 +76,18 @@ public class PlayerMovement : MonoBehaviour
 
             // Save the last movement direction for idle state
             lastMoveDirection = normalizedDirection;
+
+            // Adjust weapon position based on direction (facing up/down)
+            AdjustWeaponPosition(normalizedDirection);
         }
         // If player is idle, use the last movement direction for idle animation
-        else if (speed == 0) 
+        else if (speed == 0)
         {
             animator.SetFloat("animMoveX", lastMoveDirection.x);
             animator.SetFloat("animMoveY", lastMoveDirection.y);
+
+            // Adjust weapon position for idle state
+            AdjustWeaponPosition(lastMoveDirection);
         }
     }
 
@@ -94,6 +100,24 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("animMoveX", normalizedDirection.x);
         animator.SetFloat("animMoveY", normalizedDirection.y);
     }
+
+    // Adjust weapon position when the player is facing up or down
+    public void AdjustWeaponPosition(Vector2 direction)
+    {
+        if (direction.y > 0)  // Facing up
+        {
+            weapon.localPosition = new Vector3(-0.137f, 0.195f, 0); // Slightly in front of the player
+        }
+        else if (direction.y < 0)  // Facing down
+        {
+            weapon.localPosition = new Vector3(-0.147f, -0.134f, 0); // Below player
+        }
+        else  // Horizontal movement (left/right)
+        {
+            weapon.localPosition = new Vector3(-0.335f, 0f, 0f);  // Centered
+        }
+    }
+
 
     void OnDash()
     {
