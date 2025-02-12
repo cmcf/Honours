@@ -102,10 +102,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Update vertical aim based on the direction of the aim (aimDirection.y)
-        if (aimDirection.y > 0)
+        if (aimDirection.y > 0.85)
         {
             // Aiming upwards
-            animator.SetFloat("animMoveY", 1f);  // Trigger the "up" animation
+            animator.SetFloat("animMoveY", aimDirection.y);  // Trigger the "up" animation
         }
         else if (aimDirection.y < 0)
         {

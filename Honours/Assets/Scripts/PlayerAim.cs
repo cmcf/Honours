@@ -85,16 +85,29 @@ public class PlayerAim : MonoBehaviour
             isFacingDown = false;
             targetWeaponPosition = defaultWeaponOffset;
         }
-      
+
         // Smoothly move the weapon towards the target position using Lerp
         weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
 
-        // Pass the vertical aiming direction to PlayerMovement 
+        // Set the vertical aiming direction with a threshold to prevent flickering animation
         if (animator != null)
         {
-            animator.SetFloat("animMoveY", direction.y); 
+            float aimThreshold = 0.1f;  // Adjust this value as needed to filter small movements
+            if (direction.y > aimThreshold)
+            {
+                animator.SetFloat("animMoveY", 1f);  // Aiming upwards
+            }
+            else if (direction.y < -aimThreshold)
+            {
+                animator.SetFloat("animMoveY", -1f); // Aiming downwards
+            }
+            else
+            {
+                animator.SetFloat("animMoveY", 0f);  // Neutral aim
+            }
         }
     }
+
 
 
 }
