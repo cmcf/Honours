@@ -5,6 +5,7 @@ public class PlayerAim : MonoBehaviour
     public Transform weaponTransform;
     public Transform playerTransform;
     public Transform bulletSpawn;
+    public GameObject crosshair;
     Animator animator;
 
     Vector3 defaultWeaponOffset = new Vector3(-0.161f, -0.033f, 0f);
@@ -79,6 +80,9 @@ public class PlayerAim : MonoBehaviour
         // Smoothly move the weapon towards the target position using Lerp
         weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
 
+        // Update the crosshair position
+        crosshair.transform.position = mousePosition;
+
         // Now handle the animation transitions for up/down aiming
         if (animator != null)
         {
@@ -97,8 +101,5 @@ public class PlayerAim : MonoBehaviour
             }
         }
     }
-
-
-
 
 }
