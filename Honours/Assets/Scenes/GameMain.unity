@@ -3757,6 +3757,10 @@ PrefabInstance:
       propertyPath: weaponTransform
       value: 
       objectReference: {fileID: 1823406006}
+    - target: {fileID: 1197615737921446024, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
+      propertyPath: crosshairDistance
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3067323939636054020, guid: 7f0a19b550803f04b8bf0170bd52e859, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.144
