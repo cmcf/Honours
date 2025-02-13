@@ -22,7 +22,7 @@ public class PlayerAim : MonoBehaviour
     public float weaponMoveSpeed = 10f;
     public float crosshairDistance = 4f; 
 
-    public Vector3 lastFireDirection;
+    public Vector2 lastFireDirection;
 
     void Start()
     {
