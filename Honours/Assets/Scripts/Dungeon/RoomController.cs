@@ -17,6 +17,7 @@ public class RoomController : MonoBehaviour
     public static RoomController Instance;
     SpawnRateManager spawnRate;
     string currentWorldName = "Game";
+    public Weapon[] availableWeapons;
 
     RoomInfo currentLoadRoomData;
     public Room currentRoom;
@@ -171,13 +172,15 @@ public class RoomController : MonoBehaviour
 
     public void TriggerRandomWeapon()
     {
-        // Randomly select a weapon type
-        WeaponType newWeapon = (WeaponType)Random.Range(0, 4);
+        // Randomly select a weapon index from the available weapons
+        int randomIndex = Random.Range(0, availableWeapons.Length);
+
+        // Get the selected weapon ScriptableObject
+        Weapon selectedWeapon = availableWeapons[randomIndex];
 
         // Assign the selected weapon to the player
         Player player = FindObjectOfType<Player>();
-        player.currentWeaponType = newWeapon;
-
+        player.currentWeapon = selectedWeapon; // Set the selected ScriptableObject as the player's weapon
     }
 
     public IEnumerator RoomCoroutine()

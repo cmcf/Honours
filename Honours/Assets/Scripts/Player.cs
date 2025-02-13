@@ -25,29 +25,15 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] float health = 50f;
     public float Health { get; set; }
 
-    [Header("Projectile")]
-    [SerializeField] float bulletSpeed = 10f;
+    [Header("Firing")]
     float lastFireTime = 0f;
-    float iceBulletDamage = 15f;
-    int defaultBulletDamage = 10;
-    [SerializeField] float fireDelay = 0.5f;
 
     [Header("State")]
     public bool isDead = false; 
 
-    public WeaponType currentWeaponType = WeaponType.Default;
+    public Weapon currentWeapon;
     bool isAutoFiring = false;
     [SerializeField] int numberOfDeaths = 0;
-
-    // Weapon Type Enum
-    public enum WeaponType
-    {
-        Default,    // Fires a single bullet
-        RapidFire,  // Fires bullets with a faster rate
-        SpreadShot, // Fires multiple bullets in a spread
-        Ice,   // Fires an ice projectile
-        AutoFire // Autofire projectiles
-    }
 
     void Start()
     {
@@ -60,61 +46,54 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFire()
     {
-        if (currentWeaponType == WeaponType.AutoFire)
+        if (Time.time > lastFireTime + currentWeapon.fireDelay)
         {
-            if (!isAutoFiring)
-            {
-                isAutoFiring = true;
-                StartCoroutine(AutoFireCoroutine());
-            }
-        }
-        else
-        {
-            if (Time.time > lastFireTime + fireDelay)
-            {
-                lastFireTime = Time.time;
-                Vector3 fireDirection;
+            lastFireTime = Time.time;
+            Vector3 fireDirection;
 
-                if (playerAim.usingController)
+            if (playerAim.usingController)
+            {
+                // Use last known aim direction for the controller
+                fireDirection = (Vector3)playerAim.aimDirection.normalized;
+                if (fireDirection.magnitude < 0.1f)
                 {
-                    // Use last known aim direction for the controller
-                    fireDirection = (Vector3)playerAim.aimDirection.normalized;
-                    if (fireDirection.magnitude < 0.1f)
-                    {
-                        fireDirection = Vector3.left; // Default direction if stick is not moved
-                    }
-                }
-                else
-                {
-                    // Mouse aiming
-                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
-                        Input.mousePosition.x,
-                        Input.mousePosition.y,
-                        Mathf.Abs(Camera.main.transform.position.z)
-                    ));
-                    fireDirection = (mousePosition - spawnPoint.position).normalized;
-                }
-
-                // Fire bullets based on the selected weapon type
-                switch (currentWeaponType)
-                {
-                    case WeaponType.Default:
-                        FireSingleBullet(fireDirection);
-                        break;
-                    case WeaponType.RapidFire:
-                        StartCoroutine(FireRapid(fireDirection));
-                        break;
-                    case WeaponType.SpreadShot:
-                        FireSpreadBullets(fireDirection, 5, 30f);
-                        break;
-                    case WeaponType.Ice:
-                        FireIceBullet(fireDirection);
-                        break;
+                    fireDirection = Vector3.left; // Default direction if stick is not moved
                 }
             }
+            else
+            {
+                // Mouse aiming
+                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
+                    Input.mousePosition.x,
+                    Input.mousePosition.y,
+                    Mathf.Abs(Camera.main.transform.position.z)
+                ));
+                fireDirection = (mousePosition - spawnPoint.position).normalized;
+                FireWeapon(fireDirection);
+            }
+
+
         }
     }
-
+    
+    void FireWeapon(Vector3 direction)
+    {
+        switch (currentWeapon.weaponType)
+        {
+            case Weapon.WeaponType.Default:
+                FireSingleBullet(direction);
+                break;
+            case Weapon.WeaponType.RapidFire:
+                StartCoroutine(FireRapid(direction));
+                break;
+            case Weapon.WeaponType.SpreadShot:
+                FireSpreadBullets(direction, 5, 30f);
+                break;
+            case Weapon.WeaponType.Ice:
+                FireIceBullet(direction);
+                break;
+        }
+    }
 
     void FireSingleBullet(Vector3 direction)
     {
@@ -139,37 +118,9 @@ public class Player : MonoBehaviour, IDamageable
         if (rb != null)
         {
             // Ensures consistent velocity
-            rb.velocity = direction * bulletSpeed; 
+            rb.velocity = direction * currentWeapon.bulletSpeed; 
         }
     }
-
-
-    IEnumerator AutoFireCoroutine()
-    {
-        // Keep firing as long as AutoFire is active
-        while (currentWeaponType == WeaponType.AutoFire) 
-        {
-            if (Time.time > lastFireTime + fireDelay)
-            {
-                lastFireTime = Time.time;
-
-                Vector3 fireDirection = playerMovement.lastMoveDirection;
-                if (fireDirection == Vector3.zero)
-                {
-                    fireDirection = -spawnPoint.up.normalized;
-                }
-
-                FireSingleBullet(fireDirection);
-            }
-
-            yield return null;
-        }
-
-        // Once AutoFire is no longer active, stop firing
-        isAutoFiring = false;
-    }
-
-
 
 
     IEnumerator FireRapid(Vector3 direction)
@@ -179,7 +130,7 @@ public class Player : MonoBehaviour, IDamageable
         {
             // Fire a single bullet in the given direction
             FireSingleBullet(direction); 
-            yield return new WaitForSeconds(fireDelay / 3);
+            yield return new WaitForSeconds(currentWeapon.fireDelay / 3);
         }
     }
 
@@ -214,14 +165,14 @@ public class Player : MonoBehaviour, IDamageable
         Rigidbody2D rb = iceBullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = direction * bulletSpeed;
+            rb.velocity = direction * currentWeapon.bulletSpeed;
         }
 
         // Sets the ice bullet behaviour
         Bullet bullet = iceBullet.GetComponent<Bullet>();
         if (bullet != null)
         {
-            bullet.SetDamage(iceBulletDamage);
+            bullet.SetDamage(currentWeapon.bulletDamage);
             bullet.isIce = true;
         }
     }
