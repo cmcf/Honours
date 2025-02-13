@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
     Animator animator;
+    PlayerAim playerAim;
     TrailRenderer trailRenderer;
     public Transform weapon;
     public Transform bulletSpawn;
@@ -40,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = defaultSpeed;
         animator = GetComponent<Animator>();
         trailRenderer = GetComponentInChildren<TrailRenderer>();
+        playerAim = GetComponentInChildren<PlayerAim>();
     }
 
     void FixedUpdate()
@@ -100,30 +102,43 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        Vector2 dashDirection = (moveDirection != Vector2.zero) ? moveDirection.normalized : lastMoveDirection;
-        if (dashDirection != Vector2.zero)
+        // Use lastFireDirection from the PlayerAim script for the dash direction
+        Vector2 dashDirection;
+
+        if (playerAim.lastFireDirection != Vector2.zero)
         {
-            lastMoveDirection = dashDirection;
+            dashDirection = playerAim.lastFireDirection;
         }
+        else
+        {
+            dashDirection = Vector2.right;
+        }
+
+        // If there's still no direction, default to a direction (e.g., right)
+        if (dashDirection == Vector2.zero)
+        {
+            dashDirection = Vector2.right;
+        }
+
+        // Update lastMoveDirection to the dash direction
+        lastMoveDirection = dashDirection;
 
         // Store the current facing direction before the dash
         bool wasFacingRight = isFacingRight;
 
-        // Make player invincible
+        // Make player invincible during the dash
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
 
-        // Sprite stretch effect
+        // Sprite stretch effect and dash effects
         spriteRenderer.transform.localScale = new Vector3(1.2f, 0.8f, 1f);
-        // Make player semi-transparent
         spriteRenderer.color = new Color(1f, 1f, 1f, 0.5f);
-        // Enable dash trail
         trailRenderer.emitting = true;
 
         float elapsedTime = 0f;
         Vector2 startPosition = rb.position;
         Vector2 endPosition = startPosition + (dashDirection * dashDistance);
 
-        // Move smoothly over dashDuration
+        // Move the player smoothly during the dash
         while (elapsedTime < dashDuration)
         {
             elapsedTime += Time.deltaTime;
@@ -131,30 +146,15 @@ public class PlayerMovement : MonoBehaviour
             yield return null;
         }
 
-        // Reset scale
+        // Reset sprite and dash effects
         spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
-        // Restore full opacity
         spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-        // Disable dash effect
         trailRenderer.emitting = false;
 
-        // Re-enable collision after dash ends
+        // Re-enable collisions after the dash
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
 
-        // Ensure the player keeps their facing direction after the dash
-        isFacingRight = wasFacingRight;
-        // Face right
-        if (isFacingRight)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-
         isDashing = false;
-        // Enable dash when cooldown has passed
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
