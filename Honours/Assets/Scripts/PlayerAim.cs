@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class PlayerAim : MonoBehaviour
 {
     public Transform weaponTransform;
@@ -12,6 +12,8 @@ public class PlayerAim : MonoBehaviour
     Vector3 weaponUpOffset = new Vector3(-0.1f, 0.12f, 0f);
     Vector3 weaponDownOffset = new Vector3(-0.161f, -0.033f, 0f);
     Vector3 targetWeaponPosition;
+
+    public Vector2 aimDirection;
 
 
     public float weaponMoveSpeed = 10f; 
@@ -99,6 +101,29 @@ public class PlayerAim : MonoBehaviour
             {
                 animator.SetFloat("animMoveY", 0f);  // Neutral aiming
             }
+        }
+    }
+
+    void OnLook(InputValue value)
+    {
+        Vector2 inputDirection = value.Get<Vector2>();
+
+        Debug.Log("Workign");
+        // If using a controller (right stick), update aimDirection
+        if (inputDirection.magnitude > 0.1f) // Ignore small stick movement
+        {
+            aimDirection = inputDirection.normalized;
+
+            // Calculate angle for rotation
+            float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+
+            // Rotate weapon
+            weaponTransform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // Flip player based on joystick aim direction
+            playerTransform.localScale = (aimDirection.x > 0) ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
+
+            Debug.Log(inputDirection);
         }
     }
 

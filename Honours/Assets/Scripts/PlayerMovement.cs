@@ -25,9 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float dashCooldown = 2f;
 
     public Vector2 moveDirection;
-    Vector2 mouseWorldPosition;
     public Vector2 lastMoveDirection = Vector2.zero;
-    Vector2 aimDirection;
     bool isDashing = false;
     bool canDash = true;
     bool isFacingRight = false;
@@ -60,12 +58,6 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = value.Get<Vector2>();
     }
 
-    void OnLook(InputValue value)
-    {
-        // Get the mouse or joystick position for aiming
-        aimDirection = value.Get<Vector2>();
-    }
-
     void UpdateAnimation()
     {
         // Calculate speed based on the move direction magnitude
@@ -82,11 +74,6 @@ public class PlayerMovement : MonoBehaviour
         // Update the speed parameter for animation states (run/idle)
         animator.SetFloat("speed", speed);
 
-        // If not moving, use the last direction (idle state)
-        if (speed == 0 && aimDirection.magnitude == 0)
-        {
-            animator.SetFloat("animMoveX", lastMoveDirection.x);
-        }
         // Neutral vertical aim (no up/down aiming)
         if (speed == 0)
         {
