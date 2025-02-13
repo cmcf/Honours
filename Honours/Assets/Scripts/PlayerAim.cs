@@ -61,16 +61,15 @@ public class PlayerAim : MonoBehaviour
         }
         else
         {
-            // Mouse aiming: project mouse position to world space
+            // Mouse aiming: follow mouse position with no fixed distance
             Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(
                 Input.mousePosition.x,
                 Input.mousePosition.y,
                 Mathf.Abs(Camera.main.transform.position.z)
             ));
 
-            // Keep the crosshair at a fixed distance in the same direction
-            Vector3 directionToMouse = (mouseWorldPosition - playerTransform.position).normalized;
-            aimTarget = playerTransform.position + directionToMouse * crosshairDistance;
+            // Directly set the crosshair to the mouse position (without distance restriction)
+            aimTarget = mouseWorldPosition;
         }
 
         // Calculate aim direction
@@ -94,10 +93,11 @@ public class PlayerAim : MonoBehaviour
         // Store last valid fire direction
         lastFireDirection = direction;
 
-        // Update crosshair position (fixed distance)
+        // Update crosshair position (fixed distance or direct mouse position)
         crosshair.transform.position = aimTarget;
         return direction;
     }
+
 
     void UpdatePlayerAnimations(Vector3 direction)
     {
