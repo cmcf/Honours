@@ -4,6 +4,7 @@ using System.IO.Pipes;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 using static Damage;
 
 public class Player : MonoBehaviour, IDamageable
@@ -58,12 +59,9 @@ public class Player : MonoBehaviour, IDamageable
     }
 
     void OnFire()
-    { 
-        //if (!isDead) { return; }
-
+    {
         if (currentWeaponType == WeaponType.AutoFire)
         {
-            // If AutoFire is enabled, start or ensure the coroutine is running
             if (!isAutoFiring)
             {
                 isAutoFiring = true;
@@ -72,23 +70,32 @@ public class Player : MonoBehaviour, IDamageable
         }
         else
         {
-            // Only fire if the fire delay has passed for non-AutoFire weapons
             if (Time.time > lastFireTime + fireDelay)
             {
                 lastFireTime = Time.time;
+                Vector3 fireDirection;
 
-                // Get the mouse position in world space
-                Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
-                    Input.mousePosition.x,
-                    Input.mousePosition.y,
-                    Mathf.Abs(Camera.main.transform.position.z)
-                ));
+                if (playerAim.usingController)
+                {
+                    // Use last known aim direction for the controller
+                    fireDirection = (Vector3)playerAim.aimDirection.normalized;
+                    if (fireDirection.magnitude < 0.1f)
+                    {
+                        fireDirection = Vector3.left; // Default direction if stick is not moved
+                    }
+                }
+                else
+                {
+                    // Mouse aiming
+                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
+                        Input.mousePosition.x,
+                        Input.mousePosition.y,
+                        Mathf.Abs(Camera.main.transform.position.z)
+                    ));
+                    fireDirection = (mousePosition - spawnPoint.position).normalized;
+                }
 
-                // Calculate the fire direction towards the mouse
-                Vector3 fireDirection = mousePosition - spawnPoint.position;
-                fireDirection.z = 0f; // Ignore Z axis for 2D
-
-                // Handle different weapon type behaviour
+                // Fire bullets based on the selected weapon type
                 switch (currentWeaponType)
                 {
                     case WeaponType.Default:
@@ -107,6 +114,7 @@ public class Player : MonoBehaviour, IDamageable
             }
         }
     }
+
 
     void FireSingleBullet(Vector3 direction)
     {

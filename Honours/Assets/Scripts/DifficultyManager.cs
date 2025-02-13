@@ -41,7 +41,7 @@ public class DifficultyManager : MonoBehaviour
         currentDifficultyLevel += difficultyIncreaseRate;
 
         // Cap difficulty
-        if (currentDifficultyLevel > 10) // Adjust the cap as needed
+        if (currentDifficultyLevel > 10) 
         {
             currentDifficultyLevel = 10;
         }

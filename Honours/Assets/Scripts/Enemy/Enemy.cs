@@ -61,7 +61,6 @@ public class Enemy : MonoBehaviour, IDamageable
             case 3:
                 moveSpeed += 0.2f;
                 break;
-
             case 4:
                 moveSpeed += 0.2f;
                 break;
