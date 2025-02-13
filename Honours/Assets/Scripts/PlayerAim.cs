@@ -63,7 +63,7 @@ public class PlayerAim : MonoBehaviour
         bool shouldFaceDown = direction.y < -0.5f;  // Downwards aiming threshold
         bool isNeutralAim = !shouldFaceUp && !shouldFaceDown;
 
-        // Update weapon position based on vertical aiming (only move the weapon when aiming upwards)
+        // Update weapon position based on vertical aiming
         if (shouldFaceUp)
         {
             targetWeaponPosition = weaponUpOffset;
@@ -86,8 +86,8 @@ public class PlayerAim : MonoBehaviour
         // Now handle the animation transitions for up/down aiming
         if (animator != null)
         {
-            // Only set animMoveY to 1f when direction.y exceeds the threshold (controlled up aiming)
-            if (direction.y > 0.5f) // Trigger the "up" animation when aiming significantly up
+            // Only set animMoveY to 1f when direction.y exceeds the threshold 
+            if (direction.y > 0.5f) // Trigger the up animation when aiming up
             {
                 animator.SetFloat("animMoveY", 1f);  // Aiming upwards
             }
