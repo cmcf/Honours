@@ -154,17 +154,6 @@ public class PlayerMovement : MonoBehaviour
         // Re-enable collisions after the dash
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
 
-        // Restore the player's facing direction
-        isFacingRight = wasFacingRight;
-        if (isFacingRight)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);  // Flip sprite
-        }
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);   // Flip sprite back
-        }
-
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
