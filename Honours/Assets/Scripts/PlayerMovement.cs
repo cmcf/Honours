@@ -70,7 +70,6 @@ public class PlayerMovement : MonoBehaviour
         // Save the player's last movement direction (for idle state)
         lastMoveDirection = normalizedDirection;
 
-
         // Update the speed parameter for animation states (run/idle)
         animator.SetFloat("speed", speed);
 

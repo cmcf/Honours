@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerAim : MonoBehaviour
 {
     public Transform weaponTransform;
     public Transform playerTransform;
     public Transform bulletSpawn;
     public GameObject crosshair;
+
+    PlayerInput playerInput;
     Animator animator;
 
     Vector3 defaultWeaponOffset = new Vector3(-0.161f, -0.033f, 0f);
@@ -14,19 +17,20 @@ public class PlayerAim : MonoBehaviour
     Vector3 targetWeaponPosition;
 
     public Vector2 aimDirection;
+    public bool usingController = false;
 
+    public float weaponMoveSpeed = 10f;
+    public float crosshairDistance = 4f; 
 
-    public float weaponMoveSpeed = 10f; 
+    public Vector3 lastFireDirection;
 
     void Start()
     {
-        if (weaponTransform == null)
-        {
-            weaponTransform = transform;
-        }
+        playerInput = GetComponentInParent<PlayerInput>();
+        playerInput.currentActionMap.Enable();
+        playerInput.actions["Look"].performed += ctx => OnLook(ctx);
 
         animator = playerTransform.GetComponent<Animator>();
-
         targetWeaponPosition = defaultWeaponOffset;
 
         Cursor.visible = false;
@@ -34,22 +38,49 @@ public class PlayerAim : MonoBehaviour
 
     void Update()
     {
-        // Get mouse position in world space
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
-            Input.mousePosition.x,
-            Input.mousePosition.y,
-            Mathf.Abs(Camera.main.transform.position.z)
-        ));
+        Vector3 direction = Aim();
 
-        // Calculate aim direction (ignoring Z-axis)
-        Vector3 direction = mousePosition - playerTransform.position;
-        direction.z = 0f; 
+        UpdatePlayerAnimations(direction);
+    }
 
-        // Calculate the weapon angle for rotation
+    Vector3 Aim()
+    {
+        Vector3 aimTarget;
+
+        if (usingController)
+        {
+            // Controller aiming: keep crosshair at a fixed distance
+            if (aimDirection.magnitude > 0.1f)
+            {
+                aimTarget = playerTransform.position + (Vector3)aimDirection.normalized * crosshairDistance;
+            }
+            else
+            {
+                aimTarget = playerTransform.position + new Vector3(crosshairDistance, 0, 0); // Default right
+            }
+        }
+        else
+        {
+            // Mouse aiming: project mouse position to world space
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(new Vector3(
+                Input.mousePosition.x,
+                Input.mousePosition.y,
+                Mathf.Abs(Camera.main.transform.position.z)
+            ));
+
+            // Keep the crosshair at a fixed distance in the same direction
+            Vector3 directionToMouse = (mouseWorldPosition - playerTransform.position).normalized;
+            aimTarget = playerTransform.position + directionToMouse * crosshairDistance;
+        }
+
+        // Calculate aim direction
+        Vector3 direction = (aimTarget - playerTransform.position).normalized;
+
+        // Calculate weapon rotation angle
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Flip player based on mouse position (for left/right aiming)
-        if (mousePosition.x > playerTransform.position.x)
+        // Flip player and weapon rotation
+        if (aimTarget.x > playerTransform.position.x)
         {
             playerTransform.localScale = new Vector3(-1, 1, 1);
             weaponTransform.rotation = Quaternion.Euler(0, 0, angle);
@@ -60,71 +91,45 @@ public class PlayerAim : MonoBehaviour
             weaponTransform.rotation = Quaternion.Euler(0, 0, angle + 180f);
         }
 
-        // Set up aiming thresholds
-        bool shouldFaceUp = direction.y > 0.5f;  // Upwards aiming threshold 
-        bool shouldFaceDown = direction.y < -0.5f;  // Downwards aiming threshold
-        bool isNeutralAim = !shouldFaceUp && !shouldFaceDown;
+        // Store last valid fire direction
+        lastFireDirection = direction;
 
-        // Update weapon position based on vertical aiming
-        if (shouldFaceUp)
-        {
-            targetWeaponPosition = weaponUpOffset;
-        }
-        else if (shouldFaceDown)
-        {
-            targetWeaponPosition = weaponDownOffset;
-        }
-        else if (isNeutralAim)
-        {
-            targetWeaponPosition = defaultWeaponOffset;
-        }
+        // Update crosshair position (fixed distance)
+        crosshair.transform.position = aimTarget;
+        return direction;
+    }
 
-        // Smoothly move the weapon towards the target position using Lerp
-        weaponTransform.localPosition = Vector3.Lerp(weaponTransform.localPosition, targetWeaponPosition, weaponMoveSpeed * Time.deltaTime);
-
-        // Update the crosshair position
-        crosshair.transform.position = mousePosition;
-
-        // Now handle the animation transitions for up/down aiming
+    void UpdatePlayerAnimations(Vector3 direction)
+    {
+        // Animation transitions
         if (animator != null)
         {
-            // Only set animMoveY to 1f when direction.y exceeds the threshold 
-            if (direction.y > 0.5f) // Trigger the up animation when aiming up
+            if (direction.y > 0.5f)
             {
-                animator.SetFloat("animMoveY", 1f);  // Aiming upwards
+                animator.SetFloat("animMoveY", 1f);
             }
-            else if (direction.y < -0.5f)  // More lenient downward threshold
+            else if (direction.y < -0.5f)
             {
-                animator.SetFloat("animMoveY", -1f); // Aiming downwards
+                animator.SetFloat("animMoveY", -1f);
             }
             else
             {
-                animator.SetFloat("animMoveY", 0f);  // Neutral aiming
+                animator.SetFloat("animMoveY", 0f);
             }
         }
     }
 
-    void OnLook(InputValue value)
+    void OnLook(InputAction.CallbackContext context)
     {
-        Vector2 inputDirection = value.Get<Vector2>();
+        aimDirection = context.ReadValue<Vector2>();
 
-        Debug.Log("Workign");
-        // If using a controller (right stick), update aimDirection
-        if (inputDirection.magnitude > 0.1f) // Ignore small stick movement
+        if (aimDirection.magnitude > 0.1f)
         {
-            aimDirection = inputDirection.normalized;
-
-            // Calculate angle for rotation
-            float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-
-            // Rotate weapon
-            weaponTransform.rotation = Quaternion.Euler(0, 0, angle);
-
-            // Flip player based on joystick aim direction
-            playerTransform.localScale = (aimDirection.x > 0) ? new Vector3(-1, 1, 1) : new Vector3(1, 1, 1);
-
-            Debug.Log(inputDirection);
+            usingController = true;
+        }
+        else
+        {
+            usingController = false;
         }
     }
-
 }
