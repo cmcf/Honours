@@ -172,16 +172,16 @@ public class RoomController : MonoBehaviour
 
     public void TriggerRandomWeapon()
     {
-        // Randomly select a weapon index from the available weapons
         int randomIndex = Random.Range(0, availableWeapons.Length);
-
-        // Get the selected weapon ScriptableObject
         Weapon selectedWeapon = availableWeapons[randomIndex];
 
-        // Assign the selected weapon to the player
+        Debug.Log("Selected weapon: " + selectedWeapon.weaponName);
+        Debug.Log("Weapon sprite: " + selectedWeapon.weaponSprite);
+
         Player player = FindObjectOfType<Player>();
-        player.currentWeapon = selectedWeapon; // Set the selected ScriptableObject as the player's weapon
+        player.EquipWeapon(selectedWeapon);
     }
+
 
     public IEnumerator RoomCoroutine()
     {

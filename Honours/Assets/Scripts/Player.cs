@@ -14,6 +14,7 @@ public class Player : MonoBehaviour, IDamageable
     public Transform spawnPoint;
     public Enemy currentEnemy;
     PlayerAim playerAim;
+    public SpriteRenderer weaponRenderer;
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
@@ -46,6 +47,25 @@ public class Player : MonoBehaviour, IDamageable
         fireAction.performed += OnFirePressed;
         fireAction.canceled += OnFireReleased;
     }
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        playerMovement = GetComponent<PlayerMovement>();
+        playerAim = GetComponentInChildren<PlayerAim>();
+
+        // Find the weapon sprite renderer inside the "Hands" object
+        Transform hands = transform.Find("Hands");
+        if (hands != null)
+        {
+            weaponRenderer = hands.Find("Weapon")?.GetComponent<SpriteRenderer>();
+        }
+
+        currentHealth = health;
+        UpdateWeaponSprite();
+    }
+
+
 
     void OnDestroy()
     {
@@ -67,6 +87,22 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
+    public void EquipWeapon(Weapon newWeapon)
+    {
+        currentWeapon = newWeapon;
+        UpdateWeaponSprite();
+    }
+
+
+    void UpdateWeaponSprite()
+    {
+        if (weaponRenderer != null && currentWeapon != null)
+        {
+            weaponRenderer.sprite = currentWeapon.weaponSprite;
+            weaponRenderer.enabled = false;
+            weaponRenderer.enabled = true;
+        }
+    }
 
 
     void OnFireReleased(InputAction.CallbackContext context)
@@ -75,15 +111,6 @@ public class Player : MonoBehaviour, IDamageable
         isAutoFiring = false; 
     }
 
-
-    void Start()
-    {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
-        playerMovement = GetComponent<PlayerMovement>();
-        playerAim = GetComponentInChildren<PlayerAim>();
-        currentHealth = health;
-    }
 
     void OnFire()
     {

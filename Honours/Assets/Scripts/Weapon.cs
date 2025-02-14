@@ -5,6 +5,7 @@ public class Weapon : ScriptableObject
 {
     public string weaponName;
     public WeaponType weaponType;
+    public Sprite weaponSprite;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
     public float bulletLifetime = 2f;
