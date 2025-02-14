@@ -102,29 +102,16 @@ public class PlayerMovement : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        // Use lastFireDirection from the PlayerAim script for the dash direction
-        Vector2 dashDirection;
+        // Determine the dash direction
+        Vector2 dashDirection = moveDirection != Vector2.zero ? moveDirection : playerAim.lastFireDirection;
 
-        if (playerAim.lastFireDirection != Vector2.zero)
-        {
-            dashDirection = playerAim.lastFireDirection;
-        }
-        else
-        {
-            dashDirection = Vector2.right;
-        }
-
-        // If there's still no direction, default to a direction (e.g., right)
+        // Ensure there's always a valid direction
         if (dashDirection == Vector2.zero)
         {
             dashDirection = Vector2.right;
         }
 
-        // Update lastMoveDirection to the dash direction
-        lastMoveDirection = dashDirection;
-
-        // Store the current facing direction before the dash
-        bool wasFacingRight = isFacingRight;
+        lastMoveDirection = dashDirection; // Store last dash direction
 
         // Make player invincible during the dash
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
@@ -136,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
 
         float elapsedTime = 0f;
         Vector2 startPosition = rb.position;
-        Vector2 endPosition = startPosition + (dashDirection * dashDistance);
+        Vector2 endPosition = startPosition + (dashDirection.normalized * dashDistance);
 
         // Move the player smoothly during the dash
         while (elapsedTime < dashDuration)
@@ -147,17 +134,18 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Reset sprite and dash effects
-        spriteRenderer.transform.localScale = new Vector3(1f, 1f, 1f);
-        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        spriteRenderer.transform.localScale = Vector3.one;
+        spriteRenderer.color = Color.white;
         trailRenderer.emitting = false;
 
-        // Re-enable collisions after the dash
+        // Re-enable collisions
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
 
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
+
 
     public void ChangeSpeed(bool isEnhanced)
     {

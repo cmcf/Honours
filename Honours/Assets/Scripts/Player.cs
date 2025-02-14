@@ -56,10 +56,10 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFirePressed(InputAction.CallbackContext context)
     {
-        if (currentWeapon.weaponType == Weapon.WeaponType.AutoFire)
+        if (currentWeapon.weaponType == Weapon.WeaponType.Automatic)
         {
             isAutoFiring = true;
-            StartCoroutine(AutoFireRoutine());
+            StartCoroutine(AutoFireWeapon());
         }
         else
         {
@@ -135,11 +135,11 @@ public class Player : MonoBehaviour, IDamageable
             case Weapon.WeaponType.Ice:
                 FireIceBullet(direction);
                 break;
-            case Weapon.WeaponType.AutoFire:
+            case Weapon.WeaponType.Automatic:
                 if (!isAutoFiring)
                 {
                     isAutoFiring = true;
-                    StartCoroutine(AutoFireRoutine());
+                    StartCoroutine(AutoFireWeapon());
                 }
                 break;
         }
@@ -169,7 +169,7 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator AutoFireRoutine()
+    IEnumerator AutoFireWeapon()
     {
         while (isAutoFiring)
         {
