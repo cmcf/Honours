@@ -7,12 +7,14 @@ using static Damage;
 public class Bullet : MonoBehaviour
 {
     Enemy enemy;
+    Player player;
     [SerializeField] float damageAmount;
     public float freezeDuration = 0.5f;
     public bool isIce = false;
     void Start()
     {
-        Destroy(gameObject, 10f);
+        player = FindObjectOfType<Player>();
+        Destroy(gameObject, player.currentWeapon.bulletLifetime);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Pipes;
+using Unity.VisualScripting;
 using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,11 +11,10 @@ using static Damage;
 public class Player : MonoBehaviour, IDamageable
 {
     [Header("References")]
-    public GameObject bulletPrefab;
-    public GameObject iceBulletPrefab;
     public Transform spawnPoint;
     public Enemy currentEnemy;
     PlayerAim playerAim;
+    public SpriteRenderer weaponRenderer;
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
@@ -25,203 +25,222 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] float health = 50f;
     public float Health { get; set; }
 
-    [Header("Projectile")]
-    [SerializeField] float bulletSpeed = 10f;
+    [Header("Firing")]
     float lastFireTime = 0f;
-    float iceBulletDamage = 15f;
-    int defaultBulletDamage = 10;
-    [SerializeField] float fireDelay = 0.5f;
 
     [Header("State")]
     public bool isDead = false; 
 
-    public WeaponType currentWeaponType = WeaponType.Default;
+    public Weapon currentWeapon;
     bool isAutoFiring = false;
     [SerializeField] int numberOfDeaths = 0;
 
-    // Weapon Type Enum
-    public enum WeaponType
-    {
-        Default,    // Fires a single bullet
-        RapidFire,  // Fires bullets with a faster rate
-        SpreadShot, // Fires multiple bullets in a spread
-        Ice,   // Fires an ice projectile
-        AutoFire // Autofire projectiles
-    }
+    private PlayerInput playerInput;
+    private InputAction fireAction;
 
+    void Awake()
+    {
+        playerInput = GetComponent<PlayerInput>();
+        fireAction = playerInput.actions["Fire"];
+
+        // Subscribe to events
+        fireAction.performed += OnFirePressed;
+        fireAction.canceled += OnFireReleased;
+    }
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerAim = GetComponentInChildren<PlayerAim>();
+
+        // Find the weapon sprite renderer inside the "Hands" object
+        Transform hands = transform.Find("Hands");
+        if (hands != null)
+        {
+            weaponRenderer = hands.Find("Weapon")?.GetComponent<SpriteRenderer>();
+        }
+
         currentHealth = health;
+        UpdateWeaponSprite();
     }
+
+
+
+    void OnDestroy()
+    {
+        // Unsubscribe to avoid memory leaks
+        fireAction.performed -= OnFirePressed;
+        fireAction.canceled -= OnFireReleased;
+    }
+
+    void OnFirePressed(InputAction.CallbackContext context)
+    {
+        if (currentWeapon.weaponType == Weapon.WeaponType.Automatic)
+        {
+            isAutoFiring = true;
+            StartCoroutine(AutoFireWeapon());
+        }
+        else
+        {
+            OnFire(); 
+        }
+    }
+
+    public void PickupWeapon(Weapon newWeapon)
+    {
+        EquipWeapon(newWeapon);  
+    }
+
+    public void EquipWeapon(Weapon newWeapon)
+    {
+        currentWeapon = newWeapon;
+        UpdateWeaponSprite();
+    }
+
+
+    void UpdateWeaponSprite()
+    {
+        if (weaponRenderer != null && currentWeapon != null)
+        {
+            weaponRenderer.sprite = currentWeapon.weaponSprite;
+            weaponRenderer.enabled = false;
+            weaponRenderer.enabled = true;
+        }
+    }
+
+
+    void OnFireReleased(InputAction.CallbackContext context)
+    {
+        // Stop auto-firing when fire button is released
+        isAutoFiring = false; 
+    }
+
 
     void OnFire()
     {
-        if (currentWeaponType == WeaponType.AutoFire)
+        if (Time.time > lastFireTime + currentWeapon.fireDelay)
         {
-            if (!isAutoFiring)
+            lastFireTime = Time.time;
+            Vector3 fireDirection = GetFireDirection(); 
+            FireWeapon(fireDirection); 
+        }
+    }
+
+
+    Vector3 GetFireDirection()
+    {
+        Vector3 fireDirection;
+        if (playerAim.usingController)
+        {
+            fireDirection = playerAim.aimDirection.normalized;
+            if (fireDirection.magnitude < 0.1f)
             {
-                isAutoFiring = true;
-                StartCoroutine(AutoFireCoroutine());
+                fireDirection = Vector3.left; // Default direction if stick is not moved
             }
         }
         else
         {
-            if (Time.time > lastFireTime + fireDelay)
-            {
-                lastFireTime = Time.time;
-                Vector3 fireDirection;
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
+                Input.mousePosition.x,
+                Input.mousePosition.y,
+                Mathf.Abs(Camera.main.transform.position.z)
+            ));
+            fireDirection = (mousePosition - spawnPoint.position).normalized;
+        }
+        return fireDirection;
+    }
 
-                if (playerAim.usingController)
+    void FireWeapon(Vector3 direction)
+    {
+        switch (currentWeapon.weaponType)
+        {
+            case Weapon.WeaponType.Default:
+                FireSingleBullet(direction);
+                break;
+            case Weapon.WeaponType.RapidFire:
+                StartCoroutine(FireRapid(direction));
+                break;
+            case Weapon.WeaponType.SpreadShot:
+                FireSpreadBullets(direction, 5, 30f);
+                break;
+            case Weapon.WeaponType.Ice:
+                FireIceBullet(direction);
+                break;
+            case Weapon.WeaponType.Automatic:
+                if (!isAutoFiring)
                 {
-                    // Use last known aim direction for the controller
-                    fireDirection = (Vector3)playerAim.aimDirection.normalized;
-                    if (fireDirection.magnitude < 0.1f)
-                    {
-                        fireDirection = Vector3.left; // Default direction if stick is not moved
-                    }
+                    isAutoFiring = true;
+                    StartCoroutine(AutoFireWeapon());
                 }
-                else
-                {
-                    // Mouse aiming
-                    Vector3 mousePosition = Camera.main.ScreenToWorldPoint(new Vector3(
-                        Input.mousePosition.x,
-                        Input.mousePosition.y,
-                        Mathf.Abs(Camera.main.transform.position.z)
-                    ));
-                    fireDirection = (mousePosition - spawnPoint.position).normalized;
-                }
-
-                // Fire bullets based on the selected weapon type
-                switch (currentWeaponType)
-                {
-                    case WeaponType.Default:
-                        FireSingleBullet(fireDirection);
-                        break;
-                    case WeaponType.RapidFire:
-                        StartCoroutine(FireRapid(fireDirection));
-                        break;
-                    case WeaponType.SpreadShot:
-                        FireSpreadBullets(fireDirection, 5, 30f);
-                        break;
-                    case WeaponType.Ice:
-                        FireIceBullet(fireDirection);
-                        break;
-                }
-            }
+                break;
         }
     }
 
 
     void FireSingleBullet(Vector3 direction)
     {
-        // Ensure the direction is normalized
         direction.Normalize();
-
-        // Calculate the spawn point near the end of the weapon
-        Vector3 weaponDirection = direction; // Direction already normalized
-        Vector3 bulletSpawnPosition = spawnPoint.position + weaponDirection * 0.5f; 
-
-        // Instantiate the bullet at the adjusted spawn point
-        GameObject projectile = Instantiate(bulletPrefab, bulletSpawnPosition, Quaternion.identity);
-
-        // Calculate the rotation angle based on the direction
+        Vector3 bulletSpawnPosition = spawnPoint.position + direction * 0.5f;
+        GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        // Apply the rotation to the bullet to face the correct direction
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Apply velocity to the projectile based on the direction
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            // Ensures consistent velocity
-            rb.velocity = direction * bulletSpeed; 
+            rb.velocity = direction * currentWeapon.bulletSpeed;
         }
     }
-
-
-    IEnumerator AutoFireCoroutine()
-    {
-        // Keep firing as long as AutoFire is active
-        while (currentWeaponType == WeaponType.AutoFire) 
-        {
-            if (Time.time > lastFireTime + fireDelay)
-            {
-                lastFireTime = Time.time;
-
-                Vector3 fireDirection = playerMovement.lastMoveDirection;
-                if (fireDirection == Vector3.zero)
-                {
-                    fireDirection = -spawnPoint.up.normalized;
-                }
-
-                FireSingleBullet(fireDirection);
-            }
-
-            yield return null;
-        }
-
-        // Once AutoFire is no longer active, stop firing
-        isAutoFiring = false;
-    }
-
-
-
 
     IEnumerator FireRapid(Vector3 direction)
     {
-        // Fire 3 bullets in quick succession
-        for (int i = 0; i < 3; i++) 
+        for (int i = 0; i < 3; i++)
         {
-            // Fire a single bullet in the given direction
-            FireSingleBullet(direction); 
-            yield return new WaitForSeconds(fireDelay / 3);
+            FireSingleBullet(direction);
+            yield return new WaitForSeconds(currentWeapon.fireDelay / 3);
         }
     }
 
+    IEnumerator AutoFireWeapon()
+    {
+        while (isAutoFiring)
+        {
+            if (Time.time > lastFireTime + currentWeapon.fireDelay)
+            {
+                lastFireTime = Time.time;
+                FireSingleBullet(GetFireDirection());
+            }
+            yield return null; 
+        }
+    }
+
+
     void FireSpreadBullets(Vector3 direction, int bulletCount, float spreadAngle)
     {
-        // Calculate angle between each bullet
-        float angleStep = spreadAngle / (bulletCount - 1); 
+        float angleStep = spreadAngle / (bulletCount - 1);
         float startAngle = -spreadAngle / 2;
-
         for (int i = 0; i < bulletCount; i++)
         {
             float angle = startAngle + (i * angleStep);
-            // Rotate the direction by angle
-            Vector3 bulletDirection = Quaternion.Euler(0, 0, angle) * direction; 
+            Vector3 bulletDirection = Quaternion.Euler(0, 0, angle) * direction;
             FireSingleBullet(bulletDirection);
         }
     }
 
     void FireIceBullet(Vector3 direction)
     {
-
-        // Normalise the direction vector to ensure consistent speed
         direction = direction.normalized;
-
-        // Instantiate the ice bullet at the spawn point
-        GameObject iceBullet = Instantiate(iceBulletPrefab, spawnPoint.position, Quaternion.identity);
-
-        // Rotate the bullet to face the direction it will travel
+        GameObject iceBullet = Instantiate(currentWeapon.bulletPrefab, spawnPoint.position, Quaternion.identity);
         iceBullet.transform.right = direction;
-
-        // Apply velocity to the bullet's Rigidbody2D
         Rigidbody2D rb = iceBullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = direction * bulletSpeed;
+            rb.velocity = direction * currentWeapon.bulletSpeed;
         }
-
-        // Sets the ice bullet behaviour
         Bullet bullet = iceBullet.GetComponent<Bullet>();
         if (bullet != null)
         {
-            bullet.SetDamage(iceBulletDamage);
+            bullet.SetDamage(currentWeapon.bulletDamage);
             bullet.isIce = true;
         }
     }

@@ -17,6 +17,7 @@ public class RoomController : MonoBehaviour
     public static RoomController Instance;
     SpawnRateManager spawnRate;
     string currentWorldName = "Game";
+    public Weapon[] availableWeapons;
 
     RoomInfo currentLoadRoomData;
     public Room currentRoom;
@@ -85,11 +86,15 @@ public class RoomController : MonoBehaviour
         }
 
         // Ensure the condition triggers after rooms are complete
-        if (roomsCompleted >= roomsBeforeBoss) 
+        if (roomsCompleted >= roomsBeforeBoss)
         {
             StartCoroutine(SpawnBossRoom());
         }
+
+        // Spawn a weapon pickup in the current room
+        currentRoom.SpawnPickups();
     }
+
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
     {
@@ -154,7 +159,7 @@ public class RoomController : MonoBehaviour
         if (roomsCompleted >= 1)
         {
             // Trigger new weapon after entering a room
-            TriggerRandomWeapon();
+            //TriggerRandomWeapon();
         }
 
         // Only spawn enemies in the room if it is not the spawn room
@@ -171,14 +176,16 @@ public class RoomController : MonoBehaviour
 
     public void TriggerRandomWeapon()
     {
-        // Randomly select a weapon type
-        WeaponType newWeapon = (WeaponType)Random.Range(0, 4);
+        int randomIndex = Random.Range(0, availableWeapons.Length);
+        Weapon selectedWeapon = availableWeapons[randomIndex];
 
-        // Assign the selected weapon to the player
+        Debug.Log("Selected weapon: " + selectedWeapon.weaponName);
+        Debug.Log("Weapon sprite: " + selectedWeapon.weaponSprite);
+
         Player player = FindObjectOfType<Player>();
-        player.currentWeaponType = newWeapon;
-
+        player.EquipWeapon(selectedWeapon);
     }
+
 
     public IEnumerator RoomCoroutine()
     {

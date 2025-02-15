@@ -13,6 +13,7 @@ public class ObjectRoomSpawner : MonoBehaviour
 
     public GridController grid;
     public RandomSpawner[] spawnerData;
+    public GameObject weaponPickupPrefab;
 
     public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
     public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
@@ -22,7 +23,7 @@ public class ObjectRoomSpawner : MonoBehaviour
         grid = GetComponentInChildren<GridController>();
     }
 
-    public void InitialiseObjectSpawning(Room room)
+    public void StartSpawningEnemies(Room room)
     {
         // Spawn enemies or objects only for the provided room
         if (room != null)
@@ -36,6 +37,19 @@ public class ObjectRoomSpawner : MonoBehaviour
             }
         }
     }
+
+    public void StartSpawningPickups(Room room)
+    {
+        if (room != null)
+        {
+            GridController gridController = room.GetComponentInChildren<GridController>();
+            if (gridController != null)
+            {
+                SpawnWeaponPickup(gridController, room);
+            }
+        }
+    }
+
 
     void SpawnEnemiesForGrid(GridController gridController, Room room)
     {
@@ -91,4 +105,36 @@ public class ObjectRoomSpawner : MonoBehaviour
             }
         }
     }
+
+    void SpawnWeaponPickup(GridController gridController, Room room)
+    {
+        // Check if there are available points in the grid
+        if (gridController.availablePoints.Count == 0)
+        {
+            Debug.LogWarning("No available points to spawn pickups.");
+            return;
+        }
+
+        // Choose a random index from the available points
+        int randomPointIndex = Random.Range(0, gridController.availablePoints.Count);
+
+        // Get the random grid point
+        Vector2 point = gridController.availablePoints[randomPointIndex];
+
+        // Convert local point to world position using the room's transform
+        Vector3 worldPosition = room.transform.TransformPoint(point);
+
+        // Instantiate the GameObject at the world position
+        GameObject pickup = Instantiate(weaponPickupPrefab, worldPosition, Quaternion.identity);
+
+        // Set the room as the parent of the spawned item to keep the hierarchy clean
+        pickup.transform.SetParent(room.transform);
+
+        // Reset the item's local position to ensure it's correctly placed within the room
+        pickup.transform.localPosition = point;
+
+        // Remove the used point to avoid spawning multiple items at the same location
+        gridController.availablePoints.RemoveAt(randomPointIndex);
+    }
+
 }
