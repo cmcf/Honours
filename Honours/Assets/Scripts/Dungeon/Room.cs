@@ -70,7 +70,18 @@ public class Room : MonoBehaviour
         if (spawner != null)
         {
             // Trigger the spawning for this room
-            spawner.InitialiseObjectSpawning(this);
+            spawner.StartSpawningEnemies(this);
+        }
+    }
+
+    public void SpawnPickups()
+    {
+        spawner = GetComponent<ObjectRoomSpawner>();
+        // Ensure the room and spawner exist before trying to spawn
+        if (spawner != null)
+        {
+            // Trigger the spawning for this room
+            spawner.StartSpawningPickups(this);
         }
     }
 

@@ -86,11 +86,15 @@ public class RoomController : MonoBehaviour
         }
 
         // Ensure the condition triggers after rooms are complete
-        if (roomsCompleted >= roomsBeforeBoss) 
+        if (roomsCompleted >= roomsBeforeBoss)
         {
             StartCoroutine(SpawnBossRoom());
         }
+
+        // Spawn a weapon pickup in the current room
+        currentRoom.SpawnPickups();
     }
+
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
     {
@@ -155,7 +159,7 @@ public class RoomController : MonoBehaviour
         if (roomsCompleted >= 1)
         {
             // Trigger new weapon after entering a room
-            TriggerRandomWeapon();
+            //TriggerRandomWeapon();
         }
 
         // Only spawn enemies in the room if it is not the spawn room

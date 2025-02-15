@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Room
       objectReference: {fileID: 0}
+    - target: {fileID: 7222207371611653534, guid: b46b3e75ccedf5349b1f070edd465b04, type: 3}
+      propertyPath: weaponPickupPrefab
+      value: 
+      objectReference: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
