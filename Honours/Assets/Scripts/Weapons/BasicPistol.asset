@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Basic Pistol
   weaponType: 0
-  bulletPrefab: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
+  weaponSprite: {fileID: -3776783329477156521, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
+  bulletPrefab: {fileID: 1454507353135745339, guid: b611d265b86212345885bd78b5fa79d4, type: 3}
   bulletSpeed: 9
   bulletLifetime: 1.5
   fireDelay: 0.6

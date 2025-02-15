@@ -87,6 +87,11 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
+    public void PickupWeapon(Weapon newWeapon)
+    {
+        EquipWeapon(newWeapon);  
+    }
+
     public void EquipWeapon(Weapon newWeapon)
     {
         currentWeapon = newWeapon;
