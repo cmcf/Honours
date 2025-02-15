@@ -155,12 +155,16 @@ MonoBehaviour:
   rb: {fileID: 0}
   maxHealth: 45
   currentHealth: 0
+  moveSpeed: 0
+  freezeTimer: 0
+  level: 0
   bulletPrefab: {fileID: 4040207891986179867, guid: a1779c5a7f85cff43858f51b4dbc37a0, type: 3}
   spawnPoint: {fileID: 8346416027446157132}
-  attackRange: 6
+  attackRange: 8
   fireRate: 2
-  projectileSpeed: 20
+  projectileSpeed: 8
   nextFireTime: 0
+  doubleProjectileChance: 0.3
 --- !u!114 &4171604732914402250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +182,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   maxHealth: 45
   currentHealth: 0
+  moveSpeed: 0
+  freezeTimer: 0
+  level: 0
 --- !u!50 &-2637903227089958092
 Rigidbody2D:
   serializedVersion: 4
