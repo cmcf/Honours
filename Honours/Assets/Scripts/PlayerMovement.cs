@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 lastMoveDirection = Vector2.zero;
     bool isDashing = false;
     bool canDash = true;
+    public bool canMovePlayer = true;
     bool isFacingRight = false;
     float rotationSpeed = 1f;
 
@@ -161,5 +162,10 @@ public class PlayerMovement : MonoBehaviour
             currentSpeed = defaultSpeed;
             spriteRenderer.color = Color.white;
         }
+    }
+
+    public void DisableInput()
+    {
+        moveDirection = Vector2 .zero;
     }
 }
