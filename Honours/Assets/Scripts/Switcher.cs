@@ -122,7 +122,7 @@ public class Switcher : MonoBehaviour
     }
 
 
-    private void SwitchCharacter(int characterIndex)
+    void SwitchCharacter(int characterIndex)
     {
         canSwitch = false;
         isSwitching = true;
