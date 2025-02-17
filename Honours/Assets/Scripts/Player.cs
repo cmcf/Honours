@@ -80,9 +80,16 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (characterSwitcher.currentCharacterState == CharacterState.Wolf)
         {
-            return;
+            // Call the Wolf bite attack directly
+            Wolf wolf = FindObjectOfType<Wolf>();
+            if (wolf != null && !wolf.isBiting) // Check if wolf is not already attacking
+            {
+                wolf.BiteAttack(); // Trigger bite attack
+            }
+            return; // Stop further processing of the fire action
         }
 
+        // Rest of the human form firing logic
         if (currentWeapon.weaponType == Weapon.WeaponType.Automatic)
         {
             isAutoFiring = true;
@@ -90,9 +97,10 @@ public class Player : MonoBehaviour, IDamageable
         }
         else
         {
-            OnFire(); 
+            OnFire();
         }
     }
+
 
     public void PickupWeapon(Weapon newWeapon)
     {
@@ -126,11 +134,6 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFire()
     {
-        if (characterSwitcher.currentCharacterState == CharacterState.Wolf)
-        {
-            Debug.Log("Wolf form active, cannot fire.");
-            return;
-        }
 
         if (Time.time > lastFireTime + currentWeapon.fireDelay)
         {
