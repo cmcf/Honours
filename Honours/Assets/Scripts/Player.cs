@@ -15,6 +15,7 @@ public class Player : MonoBehaviour, IDamageable
     public Enemy currentEnemy;
     PlayerAim playerAim;
     public SpriteRenderer weaponRenderer;
+    Switcher characterSwitcher;
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerAim = GetComponentInChildren<PlayerAim>();
+        characterSwitcher = FindObjectOfType<Switcher>();
 
         // Find the weapon sprite renderer inside the "Hands" object
         Transform hands = transform.Find("Hands");
@@ -76,6 +78,11 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFirePressed(InputAction.CallbackContext context)
     {
+        if (characterSwitcher.currentCharacterState == CharacterState.Wolf)
+        {
+            return;
+        }
+
         if (currentWeapon.weaponType == Weapon.WeaponType.Automatic)
         {
             isAutoFiring = true;
@@ -119,11 +126,17 @@ public class Player : MonoBehaviour, IDamageable
 
     void OnFire()
     {
+        if (characterSwitcher.currentCharacterState == CharacterState.Wolf)
+        {
+            Debug.Log("Wolf form active, cannot fire.");
+            return;
+        }
+
         if (Time.time > lastFireTime + currentWeapon.fireDelay)
         {
             lastFireTime = Time.time;
-            Vector3 fireDirection = GetFireDirection(); 
-            FireWeapon(fireDirection); 
+            Vector3 fireDirection = GetFireDirection();
+            FireWeapon(fireDirection);
         }
     }
 
