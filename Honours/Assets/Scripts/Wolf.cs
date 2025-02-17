@@ -9,7 +9,6 @@ public class Wolf : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     [SerializeField] float moveSpeed = 6f;
-    public bool canMoveWolf;
 
     [SerializeField] Transform bitePoint;  // Point where the bite attack is focused
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
@@ -17,8 +16,9 @@ public class Wolf : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
 
     public Vector2 moveDirection;
-    Vector2 lastMoveDirection; // Tracks last movement direction
-    public bool isBiting; // Track if the player is biting
+    private Vector2 lastMoveDirection; // Tracks last movement direction
+    public bool isBiting = false; // Track if the player is biting
+    public bool canMoveWolf;
 
     void Start()
     {
@@ -36,10 +36,7 @@ public class Wolf : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isBiting) // Prevent movement during bite attack
-        {
-            Move();
-        }
+        Move();
     }
 
     void OnMove(InputValue value)
@@ -57,23 +54,32 @@ public class Wolf : MonoBehaviour
         rb.velocity = moveDirection * moveSpeed;
     }
 
+
     public void BiteAttack()
     {
         if (!isBiting) // Check if not already biting
         {
             isBiting = true; // Set isBiting to true
             animator.SetBool("isBiting", true); // Set bool to true to play the bite animation
-            int direction = GetFacingDirection(); // Get the correct facing direction
-            animator.SetInteger("Direction", direction); // Set the direction parameter for the animation
+            SetBiteDirection(); // Set the correct bite direction based on movement
         }
+
+        // Temporary test to call EndBiteAttack
+        Invoke("EndBiteAttack", 0.1f); // Call EndBiteAttack after 1 second
     }
 
-    private int GetFacingDirection()
+
+    private void SetBiteDirection()
     {
-        if (lastMoveDirection.y > 0) return 1;  // Up
-        if (lastMoveDirection.y < 0) return 0;  // Down
-        if (lastMoveDirection.x < 0) return 2;  // Left
-        return 3;  // Right
+        int direction = 0; // Default to Down
+
+        // Set direction based on last move direction
+        if (lastMoveDirection.y > 0) direction = 1;  // Up
+        else if (lastMoveDirection.y < 0) direction = 0;  // Down
+        else if (lastMoveDirection.x < 0) direction = 2;  // Left
+        else if (lastMoveDirection.x > 0) direction = 3;  // Right
+
+        animator.SetInteger("BiteDirection", direction); // Set the BiteDirection parameter
     }
 
     void UpdateAnimation()
@@ -87,10 +93,10 @@ public class Wolf : MonoBehaviour
             lastMoveDirection = normalizedDirection;
         }
 
-        // Update movement animations
-        animator.SetFloat("animMoveX", lastMoveDirection.x);
-        animator.SetFloat("animMoveY", lastMoveDirection.y);
-        animator.SetFloat("speed", speed);
+        // Update movement animations with last move direction
+        animator.SetFloat("animMoveX", lastMoveDirection.x); // Set X direction
+        animator.SetFloat("animMoveY", lastMoveDirection.y); // Set Y direction
+        animator.SetFloat("speed", speed); // Set speed for idle/walk transitions
     }
 
     // Called by the animation event at the correct moment
@@ -107,11 +113,13 @@ public class Wolf : MonoBehaviour
         }
     }
 
-    // Called at the **end** of the bite animation (
+    // Called at the **end** of the bite animation (use an animation event)
     public void EndBiteAttack()
     {
+        Debug.Log("Ending Bite Attack, setting isBiting to false.");
         isBiting = false; // Reset isBiting flag to allow movement again
         animator.SetBool("isBiting", false); // Set the isBiting bool back to false to transition out of bite animation
+        UpdateAnimation();
     }
 
     void OnDrawGizmosSelected()
