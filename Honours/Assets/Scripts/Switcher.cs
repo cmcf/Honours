@@ -22,7 +22,7 @@ public class Switcher : MonoBehaviour
     public List<CharacterInfo> characters = new List<CharacterInfo>();
     private int currentCharacterIndex = 0;
     private Vector3 previousCharacterPosition = Vector3.zero; // Store the previous character's position
-    private CharacterState currentCharacterState;
+    public  CharacterState currentCharacterState;
 
     [SerializeField] float switchVFXDuration = 0.2f;
 
@@ -56,20 +56,20 @@ public class Switcher : MonoBehaviour
 
     void Start()
     {
+        // Ensure the first character is active
+        if (currentCharacterIndex == 0 && currentCharacterState != CharacterState.Player)
+        {
+            SwitchCharacter(currentCharacterIndex);
+        }
 
-        // Initialize by activating the first character
-        SwitchCharacter(currentCharacterIndex);
         Respawn();
 
-        // Find and store the player movement script component
         PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>();
         if (playerMovement != null)
         {
-            // Access to the the canMovePlayer variable
             playerMovement.canMovePlayer = canMovePlayer;
         }
 
-        // Find and store the dog movement script component
         Wolf wolfMovement = wolfObject.GetComponent<Wolf>();
         if (wolfMovement != null)
         {
@@ -78,11 +78,9 @@ public class Switcher : MonoBehaviour
 
         playerInput = GetComponentInChildren<PlayerInput>();
         playerInput.currentActionMap.Enable();
-
-
-        // Subscribe to the Switch input action
         playerInput.actions["Switch"].performed += ctx => OnSwitch(ctx);
     }
+
 
     void Update()
     {
@@ -95,7 +93,7 @@ public class Switcher : MonoBehaviour
         }
         else if (currentCharacterState == CharacterState.Wolf && !isSwitching)
         {
-            // Handle input for the dog character
+            // Handle input for the wolf character
             canMovePlayer = true;
 
         }
@@ -122,7 +120,7 @@ public class Switcher : MonoBehaviour
     }
 
 
-    private void SwitchCharacter(int characterIndex)
+    void SwitchCharacter(int characterIndex)
     {
         canSwitch = false;
         isSwitching = true;

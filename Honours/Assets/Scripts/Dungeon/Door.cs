@@ -50,23 +50,29 @@ public class Door : MonoBehaviour
 
     void MovePlayer()
     {
-        // Move the player to the other side of the door
-        switch (doorType)
+        // Find the currently active player character
+        GameObject activeCharacter = GameObject.FindGameObjectWithTag("Player"); 
+
+        if (activeCharacter != null)
         {
-            case DoorType.left:
-                player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
-                break;
-            case DoorType.right:
-                player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
-                break;
-            case DoorType.top:
-                player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
-                break;
-            case DoorType.bottom:
-                player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
-                break;
+            switch (doorType)
+            {
+                case DoorType.left:
+                    activeCharacter.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                    break;
+                case DoorType.right:
+                    activeCharacter.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                    break;
+                case DoorType.top:
+                    activeCharacter.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                    break;
+                case DoorType.bottom:
+                    activeCharacter.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
+                    break;
+            }
         }
     }
+
 
     public Vector2Int GetGridPosition()
     {
