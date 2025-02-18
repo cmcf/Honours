@@ -16,13 +16,14 @@ public class Player : MonoBehaviour, IDamageable
     PlayerAim playerAim;
     public SpriteRenderer weaponRenderer;
     Switcher characterSwitcher;
+    PlayerHealth playerHealth;
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
     Animator animator;
 
     [Header("Health")]
-    [SerializeField] float currentHealth = 50f;
+    
     [SerializeField] float health = 50f;
     public float Health { get; set; }
 
@@ -54,7 +55,9 @@ public class Player : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         playerAim = GetComponentInChildren<PlayerAim>();
+
         characterSwitcher = FindObjectOfType<Switcher>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
 
         // Find the weapon sprite renderer inside the "Hands" object
         Transform hands = transform.Find("Hands");
@@ -62,8 +65,6 @@ public class Player : MonoBehaviour, IDamageable
         {
             weaponRenderer = hands.Find("Weapon")?.GetComponent<SpriteRenderer>();
         }
-
-        currentHealth = health;
         UpdateWeaponSprite();
     }
 
@@ -265,12 +266,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (isDead) { return; }
         // Current health is decreased by the damage received
-        currentHealth -= damage;
-        // Player dies when current health reaches 0
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        playerHealth.TakeDamage(damage);
     }
 
     public void Die()

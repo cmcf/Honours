@@ -4039,6 +4039,7 @@ GameObject:
   - component: {fileID: 2143930541}
   - component: {fileID: 2143930540}
   - component: {fileID: 2143930542}
+  - component: {fileID: 2143930543}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4090,6 +4091,20 @@ MonoBehaviour:
   baseDifficultyLevel: -1
   currentDifficultyLevel: 0
   difficultyIncreaseRate: 1
+--- !u!114 &2143930543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143930539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51b495ecaac1aa14dbf999e2fc9e80bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 150
+  currentHealth: 0
 --- !u!4 &181472975548114405
 Transform:
   m_ObjectHideFlags: 0
@@ -5282,7 +5297,6 @@ MonoBehaviour:
   spawnPoint: {fileID: 181472975548114405}
   currentEnemy: {fileID: 0}
   weaponRenderer: {fileID: 0}
-  currentHealth: 150
   health: 150
   isDead: 0
   currentWeapon: {fileID: 11400000, guid: e069490a8ff00fd4797515a0bfc0413d, type: 2}
