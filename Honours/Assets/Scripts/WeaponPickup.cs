@@ -18,16 +18,33 @@ public class WeaponPickup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) 
+        // Ensure the collider belongs to the player
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Called");
-            // Call the player's method to pick up the random weapon
-            other.GetComponent<Player>().PickupWeapon(selectedWeapon);
+            // Get the Switcher script to check the current character state
+            Switcher switcher = FindObjectOfType<Switcher>();
+            if (switcher == null)
+            {
+                Debug.LogError("Switcher script not found!");
+                return;
+            }
 
-            // Destroy the pickup object after it is collected
-            Destroy(gameObject);
+            // Only allow pickup if the player is in human form
+            if (switcher.currentCharacterState == CharacterState.Player)
+            {
+                Debug.Log("Weapon picked up by player");
+                other.GetComponent<Player>().PickupWeapon(selectedWeapon);
+
+                // Destroy the pickup object after it is collected
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Cannot pick up weapon in wolf form");
+            }
         }
     }
+
 
     public Weapon GetWeapon()
     {
