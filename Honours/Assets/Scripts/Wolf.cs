@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Damage;
 
-public class Wolf : MonoBehaviour
+public class Wolf : MonoBehaviour, IDamageable
 {
     Rigidbody2D rb;
     Animator animator;
     [SerializeField] float moveSpeed = 6f;
+    PlayerHealth playerHealth;
 
     [SerializeField] Transform bitePoint;  // Point where the bite attack is focused
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
@@ -20,10 +21,17 @@ public class Wolf : MonoBehaviour
     public bool isBiting = false; // Track if the player is biting
     public bool canMoveWolf;
 
+    bool isDead = false;
+
+    public float Health { get; set; }
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void Update()
@@ -130,4 +138,12 @@ public class Wolf : MonoBehaviour
             Gizmos.DrawWireSphere(bitePoint.position, biteRange);
         }
     }
+
+    public void Damage(float damage)
+    {
+        if (isDead) { return; }
+        // Current health is decreased by the damage received
+        playerHealth.TakeDamage(damage);
+    }
+
 }
