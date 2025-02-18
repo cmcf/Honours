@@ -39,28 +39,44 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         if (isDead) return;
-
         isDead = true;
 
-        // Disable movement and aiming
-        if (player != null)
+        // Reference the Switcher script to check the current character state
+        Switcher switcher = FindObjectOfType<Switcher>();
+        if (switcher == null)
         {
-            player.GetComponent<PlayerMovement>().enabled = false;
-            player.GetComponent<PlayerAim>().enabled = false;
-
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.velocity = Vector2.zero;
-            player.GetComponent<Animator>().SetTrigger("isDead");
+            return;
         }
 
-        if (wolf != null)
+        // Check if the player or the wolf is currently active
+        if (switcher.currentCharacterState == CharacterState.Player)
         {
-            wolf.GetComponent<PlayerMovement>().enabled = false;
+            if (switcher.playerObject != null)
+            {
+                PlayerMovement playerMovement = switcher.playerObject.GetComponent<PlayerMovement>();
+                PlayerAim playerAim = switcher.playerObject.GetComponent<PlayerAim>();
+                Animator playerAnimator = switcher.playerObject.GetComponent<Animator>();
+                Rigidbody2D rb = switcher.playerObject.GetComponent<Rigidbody2D>();
 
-            Rigidbody2D rb = wolf.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.velocity = Vector2.zero;
+                if (playerMovement != null) playerMovement.enabled = false;
+                if (playerAim != null) playerAim.enabled = false;
+                if (rb != null) rb.velocity = Vector2.zero;
+                if (playerAnimator != null) playerAnimator.SetTrigger("isDead");
+            }
+        }
+        else if (switcher.currentCharacterState == CharacterState.Wolf)
+        {
+            if (switcher.wolfObject != null)
+            {
+                Wolf wolfMovement = switcher.wolfObject.GetComponent<Wolf>();
+                Animator wolfAnimator = switcher.wolfObject.GetComponent<Animator>();
+                Rigidbody2D rb = switcher.wolfObject.GetComponent<Rigidbody2D>();
 
-            wolf.GetComponent<Animator>().SetTrigger("isDead");
+                if (wolfMovement != null) wolfMovement.enabled = false;
+                if (rb != null) rb.velocity = Vector2.zero;
+                if (wolfAnimator != null) wolfAnimator.SetTrigger("isDead");
+            }
         }
     }
+
 }

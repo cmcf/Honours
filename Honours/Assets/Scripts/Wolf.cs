@@ -73,7 +73,7 @@ public class Wolf : MonoBehaviour, IDamageable
         }
 
         // Temporary test to call EndBiteAttack
-        Invoke("EndBiteAttack", 0.1f); // Call EndBiteAttack after 1 second
+        Invoke("EndBiteAttack", 0.3f); // Call EndBiteAttack after 1 second
     }
 
 
@@ -124,7 +124,6 @@ public class Wolf : MonoBehaviour, IDamageable
     // Called at the **end** of the bite animation (use an animation event)
     public void EndBiteAttack()
     {
-        Debug.Log("Ending Bite Attack, setting isBiting to false.");
         isBiting = false; // Reset isBiting flag to allow movement again
         animator.SetBool("isBiting", false); // Set the isBiting bool back to false to transition out of bite animation
         UpdateAnimation();
