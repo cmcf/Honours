@@ -6,7 +6,12 @@ public class WeaponPickup : MonoBehaviour
     public Weapon[] possibleWeapons;
     SpriteRenderer spriteRenderer;
     // The selected random weapon
-    Weapon selectedWeapon;  
+    Weapon selectedWeapon;
+
+    public float floatSpeed = 2f;  
+    public float floatAmount = 0.1f;  
+
+    private Vector3 startPos;
 
     void Start()
     {
@@ -14,6 +19,15 @@ public class WeaponPickup : MonoBehaviour
         selectedWeapon = possibleWeapons[Random.Range(0, possibleWeapons.Length)];
         spriteRenderer= GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedWeapon.weaponSprite;
+
+        startPos = transform.position;
+    }
+
+    void Update()
+    {
+        // Moves the pickup up and down smoothly
+        float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
+        transform.position = startPos + new Vector3(0, yOffset, 0);
     }
 
     void OnTriggerEnter2D(Collider2D other)
