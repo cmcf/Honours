@@ -3699,6 +3699,7 @@ MonoBehaviour:
   characters:
   - character: {fileID: 5213473724355869344}
   - character: {fileID: 1816236667}
+  currentCharacterState: 0
   switchVFXDuration: 0.2
   wolfObject: {fileID: 1816236667}
   playerObject: {fileID: 5213473724355869344}
@@ -3741,7 +3742,7 @@ GameObject:
   - component: {fileID: 1816236674}
   m_Layer: 0
   m_Name: Wolf
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3808,7 +3809,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816236667}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3923,8 +3924,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  canMoveWolf: 0
+  bitePoint: {fileID: 1816236669}
+  biteRange: 0.5
+  biteDamage: 10
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
   moveDirection: {x: 0, y: 0}
+  isBiting: 0
+  canMoveWolf: 0
 --- !u!114 &1816236674
 MonoBehaviour:
   m_ObjectHideFlags: 0
