@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Poison
   m_EditorClassIdentifier: 
   effectName: Poison
-  duration: 0.8
-  tickInterval: 5
+  duration: 2.5
+  tickInterval: 0.6
   damagePerTick: 2
-  effectColor: {r: 0.07537324, g: 0.9547169, b: 0, a: 1}
+  effectAnimationPrefab: {fileID: 5457993127205109815, guid: 82a872fbe81d7514ba2b7bdab80374e0, type: 3}

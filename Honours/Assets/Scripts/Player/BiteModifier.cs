@@ -6,10 +6,10 @@ using static Damage;
 public class BiteModifier : ScriptableObject
 {
     public string effectName;
-    public float duration;
-    public float tickInterval;
+    public float duration; // Total duration of the effect
+    public float tickInterval = 2f; // How often damage is applied
     public float damagePerTick;
-    public Color effectColor = Color.white; 
+    public GameObject effectAnimationPrefab;
 
     public void ApplyEffect(IDamageable target, MonoBehaviour caller)
     {
@@ -21,22 +21,37 @@ public class BiteModifier : ScriptableObject
 
     private IEnumerator ApplyEffectCoroutine(IDamageable target, MonoBehaviour enemy)
     {
-        SpriteRenderer sprite = enemy.GetComponent<SpriteRenderer>();
-        Color originalColor = sprite.color;
+        Transform enemyTransform = enemy.transform;
+        GameObject effectInstance = null;
+
+        // Spawn visual effect if available
+        if (effectAnimationPrefab != null)
+        {
+            effectInstance = Instantiate(effectAnimationPrefab, enemyTransform.position, Quaternion.identity, enemyTransform);
+        }
 
         float elapsedTime = 0f;
 
         while (elapsedTime < duration)
         {
-            yield return new WaitForSeconds(tickInterval);
+            if (enemy == null)
+            {
+                break;
+            }
+
+            // Apply damage every tickInterval
             target.Damage(damagePerTick);
 
-            // Flash effect: briefly change color
-            sprite.color = effectColor;
-            yield return new WaitForSeconds(0.1f);
-            sprite.color = originalColor;
-
+            yield return new WaitForSeconds(tickInterval);
             elapsedTime += tickInterval;
+
+            target.Damage(damagePerTick);
+        }
+
+        // Destroy visual effect when done
+        if (effectInstance != null)
+        {
+            Destroy(effectInstance);
         }
     }
 }
