@@ -82,7 +82,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.58, y: 0.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -104,6 +104,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c9c4080e55692ef46957d37183c64c0b, type: 2}
   - {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   - {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
+  floatSpeed: 3
+  floatAmount: 0.1
 --- !u!61 &6939024789969638267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,10 +143,10 @@ BoxCollider2D:
   m_Offset: {x: -0.102971435, y: 0.014000654}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.58, y: 0.26}
+    newSize: {x: 0.58, y: 0.26}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
