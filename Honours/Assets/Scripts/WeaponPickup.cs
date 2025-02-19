@@ -39,22 +39,16 @@ public class WeaponPickup : MonoBehaviour
             Switcher switcher = FindObjectOfType<Switcher>();
             if (switcher == null)
             {
-                Debug.LogError("Switcher script not found!");
                 return;
             }
 
             // Only allow pickup if the player is in human form
             if (switcher.currentCharacterState == CharacterState.Player)
             {
-                Debug.Log("Weapon picked up by player");
                 other.GetComponent<Player>().PickupWeapon(selectedWeapon);
 
                 // Destroy the pickup object after it is collected
                 Destroy(gameObject);
-            }
-            else
-            {
-                Debug.Log("Cannot pick up weapon in wolf form");
             }
         }
     }
