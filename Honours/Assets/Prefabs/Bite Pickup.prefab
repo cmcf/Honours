@@ -148,5 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleModifiers:
   - {fileID: 11400000, guid: efbafa6f116c3d54883ef00d28bc8795, type: 2}
+  - {fileID: 11400000, guid: 0f62b6787b111d64dbb41159daf465ff, type: 2}
   floatSpeed: 2
   floatAmount: 0.1

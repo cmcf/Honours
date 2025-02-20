@@ -12,15 +12,18 @@ public class BiteModifier : ScriptableObject
     public Sprite biteSprite;
     public GameObject effectAnimationPrefab;
 
+    // Health Leech Specific
+    public bool isLeechEffect = false; 
+
     public void ApplyEffect(IDamageable target, MonoBehaviour caller)
     {
         if (target is MonoBehaviour enemy)
         {
-            caller.StartCoroutine(ApplyEffectCoroutine(target, enemy));
+            caller.StartCoroutine(ApplyEffectCoroutine(target, enemy, caller));
         }
     }
 
-    private IEnumerator ApplyEffectCoroutine(IDamageable target, MonoBehaviour enemy)
+    private IEnumerator ApplyEffectCoroutine(IDamageable target, MonoBehaviour enemy, MonoBehaviour caller)
     {
         Transform enemyTransform = enemy.transform;
         GameObject effectInstance = null;
@@ -33,9 +36,12 @@ public class BiteModifier : ScriptableObject
 
         float elapsedTime = 0f;
 
+        // Find PlayerHealth from GameManager at the start
+        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+
         while (elapsedTime < duration)
         {
-            if (enemy == null)
+            if (enemy == null || playerHealth == null)
             {
                 break;
             }
@@ -43,10 +49,14 @@ public class BiteModifier : ScriptableObject
             // Apply damage every tickInterval
             target.Damage(damagePerTick);
 
+            // If it's a leech effect, heal the player based on damage dealt
+            if (isLeechEffect)
+            {
+                playerHealth.Heal(damagePerTick); // Heal the same amount as damage dealt
+            }
+
             yield return new WaitForSeconds(tickInterval);
             elapsedTime += tickInterval;
-
-            target.Damage(damagePerTick);
         }
 
         // Destroy visual effect when done
@@ -55,4 +65,5 @@ public class BiteModifier : ScriptableObject
             Destroy(effectInstance);
         }
     }
+
 }
