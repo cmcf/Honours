@@ -5154,9 +5154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 3067323940327294350}
   bulletSpawn: {fileID: 181472975548114405}
-  defaultSpeed: 6
+  defaultSpeed: 5.5
   currentSpeed: 0
-  increasedSpeed: 6
+  increasedSpeed: 5.5
   dashDistance: 4
   dashDuration: 0.25
   dashCooldown: 1.5
