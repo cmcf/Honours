@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21321b2ed82e02f4181f4e670accbc5e, type: 3}
+  m_Name: Poison
+  m_EditorClassIdentifier: 
+  effectName: Poison
+  duration: 2.5
+  tickInterval: 0.6
+  damagePerTick: 2
+  biteSprite: {fileID: 177967809510971523, guid: 8aaffa9e39b517f43a2af0e3d5980f43, type: 3}
+  effectAnimationPrefab: {fileID: 5457993127205109815, guid: 82a872fbe81d7514ba2b7bdab80374e0, type: 3}

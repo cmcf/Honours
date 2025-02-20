@@ -14,6 +14,7 @@ public class ObjectRoomSpawner : MonoBehaviour
     public GridController grid;
     public RandomSpawner[] spawnerData;
     public GameObject weaponPickupPrefab;
+    public GameObject biteModifierPrefab;
 
     public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
     public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
@@ -45,7 +46,7 @@ public class ObjectRoomSpawner : MonoBehaviour
             GridController gridController = room.GetComponentInChildren<GridController>();
             if (gridController != null)
             {
-                SpawnWeaponPickup(gridController, room);
+                SpawnRandomPickup(gridController, room);
             }
         }
     }
@@ -106,7 +107,7 @@ public class ObjectRoomSpawner : MonoBehaviour
         }
     }
 
-    void SpawnWeaponPickup(GridController gridController, Room room)
+    void SpawnRandomPickup(GridController gridController, Room room)
     {
         // Check if there are available points in the grid
         if (gridController.availablePoints.Count == 0)
@@ -124,8 +125,11 @@ public class ObjectRoomSpawner : MonoBehaviour
         // Convert local point to world position using the room's transform
         Vector3 worldPosition = room.transform.TransformPoint(point);
 
-        // Instantiate the GameObject at the world position
-        GameObject pickup = Instantiate(weaponPickupPrefab, worldPosition, Quaternion.identity);
+        // Randomly choose between spawning a weapon or a bite modifier
+        GameObject pickupPrefabToSpawn = Random.value < 0.5f ? weaponPickupPrefab : biteModifierPrefab;
+
+        // Instantiate the selected pickup prefab at the world position
+        GameObject pickup = Instantiate(pickupPrefabToSpawn, worldPosition, Quaternion.identity);
 
         // Set the room as the parent of the spawned item to keep the hierarchy clean
         pickup.transform.SetParent(room.transform);
@@ -136,5 +140,6 @@ public class ObjectRoomSpawner : MonoBehaviour
         // Remove the used point to avoid spawning multiple items at the same location
         gridController.availablePoints.RemoveAt(randomPointIndex);
     }
+
 
 }

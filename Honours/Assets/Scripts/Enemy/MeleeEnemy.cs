@@ -45,6 +45,7 @@ public class MeleeEnemy : Enemy
         }
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        StartCoroutine(UpdatePlayerLocation());
         StartCoroutine(HandleAppearance());
     }
 
@@ -54,6 +55,20 @@ public class MeleeEnemy : Enemy
         if (isDisappearing || isAppearing || !IsActive()) return;
 
         MoveTowardsPlayer();
+    }
+
+    IEnumerator UpdatePlayerLocation()
+    {
+        while (true)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                playerLocation = player.transform;
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
 

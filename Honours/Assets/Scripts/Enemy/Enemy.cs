@@ -76,6 +76,8 @@ public class Enemy : MonoBehaviour, IDamageable
             // Decrease health
             currentHealth -= damage;
 
+            Debug.Log($"Enemy took {damage} damage! Current health before damage: {currentHealth}");
+
             // Play hurt animation
             PlayHitEffect();
 
@@ -87,6 +89,8 @@ public class Enemy : MonoBehaviour, IDamageable
                 isActive = false;
                 Die();
             }
+
+            Debug.Log($"Enemy health after damage: {currentHealth}");
 
             // Mark as hit so that damage does not process more than once
             hit = true;
@@ -141,12 +145,18 @@ public class Enemy : MonoBehaviour, IDamageable
 
     void PlayHitEffect()
     {
-        animator.SetBool("isHurt", true);
-        Invoke("ResetHit", 0.2f);
+        if (animator != null)
+        {
+            animator.SetBool("isHurt", true);
+
+            Invoke("ResetHit", 0.2f);
+        }
+         
     }
 
     void ResetHit()
     {
+        if (animator == null) { return; }
         animator.SetBool("isHurt", false);
     }
 
