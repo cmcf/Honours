@@ -3924,7 +3924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  biteModifier: {fileID: 11400000, guid: efbafa6f116c3d54883ef00d28bc8795, type: 2}
+  biteModifier: {fileID: 11400000, guid: 1d265812f3f8b284db12d3a36a96a1ad, type: 2}
   bitePoint: {fileID: 1816236669}
   biteRange: 0.5
   biteDamage: 20

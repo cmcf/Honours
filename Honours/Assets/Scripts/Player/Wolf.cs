@@ -63,6 +63,11 @@ public class Wolf : MonoBehaviour, IDamageable
         rb.velocity = moveDirection * moveSpeed;
     }
 
+    public void EquipBiteEffect(BiteModifier newBiteEffect)
+    {
+        biteModifier = newBiteEffect;
+    }
+
 
     public void BiteAttack()
     {

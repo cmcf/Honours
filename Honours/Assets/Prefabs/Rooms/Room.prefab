@@ -4255,6 +4255,7 @@ MonoBehaviour:
   - name: MeleeEnemy
     spawnerData: {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
   weaponPickupPrefab: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
+  biteModifierPrefab: {fileID: 8278573925337004562, guid: ab76636a8d1bfb54189b230d8d245502, type: 3}
 --- !u!1 &6760858678422147584
 GameObject:
   m_ObjectHideFlags: 0
