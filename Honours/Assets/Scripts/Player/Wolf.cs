@@ -8,7 +8,9 @@ public class Wolf : MonoBehaviour, IDamageable
 {
     Rigidbody2D rb;
     Animator animator;
-    [SerializeField] float moveSpeed = 6f;
+    [SerializeField] float defaultSpeed = 6f;
+    [SerializeField] float currentSpeed = 6f;
+    [SerializeField] float attackMoveSpeed = 2f;
     public BiteModifier biteModifier;
     PlayerHealth playerHealth;
 
@@ -31,13 +33,14 @@ public class Wolf : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
+        currentSpeed = defaultSpeed;
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void Update()
     {
-        if (!isBiting) // Only update movement animations if not biting
+        // Only update movement animations if not biting
+        if (!isBiting) 
         {
             UpdateAnimation();
         }
@@ -60,7 +63,7 @@ public class Wolf : MonoBehaviour, IDamageable
 
     void Move()
     {
-        rb.velocity = moveDirection * moveSpeed;
+        rb.velocity = moveDirection * currentSpeed;
     }
 
     public void EquipBiteEffect(BiteModifier newBiteEffect)
@@ -73,13 +76,14 @@ public class Wolf : MonoBehaviour, IDamageable
     {
         if (!isBiting) // Check if not already biting
         {
-            isBiting = true; // Set isBiting to true
-            animator.SetBool("isBiting", true); // Set bool to true to play the bite animation
+            // Play bite animation
+            isBiting = true; 
+            animator.SetBool("isBiting", true); 
+            currentSpeed = attackMoveSpeed;
             SetBiteDirection(); // Set the correct bite direction based on movement
         }
 
-        // Temporary test to call EndBiteAttack
-        Invoke("EndBiteAttack", 0.3f); // Call EndBiteAttack after 1 second
+        Invoke("EndBiteAttack", 0.3f); 
     }
 
 
@@ -113,7 +117,6 @@ public class Wolf : MonoBehaviour, IDamageable
         animator.SetFloat("speed", speed); // Set speed for idle/walk transitions
     }
 
-    // Called by the animation event at the correct moment
     public void BiteDamage()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, enemyLayer);
@@ -122,20 +125,21 @@ public class Wolf : MonoBehaviour, IDamageable
         {
             if (enemy.TryGetComponent<IDamageable>(out IDamageable damageable))
             {
-                damageable.Damage(biteDamage); // Apply the damage first
+                // Apply the modifier damage
+                damageable.Damage(biteDamage); 
 
-                // Now apply the modifier effect (e.g., poison, bleed)
-                biteModifier.ApplyEffect(damageable, this); // Apply the effect
+                // Apply the modifier effect
+                biteModifier.ApplyEffect(damageable, this); 
             }
         }
     }
 
-
-    // Called at the **end** of the bite animation (use an animation event)
     public void EndBiteAttack()
     {
-        isBiting = false; // Reset isBiting flag to allow movement again
-        animator.SetBool("isBiting", false); // Set the isBiting bool back to false to transition out of bite animation
+        // Reset isBiting flag to allow movement animation states
+        isBiting = false;
+        currentSpeed = defaultSpeed;
+        animator.SetBool("isBiting", false);
         UpdateAnimation();
     }
 
