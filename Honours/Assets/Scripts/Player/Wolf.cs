@@ -6,22 +6,46 @@ using static Damage;
 
 public class Wolf : MonoBehaviour, IDamageable
 {
+    [Header("References")]
     Rigidbody2D rb;
     Animator animator;
-    [SerializeField] float moveSpeed = 6f;
-    public BiteModifier biteModifier;
     PlayerHealth playerHealth;
+    public BiteModifier biteModifier;
+    public Transform firePoint;
+    public GameObject knifePrefab;
+   
+    [Header("Speed")]
+    [SerializeField] float defaultSpeed = 6f;
+    [SerializeField] float currentSpeed = 6f;
+    [SerializeField] float attackMoveSpeed = 2f;
 
+    [Header("Knife")]
+    List<GameObject> orbitingKnives = new List<GameObject>();
+    [SerializeField] float knifeSpeed = 7f;
+    [SerializeField] float orbitRadius = 0.5f; // Distance from player
+    [SerializeField] float orbitSpeed = 200f;  // Rotation speed
+    [SerializeField] int knifeCount = 8; 
+    [SerializeField] float shieldDuration = 3f; // Time before firing knives
+  
+    public float knifeCooldown = 0.5f;
+    float lastKnifeTime;
+
+    [Header("Bite")]
     [SerializeField] Transform bitePoint;  // Point where the bite attack is focused
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
     [SerializeField] int biteDamage = 10;  // Damage dealt by the bite attack
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
+                                            
+    float biteCooldown = 0.2f;
+    float lastBiteTime;
 
     public Vector2 moveDirection;
-    private Vector2 lastMoveDirection; // Tracks last movement direction
+    Vector2 lastMoveDirection; // Tracks last movement direction
     public bool isBiting = false; // Track if the player is biting
     public bool canMoveWolf;
 
+    bool knivesActive = false;
+    bool canBite = true;
     bool isDead = false;
 
     public float Health { get; set; }
@@ -31,16 +55,26 @@ public class Wolf : MonoBehaviour, IDamageable
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
+        currentSpeed = defaultSpeed;
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 
     void Update()
     {
-        if (!isBiting) // Only update movement animations if not biting
+        UpdateAnimation();
+
+        if (knivesActive)
         {
-            UpdateAnimation();
+            UpdateKnifeOrbit();
         }
+
+    }
+
+    void OnDash()
+    {
+        if (isDead) { return; }
+
+        ActivateKnifeShield();
     }
 
     void FixedUpdate()
@@ -60,7 +94,7 @@ public class Wolf : MonoBehaviour, IDamageable
 
     void Move()
     {
-        rb.velocity = moveDirection * moveSpeed;
+        rb.velocity = moveDirection * currentSpeed;
     }
 
     public void EquipBiteEffect(BiteModifier newBiteEffect)
@@ -68,22 +102,177 @@ public class Wolf : MonoBehaviour, IDamageable
         biteModifier = newBiteEffect;
     }
 
-
-    public void BiteAttack()
+    // Spawns knives in an orbiting pattern and starts timer to fire
+    public void ActivateKnifeShield()
     {
-        if (!isBiting) // Check if not already biting
+        if (knivesActive) return; 
+
+        if (Time.time > lastKnifeTime + knifeCooldown)
         {
-            isBiting = true; // Set isBiting to true
-            animator.SetBool("isBiting", true); // Set bool to true to play the bite animation
-            SetBiteDirection(); // Set the correct bite direction based on movement
+            lastKnifeTime = Time.time;
+            float angleStep = 360f / knifeCount;
+
+            for (int i = 0; i < knifeCount; i++)
+            {
+                float angle = i * angleStep * Mathf.Deg2Rad;
+
+                Vector3 knifePos = new Vector3(
+                    transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                    transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                    0f
+                );
+
+                GameObject knife = Instantiate(knifePrefab, knifePos, Quaternion.identity);
+                orbitingKnives.Add(knife);
+            }
+
+            knivesActive = true;
+
+            // Fire knives after delay
+            Invoke(nameof(FireKnives), shieldDuration);
         }
 
-        // Temporary test to call EndBiteAttack
-        Invoke("EndBiteAttack", 0.3f); // Call EndBiteAttack after 1 second
+        
+    }
+
+    // Keeps knives orbiting around the wolf
+    void UpdateKnifeOrbit()
+    {
+        // Stop updating if knives should fire
+        if (!knivesActive) return; 
+
+        for (int i = 0; i < orbitingKnives.Count; i++)
+        {
+            if (orbitingKnives[i] == null) continue;
+
+            float angle = (Time.time * orbitSpeed + (360f / orbitingKnives.Count) * i) * Mathf.Deg2Rad;
+
+            Vector3 knifePos = new Vector3(
+                transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                0f
+            );
+
+            orbitingKnives[i].transform.position = knifePos;
+
+            // Rotate knives to always face outward
+            float rotationAngle = Mathf.Atan2(knifePos.y - transform.position.y, knifePos.x - transform.position.x) * Mathf.Rad2Deg;
+            orbitingKnives[i].transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+        }
+    }
+
+    void FireKnives()
+    {
+        // Stop orbiting
+        knivesActive = false; 
+
+        foreach (GameObject knife in orbitingKnives)
+        {
+            if (knife == null) continue;
+
+            // Get the Knife script and call Fire function
+            KnifeProjectile knifeScript = knife.GetComponent<KnifeProjectile>();
+            if (knifeScript != null)
+            {
+                Vector3 direction = (knife.transform.position - transform.position).normalized;
+                // Fire outward set knife speed
+                knifeScript.Fire(direction, knifeSpeed); 
+            }
+        }
+        // Clear the list after firing
+
+        orbitingKnives.Clear(); 
     }
 
 
-    private void SetBiteDirection()
+    public void BiteAttack()
+    {
+        // Only allow the bite attack if the cooldown has passed
+        if (Time.time > lastBiteTime + biteCooldown && !isBiting)
+        {
+            lastBiteTime = Time.time; 
+
+            isBiting = true;
+            animator.SetBool("isBiting", true);
+            currentSpeed = attackMoveSpeed;
+            SetBiteDirection();
+
+            StartCoroutine(EndBiteAttackCoroutine());
+        }
+    }
+
+    IEnumerator BiteLunge()
+    {
+        float lungeDistance = 0.3f;
+        Vector2 lungeVector = lastMoveDirection.normalized * lungeDistance;
+        rb.AddForce(lungeVector, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.1f);
+    }
+
+    IEnumerator EndBiteAttackCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f); 
+        isBiting = false;
+        currentSpeed = defaultSpeed;
+        animator.SetBool("isBiting", false);
+
+        // Resume movement if the player is still pressing movement keys
+        if (moveDirection != Vector2.zero)
+        {
+            rb.velocity = moveDirection * currentSpeed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+
+        UpdateAnimation();
+    }
+    public void EndBiteAttack()
+    {
+        isBiting = false;
+        currentSpeed = defaultSpeed;
+        animator.SetBool("isBiting", false);
+
+        // If the player is still holding a movement direction, resume movement
+        if (moveDirection != Vector2.zero)
+        {
+            rb.velocity = moveDirection * currentSpeed;
+        }
+        else
+        {
+            // Ensure the rigidbody isn't stuck
+            rb.velocity = Vector2.zero;
+        }
+
+        UpdateAnimation();
+    }
+
+
+    public void BiteDamage()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.TryGetComponent<IDamageable>(out IDamageable damageable))
+            {
+                // Apply the modifier damage
+                damageable.Damage(biteDamage);
+
+                // Apply the modifier effect
+                biteModifier.ApplyEffect(damageable, this);
+
+                if (isBiting)
+                {
+                    StopCoroutine(EndBiteAttackCoroutine());
+                    EndBiteAttack();
+                }
+            }
+        }
+    }
+
+    void SetBiteDirection()
     {
         int direction = 0; // Default to Down
 
@@ -111,32 +300,6 @@ public class Wolf : MonoBehaviour, IDamageable
         animator.SetFloat("animMoveX", lastMoveDirection.x); // Set X direction
         animator.SetFloat("animMoveY", lastMoveDirection.y); // Set Y direction
         animator.SetFloat("speed", speed); // Set speed for idle/walk transitions
-    }
-
-    // Called by the animation event at the correct moment
-    public void BiteDamage()
-    {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, enemyLayer);
-
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            if (enemy.TryGetComponent<IDamageable>(out IDamageable damageable))
-            {
-                damageable.Damage(biteDamage); // Apply the damage first
-
-                // Now apply the modifier effect (e.g., poison, bleed)
-                biteModifier.ApplyEffect(damageable, this); // Apply the effect
-            }
-        }
-    }
-
-
-    // Called at the **end** of the bite animation (use an animation event)
-    public void EndBiteAttack()
-    {
-        isBiting = false; // Reset isBiting flag to allow movement again
-        animator.SetBool("isBiting", false); // Set the isBiting bool back to false to transition out of bite animation
-        UpdateAnimation();
     }
 
     void OnDrawGizmosSelected()
