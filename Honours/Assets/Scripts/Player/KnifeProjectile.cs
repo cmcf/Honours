@@ -8,8 +8,8 @@ public class KnifeProjectile : MonoBehaviour
 
     public float lifetime = 3f;
     public int damage;
-    float pushbackDuration = 0.4f;
-    float pushbackAmount = 0.5f;
+    float pushbackDuration = 0.3f;
+    float pushbackAmount = 0.4f;
 
     void Start()
     {
@@ -37,43 +37,46 @@ public class KnifeProjectile : MonoBehaviour
 
     IEnumerator PushbackEnemy(Transform enemyTransform, Vector3 knifePosition)
     {
-        // Store the original position and scale of the enemy
-        Vector3 originalPosition = enemyTransform.position;
-        Vector3 originalScale = enemyTransform.localScale;
+        Rigidbody2D enemyRb = enemyTransform.GetComponent<Rigidbody2D>();
+        if (enemyRb == null) yield break;
 
-        // Calculate the direction of pushback
-        Vector3 pushbackDirection = (enemyTransform.position - knifePosition).normalized;
+        Vector2 originalPosition = enemyTransform.position;
+        Vector2 pushbackDirection = (enemyTransform.position - knifePosition).normalized;
 
-        // Calculate the target position for pushback
-        Vector3 targetPosition = enemyTransform.position + pushbackDirection * pushbackAmount;
+        // Add slight random variation to direction
+        pushbackDirection += new Vector2(Random.Range(-0.05f, 0.05f), Random.Range(-0.05f, 0.05f));
+        pushbackDirection.Normalize();
 
-        // Initialize time elapsed
-        float elapsedTime = 0f;
-
-        // Smoothly move the enemy back over the specified duration
-        while (elapsedTime < pushbackDuration)
+        // Raycast to prevent passing through walls
+        float maxDistance = pushbackAmount;
+        RaycastHit2D hit = Physics2D.Raycast(enemyTransform.position, pushbackDirection, maxDistance, LayerMask.GetMask("Wall"));
+        if (hit.collider != null)
         {
-            // Calculate interpolation factor
-            float t = elapsedTime / pushbackDuration;
-
-            if (enemyTransform != null)
-            {
-                // Interpolate position
-                enemyTransform.position = Vector3.Lerp(originalPosition, targetPosition, t);
-
-                // Ensure scale remains unchanged
-                enemyTransform.localScale = originalScale;
-
-                // Increment time elapsed
-                elapsedTime += Time.deltaTime;
-            }
-
-            yield return null;
+            // Stop slightly before the wall
+            maxDistance = hit.distance - 0.05f; 
         }
 
-        // Make sure the enemy ends at the final position with the original scale
-        enemyTransform.position = targetPosition;
-        enemyTransform.localScale = originalScale;
+        Vector2 targetPosition = originalPosition + pushbackDirection * maxDistance;
+        float elapsedTime = 0f;
+        float smoothFactor = 2f; 
+
+        // Reduce pushback over time 
+        while (elapsedTime < pushbackDuration)
+        {
+            float t = elapsedTime / pushbackDuration;
+
+            // Improved smoothness: cubic easing-out
+            t = 1 - Mathf.Pow(1 - t, 3);
+
+            Vector2 newPosition = Vector2.Lerp(originalPosition, targetPosition, t);
+            enemyRb.MovePosition(newPosition);
+
+            elapsedTime += Time.fixedDeltaTime / smoothFactor;
+            yield return new WaitForFixedUpdate();
+        }
+
+        // Ensure final position is correct
+        enemyRb.MovePosition(targetPosition);
     }
 
 

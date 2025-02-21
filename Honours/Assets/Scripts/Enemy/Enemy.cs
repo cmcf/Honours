@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour, IDamageable
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
-    Color originalColour;
     public float Health { get; set; }
     public float maxHealth = 45f;
     public float currentHealth;
@@ -22,7 +21,6 @@ public class Enemy : MonoBehaviour, IDamageable
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        originalColour = GetComponent<SpriteRenderer>().color;
         currentHealth = maxHealth;
     }
 
@@ -76,8 +74,6 @@ public class Enemy : MonoBehaviour, IDamageable
             // Decrease health
             currentHealth -= damage;
 
-            Debug.Log($"Enemy took {damage} damage! Current health before damage: {currentHealth}");
-
             // Play hurt animation
             PlayHitEffect();
 
@@ -89,8 +85,6 @@ public class Enemy : MonoBehaviour, IDamageable
                 isActive = false;
                 Die();
             }
-
-            Debug.Log($"Enemy health after damage: {currentHealth}");
 
             // Mark as hit so that damage does not process more than once
             hit = true;

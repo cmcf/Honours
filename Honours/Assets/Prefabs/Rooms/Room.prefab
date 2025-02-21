@@ -1348,9 +1348,9 @@ GameObject:
   - component: {fileID: 7373515771427251128}
   - component: {fileID: 586480518297074520}
   - component: {fileID: 7570220036447328569}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TopWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1458,7 +1458,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.01592961, y: 0}
+  m_Offset: {x: -1.0452672, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1468,7 +1468,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9681408, y: 1}
+  m_Size: {x: 1.8261049, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &2645908535916401199
 GameObject:
@@ -1592,7 +1592,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.01590097, y: 0.02735877}
+  m_Offset: {x: -0.0046905875, y: -0.07559919}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1602,7 +1602,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0756714, y: 1.0710025}
+  m_Size: {x: 1.1168545, y: 1.127161}
   m_EdgeRadius: 0
 --- !u!114 &1986239574822736469
 MonoBehaviour:
@@ -1630,9 +1630,9 @@ GameObject:
   - component: {fileID: 8197394104871470225}
   - component: {fileID: 7343428242543838231}
   - component: {fileID: 3509797989514317415}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1740,7 +1740,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.4865913, y: 0}
+  m_Offset: {x: 0.13548706, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1750,7 +1750,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9231697, y: 1}
+  m_Size: {x: 0.2351475, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6011471001824684608
 GameObject:
@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 3713378319482757960}
   - component: {fileID: 8860330179819225646}
   - component: {fileID: 3980210163374005186}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1873,7 +1873,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.38249242, y: 0}
+  m_Offset: {x: -0.17103963, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1883,7 +1883,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.760944, y: 1}
+  m_Size: {x: 0.3380384, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6150304274004030587
 GameObject:
@@ -4267,7 +4267,7 @@ GameObject:
   - component: {fileID: 4407312423944365277}
   - component: {fileID: 3846669874444464480}
   - component: {fileID: 4104064494031512422}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BottomWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4377,7 +4377,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.2106442, y: 0}
+  m_Offset: {x: -0.7740153, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4387,7 +4387,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2867303, y: 1}
+  m_Size: {x: 0.41347402, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &7266634051425037945
 GameObject:
@@ -4660,7 +4660,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.010464072, y: 0.013786167}
+  m_Offset: {x: -0.010464072, y: 0.05840577}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4670,7 +4670,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1825614, y: 0.5073386}
+  m_Size: {x: 1.1825614, y: 0.41809937}
   m_EdgeRadius: 0
 --- !u!114 &3563903038218848147
 MonoBehaviour:

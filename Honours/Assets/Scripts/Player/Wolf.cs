@@ -9,12 +9,15 @@ public class Wolf : MonoBehaviour, IDamageable
     [Header("References")]
     Rigidbody2D rb;
     Animator animator;
+    PlayerHealth playerHealth;
+    public BiteModifier biteModifier;
+    public Transform firePoint;
+    public GameObject knifePrefab;
+   
+    [Header("Speed")]
     [SerializeField] float defaultSpeed = 6f;
     [SerializeField] float currentSpeed = 6f;
     [SerializeField] float attackMoveSpeed = 2f;
-    public BiteModifier biteModifier;
-    PlayerHealth playerHealth;
-
 
     [Header("Knife")]
     List<GameObject> orbitingKnives = new List<GameObject>();
@@ -23,10 +26,7 @@ public class Wolf : MonoBehaviour, IDamageable
     [SerializeField] float orbitSpeed = 200f;  // Rotation speed
     [SerializeField] int knifeCount = 8; 
     [SerializeField] float shieldDuration = 3f; // Time before firing knives
-    bool knivesActive = false;
-
-    public Transform firePoint;
-    public GameObject knifePrefab;
+  
     public float knifeCooldown = 0.5f;
     float lastKnifeTime;
 
@@ -41,6 +41,7 @@ public class Wolf : MonoBehaviour, IDamageable
     public bool isBiting = false; // Track if the player is biting
     public bool canMoveWolf;
 
+    bool knivesActive = false;
     bool isDead = false;
 
     public float Health { get; set; }
@@ -71,6 +72,8 @@ public class Wolf : MonoBehaviour, IDamageable
 
     void OnDash()
     {
+        if (isDead) { return; }
+
         ActivateKnifeShield();
     }
 
