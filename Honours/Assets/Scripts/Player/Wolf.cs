@@ -6,6 +6,7 @@ using static Damage;
 
 public class Wolf : MonoBehaviour, IDamageable
 {
+    [Header("References")]
     Rigidbody2D rb;
     Animator animator;
     [SerializeField] float defaultSpeed = 6f;
@@ -14,6 +15,22 @@ public class Wolf : MonoBehaviour, IDamageable
     public BiteModifier biteModifier;
     PlayerHealth playerHealth;
 
+
+    [Header("Knife")]
+    List<GameObject> orbitingKnives = new List<GameObject>();
+    [SerializeField] float knifeSpeed = 7f;
+    [SerializeField] float orbitRadius = 0.5f; // Distance from player
+    [SerializeField] float orbitSpeed = 200f;  // Rotation speed
+    [SerializeField] int knifeCount = 8; 
+    [SerializeField] float shieldDuration = 3f; // Time before firing knives
+    bool knivesActive = false;
+
+    public Transform firePoint;
+    public GameObject knifePrefab;
+    public float knifeCooldown = 0.5f;
+    float lastKnifeTime;
+
+    [Header("Bite")]
     [SerializeField] Transform bitePoint;  // Point where the bite attack is focused
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
     [SerializeField] int biteDamage = 10;  // Damage dealt by the bite attack
@@ -44,6 +61,17 @@ public class Wolf : MonoBehaviour, IDamageable
         {
             UpdateAnimation();
         }
+
+        if (knivesActive)
+        {
+            UpdateKnifeOrbit();
+        }
+
+    }
+
+    void OnDash()
+    {
+        ActivateKnifeShield();
     }
 
     void FixedUpdate()
@@ -71,6 +99,88 @@ public class Wolf : MonoBehaviour, IDamageable
         biteModifier = newBiteEffect;
     }
 
+    // Spawns knives in an orbiting pattern and starts timer to fire
+    public void ActivateKnifeShield()
+    {
+        if (knivesActive) return; // Prevent multiple activations
+
+        if (Time.time > lastKnifeTime + knifeCooldown)
+        {
+            lastKnifeTime = Time.time;
+            float angleStep = 360f / knifeCount;
+
+            for (int i = 0; i < knifeCount; i++)
+            {
+                float angle = i * angleStep * Mathf.Deg2Rad;
+
+                Vector3 knifePos = new Vector3(
+                    transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                    transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                    0f
+                );
+
+                GameObject knife = Instantiate(knifePrefab, knifePos, Quaternion.identity);
+                orbitingKnives.Add(knife);
+            }
+
+            knivesActive = true;
+
+            // Fire knives after delay
+            Invoke(nameof(FireKnives), shieldDuration);
+        }
+
+        
+    }
+
+    // Keeps knives orbiting around the wolf
+    void UpdateKnifeOrbit()
+    {
+        // Stop updating if knives should fire
+        if (!knivesActive) return; 
+
+        for (int i = 0; i < orbitingKnives.Count; i++)
+        {
+            if (orbitingKnives[i] == null) continue;
+
+            float angle = (Time.time * orbitSpeed + (360f / orbitingKnives.Count) * i) * Mathf.Deg2Rad;
+
+            Vector3 knifePos = new Vector3(
+                transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                0f
+            );
+
+            orbitingKnives[i].transform.position = knifePos;
+
+            // Rotate knives to always face outward
+            float rotationAngle = Mathf.Atan2(knifePos.y - transform.position.y, knifePos.x - transform.position.x) * Mathf.Rad2Deg;
+            orbitingKnives[i].transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+        }
+    }
+
+    void FireKnives()
+    {
+        // Stop orbiting
+        knivesActive = false; 
+
+        foreach (GameObject knife in orbitingKnives)
+        {
+            if (knife == null) continue;
+
+            // Get the Knife script and call Fire function
+            KnifeProjectile knifeScript = knife.GetComponent<KnifeProjectile>();
+            if (knifeScript != null)
+            {
+                Vector3 direction = (knife.transform.position - transform.position).normalized;
+                // Fire outward set knife speed
+                knifeScript.Fire(direction, knifeSpeed); 
+            }
+        }
+        // Clear the list after firing
+
+        orbitingKnives.Clear(); 
+    }
+
 
     public void BiteAttack()
     {
@@ -80,14 +190,15 @@ public class Wolf : MonoBehaviour, IDamageable
             isBiting = true; 
             animator.SetBool("isBiting", true); 
             currentSpeed = attackMoveSpeed;
-            SetBiteDirection(); // Set the correct bite direction based on movement
+            // Set the correct bite direction based on movement
+            SetBiteDirection();
         }
 
         Invoke("EndBiteAttack", 0.3f); 
     }
 
 
-    private void SetBiteDirection()
+    void SetBiteDirection()
     {
         int direction = 0; // Default to Down
 
