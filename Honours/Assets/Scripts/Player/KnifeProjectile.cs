@@ -11,6 +11,8 @@ public class KnifeProjectile : MonoBehaviour
     float pushbackDuration = 0.3f;
     float pushbackAmount = 0.4f;
 
+    public float deflectionForce = 10f;
+
     void Start()
     {
         damage = Random.Range(1, 2);
@@ -32,6 +34,12 @@ public class KnifeProjectile : MonoBehaviour
                 StartCoroutine(PushbackEnemy(enemy.transform, transform.position));
 
             }
+        }
+
+        else if (other.CompareTag("EnemyProjectile"))
+        {
+            // Handle deflection of enemy projectiles
+            DeflectProjectile(other);
         }
     }
 
@@ -84,6 +92,21 @@ public class KnifeProjectile : MonoBehaviour
             enemyRb.MovePosition(targetPosition);
         }
             
+    }
+
+    void DeflectProjectile(Collider2D projectile)
+    {
+        Rigidbody2D projectileRb = projectile.GetComponent<Rigidbody2D>();
+        if (projectileRb != null)
+        {
+            // Get the direction to deflect the projectile
+            Vector2 deflectionDirection = (projectile.transform.position - transform.position).normalized;
+
+            // Apply force to deflect the projectile
+            projectileRb.velocity = deflectionDirection * deflectionForce;
+
+            Destroy(projectile.gameObject);
+        }
     }
 
     public void Fire(Vector3 direction, float speed)

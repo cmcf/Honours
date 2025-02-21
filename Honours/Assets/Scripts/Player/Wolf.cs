@@ -35,9 +35,12 @@ public class Wolf : MonoBehaviour, IDamageable
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
     [SerializeField] int biteDamage = 10;  // Damage dealt by the bite attack
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
+                                            
+    float biteCooldown = 0.2f;
+    float lastBiteTime;
 
     public Vector2 moveDirection;
-    private Vector2 lastMoveDirection; // Tracks last movement direction
+    Vector2 lastMoveDirection; // Tracks last movement direction
     public bool isBiting = false; // Track if the player is biting
     public bool canMoveWolf;
 
@@ -102,7 +105,7 @@ public class Wolf : MonoBehaviour, IDamageable
     // Spawns knives in an orbiting pattern and starts timer to fire
     public void ActivateKnifeShield()
     {
-        if (knivesActive) return; // Prevent multiple activations
+        if (knivesActive) return; 
 
         if (Time.time > lastKnifeTime + knifeCooldown)
         {
@@ -184,12 +187,16 @@ public class Wolf : MonoBehaviour, IDamageable
 
     public void BiteAttack()
     {
-        if (!isBiting)
+        // Only allow the bite attack if the cooldown has passed
+        if (Time.time > lastBiteTime + biteCooldown && !isBiting)
         {
+            lastBiteTime = Time.time; 
+
             isBiting = true;
             animator.SetBool("isBiting", true);
             currentSpeed = attackMoveSpeed;
             SetBiteDirection();
+
             StartCoroutine(EndBiteAttackCoroutine());
         }
     }
@@ -202,24 +209,67 @@ public class Wolf : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(0.1f);
     }
 
-    IEnumerator BiteAttackCoroutine()
-    {
-        isBiting = true;
-        animator.SetBool("isBiting", true);
-        currentSpeed = attackMoveSpeed;
-        yield return new WaitForSeconds(0.15f);
-        BiteDamage();
-        yield return new WaitForSeconds(0.2f); 
-        EndBiteAttack();
-    }
-
-
     IEnumerator EndBiteAttackCoroutine()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f); 
         isBiting = false;
         currentSpeed = defaultSpeed;
         animator.SetBool("isBiting", false);
+
+        // Resume movement if the player is still pressing movement keys
+        if (moveDirection != Vector2.zero)
+        {
+            rb.velocity = moveDirection * currentSpeed;
+        }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
+
+        UpdateAnimation();
+    }
+    public void EndBiteAttack()
+    {
+        isBiting = false;
+        currentSpeed = defaultSpeed;
+        animator.SetBool("isBiting", false);
+
+        // If the player is still holding a movement direction, resume movement
+        if (moveDirection != Vector2.zero)
+        {
+            rb.velocity = moveDirection * currentSpeed;
+        }
+        else
+        {
+            // Ensure the rigidbody isn't stuck
+            rb.velocity = Vector2.zero;
+        }
+
+        UpdateAnimation();
+    }
+
+
+    public void BiteDamage()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            if (enemy.TryGetComponent<IDamageable>(out IDamageable damageable))
+            {
+                // Apply the modifier damage
+                damageable.Damage(biteDamage);
+
+                // Apply the modifier effect
+                biteModifier.ApplyEffect(damageable, this);
+
+                if (isBiting)
+                {
+                    StopCoroutine(EndBiteAttackCoroutine());
+                    EndBiteAttack();
+                }
+            }
+        }
     }
 
     void SetBiteDirection()
@@ -251,50 +301,6 @@ public class Wolf : MonoBehaviour, IDamageable
         animator.SetFloat("animMoveY", lastMoveDirection.y); // Set Y direction
         animator.SetFloat("speed", speed); // Set speed for idle/walk transitions
     }
-
-    public void BiteDamage()
-    {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, enemyLayer);
-
-        foreach (Collider2D enemy in hitEnemies)
-        {
-            if (enemy.TryGetComponent<IDamageable>(out IDamageable damageable))
-            {
-                // Apply the modifier damage
-                damageable.Damage(biteDamage); 
-
-                // Apply the modifier effect
-                biteModifier.ApplyEffect(damageable, this);
-
-                if (isBiting)
-                {
-                    StopCoroutine(EndBiteAttackCoroutine());
-                    EndBiteAttack();
-                }
-            }
-        }
-    }
-
-    public void EndBiteAttack()
-    {
-        isBiting = false;
-        currentSpeed = defaultSpeed;
-        animator.SetBool("isBiting", false);
-
-        // If the player is still holding a movement direction, resume movement
-        if (moveDirection != Vector2.zero)
-        {
-            rb.velocity = moveDirection * currentSpeed;
-        }
-        else
-        {
-            // Ensure the rigidbody isn't stuck
-            rb.velocity = Vector2.zero;
-        }
-
-        UpdateAnimation();
-    }
-
 
     void OnDrawGizmosSelected()
     {
