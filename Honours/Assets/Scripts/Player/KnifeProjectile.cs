@@ -69,19 +69,22 @@ public class KnifeProjectile : MonoBehaviour
             t = 1 - Mathf.Pow(1 - t, 3);
 
             Vector2 newPosition = Vector2.Lerp(originalPosition, targetPosition, t);
-            enemyRb.MovePosition(newPosition);
-
+            if (enemyRb != null)
+            {
+                enemyRb.MovePosition(newPosition);
+            }
+            
             elapsedTime += Time.fixedDeltaTime / smoothFactor;
             yield return new WaitForFixedUpdate();
         }
 
-        // Ensure final position is correct
-        enemyRb.MovePosition(targetPosition);
+        if (enemyRb != null)
+        {
+            // Ensure final position is correct
+            enemyRb.MovePosition(targetPosition);
+        }
+            
     }
-
-
-
-
 
     public void Fire(Vector3 direction, float speed)
     {

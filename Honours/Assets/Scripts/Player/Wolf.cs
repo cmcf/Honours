@@ -42,6 +42,7 @@ public class Wolf : MonoBehaviour, IDamageable
     public bool canMoveWolf;
 
     bool knivesActive = false;
+    bool canBite = true;
     bool isDead = false;
 
     public float Health { get; set; }
@@ -57,11 +58,7 @@ public class Wolf : MonoBehaviour, IDamageable
 
     void Update()
     {
-        // Only update movement animations if not biting
-        if (!isBiting) 
-        {
-            UpdateAnimation();
-        }
+        UpdateAnimation();
 
         if (knivesActive)
         {
@@ -187,19 +184,43 @@ public class Wolf : MonoBehaviour, IDamageable
 
     public void BiteAttack()
     {
-        if (!isBiting) // Check if not already biting
+        if (!isBiting)
         {
-            // Play bite animation
-            isBiting = true; 
-            animator.SetBool("isBiting", true); 
+            isBiting = true;
+            animator.SetBool("isBiting", true);
             currentSpeed = attackMoveSpeed;
-            // Set the correct bite direction based on movement
             SetBiteDirection();
+            StartCoroutine(EndBiteAttackCoroutine());
         }
-
-        Invoke("EndBiteAttack", 0.3f); 
     }
 
+    IEnumerator BiteLunge()
+    {
+        float lungeDistance = 0.3f;
+        Vector2 lungeVector = lastMoveDirection.normalized * lungeDistance;
+        rb.AddForce(lungeVector, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.1f);
+    }
+
+    IEnumerator BiteAttackCoroutine()
+    {
+        isBiting = true;
+        animator.SetBool("isBiting", true);
+        currentSpeed = attackMoveSpeed;
+        yield return new WaitForSeconds(0.15f);
+        BiteDamage();
+        yield return new WaitForSeconds(0.2f); 
+        EndBiteAttack();
+    }
+
+
+    IEnumerator EndBiteAttackCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+        isBiting = false;
+        currentSpeed = defaultSpeed;
+        animator.SetBool("isBiting", false);
+    }
 
     void SetBiteDirection()
     {
@@ -243,19 +264,37 @@ public class Wolf : MonoBehaviour, IDamageable
                 damageable.Damage(biteDamage); 
 
                 // Apply the modifier effect
-                biteModifier.ApplyEffect(damageable, this); 
+                biteModifier.ApplyEffect(damageable, this);
+
+                if (isBiting)
+                {
+                    StopCoroutine(EndBiteAttackCoroutine());
+                    EndBiteAttack();
+                }
             }
         }
     }
 
     public void EndBiteAttack()
     {
-        // Reset isBiting flag to allow movement animation states
         isBiting = false;
         currentSpeed = defaultSpeed;
         animator.SetBool("isBiting", false);
+
+        // If the player is still holding a movement direction, resume movement
+        if (moveDirection != Vector2.zero)
+        {
+            rb.velocity = moveDirection * currentSpeed;
+        }
+        else
+        {
+            // Ensure the rigidbody isn't stuck
+            rb.velocity = Vector2.zero;
+        }
+
         UpdateAnimation();
     }
+
 
     void OnDrawGizmosSelected()
     {
