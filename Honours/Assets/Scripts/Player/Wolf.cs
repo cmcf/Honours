@@ -35,7 +35,10 @@ public class Wolf : MonoBehaviour, IDamageable
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
     [SerializeField] int biteDamage = 10;  // Damage dealt by the bite attack
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
-                                            
+
+    [Header("Movement")]
+    [SerializeField] float lungeDistance = 0.5f;
+
     float biteCooldown = 0.2f;
     float lastBiteTime;
 
@@ -204,7 +207,7 @@ public class Wolf : MonoBehaviour, IDamageable
         float lungeDuration = 0.1f; // Duration of the lunge
         float elapsedTime = 0f;
         Vector2 startPos = rb.position;
-        Vector2 targetPos = startPos + lastMoveDirection.normalized * 1f; // Lunge distance increased for visibility
+        Vector2 targetPos = startPos + lastMoveDirection.normalized * lungeDistance; 
 
         while (elapsedTime < lungeDuration)
         {
