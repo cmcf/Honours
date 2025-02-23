@@ -23,7 +23,7 @@ public class BiteModifier : ScriptableObject
         }
     }
 
-    private IEnumerator ApplyEffectCoroutine(IDamageable target, MonoBehaviour enemy, MonoBehaviour caller)
+    IEnumerator ApplyEffectCoroutine(IDamageable target, MonoBehaviour enemy, MonoBehaviour caller)
     {
         Transform enemyTransform = enemy.transform;
         GameObject effectInstance = null;
