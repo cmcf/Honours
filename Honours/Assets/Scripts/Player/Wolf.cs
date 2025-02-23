@@ -35,7 +35,10 @@ public class Wolf : MonoBehaviour, IDamageable
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
     [SerializeField] int biteDamage = 10;  // Damage dealt by the bite attack
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
-                                            
+
+    [Header("Movement")]
+    [SerializeField] float lungeDistance = 0.5f;
+
     float biteCooldown = 0.2f;
     float lastBiteTime;
 
@@ -190,11 +193,9 @@ public class Wolf : MonoBehaviour, IDamageable
         // Only allow the bite attack if the cooldown has passed
         if (Time.time > lastBiteTime + biteCooldown && !isBiting)
         {
-            lastBiteTime = Time.time; 
-
-            isBiting = true;
-            animator.SetBool("isBiting", true);
-            currentSpeed = attackMoveSpeed;
+            lastBiteTime = Time.time;
+            StartCoroutine(BiteLunge());
+           
             SetBiteDirection();
 
             StartCoroutine(EndBiteAttackCoroutine());
@@ -203,11 +204,26 @@ public class Wolf : MonoBehaviour, IDamageable
 
     IEnumerator BiteLunge()
     {
-        float lungeDistance = 0.3f;
-        Vector2 lungeVector = lastMoveDirection.normalized * lungeDistance;
-        rb.AddForce(lungeVector, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.1f);
+        float lungeDuration = 0.1f; // Duration of the lunge
+        float elapsedTime = 0f;
+        Vector2 startPos = rb.position;
+        Vector2 targetPos = startPos + lastMoveDirection.normalized * lungeDistance; 
+
+        while (elapsedTime < lungeDuration)
+        {
+            rb.MovePosition(Vector2.Lerp(startPos, targetPos, elapsedTime / lungeDuration));
+            elapsedTime += Time.deltaTime;
+
+            isBiting = true;
+            animator.SetBool("isBiting", true);
+            currentSpeed = attackMoveSpeed;
+
+            yield return null;
+        }
+
+        rb.MovePosition(targetPos); // Ensure final position is set correctly
     }
+
 
     IEnumerator EndBiteAttackCoroutine()
     {
