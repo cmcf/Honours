@@ -3941,6 +3941,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  lungeDistance: 0.5
   moveDirection: {x: 0, y: 0}
   isBiting: 0
   canMoveWolf: 0
