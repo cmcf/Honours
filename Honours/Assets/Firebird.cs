@@ -138,18 +138,42 @@ public class Firebird : MonoBehaviour
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
-    void FireProjectile()
+    void FireSpreadAtPlayer()
     {
         if (projectilePrefab == null || firePoint == null) return;
 
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        Rigidbody2D projRb = projectile.GetComponent<Rigidbody2D>();
+        int numberOfProjectiles = 5; // Number of spread bullets
+        float spreadAngle = 30f; // How wide the spread should be
+        float angleStep = spreadAngle / (numberOfProjectiles - 1);
 
-        if (projRb != null)
+        for (int i = 0; i < numberOfProjectiles; i++)
         {
-            Vector2 direction = (player.position - firePoint.position).normalized;
-            projRb.velocity = direction * projectileSpeed;
+            float angle = -spreadAngle / 2 + angleStep * i; // Calculate angle for each bullet
+
+            Vector2 fireDirection = (player.position - firePoint.position).normalized;
+            fireDirection = RotateVector(fireDirection, angle); // Rotate the direction by the calculated angle
+
+            GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Rigidbody2D projRb = projectile.GetComponent<Rigidbody2D>();
+
+            if (projRb != null)
+            {
+                projRb.velocity = fireDirection * projectileSpeed;
+            }
         }
+    }
+
+    // Helper function to rotate a vector by a given angle
+    Vector2 RotateVector(Vector2 vector, float angle)
+    {
+        float radian = angle * Mathf.Deg2Rad;
+        float cos = Mathf.Cos(radian);
+        float sin = Mathf.Sin(radian);
+
+        float x = vector.x * cos - vector.y * sin;
+        float y = vector.x * sin + vector.y * cos;
+
+        return new Vector2(x, y);
     }
 
     // Coroutine to fire at the player
@@ -162,7 +186,7 @@ public class Firebird : MonoBehaviour
         // Keep firing at the player
         while (true)
         {
-            FireProjectile();  // Fire a projectile at the player
+            FireSpreadAtPlayer();  // Fire a projectile at the player
             yield return new WaitForSeconds(fireRate); // Wait for the next shot
         }
     }
