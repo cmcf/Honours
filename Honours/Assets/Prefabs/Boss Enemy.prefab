@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7946868020449870828}
   - component: {fileID: 1147851224862576677}
   - component: {fileID: 2998702969684664906}
+  - component: {fileID: 8086855544101789147}
   - component: {fileID: 7935234978596684981}
   - component: {fileID: 6456316246836538592}
-  - component: {fileID: 8086855544101789147}
   m_Layer: 6
   m_Name: Firebird
   m_TagString: Untagged
@@ -134,6 +134,37 @@ MonoBehaviour:
   moveSpeed: 0
   freezeTimer: 0
   level: 0
+  isActive: 0
+  currentState: 0
+--- !u!114 &8086855544101789147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963411700256930395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a85b82c7fdf4c4c8400ea19e1b8d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  rb: {fileID: 0}
+  maxHealth: 45
+  currentHealth: 0
+  moveSpeed: 5
+  freezeTimer: 0
+  level: 0
+  isActive: 0
+  currentState: 0
+  pauseDuration: 3
+  moveDuration: 2
+  projectilePrefab: {fileID: 4040207891986179867, guid: 866b00de7334bed4587d6c43be998368, type: 3}
+  firePoint: {fileID: 1855401804210265077}
+  projectileSpeed: 5
+  fireRate: 2
+  currentRoom: {fileID: 0}
 --- !u!50 &7935234978596684981
 Rigidbody2D:
   serializedVersion: 4
@@ -207,26 +238,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &8086855544101789147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6963411700256930395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a85b82c7fdf4c4c8400ea19e1b8d58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  pauseDuration: 3
-  moveDuration: 2
-  projectilePrefab: {fileID: 4040207891986179867, guid: 866b00de7334bed4587d6c43be998368, type: 3}
-  firePoint: {fileID: 1855401804210265077}
-  projectileSpeed: 5
-  fireRate: 2
-  currentRoom: {fileID: 0}
 --- !u!1 &7680301594631846213
 GameObject:
   m_ObjectHideFlags: 0

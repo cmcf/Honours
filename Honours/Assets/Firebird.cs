@@ -2,14 +2,13 @@ using TMPro;
 using System.Collections;
 using UnityEngine;
 
-public class Firebird : MonoBehaviour
+
+public class Firebird : Enemy
 {
     Transform player;
-    public float moveSpeed = 5f; // Movement speed
+    BoxCollider2D boxCollider2D;
     public float pauseDuration = 1.5f; // Time spent at each position
     [SerializeField] float moveDuration = 2f; // Time to move between sides
-    Rigidbody2D rb;
-    Animator animator;
 
     public GameObject projectilePrefab;
     public Transform firePoint;
@@ -22,13 +21,13 @@ public class Firebird : MonoBehaviour
     public Room currentRoom;
     Coroutine firingCoroutine;
 
-    bool isAppearing = true;
 
     void Start()
     {
         // References 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         // Start boss movement
         StartCoroutine(WaitForAppearanceAndStartRoutine());
     }
@@ -44,23 +43,20 @@ public class Firebird : MonoBehaviour
         }
     }
 
-    void MoveInDirection(Vector2 direction)
-    {
-        rb.velocity = direction.normalized * moveSpeed;
-    }
-
     // Coroutine to wait for the appearance animation to finish before starting the boss routine
     IEnumerator WaitForAppearanceAndStartRoutine()
     {
-        // Wait until the "Appear" animation is complete (detect it based on its length or state)
+        // Disable collider during appearance
+        GetComponent<Collider2D>().enabled = false;
+        // Wait until the "Appear" animation is complete 
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
         float animationDuration = stateInfo.length; // Get the duration of the current animation
 
         // Wait for the animation to finish
         yield return new WaitForSeconds(animationDuration);
 
-        // Now the "Appear" animation is done, so start the boss routine
-        isAppearing = false;
+        ChangeState(EnemyState.Attacking);
+        boxCollider2D.enabled = true;
         StartCoroutine(BossRoutine());
     }
 
@@ -78,7 +74,7 @@ public class Firebird : MonoBehaviour
 
     IEnumerator BossRoutine()
     {
-
+        
         while (true)
         {
             // Move to the four positions: top, bottom, left, and right

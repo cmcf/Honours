@@ -18,10 +18,30 @@ public class Enemy : MonoBehaviour, IDamageable
     bool hit = false;
     bool isFrozen = false;
 
+    public EnemyState currentState = EnemyState.Idle;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
+    }
+
+    // Method to change the state
+    public void ChangeState(EnemyState newState)
+    {
+        if (currentState != newState)
+        {
+            currentState = newState;
+            Debug.Log($"State changed to: {currentState}");
+            switch (currentState)
+            {
+                case EnemyState.Attacking:
+                    break;
+                case EnemyState.Appear:
+                    break;
+                case EnemyState.Idle:                    
+                    break;
+            }
+        }
     }
 
     public void SetActiveState(bool active)
@@ -68,14 +88,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Damage(float damage)
     {
-        Debug.Log("Hit");
         // Only deal damage if not already hit and the enemy is active
         if (!hit && isActive)
         {
             // Decrease health
             currentHealth -= damage;
-
-            Debug.Log(currentHealth);
 
             // Play hurt animation
             PlayHitEffect();
