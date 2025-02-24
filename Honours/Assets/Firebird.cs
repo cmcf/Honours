@@ -5,7 +5,6 @@ using UnityEngine;
 public class Firebird : MonoBehaviour
 {
     Transform player;
-
     public float moveSpeed = 5f; // Movement speed
     public float pauseDuration = 1.5f; // Time spent at each position
     [SerializeField] float moveDuration = 2f; // Time to move between sides
@@ -23,13 +22,15 @@ public class Firebird : MonoBehaviour
     public Room currentRoom;
     Coroutine firingCoroutine;
 
+    bool isAppearing = true;
+
     void Start()
     {
         // References 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        StartCoroutine(BossRoutine());
+        // Start boss movement
+        StartCoroutine(WaitForAppearanceAndStartRoutine());
     }
 
     void Update()
@@ -46,6 +47,21 @@ public class Firebird : MonoBehaviour
     void MoveInDirection(Vector2 direction)
     {
         rb.velocity = direction.normalized * moveSpeed;
+    }
+
+    // Coroutine to wait for the appearance animation to finish before starting the boss routine
+    IEnumerator WaitForAppearanceAndStartRoutine()
+    {
+        // Wait until the "Appear" animation is complete (detect it based on its length or state)
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        float animationDuration = stateInfo.length; // Get the duration of the current animation
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(animationDuration);
+
+        // Now the "Appear" animation is done, so start the boss routine
+        isAppearing = false;
+        StartCoroutine(BossRoutine());
     }
 
     // Updates animation direction based on velocity

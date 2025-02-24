@@ -10,7 +10,6 @@ public class MeleeEnemy : Enemy
 
     Transform playerLocation;
     public int damage;
-    int health;
 
     [Header("State Control")]
     bool reachedPlayer = false;

@@ -25,7 +25,6 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Health")]
     
     [SerializeField] float health = 50f;
-    public float Health { get; set; }
 
     [Header("Firing")]
     float lastFireTime = 0f;

@@ -7,14 +7,14 @@ public class Enemy : MonoBehaviour, IDamageable
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
-    public float Health { get; set; }
+
     public float maxHealth = 45f;
     public float currentHealth;
     public float moveSpeed;
     public float freezeTimer;
     public int level;
 
-    bool isActive = false;
+    public bool isActive = false;
     bool hit = false;
     bool isFrozen = false;
 
@@ -68,11 +68,14 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void Damage(float damage)
     {
+        Debug.Log("Hit");
         // Only deal damage if not already hit and the enemy is active
         if (!hit && isActive)
         {
             // Decrease health
             currentHealth -= damage;
+
+            Debug.Log(currentHealth);
 
             // Play hurt animation
             PlayHitEffect();
