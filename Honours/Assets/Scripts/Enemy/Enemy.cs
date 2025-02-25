@@ -45,10 +45,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public float GetHealthPercentage()
-    {
-        return currentHealth / maxHealth;
-    }
+ 
 
     public void SetActiveState(bool active)
     {
@@ -204,7 +201,6 @@ public class Enemy : MonoBehaviour, IDamageable
         }
 
     }
-
 
     void Die()
     {

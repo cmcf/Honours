@@ -9,15 +9,15 @@ public class BossFormManager : MonoBehaviour
     public float switchCooldown = 10f; // Prevents instant switching
     float lastSwitchTime;
     enum BossForm { Firebird, Panther }
-    BossForm currentForm;
+    BossForm currentForm = BossForm.Firebird;
 
-    Enemy enemy;
+    BossEnemy enemy;
 
     void Start()
     {
-        enemy = GetComponentInChildren<Enemy>();
+        enemy = GetComponent<BossEnemy>();
         // Randomly start as Firebird or Panther
-        currentForm = (Random.value > 0.5f) ? BossForm.Firebird : BossForm.Panther;
+        //currentForm = (Random.value > 0.5f) ? BossForm.Firebird : BossForm.Panther;
         ActivateForm(currentForm, transform.position);
     }
 
@@ -28,14 +28,6 @@ public class BossFormManager : MonoBehaviour
         if (enemy != null)
         {
             float healthPercent = enemy.GetHealthPercentage();
-
-            // Health-Based Switching
-            if (healthPercent <= 0.75f && currentForm == BossForm.Firebird)
-                SwitchForm();
-            else if (healthPercent <= 0.50f && currentForm == BossForm.Panther)
-                SwitchForm();
-            else if (healthPercent <= 0.25f && currentForm == BossForm.Firebird)
-                SwitchForm();
         }
 
         // Proximity-Based Switching
@@ -47,7 +39,7 @@ public class BossFormManager : MonoBehaviour
         // Random Switching After Some Time
         if (Random.Range(0f, 1f) < 0.01f) // ~1% chance per frame to switch
         {
-            SwitchForm();
+            //SwitchForm();
         }
     }
 
@@ -74,6 +66,8 @@ public class BossFormManager : MonoBehaviour
         // Swap to the other form
         currentForm = (currentForm == BossForm.Firebird) ? BossForm.Panther : BossForm.Firebird;
         ActivateForm(currentForm, lastPosition);
+        GetCurrentAnimator();
+        GetCurrentRb();
     }
 
     void ActivateForm(BossForm newForm, Vector3 position)
@@ -86,5 +80,37 @@ public class BossFormManager : MonoBehaviour
             firebirdForm.transform.position = position;
         else
             pantherForm.transform.position = position;
+    }
+
+    public Animator GetCurrentAnimator()
+    {
+        if (currentForm == BossForm.Firebird)
+            return firebirdForm.GetComponent<Animator>();
+        else
+            return pantherForm.GetComponent<Animator>();
+    }
+
+   public Rigidbody2D GetCurrentRb()
+    {
+        if (currentForm == BossForm.Firebird)
+            return firebirdForm.GetComponent<Rigidbody2D>();
+        else
+            return pantherForm.GetComponent<Rigidbody2D>();
+    }
+
+    void TempUpdateCode()
+    {
+        if (enemy != null)
+        {
+            float healthPercent = enemy.GetHealthPercentage();
+
+            // Health-Based Switching
+            if (healthPercent <= 0.75f && currentForm == BossForm.Firebird)
+                SwitchForm();
+            else if (healthPercent <= 0.50f && currentForm == BossForm.Panther)
+                SwitchForm();
+            else if (healthPercent <= 0.25f && currentForm == BossForm.Firebird)
+                SwitchForm();
+        }
     }
 }

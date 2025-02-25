@@ -1,13 +1,15 @@
 using TMPro;
 using System.Collections;
 using UnityEngine;
+using static Damage;
 
-
-public class Firebird : Enemy
+public class Firebird : MonoBehaviour, IDamageable
 {
     Transform player;
     BoxCollider2D boxCollider2D;
-    public GameObject pantherPrefab;
+    Animator animator;
+    Rigidbody2D rb;
+
     public float pauseDuration = 1.5f; // Time spent at each position
     [SerializeField] float moveDuration = 2f; // Time to move between sides
 
@@ -17,11 +19,13 @@ public class Firebird : Enemy
     public float fireRate = 2f; // Time between shots
 
     Vector2 targetPosition;
+    public EnemyState currentState;
     int moveCount = 0; // Tracks number of moves
 
     public Room currentRoom;
     Coroutine firingCoroutine;
     bool isMoving = false;
+    bool hasAppeared = false;
 
     // Enum for different phases of the boss
     public enum FirebirdPhase { Phase1, Phase2, Phase3 }
@@ -33,8 +37,17 @@ public class Firebird : Enemy
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
-        // Start boss movement
-        StartCoroutine(WaitForAppearanceAndStartRoutine());
+
+        if (hasAppeared)
+        {
+            // Skip appearance wait and go straight into attacking
+            StartCoroutine(BossRoutine());
+        }
+        else
+        {
+            // First-time appearance
+            StartCoroutine(WaitForAppearanceAndStartRoutine());
+        }
     }
 
     void Update()
@@ -48,19 +61,29 @@ public class Firebird : Enemy
         }
     }
 
+    public void Damage(float damage)
+    {
+        if (currentState == EnemyState.Dead) { return; }
+        // Current health is decreased by the damage received
+        BossEnemy enemy = GetComponentInParent<BossEnemy>();
+        enemy.Damage(damage);
+    }
+
     // Coroutine to wait for the appearance animation to finish before starting the boss routine
     IEnumerator WaitForAppearanceAndStartRoutine()
     {
         // Disable collider during appearance
         GetComponent<Collider2D>().enabled = false;
-        // Wait until the "Appear" animation is complete 
-        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
-        float animationDuration = stateInfo.length; // Get the duration of the current animation
 
-        // Wait for the animation to finish
-        yield return new WaitForSeconds(animationDuration);
+        if (!hasAppeared) // Only play "Appear" animation the first time
+        {
+            animator.Play("Appear"); // Play appear animation
+            yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+            hasAppeared = true; // Mark as appeared
+        }
 
-        ChangeState(EnemyState.Attacking);
+        // Enable collider and start the boss routine
+        currentState = EnemyState.Attacking;
         boxCollider2D.enabled = true;
         StartCoroutine(BossRoutine());
     }

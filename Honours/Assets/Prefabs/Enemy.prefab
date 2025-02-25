@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7440780272706730979}
   - component: {fileID: 7893117136063839857}
   - component: {fileID: -7668288653603643390}
-  - component: {fileID: 4171604732914402250}
   - component: {fileID: -2637903227089958092}
   - component: {fileID: 98956588036350151}
   m_Layer: 6
@@ -167,28 +166,6 @@ MonoBehaviour:
   projectileSpeed: 8
   nextFireTime: 0
   doubleProjectileChance: 0.3
---- !u!114 &4171604732914402250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164709598715183366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d2d56353bd991458d3c7ee7590d666, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 98956588036350151}
-  spriteRenderer: {fileID: 7440780272706730979}
-  rb: {fileID: 0}
-  maxHealth: 45
-  currentHealth: 0
-  moveSpeed: 0
-  freezeTimer: 0
-  level: 0
-  isActive: 0
-  currentState: 0
 --- !u!50 &-2637903227089958092
 Rigidbody2D:
   serializedVersion: 4
