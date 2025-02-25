@@ -109,8 +109,11 @@ public class Firebird : Enemy
 
     IEnumerator MoveToSetPosition(Vector2 target)
     {
-
         isMoving = true;
+
+        // Disable the collider while moving
+        boxCollider2D.enabled = false;
+
         Vector2 startPosition = transform.position;
 
         // Calculate direction for animation
@@ -126,11 +129,16 @@ public class Firebird : Enemy
         }
 
         transform.position = target;
+
+        // Enable the collider once movement is finished
+        boxCollider2D.enabled = true;
+
         isMoving = false;
 
         // Stop movement animation when reaching the position
         UpdateAnimationDirection(Vector2.zero);
     }
+
 
     // Clamps the firebird's position to stay within the room boundaries
     void ClampPosition()

@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public bool isActive = false;
     bool hit = false;
     bool isFrozen = false;
+    float destroyDelay = 0.6f;
 
     public EnemyState currentState = EnemyState.Idle;
     void Start()
@@ -159,13 +160,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     void PlayHitEffect()
     {
-        if (animator != null)
+        if (animator != null && currentState != EnemyState.Dead)
         {
             animator.SetBool("isHurt", true);
-
             Invoke("ResetHit", 0.2f);
         }
-         
+
     }
 
     void ResetHit()
@@ -203,11 +203,23 @@ public class Enemy : MonoBehaviour, IDamageable
 
     void Die()
     {
-        RoomController.Instance.StartCoroutine(RoomController.Instance.RoomCoroutine());
+        currentState = EnemyState.Dead;
+        animator.SetBool("isHurt", false);
+        // Start the death animation
         animator.SetTrigger("isDead");
-        //FindObjectOfType<EnemyManager>().OnEnemyDefeated();
-        Destroy(gameObject, 0.8f);
+       
+
+        // Call a coroutine to delay destruction of the game object
+        StartCoroutine(WaitForDeathAnimation());
     }
 
+    IEnumerator WaitForDeathAnimation()
+    {
+        // Wait for the death animation to finish
+        yield return new WaitForSeconds(destroyDelay);
+
+        Destroy(rb);
+        Destroy(gameObject);
+    }
 
 }

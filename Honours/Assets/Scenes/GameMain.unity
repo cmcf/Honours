@@ -3975,6 +3975,16 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!50 &1932682889 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7935234978596684981, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+  m_PrefabInstance: {fileID: 1754553285392444315}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1932682892 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1147851224862576677, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+  m_PrefabInstance: {fileID: 1754553285392444315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2019253174
 GameObject:
   m_ObjectHideFlags: 0
@@ -4624,8 +4634,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2998702969684664906, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1932682889}
+    - target: {fileID: 2998702969684664906, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1932682892}
+    - target: {fileID: 2998702969684664906, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
       propertyPath: isActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998702969684664906, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: maxHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4700,9 +4722,25 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8086855544101789147, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1932682892}
+    - target: {fileID: 8086855544101789147, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: fireRate
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086855544101789147, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1606285804524116695}
+    - target: {fileID: 8086855544101789147, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: pauseDuration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086855544101789147, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: baseProjectileSpeed
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8991972665906897161, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
       propertyPath: m_Name
       value: Boss Enemy
