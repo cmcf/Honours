@@ -7,6 +7,7 @@ public class Firebird : Enemy
 {
     Transform player;
     BoxCollider2D boxCollider2D;
+    public GameObject pantherPrefab;
     public float pauseDuration = 1.5f; // Time spent at each position
     [SerializeField] float moveDuration = 2f; // Time to move between sides
 
@@ -25,6 +26,9 @@ public class Firebird : Enemy
     // Enum for different phases of the boss
     public enum FirebirdPhase { Phase1, Phase2, Phase3 }
     public FirebirdPhase currentPhase = FirebirdPhase.Phase1;
+
+    public enum BossForm { Firebird, Panther }
+    public BossForm currentForm = BossForm.Firebird;
     void Start()
     {
         // References 

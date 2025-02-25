@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -516,7 +516,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Feline_Mutated_Panther_Idle_0: 1672769912608968437
+      Feline_Mutated_Panther_Idle_1: -5499069137513168649
+      Feline_Mutated_Panther_Idle_10: 5993104776244411870
+      Feline_Mutated_Panther_Idle_11: -1250247598663701105
+      Feline_Mutated_Panther_Idle_12: -5908475019868478589
+      Feline_Mutated_Panther_Idle_13: -2928885368157281891
+      Feline_Mutated_Panther_Idle_14: 3263229517048656328
+      Feline_Mutated_Panther_Idle_15: -6605657990090541174
+      Feline_Mutated_Panther_Idle_2: 4192431884756963320
+      Feline_Mutated_Panther_Idle_3: 7964643211230822107
+      Feline_Mutated_Panther_Idle_4: -7376171487306432888
+      Feline_Mutated_Panther_Idle_5: 1515417377315728351
+      Feline_Mutated_Panther_Idle_6: 5204492723766609744
+      Feline_Mutated_Panther_Idle_7: 3052519041008774196
+      Feline_Mutated_Panther_Idle_8: -396020361001173145
+      Feline_Mutated_Panther_Idle_9: 7956868510658929684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
