@@ -1,0 +1,90 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BossFormManager : MonoBehaviour
+{
+    public GameObject firebirdForm;
+    public GameObject pantherForm;
+    public float switchCooldown = 10f; // Prevents instant switching
+    float lastSwitchTime;
+    enum BossForm { Firebird, Panther }
+    BossForm currentForm;
+
+    Enemy enemy;
+
+    void Start()
+    {
+        enemy = GetComponentInChildren<Enemy>();
+        // Randomly start as Firebird or Panther
+        currentForm = (Random.value > 0.5f) ? BossForm.Firebird : BossForm.Panther;
+        ActivateForm(currentForm, transform.position);
+    }
+
+    void Update()
+    {
+        if (Time.time - lastSwitchTime < switchCooldown) return;
+
+        if (enemy != null)
+        {
+            float healthPercent = enemy.GetHealthPercentage();
+
+            // Health-Based Switching
+            if (healthPercent <= 0.75f && currentForm == BossForm.Firebird)
+                SwitchForm();
+            else if (healthPercent <= 0.50f && currentForm == BossForm.Panther)
+                SwitchForm();
+            else if (healthPercent <= 0.25f && currentForm == BossForm.Firebird)
+                SwitchForm();
+        }
+
+        // Proximity-Based Switching
+        if (ShouldSwitchBasedOnPlayerDistance())
+        {
+            SwitchForm();
+        }
+
+        // Random Switching After Some Time
+        if (Random.Range(0f, 1f) < 0.01f) // ~1% chance per frame to switch
+        {
+            SwitchForm();
+        }
+    }
+
+    bool ShouldSwitchBasedOnPlayerDistance()
+    {
+        Transform player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (player == null) return false;
+
+        float distance = Vector2.Distance(transform.position, player.position);
+
+        if (currentForm == BossForm.Firebird && distance < 3f) return true; // Player is too close
+        if (currentForm == BossForm.Panther && distance > 6f) return true; // Player is too far
+
+        return false;
+    }
+
+    void SwitchForm()
+    {
+        lastSwitchTime = Time.time;
+
+        // Get the current active form's position before switching
+        Vector3 lastPosition = (currentForm == BossForm.Firebird) ? firebirdForm.transform.position : pantherForm.transform.position;
+
+        // Swap to the other form
+        currentForm = (currentForm == BossForm.Firebird) ? BossForm.Panther : BossForm.Firebird;
+        ActivateForm(currentForm, lastPosition);
+    }
+
+    void ActivateForm(BossForm newForm, Vector3 position)
+    {
+        firebirdForm.SetActive(newForm == BossForm.Firebird);
+        pantherForm.SetActive(newForm == BossForm.Panther);
+
+        // Set the new form’s position to match the last one
+        if (newForm == BossForm.Firebird)
+            firebirdForm.transform.position = position;
+        else
+            pantherForm.transform.position = position;
+    }
+}

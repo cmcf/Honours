@@ -27,8 +27,6 @@ public class Firebird : Enemy
     public enum FirebirdPhase { Phase1, Phase2, Phase3 }
     public FirebirdPhase currentPhase = FirebirdPhase.Phase1;
 
-    public enum BossForm { Firebird, Panther }
-    public BossForm currentForm = BossForm.Firebird;
     void Start()
     {
         // References 

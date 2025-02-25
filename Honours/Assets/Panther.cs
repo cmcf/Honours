@@ -38,7 +38,6 @@ public class Panther : MonoBehaviour
     {
         canAttack = false;
         animator.SetTrigger("Attack"); // Assume you have an attack animation
-        // You could detect collision or trigger damage logic here
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true;
     }
