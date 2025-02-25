@@ -12,16 +12,19 @@ public class Firebird : Enemy
 
     public GameObject projectilePrefab;
     public Transform firePoint;
-    public float projectileSpeed = 5f;
+    public float baseProjectileSpeed = 5f;
     public float fireRate = 2f; // Time between shots
 
     Vector2 targetPosition;
-    bool isMoving = false;
+    int moveCount = 0; // Tracks number of moves
 
     public Room currentRoom;
     Coroutine firingCoroutine;
+    bool isMoving = false;
 
-
+    // Enum for different phases of the boss
+    public enum FirebirdPhase { Phase1, Phase2, Phase3 }
+    public FirebirdPhase currentPhase = FirebirdPhase.Phase1;
     void Start()
     {
         // References 
@@ -74,34 +77,31 @@ public class Firebird : Enemy
 
     IEnumerator BossRoutine()
     {
-        
+
         while (true)
         {
-            // Move to the four positions: top, bottom, left, and right
             Vector2[] positions = new Vector2[]
             {
-                new Vector2(currentRoom.GetRoomCentre().x, currentRoom.GetRoomCentre().y + currentRoom.height / 2 - 1f), // Top
-                new Vector2(currentRoom.GetRoomCentre().x, currentRoom.GetRoomCentre().y - currentRoom.height / 2 + 1f), // Bottom
-                new Vector2(currentRoom.GetRoomCentre().x - currentRoom.width / 2 + 1f, currentRoom.GetRoomCentre().y), // Left
-                new Vector2(currentRoom.GetRoomCentre().x + currentRoom.width / 2 - 1f, currentRoom.GetRoomCentre().y)  // Right
+                new Vector2(currentRoom.GetRoomCentre().x, currentRoom.GetRoomCentre().y + currentRoom.height / 2 - 1f),
+                new Vector2(currentRoom.GetRoomCentre().x, currentRoom.GetRoomCentre().y - currentRoom.height / 2 + 1f),
+                new Vector2(currentRoom.GetRoomCentre().x - currentRoom.width / 2 + 1f, currentRoom.GetRoomCentre().y),
+                new Vector2(currentRoom.GetRoomCentre().x + currentRoom.width / 2 - 1f, currentRoom.GetRoomCentre().y)
             };
 
             foreach (var position in positions)
             {
-                Debug.Log($"Moving to position: {position}");
-
                 targetPosition = position;
-
-                // Move to the current position and fire at the player
                 yield return MoveToSetPosition(position);
+                moveCount++;
 
-                // Start firing at player (with a delay before firing)
+                // Increase phase every two moves
+                if (moveCount % 2 == 0 && currentPhase != FirebirdPhase.Phase3)
+                {
+                    currentPhase++;
+                }
+
                 firingCoroutine = StartCoroutine(FireAtPlayerRoutine());
-
-                // Fire for a period then move again
                 yield return new WaitForSeconds(pauseDuration);
-
-                // Stop firing and move to next position
                 StopCoroutine(firingCoroutine);
             }
         }
@@ -154,20 +154,42 @@ public class Firebird : Enemy
     {
         if (projectilePrefab == null || firePoint == null) return;
 
-        int numberOfProjectiles = 5; // Number of spread bullets
-        float spreadAngle = 30f; // How wide the spread should be
-        float angleStep = spreadAngle / (numberOfProjectiles - 1);
+        int numberOfProjectiles;
+        float spreadAngle;
+        float projectileSpeed = baseProjectileSpeed;
 
+        // Adjust fire pattern based on phase
+        switch (currentPhase)
+        {
+            case FirebirdPhase.Phase1:
+                numberOfProjectiles = 3;
+                spreadAngle = 20f;
+                break;
+            case FirebirdPhase.Phase2:
+                numberOfProjectiles = 5;
+                spreadAngle = 30f;
+                projectileSpeed *= 1f;
+                break;
+            case FirebirdPhase.Phase3:
+                numberOfProjectiles = 7;
+                spreadAngle = 45f;
+                projectileSpeed *= 1.2f;
+                break;
+            default:
+                numberOfProjectiles = 3;
+                spreadAngle = 20f;
+                break;
+        }
+
+        float angleStep = spreadAngle / (numberOfProjectiles - 1);
         for (int i = 0; i < numberOfProjectiles; i++)
         {
-            float angle = -spreadAngle / 2 + angleStep * i; // Calculate angle for each bullet
-
+            float angle = -spreadAngle / 2 + angleStep * i;
             Vector2 fireDirection = (player.position - firePoint.position).normalized;
-            fireDirection = RotateVector(fireDirection, angle); // Rotate the direction by the calculated angle
+            fireDirection = RotateVector(fireDirection, angle);
 
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             Rigidbody2D projRb = projectile.GetComponent<Rigidbody2D>();
-
             if (projRb != null)
             {
                 projRb.velocity = fireDirection * projectileSpeed;
@@ -194,14 +216,41 @@ public class Firebird : Enemy
 
         // Ensure the Firebird is facing the player
         UpdateAnimationDirectionTowardsPlayer();
-
-        // Keep firing at the player
         while (true)
         {
-            FireSpreadAtPlayer();  // Fire a projectile at the player
-            yield return new WaitForSeconds(fireRate); // Wait for the next shot
+            int attackType = Random.Range(0, 2);
+            if (attackType == 0)
+                FireSpreadAtPlayer();
+            else
+                FireRapidShots();
+            yield return new WaitForSeconds(fireRate);
         }
     }
+
+    void FireRapidShots()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            StartCoroutine(FireDelayedProjectile(i * 0.2f));
+        }
+    }
+
+    IEnumerator FireDelayedProjectile(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        FireProjectile((player.position - firePoint.position).normalized);
+    }
+
+    void FireProjectile(Vector2 direction)
+    {
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        Rigidbody2D projRb = projectile.GetComponent<Rigidbody2D>();
+        if (projRb != null)
+        {
+            projRb.velocity = direction * baseProjectileSpeed;
+        }
+    }
+
 
     // Update the animation direction to face the player when the Firebird stops moving
     void UpdateAnimationDirectionTowardsPlayer()
