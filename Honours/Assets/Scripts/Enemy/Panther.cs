@@ -38,42 +38,22 @@ public class Panther : MonoBehaviour, IDamageable
     void Update()
     {
         if (currentState == EnemyState.Dead) { return; }
-        // Constantly gets player current location
-        player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        // If charging, update direction and move
-        if (isCharging)
+        // Only update direction when not charging
+        if (!isCharging) 
         {
-            // Enable the trail when charging
-            if (trailRenderer != null && !trailRenderer.enabled)
+            Vector2 moveDirection = rb.velocity.normalized;
+            if (moveDirection.magnitude > 0.1f)
             {
-                trailRenderer.enabled = true;
+                animator.SetFloat("posX", moveDirection.y);
+                animator.SetFloat("posY", moveDirection.x);
             }
-
-            // Update direction based on charge towards the player
-            Vector2 chargeDirection = (player.position - transform.position).normalized;
-            animator.SetFloat("posX", chargeDirection.y); // Update posX
-            animator.SetFloat("posY", chargeDirection.x); // Update posY
-
-            ClampPosition();
-            return;  
         }
 
-        // Disable the trail when not charging
-        if (trailRenderer != null && trailRenderer.enabled)
-        {
-            trailRenderer.emitting = false;
-        }
+        // Handle speed animation update
+        animator.SetFloat("speed", rb.velocity.magnitude);
 
-        // Check if the panther is moving or stopped to update the animation
-        if (rb.velocity.magnitude > 0.1f)
-        {
-            animator.SetFloat("speed", rb.velocity.magnitude);  // Smoothly update speed for moving animation
-        }
-        else
-        {
-            animator.SetFloat("speed", 0f); 
-        }
+        ClampPosition();
     }
 
     public void StartAttacking()
@@ -102,19 +82,23 @@ public class Panther : MonoBehaviour, IDamageable
     {
         isCharging = true;
 
-        // Enable the trail during the charge
         if (trailRenderer != null)
         {
             trailRenderer.emitting = true;
         }
 
-        animator.SetFloat("speed", chargeSpeed); 
+        animator.SetFloat("speed", chargeSpeed);
 
-        // Dash through the player while charging
+        // Store the charge direction
         Vector2 chargeDirection = (player.position - transform.position).normalized;
+
+        // Set the animation direction
+        animator.SetFloat("posX", chargeDirection.y);
+        animator.SetFloat("posY", chargeDirection.x);
+
+        // Move in a straight line without updating direction
         rb.velocity = chargeDirection * chargeSpeed;
 
-        // Keep charging for the duration of the charge
         float chargeTimeElapsed = 0f;
         while (chargeTimeElapsed < chargeDuration)
         {
@@ -122,21 +106,25 @@ public class Panther : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        // Stop the panther after charging for the specified duration
+        // Stop the panther movement after dash
         rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0f;
 
-        // Transition to idle by setting speed to 0 
-        animator.SetFloat("speed", 0f);  
+        animator.SetFloat("speed", 0f);
 
-        // Disable the trail when the charge is complete
         if (trailRenderer != null)
         {
             trailRenderer.emitting = false;
         }
 
-        // Reset the charging state
         isCharging = false;
+
+        // Face the the player
+        Vector2 playerDirection = (player.position - transform.position).normalized;
+        animator.SetFloat("posX", playerDirection.y);
+        animator.SetFloat("posY", playerDirection.x);
     }
+
 
     public void Damage(float damage)
     {
@@ -156,10 +144,20 @@ public class Panther : MonoBehaviour, IDamageable
         float roomMinY = currentRoom.GetRoomCentre().y - (currentRoom.height / 2) + 1.3f;
         float roomMaxY = currentRoom.GetRoomCentre().y + (currentRoom.height / 2) - margin;
 
-        // Clamp the panther's position within these adjusted boundaries
-        float clampedX = Mathf.Clamp(transform.position.x, roomMinX, roomMaxX);
-        float clampedY = Mathf.Clamp(transform.position.y, roomMinY, roomMaxY);
+        // Get current position
+        Vector3 currentPosition = transform.position;
+        float clampedX = Mathf.Clamp(currentPosition.x, roomMinX, roomMaxX);
+        float clampedY = Mathf.Clamp(currentPosition.y, roomMinY, roomMaxY);
 
-        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+        // If clamping happened, stop movement
+        if (currentPosition.x != clampedX || currentPosition.y != clampedY)
+        {
+            rb.velocity = Vector2.zero;  // Stop movement
+            rb.angularVelocity = 0f; // Stop rotation
+        }
+
+        // Apply the clamped position
+        transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
     }
+
 }
