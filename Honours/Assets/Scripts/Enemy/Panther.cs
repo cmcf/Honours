@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using static Damage;
-using static Firebird;
 
 public class Panther : MonoBehaviour, IDamageable
 {
@@ -159,6 +158,8 @@ public class Panther : MonoBehaviour, IDamageable
         // Start the attack animation
         animator.SetBool("isAttacking", true);
 
+        AttackDamage();
+
         float attackTimeElapsed = 0f;
 
         // Perform the attack for the cooldown duration or until the player moves out of range
@@ -233,5 +234,17 @@ public class Panther : MonoBehaviour, IDamageable
         // Apply the clamped position
         transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
     }
+
+    public void AttackDamage()
+    {
+        // Check if the player has an IDamageable component and apply damage
+        if (player.TryGetComponent<IDamageable>(out IDamageable damageable))
+        {
+            // Call the player's Damage method with the attack damage
+            damageable.Damage(attackDamage);
+        }
+
+    }
+
 
 }
