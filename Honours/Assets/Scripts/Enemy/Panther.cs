@@ -15,6 +15,7 @@ public class Panther : MonoBehaviour, IDamageable
     public float chargeCooldown = 5f;
     public float chargeDuration = 1f;
     [SerializeField] float moveSpeed = 7f;
+    [SerializeField] float attackSpeed = 2f;
     private bool isCharging = false;
 
     // Melee Attack Variables
@@ -78,6 +79,8 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
+    private Vector2 chargeDirection; // Store the direction during the charge
+
     IEnumerator ChargeAtPlayer()
     {
         isCharging = true;
@@ -89,27 +92,35 @@ public class Panther : MonoBehaviour, IDamageable
 
         animator.SetFloat("speed", chargeSpeed);
 
-        // Store the charge direction
-        Vector2 chargeDirection = (player.position - transform.position).normalized;
+        // Store charge direction
+        chargeDirection = (player.position - transform.position).normalized;
 
-        // Set the animation direction
+        // Set animation direction
         animator.SetFloat("posX", chargeDirection.y);
         animator.SetFloat("posY", chargeDirection.x);
 
-        // Move in a straight line without updating direction
+        // Move in a straight line
         rb.velocity = chargeDirection * chargeSpeed;
 
         float chargeTimeElapsed = 0f;
         while (chargeTimeElapsed < chargeDuration)
         {
             chargeTimeElapsed += Time.deltaTime;
+
+            // Check if close enough to attack
+            if (Vector2.Distance(transform.position, player.position) <= attackRange)
+            {
+                moveSpeed = attackSpeed;
+                StartCoroutine(AttackPlayer());
+                yield break;
+            }
+
             yield return null;
         }
 
-        // Stop the panther movement after dash
+        // Stop movement after charge
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
-
         animator.SetFloat("speed", 0f);
 
         if (trailRenderer != null)
@@ -119,12 +130,43 @@ public class Panther : MonoBehaviour, IDamageable
 
         isCharging = false;
 
-        // Face the the player
+        // Face the player
         Vector2 playerDirection = (player.position - transform.position).normalized;
         animator.SetFloat("posX", playerDirection.y);
         animator.SetFloat("posY", playerDirection.x);
     }
 
+    IEnumerator AttackPlayer()
+    {
+        isCharging = false;
+        canAttack = false;
+
+        // Use the charge direction for the attack animation
+        animator.SetFloat("posX", chargeDirection.y);
+        animator.SetFloat("posY", chargeDirection.x);
+
+        // Start the attack animation
+        animator.SetBool("isAttacking", true);
+
+        // Store the player's initial position
+        Vector2 playerInitialPosition = player.position;
+
+        // Let the attack animation play through its full duration
+        float attackTimeElapsed = 0f;
+
+        while (attackTimeElapsed < attackCooldown)
+        {
+            attackTimeElapsed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        // End the attack animation after the cooldown time has passed
+        animator.SetBool("isAttacking", false);
+
+        // Allow the panther to attack again after the cooldown
+        canAttack = true;
+    }
 
     public void Damage(float damage)
     {
