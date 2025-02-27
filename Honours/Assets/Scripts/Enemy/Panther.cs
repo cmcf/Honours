@@ -248,7 +248,7 @@ public class Panther : MonoBehaviour, IDamageable
         // Calculate the room's boundaries with margin
         float roomMinX = currentRoom.GetRoomCentre().x - (currentRoom.width / 2) + margin;
         float roomMaxX = currentRoom.GetRoomCentre().x + (currentRoom.width / 2) - margin;
-        float roomMinY = currentRoom.GetRoomCentre().y - (currentRoom.height / 2) + 1.3f;
+        float roomMinY = currentRoom.GetRoomCentre().y - (currentRoom.height / 2) + 1.12f;
         float roomMaxY = currentRoom.GetRoomCentre().y + (currentRoom.height / 2) - margin;
 
         // Get current position
@@ -256,12 +256,19 @@ public class Panther : MonoBehaviour, IDamageable
         float clampedX = Mathf.Clamp(currentPosition.x, roomMinX, roomMaxX);
         float clampedY = Mathf.Clamp(currentPosition.y, roomMinY, roomMaxY);
 
-        // Check if the Panther is out of bounds
+        // Determine the direction of the Panther's movement relative to the clamped position
+        Vector2 velocity = rb.velocity;
+
+        // If the Panther is near the edges, decelerate smoothly
         if (currentPosition.x != clampedX || currentPosition.y != clampedY)
         {
-            rb.velocity = Vector2.zero;
+            // If the Panther is at or near the boundary, smooth out the deceleration
+            velocity = Vector2.Lerp(velocity, Vector2.zero, 0.5f);
 
-            // Stop any angular velocity to prevent sliding
+            // Set the velocity
+            rb.velocity = velocity;
+
+            // Stop any angular velocity to prevent unwanted rotation
             rb.angularVelocity = 0f;
 
             // Stop the animation

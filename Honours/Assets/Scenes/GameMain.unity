@@ -4041,7 +4041,11 @@ PrefabInstance:
       objectReference: {fileID: 1606285804524116695}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: attackCooldown
-      value: 0.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: chargeDuration
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: stopAttackRange
