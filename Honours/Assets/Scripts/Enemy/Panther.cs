@@ -121,11 +121,11 @@ public class Panther : MonoBehaviour, IDamageable
         // Store initial charge direction
         chargeDirection = (player.position - transform.position).normalized;
 
-        // Update the animator with initial direction
+        // Update the animator with the initial charge direction
         animator.SetFloat("posX", chargeDirection.y);
         animator.SetFloat("posY", chargeDirection.x);
 
-        // Move in a straight line towards the player
+        // Move in a straight line towards the initial direction
         rb.velocity = chargeDirection * chargeSpeed;
 
         float chargeTimeElapsed = 0f;
@@ -135,43 +135,59 @@ public class Panther : MonoBehaviour, IDamageable
         {
             chargeTimeElapsed += Time.deltaTime;
 
-            // Continuously update the charge direction based on the player's current position
-            chargeDirection = (player.position - transform.position).normalized;
-
-            // Update animator with the new charge direction
-            animator.SetFloat("posX", chargeDirection.y);
-            animator.SetFloat("posY", chargeDirection.x);
-
             // Check if the Panther is within attack range
-            if (Vector2.Distance(transform.position, player.position) <= attackRange)
+            if (Vector2.Distance(transform.position, player.position) <= attackRange && !hasAttacked)
             {
-                // Only attack once when entering the range
-                if (!hasAttacked)
-                {
-                    hasAttacked = true;
-                    AttackPlayer();  
-                }
-
-                // Stop movement once in range
+                // Stop movement when within attack range
                 rb.velocity = Vector2.zero;
 
-                // Continue attacking while still in range
-                if (!isAttacking)
+                // Start the attack and keep attacking until the attack duration is over
+                hasAttacked = true;
+                animator.SetBool("isAttacking", true);
+
+                // Keep attacking for a set duration, but stop if the player moves out of range
+                float attackTime = 0f;
+                while (attackTime < attackCooldown)
                 {
+                    attackTime += Time.deltaTime;
+
+                    // Continuously apply damage
                     AttackPlayer();
+
+                    // Check if the player moves out of range during the attack
+                    if (Vector2.Distance(transform.position, player.position) > attackRange)
+                    {
+                        // Player moved out of attack range, stop attacking and go to Defend state
+                        animator.SetBool("isAttacking", false);
+                        currentPhase = PantherState.Defend;
+                        yield break; 
+                    }
+
+                    yield return null;
                 }
+
+                // End the attack animation after cooldown
+                animator.SetBool("isAttacking", false);
+
+                // Wait for the attack cooldown to finish before continuing the charge
+                yield return new WaitForSeconds(attackCooldown);
+
+                // Break out of the charge loop after finishing the attack sequence
+                break;
             }
-            else
-            {
-                // Continue charging if player is out of range
-                rb.velocity = chargeDirection * chargeSpeed;
-            }
+
+            // Continue moving in the same charge direction
+            rb.velocity = chargeDirection * chargeSpeed;
 
             yield return null;
         }
 
-        // Movement stop and reset after charge
-        rb.velocity = Vector2.zero;
+        // If the panther finishes charging without getting into range for an attack, stop and reset
+        if (!hasAttacked)
+        {
+            rb.velocity = Vector2.zero;
+        }
+
         rb.angularVelocity = 0f;
         animator.SetFloat("speed", 0f);
 
@@ -186,7 +202,6 @@ public class Panther : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(attackCooldown);
         currentPhase = PantherState.Defend;
     }
-
 
     void AttackPlayer()
     {
