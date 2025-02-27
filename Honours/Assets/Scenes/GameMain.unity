@@ -4032,6 +4032,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1760543578}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: attackRange
+      value: 0.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1606285804524116695}
@@ -5980,7 +5984,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.022898853, y: 0.0018319935}
+  m_Offset: {x: -0.0035240352, y: 0.12513873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5990,7 +5994,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5511831, y: 0.9120686}
+  m_Size: {x: 0.36622292, y: 0.5597636}
   m_EdgeRadius: 0
 --- !u!1 &6969243546914432234
 GameObject:

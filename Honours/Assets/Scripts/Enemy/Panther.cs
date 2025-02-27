@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using static Damage;
 
@@ -38,7 +39,7 @@ public class Panther : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        trailRenderer= GetComponent<TrailRenderer>();
+        trailRenderer = GetComponent<TrailRenderer>();
         // Start charge behaviour loop
         StartCoroutine(ChargeRoutine());
     }
@@ -56,9 +57,8 @@ public class Panther : MonoBehaviour, IDamageable
             {
                 animator.SetFloat("posX", moveDirection.y);
                 animator.SetFloat("posY", moveDirection.x);
-            }
 
-           
+            }
         }
 
         // Face player only when idle
@@ -71,6 +71,12 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("speed", rb.velocity.magnitude);
 
         ClampPosition();
+
+        // Check for the current phase and activate the shield in the Defend phase
+        if (currentPhase == PantherState.Defend)
+        {
+            ActivateShield();
+        }
     }
 
     public void StartAttacking()
@@ -80,7 +86,6 @@ public class Panther : MonoBehaviour, IDamageable
             StartCoroutine(ChargeRoutine());
         }
     }
-
 
     IEnumerator ChargeRoutine()
     {
@@ -95,6 +100,11 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
+    void ActivateShield()
+    {
+        Debug.Log("Panther shield is active");
+
+    }
 
     IEnumerator ChargeAtPlayer()
     {
@@ -108,8 +118,10 @@ public class Panther : MonoBehaviour, IDamageable
 
         animator.SetFloat("speed", chargeSpeed);
 
-        // Store charge direction at the start of charge
+        // Store initial charge direction
         chargeDirection = (player.position - transform.position).normalized;
+
+        // Update the animator with initial direction
         animator.SetFloat("posX", chargeDirection.y);
         animator.SetFloat("posY", chargeDirection.x);
 
@@ -123,6 +135,13 @@ public class Panther : MonoBehaviour, IDamageable
         {
             chargeTimeElapsed += Time.deltaTime;
 
+            // Continuously update the charge direction based on the player's current position
+            chargeDirection = (player.position - transform.position).normalized;
+
+            // Update animator with the new charge direction
+            animator.SetFloat("posX", chargeDirection.y);
+            animator.SetFloat("posY", chargeDirection.x);
+
             // Check if the Panther is within attack range
             if (Vector2.Distance(transform.position, player.position) <= attackRange)
             {
@@ -130,7 +149,7 @@ public class Panther : MonoBehaviour, IDamageable
                 if (!hasAttacked)
                 {
                     hasAttacked = true;
-                    AttackPlayer();
+                    AttackPlayer();  
                 }
 
                 // Stop movement once in range
@@ -151,7 +170,7 @@ public class Panther : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        // Stop movement after charge
+        // Movement stop and reset after charge
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
         animator.SetFloat("speed", 0f);
@@ -161,54 +180,35 @@ public class Panther : MonoBehaviour, IDamageable
             trailRenderer.emitting = false;
         }
 
-        // Ensure attack is stopped immediately after charge
-        StopAttack();
-
         isCharging = false;
 
-        // Small delay before switching to Defend phase
-        yield return new WaitForSeconds(0.2f);
-        rb.velocity = Vector2.zero;
+        // Wait for the attack cooldown to finish before switching to Defend phase
+        yield return new WaitForSeconds(attackCooldown);
         currentPhase = PantherState.Defend;
-
-        // Check if the player is out of range after the charge ends
-        if (Vector2.Distance(transform.position, player.position) > attackRange)
-        {
-            // Face the player if they are still within range
-            FacePlayer();
-        }
     }
 
 
     void AttackPlayer()
     {
-        isCharging = false;
-        canAttack = false;
-        isAttacking = true;
-        currentPhase = PantherState.Attack;
+        if (!isAttacking)
+        {
+            currentPhase = PantherState.Attack;
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
 
-        // Set attack direction
-        animator.SetFloat("posX", chargeDirection.y);
-        animator.SetFloat("posY", chargeDirection.x);
+            AttackDamage();
 
-        // Start the attack animation
-        animator.SetBool("isAttacking", true);
-
-        AttackDamage();
-
-        // Schedule attack end
-        Invoke(nameof(StopAttack), attackCooldown);
+            // Schedule attack end after attack cooldown
+            Invoke(nameof(StopAttack), attackCooldown);
+        }
     }
 
     void StopAttack()
     {
         isAttacking = false;
         animator.SetBool("isAttacking", false);
-        canAttack = true;
         currentPhase = PantherState.Defend;
     }
-
-
 
     void FacePlayer()
     {
@@ -216,8 +216,6 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("posX", playerDirection.y);
         animator.SetFloat("posY", playerDirection.x);
     }
-
-
 
     public void Damage(float damage)
     {
@@ -261,8 +259,5 @@ public class Panther : MonoBehaviour, IDamageable
             // Call the player's Damage method with the attack damage
             damageable.Damage(attackDamage);
         }
-
     }
-
-
 }
