@@ -186,6 +186,7 @@ public class Panther : MonoBehaviour, IDamageable
         if (!hasAttacked)
         {
             rb.velocity = Vector2.zero;
+            animator.SetFloat("speed", 0f);
         }
 
         rb.angularVelocity = 0f;
@@ -255,16 +256,22 @@ public class Panther : MonoBehaviour, IDamageable
         float clampedX = Mathf.Clamp(currentPosition.x, roomMinX, roomMaxX);
         float clampedY = Mathf.Clamp(currentPosition.y, roomMinY, roomMaxY);
 
-        // If clamping happened, stop movement
+        // Check if the Panther is out of bounds
         if (currentPosition.x != clampedX || currentPosition.y != clampedY)
         {
-            rb.velocity = Vector2.zero;  // Stop movement
-            rb.angularVelocity = 0f; // Stop rotation
+            rb.velocity = Vector2.zero;
+
+            // Stop any angular velocity to prevent sliding
+            rb.angularVelocity = 0f;
+
+            // Stop the animation
+            animator.SetFloat("speed", 0f);
         }
 
-        // Apply the clamped position
+        // Apply the clamped position if the Panther is out of bounds
         transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
     }
+
 
     public void AttackDamage()
     {
