@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using static Damage;
 
@@ -20,7 +20,7 @@ public class Panther : MonoBehaviour, IDamageable
 
     // Melee Attack Variables
     public float attackRange = 2f;
-    float stopAttackRange = 10f;
+    public float stopAttackRange = 4f;
     public float attackDamage = 10f;
     public float attackCooldown = 1f;
     private bool canAttack = true;
@@ -45,8 +45,9 @@ public class Panther : MonoBehaviour, IDamageable
     {
         if (currentState == EnemyState.Dead) { return; }
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
         // Only update direction when not charging
-        if (!isCharging) 
+        if (!isCharging)
         {
             Vector2 moveDirection = rb.velocity.normalized;
             if (moveDirection.magnitude > 0.1f)
@@ -54,18 +55,18 @@ public class Panther : MonoBehaviour, IDamageable
                 animator.SetFloat("posX", moveDirection.y);
                 animator.SetFloat("posY", moveDirection.x);
             }
+
+            // Face player only when idle
+            if (currentPhase == PantherState.Defend)
+            {
+                FacePlayer();
+            }
         }
 
         // Handle speed animation update
         animator.SetFloat("speed", rb.velocity.magnitude);
 
         ClampPosition();
-
-        // Always face the player when in Defend phase
-        if (currentPhase == PantherState.Defend)
-        {
-            FacePlayer();
-        }
     }
 
     public void StartAttacking()
@@ -103,10 +104,8 @@ public class Panther : MonoBehaviour, IDamageable
 
         animator.SetFloat("speed", chargeSpeed);
 
-        // Store charge direction
+        // Store charge direction ONCE at the start of charge
         chargeDirection = (player.position - transform.position).normalized;
-
-        // Set animation direction for charge
         animator.SetFloat("posX", chargeDirection.y);
         animator.SetFloat("posY", chargeDirection.x);
 
@@ -118,11 +117,10 @@ public class Panther : MonoBehaviour, IDamageable
         {
             chargeTimeElapsed += Time.deltaTime;
 
-            // Check if close enough to attack
             if (Vector2.Distance(transform.position, player.position) <= attackRange)
             {
                 moveSpeed = attackSpeed;
-                StartCoroutine(AttackPlayer());
+                AttackPlayer();
                 yield break;
             }
 
@@ -132,26 +130,36 @@ public class Panther : MonoBehaviour, IDamageable
         // Stop movement after charge
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0f;
+
         animator.SetFloat("speed", 0f);
+        animator.SetFloat("posX", 0f);
+        animator.SetFloat("posY", 0f);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
         if (trailRenderer != null)
         {
             trailRenderer.emitting = false;
         }
+        StopAttack();
 
         isCharging = false;
+
+        // Small delay before switching to Defend phase
+        yield return new WaitForSeconds(0.2f);
+        rb.velocity = Vector2.zero;
         currentPhase = PantherState.Defend;
-        // After the charge, face the player
+
         FacePlayer();
     }
 
-    IEnumerator AttackPlayer()
+    void AttackPlayer()
     {
         isCharging = false;
         canAttack = false;
         currentPhase = PantherState.Attack;
 
-        // Use the charge direction for the attack animation
+        // Set attack direction
         animator.SetFloat("posX", chargeDirection.y);
         animator.SetFloat("posY", chargeDirection.x);
 
@@ -160,36 +168,17 @@ public class Panther : MonoBehaviour, IDamageable
 
         AttackDamage();
 
-        float attackTimeElapsed = 0f;
+        // Schedule attack end
+        Invoke(nameof(StopAttack), attackCooldown);
+    }
 
-        // Perform the attack for the cooldown duration or until the player moves out of range
-        while (attackTimeElapsed < attackCooldown)
-        {
-            attackTimeElapsed += Time.deltaTime;
-
-            // If the player moves out of range, stop the attack early
-            if (Vector2.Distance(transform.position, player.position) > stopAttackRange)
-            {
-                // End the attack animation immediately if the player is out of range
-                animator.SetBool("isAttacking", false);
-                canAttack = true; // Allow the panther to attack again
-                currentPhase = PantherState.Defend; // Return to defend phase
-                yield break; // Exit the coroutine early
-            }
-
-            yield return null;
-        }
-
-        // End the attack animation after the cooldown time has passed
+    void StopAttack()
+    {
         animator.SetBool("isAttacking", false);
-
-        // Allow the panther to attack again after cooldown
         canAttack = true;
         currentPhase = PantherState.Defend;
-
-        // After the attack, face the player
-        FacePlayer();
     }
+
 
 
     void FacePlayer()
