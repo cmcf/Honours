@@ -3996,6 +3996,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2898602058593776748, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.95
@@ -4041,8 +4045,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1760543578}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: orbitSpeed
       value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: attackRange
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: currentRoom
@@ -4063,6 +4075,14 @@ PrefabInstance:
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: chargeDuration
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: projectileSpeed
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: stopAttackRange
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: shieldSpawnPoint
