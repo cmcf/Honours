@@ -33,11 +33,12 @@ public class Panther : MonoBehaviour, IDamageable
     public Transform shieldSpawnPoint;
     private List<GameObject> activeShields = new List<GameObject>();
     private bool shieldActive = false;
-    public float shieldDuration = 8f; // Time before the shield breaks
+    public float shieldDuration = 8f; // Time before the shield projectiel fire
 
-    public Transform target; // The panther (center of orbit)
+    public Transform target; 
     public float orbitRadius = 0.5f;
     public float orbitSpeed = 100f; // Degrees per second
+    public float projectileSpeed = 5f; // Speed of the fired shield projectiles
 
     float angle; // Tracks rotation angle
 
@@ -187,24 +188,35 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
-    // Destroys shield projectiles and resets state
+
     public void BreakShield()
     {
         if (!shieldActive) return;
+
+        Debug.Log("Panther shield is broken!");
         shieldActive = false;
 
         foreach (GameObject shield in activeShields)
         {
             if (shield != null)
             {
-                Destroy(shield);
+                Rigidbody2D rb = shield.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    // Calculate direction based on current position relative to the panther
+                    Vector2 fireDirection = (shield.transform.position - transform.position).normalized;
+                    rb.velocity = fireDirection * projectileSpeed; // Fire outward in its orbiting direction
+                }
+
+                Destroy(shield, 2f);
             }
         }
-        activeShields.Clear();
 
-        // Panther can now charge at the player
-        StartCoroutine(ChargeAtPlayer());
+        activeShields.Clear();
+        StartCoroutine(ChargeAtPlayer()); // Continue to next phase
     }
+
+
 
 
     IEnumerator ChargeAtPlayer()
@@ -260,7 +272,7 @@ public class Panther : MonoBehaviour, IDamageable
                     {
                         // Player moved out of attack range, stop attacking and go to Defend state
                         animator.SetBool("isAttacking", false);
-                        currentPhase = PantherState.Defend;
+                        //MoveTowardsPlayer();
                         yield break; 
                     }
 
@@ -303,6 +315,19 @@ public class Panther : MonoBehaviour, IDamageable
         // Wait for the attack cooldown to finish before switching to Defend phase
         yield return new WaitForSeconds(attackCooldown);
         currentPhase = PantherState.Defend;
+    }
+
+    void MoveTowardsPlayer()
+    {
+        Vector2 moveDirection = (player.position - transform.position).normalized;
+        rb.velocity = moveDirection * moveSpeed;
+
+        // Check if the player moves out of range during the attack
+        if (Vector2.Distance(transform.position, player.position) < attackRange)
+        {
+            animator.SetBool("isAttacking", true);
+            AttackPlayer();
+        }
     }
 
     void AttackPlayer()
