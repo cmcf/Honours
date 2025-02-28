@@ -3725,6 +3725,11 @@ Transform:
   - {fileID: 1816236669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1805593058 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+  m_PrefabInstance: {fileID: 1935097945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1816236667
 GameObject:
   m_ObjectHideFlags: 0
@@ -4036,9 +4041,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1760543578}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: orbitSpeed
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 1606285804524116695}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: orbitRadius
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: shieldCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: shieldPrefab
+      value: 
+      objectReference: {fileID: 4040207891986179867, guid: 7f56e55fb035b6a4ebbb271a68a1a371, type: 3}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: chargeDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: shieldSpawnPoint
+      value: 
+      objectReference: {fileID: 1805593058}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

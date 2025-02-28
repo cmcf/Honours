@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Damage;
@@ -10,7 +11,6 @@ public class Panther : MonoBehaviour, IDamageable
     private Rigidbody2D rb;
     public Room currentRoom;
     TrailRenderer trailRenderer;
-
     // Movement Variables
     public float chargeSpeed = 8f;
     public float chargeCooldown = 5f;
@@ -28,8 +28,24 @@ public class Panther : MonoBehaviour, IDamageable
 
     bool isAttacking = false;
 
+    // Shield Variables
+    public GameObject shieldPrefab;
+    public Transform shieldSpawnPoint;
+    private List<GameObject> activeShields = new List<GameObject>();
+    private bool shieldActive = false;
+    public float shieldDuration = 8f; // Time before the shield breaks
+
+    public Transform target; // The panther (center of orbit)
+    public float orbitRadius = 0.5f;
+    public float orbitSpeed = 100f; // Degrees per second
+
+    float angle; // Tracks rotation angle
+
     Vector2 chargeDirection; // Stores the direction during the charge
 
+    float shieldCooldown = 1f;
+    float lastShieldTime;
+    public float shieldCount = 5;
     public EnemyState currentState;
     public enum PantherState { Defend, Charge, Attack }
     public PantherState currentPhase = PantherState.Defend;
@@ -40,8 +56,8 @@ public class Panther : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
-        // Start charge behaviour loop
-        StartCoroutine(ChargeRoutine());
+
+        StartCoroutine(ShieldCycle());
     }
 
     void Update()
@@ -76,6 +92,7 @@ public class Panther : MonoBehaviour, IDamageable
         if (currentPhase == PantherState.Defend)
         {
             ActivateShield();
+            UpdateShieldOrbit();
         }
     }
 
@@ -100,11 +117,95 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
-    void ActivateShield()
+    IEnumerator ShieldCycle()
     {
-        Debug.Log("Panther shield is active");
-
+        while (true)
+        {
+            if (currentPhase == PantherState.Defend)
+            {
+                ActivateShield();
+                yield return new WaitForSeconds(shieldDuration);
+                BreakShield();
+            }
+            yield return new WaitForSeconds(1f);
+        }
     }
+
+    public void ActivateShield()
+    {
+        // Prevent multiple activations
+        if (shieldActive) return; 
+
+        if (Time.time > lastShieldTime + shieldCooldown)
+        {
+            lastShieldTime = Time.time;
+            float angleStep = 360f / shieldCount;
+
+            for (int i = 0; i < shieldCount; i++)
+            {
+                float angle = i * angleStep * Mathf.Deg2Rad;
+
+                Vector3 shieldPos = new Vector3(
+                    transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                    transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                    0f
+                );
+                // Parent to panther
+                GameObject shield = Instantiate(shieldPrefab, shieldPos, Quaternion.identity, transform); 
+                activeShields.Add(shield);
+            }
+
+            shieldActive = true;
+
+            // Break shield after duration
+            Invoke(nameof(BreakShield), shieldDuration);
+        }
+    }
+
+    // Keeps shields orbiting around the Panther
+    void UpdateShieldOrbit()
+    {
+        if (!shieldActive) return;
+
+        for (int i = 0; i < activeShields.Count; i++)
+        {
+            if (activeShields[i] == null) continue;
+
+            float angle = (Time.time * orbitSpeed + (360f / activeShields.Count) * i) * Mathf.Deg2Rad;
+
+            Vector3 shieldPos = new Vector3(
+                transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                0f
+            );
+
+            activeShields[i].transform.position = shieldPos;
+
+            // Rotate shields to always face outward
+            float rotationAngle = Mathf.Atan2(shieldPos.y - transform.position.y, shieldPos.x - transform.position.x) * Mathf.Rad2Deg;
+            activeShields[i].transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
+        }
+    }
+
+    // Destroys shield projectiles and resets state
+    public void BreakShield()
+    {
+        if (!shieldActive) return;
+        shieldActive = false;
+
+        foreach (GameObject shield in activeShields)
+        {
+            if (shield != null)
+            {
+                Destroy(shield);
+            }
+        }
+        activeShields.Clear();
+
+        // Panther can now charge at the player
+        StartCoroutine(ChargeAtPlayer());
+    }
+
 
     IEnumerator ChargeAtPlayer()
     {
@@ -277,6 +378,7 @@ public class Panther : MonoBehaviour, IDamageable
 
         // Apply the clamped position if the Panther is out of bounds
         transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
+
     }
 
 

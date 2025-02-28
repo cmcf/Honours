@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1526507904440253272}
   - component: {fileID: -4458882972266371694}
   - component: {fileID: 4052097904083288784}
+  - component: {fileID: 7188499248057155673}
   m_Layer: 0
   m_Name: ShieldProjectile
   m_TagString: Shield
@@ -152,3 +153,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.92, y: 0.79999995}
   m_Direction: 0
+--- !u!114 &7188499248057155673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4040207891986179867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd662e97af8ad8448815d0d1f2fa2df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  orbitRadius: 1
+  orbitSpeed: 100
