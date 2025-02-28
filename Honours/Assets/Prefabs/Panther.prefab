@@ -202,13 +202,13 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   chargeSpeed: 8
   chargeCooldown: 5
-  chargeDuration: 2.5
+  chargeDuration: 2
   moveSpeed: 6.6
   attackSpeed: 2
-  attackRange: 1
-  stopAttackRange: 4
+  attackRange: 0.84
+  stopAttackRange: 6
   attackDamage: 10
-  attackCooldown: 0.7
+  attackCooldown: 2
   currentState: 0
   currentPhase: 0
 --- !u!96 &2834042001106705526
