@@ -19,6 +19,7 @@ public class Panther : MonoBehaviour, IDamageable
     public float chargeDuration = 1f;
     [SerializeField] float moveSpeed = 7f;
     [SerializeField] float attackSpeed = 2f;
+    float chargeStartTime;
     private bool isCharging = false;
 
     // Melee Attack Variables
@@ -110,15 +111,18 @@ public class Panther : MonoBehaviour, IDamageable
 
     void StartChargePhase()
     {
-        if (Time.time >= chargeCooldown)
+        if (Time.time >= chargeCooldown && currentPhase != PantherState.Charge)
         {
             currentPhase = PantherState.Charge;
             isCharging = true;
-            animator.SetFloat("speed", chargeSpeed);
+            animator.SetFloat("speed", chargeSpeed);  // Set speed for animation
             chargeDirection = (player.position - transform.position).normalized;
             animator.SetFloat("posX", chargeDirection.y);
             animator.SetFloat("posY", chargeDirection.x);
             trailRenderer.emitting = true;
+
+            // Record the time when the charge starts
+            chargeStartTime = Time.time;
         }
     }
 
@@ -126,12 +130,18 @@ public class Panther : MonoBehaviour, IDamageable
     {
         rb.velocity = chargeDirection * chargeSpeed;
 
-        // Charge duration check
+        // Check if the charge duration has passed
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             rb.velocity = Vector2.zero;
             animator.SetBool("isAttacking", true);
             AttackPlayer();
+        }
+
+        if (Time.time - chargeStartTime >= chargeDuration)
+        {
+            rb.velocity = Vector2.zero;
+            currentPhase = PantherState.Defend;
         }
     }
 
