@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Damage;
 
 public class ShieldOrbit : MonoBehaviour
 {
-
+    Switcher currentCharacter;
     public float speed = 5f;
+    [SerializeField] float shieldDamage = 2f;
+    [SerializeField] float knockbackForce = 5f;
     private Vector2 moveDirection;
 
     public void SetDirection(Vector2 direction)
@@ -23,6 +26,16 @@ public class ShieldOrbit : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Damage");
+
+            // Get the IDamageable component
+            IDamageable damageable = other.GetComponent<IDamageable>();
+            if (damageable != null)
+            {
+                // Apply damage to the player
+                damageable.Damage(shieldDamage);
+
+            }
         }
     }
+
 }

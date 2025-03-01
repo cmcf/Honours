@@ -36,6 +36,11 @@ public class KnifeProjectile : MonoBehaviour
             }
         }
 
+        if (other.CompareTag("Shield")) 
+        {
+            Destroy(other.gameObject);  // Destroy the shield
+        }
+
         else if (other.CompareTag("EnemyProjectile"))
         {
             // Handle deflection of enemy projectiles
