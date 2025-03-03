@@ -3975,17 +3975,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &2007110947 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2727881887632806977, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-  m_PrefabInstance: {fileID: 1754553285392444315}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db017a528635ce4593b597d1c9383c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2019253174
 GameObject:
   m_ObjectHideFlags: 0
@@ -4626,79 +4615,6 @@ MonoBehaviour:
   isBossRoom: 0
   hasSpawnedEnemies: 0
   doorList: []
---- !u!1001 &1754553285392444315
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3430006399220710628, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: formManager
-      value: 
-      objectReference: {fileID: 2007110947}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8086855544101789147, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: currentRoom
-      value: 
-      objectReference: {fileID: 1606285804524116695}
-    - target: {fileID: 8991972665906897161, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: m_Name
-      value: Boss Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016911707862722473, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1760543578}
-    - target: {fileID: 9016911707862722473, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
-      propertyPath: currentRoom
-      value: 
-      objectReference: {fileID: 1606285804524116695}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
 --- !u!1 &1821578464605920457
 GameObject:
   m_ObjectHideFlags: 0
@@ -6404,4 +6320,3 @@ SceneRoots:
   - {fileID: 3862144887162636143}
   - {fileID: 2143930541}
   - {fileID: 1760543578}
-  - {fileID: 1754553285392444315}

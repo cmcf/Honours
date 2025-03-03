@@ -155,6 +155,20 @@ public class RoomController : MonoBehaviour
     {
         CameraController.Instance.currentRoom = room;
         currentRoom = room;
+        // Only spawn enemies in the room if it is not the spawn or boss room
+        if (room.isBossRoom)
+        {
+            Invoke(nameof(DelayedActivateBoss), 0.5f);
+        }
+        else
+        {
+            if (leftSpawnRoom)
+            {
+                currentRoom.SpawnEnemies();
+            }
+        }
+
+        StartCoroutine(RoomCoroutine());
 
         if (roomsCompleted >= 1)
         {
@@ -162,19 +176,26 @@ public class RoomController : MonoBehaviour
             //TriggerRandomWeapon();
         }
 
-        // Only spawn enemies in the room if it is not the spawn room
-        if (leftSpawnRoom)
+    }
+
+    void DelayedActivateBoss()
+    {
+        ActivateBoss(currentRoom);
+    }
+
+    void ActivateBoss(Room bossRoom)
+    {
+        // Find and activate the boss inside the room
+        BossFormManager boss = bossRoom.GetComponentInChildren<BossFormManager>(true);
+        if (boss != null)
         {
-            currentRoom.SpawnEnemies();
-
+            boss.gameObject.SetActive(true);
+            boss.StartBossBattle();
         }
-
-        StartCoroutine(RoomCoroutine());
-
     }
 
 
-    public void TriggerRandomWeapon()
+        public void TriggerRandomWeapon()
     {
         int randomIndex = Random.Range(0, availableWeapons.Length);
         Weapon selectedWeapon = availableWeapons[randomIndex];

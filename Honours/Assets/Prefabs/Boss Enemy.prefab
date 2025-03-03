@@ -287,7 +287,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firebirdForm: {fileID: 6963411700256930395}
   pantherForm: {fileID: 3241009952511098558}
-  switchCooldown: 10
+  switchCooldown: 50
+  boss: {fileID: 8991972665906897161}
 --- !u!114 &3430006399220710628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentAnimator: {fileID: 1147851224862576677}
-  formManager: {fileID: 0}
+  formManager: {fileID: 2727881887632806977}
   maxHealth: 200
   currentHealth: 0
   currentState: 0
@@ -320,6 +321,10 @@ PrefabInstance:
     - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2898602058593776748, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_Interpolate

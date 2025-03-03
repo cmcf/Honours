@@ -9,6 +9,8 @@ public class BossFormManager : MonoBehaviour
     Panther pantherScript;
     public float switchCooldown = 10f; // Prevents instant switching
     float lastSwitchTime;
+    public GameObject boss;
+    float bossStartDelay = 0.2f;
     enum BossForm { Firebird, Panther }
     BossForm currentForm = BossForm.Firebird;
 
@@ -18,6 +20,12 @@ public class BossFormManager : MonoBehaviour
     {
         enemy = GetComponent<BossEnemy>();
         pantherScript= GetComponentInChildren<Panther>();
+        boss.gameObject.SetActive(false);
+
+    }
+
+    public void StartBossBattle()
+    {
         // Randomly start as Firebird or Panther
         //currentForm = (Random.value > 0.5f) ? BossForm.Firebird : BossForm.Panther;
         ActivateForm(currentForm, transform.position);
