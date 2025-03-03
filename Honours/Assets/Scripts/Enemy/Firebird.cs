@@ -61,6 +61,13 @@ public class Firebird : MonoBehaviour, IDamageable
         }
     }
 
+    public void RestartBossRoutine()
+    {
+        StopAllCoroutines();
+        hasAppeared = true;  
+        StartCoroutine(BossRoutine());
+    }
+
     public void Damage(float damage)
     {
         if (currentState == EnemyState.Dead) { return; }

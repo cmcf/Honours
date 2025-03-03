@@ -77,13 +77,23 @@ public class BossFormManager : MonoBehaviour
         firebirdForm.SetActive(newForm == BossForm.Firebird);
         pantherForm.SetActive(newForm == BossForm.Panther);
 
-        // Set the new form’s position to match the last one
         if (newForm == BossForm.Firebird)
+        {
             firebirdForm.transform.position = position;
+            Firebird firebirdScript = firebirdForm.GetComponent<Firebird>();
+            if (firebirdScript != null)
+            {
+                StopAllCoroutines(); // Stop any lingering coroutines
+                firebirdScript.RestartBossRoutine(); // Restart Firebird's behaviour
+            }
+        }
         else
+        {
             pantherForm.transform.position = position;
-        pantherScript.StartAttacking();
+            pantherScript.StartAttacking();
+        }
     }
+
 
     public Animator GetCurrentAnimator()
     {
