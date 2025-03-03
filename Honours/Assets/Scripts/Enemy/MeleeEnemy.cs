@@ -10,7 +10,6 @@ public class MeleeEnemy : Enemy
 
     Transform playerLocation;
     public int damage;
-    int health;
 
     [Header("State Control")]
     bool reachedPlayer = false;
@@ -27,7 +26,6 @@ public class MeleeEnemy : Enemy
     [Header("Animation Timing")]
     [SerializeField] float appearDuration = 0.5f; 
     [SerializeField] float disappearDuration = 0.5f; 
-    [SerializeField] float delayBeforeAttack = 0.5f;
 
     [Header("Respawning")]
     [SerializeField] Vector2 minPosition;

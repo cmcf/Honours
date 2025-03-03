@@ -285,6 +285,12 @@ public class Wolf : MonoBehaviour, IDamageable
                     EndBiteAttack();
                 }
             }
+
+            // Check if the bite hits the shield 
+            if (enemy.CompareTag("Shield")) 
+            {
+                Destroy(enemy.gameObject);  // Destroy the shield
+            }
         }
     }
 

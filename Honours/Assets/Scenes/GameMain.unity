@@ -3941,6 +3941,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  lungeDistance: 0.5
   moveDirection: {x: 0, y: 0}
   isBiting: 0
   canMoveWolf: 0
@@ -4114,7 +4115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b495ecaac1aa14dbf999e2fc9e80bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 444
+  maxHealth: 8888
   currentHealth: 299
 --- !u!4 &181472975548114405
 Transform:
@@ -5833,7 +5834,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.022898853, y: 0.0018319935}
+  m_Offset: {x: -0.0035240352, y: 0.12513873}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5843,7 +5844,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5511831, y: 0.9120686}
+  m_Size: {x: 0.36622292, y: 0.5597636}
   m_EdgeRadius: 0
 --- !u!1 &6969243546914432234
 GameObject:
@@ -6203,9 +6204,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 804157269
-  m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 9040166863541416304, guid: 9876d855fd7ce8648a4537dc9560afda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

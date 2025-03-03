@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     bool canDash = true;
     public bool canMovePlayer = true;
     bool isFacingRight = false;
-    float rotationSpeed = 1f;
 
     public float weaponDistance = 1f;
 
