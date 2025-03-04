@@ -38,7 +38,7 @@ public class KnifeProjectile : MonoBehaviour
 
         if (other.CompareTag("Shield")) 
         {
-            Destroy(other.gameObject);  // Destroy the shield
+            DestroyShield(other.gameObject); // Destroy the shield
         }
 
         else if (other.CompareTag("EnemyProjectile"))
@@ -46,6 +46,19 @@ public class KnifeProjectile : MonoBehaviour
             // Handle deflection of enemy projectiles
             DeflectProjectile(other);
         }
+    }
+
+    public void DestroyShield(GameObject shield)
+    {
+
+        Panther panther = FindObjectOfType<Panther>();
+
+        if (panther != null)
+        {
+            panther.OnShieldDestroyed(shield); // Notify Panther that the shield is destroyed
+        }
+
+        Destroy(shield); // Destroy the shield GameObject
     }
 
     IEnumerator PushbackEnemy(Transform enemyTransform, Vector3 knifePosition)

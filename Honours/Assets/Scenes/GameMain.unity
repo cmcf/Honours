@@ -4005,7 +4005,8 @@ MonoBehaviour:
   knifeCooldown: 0.5
   bitePoint: {fileID: 1816236669}
   biteRange: 0.5
-  biteDamage: 20
+  minBiteDamage: 15
+  maxBiteDamage: 20
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -5242,6 +5243,7 @@ MonoBehaviour:
   dashCooldown: 1.5
   moveDirection: {x: 0, y: 0}
   lastMoveDirection: {x: 0, y: 0}
+  canDash: 1
   canMovePlayer: 1
   weaponDistance: 1
 --- !u!4 &3738425011321697357

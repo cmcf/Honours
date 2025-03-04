@@ -209,6 +209,18 @@ MonoBehaviour:
   stopAttackRange: 6
   attackDamage: 10
   attackCooldown: 2
+  shieldPrefab: {fileID: 0}
+  shieldSpawnPoint: {fileID: 0}
+  shieldActive: 0
+  shieldDuration: 8
+  respawnShieldDelay: 2
+  defendStateDuration: 9
+  target: {fileID: 0}
+  orbitRadius: 0.5
+  orbitSpeed: 100
+  projectileSpeed: 5
+  canActivateShield: 1
+  shieldCount: 5
   currentState: 0
   currentPhase: 0
 --- !u!96 &2834042001106705526

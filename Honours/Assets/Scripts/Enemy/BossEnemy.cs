@@ -35,7 +35,7 @@ public class BossEnemy : MonoBehaviour
     {
         Panther panther = GetComponentInChildren<Panther>(); 
 
-        if (panther != null && panther.IsShieldActive())
+        if (panther != null && panther.shieldActive)
         {
             return; // Ignore damage if shield is active
         }
