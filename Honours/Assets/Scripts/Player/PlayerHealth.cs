@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameObject floatingTextPrefab;
+
     public float maxHealth = 50f;
     public  float currentHealth;
     private bool isDead = false;
 
     private Player player;
     private Wolf wolf;
-
+    CharacterState currentCharacterState;
     void Awake()
     {
         currentHealth = maxHealth;
@@ -25,15 +27,64 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= amount;
+        ShowFloatingText(amount, Color.red);
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+    void ShowFloatingText(float amount, Color textColour)
+    {
+        if (floatingTextPrefab != null)
+        {
+            Switcher switcher = FindObjectOfType<Switcher>();
+            if (switcher == null)
+            {
+                return;
+            }
+
+            // Get the correct character's position based on the current character state
+            GameObject activeCharacter = null;
+
+            if (switcher.currentCharacterState == CharacterState.Player)
+            {
+                activeCharacter = switcher.playerObject;
+            }
+            else if (switcher.currentCharacterState == CharacterState.Wolf)
+            {
+                activeCharacter = switcher.wolfObject;
+            }
+
+            if (activeCharacter != null)
+            {
+                // Spawn the text slightly in front of the active character
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0f, 2f);
+
+                // Instantiate the floating text prefab
+                GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
+
+                // Set the text instance to be in world space
+                textInstance.transform.SetParent(null);
+
+                // Set the text value
+                var floatingTextComponent = textInstance.GetComponentInChildren<FloatingText>();
+
+                Destroy(textInstance, 0.5f);
+
+                if (floatingTextComponent != null)
+                {
+                    floatingTextComponent.SetText(amount.ToString(), textColour);
+                }
+            }
+        }
+    }
+
+
 
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        ShowFloatingText(amount, Color.green);
     }
 
     public void Die()
