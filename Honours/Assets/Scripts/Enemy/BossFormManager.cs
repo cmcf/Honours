@@ -112,12 +112,12 @@ public class BossFormManager : MonoBehaviour
     }
 
    public Rigidbody2D GetCurrentRb()
-    {
+   {
         if (currentForm == BossForm.Firebird)
             return firebirdForm.GetComponent<Rigidbody2D>();
         else
             return pantherForm.GetComponent<Rigidbody2D>();
-    }
+   }
 
     void TempUpdateCode()
     {
