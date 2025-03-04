@@ -3,8 +3,6 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
-    public GameObject playerObject;
-    public GameObject wolfObject;
 
     public float maxHealth = 50f;
     public  float currentHealth;
@@ -39,16 +37,22 @@ public class PlayerHealth : MonoBehaviour
     {
         if (floatingTextPrefab != null)
         {
+            Switcher switcher = FindObjectOfType<Switcher>();
+            if (switcher == null)
+            {
+                return;
+            }
+
             // Get the correct character's position based on the current character state
             GameObject activeCharacter = null;
 
-            if (currentCharacterState == CharacterState.Player)
+            if (switcher.currentCharacterState == CharacterState.Player)
             {
-                activeCharacter = playerObject;
+                activeCharacter = switcher.playerObject;
             }
-            else if (currentCharacterState == CharacterState.Wolf)
+            else if (switcher.currentCharacterState == CharacterState.Wolf)
             {
-                activeCharacter = wolfObject;
+                activeCharacter = switcher.wolfObject;
             }
 
             if (activeCharacter != null)
@@ -74,6 +78,8 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+
 
     public void Heal(float amount)
     {
