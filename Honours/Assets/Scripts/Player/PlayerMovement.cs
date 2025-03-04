@@ -96,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        Debug.Log("Dash button pressed! CanDash: " + canDash + ", IsDashing: " + isDashing);
         if (canDash)
         {
             StartCoroutine(Dash());

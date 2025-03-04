@@ -11,7 +11,7 @@ public class BossFormManager : MonoBehaviour
     float lastSwitchTime;
     public GameObject boss;
     float bossStartDelay = 0.2f;
-    enum BossForm { Firebird, Panther }
+    public enum BossForm { Firebird, Panther }
     BossForm currentForm = BossForm.Firebird;
 
     BossEnemy enemy;
@@ -118,6 +118,11 @@ public class BossFormManager : MonoBehaviour
         else
             return pantherForm.GetComponent<Rigidbody2D>();
    }
+
+    public BossForm GetCurrentForm()
+    {
+        return currentForm;
+    }
 
     void TempUpdateCode()
     {

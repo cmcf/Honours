@@ -27,7 +27,7 @@ public class Panther : MonoBehaviour, IDamageable
     public float stopAttackRange = 4f;
     public float attackDamage = 10f;
     public float attackCooldown = 1f;
-    private bool canAttack = true;
+    bool canAttack = true;
 
     bool isAttacking = false;
 
@@ -376,5 +376,10 @@ public class Panther : MonoBehaviour, IDamageable
         }
 
         transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
+    }
+
+    public bool IsShieldActive()
+    {
+        return shieldActive;
     }
 }
