@@ -343,4 +343,22 @@ public class Wolf : MonoBehaviour, IDamageable
         playerHealth.TakeDamage(damage);
     }
 
+    public void DestroyKnives()
+    {
+        // Loop through all the orbiting knives and destroy them
+        foreach (GameObject knife in orbitingKnives)
+        {
+            if (knife != null)
+            {
+                Destroy(knife); 
+            }
+        }
+
+        // Clear the list after destroying the knives
+        orbitingKnives.Clear();
+        knivesActive = false;  
+    }
+
+
+
 }
