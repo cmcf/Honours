@@ -16,11 +16,9 @@ public class RangedEnemy : Enemy
     public float doubleProjectileChance = 0.3f;
     void Start()
     {
-        playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-
     }
 
 
@@ -28,6 +26,8 @@ public class RangedEnemy : Enemy
     {
         // Do not fire projectiles if enemy is not active
         if (!IsActive()) return;
+
+        playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
 
         // Check the distance to the player
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
