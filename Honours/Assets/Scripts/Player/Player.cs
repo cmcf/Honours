@@ -206,6 +206,12 @@ public class Player : MonoBehaviour, IDamageable
         {
             rb.velocity = direction * currentWeapon.bulletSpeed;
         }
+        Bullet bullet = projectile.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(currentWeapon.GetRandomDamage());
+            bullet.isIce = false;
+        }
     }
 
     IEnumerator FireRapid(Vector3 direction)
@@ -256,7 +262,7 @@ public class Player : MonoBehaviour, IDamageable
         Bullet bullet = iceBullet.GetComponent<Bullet>();
         if (bullet != null)
         {
-            bullet.SetDamage(currentWeapon.bulletDamage);
+            bullet.SetDamage(currentWeapon.GetRandomDamage());
             bullet.isIce = true;
         }
     }

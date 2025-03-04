@@ -46,8 +46,6 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
- 
-
     public void SetActiveState(bool active)
     {
         isActive = active;

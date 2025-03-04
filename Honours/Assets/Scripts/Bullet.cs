@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 {
     Enemy enemy;
     Player player;
-    [SerializeField] float damageAmount;
+    float damageAmount;
     public float freezeDuration = 0.5f;
     public bool isIce = false;
     void Start()
