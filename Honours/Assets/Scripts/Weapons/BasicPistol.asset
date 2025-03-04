@@ -19,4 +19,5 @@ MonoBehaviour:
   bulletSpeed: 9
   bulletLifetime: 1.5
   fireDelay: 0.6
-  bulletDamage: 10
+  minDamage: 5
+  maxDamage: 10

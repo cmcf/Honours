@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 moveDirection;
     public Vector2 lastMoveDirection = Vector2.zero;
     bool isDashing = false;
-    bool canDash = true;
+    public bool canDash = true;
     public bool canMovePlayer = true;
     bool isFacingRight = false;
 
@@ -52,6 +52,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateAnimation();
+    }
+
+    void OnEnable()
+    {
+        canDash = true; // Ensure dashing is available when re-enabling
     }
 
     void OnMove(InputValue value)
@@ -91,11 +96,13 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
+        Debug.Log("Dash button pressed! CanDash: " + canDash + ", IsDashing: " + isDashing);
         if (canDash)
         {
             StartCoroutine(Dash());
         }
     }
+
 
     IEnumerator Dash()
     {
