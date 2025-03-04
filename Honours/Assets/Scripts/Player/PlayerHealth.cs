@@ -29,13 +29,13 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= amount;
-        ShowFloatingText(amount);
+        ShowFloatingText(amount, Color.red);
         if (currentHealth <= 0)
         {
             Die();
         }
     }
-    void ShowFloatingText(float amount)
+    void ShowFloatingText(float amount, Color textColour)
     {
         if (floatingTextPrefab != null)
         {
@@ -54,32 +54,31 @@ public class PlayerHealth : MonoBehaviour
             if (activeCharacter != null)
             {
                 // Spawn the text slightly in front of the active character
-                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0f, 2f); 
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0f, 2f);
 
                 // Instantiate the floating text prefab
                 GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
 
                 // Set the text instance to be in world space
-                textInstance.transform.SetParent(null);  
+                textInstance.transform.SetParent(null);
 
                 // Set the text value
                 var floatingTextComponent = textInstance.GetComponentInChildren<FloatingText>();
 
-                Destroy(textInstance, 0.5f);  
+                Destroy(textInstance, 0.5f);
 
                 if (floatingTextComponent != null)
                 {
-                    floatingTextComponent.SetText(amount.ToString());
+                    floatingTextComponent.SetText(amount.ToString(), textColour);
                 }
             }
         }
     }
 
-
-
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
+        ShowFloatingText(amount, Color.green);
     }
 
     public void Die()
