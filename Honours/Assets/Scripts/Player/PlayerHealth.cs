@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public GameObject floatingTextPrefab;
+    public GameObject playerObject;
+    public GameObject wolfObject;
+
     public float maxHealth = 50f;
     public  float currentHealth;
     private bool isDead = false;
 
     private Player player;
     private Wolf wolf;
-
+    CharacterState currentCharacterState;
     void Awake()
     {
         currentHealth = maxHealth;
@@ -25,11 +29,53 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= amount;
+        ShowFloatingText(-amount);
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+    void ShowFloatingText(float amount)
+    {
+        if (floatingTextPrefab != null)
+        {
+            // Get the correct character's position based on the current character state
+            GameObject activeCharacter = null;
+
+            if (currentCharacterState == CharacterState.Player)
+            {
+                activeCharacter = playerObject;
+            }
+            else if (currentCharacterState == CharacterState.Wolf)
+            {
+                activeCharacter = wolfObject;
+            }
+
+            if (activeCharacter != null)
+            {
+                // Spawn the text slightly in front of the active character
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0f, 4f); 
+
+                // Instantiate the floating text prefab
+                GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
+
+                // Set the text instance to be in world space
+                textInstance.transform.SetParent(null);  
+
+                // Set the text value
+                var floatingTextComponent = textInstance.GetComponentInChildren<FloatingText>();
+
+                Destroy(textInstance, 2f);  
+
+                if (floatingTextComponent != null)
+                {
+                    floatingTextComponent.SetText(amount.ToString());
+                }
+            }
+        }
+    }
+
+
 
     public void Heal(float amount)
     {
