@@ -170,7 +170,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 61
+  field of view: 61.4
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -4184,8 +4184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  playerObject: {fileID: 5213473724355869344}
-  wolfObject: {fileID: 1816236667}
   maxHealth: 8888
   currentHealth: 299
 --- !u!4 &181472975548114405
