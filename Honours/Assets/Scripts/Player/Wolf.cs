@@ -33,7 +33,9 @@ public class Wolf : MonoBehaviour, IDamageable
     [Header("Bite")]
     [SerializeField] Transform bitePoint;  // Point where the bite attack is focused
     [SerializeField] float biteRange = 0.5f;  // Radius of the bite hitbox
-    [SerializeField] int biteDamage = 10;  // Damage dealt by the bite attack
+    [SerializeField] int minBiteDamage = 15;
+    [SerializeField] int maxBiteDamage = 20;
+    int biteDamage;  // Damage dealt by the bite attack
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
 
     [Header("Movement")]
@@ -59,6 +61,7 @@ public class Wolf : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentSpeed = defaultSpeed;
+        biteDamage = Random.Range(minBiteDamage, maxBiteDamage + 1);
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 

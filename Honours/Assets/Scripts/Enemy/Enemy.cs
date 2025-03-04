@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
+    public GameObject floatingTextPrefab;
 
     public float maxHealth = 45f;
     public float currentHealth;
@@ -44,8 +45,6 @@ public class Enemy : MonoBehaviour, IDamageable
             }
         }
     }
-
- 
 
     public void SetActiveState(bool active)
     {
@@ -96,7 +95,8 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             // Decrease health
             currentHealth -= damage;
-
+            // Show amount of damage taken
+            ShowFloatingText(damage, Color.white, gameObject);
             // Play hurt animation
             PlayHitEffect();
 
@@ -118,6 +118,32 @@ public class Enemy : MonoBehaviour, IDamageable
         }
       
     }
+
+    void ShowFloatingText(float amount, Color textColour, GameObject target)
+    {
+        if (floatingTextPrefab != null)
+        {
+            // Spawn the text slightly in front of the target
+            Vector3 spawnPosition = target.transform.position + new Vector3(0f, 0f, 2f);
+
+            // Instantiate the floating text prefab
+            GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
+
+            // Set the text instance to be in world space
+            textInstance.transform.SetParent(null);
+
+            // Set the text value and colour
+            var floatingTextComponent = textInstance.GetComponentInChildren<FloatingText>();
+
+            if (floatingTextComponent != null)
+            {
+                floatingTextComponent.SetText(amount.ToString(), textColour);
+            }
+
+            Destroy(textInstance, 0.5f);
+        }
+    }
+
 
     IEnumerator ResetHitFlag()
     {

@@ -10,7 +10,9 @@ public class Weapon : ScriptableObject
     public float bulletSpeed = 10f;
     public float bulletLifetime = 2f;
     public float fireDelay = 0.5f;
-    public int bulletDamage = 10;
+
+    public int minDamage;  // Minimum damage
+    public int maxDamage; // Maximum damage
 
     public enum WeaponType
     {
@@ -19,5 +21,10 @@ public class Weapon : ScriptableObject
         SpreadShot, // Fires multiple bullets in a spread
         Ice,        // Fires an ice projectile
         Automatic     // Autofire projectiles
+    }
+
+    public int GetRandomDamage()
+    {
+        return Random.Range(minDamage, maxDamage + 1);
     }
 }
