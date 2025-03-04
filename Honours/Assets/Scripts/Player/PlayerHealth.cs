@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= amount;
-        ShowFloatingText(-amount);
+        ShowFloatingText(amount);
         if (currentHealth <= 0)
         {
             Die();
@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour
             if (activeCharacter != null)
             {
                 // Spawn the text slightly in front of the active character
-                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0f, 4f); 
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0f, 2f); 
 
                 // Instantiate the floating text prefab
                 GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
                 // Set the text value
                 var floatingTextComponent = textInstance.GetComponentInChildren<FloatingText>();
 
-                Destroy(textInstance, 2f);  
+                Destroy(textInstance, 0.5f);  
 
                 if (floatingTextComponent != null)
                 {
