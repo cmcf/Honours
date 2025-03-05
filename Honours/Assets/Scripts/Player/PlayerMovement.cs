@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         // Neutral vertical aim (no up/down aiming)
         if (speed == 0)
         {
-            // If idle, keep the last vertical direction (or set to zero if idle)
+            // If idle, keep the last vertical direction
             animator.SetFloat("animMoveY", lastMoveDirection.y);
         }
         else
