@@ -158,7 +158,7 @@ public class RoomController : MonoBehaviour
         // Only spawn enemies in the room if it is not the spawn or boss room
         if (room.isBossRoom)
         {
-            Invoke(nameof(DelayedActivateBoss), 0.5f);
+            Invoke(nameof(DelayedActivateBoss), 1.5f);
         }
         else
         {
@@ -169,13 +169,6 @@ public class RoomController : MonoBehaviour
         }
 
         StartCoroutine(RoomCoroutine());
-
-        if (roomsCompleted >= 1)
-        {
-            // Trigger new weapon after entering a room
-            //TriggerRandomWeapon();
-        }
-
     }
 
     void DelayedActivateBoss()
@@ -193,20 +186,6 @@ public class RoomController : MonoBehaviour
             boss.StartBossBattle();
         }
     }
-
-
-        public void TriggerRandomWeapon()
-    {
-        int randomIndex = Random.Range(0, availableWeapons.Length);
-        Weapon selectedWeapon = availableWeapons[randomIndex];
-
-        Debug.Log("Selected weapon: " + selectedWeapon.weaponName);
-        Debug.Log("Weapon sprite: " + selectedWeapon.weaponSprite);
-
-        Player player = FindObjectOfType<Player>();
-        player.EquipWeapon(selectedWeapon);
-    }
-
 
     public IEnumerator RoomCoroutine()
     {
