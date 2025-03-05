@@ -271,12 +271,9 @@ public class Panther : MonoBehaviour, IDamageable
             if (damageable != null && obj.CompareTag("Player"))
             {
                 damageable.Damage(attackDamage);
-                Debug.Log("Panther dealt damage to the player!");
             }
         }
     }
-
-
 
     IEnumerator ReturnToDefendState()
     {
@@ -318,7 +315,6 @@ public class Panther : MonoBehaviour, IDamageable
 
     public void OnShieldDestroyed(GameObject destroyedShield)
     {
-        Debug.Log("Shield destroyed: " + destroyedShield.name);
         activeShields.Remove(destroyedShield);
 
         if (activeShields.Count == 0)
