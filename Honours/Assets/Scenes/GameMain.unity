@@ -4185,8 +4185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 8888
-  currentHealth: 299
+  maxHealth: 200
+  currentHealth: 200
 --- !u!4 &181472975548114405
 Transform:
   m_ObjectHideFlags: 0

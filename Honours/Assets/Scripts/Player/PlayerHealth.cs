@@ -1,16 +1,20 @@
 using UnityEngine;
+using TMPro;  // If using TextMeshPro
 
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
-
     public float maxHealth = 50f;
-    public  float currentHealth;
+    public float currentHealth;
     private bool isDead = false;
 
     private Player player;
     private Wolf wolf;
-    CharacterState currentCharacterState;
+    private CharacterState currentCharacterState;
+
+    // Reference to the UI Text element for health display
+    public TextMeshProUGUI healthText;
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -20,6 +24,13 @@ public class PlayerHealth : MonoBehaviour
     {
         player = FindObjectOfType<Player>();
         wolf = FindObjectOfType<Wolf>();
+        UpdateHealthText();
+    }
+
+    void UpdateHealthText()
+    {
+        // Update the health text to display current health
+        healthText.text = "Health: " + currentHealth.ToString("0");
     }
 
     public void TakeDamage(float amount)
@@ -28,11 +39,13 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= amount;
         ShowFloatingText(amount, Color.red);
+        UpdateHealthText();  // Update health text
         if (currentHealth <= 0)
         {
             Die();
         }
     }
+
     void ShowFloatingText(float amount, Color textColour)
     {
         if (floatingTextPrefab != null)
@@ -79,12 +92,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-
-
     public void Heal(float amount)
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         ShowFloatingText(amount, Color.green);
+        UpdateHealthText();  // Update health text
     }
 
     public void Die()
@@ -129,5 +141,4 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
-
 }
