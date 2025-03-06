@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
         // Neutral vertical aim (no up/down aiming)
         if (speed == 0)
         {
-            // If idle, keep the last vertical direction (or set to zero if idle)
+            // If idle, keep the last vertical direction
             animator.SetFloat("animMoveY", lastMoveDirection.y);
         }
         else
@@ -96,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        Debug.Log("Dash button pressed! CanDash: " + canDash + ", IsDashing: " + isDashing);
         if (canDash)
         {
             StartCoroutine(Dash());
@@ -118,7 +117,9 @@ public class PlayerMovement : MonoBehaviour
             dashDirection = Vector2.right;
         }
 
-        lastMoveDirection = dashDirection; // Store last dash direction
+        // Store last dash direction
+
+        lastMoveDirection = dashDirection; 
 
         // Make player invincible during the dash
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), true);
@@ -149,9 +150,16 @@ public class PlayerMovement : MonoBehaviour
         Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Enemy"), false);
 
         isDashing = false;
-        yield return new WaitForSeconds(dashCooldown);
+
+        // Set trail duration to match cooldown
+        trailRenderer.time = dashCooldown;
+
+        // Wait until the trail disappears
+        yield return new WaitForSeconds(trailRenderer.time);
+
         canDash = true;
     }
+
 
 
     public void ChangeSpeed(bool isEnhanced)

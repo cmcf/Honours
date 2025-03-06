@@ -15,6 +15,7 @@ public class RoomInfo
 public class RoomController : MonoBehaviour
 {
     public static RoomController Instance;
+    public Canvas tutorialTextCanvas;
     SpawnRateManager spawnRate;
     string currentWorldName = "Game";
     public Weapon[] availableWeapons;
@@ -38,6 +39,7 @@ public class RoomController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        tutorialTextCanvas.enabled = true;
     }
 
     void Update()
@@ -90,6 +92,7 @@ public class RoomController : MonoBehaviour
         {
             StartCoroutine(SpawnBossRoom());
         }
+
 
         // Spawn a weapon pickup in the current room
         currentRoom.SpawnPickups();
@@ -155,27 +158,22 @@ public class RoomController : MonoBehaviour
     {
         CameraController.Instance.currentRoom = room;
         currentRoom = room;
+
         // Only spawn enemies in the room if it is not the spawn or boss room
         if (room.isBossRoom)
         {
-            Invoke(nameof(DelayedActivateBoss), 0.5f);
+            Invoke(nameof(DelayedActivateBoss), 1.5f);
         }
         else
         {
             if (leftSpawnRoom)
             {
                 currentRoom.SpawnEnemies();
+                tutorialTextCanvas.enabled = false;
             }
         }
 
         StartCoroutine(RoomCoroutine());
-
-        if (roomsCompleted >= 1)
-        {
-            // Trigger new weapon after entering a room
-            //TriggerRandomWeapon();
-        }
-
     }
 
     void DelayedActivateBoss()
@@ -193,20 +191,6 @@ public class RoomController : MonoBehaviour
             boss.StartBossBattle();
         }
     }
-
-
-        public void TriggerRandomWeapon()
-    {
-        int randomIndex = Random.Range(0, availableWeapons.Length);
-        Weapon selectedWeapon = availableWeapons[randomIndex];
-
-        Debug.Log("Selected weapon: " + selectedWeapon.weaponName);
-        Debug.Log("Weapon sprite: " + selectedWeapon.weaponSprite);
-
-        Player player = FindObjectOfType<Player>();
-        player.EquipWeapon(selectedWeapon);
-    }
-
 
     public IEnumerator RoomCoroutine()
     {

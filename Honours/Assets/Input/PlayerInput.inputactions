@@ -283,17 +283,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c47bd6f8-d265-4544-bb53-fd8b058f2fe6",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6e6a0b31-83af-4bcd-978d-b47573ce7f98",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
@@ -307,6 +296,17 @@
                     "name": "",
                     "id": "dd59a0a4-e6eb-4671-bb34-ce6135d9c9c8",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e25c3c37-ca07-4971-9192-adcc1dc1ae1c",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -395,6 +395,17 @@
                     "name": "",
                     "id": "d0475fe5-d9ce-4014-aa4f-fdf433bdea0b",
                     "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e3a77150-d0ed-4f73-a428-6c22b4fba71d",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

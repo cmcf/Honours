@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.XR;
 using static Damage;
+using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class Panther : MonoBehaviour, IDamageable
 {
@@ -27,7 +29,7 @@ public class Panther : MonoBehaviour, IDamageable
     public float stopAttackRange = 4f;
     public float attackDamage = 10f;
     public float attackCooldown = 1f;
-    private bool canAttack = true;
+    bool canAttack = true;
 
     bool isAttacking = false;
 
@@ -35,8 +37,10 @@ public class Panther : MonoBehaviour, IDamageable
     public GameObject shieldPrefab;
     public Transform shieldSpawnPoint;
     private List<GameObject> activeShields = new List<GameObject>();
-    private bool shieldActive = false;
+    public bool shieldActive = false;
     public float shieldDuration = 8f; // Time before the shield projectiles fire
+    [SerializeField] float respawnShieldDelay = 2f;
+    [SerializeField] float defendStateDuration = 25f;
 
     public Transform target;
     public float orbitRadius = 0.5f;
@@ -48,6 +52,8 @@ public class Panther : MonoBehaviour, IDamageable
     Vector2 chargeDirection; // Stores the direction during the charge
 
     bool canAttackAgain = true;
+    [SerializeField] bool canActivateShield = true;
+    float defendStateStartTime;
 
     float shieldCooldown = 1f;
     float lastShieldTime;
@@ -73,6 +79,13 @@ public class Panther : MonoBehaviour, IDamageable
 
     }
 
+    void OnEnable()
+    {
+        canActivateShield = true;
+        defendStateStartTime = Time.time;
+        currentPhase = PantherState.Defend;
+    }
+
     void Update()
     {
         if (currentState == EnemyState.Dead) { return; }
@@ -82,6 +95,17 @@ public class Panther : MonoBehaviour, IDamageable
         if (currentPhase == PantherState.Defend)
         {
             FacePlayer();
+
+            if (canActivateShield)
+            {
+                ActivateShield();
+            }
+
+            // Transition to Charge after the defend duration ends
+            if (Time.time - defendStateStartTime >= defendStateDuration)
+            {
+                currentPhase = PantherState.Charge;
+            }
         }
 
         if (currentPhase == PantherState.Charge)
@@ -89,12 +113,10 @@ public class Panther : MonoBehaviour, IDamageable
             PerformCharge();
         }
 
-        
         animator.SetFloat("speed", rb.velocity.magnitude);
 
-        if (currentPhase == PantherState.Defend)
+        if (shieldActive)
         {
-            ActivateShield();
             UpdateShieldOrbit();
         }
 
@@ -249,12 +271,9 @@ public class Panther : MonoBehaviour, IDamageable
             if (damageable != null && obj.CompareTag("Player"))
             {
                 damageable.Damage(attackDamage);
-                Debug.Log("Panther dealt damage to the player!");
             }
         }
     }
-
-
 
     IEnumerator ReturnToDefendState()
     {
@@ -262,10 +281,11 @@ public class Panther : MonoBehaviour, IDamageable
         currentPhase = PantherState.Defend;
     }
 
-
     public void ActivateShield()
     {
         if (shieldActive) return;
+
+        canActivateShield = false;
 
         if (Time.time > lastShieldTime + shieldCooldown)
         {
@@ -292,12 +312,26 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
+
+    public void OnShieldDestroyed(GameObject destroyedShield)
+    {
+        activeShields.Remove(destroyedShield);
+
+        if (activeShields.Count == 0)
+        {
+            shieldActive = false;  
+            // Delay the shield respawn
+            StartCoroutine(RespawnShieldDelayed());
+        }
+    }
+
     void BreakShield()
     {
         if (!shieldActive) return;
 
         shieldActive = false;
 
+        // Destroy and clear active shields
         foreach (GameObject shield in activeShields)
         {
             if (shield != null)
@@ -308,14 +342,24 @@ public class Panther : MonoBehaviour, IDamageable
                     Vector2 fireDirection = (shield.transform.position - transform.position).normalized;
                     rb.velocity = fireDirection * projectileSpeed;
                 }
-
                 Destroy(shield, 2f);
             }
         }
 
         activeShields.Clear();
-        StartChargePhase(); // Continue to next phase
+
+        currentPhase = PantherState.Charge;
+
     }
+
+    IEnumerator RespawnShieldDelayed()
+    {
+        // Wait for the respawn delay time
+        yield return new WaitForSeconds(4f);
+
+        canActivateShield = true;
+    }
+
 
     void UpdateShieldOrbit()
     {
@@ -376,5 +420,10 @@ public class Panther : MonoBehaviour, IDamageable
         }
 
         transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
+    }
+
+    public bool IsShieldActive()
+    {
+        return shieldActive;
     }
 }

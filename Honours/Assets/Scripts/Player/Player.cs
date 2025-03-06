@@ -302,4 +302,9 @@ public class Player : MonoBehaviour, IDamageable
         animator.SetTrigger("isDead");
     }
 
+    public Weapon GetCurrentWeapon()
+    {
+        return currentWeapon; // Replace with your actual variable for the current weapon
+    }
+
 }

@@ -136,17 +136,19 @@ public class Switcher : MonoBehaviour
 
             wolfRigidbody.velocity = Vector2.zero;
             playerRigidbody.velocity = Vector2.zero;
-
         }
         else if (currentCharacterState == CharacterState.Wolf)
         {
-            // Resets move input 
+            // Disable wolf input and stop movement
             Wolf wolfMovement = wolfObject.GetComponent<Wolf>();
             wolfMovement.DisableInput();
-            // Resets velocity 
+
+            // Destroy wolf's orbiting knives when switching to player
+            wolfMovement.DestroyKnives();  
+
+            // Reset velocities
             playerRigidbody.velocity = Vector2.zero;
             wolfRigidbody.velocity = Vector2.zero;
-
         }
 
         // Change the current character state
@@ -166,10 +168,11 @@ public class Switcher : MonoBehaviour
 
             playerRigidbody.velocity = Vector2.zero;
             wolfRigidbody.velocity = Vector2.zero;
-            Invoke("EnableSwitch", 1f);
 
+            Invoke("EnableSwitch", 1f);  
         }
     }
+
 
 
     void EnableSwitch()

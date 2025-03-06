@@ -292,10 +292,23 @@ public class Wolf : MonoBehaviour, IDamageable
             // Check if the bite hits the shield 
             if (enemy.CompareTag("Shield")) 
             {
-                Destroy(enemy.gameObject);  // Destroy the shield
+                DestroyShield(enemy.gameObject);  // Destroy the shield
             }
         }
     }
+    public void DestroyShield(GameObject shield)
+    {
+        
+        Panther panther = FindObjectOfType<Panther>(); 
+
+        if (panther != null)
+        {
+            panther.OnShieldDestroyed(shield); // Notify Panther that the shield is destroyed
+        }
+
+        Destroy(shield); // Destroy the shield GameObject
+    }
+
 
     void SetBiteDirection()
     {
@@ -342,5 +355,23 @@ public class Wolf : MonoBehaviour, IDamageable
         // Current health is decreased by the damage received
         playerHealth.TakeDamage(damage);
     }
+
+    public void DestroyKnives()
+    {
+        // Loop through all the orbiting knives and destroy them
+        foreach (GameObject knife in orbitingKnives)
+        {
+            if (knife != null)
+            {
+                Destroy(knife); 
+            }
+        }
+
+        // Clear the list after destroying the knives
+        orbitingKnives.Clear();
+        knivesActive = false;  
+    }
+
+
 
 }

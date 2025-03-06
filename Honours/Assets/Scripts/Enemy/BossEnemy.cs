@@ -7,6 +7,8 @@ public class BossEnemy : MonoBehaviour
 {
     public Animator currentAnimator;
     public BossFormManager formManager;
+
+    public GameObject floatingTextPrefab;
     Rigidbody2D activeRb;
     public float maxHealth = 45f;
     public float currentHealth;
@@ -31,19 +33,72 @@ public class BossEnemy : MonoBehaviour
 
     public void Damage(float damage)
     {
-        Debug.Log("Damage Received: " + damage); // Debug message
+        Panther panther = GetComponentInChildren<Panther>(); 
+
+        if (panther != null && panther.shieldActive)
+        {
+            return; // Ignore damage if shield is active
+        }
+
         if (!hit)
         {
             // Decrease health
             currentHealth -= damage;
             PlayHitEffect();
+            ShowFloatingText(damage, Color.white);
+
             if (currentHealth <= 0)
             {
                 Die();
             }
-
+ 
             hit = true;
             StartCoroutine(ResetHitFlag());
+        }
+    }
+
+
+    void ShowFloatingText(float amount, Color textColour)
+    {
+        if (floatingTextPrefab != null)
+        {
+            // Get the correct character's position based on the current boss form
+            GameObject activeCharacter = null;
+
+            // Get the current active form's position
+            if (formManager != null)
+            {
+                if (formManager.GetCurrentForm() == BossFormManager.BossForm.Firebird)
+                {
+                    activeCharacter = formManager.firebirdForm;
+                }
+                else if (formManager.GetCurrentForm() == BossFormManager.BossForm.Panther)
+                {
+                    activeCharacter = formManager.pantherForm;
+                }
+            }
+
+            if (activeCharacter != null)
+            {
+                // Spawn the text slightly in front of the active character
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0.5f, 2f);
+
+                // Instantiate the floating text prefab
+                GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
+
+                // Set the text instance to be in world space
+                textInstance.transform.SetParent(null);
+
+                // Set the text value and colour
+                var floatingTextComponent = textInstance.GetComponentInChildren<FloatingText>();
+
+                if (floatingTextComponent != null)
+                {
+                    floatingTextComponent.SetText(amount.ToString(), textColour);
+                }
+
+                Destroy(textInstance, 0.5f); 
+            }
         }
     }
 
