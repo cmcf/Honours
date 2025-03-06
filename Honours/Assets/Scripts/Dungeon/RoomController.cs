@@ -15,6 +15,7 @@ public class RoomInfo
 public class RoomController : MonoBehaviour
 {
     public static RoomController Instance;
+    public Canvas tutorialTextCanvas;
     SpawnRateManager spawnRate;
     string currentWorldName = "Game";
     public Weapon[] availableWeapons;
@@ -38,6 +39,7 @@ public class RoomController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+        tutorialTextCanvas.enabled = true;
     }
 
     void Update()
@@ -90,6 +92,7 @@ public class RoomController : MonoBehaviour
         {
             StartCoroutine(SpawnBossRoom());
         }
+
 
         // Spawn a weapon pickup in the current room
         currentRoom.SpawnPickups();
@@ -155,6 +158,7 @@ public class RoomController : MonoBehaviour
     {
         CameraController.Instance.currentRoom = room;
         currentRoom = room;
+
         // Only spawn enemies in the room if it is not the spawn or boss room
         if (room.isBossRoom)
         {
@@ -165,6 +169,7 @@ public class RoomController : MonoBehaviour
             if (leftSpawnRoom)
             {
                 currentRoom.SpawnEnemies();
+                tutorialTextCanvas.enabled = false;
             }
         }
 

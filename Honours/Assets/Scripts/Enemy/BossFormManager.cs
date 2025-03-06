@@ -35,22 +35,13 @@ public class BossFormManager : MonoBehaviour
     {
         if (Time.time - lastSwitchTime < switchCooldown) return;
 
-        if (enemy != null)
-        {
-            float healthPercent = enemy.GetHealthPercentage();
-        }
-
-        // Proximity-Based Switching
-        if (ShouldSwitchBasedOnPlayerDistance())
-        {
-            SwitchForm();
-        }
-
         // Random Switching After Some Time
         if (Random.Range(0f, 1f) < 0.01f) // ~1% chance per frame to switch
         {
             //SwitchForm();
         }
+
+        SwitchBasedOnHealth();
     }
 
     bool ShouldSwitchBasedOnPlayerDistance()
@@ -124,14 +115,14 @@ public class BossFormManager : MonoBehaviour
         return currentForm;
     }
 
-    void TempUpdateCode()
+    void SwitchBasedOnHealth()
     {
         if (enemy != null)
         {
             float healthPercent = enemy.GetHealthPercentage();
 
             // Health-Based Switching
-            if (healthPercent <= 0.75f && currentForm == BossForm.Firebird)
+            if (healthPercent <= 0.65f && currentForm == BossForm.Firebird)
                 SwitchForm();
             else if (healthPercent <= 0.50f && currentForm == BossForm.Panther)
                 SwitchForm();
