@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 [System.Serializable]
 public class CharacterInfo
@@ -18,6 +19,7 @@ public enum CharacterState
 public class Switcher : MonoBehaviour
 {
     public PlayerInput playerInput; // Reference to PlayerInput component
+    public CinemachineVirtualCamera virtualCamera;
 
     public List<CharacterInfo> characters = new List<CharacterInfo>();
     private int currentCharacterIndex = 0;
@@ -169,10 +171,21 @@ public class Switcher : MonoBehaviour
             playerRigidbody.velocity = Vector2.zero;
             wolfRigidbody.velocity = Vector2.zero;
 
+            // Switch the camera to follow the new character
+            SwitchCameraFollow(characterInfo.character.transform);
+
             Invoke("EnableSwitch", 1f);  
         }
     }
 
+    void SwitchCameraFollow(Transform newTarget)
+    {
+        // Update camera to follow the new character
+        if (virtualCamera != null)
+        {
+            virtualCamera.Follow = newTarget; 
+        }
+    }
 
 
     void EnableSwitch()

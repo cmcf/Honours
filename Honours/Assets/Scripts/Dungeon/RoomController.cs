@@ -128,11 +128,6 @@ public class RoomController : MonoBehaviour
 
             isLoadingRoom = false;
 
-            if (loadedRooms.Count == 0)
-            {
-                CameraController.Instance.currentRoom = room;
-            }
-
             loadedRooms.Add(room);
         }
         else
@@ -156,7 +151,6 @@ public class RoomController : MonoBehaviour
 
     public void OnEnterRoom(Room room)
     {
-        CameraController.Instance.currentRoom = room;
         currentRoom = room;
 
         // Only spawn enemies in the room if it is not the spawn or boss room
