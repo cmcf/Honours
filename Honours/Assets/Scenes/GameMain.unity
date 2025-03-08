@@ -1092,6 +1092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dungeonGenerationData: {fileID: 11400000, guid: 8b1f29dca6b69504bbf2c0dc7db82acd, type: 2}
+  corridorPrefab: {fileID: 943576447892573190, guid: 1e94172b93a5ba4439a88a2e33f7c19f, type: 3}
 --- !u!1 &2143930539
 GameObject:
   m_ObjectHideFlags: 0
