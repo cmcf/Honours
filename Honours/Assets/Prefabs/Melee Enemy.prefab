@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b63793bf84100f54ab812b0598d206ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 794100427900891297}
   spriteRenderer: {fileID: 8561932971203901866}
   rb: {fileID: 2956526659463315321}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
@@ -139,7 +139,7 @@ MonoBehaviour:
   moveSpeed: 1.7
   freezeTimer: 0
   level: 0
-  isActive: 0
+  isActive: 1
   currentState: 1
   damage: 0
   stoppingDistance: 0.3
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d2d56353bd991458d3c7ee7590d666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 794100427900891297}
   spriteRenderer: {fileID: 8561932971203901866}
   rb: {fileID: 2956526659463315321}
   floatingTextPrefab: {fileID: 0}
@@ -215,7 +215,7 @@ MonoBehaviour:
   moveSpeed: 1.7
   freezeTimer: 0.5
   level: 0
-  isActive: 0
+  isActive: 1
   currentState: 1
 --- !u!95 &794100427900891297
 Animator:

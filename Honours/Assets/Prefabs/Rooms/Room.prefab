@@ -27134,8 +27134,9 @@ MonoBehaviour:
   height: 11
   x: 0
   y: 0
-  gridController: {fileID: 0}
-  spawner: {fileID: 0}
+  gridController: {fileID: 9148599058773448029}
+  spawner: {fileID: 7222207371611653534}
+  roomSO: {fileID: 0}
   leftDoor: {fileID: 0}
   rightDoor: {fileID: 668576329600041846}
   topDoor: {fileID: 0}

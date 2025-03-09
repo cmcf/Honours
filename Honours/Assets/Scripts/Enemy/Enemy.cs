@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public float freezeTimer;
     public int level;
 
-    public bool isActive = false;
+    public bool isActive = true;
     bool hit = false;
     bool isFrozen = false;
     float destroyDelay = 0.6f;

@@ -76,13 +76,13 @@ public class RoomController : MonoBehaviour
 
     public void StartRoomTransition()
     {
-        // Step 1: Fade out
+        // Fade out
         sceneTransition.FadeOut(() =>
         {
-            // Step 2: Deactivate the previous room
+            // Deactivate the previous room
             if (previousRoom != null)
             {
-                Destroy(previousRoom); // Or Destroy(previousRoom) if you want to destroy it
+                Destroy(previousRoom); 
             }
 
             // Step 3: Activate the next room
@@ -91,11 +91,18 @@ public class RoomController : MonoBehaviour
                 nextRoom.SetActive(true);
             }
 
-            // Step 4: Fade in the new room
+            // Fade in the new room
             sceneTransition.FadeIn(() =>
-            {
-                // You can call additional logic after fade-in completes
-                Debug.Log("Room Transition Complete");
+            { // Debug: Check if SpawnEnemies is called
+                if (currentRoom != null)
+                {
+                    Debug.Log("Spawning enemies in the new room");
+                    currentRoom.SpawnEnemies();
+                }
+                else
+                {
+                    Debug.LogWarning("Current room is null. Enemies cannot be spawned.");
+                }
             });
         });
     }
@@ -152,7 +159,7 @@ public class RoomController : MonoBehaviour
     public void OnEnterRoom(Room room)
     {
         currentRoom = room;
-
+        Debug.Log("Entered room");
         if (room.isBossRoom)
         {
             Invoke(nameof(DelayedActivateBoss), 1.5f);

@@ -68,7 +68,7 @@ public class Room : MonoBehaviour
         }
     }
 
-    private Door.DoorType GetOppositeDoor(Door.DoorType doorType)
+    Door.DoorType GetOppositeDoor(Door.DoorType doorType)
     {
         switch (doorType)
         {
