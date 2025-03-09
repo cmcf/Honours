@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Room : MonoBehaviour
@@ -11,12 +10,7 @@ public class Room : MonoBehaviour
     public int y;
     public GridController gridController;
     public ObjectRoomSpawner spawner;
-    bool updatedDoors = false;
-    public Room(int X, int Y)
-    {
-        X = x;
-        Y = y;
-    }
+    public RoomSO roomSO;
 
     public Door leftDoor;
     public Door rightDoor;
@@ -27,131 +21,56 @@ public class Room : MonoBehaviour
     public bool hasSpawnedEnemies = false;
     public bool isCompleted { get; set; } = false;
 
-    public List <Door> doorList = new List<Door>();
+    public List<Door> doorList = new List<Door>();
 
-
-    void Start()
+    public void InitializeRoom(int roomNumber)
     {
-        gridController = GetComponentInChildren<GridController>();
-
-        if (RoomController.Instance == null)
-        {
-            return;
-        }
+        // Room initialization logic
+        // Example: You can use roomNumber to load specific room configurations
         Door[] doors = GetComponentsInChildren<Door>();
-        foreach(Door door in doors)
+        foreach (Door door in doors)
         {
             doorList.Add(door);
             switch (door.doorType)
             {
-                case Door.DoorType.right:
-                    rightDoor = door;
-                    break;
-                    case Door.DoorType.left:
-                    leftDoor = door;
-                    break;
-                    case Door.DoorType.bottom:
-                    bottomDoor = door;
-                    break;
-                    case Door.DoorType.top:
-                    topDoor = door;
-                    break;
+                case Door.DoorType.right: rightDoor = door; break;
+                case Door.DoorType.left: leftDoor = door; break;
+                case Door.DoorType.bottom: bottomDoor = door; break;
+                case Door.DoorType.top: topDoor = door; break;
             }
         }
-
-        RoomController.Instance.RegisterRoom(this);
-        
     }
 
     public void SpawnEnemies()
     {
-        spawner = GetComponent<ObjectRoomSpawner>();
-        // Ensure the room and spawner exist before trying to spawn
         if (spawner != null)
         {
-            // Trigger the spawning for this room
             spawner.StartSpawningEnemies(this);
         }
     }
 
     public void SpawnPickups()
     {
-        spawner = GetComponent<ObjectRoomSpawner>();
-        // Ensure the room and spawner exist before trying to spawn
         if (spawner != null)
         {
-            // Trigger the spawning for this room
             spawner.StartSpawningPickups(this);
         }
     }
 
+    public void CheckRoomCompletion()
+    {
+        bool enemiesDefeated = AreAllEnemiesDefeated();
+        if (enemiesDefeated && !isCompleted)
+        {
+            isCompleted = true;
+            RoomController.Instance.OnRoomCompleted();
+        }
+    }
 
     public bool AreAllEnemiesDefeated()
     {
         Enemy[] enemies = GetComponentsInChildren<Enemy>();
         return enemies.Length == 0;
-    }
-
-  public void RemoveUnConnectedDoors()
-    {
-        foreach (Door door in GetComponentsInChildren<Door>())
-        {
-            // Get the grid position of the neighboring room
-            Vector2Int doorPosition = door.GetGridPosition();
-
-            // Use RoomController to find if the neighboring room exists
-            Room neighbour = RoomController.Instance.FindRoom(doorPosition.x, doorPosition.y);
-
-            // Deactivate the door if no neighboring room exists
-            if (neighbour == null)
-            {
-                door.gameObject.SetActive(false);
-            }
-            else
-            {
-                door.gameObject.SetActive(true);
-            }
-        }
-    }
-
-
-    public Room GetRight()
-    {
-        if (RoomController.Instance.DoesRoomExist(x + 1, y))
-        {
-            return RoomController.Instance.FindRoom(x + 1, y);
-        }
-        return null;
-    }
-    public Room GetLeft()
-    {
-        if (RoomController.Instance.DoesRoomExist(x - 1, y))
-        {
-            return RoomController.Instance.FindRoom(x - 1, y);
-        }
-        return null;
-    }
-    public Room GetTop()
-    {
-        if (RoomController.Instance.DoesRoomExist(x, y + 1))
-        {
-            return RoomController.Instance.FindRoom(x, y + 1);
-        }
-        return null;
-    }
-    public Room GetBottom()
-    {
-        if (RoomController.Instance.DoesRoomExist(x, y - 1))
-        {
-            return RoomController.Instance.FindRoom(x, y -1);
-        }
-        return null;
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(width, height, 0));
     }
 
     public Vector3 GetRoomCentre()
@@ -161,10 +80,9 @@ public class Room : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             RoomController.Instance.OnEnterRoom(this);
         }
     }
-
 }
