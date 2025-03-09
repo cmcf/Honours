@@ -1,17 +1,27 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Collections;
+
+public enum RoomDirection
+{
+    Up,
+    Down,
+    Left,
+    Right
+}
 
 public class RoomController : MonoBehaviour
 {
     public static RoomController Instance;
-    public Canvas tutorialTextCanvas;
     public List<Weapon> availableWeapons;
+    public List<RoomSO> availableRooms;
     public RoomSO bossRoom;
     public RoomSO spawnRoom;
 
-
     public Room currentRoom;
+    public Vector3 currentRoomPosition; // Track the position of the last room
+    public RoomDirection currentDirection; // Track the current direction to spawn rooms in
+
     int roomsCompleted = 0;
     const int roomsBeforeBoss = 2;
     bool leftSpawnRoom = false;
@@ -19,10 +29,9 @@ public class RoomController : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        tutorialTextCanvas.enabled = true;
 
         // Load the spawn room when the game starts
-        LoadRoom(spawnRoom);
+        LoadSpawnRoom(); 
     }
 
     void Update()
@@ -30,22 +39,80 @@ public class RoomController : MonoBehaviour
         UpdateRooms();
     }
 
-    public void LoadRoom(RoomSO roomSO)
+    void LoadSpawnRoom()
     {
-        // Check if the room is already loaded
+        if (spawnRoom == null || spawnRoom.roomPrefab == null)
+        {
+            Debug.LogError("Spawn room or its prefab is missing!");
+            return;
+        }
+
+        // Instantiate the spawn room at a fixed position
+        Room newRoom = Instantiate(spawnRoom.roomPrefab, Vector3.zero, Quaternion.identity).GetComponent<Room>();
+
+        newRoom.roomSO = spawnRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+
+        currentRoom = newRoom;
+        currentRoomPosition = newRoom.transform.position; 
+    }
+
+
+    public void LoadNextRoom(Door door)
+    {
+        if (availableRooms.Count == 0)
+        {
+            Debug.LogError("No available rooms to spawn!");
+            return;
+        }
+
+        RoomSO nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)]; // Pick a random room
+
+        LoadRoom(nextRoomSO, door.doorType); 
+    }
+
+
+    public void LoadRoom(RoomSO roomSO, Door.DoorType doorType)
+    {
         if (DoesRoomExist(roomSO))
         {
             return;
         }
 
-        // Instantiate and initialize the room
+        if (roomSO == null || roomSO.roomPrefab == null)
+        {
+            Debug.LogError("RoomSO or Room Prefab is null!");
+            return;
+        }
+
         Room newRoom = Instantiate(roomSO.roomPrefab).GetComponent<Room>();
 
-        // Initialize new room and update the current room reference
+        // Calculate spawn position based on doorType
+        Vector3 spawnPosition = currentRoom.transform.position;
+
+        switch (doorType)
+        {
+            case Door.DoorType.left:
+                spawnPosition.x -= currentRoom.width;
+                break;
+            case Door.DoorType.right:
+                spawnPosition.x += currentRoom.width;
+                break;
+            case Door.DoorType.top:
+                spawnPosition.y += currentRoom.height;
+                break;
+            case Door.DoorType.bottom:
+                spawnPosition.y -= currentRoom.height;
+                break;
+        }
+
+        newRoom.transform.position = spawnPosition;
         newRoom.roomSO = roomSO;
         newRoom.InitializeRoom(roomsCompleted);
         currentRoom = newRoom;
+        currentRoomPosition = newRoom.transform.position;
     }
+
 
     public void OnRoomCompleted()
     {
@@ -56,10 +123,6 @@ public class RoomController : MonoBehaviour
             StartCoroutine(SpawnBossRoom());
         }
 
-        if (!leftSpawnRoom)
-        {
-            tutorialTextCanvas.enabled = false;
-        }
 
         currentRoom.SpawnPickups(); // Spawn pickups for the current room
     }
@@ -76,14 +139,6 @@ public class RoomController : MonoBehaviour
         if (room.isBossRoom)
         {
             Invoke(nameof(DelayedActivateBoss), 1.5f);
-        }
-        else
-        {
-            if (leftSpawnRoom)
-            {
-                currentRoom.SpawnEnemies();
-                tutorialTextCanvas.enabled = false;
-            }
         }
 
         StartCoroutine(RoomCoroutine());
@@ -120,8 +175,8 @@ public class RoomController : MonoBehaviour
 
     IEnumerator SpawnBossRoom()
     {
-        yield return new WaitForSeconds(1f); 
-        RoomSO bossRoomSO = bossRoom;  
-        LoadRoom(bossRoomSO); 
+        yield return new WaitForSeconds(1f);
+        RoomSO bossRoomSO = bossRoom;
+        //LoadRoom(bossRoomSO);
     }
 }

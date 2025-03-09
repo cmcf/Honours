@@ -40,6 +40,9 @@ public class Door : MonoBehaviour
             if (parentRoom.AreAllEnemiesDefeated())
             {
                 MovePlayer();
+                RoomController.Instance.LoadNextRoom(this);
+
+
             }
             else
             {
