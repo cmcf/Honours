@@ -66,19 +66,14 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        RoomSO nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)]; // Pick a random room
+        // Pick a random room
+        RoomSO nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)]; 
 
         LoadRoom(nextRoomSO, door.doorType); 
     }
 
-
-    public void LoadRoom(RoomSO roomSO, Door.DoorType doorType)
+    public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
     {
-        if (DoesRoomExist(roomSO))
-        {
-            return;
-        }
-
         if (roomSO == null || roomSO.roomPrefab == null)
         {
             Debug.LogError("RoomSO or Room Prefab is null!");
@@ -86,31 +81,23 @@ public class RoomController : MonoBehaviour
         }
 
         Room newRoom = Instantiate(roomSO.roomPrefab).GetComponent<Room>();
-
-        // Calculate spawn position based on doorType
-        Vector3 spawnPosition = currentRoom.transform.position;
-
-        switch (doorType)
-        {
-            case Door.DoorType.left:
-                spawnPosition.x -= currentRoom.width;
-                break;
-            case Door.DoorType.right:
-                spawnPosition.x += currentRoom.width;
-                break;
-            case Door.DoorType.top:
-                spawnPosition.y += currentRoom.height;
-                break;
-            case Door.DoorType.bottom:
-                spawnPosition.y -= currentRoom.height;
-                break;
-        }
-
-        newRoom.transform.position = spawnPosition;
-        newRoom.roomSO = roomSO;
         newRoom.InitializeRoom(roomsCompleted);
+
+        // Set the correct position based on the previous door
+        Vector3 spawnPosition = currentRoom.transform.position;
+        switch (previousDoor)
+        {
+            case Door.DoorType.left: spawnPosition.x -= currentRoom.width; break;
+            case Door.DoorType.right: spawnPosition.x += currentRoom.width; break;
+            case Door.DoorType.top: spawnPosition.y += currentRoom.height; break;
+            case Door.DoorType.bottom: spawnPosition.y -= currentRoom.height; break;
+        }
+        newRoom.transform.position = spawnPosition;
+
+        // Enable a single exit door that does NOT allow backtracking
+        newRoom.EnableSingleExitDoor(previousDoor);
+
         currentRoom = newRoom;
-        currentRoomPosition = newRoom.transform.position;
     }
 
 
