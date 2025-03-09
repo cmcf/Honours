@@ -12,6 +12,7 @@ public enum RoomDirection
 
 public class RoomController : MonoBehaviour
 {
+    public SceneTransition sceneTransition;
     public static RoomController Instance;
     public List<Weapon> availableWeapons;
     public List<RoomSO> availableRooms;
@@ -19,6 +20,8 @@ public class RoomController : MonoBehaviour
     public RoomSO spawnRoom;
 
     public Room currentRoom;
+    GameObject previousRoom;
+    GameObject nextRoom; // Store next room reference
     public Vector3 currentRoomPosition; // Track the position of the last room
     public RoomDirection currentDirection; // Track the current direction to spawn rooms in
 
@@ -31,7 +34,7 @@ public class RoomController : MonoBehaviour
         Instance = this;
 
         // Load the spawn room when the game starts
-        LoadSpawnRoom(); 
+        LoadSpawnRoom();
     }
 
     void Update()
@@ -54,9 +57,8 @@ public class RoomController : MonoBehaviour
         newRoom.InitializeRoom(roomsCompleted);
 
         currentRoom = newRoom;
-        currentRoomPosition = newRoom.transform.position; 
+        currentRoomPosition = newRoom.transform.position;
     }
-
 
     public void LoadNextRoom(Door door)
     {
@@ -67,9 +69,35 @@ public class RoomController : MonoBehaviour
         }
 
         // Pick a random room
-        RoomSO nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)]; 
+        RoomSO nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)];
 
-        LoadRoom(nextRoomSO, door.doorType); 
+        LoadRoom(nextRoomSO, door.doorType);
+    }
+
+    public void StartRoomTransition()
+    {
+        // Step 1: Fade out
+        sceneTransition.FadeOut(() =>
+        {
+            // Step 2: Deactivate the previous room
+            if (previousRoom != null)
+            {
+                Destroy(previousRoom); // Or Destroy(previousRoom) if you want to destroy it
+            }
+
+            // Step 3: Activate the next room
+            if (nextRoom != null)
+            {
+                nextRoom.SetActive(true);
+            }
+
+            // Step 4: Fade in the new room
+            sceneTransition.FadeIn(() =>
+            {
+                // You can call additional logic after fade-in completes
+                Debug.Log("Room Transition Complete");
+            });
+        });
     }
 
     public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
@@ -80,6 +108,7 @@ public class RoomController : MonoBehaviour
             return;
         }
 
+        // Create new room and initialize it
         Room newRoom = Instantiate(roomSO.roomPrefab).GetComponent<Room>();
         newRoom.InitializeRoom(roomsCompleted);
 
@@ -97,9 +126,11 @@ public class RoomController : MonoBehaviour
         // Enable a single exit door that does NOT allow backtracking
         newRoom.EnableSingleExitDoor(previousDoor);
 
+        // Set previous room reference for transition
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject; // Set the next room reference
         currentRoom = newRoom;
     }
-
 
     public void OnRoomCompleted()
     {
@@ -109,7 +140,6 @@ public class RoomController : MonoBehaviour
         {
             StartCoroutine(SpawnBossRoom());
         }
-
 
         currentRoom.SpawnPickups(); // Spawn pickups for the current room
     }
