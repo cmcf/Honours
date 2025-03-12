@@ -457,7 +457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -24.8}
+  m_AnchoredPosition: {x: 110, y: -30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210541548
@@ -507,8 +507,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 0}
-  virtualCamera: {fileID: 0}
+  virtualCamera: {fileID: 1758664112}
   characters:
   - character: {fileID: 5213473724355869344}
   - character: {fileID: 1816236667}
@@ -1147,12 +1147,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
   - {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   availableRooms:
-  - {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
+  - {fileID: 11400000, guid: 488f124bc8f0661488e8b39bdf0eccb4, type: 2}
   bossRoom: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   spawnRoom: {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
   currentRoom: {fileID: 0}
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
+  startBossAttack: 0
 --- !u!4 &2019253176
 Transform:
   m_ObjectHideFlags: 0

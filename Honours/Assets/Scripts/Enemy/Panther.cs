@@ -10,6 +10,7 @@ using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 public class Panther : MonoBehaviour, IDamageable
 {
     public Transform player;
+    public Transform[] boundaryPoints;
     private Animator animator;
     private Rigidbody2D rb;
     public Room currentRoom;
@@ -121,6 +122,40 @@ public class Panther : MonoBehaviour, IDamageable
         }
 
         ClampPosition();
+    }
+
+    void ClampPosition()
+    {
+        // Get the panther's current position
+        Vector3 currentPosition = transform.position;
+
+        // Define the min and max X/Y values based on the boundary points
+        float minX = Mathf.Min(boundaryPoints[0].position.x, boundaryPoints[1].position.x);
+        float maxX = Mathf.Max(boundaryPoints[0].position.x, boundaryPoints[1].position.x);
+        float minY = Mathf.Min(boundaryPoints[0].position.y, boundaryPoints[2].position.y);
+        float maxY = Mathf.Max(boundaryPoints[0].position.y, boundaryPoints[2].position.y);
+
+        // Constrain the panther's position to stay within these bounds
+        if (currentPosition.x < minX)
+        {
+            currentPosition.x = minX;
+        }
+        else if (currentPosition.x > maxX)
+        {
+            currentPosition.x = maxX;
+        }
+
+        if (currentPosition.y < minY)
+        {
+            currentPosition.y = minY;
+        }
+        else if (currentPosition.y > maxY)
+        {
+            currentPosition.y = maxY;
+        }
+
+        // Apply the new constrained position
+        transform.position = currentPosition;
     }
 
     public void StartAttacking()
@@ -394,32 +429,6 @@ public class Panther : MonoBehaviour, IDamageable
 
         BossEnemy enemy = GetComponentInParent<BossEnemy>();
         enemy.Damage(damage);
-    }
-
-    void ClampPosition()
-    {
-        float margin = 2f;
-
-        float roomMinX = currentRoom.GetRoomCentre().x - (currentRoom.width / 2) + margin;
-        float roomMaxX = currentRoom.GetRoomCentre().x + (currentRoom.width / 2) - margin;
-        float roomMinY = currentRoom.GetRoomCentre().y - (currentRoom.height / 2) + 1.12f;
-        float roomMaxY = currentRoom.GetRoomCentre().y + (currentRoom.height / 2) - margin;
-
-        Vector3 currentPosition = transform.position;
-        float clampedX = Mathf.Clamp(currentPosition.x, roomMinX, roomMaxX);
-        float clampedY = Mathf.Clamp(currentPosition.y, roomMinY, roomMaxY);
-
-        Vector2 velocity = rb.velocity;
-
-        if (currentPosition.x != clampedX || currentPosition.y != clampedY)
-        {
-            velocity = Vector2.Lerp(velocity, Vector2.zero, 0.5f);
-            rb.velocity = velocity;
-            rb.angularVelocity = 0f;
-            animator.SetFloat("speed", 0f);
-        }
-
-        transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
     }
 
     public bool IsShieldActive()

@@ -34,6 +34,8 @@ public class RoomController : MonoBehaviour
     int roomsCompleted = 0;
     const int roomsBeforeBoss = 2;
     bool leftSpawnRoom = false;
+    bool hasBossRoomSpawned = false;
+    public bool startBossAttack = false;
 
     void Awake()
     {
@@ -91,7 +93,7 @@ public class RoomController : MonoBehaviour
                 Destroy(previousRoom); 
             }
 
-            // Step 3: Activate the next room
+            // Activate the next room
             if (nextRoom != null)
             {
                 nextRoom.SetActive(true);
@@ -99,15 +101,11 @@ public class RoomController : MonoBehaviour
 
             // Fade in the new room
             sceneTransition.FadeIn(() =>
-            { // Debug: Check if SpawnEnemies is called
+            { // Check if SpawnEnemies is called
                 if (currentRoom != null)
                 {
                     Debug.Log("Spawning enemies in the new room");
                     currentRoom.SpawnEnemies();
-                }
-                else
-                {
-                    Debug.LogWarning("Current room is null. Enemies cannot be spawned.");
                 }
             });
         });
@@ -115,9 +113,14 @@ public class RoomController : MonoBehaviour
 
     public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
     {
+        if (roomsCompleted >= roomsBeforeBoss && !hasBossRoomSpawned)
+        {
+            ReplaceWithBossRoom(previousDoor);
+            return;
+        }
+
         if (roomSO == null || roomSO.roomPrefab == null)
         {
-            Debug.LogError("RoomSO or Room Prefab is null");
             return;
         }
 
@@ -125,7 +128,43 @@ public class RoomController : MonoBehaviour
         Room newRoom = Instantiate(roomSO.roomPrefab).GetComponent<Room>();
         newRoom.InitializeRoom(roomsCompleted);
 
-        // Set the correct position based on the previous door
+        // Set position and update direction based on previous door
+        Vector3 spawnPosition = GetSpawnPosition(previousDoor);
+        newRoom.transform.position = spawnPosition;
+
+        // Enable a single exit door that does NOT allow backtracking
+        newRoom.EnableSingleExitDoor(previousDoor);
+
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+    }
+
+    void ReplaceWithBossRoom(Door.DoorType previousDoor)
+    {
+        if (bossRoom == null || bossRoom.roomPrefab == null)
+        {
+            Debug.LogError("Boss room or its prefab is missing!");
+            return;
+        }
+
+        // Set the boss room to spawn where the next room should be
+        Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
+
+        Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
+        newRoom.roomSO = bossRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+        hasBossRoomSpawned = true;
+
+        Invoke("StartBossBattle", 2f);
+    }
+
+    Vector3 GetSpawnPosition(Door.DoorType previousDoor)
+    {
         Vector3 spawnPosition = currentRoom.transform.position;
         switch (previousDoor)
         {
@@ -134,28 +173,17 @@ public class RoomController : MonoBehaviour
             case Door.DoorType.top: spawnPosition.y += currentRoom.height; break;
             case Door.DoorType.bottom: spawnPosition.y -= currentRoom.height; break;
         }
-        newRoom.transform.position = spawnPosition;
-
-        // Enable a single exit door that does NOT allow backtracking
-        newRoom.EnableSingleExitDoor(previousDoor);
-
-        // Set previous room reference for transition
-        previousRoom = currentRoom.gameObject;
-        nextRoom = newRoom.gameObject; // Set the next room reference
-        currentRoom = newRoom;
+        return spawnPosition;
     }
+
+
 
     public void OnRoomCompleted()
     {
         roomsCompleted++;
-
-        if (roomsCompleted >= roomsBeforeBoss)
-        {
-            StartCoroutine(SpawnBossRoom());
-        }
-
         currentRoom.SpawnPickups(); // Spawn pickups for the current room
     }
+
 
     public bool DoesRoomExist(RoomSO roomSO)
     {
@@ -203,10 +231,48 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    IEnumerator SpawnBossRoom()
+    void SpawnBossRoom()
     {
-        yield return new WaitForSeconds(1f);
-        RoomSO bossRoomSO = bossRoom;
-        //LoadRoom(bossRoomSO);
+        if (bossRoom == null || bossRoom.roomPrefab == null)
+        {
+            Debug.LogError("Boss room or its prefab is missing!");
+            return;
+        }
+
+        // Spawn position based on last used door direction
+        Vector3 bossRoomPosition = currentRoom.transform.position;
+
+        switch (currentDirection) // Use the last movement direction
+        {
+            case RoomDirection.Up: bossRoomPosition += new Vector3(0, currentRoom.height, 0); break;
+            case RoomDirection.Down: bossRoomPosition += new Vector3(0, -currentRoom.height, 0); break;
+            case RoomDirection.Left: bossRoomPosition += new Vector3(-currentRoom.width, 0, 0); break;
+            case RoomDirection.Right: bossRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
+        }
+
+        // Instantiate the boss room
+        Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
+        newRoom.roomSO = bossRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+        newRoom.isBossRoom = true; 
+
+        // Set up previous and current room references
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+        currentRoomPosition = newRoom.transform.position;
+        hasBossRoomSpawned = true;
+
+        newRoom.gameObject.SetActive(true); 
+
+        Invoke("StartBossBattle", 0.5f);
     }
+
+
+
+    void StartBossBattle()
+    {
+        startBossAttack = true;
+    }
+
 }
