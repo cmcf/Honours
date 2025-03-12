@@ -12,16 +12,22 @@ public enum RoomDirection
 
 public class RoomController : MonoBehaviour
 {
+    [Header("References")]
     public SceneTransition sceneTransition;
     public static RoomController Instance;
+
+    [Header("Weapons")]
     public List<Weapon> availableWeapons;
+
+    [Header("Rooms")]
     public List<RoomSO> availableRooms;
     public RoomSO bossRoom;
     public RoomSO spawnRoom;
-
     public Room currentRoom;
     GameObject previousRoom;
     GameObject nextRoom; // Store next room reference
+
+    [Header("Room position")]
     public Vector3 currentRoomPosition; // Track the position of the last room
     public RoomDirection currentDirection; // Track the current direction to spawn rooms in
 
@@ -111,7 +117,7 @@ public class RoomController : MonoBehaviour
     {
         if (roomSO == null || roomSO.roomPrefab == null)
         {
-            Debug.LogError("RoomSO or Room Prefab is null!");
+            Debug.LogError("RoomSO or Room Prefab is null");
             return;
         }
 
