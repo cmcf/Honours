@@ -75,13 +75,13 @@ public class Wolf : MonoBehaviour, IDamageable
         }
 
     }
-
     void OnDash()
     {
         if (isDead) { return; }
 
         ActivateKnifeShield();
     }
+
 
     void FixedUpdate()
     {

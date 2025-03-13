@@ -840,6 +840,7 @@ MonoBehaviour:
   wolfObject: {fileID: 1816236667}
   playerObject: {fileID: 5213473724355869344}
   playerTransform: {fileID: 6624806211218104826}
+  canSwitch: 1
   isSwitching: 0
   canMovePlayer: 1
   canMoveWolf: 0

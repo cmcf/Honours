@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public enum RoomDirection
 {
     Up,
@@ -84,32 +84,73 @@ public class RoomController : MonoBehaviour
 
     public void StartRoomTransition()
     {
-        // Fade out
         sceneTransition.FadeOut(() =>
         {
-            // Deactivate the previous room
             if (previousRoom != null)
             {
-                Destroy(previousRoom); 
+                Destroy(previousRoom);
             }
 
-            // Activate the next room
             if (nextRoom != null)
             {
                 nextRoom.SetActive(true);
             }
 
-            // Fade in the new room
             sceneTransition.FadeIn(() =>
-            { // Check if SpawnEnemies is called
+            {
                 if (currentRoom != null)
                 {
                     Debug.Log("Spawning enemies in the new room");
                     currentRoom.SpawnEnemies();
                 }
+
+                // Find Switcher and re-enable the active character
+                Switcher switcher = FindObjectOfType<Switcher>();
+                if (switcher != null)
+                {
+                    switcher.EnableActiveCharacter(); 
+
+                    // Enable movement after the character is re-enabled
+                    if (switcher.currentCharacterState == CharacterState.Player)
+                    {
+                        EnableCharacterMovement(switcher.playerObject);
+                    }
+                    else if (switcher.currentCharacterState == CharacterState.Wolf)
+                    {
+                        EnableCharacterMovement(switcher.wolfObject);
+                    }
+                }
             });
         });
+        }
+
+    void EnableCharacterMovement(GameObject character)
+    {
+        if (character != null)
+        {
+            // Re-enable PlayerInput
+            PlayerInput input = character.GetComponent<PlayerInput>();
+            if (input != null)
+            {
+                input.enabled = true;
+            }
+
+            // Re-enable movement script
+            PlayerMovement movement = character.GetComponent<PlayerMovement>();
+            if (movement != null)
+            {
+                movement.enabled = true;
+            }
+
+            Wolf wolfMovement = character.GetComponent<Wolf>();
+            if (wolfMovement != null)
+            {
+                wolfMovement.enabled = true;
+            }
+        }
     }
+
+
 
     public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
     {
@@ -160,7 +201,7 @@ public class RoomController : MonoBehaviour
         currentRoom = newRoom;
         hasBossRoomSpawned = true;
 
-        Invoke("StartBossBattle", 2f);
+        Invoke("StartBossBattle", 1f);
     }
 
     Vector3 GetSpawnPosition(Door.DoorType previousDoor)
