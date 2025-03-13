@@ -38,6 +38,20 @@ public class Room : MonoBehaviour
                 case Door.DoorType.top: topDoor = door; break;
             }
         }
+
+        // Disable all doors if it's the boss room
+        if (isBossRoom)
+        {
+            DisableAllDoors();
+        }
+    }
+
+    public void DisableAllDoors()
+    {
+        foreach (Door door in doorList)
+        {
+            door.gameObject.SetActive(false);
+        }
     }
 
     public void EnableSingleExitDoor(Door.DoorType previousDoor)

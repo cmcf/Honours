@@ -154,6 +154,15 @@ public class Panther : MonoBehaviour, IDamageable
 
     void PerformCharge()
     {
+        // Check if the Panther is near a wall
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, chargeDirection, 1f);
+
+        if (hit.collider != null && hit.collider.CompareTag("Wall"))
+        {
+            // If the Panther is blocked by a wall, stop moving
+            rb.velocity = Vector2.zero;
+        }
+
         rb.velocity = chargeDirection * chargeSpeed;
 
         // Check if the charge duration has passed
