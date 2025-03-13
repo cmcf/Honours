@@ -214,7 +214,6 @@ MonoBehaviour:
   stopAttackRange: 6
   attackDamage: 4
   attackCooldown: 2
-  chargeRange: 5
   shieldPrefab: {fileID: 0}
   shieldSpawnPoint: {fileID: 0}
   shieldActive: 0
@@ -228,7 +227,7 @@ MonoBehaviour:
   canActivateShield: 1
   shieldCount: 5
   currentState: 0
-  currentPhase: 1
+  currentPhase: 0
 --- !u!96 &2834042001106705526
 TrailRenderer:
   serializedVersion: 3

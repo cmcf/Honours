@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using static GridController;
 
 public class Room : MonoBehaviour
 {
@@ -8,9 +10,11 @@ public class Room : MonoBehaviour
     public int height;
     public int x;
     public int y;
+
     public GridController gridController;
     public ObjectRoomSpawner spawner;
     public RoomSO roomSO;
+    public Transform[] spawnPoints;
 
     public Door leftDoor;
     public Door rightDoor;
@@ -22,6 +26,12 @@ public class Room : MonoBehaviour
     public bool isCompleted { get; set; } = false;
 
     public List<Door> doorList = new List<Door>();
+
+    void Start()
+    {
+        SetDimensions();
+       
+    }
 
     public void InitializeRoom(int roomNumber)
     {
@@ -43,6 +53,25 @@ public class Room : MonoBehaviour
         if (isBossRoom)
         {
             DisableAllDoors();
+        }
+    }
+
+    public void SetDimensions()
+    {
+        BoxCollider2D roomCollider = GetComponent<BoxCollider2D>();
+
+        if (roomCollider != null)
+        {
+            // Get the size of the room based on the collider's bounds
+            width = (int)roomCollider.bounds.size.x; // Automatically set the width
+            height = (int)roomCollider.bounds.size.y; // Automatically set the height
+
+            // Now you have roomWidth and roomHeight automatically
+            Debug.Log("Room Width: " + width + ", Room Height: " + height);
+        }
+        else
+        {
+            Debug.LogError("No BoxCollider2D found on the room!");
         }
     }
 

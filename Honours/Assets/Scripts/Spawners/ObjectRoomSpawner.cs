@@ -5,6 +5,8 @@ using UnityEngine;
 public class ObjectRoomSpawner : MonoBehaviour
 {
     [System.Serializable]
+
+    
     public struct RandomSpawner
     {
         public string name;
@@ -46,7 +48,7 @@ public class ObjectRoomSpawner : MonoBehaviour
             GridController gridController = room.GetComponentInChildren<GridController>();
             if (gridController != null)
             {
-                SpawnRandomPickup(gridController, room);
+                SpawnRandomPickup(room);
             }
         }
     }
@@ -107,39 +109,35 @@ public class ObjectRoomSpawner : MonoBehaviour
         }
     }
 
-    void SpawnRandomPickup(GridController gridController, Room room)
+    void SpawnRandomPickup(Room room)
     {
-        // Check if there are available points in the grid
-        if (gridController.availablePoints.Count == 0)
+        if (room.spawnPoints.Length == 0)
         {
-            Debug.LogWarning("No available points to spawn pickups.");
+            Debug.LogWarning("No spawn points available for pickups.");
             return;
         }
 
-        // Choose a random index from the available points
-        int randomPointIndex = Random.Range(0, gridController.availablePoints.Count);
+        int randomIndex = Random.Range(0, room.spawnPoints.Length);
+        Transform spawnPoint = room.spawnPoints[randomIndex];
 
-        // Get the random grid point
-        Vector2 point = gridController.availablePoints[randomPointIndex];
+        GameObject pickupPrefabToSpawn;
+        float randomValue = Random.value;
 
-        // Convert local point to world position using the room's transform
-        Vector3 worldPosition = room.transform.TransformPoint(point);
+        if (randomValue < 0.5f)
+        {
+            pickupPrefabToSpawn = weaponPickupPrefab;
+        }
+        else
+        {
+            pickupPrefabToSpawn = biteModifierPrefab;
+        }
 
-        // Randomly choose between spawning a weapon or a bite modifier
-        GameObject pickupPrefabToSpawn = Random.value < 0.5f ? weaponPickupPrefab : biteModifierPrefab;
+        GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
 
-        // Instantiate the selected pickup prefab at the world position
-        GameObject pickup = Instantiate(pickupPrefabToSpawn, worldPosition, Quaternion.identity);
-
-        // Set the room as the parent of the spawned item to keep the hierarchy clean
         pickup.transform.SetParent(room.transform);
-
-        // Reset the item's local position to ensure it's correctly placed within the room
-        pickup.transform.localPosition = point;
-
-        // Remove the used point to avoid spawning multiple items at the same location
-        gridController.availablePoints.RemoveAt(randomPointIndex);
+        pickup.transform.localPosition = spawnPoint.localPosition;
     }
+
 
 
 }

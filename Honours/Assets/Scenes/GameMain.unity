@@ -876,7 +876,7 @@ GameObject:
   - component: {fileID: 1816236671}
   - component: {fileID: 1816236670}
   - component: {fileID: 1816236674}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wolf
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1148,11 +1148,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   availableRooms:
   - {fileID: 11400000, guid: 488f124bc8f0661488e8b39bdf0eccb4, type: 2}
+  - {fileID: 11400000, guid: 474799996ba018446b2c021c6da9c450, type: 2}
+  - {fileID: 11400000, guid: 82587c4b4285c054582679655737b35a, type: 2}
   bossRoom: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   spawnRoom: {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
   currentRoom: {fileID: 0}
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
+  roomsBeforeBoss: 6
   startBossAttack: 0
 --- !u!4 &2019253176
 Transform:
@@ -1436,7 +1439,7 @@ GameObject:
   - component: {fileID: 3067323940327294350}
   - component: {fileID: 2423823984703116700}
   - component: {fileID: 1197615739183574274}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1527,7 +1530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 181472975548114405}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1566,7 +1569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5510960653169552189}
   - component: {fileID: 5409880740369614424}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1947,7 +1950,7 @@ GameObject:
   - component: {fileID: 6824433778003160715}
   - component: {fileID: 1979906301249340099}
   - component: {fileID: 1182252617243413406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2127,7 +2130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2151018312752070991}
   - component: {fileID: 811787758269710004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2145,7 +2148,7 @@ GameObject:
   - component: {fileID: 8738862856252488607}
   - component: {fileID: 1034517394847052867}
   - component: {fileID: 2457101399641346970}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2162,7 +2165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3245743100452508633}
   - component: {fileID: 2499783591500815779}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2194,7 +2197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3738425011321697357}
   - component: {fileID: 1265135645292772537}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Crosshair
   m_TagString: Untagged
   m_Icon: {fileID: 0}

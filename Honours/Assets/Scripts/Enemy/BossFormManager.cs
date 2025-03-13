@@ -12,7 +12,7 @@ public class BossFormManager : MonoBehaviour
     public GameObject boss;
     float bossStartDelay = 0.2f;
     public enum BossForm { Firebird, Panther }
-    BossForm currentForm = BossForm.Panther;
+    BossForm currentForm = BossForm.Firebird;
 
     BossEnemy enemy;
 

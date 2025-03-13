@@ -370,8 +370,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b953f12637a65449be79ac64679dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 23
-  height: 11
+  width: 21
+  height: 8
   x: 0
   y: 0
   gridController: {fileID: 86508873044411954}
@@ -381,6 +381,8 @@ MonoBehaviour:
   rightDoor: {fileID: 7483974218871499867}
   topDoor: {fileID: 4337897897274477473}
   bottomDoor: {fileID: 3711961361542925371}
+  cellSize: 1
+  cellPrefab: {fileID: 0}
   isBossRoom: 1
   hasSpawnedEnemies: 0
   doorList: []
@@ -418,7 +420,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.045633316, y: -0.0066838264}
+  m_Offset: {x: 0.19625616, y: -0.35813856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -428,7 +430,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 21.21479, y: 9.453553}
+  m_Size: {x: 21.716866, y: 8.750644}
   m_EdgeRadius: 0
 --- !u!1 &2002658775573675807
 GameObject:
