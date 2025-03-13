@@ -157,7 +157,7 @@ public class Firebird : MonoBehaviour, IDamageable
         UpdateAnimationDirection(Vector2.zero);
     }
 
-        void FireSpreadAtPlayer()
+    void FireSpreadAtPlayer()
     {
         if (projectilePrefab == null || firePoint == null) return;
 

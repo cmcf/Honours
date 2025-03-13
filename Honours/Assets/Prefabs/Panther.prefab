@@ -199,22 +199,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  boundaryPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentRoom: {fileID: 0}
   chargeSpeed: 8
-  chargeCooldown: 5
-  chargeDuration: 2
+  chargeCooldown: 0.2
+  chargeDuration: 1
   moveSpeed: 6.6
   attackSpeed: 2
   attackRange: 0.84
   stopAttackRange: 6
-  attackDamage: 10
+  attackDamage: 4
   attackCooldown: 2
+  chargeRange: 5
   shieldPrefab: {fileID: 0}
   shieldSpawnPoint: {fileID: 0}
   shieldActive: 0
-  shieldDuration: 8
+  shieldDuration: 6
   respawnShieldDelay: 2
-  defendStateDuration: 9
+  defendStateDuration: 5
   target: {fileID: 0}
   orbitRadius: 0.5
   orbitSpeed: 100
@@ -222,7 +228,7 @@ MonoBehaviour:
   canActivateShield: 1
   shieldCount: 5
   currentState: 0
-  currentPhase: 0
+  currentPhase: 1
 --- !u!96 &2834042001106705526
 TrailRenderer:
   serializedVersion: 3

@@ -32,7 +32,7 @@ public class RoomController : MonoBehaviour
     public RoomDirection currentDirection; // Track the current direction to spawn rooms in
 
     int roomsCompleted = 0;
-    const int roomsBeforeBoss = 2;
+    [SerializeField] const int roomsBeforeBoss = 1;
     bool leftSpawnRoom = false;
     bool hasBossRoomSpawned = false;
     public bool startBossAttack = false;

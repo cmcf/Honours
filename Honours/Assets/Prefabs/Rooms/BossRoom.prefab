@@ -152,7 +152,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.0452672, y: 0}
+  m_Offset: {x: -1.0452676, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8261049, y: 1}
+  m_Size: {x: 1.3506633, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &635692641771487828
 GameObject:
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 3747936037770315691}
   m_Layer: 3
   m_Name: BottomWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27643,7 +27643,7 @@ GameObject:
   - component: {fileID: 4045301420831123664}
   m_Layer: 3
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28034,6 +28034,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5699604241586870759}
     m_Modifications:
+    - target: {fileID: 2009807191327881225, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6235853206957021514, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -28106,6 +28110,18 @@ PrefabInstance:
       propertyPath: currentRoom
       value: 
       objectReference: {fileID: 6755874850017240879}
+    - target: {fileID: 9016911707862722473, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016911707862722473, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: shieldDuration
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016911707862722473, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
+      propertyPath: defendStateDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 9016911707862722473, guid: 456515cf3cadfac43b8f544d96c56aa8, type: 3}
       propertyPath: boundaryPoints.Array.size
       value: 4

@@ -93,6 +93,21 @@ public class Panther : MonoBehaviour, IDamageable
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
+        // If the shield is active, stop charging and movement
+        if (shieldActive)
+        {
+            animator.SetFloat("speed", 0);
+            rb.velocity = Vector2.zero;
+            UpdateShieldOrbit();
+            return; 
+        }
+
+        // Handle Charge Phase
+        if (currentPhase == PantherState.Charge)
+        {
+            StartChargePhase();
+        }
+
         if (currentPhase == PantherState.Defend)
         {
             FacePlayer();
@@ -109,53 +124,7 @@ public class Panther : MonoBehaviour, IDamageable
             }
         }
 
-        if (currentPhase == PantherState.Charge)
-        {
-            PerformCharge();
-        }
-
         animator.SetFloat("speed", rb.velocity.magnitude);
-
-        if (shieldActive)
-        {
-            UpdateShieldOrbit();
-        }
-
-        ClampPosition();
-    }
-
-    void ClampPosition()
-    {
-        // Get the panther's current position
-        Vector3 currentPosition = transform.position;
-
-        // Define the min and max X/Y values based on the boundary points
-        float minX = Mathf.Min(boundaryPoints[0].position.x, boundaryPoints[1].position.x);
-        float maxX = Mathf.Max(boundaryPoints[0].position.x, boundaryPoints[1].position.x);
-        float minY = Mathf.Min(boundaryPoints[0].position.y, boundaryPoints[2].position.y);
-        float maxY = Mathf.Max(boundaryPoints[0].position.y, boundaryPoints[2].position.y);
-
-        // Constrain the panther's position to stay within these bounds
-        if (currentPosition.x < minX)
-        {
-            currentPosition.x = minX;
-        }
-        else if (currentPosition.x > maxX)
-        {
-            currentPosition.x = maxX;
-        }
-
-        if (currentPosition.y < minY)
-        {
-            currentPosition.y = minY;
-        }
-        else if (currentPosition.y > maxY)
-        {
-            currentPosition.y = maxY;
-        }
-
-        // Apply the new constrained position
-        transform.position = currentPosition;
     }
 
     public void StartAttacking()
@@ -168,9 +137,8 @@ public class Panther : MonoBehaviour, IDamageable
 
     void StartChargePhase()
     {
-        if (Time.time >= chargeCooldown && currentPhase != PantherState.Charge)
+        if (Time.time >= chargeCooldown)
         {
-            currentPhase = PantherState.Charge;
             isCharging = true;
             animator.SetFloat("speed", chargeSpeed);  // Set speed for animation
             chargeDirection = (player.position - transform.position).normalized;
@@ -180,6 +148,7 @@ public class Panther : MonoBehaviour, IDamageable
 
             // Record the time when the charge starts
             chargeStartTime = Time.time;
+            PerformCharge();
         }
     }
 
@@ -210,8 +179,17 @@ public class Panther : MonoBehaviour, IDamageable
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
         Vector2 moveDirection = (player.position - transform.position).normalized;
+
+        // Check if the Panther is near a wall
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, 1f);
+
+        if (hit.collider != null && hit.collider.CompareTag("Wall"))
+        {
+            // If the Panther is blocked by a wall, stop moving
+            rb.velocity = Vector2.zero;
+            return; // Stop moving towards the player
+        }
 
         // Prevent jittering by not re-entering attack state constantly
         if (distanceToPlayer <= attackRange)
@@ -225,7 +203,7 @@ public class Panther : MonoBehaviour, IDamageable
         }
         else
         {
-            // Move towards the player
+            // Move towards the player if no wall is blocking
             rb.velocity = moveDirection * moveSpeed;
         }
 
@@ -242,7 +220,6 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("posY", moveDirection.x);
         animator.SetBool("speed", rb.velocity != Vector2.zero);
     }
-
 
     void AttackPlayer()
     {
@@ -383,14 +360,14 @@ public class Panther : MonoBehaviour, IDamageable
 
         activeShields.Clear();
 
-        currentPhase = PantherState.Charge;
+        RespawnShieldDelayed();
 
     }
 
     IEnumerator RespawnShieldDelayed()
     {
         // Wait for the respawn delay time
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(respawnShieldDelay);
 
         canActivateShield = true;
     }
