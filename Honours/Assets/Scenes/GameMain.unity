@@ -1151,6 +1151,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 488f124bc8f0661488e8b39bdf0eccb4, type: 2}
   - {fileID: 11400000, guid: 474799996ba018446b2c021c6da9c450, type: 2}
   - {fileID: 11400000, guid: 82587c4b4285c054582679655737b35a, type: 2}
+  - {fileID: 11400000, guid: 0dee4c4d86f76c2448219d9cedfde7fa, type: 2}
+  - {fileID: 11400000, guid: 458c19de674a2f247a16c5cb08f5fc21, type: 2}
+  - {fileID: 11400000, guid: 58b76c291c8817045bb54db75fd325f8, type: 2}
   bossRoom: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   spawnRoom: {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
   currentRoom: {fileID: 0}
