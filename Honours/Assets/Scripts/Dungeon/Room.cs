@@ -16,6 +16,11 @@ public class Room : MonoBehaviour
     public RoomSO roomSO;
     public Transform[] spawnPoints;
 
+    public Transform spawnPointLeft;
+    public Transform spawnPointRight;
+    public Transform spawnPointTop;
+    public Transform spawnPointBottom;
+
     public Door leftDoor;
     public Door rightDoor;
     public Door topDoor;
@@ -32,6 +37,44 @@ public class Room : MonoBehaviour
         SetDimensions();
        
     }
+
+    public Transform GetSpawnPoint(Door.DoorType enteringFrom)
+    {
+        switch (enteringFrom)
+        {
+            case Door.DoorType.right: return spawnPointLeft; // Entering from the right, spawn at left
+            case Door.DoorType.left: return spawnPointRight; // Entering from the left, spawn at right
+            case Door.DoorType.top: return spawnPointBottom; // Entering from the top, spawn at bottom
+            case Door.DoorType.bottom: return spawnPointTop; // Entering from the bottom, spawn at top
+            default: return transform; 
+        }
+    }
+
+
+    public Door GetMatchingDoor(Door.DoorType enteringFrom)
+    {
+        foreach (Door door in GetComponentsInChildren<Door>())
+        {
+            if (door.doorType == GetOppositeDoor(enteringFrom))
+            {
+                return door;
+            }
+        }
+        return null;
+    }
+
+    public Door.DoorType GetOppositeDoor(Door.DoorType door)
+    {
+        switch (door)
+        {
+            case Door.DoorType.left: return Door.DoorType.right;
+            case Door.DoorType.right: return Door.DoorType.left;
+            case Door.DoorType.top: return Door.DoorType.bottom;
+            case Door.DoorType.bottom: return Door.DoorType.top;
+            default: return door;
+        }
+    }
+
 
     public void InitializeRoom(int roomNumber)
     {
@@ -108,18 +151,6 @@ public class Room : MonoBehaviour
         {
             Door chosenDoor = possibleDoors[Random.Range(0, possibleDoors.Count)];
             chosenDoor.gameObject.SetActive(true);
-        }
-    }
-
-    Door.DoorType GetOppositeDoor(Door.DoorType doorType)
-    {
-        switch (doorType)
-        {
-            case Door.DoorType.right: return Door.DoorType.left;
-            case Door.DoorType.left: return Door.DoorType.right;
-            case Door.DoorType.top: return Door.DoorType.bottom;
-            case Door.DoorType.bottom: return Door.DoorType.top;
-            default: return doorType;
         }
     }
 

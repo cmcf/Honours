@@ -227,6 +227,7 @@ public class Switcher : MonoBehaviour
 
     public void DisableInputTemporarily()
     {
+        canSwitch = false;
         PlayerInput playerInput = GetComponentInChildren<PlayerInput>(); 
         if (playerInput != null)
         {

@@ -30,6 +30,7 @@ public class RoomController : MonoBehaviour
     [Header("Room position")]
     public Vector3 currentRoomPosition; // Track the position of the last room
     public RoomDirection currentDirection; // Track the current direction to spawn rooms in
+    Door.DoorType lastUsedDoor;
 
     int roomsCompleted = 0;
     [SerializeField] int roomsBeforeBoss = 6;
@@ -54,7 +55,6 @@ public class RoomController : MonoBehaviour
     {
         if (spawnRoom == null || spawnRoom.roomPrefab == null)
         {
-            Debug.LogError("Spawn room or its prefab is missing!");
             return;
         }
 
@@ -66,6 +66,11 @@ public class RoomController : MonoBehaviour
 
         currentRoom = newRoom;
         currentRoomPosition = newRoom.transform.position;
+    }
+
+    public void SetLastUsedDoor(Door.DoorType doorType)
+    {
+        lastUsedDoor = doorType;
     }
 
     public void LoadNextRoom(Door door)
@@ -82,8 +87,12 @@ public class RoomController : MonoBehaviour
         LoadRoom(nextRoomSO, door.doorType);
     }
 
-    public void StartRoomTransition()
+    public void StartRoomTransition(GameObject player)
     {
+        Switcher switcher = FindObjectOfType<Switcher>();
+        // Disable switching during the transition
+        switcher.canSwitch = false;
+        // Fade out
         sceneTransition.FadeOut(() =>
         {
             if (previousRoom != null)
@@ -95,22 +104,22 @@ public class RoomController : MonoBehaviour
             {
                 nextRoom.SetActive(true);
             }
-
+            // Ensure the player is placed at the correct spawn point before any movement is enabled
+            PlacePlayerAtSpawnPoint(player, lastUsedDoor);
+            // Fades in after placing the player at the spawn point
             sceneTransition.FadeIn(() =>
             {
+                // Spawn enemies
                 if (currentRoom != null)
                 {
-                    Debug.Log("Spawning enemies in the new room");
                     currentRoom.SpawnEnemies();
                 }
 
-                // Find Switcher and re-enable the active character
-                Switcher switcher = FindObjectOfType<Switcher>();
+                // Enable the current character
+                
                 if (switcher != null)
                 {
-                    switcher.EnableActiveCharacter(); 
-
-                    // Enable movement after the character is re-enabled
+                    switcher.EnableActiveCharacter();
                     if (switcher.currentCharacterState == CharacterState.Player)
                     {
                         EnableCharacterMovement(switcher.playerObject);
@@ -122,7 +131,29 @@ public class RoomController : MonoBehaviour
                 }
             });
         });
+    }
+
+
+
+    void PlacePlayerAtSpawnPoint(GameObject player, Door.DoorType lastUsedDoor)
+    {
+        if (player == null)
+        {
+            return;
         }
+        // Spawns player at the correct spawn point in the room
+
+        Transform spawnPoint = currentRoom.GetSpawnPoint(lastUsedDoor);
+        if (spawnPoint != null)
+        {
+            player.transform.position = spawnPoint.position;
+        }
+        else
+        {
+            player.transform.position = currentRoom.transform.position; 
+        }
+    }
+
 
     void EnableCharacterMovement(GameObject character)
     {
@@ -173,7 +204,7 @@ public class RoomController : MonoBehaviour
         Vector3 spawnPosition = GetSpawnPosition(previousDoor);
         newRoom.transform.position = spawnPosition;
 
-        // Enable a single exit door that does NOT allow backtracking
+        // Enable a single exit door that does not allow backtracking
         newRoom.EnableSingleExitDoor(previousDoor);
 
         previousRoom = currentRoom.gameObject;

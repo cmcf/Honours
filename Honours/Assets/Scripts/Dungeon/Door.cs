@@ -38,15 +38,10 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            
             if (parentRoom.AreAllEnemiesDefeated())
             {
-                if (switcher != null)
-                {
-                    switcher.DisableActiveCharacter(); // Disable the player character
-                }
-                //MovePlayer();
-                RoomController.Instance.StartRoomTransition();
+                RoomController.Instance.SetLastUsedDoor(doorType); // Set the last used door
+                RoomController.Instance.StartRoomTransition(other.gameObject);
                 Invoke("LoadLevelAfterADelay", 0.5f);
             }
             else
@@ -55,7 +50,6 @@ public class Door : MonoBehaviour
             }
         }
     }
-
 
     void MovePlayer()
     {
