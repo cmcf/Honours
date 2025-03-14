@@ -92,31 +92,34 @@ public class RoomController : MonoBehaviour
         Switcher switcher = FindObjectOfType<Switcher>();
         // Disable switching during the transition
         switcher.canSwitch = false;
-        // Fade out
+
+        // Fade out first
         sceneTransition.FadeOut(() =>
         {
+            // Destroy the previous room right when the fade out completes
             if (previousRoom != null)
             {
                 Destroy(previousRoom);
             }
 
-            if (nextRoom != null)
-            {
-                nextRoom.SetActive(true);
-            }
-            // Ensure the player is placed at the correct spawn point before any movement is enabled
+            // Ensure the player is placed at the correct spawn point
             PlacePlayerAtSpawnPoint(player, lastUsedDoor);
-            // Fades in after placing the player at the spawn point
+
+            // Fade in and make the next room active after the fade
             sceneTransition.FadeIn(() =>
             {
-                // Spawn enemies
+                // Ensures next room is active and ready after fade in
+                if (nextRoom != null)
+                {
+                    nextRoom.SetActive(true);
+                }
+
+                // Spawn enemies and enable player movement
                 if (currentRoom != null)
                 {
                     currentRoom.SpawnEnemies();
                 }
 
-                // Enable the current character
-                
                 if (switcher != null)
                 {
                     switcher.EnableActiveCharacter();
@@ -132,6 +135,7 @@ public class RoomController : MonoBehaviour
             });
         });
     }
+
 
 
 
