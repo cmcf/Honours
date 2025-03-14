@@ -77,15 +77,20 @@ public class RoomController : MonoBehaviour
     {
         if (availableRooms.Count == 0)
         {
-            Debug.LogError("No available rooms to spawn!");
             return;
         }
 
-        // Pick a random room
-        RoomSO nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)];
+        RoomSO nextRoomSO;
+        // Loads a room from the list that is not the current room
+        do
+        {
+            nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)];
+        }
+        while (nextRoomSO == currentRoom.roomSO && availableRooms.Count > 1);
 
         LoadRoom(nextRoomSO, door.doorType);
     }
+
 
     public void StartRoomTransition(GameObject player)
     {
