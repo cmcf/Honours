@@ -12,6 +12,7 @@ TagManager:
   - SpawnRoom
   - EnemyProjectile
   - Shield
+  - Hazard
   layers:
   - Default
   - TransparentFX
