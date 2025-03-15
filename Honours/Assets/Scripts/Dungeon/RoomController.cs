@@ -1,176 +1,283 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Linq;
-using UnityEditor;
-using static Player;
-
-public class RoomInfo
+using UnityEngine.InputSystem;
+public enum RoomDirection
 {
-    public string name;
-    public int x;
-    public int y;
+    Up,
+    Down,
+    Left,
+    Right
 }
+
 public class RoomController : MonoBehaviour
 {
+    [Header("References")]
+    public SceneTransition sceneTransition;
     public static RoomController Instance;
-    public Canvas tutorialTextCanvas;
-    SpawnRateManager spawnRate;
-    string currentWorldName = "Game";
-    public Weapon[] availableWeapons;
 
-    RoomInfo currentLoadRoomData;
+    [Header("Weapons")]
+    public List<Weapon> availableWeapons;
+
+    [Header("Rooms")]
+    public List<RoomSO> availableRooms;
+    public RoomSO bossRoom;
+    public RoomSO spawnRoom;
     public Room currentRoom;
-    Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
+    GameObject previousRoom;
+    GameObject nextRoom; // Store next room reference
 
-    public List<Room> loadedRooms = new List<Room>();
-    HashSet<Room> completedRooms = new HashSet<Room>();
+    [Header("Room position")]
+    public Vector3 currentRoomPosition; // Track the position of the last room
+    public RoomDirection currentDirection; // Track the current direction to spawn rooms in
+    Door.DoorType lastUsedDoor;
 
-    bool isLoadingRoom = false;
-    bool hasSpawnedBossRoom = false;
-    bool updatedRooms = false;
-
-    int roomsCompleted = -1;
-    const int roomsBeforeBoss = 2;
-
+    int roomsCompleted = 0;
+    [SerializeField] int roomsBeforeBoss = 6;
     bool leftSpawnRoom = false;
+    bool hasBossRoomSpawned = false;
+    public bool startBossAttack = false;
 
     void Awake()
     {
         Instance = this;
-        tutorialTextCanvas.enabled = true;
+
+        // Load the spawn room when the game starts
+        LoadSpawnRoom();
     }
 
     void Update()
     {
         UpdateRooms();
-        UpdateRoomQueue();
     }
 
-    [System.Obsolete]
-    void Start()
+    void LoadSpawnRoom()
     {
-        roomsCompleted = -1;
-        spawnRate = FindObjectOfType<SpawnRateManager>();
-    }
-
-    public void LoadRoom(string name, int x, int y)
-    {
-        if (DoesRoomExist(x, y))
+        if (spawnRoom == null || spawnRoom.roomPrefab == null)
         {
             return;
         }
-        RoomInfo newRoomData = new RoomInfo();
-        newRoomData.name = name;
-        newRoomData.x = x;
-        newRoomData.y = y;
 
-        // Add room data to the queue 
-        loadRoomQueue.Enqueue(newRoomData);
+        // Instantiate the spawn room at a fixed position
+        Room newRoom = Instantiate(spawnRoom.roomPrefab, Vector3.zero, Quaternion.identity).GetComponent<Room>();
+
+        newRoom.roomSO = spawnRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+
+        currentRoom = newRoom;
+        currentRoomPosition = newRoom.transform.position;
     }
+
+    public void SetLastUsedDoor(Door.DoorType doorType)
+    {
+        lastUsedDoor = doorType;
+    }
+
+    public void LoadNextRoom(Door door)
+    {
+        if (availableRooms.Count == 0)
+        {
+            return;
+        }
+
+        RoomSO nextRoomSO;
+        // Loads a room from the list that is not the current room
+        do
+        {
+            nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)];
+        }
+        while (nextRoomSO == currentRoom.roomSO && availableRooms.Count > 1);
+
+        LoadRoom(nextRoomSO, door.doorType);
+    }
+
+
+    public void StartRoomTransition(GameObject player)
+    {
+        Switcher switcher = FindObjectOfType<Switcher>();
+        // Disable switching during the transition
+        switcher.canSwitch = false;
+
+        // Fade out first
+        sceneTransition.FadeOut(() =>
+        {
+            // Destroy the previous room right when the fade out completes
+            if (previousRoom != null)
+            {
+                Destroy(previousRoom);
+            }
+
+            // Ensure the player is placed at the correct spawn point
+            PlacePlayerAtSpawnPoint(player, lastUsedDoor);
+
+            // Fade in and make the next room active after the fade
+            sceneTransition.FadeIn(() =>
+            {
+                // Ensures next room is active and ready after fade in
+                if (nextRoom != null)
+                {
+                    nextRoom.SetActive(true);
+                }
+
+                // Spawn enemies and enable player movement
+                if (currentRoom != null)
+                {
+                    currentRoom.SpawnEnemies();
+                }
+
+                if (switcher != null)
+                {
+                    switcher.EnableActiveCharacter();
+                    if (switcher.currentCharacterState == CharacterState.Player)
+                    {
+                        EnableCharacterMovement(switcher.playerObject);
+                    }
+                    else if (switcher.currentCharacterState == CharacterState.Wolf)
+                    {
+                        EnableCharacterMovement(switcher.wolfObject);
+                    }
+                }
+            });
+        });
+    }
+
+
+
+
+    void PlacePlayerAtSpawnPoint(GameObject player, Door.DoorType lastUsedDoor)
+    {
+        if (player == null)
+        {
+            return;
+        }
+        // Spawns player at the correct spawn point in the room
+
+        Transform spawnPoint = currentRoom.GetSpawnPoint(lastUsedDoor);
+        if (spawnPoint != null)
+        {
+            player.transform.position = spawnPoint.position;
+        }
+        else
+        {
+            player.transform.position = currentRoom.transform.position; 
+        }
+    }
+
+
+    void EnableCharacterMovement(GameObject character)
+    {
+        if (character != null)
+        {
+            // Re-enable PlayerInput
+            PlayerInput input = character.GetComponent<PlayerInput>();
+            if (input != null)
+            {
+                input.enabled = true;
+            }
+
+            // Re-enable movement script
+            PlayerMovement movement = character.GetComponent<PlayerMovement>();
+            if (movement != null)
+            {
+                movement.enabled = true;
+            }
+
+            Wolf wolfMovement = character.GetComponent<Wolf>();
+            if (wolfMovement != null)
+            {
+                wolfMovement.enabled = true;
+            }
+        }
+    }
+
+
+
+    public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
+    {
+        if (roomsCompleted >= roomsBeforeBoss && !hasBossRoomSpawned)
+        {
+            ReplaceWithBossRoom(previousDoor);
+            return;
+        }
+
+        if (roomSO == null || roomSO.roomPrefab == null)
+        {
+            return;
+        }
+
+        // Create new room and initialize it
+        Room newRoom = Instantiate(roomSO.roomPrefab).GetComponent<Room>();
+        newRoom.InitializeRoom(roomsCompleted);
+
+        // Set position and update direction based on previous door
+        Vector3 spawnPosition = GetSpawnPosition(previousDoor);
+        newRoom.transform.position = spawnPosition;
+
+        // Enable a single exit door that does not allow backtracking
+        newRoom.EnableSingleExitDoor(previousDoor);
+
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+    }
+
+    void ReplaceWithBossRoom(Door.DoorType previousDoor)
+    {
+        if (bossRoom == null || bossRoom.roomPrefab == null)
+        {
+            Debug.LogError("Boss room or its prefab is missing!");
+            return;
+        }
+
+        // Set the boss room to spawn where the next room should be
+        Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
+
+        Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
+        newRoom.roomSO = bossRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+        hasBossRoomSpawned = true;
+
+        Invoke("StartBossBattle", 1f);
+    }
+
+    Vector3 GetSpawnPosition(Door.DoorType previousDoor)
+    {
+        Vector3 spawnPosition = currentRoom.transform.position;
+        switch (previousDoor)
+        {
+            case Door.DoorType.left: spawnPosition.x -= currentRoom.width; break;
+            case Door.DoorType.right: spawnPosition.x += currentRoom.width; break;
+            case Door.DoorType.top: spawnPosition.y += currentRoom.height; break;
+            case Door.DoorType.bottom: spawnPosition.y -= currentRoom.height; break;
+        }
+        return spawnPosition;
+    }
+
+
 
     public void OnRoomCompleted()
     {
-        leftSpawnRoom = true;
         roomsCompleted++;
-        Debug.Log("Rooms Completed: " + roomsCompleted);
-
-        // Increase enemy spawn rate
-        if (SpawnRateManager.Instance != null)
-        {
-            spawnRate.IncreaseSpawnRate();
-        }
-
-        if (DifficultyManager.Instance != null)
-        {
-            DifficultyManager.Instance.IncreaseDifficulty();
-        }
-
-        // Ensure the condition triggers after rooms are complete
-        if (roomsCompleted >= roomsBeforeBoss)
-        {
-            StartCoroutine(SpawnBossRoom());
-        }
-
-
-        // Spawn a weapon pickup in the current room
-        currentRoom.SpawnPickups();
+        currentRoom.SpawnPickups(); // Spawn pickups for the current room
     }
 
 
-    IEnumerator LoadRoomRoutine(RoomInfo info)
+    public bool DoesRoomExist(RoomSO roomSO)
     {
-        string roomName = currentWorldName + info.name;
-        AsyncOperation loadRoom = SceneManager.LoadSceneAsync(roomName, LoadSceneMode.Additive);
-        while (loadRoom.isDone == false)
-        {
-            yield return null;
-        }
+        return currentRoom != null && currentRoom.roomSO == roomSO;
     }
-
-    public void RegisterRoom(Room room)
-    {
-        if (currentLoadRoomData == null)
-        {
-            return;
-        }
-        // Only spawn room if it does not already exist
-        if (!DoesRoomExist(currentLoadRoomData.x, currentLoadRoomData.y))
-        {
-
-            room.transform.position = new Vector3(currentLoadRoomData.x * room.width, currentLoadRoomData.y * room.height, 0);
-
-            room.x = currentLoadRoomData.x;
-            room.y = currentLoadRoomData.y;
-            room.name = currentWorldName + room.name + " " + room.x + ", " + room.y;
-            room.transform.parent = transform;
-
-            isLoadingRoom = false;
-
-            if (loadedRooms.Count == 0)
-            {
-                CameraController.Instance.currentRoom = room;
-            }
-
-            loadedRooms.Add(room);
-        }
-        else
-        {
-            Destroy(room.gameObject);
-            isLoadingRoom = false;
-        }
-
-    }
-
-    public bool DoesRoomExist(int x, int y)
-    {
-        return loadedRooms.Find(item => item.x == x && item.y == y) != null;
-    }
-
-    public Room FindRoom(int x, int y)
-    {
-        return loadedRooms.Find(item => item.x == x && item.y == y);
-    }
-
 
     public void OnEnterRoom(Room room)
     {
-        CameraController.Instance.currentRoom = room;
         currentRoom = room;
-
-        // Only spawn enemies in the room if it is not the spawn or boss room
+        Debug.Log("Entered room");
         if (room.isBossRoom)
         {
             Invoke(nameof(DelayedActivateBoss), 1.5f);
-        }
-        else
-        {
-            if (leftSpawnRoom)
-            {
-                currentRoom.SpawnEnemies();
-                tutorialTextCanvas.enabled = false;
-            }
         }
 
         StartCoroutine(RoomCoroutine());
@@ -183,8 +290,7 @@ public class RoomController : MonoBehaviour
 
     void ActivateBoss(Room bossRoom)
     {
-        // Find and activate the boss inside the room
-        BossFormManager boss = bossRoom.GetComponentInChildren<BossFormManager>(true);
+        BossFormManager boss = bossRoom.GetComponentInChildren<BossFormManager>();
         if (boss != null)
         {
             boss.gameObject.SetActive(true);
@@ -192,197 +298,62 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    public IEnumerator RoomCoroutine()
+    IEnumerator RoomCoroutine()
     {
         yield return new WaitForSeconds(0.2f);
         UpdateRooms();
     }
 
-    public string GetRandomRoomName()
+    void UpdateRooms()
     {
-        string[] possibleRooms = new string[]
+        if (currentRoom != null)
         {
-            "Empty",
-            "Default",
-        };
-
-        return possibleRooms[Random.Range(0, possibleRooms.Length)];
-    }
-
-    public void UpdateRooms()
-    {
-        HandlesDoorFunctionality();
-    }
-
-    void HandlesDoorFunctionality()
-    {
-        foreach (Room room in loadedRooms)
-            ChecksIfRoomIsCleared(room);
-    }
-
-    void ChecksIfRoomIsCleared(Room room)
-    {
-        bool isCurrentRoom = (currentRoom == room);
-        bool enemiesDefeated = room.AreAllEnemiesDefeated();
-
-        foreach (Door door in room.doorList)
-        {
-            Vector2Int doorPosition = door.GetGridPosition();
-            Room adjacentRoom = FindRoom(doorPosition.x, doorPosition.y);
-
-            // Disable door if no adjacent room
-            if (adjacentRoom == null)
-            {
-                door.gameObject.SetActive(false);
-            }
-            else
-            {
-                // Enable door if adjacent room exists
-                door.gameObject.SetActive(true);
-            }
-
-            if (door.wallCollider != null)
-            {
-                Collider2D collider = door.wallCollider.GetComponent<Collider2D>();
-
-                if (collider != null)
-                {
-                    // If current room and enemies are defeated, allow passing
-                    if (isCurrentRoom && enemiesDefeated)
-                    {
-                        collider.enabled = false;
-                    }
-                    else
-                    {
-                        collider.enabled = true;
-                    }
-                }
-            }
-        }
-
-        // Reset isCompleted when entering a new room but enemies are still alive
-        if (isCurrentRoom && !enemiesDefeated)
-        {
-            room.isCompleted = false;
-        }
-
-        // Checks if the room is cleared
-        if (isCurrentRoom && enemiesDefeated && !room.isCompleted)
-        {
-            Debug.Log("Room cleared: " + room.name);
-            room.isCompleted = true;
-            OnRoomCompleted();
-        }
-        foreach (Collider2D collider in room.GetComponentsInChildren<Collider2D>())
-        {
-            if (collider != null && collider.gameObject != null && !collider.gameObject.GetComponent<Door>())
-            {
-                if (isCurrentRoom)
-                {
-
-                    collider.enabled = true;
-                }
-                else
-                {
-
-                    collider.enabled = true;
-                }
-            }
-        }
-
-        foreach (Enemy enemy in room.GetComponentsInChildren<Enemy>())
-        {
-            enemy.SetActiveState(isCurrentRoom);
+            currentRoom.CheckRoomCompletion();
         }
     }
 
-    void UpdateRoomQueue()
+    void SpawnBossRoom()
     {
-        if (isLoadingRoom)
+        if (bossRoom == null || bossRoom.roomPrefab == null)
         {
+            Debug.LogError("Boss room or its prefab is missing!");
             return;
         }
 
-        if (loadRoomQueue.Count == 0)
+        // Spawn position based on last used door direction
+        Vector3 bossRoomPosition = currentRoom.transform.position;
+
+        switch (currentDirection) // Use the last movement direction
         {
-            // Only spawn if all enemy rooms are cleared
-            if (!hasSpawnedBossRoom && roomsCompleted >= roomsBeforeBoss) 
-            {
-                StartCoroutine(SpawnBossRoom());
-            }
-            // Removes any doors 
-            else if (hasSpawnedBossRoom && !updatedRooms)
-            {
-                foreach (Room room in loadedRooms)
-                {
-                    room.RemoveUnConnectedDoors();
-                }
-                UpdateRooms();
-                updatedRooms = true;
-            }
-            return;
+            case RoomDirection.Up: bossRoomPosition += new Vector3(0, currentRoom.height, 0); break;
+            case RoomDirection.Down: bossRoomPosition += new Vector3(0, -currentRoom.height, 0); break;
+            case RoomDirection.Left: bossRoomPosition += new Vector3(-currentRoom.width, 0, 0); break;
+            case RoomDirection.Right: bossRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
         }
 
-        currentLoadRoomData = loadRoomQueue.Dequeue();
-        isLoadingRoom = true;
+        // Instantiate the boss room
+        Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
+        newRoom.roomSO = bossRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+        newRoom.isBossRoom = true; 
 
-        StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
+        // Set up previous and current room references
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+        currentRoomPosition = newRoom.transform.position;
+        hasBossRoomSpawned = true;
+
+        newRoom.gameObject.SetActive(true); 
+
+        Invoke("StartBossBattle", 0.5f);
     }
 
-    IEnumerator SpawnBossRoom()
+
+
+    void StartBossBattle()
     {
-        // Check if the boss room has already been spawned
-        if (hasSpawnedBossRoom)
-            yield break;
-
-        hasSpawnedBossRoom = true;
-
-        yield return new WaitForSeconds(0.5f);
-
-        // Ensure the queue is empty before spawning the boss room.
-        if (loadRoomQueue.Count == 0 && loadedRooms.Count > 0)
-        {
-            // Identify the last room to replace with the boss room
-            Room lastRoom = loadedRooms.Last();
-            Vector2Int tempRoom = new Vector2Int(lastRoom.x, lastRoom.y);
-
-            // Remove the last room
-            Destroy(lastRoom.gameObject);
-            loadedRooms.Remove(lastRoom);
-
-            // Load the boss room
-            LoadRoom("Boss", tempRoom.x, tempRoom.y);
-        }
+        startBossAttack = true;
     }
-
-    private Vector3 GetRoomCentre(Room room)
-    {
-        return new Vector3(room.x * room.width, 0, room.y * room.height);
-    }
-
-    public Room GetRoomAtPosition(Vector3 position)
-    {
-        // Returns the rooms position
-        foreach (Room room in loadedRooms)
-        { 
-            if (IsPositionWithinBounds(position))
-            {
-                return room;
-            }
-        }
-        return null;
-    }
-
-    public bool IsPositionWithinBounds(Vector3 position)
-    {
-        // Checks if room is within bounds
-        Vector3 roomCentre = GetRoomCentre(currentRoom);
-        float halfWidth = currentRoom.width/ 2f;
-        float halfHeight = currentRoom.height / 2f;
-
-        return position.x >= roomCentre.x - halfWidth && position.x <= roomCentre.x + halfWidth &&
-               position.y >= roomCentre.y - halfHeight && position.y <= roomCentre.y + halfHeight;
-    }
-
 
 }

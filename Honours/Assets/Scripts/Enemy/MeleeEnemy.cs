@@ -50,7 +50,7 @@ public class MeleeEnemy : Enemy
     void Update()
     {
         // Stop movement when not active
-        if (isDisappearing || isAppearing || !IsActive()) return;
+        if (isDisappearing || isAppearing) return;
 
         MoveTowardsPlayer();
     }
@@ -176,13 +176,16 @@ public class MeleeEnemy : Enemy
         float roomWidth = currentRoom.width;
         float roomHeight = currentRoom.height;
 
-        // Define spawn area bounds
-        float margin = 1.5f; 
+        // Get room's position in the scene
+        Vector3 roomPosition = currentRoom.transform.position; 
 
-        float minX = roomCentre.x - roomWidth / 2f + margin;
-        float maxX = roomCentre.x + roomWidth / 2f - margin;
-        float minY = roomCentre.y - roomHeight / 2f + margin;
-        float maxY = roomCentre.y + roomHeight / 2f - margin;
+        // Define spawn area bounds with a margin
+        float margin = 1.5f;
+
+        float minX = roomPosition.x - roomWidth / 2f + margin;
+        float maxX = roomPosition.x + roomWidth / 2f - margin;
+        float minY = roomPosition.y - roomHeight / 2f + margin;
+        float maxY = roomPosition.y + roomHeight / 2f - margin;
 
         // Generates a random spawn position within the room bounds
         Vector2 spawnPosition = new Vector2(
@@ -193,5 +196,6 @@ public class MeleeEnemy : Enemy
         // Update enemy position to the new spawn position
         transform.position = spawnPosition;
     }
+
 }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 [System.Serializable]
 public class CharacterInfo
@@ -18,6 +19,7 @@ public enum CharacterState
 public class Switcher : MonoBehaviour
 {
     public PlayerInput playerInput; // Reference to PlayerInput component
+    public CinemachineVirtualCamera virtualCamera;
 
     public List<CharacterInfo> characters = new List<CharacterInfo>();
     private int currentCharacterIndex = 0;
@@ -35,7 +37,7 @@ public class Switcher : MonoBehaviour
 
     float respawnDelay = 0.66f;
 
-    private bool canSwitch = true;
+    public bool canSwitch = true;
     public bool isSwitching = false;
 
     public bool canMovePlayer = true;
@@ -100,6 +102,8 @@ public class Switcher : MonoBehaviour
     }
     void OnSwitch(InputAction.CallbackContext context)
     {
+        if (!canSwitch) return; // Prevent switching if locked
+
         // Disable movement for the current character during switching
         canMovePlayer = false;
         canMoveWolf = false;
@@ -116,8 +120,8 @@ public class Switcher : MonoBehaviour
 
         // Activate the new character and set their position based on the previous character's position
         SwitchCharacter(currentCharacterIndex);
-
     }
+
 
 
     void SwitchCharacter(int characterIndex)
@@ -169,16 +173,100 @@ public class Switcher : MonoBehaviour
             playerRigidbody.velocity = Vector2.zero;
             wolfRigidbody.velocity = Vector2.zero;
 
+            // Switch the camera to follow the new character
+            SwitchCameraFollow(characterInfo.character.transform);
+
             Invoke("EnableSwitch", 1f);  
         }
     }
 
+    void SwitchCameraFollow(Transform newTarget)
+    {
+        // Update camera to follow the new character
+        if (virtualCamera != null)
+        {
+            virtualCamera.Follow = newTarget; 
+        }
+    }
 
 
     void EnableSwitch()
     {
         canSwitch = true;
         isSwitching = false;
+    }
+
+    public void EnableActiveCharacter()
+    {
+        if (currentCharacterState == CharacterState.Player)
+        {
+            playerObject.SetActive(true);
+            ResetCharacterMovement(playerObject);
+        }
+        else if (currentCharacterState == CharacterState.Wolf)
+        {
+            wolfObject.SetActive(true);
+            ResetCharacterMovement(wolfObject);
+        }
+
+        Invoke("UnlockSwitching", 1f);
+    }
+
+
+    void ResetCharacterMovement(GameObject character)
+    {
+        Rigidbody2D rb = character.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero; // Stop all movement
+            rb.angularVelocity = 0f;
+        }
+
+        DisableInputTemporarily();
+    }
+
+    public void DisableInputTemporarily()
+    {
+        canSwitch = false;
+        PlayerInput playerInput = GetComponentInChildren<PlayerInput>(); 
+        if (playerInput != null)
+        {
+            playerInput.enabled = false; // Disables input
+        }
+        Invoke(nameof(ReenableInput), 0.5f); 
+    }
+
+    void ReenableInput()
+    {
+        PlayerInput playerInput = GetComponentInChildren<PlayerInput>(); 
+        if (playerInput != null)
+        {
+            playerInput.enabled = true; 
+        }
+    }
+
+
+    public void DisableActiveCharacter()
+    {
+        canSwitch = false;
+
+        if (currentCharacterState == CharacterState.Player)
+        {
+            ResetCharacterMovement(playerObject);
+            playerObject.SetActive(false);
+        }
+        else if (currentCharacterState == CharacterState.Wolf)
+        {
+            ResetCharacterMovement(wolfObject);
+            wolfObject.SetActive(false);
+        }
+    }
+
+
+
+    void UnlockSwitching()
+    {
+        canSwitch = true;
     }
 
 }

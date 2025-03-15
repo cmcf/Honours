@@ -20,8 +20,7 @@ public class BossFormManager : MonoBehaviour
     {
         enemy = GetComponent<BossEnemy>();
         pantherScript= GetComponentInChildren<Panther>();
-        boss.gameObject.SetActive(false);
-
+        boss.gameObject.SetActive(true);
     }
 
     public void StartBossBattle()
@@ -38,10 +37,15 @@ public class BossFormManager : MonoBehaviour
         // Random Switching After Some Time
         if (Random.Range(0f, 1f) < 0.01f) // ~1% chance per frame to switch
         {
-            //SwitchForm();
+            SwitchForm();
         }
 
         SwitchBasedOnHealth();
+
+        if (RoomController.Instance.startBossAttack)
+        {
+            boss.gameObject.SetActive(true);
+        }
     }
 
     bool ShouldSwitchBasedOnPlayerDistance()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Door : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class Door : MonoBehaviour
     float widthOffset = 4f;
     GameObject player;
     private Room parentRoom;
+    Switcher switcher;
 
     Vector2Int gridPosition;
 
     void Start()
     {
+        switcher = FindObjectOfType<Switcher>();
         player = GameObject.FindGameObjectWithTag("Player");
         parentRoom = GetComponentInParent<Room>();
 
@@ -33,13 +36,13 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Only trigger interaction when the player collides with the door
         if (other.CompareTag("Player"))
         {
-            // Check if all enemies in the current room are defeated
             if (parentRoom.AreAllEnemiesDefeated())
             {
-                MovePlayer();
+                RoomController.Instance.SetLastUsedDoor(doorType); // Set the last used door
+                RoomController.Instance.StartRoomTransition(other.gameObject);
+                Invoke("LoadLevelAfterADelay", 0.5f);
             }
             else
             {
@@ -73,6 +76,10 @@ public class Door : MonoBehaviour
         }
     }
 
+    void LoadLevelAfterADelay()
+    {
+        RoomController.Instance.LoadNextRoom(this);
+    }
 
     public Vector2Int GetGridPosition()
     {

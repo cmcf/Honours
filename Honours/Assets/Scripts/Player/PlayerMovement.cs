@@ -59,11 +59,13 @@ public class PlayerMovement : MonoBehaviour
         canDash = true; // Ensure dashing is available when re-enabling
     }
 
+
     void OnMove(InputValue value)
     {
         // Get movement input
         moveDirection = value.Get<Vector2>();
     }
+
 
     void UpdateAnimation()
     {

@@ -10,6 +10,7 @@ using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 public class Panther : MonoBehaviour, IDamageable
 {
     public Transform player;
+    public Transform[] boundaryPoints;
     private Animator animator;
     private Rigidbody2D rb;
     public Room currentRoom;
@@ -92,6 +93,21 @@ public class Panther : MonoBehaviour, IDamageable
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
 
+        // If the shield is active, stop charging and movement
+        if (shieldActive)
+        {
+            animator.SetFloat("speed", 0);
+            rb.velocity = Vector2.zero;
+            UpdateShieldOrbit();
+            return; 
+        }
+
+        // Handle Charge Phase
+        if (currentPhase == PantherState.Charge)
+        {
+            StartChargePhase();
+        }
+
         if (currentPhase == PantherState.Defend)
         {
             FacePlayer();
@@ -108,19 +124,7 @@ public class Panther : MonoBehaviour, IDamageable
             }
         }
 
-        if (currentPhase == PantherState.Charge)
-        {
-            PerformCharge();
-        }
-
         animator.SetFloat("speed", rb.velocity.magnitude);
-
-        if (shieldActive)
-        {
-            UpdateShieldOrbit();
-        }
-
-        ClampPosition();
     }
 
     public void StartAttacking()
@@ -133,9 +137,8 @@ public class Panther : MonoBehaviour, IDamageable
 
     void StartChargePhase()
     {
-        if (Time.time >= chargeCooldown && currentPhase != PantherState.Charge)
+        if (Time.time >= chargeCooldown)
         {
-            currentPhase = PantherState.Charge;
             isCharging = true;
             animator.SetFloat("speed", chargeSpeed);  // Set speed for animation
             chargeDirection = (player.position - transform.position).normalized;
@@ -145,11 +148,21 @@ public class Panther : MonoBehaviour, IDamageable
 
             // Record the time when the charge starts
             chargeStartTime = Time.time;
+            PerformCharge();
         }
     }
 
     void PerformCharge()
     {
+        // Check if the Panther is near a wall
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, chargeDirection, 1f);
+
+        if (hit.collider != null && hit.collider.CompareTag("Wall"))
+        {
+            // If the Panther is blocked by a wall, stop moving
+            rb.velocity = Vector2.zero;
+        }
+
         rb.velocity = chargeDirection * chargeSpeed;
 
         // Check if the charge duration has passed
@@ -175,8 +188,17 @@ public class Panther : MonoBehaviour, IDamageable
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
         Vector2 moveDirection = (player.position - transform.position).normalized;
+
+        // Check if the Panther is near a wall
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, 1f);
+
+        if (hit.collider != null && hit.collider.CompareTag("Wall"))
+        {
+            // If the Panther is blocked by a wall, stop moving
+            rb.velocity = Vector2.zero;
+            return; // Stop moving towards the player
+        }
 
         // Prevent jittering by not re-entering attack state constantly
         if (distanceToPlayer <= attackRange)
@@ -190,7 +212,7 @@ public class Panther : MonoBehaviour, IDamageable
         }
         else
         {
-            // Move towards the player
+            // Move towards the player if no wall is blocking
             rb.velocity = moveDirection * moveSpeed;
         }
 
@@ -207,7 +229,6 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("posY", moveDirection.x);
         animator.SetBool("speed", rb.velocity != Vector2.zero);
     }
-
 
     void AttackPlayer()
     {
@@ -348,14 +369,14 @@ public class Panther : MonoBehaviour, IDamageable
 
         activeShields.Clear();
 
-        currentPhase = PantherState.Charge;
+        RespawnShieldDelayed();
 
     }
 
     IEnumerator RespawnShieldDelayed()
     {
         // Wait for the respawn delay time
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(respawnShieldDelay);
 
         canActivateShield = true;
     }
@@ -394,32 +415,6 @@ public class Panther : MonoBehaviour, IDamageable
 
         BossEnemy enemy = GetComponentInParent<BossEnemy>();
         enemy.Damage(damage);
-    }
-
-    void ClampPosition()
-    {
-        float margin = 2f;
-
-        float roomMinX = currentRoom.GetRoomCentre().x - (currentRoom.width / 2) + margin;
-        float roomMaxX = currentRoom.GetRoomCentre().x + (currentRoom.width / 2) - margin;
-        float roomMinY = currentRoom.GetRoomCentre().y - (currentRoom.height / 2) + 1.12f;
-        float roomMaxY = currentRoom.GetRoomCentre().y + (currentRoom.height / 2) - margin;
-
-        Vector3 currentPosition = transform.position;
-        float clampedX = Mathf.Clamp(currentPosition.x, roomMinX, roomMaxX);
-        float clampedY = Mathf.Clamp(currentPosition.y, roomMinY, roomMaxY);
-
-        Vector2 velocity = rb.velocity;
-
-        if (currentPosition.x != clampedX || currentPosition.y != clampedY)
-        {
-            velocity = Vector2.Lerp(velocity, Vector2.zero, 0.5f);
-            rb.velocity = velocity;
-            rb.angularVelocity = 0f;
-            animator.SetFloat("speed", 0f);
-        }
-
-        transform.position = new Vector3(clampedX, clampedY, currentPosition.z);
     }
 
     public bool IsShieldActive()

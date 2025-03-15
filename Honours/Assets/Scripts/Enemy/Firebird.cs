@@ -9,6 +9,7 @@ public class Firebird : MonoBehaviour, IDamageable
     BoxCollider2D boxCollider2D;
     Animator animator;
     Rigidbody2D rb;
+    public Transform[] movementPoints;
 
     public float pauseDuration = 1.5f; // Time spent at each position
     [SerializeField] float moveDuration = 2f; // Time to move between sides
@@ -53,12 +54,6 @@ public class Firebird : MonoBehaviour, IDamageable
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
-        // Keep the firebird within the room by clamping its position
-        if (currentRoom != null)
-        {
-            ClampPosition();
-        }
     }
 
     public void RestartBossRoutine()
@@ -109,24 +104,14 @@ public class Firebird : MonoBehaviour, IDamageable
 
     IEnumerator BossRoutine()
     {
-
         while (true)
         {
-            Vector2[] positions = new Vector2[]
+            foreach (var point in movementPoints)
             {
-                new Vector2(currentRoom.GetRoomCentre().x, currentRoom.GetRoomCentre().y + currentRoom.height / 2 - 1f),
-                new Vector2(currentRoom.GetRoomCentre().x, currentRoom.GetRoomCentre().y - currentRoom.height / 2 + 1f),
-                new Vector2(currentRoom.GetRoomCentre().x - currentRoom.width / 2 + 1f, currentRoom.GetRoomCentre().y),
-                new Vector2(currentRoom.GetRoomCentre().x + currentRoom.width / 2 - 1f, currentRoom.GetRoomCentre().y)
-            };
-
-            foreach (var position in positions)
-            {
-                targetPosition = position;
-                yield return MoveToSetPosition(position);
+                targetPosition = point.position;
+                yield return MoveToSetPosition(point.position);
                 moveCount++;
 
-                // Increase phase every two moves
                 if (moveCount % 2 == 0 && currentPhase != FirebirdPhase.Phase3)
                 {
                     currentPhase++;
@@ -138,6 +123,7 @@ public class Firebird : MonoBehaviour, IDamageable
             }
         }
     }
+
 
     IEnumerator MoveToSetPosition(Vector2 target)
     {
@@ -169,25 +155,6 @@ public class Firebird : MonoBehaviour, IDamageable
 
         // Stop movement animation when reaching the position
         UpdateAnimationDirection(Vector2.zero);
-    }
-
-
-    // Clamps the firebird's position to stay within the room boundaries
-    void ClampPosition()
-    {
-        float margin = 2f;
-
-        // Calculate the room's boundaries with margin
-        float roomMinX = currentRoom.GetRoomCentre().x - (currentRoom.width / 2) + margin;
-        float roomMaxX = currentRoom.GetRoomCentre().x + (currentRoom.width / 2) - margin;
-        float roomMinY = currentRoom.GetRoomCentre().y - (currentRoom.height / 2) + margin;
-        float roomMaxY = currentRoom.GetRoomCentre().y + (currentRoom.height / 2) - margin;
-
-        // Clamp the firebird's position within these adjusted boundaries
-        float clampedX = Mathf.Clamp(transform.position.x, roomMinX, roomMaxX);
-        float clampedY = Mathf.Clamp(transform.position.y, roomMinY, roomMaxY);
-
-        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
     void FireSpreadAtPlayer()
