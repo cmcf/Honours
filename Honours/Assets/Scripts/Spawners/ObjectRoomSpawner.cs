@@ -34,7 +34,7 @@ public class ObjectRoomSpawner : MonoBehaviour
             GridController gridController = room.GetComponentInChildren<GridController>();
             if (gridController != null && !room.hasSpawnedEnemies)
             {
-                SpawnEnemiesForGrid(gridController, room);
+                SpawnEnemiesInRoom(room);
                 // Mark the room as spawned
                 room.hasSpawnedEnemies = true;
             }
@@ -54,60 +54,57 @@ public class ObjectRoomSpawner : MonoBehaviour
     }
 
 
-    void SpawnEnemiesForGrid(GridController gridController, Room room)
+    void SpawnEnemiesInRoom(Room room)
     {
-        // Check if there are available points in the grid
-        if (gridController.availablePoints.Count == 0)
+        // Checks if the room has any enemy spawn points
+        if (room.enemySpawnPoints.Length == 0)
         {
-            Debug.LogWarning("No available points to spawn enemies.");
+            Debug.LogWarning("No enemy spawn points available.");
             return;
         }
 
-        // Decide on how many enemies to spawn
+        // Determine the number of enemies to spawn, based on the min/max values
         int spawnCount = Random.Range(minEnemies, maxEnemies + 1);
 
-        // Get the current difficulty level
+        // Get the current difficulty level to apply scaling
         int difficultyLevel = DifficultyManager.Instance.GetCurrentDifficultyLevel();
 
-        // Loop to spawn a limited number of enemies
-        for (int i = 0; i < spawnCount; i++)
+        // Create a temporary list of available spawn points
+        List<Transform> availableSpawns = new List<Transform>(room.enemySpawnPoints);
+
+        // Loop through and spawn enemies up to the determined spawn count
+        for (int i = 0; i < spawnCount && availableSpawns.Count > 0; i++)
         {
-            // Choose a random index from the available points
-            int randomPointIndex = Random.Range(0, gridController.availablePoints.Count);
+            // Select a random spawn point from the list
+            int randomIndex = Random.Range(0, availableSpawns.Count);
+            Transform spawnPoint = availableSpawns[randomIndex];
 
-            // Get the random grid point
-            Vector2 point = gridController.availablePoints[randomPointIndex];
+            // Remove the used spawn point from the list to prevent multiple enemies from spawning at the same location
+            availableSpawns.RemoveAt(randomIndex);
 
-            // Checks if there is any spawner data available
+            // Ensures there is at least one enemy type available to spawn
             if (spawnerData.Length > 0)
             {
-                // Choose a random index from the spawnerData array
-                int randomIndex = Random.Range(0, spawnerData.Length);
+                // Choose a random enemy from the spawner data
+                int randomEnemyIndex = Random.Range(0, spawnerData.Length);
+                GameObject randomEnemy = spawnerData[randomEnemyIndex].spawnerData.itemToSpawn;
 
-                // Get the random GameObject to spawn from the selected spawner data
-                GameObject randomEnemy = spawnerData[randomIndex].spawnerData.itemToSpawn;
+                // Instantiate the enemy at the selected spawn point
+                GameObject spawnedEnemy = Instantiate(randomEnemy, spawnPoint.position, Quaternion.identity);
 
-                // Instantiate the random GameObject at the grid point
-                GameObject spawnedEnemy = Instantiate(randomEnemy, point, Quaternion.identity);
-
-                // Set the room as the parent of the spawned enemy to keep the hierarchy clean
+                // Set the spawned enemy's parent to the room
                 spawnedEnemy.transform.SetParent(room.transform);
 
-                // Reset the enemy's local position to ensure it's correctly placed within the room
-                spawnedEnemy.transform.localPosition = point;
-
-                // Apply difficulty-based adjustments to the spawned enemy
+                // Apply difficulty scaling to the enemy 
                 Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
                 if (enemyScript != null)
                 {
                     enemyScript.SetDifficultyLevel(difficultyLevel);
                 }
-
-                // Remove the used point to avoid spawning multiple enemies at the same location
-                gridController.availablePoints.RemoveAt(randomPointIndex);
             }
         }
     }
+
 
     void SpawnRandomPickup(Room room)
     {
