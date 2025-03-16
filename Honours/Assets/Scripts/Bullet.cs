@@ -30,8 +30,7 @@ public class Bullet : MonoBehaviour
             }
             if (isIce)
             {
-                enemy = collision.GetComponent<Enemy>();
-                ApplyIceEffect(enemy);
+                ApplyIceEffect(collision);
             }
 
 
@@ -40,9 +39,20 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void ApplyIceEffect(Enemy enemy)
+    void ApplyIceEffect(Collider2D collision)
     {
-        enemy.Freeze(freezeDuration);
+        Enemy enemy = collision.GetComponent<Enemy>();
+        if (enemy != null)
+        {
+            enemy.Freeze(freezeDuration);
+            return;
+        }
+
+        BossEnemy bossEnemy = collision.GetComponent<BossEnemy>();
+        if (bossEnemy != null)
+        {
+            bossEnemy.Freeze(freezeDuration);
+        }
     }
 
     public void SetDamage(float newDamage)

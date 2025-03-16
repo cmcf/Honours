@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;  // If using TextMeshPro
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     private Player player;
     private Wolf wolf;
     private CharacterState currentCharacterState;
+
+    [SerializeField] float reloadDelay = 0.8f;
 
     // Reference to the UI Text element for health display
     public TextMeshProUGUI healthText;
@@ -140,5 +142,12 @@ public class PlayerHealth : MonoBehaviour
                 if (wolfAnimator != null) wolfAnimator.SetTrigger("isDead");
             }
         }
+
+        Invoke("ReloadGame", 0.8f);
+    }
+
+    public void ReloadGame()
+    {
+        SceneManager.LoadScene("GameMain");
     }
 }

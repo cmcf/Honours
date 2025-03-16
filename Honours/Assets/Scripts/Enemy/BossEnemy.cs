@@ -7,6 +7,7 @@ public class BossEnemy : MonoBehaviour
 {
     public Animator currentAnimator;
     public BossFormManager formManager;
+    SpriteRenderer spriteRenderer;
 
     public GameObject floatingTextPrefab;
     Rigidbody2D activeRb;
@@ -15,7 +16,8 @@ public class BossEnemy : MonoBehaviour
     bool hit = false;
 
     public EnemyState currentState;
-
+    bool isFrozen = false;
+    float freezeTimer;
     void Awake()
     {
         formManager = GetComponent<BossFormManager>();
@@ -25,6 +27,7 @@ public class BossEnemy : MonoBehaviour
     void Start()
     {
        currentAnimator = formManager.GetCurrentAnimator();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public float GetHealthPercentage()
     {
@@ -147,5 +150,37 @@ public class BossEnemy : MonoBehaviour
     {
         if (currentAnimator == null) { return; }
         currentAnimator.SetBool("isHurt", false);
+    }
+
+    public void Freeze(float duration)
+    {
+        if (!isFrozen)
+        {
+            isFrozen = true;
+            freezeTimer = duration;
+
+            // Stop movement
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            }
+
+            // Freeze the animator by setting its speed to 0
+            Animator animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.speed = 0;
+            }
+
+            // Set colour to cyan to indicate frozen state
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.cyan;
+            }
+
+            Invoke("Unfreeze", freezeTimer);
+        }
     }
 }
