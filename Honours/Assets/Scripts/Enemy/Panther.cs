@@ -336,15 +336,31 @@ public class Panther : MonoBehaviour, IDamageable
 
     public void OnShieldDestroyed(GameObject destroyedShield)
     {
+        canActivateShield = false;
         activeShields.Remove(destroyedShield);
 
         if (activeShields.Count == 0)
         {
-            shieldActive = false;  
-            // Delay the shield respawn
-            StartCoroutine(RespawnShieldDelayed());
+            shieldActive = false;
+
+            // Add a vulnerable period before allowing the shield to respawn
+            StartCoroutine(ShieldVulnerabilityPhase());
         }
     }
+
+    IEnumerator ShieldVulnerabilityPhase()
+    {
+        float vulnerabilityTime = 3f; 
+
+        // Wait for a short time where the panther is vulnerable
+        yield return new WaitForSeconds(vulnerabilityTime);
+
+        canActivateShield = true;
+        // Now allow shield to be reactivated
+        StartCoroutine(RespawnShieldDelayed());
+    }
+
+
 
     void BreakShield()
     {
@@ -352,7 +368,6 @@ public class Panther : MonoBehaviour, IDamageable
 
         shieldActive = false;
 
-        // Destroy and clear active shields
         foreach (GameObject shield in activeShields)
         {
             if (shield != null)
@@ -369,9 +384,10 @@ public class Panther : MonoBehaviour, IDamageable
 
         activeShields.Clear();
 
-        RespawnShieldDelayed();
-
+        // Instead of immediately respawning, enter vulnerability phase first
+        StartCoroutine(ShieldVulnerabilityPhase());
     }
+
 
     IEnumerator RespawnShieldDelayed()
     {

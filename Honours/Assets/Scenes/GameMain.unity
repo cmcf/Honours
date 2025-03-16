@@ -1252,9 +1252,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 150
+  maxHealth: 200
   currentHealth: 200
-  reloadDelay: 0.8
+  reloadDelay: 2
   healthText: {fileID: 1210541548}
 --- !u!4 &181472975548114405
 Transform:
@@ -1907,7 +1907,7 @@ MonoBehaviour:
   weaponRenderer: {fileID: 0}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
+  currentWeapon: {fileID: 11400000, guid: e069490a8ff00fd4797515a0bfc0413d, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:

@@ -290,6 +290,7 @@ MonoBehaviour:
   pantherForm: {fileID: 3241009952511098558}
   switchCooldown: 50
   boss: {fileID: 8991972665906897161}
+  currentForm: 1
 --- !u!114 &3430006399220710628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
   currentAnimator: {fileID: 1147851224862576677}
   formManager: {fileID: 2727881887632806977}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 300
+  maxHealth: 450
   currentHealth: 0
   currentState: 0
 --- !u!1001 &3517933524031244748
@@ -322,7 +323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_TagString
@@ -389,12 +390,20 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: chargeSpeed
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: orbitRadius
       value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: shieldCount
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: attackDamage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: shieldPrefab
@@ -409,6 +418,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: shieldDuration
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: projectileSpeed
       value: 8.5
       objectReference: {fileID: 0}
@@ -421,8 +434,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 930319498867157771}
     - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: defendStateDuration
+      propertyPath: respawnShieldDelay
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: defendStateDuration
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
