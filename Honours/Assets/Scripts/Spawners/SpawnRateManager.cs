@@ -25,5 +25,8 @@ public class SpawnRateManager : MonoBehaviour
     {
         minAmountOfEnemies++;
         maxAmountOfEnemies++;
+
+        minAmountOfEnemies = Mathf.Min(minAmountOfEnemies + 1, 4); // Cap min
+        maxAmountOfEnemies = Mathf.Min(maxAmountOfEnemies + 2, 5); // Cap max
     }
 }

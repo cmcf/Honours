@@ -305,7 +305,7 @@ MonoBehaviour:
   currentAnimator: {fileID: 1147851224862576677}
   formManager: {fileID: 2727881887632806977}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 100
+  maxHealth: 300
   currentHealth: 0
   currentState: 0
 --- !u!1001 &3517933524031244748

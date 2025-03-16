@@ -12,7 +12,7 @@ public class BossFormManager : MonoBehaviour
     public GameObject boss;
     float bossStartDelay = 0.2f;
     public enum BossForm { Firebird, Panther }
-    BossForm currentForm = BossForm.Firebird;
+    public BossForm currentForm = BossForm.Firebird;
 
     BossEnemy enemy;
 
@@ -35,7 +35,7 @@ public class BossFormManager : MonoBehaviour
         if (Time.time - lastSwitchTime < switchCooldown) return;
 
         // Random Switching After Some Time
-        if (Random.Range(0f, 1f) < 0.01f) // ~1% chance per frame to switch
+        if (Random.Range(0f, 1f) < 0.02f) // ~1% chance per frame to switch
         {
             SwitchForm();
         }
