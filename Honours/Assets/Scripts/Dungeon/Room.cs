@@ -48,7 +48,7 @@ public class Room : MonoBehaviour
             case Door.DoorType.left: return spawnPointRight; // Entering from the left, spawn at right
             case Door.DoorType.top: return spawnPointBottom; // Entering from the top, spawn at bottom
             case Door.DoorType.bottom: return spawnPointTop; // Entering from the bottom, spawn at top
-            default: return transform; 
+            default: return transform;  // Default to the current rooms transform
         }
     }
 
@@ -110,13 +110,6 @@ public class Room : MonoBehaviour
             // Get the size of the room based on the collider's bounds
             width = (int)roomCollider.bounds.size.x; // Automatically set the width
             height = (int)roomCollider.bounds.size.y; // Automatically set the height
-
-            // Now you have roomWidth and roomHeight automatically
-            Debug.Log("Room Width: " + width + ", Room Height: " + height);
-        }
-        else
-        {
-            Debug.LogError("No BoxCollider2D found on the room!");
         }
     }
 
