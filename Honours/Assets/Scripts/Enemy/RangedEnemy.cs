@@ -19,6 +19,7 @@ public class RangedEnemy : Enemy
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        Invoke("SetToActive", 0.25f);
     }
 
 
@@ -43,6 +44,12 @@ public class RangedEnemy : Enemy
             // Update the next fire time
             nextFireTime = Time.time + fireRate;
         }
+    }
+
+    void SetToActive()
+    {
+        isActive = true;
+        animator.SetTrigger("hasSpawned");
     }
 
     void FireProjectilesBasedOnDifficulty()
