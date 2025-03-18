@@ -7,7 +7,7 @@ public class SpawnRateManager : MonoBehaviour
     public static SpawnRateManager Instance;
 
     public int minAmountOfEnemies = 1;
-    public int maxAmountOfEnemies = 3;
+    public int maxAmountOfEnemies = 1;
 
     void Awake()
     {
@@ -21,12 +21,14 @@ public class SpawnRateManager : MonoBehaviour
         }
     }
 
-    public void IncreaseSpawnRate()
+    public void IncreaseMinAmountOfEnemies()
     {
+        // Increases the amount of enemies
         minAmountOfEnemies++;
         maxAmountOfEnemies++;
 
-        minAmountOfEnemies = Mathf.Min(minAmountOfEnemies + 1, 4); // Cap min
-        maxAmountOfEnemies = Mathf.Min(maxAmountOfEnemies + 2, 5); // Cap max
+        // Caps the amount of enemies
+        minAmountOfEnemies = Mathf.Min(minAmountOfEnemies, 4); 
+        maxAmountOfEnemies = Mathf.Min(maxAmountOfEnemies, 5); 
     }
 }

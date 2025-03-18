@@ -280,7 +280,7 @@ public class RoomController : MonoBehaviour
             Invoke(nameof(DelayedActivateBoss), 1.5f);
         }
 
-        if (roomsCompleted >= 2)
+        if (roomsCompleted >= 3)
         {
             DifficultyManager.Instance.IncreaseDifficulty();
         }

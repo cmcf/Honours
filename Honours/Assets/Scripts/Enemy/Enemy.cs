@@ -249,4 +249,12 @@ public class Enemy : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            rb.velocity = Vector2.zero;  // Stop movement
+        }
+    }
+
 }
