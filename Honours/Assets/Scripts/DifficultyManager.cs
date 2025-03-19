@@ -47,7 +47,7 @@ public class DifficultyManager : MonoBehaviour
         }
 
         // Increase enemy spawn rate
-        SpawnRateManager.Instance.IncreaseMinAmountOfEnemies();
+        SpawnRateManager.Instance.IncreaseAmountOfEnemies();
 
         Debug.Log("Current Difficulty Level: " + currentDifficultyLevel);
     }
