@@ -8,8 +8,8 @@ public class KnifeProjectile : MonoBehaviour
 
     public float lifetime = 3f;
     public int damage;
-    float pushbackDuration = 0.3f;
-    float pushbackAmount = 0.4f;
+    float pushbackDuration = 0.2f;
+    float pushbackAmount = 0.2f;
 
     public float deflectionForce = 10f;
 

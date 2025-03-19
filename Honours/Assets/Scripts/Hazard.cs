@@ -5,9 +5,9 @@ using static Damage;
 
 public class Hazard : MonoBehaviour
 {
-    [SerializeField] float minDamage = 3f;
-    [SerializeField] float maxDamage = 6f;
-    float damageAmount;
+    [SerializeField] int minDamage = 3;
+    [SerializeField] int maxDamage = 6;
+    int damageAmount;
     PlayerHealth playerHealth;
     void Start()
     {

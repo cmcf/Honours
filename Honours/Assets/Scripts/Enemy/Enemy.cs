@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour, IDamageable
     float destroyDelay = 0.6f;
 
     public EnemyState currentState = EnemyState.Idle;
+
+    public event System.Action OnDeathEvent;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -234,7 +237,8 @@ public class Enemy : MonoBehaviour, IDamageable
         animator.SetBool("isHurt", false);
         // Start the death animation
         animator.SetTrigger("isDead");
-       
+
+        OnDeathEvent?.Invoke();
 
         // Call a coroutine to delay destruction of the game object
         StartCoroutine(WaitForDeathAnimation());
@@ -247,6 +251,14 @@ public class Enemy : MonoBehaviour, IDamageable
 
         Destroy(rb);
         Destroy(gameObject);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            rb.velocity = Vector2.zero;  // Stop movement
+        }
     }
 
 }

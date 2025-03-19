@@ -32,7 +32,7 @@ public class RoomController : MonoBehaviour
     public RoomDirection currentDirection; // Track the current direction to spawn rooms in
     Door.DoorType lastUsedDoor;
 
-    int roomsCompleted = 0;
+    public int roomsCompleted = 0;
     [SerializeField] int roomsBeforeBoss = 6;
     bool leftSpawnRoom = false;
     bool hasBossRoomSpawned = false;
@@ -277,7 +277,12 @@ public class RoomController : MonoBehaviour
         Debug.Log("Entered room");
         if (room.isBossRoom)
         {
-            Invoke(nameof(DelayedActivateBoss), 1.5f);
+            Invoke(nameof(DelayedActivateBoss), 1.6f);
+        }
+
+        if (roomsCompleted >= 3)
+        {
+            DifficultyManager.Instance.IncreaseDifficulty();
         }
 
         StartCoroutine(RoomCoroutine());

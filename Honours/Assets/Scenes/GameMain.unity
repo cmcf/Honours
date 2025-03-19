@@ -1159,6 +1159,7 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
+  roomsCompleted: 0
   roomsBeforeBoss: 6
   startBossAttack: 0
 --- !u!4 &2019253176
@@ -1252,8 +1253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 500
+  maxHealth: 225
   currentHealth: 200
+  reloadDelay: 2
   healthText: {fileID: 1210541548}
 --- !u!4 &181472975548114405
 Transform:

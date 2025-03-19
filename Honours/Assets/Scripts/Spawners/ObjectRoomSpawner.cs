@@ -12,31 +12,157 @@ public class ObjectRoomSpawner : MonoBehaviour
         public string name;
         public SpawnerData spawnerData;
     }
-
-    public GridController grid;
-    public RandomSpawner[] spawnerData;
     public GameObject weaponPickupPrefab;
     public GameObject biteModifierPrefab;
 
     public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
     public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
 
-    void Start()
-    {
-        grid = GetComponentInChildren<GridController>();
-    }
+    public int maxWaves = 2; // Number of waves in a room
+    public int currentWave = 0;
+
+    public int currentEnemies = 0;
+
+    public List<SpawnerData> meleeEnemies; // List of melee enemies
+    public List<SpawnerData> rangedEnemies; // List of ranged enemies
+
+    public int maxEnemiesPerRoom => SpawnRateManager.Instance.maxAmountOfEnemiesInRoom; // Maximum enemies allowed per room
+    private int totalEnemiesSpawnedInRoom = 0; // Tracks the total number of enemies spawned in the current room
 
     public void StartSpawningEnemies(Room room)
     {
-        // Spawn enemies or objects only for the provided room
-        if (room != null)
+        currentWave = 0;
+        totalEnemiesSpawnedInRoom = 0; // Reset enemy count for the new room
+
+        // Ensure only 1 wave in the first few rooms
+        if (RoomController.Instance.roomsCompleted < 3)
         {
-            GridController gridController = room.GetComponentInChildren<GridController>();
-            if (gridController != null && !room.hasSpawnedEnemies)
+            StartSingleWave(room);
+        }
+        else
+        {
+            StartNextWave(room);
+        }
+    }
+
+    public void StartSingleWave(Room room)
+    {
+        currentWave = 1;
+        currentEnemies = 0;
+
+        // Determine number of enemies, ensuring we don't exceed the room's max limit
+        int numEnemies = Random.Range(minEnemies, maxEnemies);
+        numEnemies = Mathf.Min(numEnemies, room.enemySpawnPoints.Length); // Limit to available spawn points
+        numEnemies = Mathf.Min(numEnemies, maxEnemiesPerRoom - totalEnemiesSpawnedInRoom); // Ensure room max is not exceeded
+
+        for (int i = 0; i < numEnemies; i++)
+        {
+            SpawnEnemy(room);
+        }
+    }
+
+    public void StartNextWave(Room room)
+    {
+        // Stop spawning if the max number of waves is reached or the room limit is hit
+        if (currentWave >= maxWaves || totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) return;
+
+        currentWave++;
+        currentEnemies = 0;
+
+        // Determine number of enemies, ensuring we don't exceed the room's max limit
+        int numEnemies = Random.Range(minEnemies, maxEnemies + 1);
+        numEnemies = Mathf.Min(numEnemies, room.enemySpawnPoints.Length); // Limit to available spawn points
+        numEnemies = Mathf.Min(numEnemies, maxEnemiesPerRoom - totalEnemiesSpawnedInRoom); // Ensure room max is not exceeded
+
+        // Start coroutine to spawn enemies with a delay
+        StartCoroutine(SpawnEnemiesWithDelay(room, numEnemies));
+    }
+
+    // Coroutine to spawn enemies one by one with a delay
+    IEnumerator SpawnEnemiesWithDelay(Room room, int numEnemies)
+    {
+        for (int i = 0; i < numEnemies; i++)
+        {
+            if (totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) yield break; // Stop spawning if max room limit is reached
+
+            SpawnEnemy(room); // Spawn a single enemy
+            yield return new WaitForSeconds(0.6f); // Delay between spawns
+        }
+    }
+
+    // Spawns a single enemy at a random spawn point
+    void SpawnEnemy(Room room)
+    {
+        if (room.enemySpawnPoints.Length == 0 || totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) return; // Stop if no spawn points or max enemies reached
+
+        Transform spawnPoint = room.enemySpawnPoints[Random.Range(0, room.enemySpawnPoints.Length)];
+
+        // Check if we there are valid melee or ranged enemies available
+        bool hasMeleeEnemies = meleeEnemies.Count > 0;
+        bool hasRangedEnemies = rangedEnemies.Count > 0;
+
+        // If no enemies are available, exit
+        if (!hasMeleeEnemies && !hasRangedEnemies)
+        {
+            Debug.LogWarning($"No enemies available to spawn in room ({room.x}, {room.y}).");
+            return;
+        }
+
+        // Ensure there is valid enemies before trying to spawn one
+        SpawnerData enemyToSpawn = null;
+
+        if (hasRangedEnemies && hasMeleeEnemies)
+        {
+            // Randomly choose between ranged or melee if both are available
+            enemyToSpawn = (Random.value > 0.5f) ? rangedEnemies[Random.Range(0, rangedEnemies.Count)] : meleeEnemies[Random.Range(0, meleeEnemies.Count)];
+        }
+        else if (hasRangedEnemies)
+        {
+            // Only ranged enemies are available
+            enemyToSpawn = rangedEnemies[Random.Range(0, rangedEnemies.Count)];
+        }
+        else if (hasMeleeEnemies)
+        {
+            // Only melee enemies are available
+            enemyToSpawn = meleeEnemies[Random.Range(0, meleeEnemies.Count)];
+        }
+        else
+        {
+            // If no enemies are available, log a warning and return
+            Debug.LogWarning($"No enemies available to spawn in room ({room.x}, {room.y}).");
+            return;
+        }
+
+        // Instantiate enemy at the chosen spawn point
+        GameObject enemy = Instantiate(enemyToSpawn.itemToSpawn, spawnPoint.position, Quaternion.identity);
+        enemy.transform.SetParent(room.transform);
+
+        // Register enemy death event to track when enemies are defeated
+        Enemy enemyScript = enemy.GetComponent<Enemy>();
+        if (enemyScript != null)
+        {
+            enemyScript.OnDeathEvent += () => OnEnemyDefeated(room);
+        }
+
+        currentEnemies++; // Increase current wave enemy count
+        totalEnemiesSpawnedInRoom++; // Increase total enemies spawned in this room
+    }
+
+    // Called when an enemy is defeated
+    public void OnEnemyDefeated(Room room)
+    {
+        currentEnemies--; // Reduce the current enemy count
+
+        // If all enemies are defeated, check if another wave should start
+        if (currentEnemies <= 0)
+        {
+            if (currentWave < maxWaves)
             {
-                SpawnEnemiesInRoom(room);
-                // Mark the room as spawned
-                room.hasSpawnedEnemies = true;
+                StartNextWave(room); // Start the next wave if possible
+            }
+            else
+            {
+                room.CheckRoomCompletion(); // Mark the room as completed
             }
         }
     }
@@ -45,66 +171,9 @@ public class ObjectRoomSpawner : MonoBehaviour
     {
         if (room != null)
         {
-            GridController gridController = room.GetComponentInChildren<GridController>();
-            if (gridController != null)
-            {
-                SpawnRandomPickup(room);
-            }
+            SpawnRandomPickup(room);
         }
     }
-
-
-    void SpawnEnemiesInRoom(Room room)
-    {
-        // Checks if the room has any enemy spawn points
-        if (room.enemySpawnPoints.Length == 0)
-        {
-            Debug.LogWarning("No enemy spawn points available.");
-            return;
-        }
-
-        // Determine the number of enemies to spawn, based on the min/max values
-        int spawnCount = Random.Range(minEnemies, maxEnemies + 1);
-
-        // Get the current difficulty level to apply scaling
-        int difficultyLevel = DifficultyManager.Instance.GetCurrentDifficultyLevel();
-
-        // Create a temporary list of available spawn points
-        List<Transform> availableSpawns = new List<Transform>(room.enemySpawnPoints);
-
-        // Loop through and spawn enemies up to the determined spawn count
-        for (int i = 0; i < spawnCount && availableSpawns.Count > 0; i++)
-        {
-            // Select a random spawn point from the list
-            int randomIndex = Random.Range(0, availableSpawns.Count);
-            Transform spawnPoint = availableSpawns[randomIndex];
-
-            // Remove the used spawn point from the list to prevent multiple enemies from spawning at the same location
-            availableSpawns.RemoveAt(randomIndex);
-
-            // Ensures there is at least one enemy type available to spawn
-            if (spawnerData.Length > 0)
-            {
-                // Choose a random enemy from the spawner data
-                int randomEnemyIndex = Random.Range(0, spawnerData.Length);
-                GameObject randomEnemy = spawnerData[randomEnemyIndex].spawnerData.itemToSpawn;
-
-                // Instantiate the enemy at the selected spawn point
-                GameObject spawnedEnemy = Instantiate(randomEnemy, spawnPoint.position, Quaternion.identity);
-
-                // Set the spawned enemy's parent to the room
-                spawnedEnemy.transform.SetParent(room.transform);
-
-                // Apply difficulty scaling to the enemy 
-                Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();
-                if (enemyScript != null)
-                {
-                    enemyScript.SetDifficultyLevel(difficultyLevel);
-                }
-            }
-        }
-    }
-
 
     void SpawnRandomPickup(Room room)
     {
@@ -134,7 +203,5 @@ public class ObjectRoomSpawner : MonoBehaviour
         pickup.transform.SetParent(room.transform);
         pickup.transform.localPosition = spawnPoint.localPosition;
     }
-
-
-
 }
+
