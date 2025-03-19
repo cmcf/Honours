@@ -1210,6 +1210,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmountOfEnemies: 1
   maxAmountOfEnemies: 2
+  maxAmountOfEnemiesInRoom: 2
+  spawnMultiplier: 2
 --- !u!4 &2143930541
 Transform:
   m_ObjectHideFlags: 0

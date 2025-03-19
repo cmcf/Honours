@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa2f1b2295ae9a4aa7a15289a565e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 2
   fadeDuration: 0.5
   textMesh: {fileID: 3182633559941697036}
 --- !u!1 &5361475802735139668

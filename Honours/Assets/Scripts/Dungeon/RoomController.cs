@@ -23,6 +23,7 @@ public class RoomController : MonoBehaviour
     public List<RoomSO> availableRooms;
     public RoomSO bossRoom;
     public RoomSO spawnRoom;
+    public RoomSO rewardRoom;
     public Room currentRoom;
     GameObject previousRoom;
     GameObject nextRoom; // Store next room reference
@@ -80,6 +81,13 @@ public class RoomController : MonoBehaviour
             return;
         }
 
+        // Check if it's time to spawn a reward room instead
+        if (roomsCompleted % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
+        {
+            LoadRoom(rewardRoom, door.doorType);
+            return;
+        }
+
         RoomSO nextRoomSO;
         // Loads a room from the list that is not the current room
         do
@@ -90,6 +98,7 @@ public class RoomController : MonoBehaviour
 
         LoadRoom(nextRoomSO, door.doorType);
     }
+
 
 
     public void StartRoomTransition(GameObject player)
@@ -317,6 +326,38 @@ public class RoomController : MonoBehaviour
         }
     }
 
+    void SpawnRewardRoom()
+    {
+        if (rewardRoom == null || rewardRoom.roomPrefab == null)
+        {
+            return;
+        }
+
+        // Spawn position based on last used door direction
+        Vector3 spawnRoomPosition = currentRoom.transform.position;
+
+        switch (currentDirection) // Use the last movement direction
+        {
+            case RoomDirection.Up: spawnRoomPosition += new Vector3(0, currentRoom.height, 0); break;
+            case RoomDirection.Down: spawnRoomPosition += new Vector3(0, -currentRoom.height, 0); break;
+            case RoomDirection.Left: spawnRoomPosition += new Vector3(-currentRoom.width, 0, 0); break;
+            case RoomDirection.Right: spawnRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
+        }
+
+        // Instantiate the boss room
+        Room newRoom = Instantiate(rewardRoom.roomPrefab, spawnRoomPosition, Quaternion.identity).GetComponent<Room>();
+        newRoom.roomSO = rewardRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+
+        // Set up previous and current room references
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+        currentRoomPosition = newRoom.transform.position;
+
+        newRoom.gameObject.SetActive(true); 
+    }
+
     void SpawnBossRoom()
     {
         if (bossRoom == null || bossRoom.roomPrefab == null)
@@ -340,7 +381,7 @@ public class RoomController : MonoBehaviour
         Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
         newRoom.roomSO = bossRoom;
         newRoom.InitializeRoom(roomsCompleted);
-        newRoom.isBossRoom = true; 
+        newRoom.isBossRoom = true;
 
         // Set up previous and current room references
         previousRoom = currentRoom.gameObject;
@@ -349,7 +390,7 @@ public class RoomController : MonoBehaviour
         currentRoomPosition = newRoom.transform.position;
         hasBossRoomSpawned = true;
 
-        newRoom.gameObject.SetActive(true); 
+        newRoom.gameObject.SetActive(true);
 
         Invoke("StartBossBattle", 0.5f);
     }
