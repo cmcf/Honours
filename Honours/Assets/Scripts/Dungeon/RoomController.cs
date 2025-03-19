@@ -32,7 +32,7 @@ public class RoomController : MonoBehaviour
     public RoomDirection currentDirection; // Track the current direction to spawn rooms in
     Door.DoorType lastUsedDoor;
 
-    int roomsCompleted = 0;
+    public int roomsCompleted = 0;
     [SerializeField] int roomsBeforeBoss = 6;
     bool leftSpawnRoom = false;
     bool hasBossRoomSpawned = false;

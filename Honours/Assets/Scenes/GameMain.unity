@@ -1159,6 +1159,7 @@ MonoBehaviour:
   currentRoom: {fileID: 0}
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
+  roomsCompleted: 0
   roomsBeforeBoss: 6
   startBossAttack: 0
 --- !u!4 &2019253176

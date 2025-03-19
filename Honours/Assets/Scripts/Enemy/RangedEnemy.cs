@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class RangedEnemy : Enemy
 {
+    [Header("References")]
     Transform playerLocation;
     public GameObject bulletPrefab;
     public Transform spawnPoint;
 
     [Header("Bullet Settings")]
+
+    [SerializeField] float minFireRate = 2f;
+    [SerializeField] float maxFireRate = 2.5f;
     [SerializeField] float attackRange = 5f;
     [SerializeField] float fireRate = 2f;
     [SerializeField] float projectileSpeed = 15f;
@@ -20,6 +24,7 @@ public class RangedEnemy : Enemy
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         Invoke("SetToActive", 0.3f);
+        fireRate = Random.Range(minFireRate, maxFireRate);
     }
 
 

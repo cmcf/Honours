@@ -19800,6 +19800,14 @@ MonoBehaviour:
     spawnerData: {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
   weaponPickupPrefab: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
   biteModifierPrefab: {fileID: 8278573925337004562, guid: ab76636a8d1bfb54189b230d8d245502, type: 3}
+  maxWaves: 3
+  currentWave: 0
+  maxEnemiesPerWave: 5
+  currentEnemies: 0
+  meleeEnemies:
+  - {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
+  rangedEnemies:
+  - {fileID: 11400000, guid: f098e7088feadd545aa81106eb06fd0a, type: 2}
 --- !u!1 &7418227460206122673
 GameObject:
   m_ObjectHideFlags: 0
