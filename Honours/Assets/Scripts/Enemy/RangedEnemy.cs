@@ -19,7 +19,7 @@ public class RangedEnemy : Enemy
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
-        Invoke("SetToActive", 0.25f);
+        Invoke("SetToActive", 0.3f);
     }
 
 

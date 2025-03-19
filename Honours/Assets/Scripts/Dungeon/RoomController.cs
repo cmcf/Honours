@@ -277,7 +277,7 @@ public class RoomController : MonoBehaviour
         Debug.Log("Entered room");
         if (room.isBossRoom)
         {
-            Invoke(nameof(DelayedActivateBoss), 1.5f);
+            Invoke(nameof(DelayedActivateBoss), 1.6f);
         }
 
         if (roomsCompleted >= 3)

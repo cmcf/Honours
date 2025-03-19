@@ -184,7 +184,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.23829651, y: 0.4987128}
+  m_Offset: {x: -0.28211832, y: 0.4987128}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44, y: 0.07}
@@ -194,7 +194,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.111083984, y: 0.98537046}
+  m_Size: {x: 0.19872761, y: 0.98537046}
   m_EdgeRadius: 0
 --- !u!114 &260086790212494676
 MonoBehaviour:
@@ -27615,6 +27615,7 @@ MonoBehaviour:
     spawnerData: {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
   weaponPickupPrefab: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
   biteModifierPrefab: {fileID: 8278573925337004562, guid: ab76636a8d1bfb54189b230d8d245502, type: 3}
+  maxRangedEnemies: 3
 --- !u!1 &6712753440624333089
 GameObject:
   m_ObjectHideFlags: 0
