@@ -21565,6 +21565,7 @@ Transform:
   - {fileID: 5176434277621252680}
   - {fileID: 8700758279346145749}
   - {fileID: 3552753854124467330}
+  - {fileID: 3311053984375026631}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8920805025549199830
@@ -21583,6 +21584,7 @@ MonoBehaviour:
   height: 8
   x: 0
   y: 0
+  chest: {fileID: 921135188303881240}
   gridController: {fileID: 9148599058773448029}
   spawner: {fileID: 7222207371611653534}
   roomSO: {fileID: 0}
@@ -22135,3 +22137,80 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1001 &5252867432846383868
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1016031596203368019}
+    m_Modifications:
+    - target: {fileID: 4912697717491367652, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 8920805025549199830}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.041690707
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6208688
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455293, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_Name
+      value: WoodenChestDarker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+--- !u!114 &921135188303881240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4912697717491367652, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+  m_PrefabInstance: {fileID: 5252867432846383868}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73ecdaf25d0da2443a2f70c990aa2b69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &3311053984375026631 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+  m_PrefabInstance: {fileID: 5252867432846383868}
+  m_PrefabAsset: {fileID: 0}

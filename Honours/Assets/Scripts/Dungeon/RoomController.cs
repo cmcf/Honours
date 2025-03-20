@@ -271,7 +271,6 @@ public class RoomController : MonoBehaviour
     public void OnRoomCompleted()
     {
         roomsCompleted++;
-        currentRoom.SpawnPickups(); // Spawn pickups for the current room
     }
 
 

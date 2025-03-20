@@ -1154,8 +1154,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0dee4c4d86f76c2448219d9cedfde7fa, type: 2}
   - {fileID: 11400000, guid: 458c19de674a2f247a16c5cb08f5fc21, type: 2}
   - {fileID: 11400000, guid: 58b76c291c8817045bb54db75fd325f8, type: 2}
+  - {fileID: 11400000, guid: f47f95bbfbb8bb2409232d0a3934007b, type: 2}
+  - {fileID: 11400000, guid: 42219e2d464597f48be82a381697351c, type: 2}
   bossRoom: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   spawnRoom: {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
+  rewardRoom: {fileID: 11400000, guid: 42219e2d464597f48be82a381697351c, type: 2}
   currentRoom: {fileID: 0}
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0

@@ -11,7 +11,7 @@ public class Room : MonoBehaviour
     public int x;
     public int y;
 
-    public GridController gridController;
+    public Chest chest;
     public ObjectRoomSpawner spawner;
     public RoomSO roomSO;
     public Transform[] spawnPoints;
@@ -170,6 +170,11 @@ public class Room : MonoBehaviour
         if (AreAllEnemiesDefeated() && !isCompleted)
         {
             isCompleted = true;
+            // Only call SetEnemiesDefeated if a chest exists
+            if (chest != null)
+            {
+                chest.SetEnemiesDefeated(true);  // Notify the chest that the enemies are defeated
+            }
             RoomController.Instance.OnRoomCompleted();
         }
     }
