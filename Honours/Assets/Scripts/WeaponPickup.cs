@@ -14,6 +14,9 @@ public class WeaponPickup : MonoBehaviour
     bool playerInRange = false;
     InputAction interactAction;
 
+    public GameObject controlPromptPrefab;
+    GameObject controlPromptInstance;
+
     void Start()
     {
         PlayerInput playerInput = FindObjectOfType<PlayerInput>();
@@ -46,6 +49,7 @@ public class WeaponPickup : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedWeapon.weaponSprite;
+
     }
 
     void Update()
@@ -56,7 +60,8 @@ public class WeaponPickup : MonoBehaviour
             if (player != null)
             {
                 player.PickupWeapon(selectedWeapon);
-                Destroy(gameObject);
+                Destroy(controlPromptInstance); // Remove prompt
+                Destroy(gameObject); // Remove pickup
             }
         }
     }
@@ -74,6 +79,11 @@ public class WeaponPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+
+            if (controlPromptInstance != null)
+            {
+                Destroy(controlPromptInstance); 
+            }
         }
     }
 
