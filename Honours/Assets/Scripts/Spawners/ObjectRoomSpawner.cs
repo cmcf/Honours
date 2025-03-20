@@ -12,9 +12,6 @@ public class ObjectRoomSpawner : MonoBehaviour
         public string name;
         public SpawnerData spawnerData;
     }
-    public GameObject weaponPickupPrefab;
-    public GameObject biteModifierPrefab;
-
     public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
     public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
 
@@ -178,44 +175,6 @@ public class ObjectRoomSpawner : MonoBehaviour
                 }
             }
         }
-    }
-
-
-    public void StartSpawningPickups(Room room)
-    {
-        if (room != null)
-        {
-            SpawnRandomPickup(room);
-        }
-    }
-
-    void SpawnRandomPickup(Room room)
-    {
-        if (room.spawnPoints.Length == 0)
-        {
-            Debug.LogWarning("No spawn points available for pickups.");
-            return;
-        }
-
-        int randomIndex = Random.Range(0, room.spawnPoints.Length);
-        Transform spawnPoint = room.spawnPoints[randomIndex];
-
-        GameObject pickupPrefabToSpawn;
-        float randomValue = Random.value;
-
-        if (randomValue < 0.5f)
-        {
-            pickupPrefabToSpawn = weaponPickupPrefab;
-        }
-        else
-        {
-            pickupPrefabToSpawn = biteModifierPrefab;
-        }
-
-        GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
-
-        pickup.transform.SetParent(room.transform);
-        pickup.transform.localPosition = spawnPoint.localPosition;
     }
 }
 

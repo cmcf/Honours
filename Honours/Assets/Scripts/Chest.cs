@@ -5,21 +5,20 @@ public class Chest : MonoBehaviour
 {
     Animator animator;
     public Room room;
+    public Transform spawnPoint;
+    public GameObject weaponPickupPrefab;
+    public GameObject biteModifierPrefab;
+
     bool playerInRange = false;
     public bool enemiesDefeated = false;
 
     public bool isRewardRoom = false;
-    InputAction interactAction;
-
-    void Awake()
-    {
-        interactAction = new InputAction("Interact", binding: "<Keyboard>/e");
-        interactAction.Enable();
-    }
+    bool pickupSpawned = false;
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        room = GetComponentInParent<Room>();    
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -27,11 +26,15 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            Debug.Log("Player is in range of the chest.");
 
             if (isRewardRoom)
             {
                 animator.SetTrigger("openChest");
+
+                if (!pickupSpawned)
+                {
+                    SpawnRandomPickup();
+                }
             }
             else if (!isRewardRoom && room.AreAllEnemiesDefeated())
             {
@@ -39,6 +42,10 @@ public class Chest : MonoBehaviour
                 if (enemiesDefeated && playerInRange)
                 {
                     animator.SetTrigger("openChest");
+                    if (!pickupSpawned)
+                    {
+                        SpawnRandomPickup();
+                    }
                 }
             }
         }
@@ -49,7 +56,6 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            Debug.Log("Player left the chest's range.");
         }
     }
 
@@ -60,11 +66,30 @@ public class Chest : MonoBehaviour
         if (enemiesDefeated && playerInRange)
         {
             animator.SetTrigger("openChest");
+            
         }
     }
 
-    void OpenChest()
+
+    void SpawnRandomPickup()
     {
-        Debug.Log("Chest Opened!");
+        pickupSpawned = true;
+        // Selects random pickup
+        GameObject pickupPrefabToSpawn;
+        float randomValue = Random.value;
+
+        if (randomValue < 0.5f)
+        {
+            pickupPrefabToSpawn = weaponPickupPrefab;
+        }
+        else
+        {
+            pickupPrefabToSpawn = biteModifierPrefab;
+        }
+        // Spawns the selected pickup
+        GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
+
+        pickup.transform.SetParent(room.transform);
     }
+
 }

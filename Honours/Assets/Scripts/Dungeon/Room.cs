@@ -157,14 +157,6 @@ public class Room : MonoBehaviour
         }
     }
 
-    public void SpawnPickups()
-    {
-        if (spawner != null)
-        {
-            spawner.StartSpawningPickups(this);
-        }
-    }
-
     public void CheckRoomCompletion()
     {
         if (AreAllEnemiesDefeated() && !isCompleted)

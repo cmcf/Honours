@@ -47,12 +47,6 @@ public class WeaponPickup : MonoBehaviour
         startPos = transform.position;
     }
 
-    void Update()
-    {
-        float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
-        transform.position = startPos + new Vector3(0, yOffset, 0);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

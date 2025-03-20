@@ -25,13 +25,6 @@ public class BitePickup : MonoBehaviour
         startPos = transform.position;
     }
 
-    void Update()
-    {
-        // Moves the pickup up and down smoothly
-        float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
-        transform.position = startPos + new Vector3(0, yOffset, 0);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         // Ensure the collider belongs to the player
