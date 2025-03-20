@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,8 +8,8 @@ public class BitePickup : MonoBehaviour
     SpriteRenderer spriteRenderer;
     BiteModifier selectedBiteModifier;
 
-    public float floatSpeed = 2f;
-    public float floatAmount = 0.1f;
+    public GameObject promptPrefab; // Assign in Inspector
+    private GameObject promptInstance;
 
     bool playerInRange = false;
     InputAction interactAction;
@@ -20,7 +19,6 @@ public class BitePickup : MonoBehaviour
         PlayerInput playerInput = FindObjectOfType<PlayerInput>();
         interactAction = playerInput.actions["Interact"];
 
-        // Randomly select a bite modifier
         selectedBiteModifier = possibleModifiers[Random.Range(0, possibleModifiers.Length)];
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedBiteModifier.biteSprite;
@@ -37,6 +35,7 @@ public class BitePickup : MonoBehaviour
                 if (wolf != null)
                 {
                     wolf.EquipBiteEffect(selectedBiteModifier);
+                    Destroy(promptInstance);
                     Destroy(gameObject);
                 }
             }
@@ -56,11 +55,10 @@ public class BitePickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            if (promptInstance != null)
+            {
+                Destroy(promptInstance);
+            }
         }
-    }
-
-    public BiteModifier GetBiteModifier()
-    {
-        return selectedBiteModifier;
     }
 }

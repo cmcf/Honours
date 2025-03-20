@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 443214366}
   - component: {fileID: 443214370}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +987,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00054086745, y: -0.0008113235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -997,7 +997,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.26, y: 0.34}
+  m_Size: {x: 0.24485561, y: 0.3264782}
   m_EdgeRadius: 0
 --- !u!50 &1816236671
 Rigidbody2D:
@@ -2091,7 +2091,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0035240352, y: 0.12513873}
+  m_Offset: {x: -0.0052401274, y: 0.13165984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2101,7 +2101,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.36622292, y: 0.5597636}
+  m_Size: {x: 0.2460972, y: 0.37648612}
   m_EdgeRadius: 0
 --- !u!50 &7264892674892112617
 Rigidbody2D:

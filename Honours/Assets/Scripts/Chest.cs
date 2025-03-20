@@ -33,7 +33,7 @@ public class Chest : MonoBehaviour
 
                 if (!pickupSpawned)
                 {
-                    SpawnRandomPickup();
+                    Invoke("SpawnRandomPickup", 0.6f);
                 }
             }
             else if (!isRewardRoom && room.AreAllEnemiesDefeated())
@@ -44,7 +44,7 @@ public class Chest : MonoBehaviour
                     animator.SetTrigger("openChest");
                     if (!pickupSpawned)
                     {
-                        SpawnRandomPickup();
+                        Invoke("SpawnRandomPickup", 0.6f);
                     }
                 }
             }
