@@ -1,22 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class WeaponPickup : MonoBehaviour
 {
-    // Array of possible weapons to randomly pick from
     public Weapon[] possibleWeapons;
     SpriteRenderer spriteRenderer;
-    // The selected random weapon
     Weapon selectedWeapon;
 
-    public float floatSpeed = 2f;  
-    public float floatAmount = 0.1f;  
+    public float floatSpeed = 2f;
+    public float floatAmount = 0.1f;
 
     Vector3 startPos;
+    bool playerInRange = false;
+    InputAction interactAction;
 
     void Start()
     {
-        // Get player's current weapon
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        interactAction = playerInput.actions["Interact"];
+
         Player player = FindObjectOfType<Player>();
         Weapon currentWeapon = null;
 
@@ -25,21 +28,21 @@ public class WeaponPickup : MonoBehaviour
             currentWeapon = player.GetCurrentWeapon();
         }
 
-        // Create a list excluding the current weapon
+        // Filter out the current weapon from the possible weapons list
         List<Weapon> filteredWeapons = new List<Weapon>(possibleWeapons);
         if (currentWeapon != null)
         {
             filteredWeapons.RemoveAll(w => w.weaponName == currentWeapon.weaponName);
         }
 
-        // Ensure there is at least one weapon to spawn
+        // Select a random weapon
         if (filteredWeapons.Count > 0)
         {
             selectedWeapon = filteredWeapons[Random.Range(0, filteredWeapons.Count)];
         }
         else
         {
-            selectedWeapon = possibleWeapons[Random.Range(0, possibleWeapons.Length)]; // Default to random if no other choice
+            selectedWeapon = possibleWeapons[Random.Range(0, possibleWeapons.Length)];
         }
 
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -47,18 +50,32 @@ public class WeaponPickup : MonoBehaviour
         startPos = transform.position;
     }
 
+    void Update()
+    {
+        if (playerInRange && interactAction.triggered)
+        {
+            Player player = FindObjectOfType<Player>();
+            if (player != null)
+            {
+                player.PickupWeapon(selectedWeapon);
+                Destroy(gameObject);
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            Switcher switcher = FindObjectOfType<Switcher>();
-            if (switcher == null) return;
+            playerInRange = true;
+        }
+    }
 
-            if (switcher.currentCharacterState == CharacterState.Player)
-            {
-                other.GetComponent<Player>().PickupWeapon(selectedWeapon);
-                Destroy(gameObject);
-            }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
         }
     }
 
