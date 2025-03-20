@@ -11,7 +11,6 @@ public class WeaponPickup : MonoBehaviour
     public float floatSpeed = 2f;
     public float floatAmount = 0.1f;
 
-    Vector3 startPos;
     bool playerInRange = false;
     InputAction interactAction;
 
@@ -47,7 +46,6 @@ public class WeaponPickup : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedWeapon.weaponSprite;
-        startPos = transform.position;
     }
 
     void Update()
