@@ -107,7 +107,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
   floatSpeed: 2
   floatAmount: 0.1
-  controlPromptPrefab: {fileID: 4267554952919739639, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
+  promptPrefab: {fileID: 0}
 --- !u!61 &6939024789969638267
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -169,6 +169,10 @@ PrefabInstance:
     - target: {fileID: 4267554952919739639, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
       propertyPath: m_Name
       value: InteractCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267554952919739639, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8077348559691017923, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
       propertyPath: m_Pivot.x

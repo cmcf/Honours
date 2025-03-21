@@ -148,9 +148,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8893077255651740835}
     m_Modifications:
+    - target: {fileID: 3421246395990575, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4267554952919739639, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
       propertyPath: m_Name
       value: InteractCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267554952919739639, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8077348559691017923, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
       propertyPath: m_Pivot.x

@@ -14,7 +14,7 @@ public class WeaponPickup : MonoBehaviour
     bool playerInRange = false;
     InputAction interactAction;
 
-    public GameObject controlPromptPrefab;
+    public GameObject promptPrefab;
     GameObject controlPromptInstance;
 
     void Start()
@@ -50,6 +50,11 @@ public class WeaponPickup : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedWeapon.weaponSprite;
 
+        if (promptPrefab != null)
+        {
+            promptPrefab.SetActive(false);
+        }
+
     }
 
     void Update()
@@ -71,6 +76,11 @@ public class WeaponPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+
+            if (promptPrefab != null)
+            {
+                promptPrefab.SetActive(true);
+            }
         }
     }
 
@@ -79,6 +89,11 @@ public class WeaponPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+
+            if (promptPrefab != null)
+            {
+                promptPrefab.SetActive(false);
+            }
 
             if (controlPromptInstance != null)
             {

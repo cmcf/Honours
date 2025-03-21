@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4267554952919739639, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6228405991350534738, guid: dd8c6c47349650e4c8a10a6ea76421ce, type: 3}
       propertyPath: m_fontSize
       value: 3

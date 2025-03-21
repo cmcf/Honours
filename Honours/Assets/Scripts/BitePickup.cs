@@ -22,6 +22,11 @@ public class BitePickup : MonoBehaviour
         selectedBiteModifier = possibleModifiers[Random.Range(0, possibleModifiers.Length)];
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedBiteModifier.biteSprite;
+
+        if (promptPrefab != null)
+        {
+            promptPrefab.SetActive(false);
+        }
     }
 
     void Update()
@@ -47,7 +52,15 @@ public class BitePickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+
+            if (promptPrefab != null)
+            {
+                promptPrefab.SetActive(true);
+            }
+
         }
+
+
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -55,6 +68,11 @@ public class BitePickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            if (promptPrefab != null)
+            {
+                promptPrefab.SetActive(false);
+            }
+
             if (promptInstance != null)
             {
                 Destroy(promptInstance);
