@@ -175,6 +175,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 3456329744758056764}
   weaponPickupPrefab: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
   biteModifierPrefab: {fileID: 8278573925337004562, guid: ab76636a8d1bfb54189b230d8d245502, type: 3}
+  healthPrefab: {fileID: 368283942065414147, guid: 1ed169a608c9136418d3f9941dfba557, type: 3}
   enemiesDefeated: 0
   isRewardRoom: 0
 --- !u!70 &8641843682908004061

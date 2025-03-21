@@ -8,6 +8,7 @@ public class Chest : MonoBehaviour
     public Transform spawnPoint;
     public GameObject weaponPickupPrefab;
     public GameObject biteModifierPrefab;
+    public GameObject healthPrefab;
 
     bool playerInRange = false;
     public bool enemiesDefeated = false;
@@ -78,13 +79,17 @@ public class Chest : MonoBehaviour
         GameObject pickupPrefabToSpawn;
         float randomValue = Random.value;
 
-        if (randomValue < 0.5f)
+        if (randomValue < 0.5f) // 50% chance
         {
             pickupPrefabToSpawn = weaponPickupPrefab;
         }
-        else
+        else if (randomValue < 0.8f) // 30% chance 
         {
             pickupPrefabToSpawn = biteModifierPrefab;
+        }
+        else // 20% chance
+        {
+            pickupPrefabToSpawn = healthPrefab;
         }
         // Spawns the selected pickup
         GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
