@@ -8,7 +8,7 @@ public class BitePickup : MonoBehaviour
     SpriteRenderer spriteRenderer;
     BiteModifier selectedBiteModifier;
 
-    public GameObject promptPrefab; // Assign in Inspector
+    public GameObject promptPrefab; 
     private GameObject promptInstance;
 
     bool playerInRange = false;

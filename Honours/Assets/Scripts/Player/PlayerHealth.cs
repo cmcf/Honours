@@ -1,21 +1,21 @@
 using UnityEngine;
-using TMPro;  // If using TextMeshPro
+using TMPro; 
 using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
+    public TextMeshProUGUI healthText;
+
     public float maxHealth = 50f;
     public float currentHealth;
     private bool isDead = false;
 
-    private Player player;
-    private Wolf wolf;
-    private CharacterState currentCharacterState;
+    Player player;
+    Wolf wolf;
+    CharacterState currentCharacterState;
 
     [SerializeField] float reloadDelay = 0.8f;
-
-    // Reference to the UI Text element for health display
-    public TextMeshProUGUI healthText;
+ 
 
     void Awake()
     {
