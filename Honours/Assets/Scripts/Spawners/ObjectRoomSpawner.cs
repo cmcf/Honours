@@ -12,9 +12,6 @@ public class ObjectRoomSpawner : MonoBehaviour
         public string name;
         public SpawnerData spawnerData;
     }
-    public GameObject weaponPickupPrefab;
-    public GameObject biteModifierPrefab;
-
     public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
     public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
 
@@ -78,9 +75,9 @@ public class ObjectRoomSpawner : MonoBehaviour
         StartCoroutine(SpawnEnemiesWithDelay(room, numEnemies));
     }
 
-    // Coroutine to spawn enemies one by one with a delay
     IEnumerator SpawnEnemiesWithDelay(Room room, int numEnemies)
     {
+        // Make sure to spawn all enemies first
         for (int i = 0; i < numEnemies; i++)
         {
             if (totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) yield break; // Stop spawning if max room limit is reached
@@ -88,7 +85,14 @@ public class ObjectRoomSpawner : MonoBehaviour
             SpawnEnemy(room); // Spawn a single enemy
             yield return new WaitForSeconds(0.6f); // Delay between spawns
         }
+
+        // Only check for room completion after all enemies are spawned
+        if (currentEnemies <= 0 && totalEnemiesSpawnedInRoom == numEnemies)
+        {
+            room.CheckRoomCompletion(); // Mark the room as completed
+        }
     }
+
 
     // Spawns a single enemy at a random spawn point
     void SpawnEnemy(Room room)
@@ -156,52 +160,21 @@ public class ObjectRoomSpawner : MonoBehaviour
         // If all enemies are defeated, check if another wave should start
         if (currentEnemies <= 0)
         {
+            // If there's still another wave to spawn, do not check for room completion yet
             if (currentWave < maxWaves)
             {
-                StartNextWave(room); // Start the next wave if possible
+                // Start the next wave if possible
+                StartNextWave(room);
             }
             else
             {
-                room.CheckRoomCompletion(); // Mark the room as completed
+                // Ensure we only check completion if no more enemies remain (even from previous waves)
+                if (totalEnemiesSpawnedInRoom == currentWave) // Make sure all enemies have been spawned
+                {
+                    room.CheckRoomCompletion(); // Mark the room as completed only when all enemies are defeated
+                }
             }
         }
-    }
-
-    public void StartSpawningPickups(Room room)
-    {
-        if (room != null)
-        {
-            SpawnRandomPickup(room);
-        }
-    }
-
-    void SpawnRandomPickup(Room room)
-    {
-        if (room.spawnPoints.Length == 0)
-        {
-            Debug.LogWarning("No spawn points available for pickups.");
-            return;
-        }
-
-        int randomIndex = Random.Range(0, room.spawnPoints.Length);
-        Transform spawnPoint = room.spawnPoints[randomIndex];
-
-        GameObject pickupPrefabToSpawn;
-        float randomValue = Random.value;
-
-        if (randomValue < 0.5f)
-        {
-            pickupPrefabToSpawn = weaponPickupPrefab;
-        }
-        else
-        {
-            pickupPrefabToSpawn = biteModifierPrefab;
-        }
-
-        GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
-
-        pickup.transform.SetParent(room.transform);
-        pickup.transform.localPosition = spawnPoint.localPosition;
     }
 }
 

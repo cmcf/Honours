@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 443214366}
   - component: {fileID: 443214370}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: GameCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -987,7 +987,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00054086745, y: -0.0008113235}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -997,7 +997,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.26, y: 0.34}
+  m_Size: {x: 0.24485561, y: 0.3264782}
   m_EdgeRadius: 0
 --- !u!50 &1816236671
 Rigidbody2D:
@@ -1154,13 +1154,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0dee4c4d86f76c2448219d9cedfde7fa, type: 2}
   - {fileID: 11400000, guid: 458c19de674a2f247a16c5cb08f5fc21, type: 2}
   - {fileID: 11400000, guid: 58b76c291c8817045bb54db75fd325f8, type: 2}
+  - {fileID: 11400000, guid: f47f95bbfbb8bb2409232d0a3934007b, type: 2}
   bossRoom: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   spawnRoom: {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
+  rewardRoom: {fileID: 11400000, guid: 42219e2d464597f48be82a381697351c, type: 2}
   currentRoom: {fileID: 0}
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
   roomsCompleted: 0
-  roomsBeforeBoss: 6
+  roomsBeforeBoss: 7
   startBossAttack: 0
 --- !u!4 &2019253176
 Transform:
@@ -1210,6 +1212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minAmountOfEnemies: 1
   maxAmountOfEnemies: 2
+  maxAmountOfEnemiesInRoom: 2
+  spawnMultiplier: 2
 --- !u!4 &2143930541
 Transform:
   m_ObjectHideFlags: 0
@@ -1253,10 +1257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
+  healthText: {fileID: 1210541548}
   maxHealth: 225
   currentHealth: 200
   reloadDelay: 2
-  healthText: {fileID: 1210541548}
 --- !u!4 &181472975548114405
 Transform:
   m_ObjectHideFlags: 0
@@ -2087,7 +2091,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0035240352, y: 0.12513873}
+  m_Offset: {x: -0.0052401274, y: 0.13165984}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2097,7 +2101,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.36622292, y: 0.5597636}
+  m_Size: {x: 0.2460972, y: 0.37648612}
   m_EdgeRadius: 0
 --- !u!50 &7264892674892112617
 Rigidbody2D:

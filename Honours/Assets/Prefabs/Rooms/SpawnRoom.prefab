@@ -960,7 +960,7 @@ MonoBehaviour:
   height: 8
   x: 0
   y: 0
-  gridController: {fileID: 0}
+  chest: {fileID: 0}
   spawner: {fileID: 0}
   roomSO: {fileID: 0}
   spawnPoints: []

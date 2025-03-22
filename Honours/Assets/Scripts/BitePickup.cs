@@ -1,63 +1,82 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BitePickup : MonoBehaviour
 {
-    // Array of possible weapons to randomly pick from
     public BiteModifier[] possibleModifiers;
     SpriteRenderer spriteRenderer;
-    // The selected random weapon
     BiteModifier selectedBiteModifier;
 
-    public float floatSpeed = 2f;
-    public float floatAmount = 0.1f;
+    public GameObject promptPrefab; 
+    private GameObject promptInstance;
 
-    private Vector3 startPos;
+    bool playerInRange = false;
+    InputAction interactAction;
 
     void Start()
     {
-        // Randomly select a weapon from the array when the pickup is created
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        interactAction = playerInput.actions["Interact"];
+
         selectedBiteModifier = possibleModifiers[Random.Range(0, possibleModifiers.Length)];
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = selectedBiteModifier.biteSprite;
 
-        startPos = transform.position;
+        if (promptPrefab != null)
+        {
+            promptPrefab.SetActive(false);
+        }
     }
 
     void Update()
     {
-        // Moves the pickup up and down smoothly
-        float yOffset = Mathf.Sin(Time.time * floatSpeed) * floatAmount;
-        transform.position = startPos + new Vector3(0, yOffset, 0);
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        // Ensure the collider belongs to the player
-        if (other.CompareTag("Player"))
+        if (playerInRange && interactAction.triggered)
         {
-            // Get the Switcher script to check the current character state
             Switcher switcher = FindObjectOfType<Switcher>();
-            if (switcher == null)
+            if (switcher != null && switcher.currentCharacterState == CharacterState.Wolf)
             {
-                return;
-            }
-
-            // Only allow pickup if the player is in wolf form
-            if (switcher.currentCharacterState == CharacterState.Wolf)
-            {
-                other.GetComponent<Wolf>().EquipBiteEffect(selectedBiteModifier);
-
-                // Destroy the pickup object after it is collected
-                Destroy(gameObject);
+                Wolf wolf = FindObjectOfType<Wolf>();
+                if (wolf != null)
+                {
+                    wolf.EquipBiteEffect(selectedBiteModifier);
+                    Destroy(promptInstance);
+                    Destroy(gameObject);
+                }
             }
         }
     }
 
-
-    public BiteModifier GetBiteModifier()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        return selectedBiteModifier;
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+
+            if (promptPrefab != null)
+            {
+                promptPrefab.SetActive(true);
+            }
+
+        }
+
+
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            if (promptPrefab != null)
+            {
+                promptPrefab.SetActive(false);
+            }
+
+            if (promptInstance != null)
+            {
+                Destroy(promptInstance);
+            }
+        }
     }
 }
