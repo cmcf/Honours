@@ -49,31 +49,6 @@ public class Door : MonoBehaviour
         }
     }
 
-    void MovePlayer()
-    {
-        // Find the currently active player character
-        GameObject activeCharacter = GameObject.FindGameObjectWithTag("Player"); 
-
-        if (activeCharacter != null)
-        {
-            switch (doorType)
-            {
-                case DoorType.left:
-                    activeCharacter.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
-                    break;
-                case DoorType.right:
-                    activeCharacter.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
-                    break;
-                case DoorType.top:
-                    activeCharacter.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
-                    break;
-                case DoorType.bottom:
-                    activeCharacter.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
-                    break;
-            }
-        }
-    }
-
     void LoadLevelAfterADelay()
     {
         RoomController.Instance.LoadNextRoom(this);
