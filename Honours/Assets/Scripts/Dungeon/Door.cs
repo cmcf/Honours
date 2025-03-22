@@ -11,12 +11,10 @@ public class Door : MonoBehaviour
     }
 
     public DoorType doorType;
-    public GameObject wallCollider;
-
     public int roomIndexToLoad;
     float widthOffset = 4f;
     GameObject player;
-    private Room parentRoom;
+    Room parentRoom;
     Switcher switcher;
 
     Vector2Int gridPosition;
@@ -47,31 +45,6 @@ public class Door : MonoBehaviour
             else
             {
                 Debug.Log("Defeat all enemies before proceeding!");
-            }
-        }
-    }
-
-    void MovePlayer()
-    {
-        // Find the currently active player character
-        GameObject activeCharacter = GameObject.FindGameObjectWithTag("Player"); 
-
-        if (activeCharacter != null)
-        {
-            switch (doorType)
-            {
-                case DoorType.left:
-                    activeCharacter.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
-                    break;
-                case DoorType.right:
-                    activeCharacter.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
-                    break;
-                case DoorType.top:
-                    activeCharacter.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
-                    break;
-                case DoorType.bottom:
-                    activeCharacter.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
-                    break;
             }
         }
     }
