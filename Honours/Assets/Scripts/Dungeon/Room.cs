@@ -29,7 +29,8 @@ public class Room : MonoBehaviour
     public bool isBossRoom = false;
     public bool hasSpawnedEnemies = false;
 
-    public Transform[] enemySpawnPoints;
+    public List<Transform> enemySpawnPoints;
+    public List<Transform> availableSpawnPoints;
     public bool isCompleted { get; set; } = false;
 
     public List<Door> doorList = new List<Door>();

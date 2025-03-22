@@ -5,8 +5,7 @@ using UnityEngine;
 public class ObjectRoomSpawner : MonoBehaviour
 {
     [System.Serializable]
-
-    
+ 
     public struct RandomSpawner
     {
         public string name;
@@ -22,6 +21,8 @@ public class ObjectRoomSpawner : MonoBehaviour
 
     public List<SpawnerData> meleeEnemies; // List of melee enemies
     public List<SpawnerData> rangedEnemies; // List of ranged enemies
+
+    [SerializeField] float delayBetweenSpawns = 0.6f;
 
     public int maxEnemiesPerRoom => SpawnRateManager.Instance.maxAmountOfEnemiesInRoom; // Maximum enemies allowed per room
     private int totalEnemiesSpawnedInRoom = 0; // Tracks the total number of enemies spawned in the current room
@@ -47,9 +48,9 @@ public class ObjectRoomSpawner : MonoBehaviour
         currentWave = 1;
         currentEnemies = 0;
 
-        // Determine number of enemies, ensuring we don't exceed the room's max limit
+        // Determine number of enemies to ensure the room's max limit is not exceeded
         int numEnemies = Random.Range(minEnemies, maxEnemies);
-        numEnemies = Mathf.Min(numEnemies, room.enemySpawnPoints.Length); // Limit to available spawn points
+        numEnemies = Mathf.Min(numEnemies, room.enemySpawnPoints.Count); // Limit to available spawn points
         numEnemies = Mathf.Min(numEnemies, maxEnemiesPerRoom - totalEnemiesSpawnedInRoom); // Ensure room max is not exceeded
 
         for (int i = 0; i < numEnemies; i++)
@@ -66,9 +67,8 @@ public class ObjectRoomSpawner : MonoBehaviour
         currentWave++;
         currentEnemies = 0;
 
-        // Determine number of enemies, ensuring we don't exceed the room's max limit
         int numEnemies = Random.Range(minEnemies, maxEnemies + 1);
-        numEnemies = Mathf.Min(numEnemies, room.enemySpawnPoints.Length); // Limit to available spawn points
+        numEnemies = Mathf.Min(numEnemies, room.enemySpawnPoints.Count); // Limit to available spawn points
         numEnemies = Mathf.Min(numEnemies, maxEnemiesPerRoom - totalEnemiesSpawnedInRoom); // Ensure room max is not exceeded
 
         // Start coroutine to spawn enemies with a delay
@@ -83,7 +83,7 @@ public class ObjectRoomSpawner : MonoBehaviour
             if (totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) yield break; // Stop spawning if max room limit is reached
 
             SpawnEnemy(room); // Spawn a single enemy
-            yield return new WaitForSeconds(0.6f); // Delay between spawns
+            yield return new WaitForSeconds(delayBetweenSpawns);
         }
 
         // Only check for room completion after all enemies are spawned
@@ -97,60 +97,56 @@ public class ObjectRoomSpawner : MonoBehaviour
     // Spawns a single enemy at a random spawn point
     void SpawnEnemy(Room room)
     {
-        if (room.enemySpawnPoints.Length == 0 || totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) return; // Stop if no spawn points or max enemies reached
+        if (room.enemySpawnPoints.Count == 0 || totalEnemiesSpawnedInRoom >= maxEnemiesPerRoom) return;
 
-        Transform spawnPoint = room.enemySpawnPoints[Random.Range(0, room.enemySpawnPoints.Length)];
+        // Ensure available spawn points list exists and refill if empty
+        if (room.availableSpawnPoints == null || room.availableSpawnPoints.Count == 0)
+        {
+            room.availableSpawnPoints = new List<Transform>(room.enemySpawnPoints);
+        }
 
-        // Check if we there are valid melee or ranged enemies available
+        if (room.availableSpawnPoints.Count == 0) return;
+
+        // Select and remove a random spawn point
+        int randomIndex = Random.Range(0, room.availableSpawnPoints.Count);
+        Transform spawnPoint = room.availableSpawnPoints[randomIndex];
+        room.availableSpawnPoints.RemoveAt(randomIndex);
+
+        // Enemy selection logic
+        SpawnerData enemyToSpawn;
         bool hasMeleeEnemies = meleeEnemies.Count > 0;
         bool hasRangedEnemies = rangedEnemies.Count > 0;
 
-        // If no enemies are available, exit
-        if (!hasMeleeEnemies && !hasRangedEnemies)
-        {
-            Debug.LogWarning($"No enemies available to spawn in room ({room.x}, {room.y}).");
-            return;
-        }
+        if (!hasMeleeEnemies && !hasRangedEnemies) return;
 
-        // Ensure there is valid enemies before trying to spawn one
-        SpawnerData enemyToSpawn = null;
-
-        if (hasRangedEnemies && hasMeleeEnemies)
+        if (hasMeleeEnemies && hasRangedEnemies)
         {
-            // Randomly choose between ranged or melee if both are available
-            enemyToSpawn = (Random.value > 0.5f) ? rangedEnemies[Random.Range(0, rangedEnemies.Count)] : meleeEnemies[Random.Range(0, meleeEnemies.Count)];
-        }
-        else if (hasRangedEnemies)
-        {
-            // Only ranged enemies are available
-            enemyToSpawn = rangedEnemies[Random.Range(0, rangedEnemies.Count)];
-        }
-        else if (hasMeleeEnemies)
-        {
-            // Only melee enemies are available
-            enemyToSpawn = meleeEnemies[Random.Range(0, meleeEnemies.Count)];
+            enemyToSpawn = Random.value > 0.5f ?
+                meleeEnemies[Random.Range(0, meleeEnemies.Count)] :
+                rangedEnemies[Random.Range(0, rangedEnemies.Count)];
         }
         else
         {
-            // If no enemies are available, log a warning and return
-            Debug.LogWarning($"No enemies available to spawn in room ({room.x}, {room.y}).");
-            return;
+            enemyToSpawn = hasRangedEnemies ?
+                rangedEnemies[Random.Range(0, rangedEnemies.Count)] :
+                meleeEnemies[Random.Range(0, meleeEnemies.Count)];
         }
 
-        // Instantiate enemy at the chosen spawn point
+        // Instantiate enemy
         GameObject enemy = Instantiate(enemyToSpawn.itemToSpawn, spawnPoint.position, Quaternion.identity);
         enemy.transform.SetParent(room.transform);
 
-        // Register enemy death event to track when enemies are defeated
+        // Register death event
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         if (enemyScript != null)
         {
             enemyScript.OnDeathEvent += () => OnEnemyDefeated(room);
         }
 
-        currentEnemies++; // Increase current wave enemy count
-        totalEnemiesSpawnedInRoom++; // Increase total enemies spawned in this room
+        currentEnemies++;
+        totalEnemiesSpawnedInRoom++;
     }
+
 
     // Called when an enemy is defeated
     public void OnEnemyDefeated(Room room)
@@ -168,10 +164,10 @@ public class ObjectRoomSpawner : MonoBehaviour
             }
             else
             {
-                // Ensure we only check completion if no more enemies remain (even from previous waves)
-                if (totalEnemiesSpawnedInRoom == currentWave) // Make sure all enemies have been spawned
+                // Ensure room is checked after all enemies have spawned
+                if (totalEnemiesSpawnedInRoom == currentWave) 
                 {
-                    room.CheckRoomCompletion(); // Mark the room as completed only when all enemies are defeated
+                    room.CheckRoomCompletion(); 
                 }
             }
         }
