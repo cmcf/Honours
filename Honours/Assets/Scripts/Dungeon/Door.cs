@@ -11,12 +11,10 @@ public class Door : MonoBehaviour
     }
 
     public DoorType doorType;
-    public GameObject wallCollider;
-
     public int roomIndexToLoad;
     float widthOffset = 4f;
     GameObject player;
-    private Room parentRoom;
+    Room parentRoom;
     Switcher switcher;
 
     Vector2Int gridPosition;
