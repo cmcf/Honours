@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 808816175613848013}
   - component: {fileID: 8430357673686015817}
   - component: {fileID: 295572035653750116}
+  - component: {fileID: 1402584539411339171}
   - component: {fileID: -381821704780921341}
   m_Layer: 0
   m_Name: SpikeProjectile
@@ -139,6 +140,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
+--- !u!114 &1402584539411339171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7142930724310883936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b5f3b3f5c35d1f409d08d2ed2abcb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &-381821704780921341
 Rigidbody2D:
   serializedVersion: 4
