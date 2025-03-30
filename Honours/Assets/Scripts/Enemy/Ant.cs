@@ -8,7 +8,7 @@ public class Ant : Enemy
     [SerializeField] float speed = 3f;
     [SerializeField] float attackRadius = 2f;
     [SerializeField] float attackCooldown = 1f;
-    [SerializeField] float attackDuration = 0.5f;
+    [SerializeField] float attackDuration = 0.35f;
 
     void Update()
     {
@@ -37,12 +37,47 @@ public class Ant : Enemy
     {
         if (currentState == EnemyState.Attacking) return; 
 
-        animator.SetBool("isAttacking", false);
-        animator.SetBool("isMoving", true);
-
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * speed;
+        rb.velocity = direction * speed; 
+
+        // If the ant is moving, trigger the walking animation
+        if (rb.velocity.magnitude > 0.1f) 
+        {
+            animator.SetBool("isMoving", true); // Trigger walking animation
+        }
+        else
+        {
+            rb.velocity = Vector2.zero; // Stop movement when not moving
+            animator.SetBool("isMoving", false); // Prevent walking animation from playing
+        }
+
     }
+
+    IEnumerator Attack()
+    {
+        currentState = EnemyState.Attacking; 
+        rb.velocity = Vector2.zero; // Stop any movement during attack
+        animator.SetBool("isMoving", false); // Stop moving animation
+        animator.SetBool("isAttacking", true); // Start attack animation
+
+        yield return new WaitForSeconds(attackDuration); // Wait for attack duration
+
+        animator.SetBool("isAttacking", false); // Stop attack animation
+
+        // Pause for attack cooldown before moving again
+        yield return new WaitForSeconds(attackCooldown);
+
+        currentState = EnemyState.Idle; // Allow attacking again
+
+        // When attack is done, if ant is not moving, make sure walk animation is not triggered
+        if (rb.velocity.magnitude == 0f)
+        {
+            animator.SetBool("isMoving", false);
+        }
+    }
+
+
+
 
     void FlipSprite()
     {
@@ -53,25 +88,5 @@ public class Ant : Enemy
             transform.localScale = new Vector3(-1, 1, 1); // Face right
         else if (directionX < 0)
             transform.localScale = new Vector3(1, 1, 1);  // Face left
-    }
-
-    IEnumerator Attack()
-    {
-        currentState = EnemyState.Attacking;
-
-        while (Vector2.Distance(transform.position, player.position) <= attackRadius)
-        {
-            rb.velocity = Vector2.zero;
-            animator.SetBool("isMoving", false);
-            animator.SetBool("isAttacking", true);
-
-            yield return new WaitForSeconds(attackDuration); 
-
-            animator.SetBool("isAttacking", false);
-            yield return new WaitForSeconds(attackCooldown); // Pause before next attack
-        }
-
-        // When the player leaves the attack radius
-        currentState = EnemyState.Idle;
     }
 }
