@@ -5,11 +5,14 @@ using UnityEngine;
 public class Shell : Enemy
 {
     Transform player;
+    [SerializeField] GameObject spikePrefab;
+    [SerializeField] Transform[] firePoints;
 
     [SerializeField] float attackRadius = 10f;
     [SerializeField] float speed = 8f;
     [SerializeField] float attackCooldown = 0.5f;
     [SerializeField] float attackPause = 2f;
+    [SerializeField] float projectileSpeed = 10f;
 
     void Start()
     {
@@ -73,10 +76,21 @@ public class Shell : Enemy
         currentState = EnemyState.Idle; // Allow attacking again
     }
 
-    void StopAttack()
+    public void FireSpikes()
     {
-        currentState = EnemyState.Idle;
-        animator.SetBool("isAttacking", false);
-        animator.SetBool("isAttacking", false);
+        foreach (Transform firePoint in firePoints)
+        {
+            if (firePoint != transform) 
+            {
+                GameObject spike = Instantiate(spikePrefab, firePoint.position, firePoint.rotation);
+                Rigidbody2D rb = spike.GetComponent<Rigidbody2D>();
+
+                if (rb != null)
+                {
+                    rb.velocity = firePoint.up * projectileSpeed;
+                }
+            }
+        }
     }
+
 }
