@@ -246,12 +246,16 @@ public class Enemy : MonoBehaviour, IDamageable
 
     IEnumerator WaitForDeathAnimation()
     {
-        // Wait for the death animation to finish
-        yield return new WaitForSeconds(destroyDelay);
+        // Get the current death animation state
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        // Wait for the animation to finish
+        yield return new WaitForSeconds(stateInfo.length);
 
         Destroy(rb);
         Destroy(gameObject);
     }
+
 
     void OnCollisionEnter2D(Collision2D collision)
     {
