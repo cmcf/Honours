@@ -294,7 +294,7 @@ MonoBehaviour:
   level: 0
   isActive: 1
   currentState: 1
-  spikePrefab: {fileID: 0}
+  spikePrefab: {fileID: 7142930724310883936, guid: 38b3d59a22d67b94490818c82c1e3de1, type: 3}
   firePoints:
   - {fileID: 523104995506707191}
   - {fileID: 3798400606357890934}
@@ -305,6 +305,9 @@ MonoBehaviour:
   speed: 4
   attackCooldown: 1
   attackPause: 1.5
+  projectileSpeed: 10
+  minDistance: 2
+  strafeDistance: 3
 --- !u!95 &3386757058431283187
 Animator:
   serializedVersion: 7

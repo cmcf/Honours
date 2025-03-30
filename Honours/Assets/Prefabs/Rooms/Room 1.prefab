@@ -3182,7 +3182,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 66
+      m_TileSpriteIndex: 73
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14822,7 +14822,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 43
+      m_TileSpriteIndex: 71
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -18782,7 +18782,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 32
+      m_TileSpriteIndex: 68
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -18881,8 +18881,8 @@ Tilemap:
     m_Data: {fileID: -1124305101, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
   - m_RefCount: 54
     m_Data: {fileID: 1252965202, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -950088044, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: 549190229, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
   - m_RefCount: 46
@@ -18903,8 +18903,8 @@ Tilemap:
     m_Data: {fileID: -1239775015, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
   - m_RefCount: 13
     m_Data: {fileID: -1184604048, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -388777004, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 42
     m_Data: {fileID: 972883250, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
   - m_RefCount: 7
@@ -18949,22 +18949,22 @@ Tilemap:
     m_Data: {fileID: 1922681460, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
   - m_RefCount: 29
     m_Data: {fileID: -1085892948, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -469826756, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
-  - m_RefCount: 11
-    m_Data: {fileID: 2125534993, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 11
+    m_Data: {fileID: 2125534993, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -950088044, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -1990929858, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: -105656656, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -388777004, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 1944114855, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -469826756, guid: 6f6ab8569f8550f499960c6896dac9db, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 2005635650, guid: 60abcdcb36e579e48980c724133e13db, type: 3}
   - m_RefCount: 2
@@ -21952,6 +21952,7 @@ MonoBehaviour:
   meleeEnemies: []
   rangedEnemies:
   - {fileID: 11400000, guid: f098e7088feadd545aa81106eb06fd0a, type: 2}
+  - {fileID: 11400000, guid: a983f8ddd266b1748bb27475b9634651, type: 2}
   delayBetweenSpawns: 0.6
 --- !u!1 &7120084921310052748
 GameObject:
