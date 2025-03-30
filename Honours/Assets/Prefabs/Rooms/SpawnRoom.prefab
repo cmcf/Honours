@@ -20506,9 +20506,9 @@ GameObject:
   - component: {fileID: 8652223739519105510}
   - component: {fileID: 2972780144879470027}
   - component: {fileID: 1586945585756976324}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Walls Tilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

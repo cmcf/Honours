@@ -257,7 +257,7 @@ MonoBehaviour:
   height: 8
   x: 0
   y: 0
-  gridController: {fileID: 86508873044411954}
+  chest: {fileID: 0}
   spawner: {fileID: 0}
   roomSO: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   spawnPoints: []
@@ -273,6 +273,7 @@ MonoBehaviour:
   hasSpawnedEnemies: 0
   enemySpawnPoints:
   - {fileID: 209728060914042933}
+  availableSpawnPoints: []
   doorList: []
 --- !u!61 &4730318738850892134
 BoxCollider2D:
@@ -4860,7 +4861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 0
-  wallCollider: {fileID: 8256182550895007499}
   roomIndexToLoad: 0
 --- !u!1 &4761522237885765740
 GameObject:
@@ -5040,7 +5040,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 2
-  wallCollider: {fileID: 286679337693610202}
   roomIndexToLoad: 0
 --- !u!1 &5274611211451453218
 GameObject:
@@ -28018,7 +28017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 1
-  wallCollider: {fileID: 6219170663216693017}
   roomIndexToLoad: 0
 --- !u!1 &8575909494358553153
 GameObject:

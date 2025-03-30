@@ -9,18 +9,24 @@ public class Shell : Enemy
     [SerializeField] Transform[] firePoints;
 
     [SerializeField] float attackRadius = 10f;
-    [SerializeField] float speed = 8f;
+    
     [SerializeField] float attackCooldown = 0.5f;
     [SerializeField] float attackPause = 2f;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float minDistance = 2f; // Prevents getting too close to the player
     [SerializeField] float strafeDistance = 3f; // Distance for side movement
 
+    [SerializeField] float minSpeed = 4f;
+    [SerializeField] float maxSpeed = 6.5f;
+
+    float speed;
+
     bool lastAttackHit = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        speed = Random.Range(minSpeed, maxSpeed);
     }
 
     void Update()
@@ -59,16 +65,24 @@ public class Shell : Enemy
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            // Stop movement when hitting a wall
+            rb.velocity = Vector2.zero;
+        }
+    }
+
     void AdjustMovement()
     {
         animator.SetBool("isMoving", true);
-        Vector2 direction = (player.position - transform.position).normalized;
+        Vector2 direction = (player.position - (Vector3)transform.position).normalized;
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         // If too close, move sideways instead of forward
         if (distanceToPlayer <= minDistance)
         {
-            // Randomly move left or right
             Vector2 strafeDirection = (Random.value > 0.5f) ? Vector2.left : Vector2.right;
             direction = strafeDirection;
         }
@@ -76,11 +90,14 @@ public class Shell : Enemy
         // Prioritise moving below the player
         if (transform.position.y > player.position.y)
         {
-            direction = Vector2.down; // Move downward
+            direction = Vector2.down;
         }
 
-        rb.velocity = direction * speed;
+        // Use MovePosition for smooth movement
+        Vector2 newPosition = (Vector2)transform.position + direction * speed * Time.deltaTime;
+        rb.MovePosition(newPosition);
     }
+
 
     void Attack()
     {
@@ -142,16 +159,14 @@ public class Shell : Enemy
 
     public void RegisterHit()
     {
-        lastAttackHit = true; // Attack was successful
+        lastAttackHit = true; 
     }
 
     IEnumerator MoveToBetterPosition()
     {
         if (player == null) yield break;
 
-        Vector2 start = transform.position;
-        Vector2 directionToPlayer = (player.position - transform.position).normalized;
-        Vector2 targetPosition = start + (directionToPlayer * 2f);
+        Vector2 targetPosition = (Vector2)transform.position + ((Vector2)player.position - (Vector2)transform.position).normalized * 2f;
 
         // Prioritise moving below the player
         if (transform.position.y > player.position.y)
@@ -159,19 +174,24 @@ public class Shell : Enemy
             targetPosition = new Vector2(transform.position.x, player.position.y - 2f);
         }
 
-        float elapsedTime = 0f;
-        float moveDuration = 0.5f; 
-
         animator.SetBool("isMoving", true); // Start move animation
 
-        while (elapsedTime < moveDuration)
+        while ((Vector2)transform.position != targetPosition)
         {
-            transform.position = Vector2.Lerp(start, targetPosition, elapsedTime / moveDuration);
-            elapsedTime += Time.deltaTime;
+            // Move smoothly like AdjustMovement
+            Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, speed * Time.deltaTime);
+
+            // Stop if colliding with a wall
+            if (Physics2D.OverlapCircle(newPosition, 0.2f, LayerMask.GetMask("Wall")) != null)
+            {
+                break;
+            }
+
+            rb.MovePosition(newPosition);
             yield return null;
         }
 
-        transform.position = targetPosition;
         animator.SetBool("isMoving", false); // Stop move animation
     }
+
 }

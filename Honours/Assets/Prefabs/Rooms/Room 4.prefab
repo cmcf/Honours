@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 4578597207737920065}
   m_Layer: 3
   m_Name: Walls Tilemap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4973,7 +4973,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 3
-  wallCollider: {fileID: 2110945856196382626}
   roomIndexToLoad: 0
 --- !u!1 &2110945856196382626
 GameObject:
@@ -21032,7 +21031,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorType: 2
-  wallCollider: {fileID: 2110945856196382626}
   roomIndexToLoad: 0
 --- !u!1 &6369464371080905636
 GameObject:
@@ -21095,7 +21093,7 @@ MonoBehaviour:
   height: 9
   x: 0
   y: 0
-  gridController: {fileID: 9148599058773448029}
+  chest: {fileID: 0}
   spawner: {fileID: 7222207371611653534}
   roomSO: {fileID: 0}
   spawnPoints:
@@ -21119,6 +21117,7 @@ MonoBehaviour:
   - {fileID: 8634346932841857873}
   - {fileID: 7616885613926700080}
   - {fileID: 8969419312467482271}
+  availableSpawnPoints: []
   doorList: []
 --- !u!61 &4711066184213293826
 BoxCollider2D:
@@ -21178,8 +21177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5d9e4866adc8458f5759e0b0164cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponPickupPrefab: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
-  biteModifierPrefab: {fileID: 8278573925337004562, guid: ab76636a8d1bfb54189b230d8d245502, type: 3}
   maxWaves: 2
   currentWave: 0
   currentEnemies: 0
@@ -21187,6 +21184,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
   rangedEnemies:
   - {fileID: 11400000, guid: f098e7088feadd545aa81106eb06fd0a, type: 2}
+  delayBetweenSpawns: 0.6
 --- !u!1 &6841655426867775756
 GameObject:
   m_ObjectHideFlags: 0
