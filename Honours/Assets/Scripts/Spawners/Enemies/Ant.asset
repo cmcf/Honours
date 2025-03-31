@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7e1c1a6695f20f418c956578878e289, type: 3}
-  m_Name: MeleeEnemy
+  m_Name: Ant
   m_EditorClassIdentifier: 
-  itemToSpawn: {fileID: 6877627727859130524, guid: 8c41bec6ccdb12248bc28f4f15778e16, type: 3}
+  itemToSpawn: {fileID: 3676589472758329687, guid: 5735cbc05e6876645a8d7dfc84fdebeb, type: 3}
   minSpawn: 1
-  maxSpawn: 4
+  maxSpawn: 3

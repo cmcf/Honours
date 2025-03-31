@@ -21184,6 +21184,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
   rangedEnemies:
   - {fileID: 11400000, guid: f098e7088feadd545aa81106eb06fd0a, type: 2}
+  - {fileID: 11400000, guid: d23216ed62350e74e8e672cb80df0dec, type: 2}
   delayBetweenSpawns: 0.6
 --- !u!1 &6841655426867775756
 GameObject:
