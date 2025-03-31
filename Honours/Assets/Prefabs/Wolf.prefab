@@ -116,13 +116,13 @@ MonoBehaviour:
   shieldDuration: 1.5
   knifeCooldown: 0.5
   bitePoint: {fileID: 3152275633236677545}
-  biteRange: 0.5
+  biteRange: 0.8
   minBiteDamage: 15
   maxBiteDamage: 20
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  lungeDistance: 0.5
+  lungeDistance: 0.4
   moveDirection: {x: 0, y: 0}
   isBiting: 0
   canMoveWolf: 0

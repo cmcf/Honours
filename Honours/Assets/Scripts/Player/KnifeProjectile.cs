@@ -6,16 +6,18 @@ public class KnifeProjectile : MonoBehaviour
 {
     Rigidbody2D rb;
 
-    public float lifetime = 3f;
+    [SerializeField] float lifetime = 2.5f;
+    [SerializeField] int minDamage = 1;
+    [SerializeField] int maxDamage = 4;
+    [SerializeField] float pushbackAmount = 0.2f;
+
     public int damage;
-    float pushbackDuration = 0.2f;
-    float pushbackAmount = 0.2f;
-
     public float deflectionForce = 10f;
-
+    float pushbackDuration = 0.2f;
+    
     void Start()
     {
-        damage = Random.Range(1, 2);
+        damage = Random.Range(minDamage, maxDamage);
         rb = GetComponent<Rigidbody2D>();
         Destroy(gameObject, lifetime); 
     }
@@ -39,6 +41,11 @@ public class KnifeProjectile : MonoBehaviour
         if (other.CompareTag("Shield")) 
         {
             DestroyShield(other.gameObject); // Destroy the shield
+        }
+
+        if (other.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
         }
 
         else if (other.CompareTag("EnemyProjectile"))
