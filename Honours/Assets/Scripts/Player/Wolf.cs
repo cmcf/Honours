@@ -24,7 +24,7 @@ public class Wolf : MonoBehaviour, IDamageable
     [SerializeField] float knifeSpeed = 7f;
     [SerializeField] float orbitRadius = 0.5f; // Distance from player
     [SerializeField] float orbitSpeed = 200f;  // Rotation speed
-    [SerializeField] int knifeCount = 8; 
+    [SerializeField] int knifeCount = 6; 
     [SerializeField] float shieldDuration = 3f; // Time before firing knives
   
     public float knifeCooldown = 0.5f;
