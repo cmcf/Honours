@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class Ant : Enemy
 {
+    [Header("References")]
     Transform player;
-    [SerializeField] float speed = 3f;
+
+    [Header("Speed")]
+    [SerializeField] float minSpeed = 3f;
+    [SerializeField] float maxSpeed = 6f;
+    float speed;
+
+    [Header("Attack")]
     [SerializeField] float attackRadius = 2f;
     [SerializeField] float attackCooldown = 1f;
     [SerializeField] float attackDuration = 0.35f;
 
+    [Header("Projectile")]
+    [SerializeField] GameObject projectilePrefab; 
+    [SerializeField] Transform projectileSpawnPoint; 
+    [SerializeField] float projectileSpeed = 8f;
+
+    void Start()
+    {
+        speed = Random.Range(minSpeed, maxSpeed);
+    }
+
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-
         if (player == null) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
@@ -35,58 +51,72 @@ public class Ant : Enemy
 
     void MoveTowardsPlayer()
     {
-        if (currentState == EnemyState.Attacking) return; 
+        if (currentState == EnemyState.Attacking) return;
 
         Vector2 direction = (player.position - transform.position).normalized;
-        rb.velocity = direction * speed; 
+        rb.velocity = direction * speed;
 
-        // If the ant is moving, trigger the walking animation
-        if (rb.velocity.magnitude > 0.1f) 
-        {
-            animator.SetBool("isMoving", true); // Trigger walking animation
-        }
-        else
-        {
-            rb.velocity = Vector2.zero; // Stop movement when not moving
-            animator.SetBool("isMoving", false); // Prevent walking animation from playing
-        }
-
+        animator.SetBool("isMoving", rb.velocity.magnitude > 0.1f);
     }
 
     IEnumerator Attack()
     {
-        currentState = EnemyState.Attacking; 
-        rb.velocity = Vector2.zero; // Stop any movement during attack
-        animator.SetBool("isMoving", false); // Stop moving animation
-        animator.SetBool("isAttacking", true); // Start attack animation
+        currentState = EnemyState.Attacking;
+        rb.velocity = Vector2.zero;
+        animator.SetBool("isMoving", false);
+        animator.SetBool("isAttacking", true);
 
-        yield return new WaitForSeconds(attackDuration); // Wait for attack duration
+        yield return new WaitForSeconds(attackDuration);
 
-        animator.SetBool("isAttacking", false); // Stop attack animation
+        // Fire a projectile directly at the player's position at attack time
+        FireProjectile();
 
-        // Pause for attack cooldown before moving again
-        yield return new WaitForSeconds(attackCooldown);
+        animator.SetBool("isAttacking", false);
 
-        currentState = EnemyState.Idle; // Allow attacking again
+        yield return new WaitForSeconds(attackCooldown); 
 
-        // When attack is done, if ant is not moving, make sure walk animation is not triggered
-        if (rb.velocity.magnitude == 0f)
+        currentState = EnemyState.Idle;
+    }
+
+    void FireProjectile()
+    {
+        if (projectilePrefab && projectileSpawnPoint && player)
         {
-            animator.SetBool("isMoving", false);
+            // Instantiate the projectile at the correct fire point
+            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+
+            // Get the players position 
+            Vector2 targetPosition = player.position;
+
+            // Start coroutine to move it after delay
+            StartCoroutine(DelayedProjectileMovement(projectile, targetPosition));
+
+            Destroy(projectile, 1f);
         }
     }
 
+    IEnumerator DelayedProjectileMovement(GameObject projectile, Vector2 targetPosition)
+    {
+        yield return new WaitForSeconds(0.25f); 
 
+        if (projectile)
+        {
+            // Calculate direction using the saved target position
+            Vector2 direction = (targetPosition - (Vector2)projectile.transform.position).normalized;
 
+            // Rotate projectile to face movement direction
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+            // Apply velocity
+            projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+        }
+    }
 
     void FlipSprite()
     {
         if (player == null) return;
-
         float directionX = player.position.x - transform.position.x;
-        if (directionX > 0)
-            transform.localScale = new Vector3(-1, 1, 1); // Face right
-        else if (directionX < 0)
-            transform.localScale = new Vector3(1, 1, 1);  // Face left
+        transform.localScale = new Vector3(directionX > 0 ? -1 : 1, 1, 1);
     }
 }

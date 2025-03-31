@@ -6,11 +6,14 @@ using static Damage;
 public class EnemyBullet : MonoBehaviour
 {
     float bulletLife = 10f;
-    [SerializeField] float damageAmount = 10;
+    [SerializeField] int minDamage = 6;
+    [SerializeField] int maxDamage = 6;
+    int damageAmount = 10;
 
     bool hitPlayer = false;
     void Start()
     {
+        damageAmount = Random.Range(minDamage, maxDamage);
         Destroy(gameObject, bulletLife);
     }
 
