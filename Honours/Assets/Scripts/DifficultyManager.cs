@@ -8,6 +8,7 @@ public class DifficultyManager : MonoBehaviour
 
     public int baseDifficultyLevel = -1;  
     public int currentDifficultyLevel;
+    public bool isChallengeMode = false;
 
     public int difficultyIncreaseRate = 1; 
 
@@ -50,5 +51,10 @@ public class DifficultyManager : MonoBehaviour
         SpawnRateManager.Instance.IncreaseAmountOfEnemies();
 
         Debug.Log("Current Difficulty Level: " + currentDifficultyLevel);
+    }
+
+    public bool IsChallengeMode()
+    {
+        return isChallengeMode;
     }
 }
