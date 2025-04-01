@@ -902,6 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTransition: {fileID: 443214370}
+  playerHealth: {fileID: 2143930543}
   availableWeapons:
   - {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   - {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
@@ -923,6 +924,7 @@ MonoBehaviour:
   roomsCompleted: 0
   roomsBeforeBoss: 8
   startBossAttack: 0
+  healthThreshold: 0.3
 --- !u!4 &2019253176
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,7 +1019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   healthText: {fileID: 1210541548}
-  maxHealth: 225
+  maxHealth: 150
   currentHealth: 200
   reloadDelay: 2
 --- !u!4 &181472975548114405
