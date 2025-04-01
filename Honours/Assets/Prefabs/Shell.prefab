@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 3386757058431283187}
   - component: {fileID: 2028400307425810599}
   - component: {fileID: 5291375299519364102}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Shell
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6376095708252927986}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
