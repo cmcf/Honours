@@ -16,6 +16,8 @@ public class Chest : MonoBehaviour
     public bool isRewardRoom = false;
     bool pickupSpawned = false;
 
+    float itemSpawnDelay = 0.6f;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +36,7 @@ public class Chest : MonoBehaviour
 
                 if (!pickupSpawned)
                 {
-                    Invoke("SpawnRandomPickup", 0.6f);
+                    Invoke("SpawnRandomPickup", itemSpawnDelay);
                 }
             }
             else if (!isRewardRoom && room.AreAllEnemiesDefeated())
@@ -45,7 +47,7 @@ public class Chest : MonoBehaviour
                     animator.SetTrigger("openChest");
                     if (!pickupSpawned)
                     {
-                        Invoke("SpawnRandomPickup", 0.6f);
+                        Invoke("SpawnRandomPickup", itemSpawnDelay);
                     }
                 }
             }

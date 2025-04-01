@@ -19,7 +19,7 @@ public class Shell : Enemy
     [SerializeField] float minSpeed = 4f;
     [SerializeField] float maxSpeed = 6.5f;
 
-    float speed;
+    public float speed;
 
     bool lastAttackHit = false;
 
@@ -31,27 +31,30 @@ public class Shell : Enemy
 
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (player == null) return;
 
-        if (player != null)
+        FlipSprite(); // Always face the player
+
+        float distance = Vector2.Distance(transform.position, player.position);
+
+        if (currentState == EnemyState.Attacking)
         {
-            FlipSprite(); // Always face the player
+            rb.velocity = Vector2.zero; 
+            return;
+        }
 
-            if (currentState != EnemyState.Attacking)
-            {
-                float distance = Vector2.Distance(transform.position, player.position);
-
-                if (distance <= attackRadius)
-                {
-                    Attack();
-                }
-                else
-                {
-                    AdjustMovement();
-                }
-            }
+        if (distance <= attackRadius)
+        {
+            Attack();
+        }
+        else
+        {
+            AdjustMovement(); // Move smoothly when not attacking
         }
     }
+
+
 
     void FlipSprite()
     {
@@ -77,25 +80,19 @@ public class Shell : Enemy
     void AdjustMovement()
     {
         animator.SetBool("isMoving", true);
-        Vector2 direction = (player.position - (Vector3)transform.position).normalized;
+
+        Vector2 direction = (player.position - transform.position).normalized;
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // If too close, move sideways instead of forward
+        // If too close, don't move forward
         if (distanceToPlayer <= minDistance)
         {
-            Vector2 strafeDirection = (Random.value > 0.5f) ? Vector2.left : Vector2.right;
-            direction = strafeDirection;
+            rb.velocity = Vector2.zero; // Stop moving if too close
+            return;
         }
 
-        // Prioritise moving below the player
-        if (transform.position.y > player.position.y)
-        {
-            direction = Vector2.down;
-        }
-
-        // Use MovePosition for smooth movement
-        Vector2 newPosition = (Vector2)transform.position + direction * speed * Time.deltaTime;
-        rb.MovePosition(newPosition);
+        // Move smoothly towards the player
+        rb.velocity = direction * speed;
     }
 
 
@@ -151,11 +148,20 @@ public class Shell : Enemy
     {
         yield return new WaitForSeconds(1f); // Wait for spikes to reach target
 
-        if (!lastAttackHit) // If the attack missed
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+
+        if (!lastAttackHit && distanceToPlayer <= attackRadius) // Missed & player still in range
         {
             StartCoroutine(MoveToBetterPosition());
         }
+        else
+        {
+            currentState = EnemyState.Idle; // Stop adjusting if player left range
+        }
     }
+
+
+
 
     public void RegisterHit()
     {
@@ -166,7 +172,7 @@ public class Shell : Enemy
     {
         if (player == null) yield break;
 
-        Vector2 targetPosition = (Vector2)transform.position + ((Vector2)player.position - (Vector2)transform.position).normalized * 2f;
+        Vector2 targetPosition = (Vector2)transform.position + ((Vector2)player.position - (Vector2)transform.position).normalized * speed;
 
         // Prioritise moving below the player
         if (transform.position.y > player.position.y)
@@ -176,22 +182,25 @@ public class Shell : Enemy
 
         animator.SetBool("isMoving", true); // Start move animation
 
-        while ((Vector2)transform.position != targetPosition)
+        while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
-            // Move smoothly like AdjustMovement
-            Vector2 newPosition = Vector2.MoveTowards(rb.position, targetPosition, speed * Time.deltaTime);
-
-            // Stop if colliding with a wall
-            if (Physics2D.OverlapCircle(newPosition, 0.2f, LayerMask.GetMask("Wall")) != null)
+            // **New Fix:** Exit early if player moves out of range
+            if (Vector2.Distance(transform.position, player.position) > attackRadius)
             {
-                break;
+                animator.SetBool("isMoving", false);
+                yield break; // Stop adjusting, return to normal movement
             }
 
-            rb.MovePosition(newPosition);
+            // Move smoothly
+            Vector2 direction = (targetPosition - rb.position).normalized;
+            rb.velocity = direction * speed;
+
             yield return null;
         }
 
-        animator.SetBool("isMoving", false); // Stop move animation
+        rb.velocity = Vector2.zero; // Stop once at target
+        animator.SetBool("isMoving", false);
     }
+
 
 }
