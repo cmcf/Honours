@@ -122,6 +122,9 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
+  shellLayer:
+    serializedVersion: 2
+    m_Bits: 256
   lungeDistance: 0.4
   moveDirection: {x: 0, y: 0}
   isBiting: 0
