@@ -20,7 +20,7 @@ public class Shell : Enemy
     [SerializeField] float maxSpeed = 6.5f;
 
     public float speed;
-
+    float waitTimeBeforeMoveCheck = 1.5f;
     bool lastAttackHit = false;
     enum FirePattern
     {
@@ -232,7 +232,7 @@ public class Shell : Enemy
 
     IEnumerator WaitAndCheckHit()
     {
-        yield return new WaitForSeconds(1f); // Wait for spikes to reach target
+        yield return new WaitForSeconds(waitTimeBeforeMoveCheck);
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 

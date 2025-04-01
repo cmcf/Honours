@@ -1002,8 +1002,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9801206178c4a304bb4bc733ee112f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDifficultyLevel: -1
+  baseDifficultyLevel: 3
   currentDifficultyLevel: 0
+  isChallengeMode: 0
   difficultyIncreaseRate: 1
 --- !u!114 &2143930543
 MonoBehaviour:
@@ -1019,7 +1020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   healthText: {fileID: 1210541548}
-  maxHealth: 150
+  maxHealth: 5000
   currentHealth: 200
   reloadDelay: 2
 --- !u!4 &181472975548114405
