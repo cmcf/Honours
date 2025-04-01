@@ -15,7 +15,8 @@ public class RoomController : MonoBehaviour
     [Header("References")]
     public SceneTransition sceneTransition;
     public static RoomController Instance;
-
+    public PlayerHealth playerHealth;
+    
     [Header("Weapons")]
     public List<Weapon> availableWeapons;
 
@@ -38,6 +39,8 @@ public class RoomController : MonoBehaviour
     bool leftSpawnRoom = false;
     bool hasBossRoomSpawned = false;
     public bool startBossAttack = false;
+
+    public float healthThreshold = 0.4f; // 40% of max health
 
     void Awake()
     {
@@ -81,11 +84,15 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        // Check if it's time to spawn a reward room instead
+        // Check if it's time to spawn a reward room
         if (roomsCompleted % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
         {
-            LoadRoom(rewardRoom, door.doorType);
-            return;
+            // Check if player health is low
+            if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
+            {
+                LoadRoom(rewardRoom, door.doorType);
+                return;
+            }
         }
 
         RoomSO nextRoomSO;
