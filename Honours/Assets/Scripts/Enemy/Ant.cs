@@ -21,6 +21,7 @@ public class Ant : Enemy
     [SerializeField] GameObject projectilePrefab; 
     [SerializeField] Transform projectileSpawnPoint; 
     [SerializeField] float projectileSpeed = 8f;
+    [SerializeField] float projectileLife = 1.5f;
 
     void Start()
     {
@@ -85,33 +86,21 @@ public class Ant : Enemy
             // Instantiate the projectile at the correct fire point
             GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
 
-            // Get the players position 
-            Vector2 targetPosition = player.position;
-
-            // Start coroutine to move it after delay
-            StartCoroutine(DelayedProjectileMovement(projectile, targetPosition));
-
-            Destroy(projectile, 1f);
-        }
-    }
-
-    IEnumerator DelayedProjectileMovement(GameObject projectile, Vector2 targetPosition)
-    {
-        yield return new WaitForSeconds(0.25f); 
-
-        if (projectile)
-        {
-            // Calculate direction using the saved target position
-            Vector2 direction = (targetPosition - (Vector2)projectile.transform.position).normalized;
+            // Calculate direction immediately
+            Vector2 direction = (player.position - projectile.transform.position).normalized;
 
             // Rotate projectile to face movement direction
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
 
-            // Apply velocity
+            // Apply velocity 
             projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+
+            // Destroy projectile
+            Destroy(projectile, projectileLife);
         }
     }
+
 
     void FlipSprite()
     {
