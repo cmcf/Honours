@@ -63,7 +63,7 @@ public class RangedEnemy : Enemy
         float chance = Random.value;
 
         // Check difficulty level and adjust the chance of firing more projectiles
-        if (DifficultyManager.Instance.currentDifficultyLevel >= 3)
+        if (DifficultyManager.Instance.currentDifficulty >= 3)
         {
             // At level 3 or above, there's a high chance of firing 3 projectiles
             if (chance <= 0.75f) // 75% chance to fire 3 projectiles
@@ -79,7 +79,7 @@ public class RangedEnemy : Enemy
                 FireProjectile(spawnPoint.right); // 10% chance to fire 1 projectile
             }
         }
-        else if (DifficultyManager.Instance.currentDifficultyLevel >= 2)
+        else if (DifficultyManager.Instance.currentDifficulty >= 2)
         {
             // At level 2, there's a higher chance of firing 2 projectiles
             if (chance <= 0.50f) // 50% chance to fire 2 projectiles

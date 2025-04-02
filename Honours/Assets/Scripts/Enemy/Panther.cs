@@ -28,7 +28,7 @@ public class Panther : MonoBehaviour, IDamageable
     // Melee Attack Variables
     public float attackRange = 2f;
     public float stopAttackRange = 4f;
-    public float attackDamage = 10f;
+    public int attackDamage = 10;
     public float attackCooldown = 1f;
     bool canAttack = true;
 
@@ -436,5 +436,10 @@ public class Panther : MonoBehaviour, IDamageable
     public bool IsShieldActive()
     {
         return shieldActive;
+    }
+
+    public void Damage(int damage)
+    {
+        throw new NotImplementedException();
     }
 }

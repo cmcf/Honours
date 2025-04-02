@@ -169,6 +169,7 @@ public class Room : MonoBehaviour
                 chest.SetEnemiesDefeated(true);  // Notify the chest that the enemies are defeated
             }
             RoomController.Instance.OnRoomCompleted();
+
         }
     }
 

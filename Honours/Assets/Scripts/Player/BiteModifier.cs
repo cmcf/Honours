@@ -8,7 +8,7 @@ public class BiteModifier : ScriptableObject
     public string effectName;
     public float duration; // Total duration of the effect
     public float tickInterval = 2f; // How often damage is applied
-    public float damagePerTick;
+    public int damagePerTick;
     public Sprite biteSprite;
     public GameObject effectAnimationPrefab;
 

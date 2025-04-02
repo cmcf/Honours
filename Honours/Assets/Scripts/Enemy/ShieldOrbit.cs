@@ -5,9 +5,8 @@ using static Damage;
 
 public class ShieldOrbit : MonoBehaviour
 {
-    Switcher currentCharacter;
     public float speed = 5f;
-    [SerializeField] float shieldDamage = 2f;
+    [SerializeField] int shieldDamage = 2;
     [SerializeField] float knockbackForce = 5f;
     private Vector2 moveDirection;
 

@@ -49,6 +49,12 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
+    public void UpdateHealthScaling(float healthMultiplier)
+    {
+        currentHealth = maxHealth * healthMultiplier;
+        Debug.Log($"{gameObject.name} Health Updated: {currentHealth}");
+    }
+
     public void SetActiveState(bool active)
     {
         isActive = active;
@@ -91,7 +97,7 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         // Only deal damage if not already hit and the enemy is active
         if (!hit && isActive)

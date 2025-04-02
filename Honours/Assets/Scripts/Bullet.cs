@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 {
     Enemy enemy;
     Player player;
-    float damageAmount;
+    int damageAmount;
     public float freezeDuration = 0.5f;
     public bool isIce = false;
     void Start()
@@ -55,7 +55,7 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    public void SetDamage(float newDamage)
+    public void SetDamage(int newDamage)
     {
         damageAmount = newDamage;
     }

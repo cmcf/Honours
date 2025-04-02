@@ -278,6 +278,16 @@ public class RoomController : MonoBehaviour
     public void OnRoomCompleted()
     {
         roomsCompleted++;
+
+        // Check if the current room is not the spawn room or the reward room before adjusting difficulty
+        if (currentRoom != null && currentRoom.roomSO != rewardRoom && roomsCompleted > 2)
+        {
+            DifficultyManager.Instance.AdjustDifficultyAfterRoom();
+        }
+        else
+        {
+            Debug.Log(" skipping difficulty adjustment.");
+        }
     }
 
 
@@ -289,19 +299,14 @@ public class RoomController : MonoBehaviour
     public void OnEnterRoom(Room room)
     {
         currentRoom = room;
-        Debug.Log("Entered room");
         if (room.isBossRoom)
         {
             Invoke(nameof(DelayedActivateBoss), 1.6f);
         }
 
-        if (roomsCompleted >= 3)
-        {
-            DifficultyManager.Instance.IncreaseDifficulty();
-        }
-
         StartCoroutine(RoomCoroutine());
     }
+
 
     void DelayedActivateBoss()
     {
