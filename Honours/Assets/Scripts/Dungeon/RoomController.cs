@@ -355,7 +355,7 @@ public class RoomController : MonoBehaviour
             case RoomDirection.Right: spawnRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
         }
 
-        // Instantiate the boss room
+        // Instantiate the reward room
         Room newRoom = Instantiate(rewardRoom.roomPrefab, spawnRoomPosition, Quaternion.identity).GetComponent<Room>();
         newRoom.roomSO = rewardRoom;
         newRoom.InitializeRoom(roomsCompleted);

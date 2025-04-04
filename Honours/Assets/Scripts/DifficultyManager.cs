@@ -16,8 +16,6 @@ public class DifficultyManager : MonoBehaviour
     public int difficultyIncreaseRate = 1;
     public int maxDeathsBeforeLowering = 3;
 
-    float roomStartHealth;
-
     public float damageThreshold = 0.5f;
     int decreaseDamageAmount = 30;
     int increaseDamageAmount = 40;
@@ -75,7 +73,6 @@ public class DifficultyManager : MonoBehaviour
         if (currentDifficulty > minDifficulty)
         {
             currentDifficulty--;
-            ApplyDifficultyScaling();
         }
         Debug.Log("Difficulty decreased to: " + currentDifficulty);
     }
@@ -109,21 +106,6 @@ public class DifficultyManager : MonoBehaviour
         foreach (Enemy enemy in FindObjectsOfType<Enemy>())
         {
             enemy.UpdateHealthScaling(healthMultiplier);
-        }
-    }
-
-    
-    public void OnRoomStart(float playerHealth)
-    {
-        roomStartHealth = playerHealth;
-    }
-
-    public void OnRoomEnd(float playerHealth)
-    {
-        float healthLost = roomStartHealth - playerHealth;
-        if (healthLost / roomStartHealth >= damageThreshold)
-        {
-            DecreaseDifficulty();
         }
     }
 
