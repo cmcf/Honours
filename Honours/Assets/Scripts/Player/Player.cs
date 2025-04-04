@@ -263,7 +263,7 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         if (isDead) { return; }
         // Current health is decreased by the damage received

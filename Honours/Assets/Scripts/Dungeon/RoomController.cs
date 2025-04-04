@@ -15,7 +15,8 @@ public class RoomController : MonoBehaviour
     [Header("References")]
     public SceneTransition sceneTransition;
     public static RoomController Instance;
-
+    public PlayerHealth playerHealth;
+    
     [Header("Weapons")]
     public List<Weapon> availableWeapons;
 
@@ -38,6 +39,8 @@ public class RoomController : MonoBehaviour
     bool leftSpawnRoom = false;
     bool hasBossRoomSpawned = false;
     public bool startBossAttack = false;
+
+    public float healthThreshold = 0.4f; // 40% of max health
 
     void Awake()
     {
@@ -81,11 +84,15 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        // Check if it's time to spawn a reward room instead
+        // Check if it's time to spawn a reward room
         if (roomsCompleted % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
         {
-            LoadRoom(rewardRoom, door.doorType);
-            return;
+            // Check if player health is low
+            if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
+            {
+                LoadRoom(rewardRoom, door.doorType);
+                return;
+            }
         }
 
         RoomSO nextRoomSO;
@@ -271,6 +278,16 @@ public class RoomController : MonoBehaviour
     public void OnRoomCompleted()
     {
         roomsCompleted++;
+
+        // Check if the current room is not the spawn room or the reward room before adjusting difficulty
+        if (currentRoom != null && currentRoom.roomSO != rewardRoom && roomsCompleted > 2)
+        {
+            DifficultyManager.Instance.AdjustDifficultyAfterRoom();
+        }
+        else
+        {
+            Debug.Log(" skipping difficulty adjustment.");
+        }
     }
 
 
@@ -282,19 +299,14 @@ public class RoomController : MonoBehaviour
     public void OnEnterRoom(Room room)
     {
         currentRoom = room;
-        Debug.Log("Entered room");
         if (room.isBossRoom)
         {
             Invoke(nameof(DelayedActivateBoss), 1.6f);
         }
 
-        if (roomsCompleted >= 3)
-        {
-            DifficultyManager.Instance.IncreaseDifficulty();
-        }
-
         StartCoroutine(RoomCoroutine());
     }
+
 
     void DelayedActivateBoss()
     {
@@ -343,7 +355,7 @@ public class RoomController : MonoBehaviour
             case RoomDirection.Right: spawnRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
         }
 
-        // Instantiate the boss room
+        // Instantiate the reward room
         Room newRoom = Instantiate(rewardRoom.roomPrefab, spawnRoomPosition, Quaternion.identity).GetComponent<Room>();
         newRoom.roomSO = rewardRoom;
         newRoom.InitializeRoom(roomsCompleted);

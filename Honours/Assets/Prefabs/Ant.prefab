@@ -178,9 +178,9 @@ MonoBehaviour:
   level: 0
   isActive: 1
   currentState: 1
-  minSpeed: 3
-  maxSpeed: 6
-  attackRadius: 3.5
+  minSpeed: 2.5
+  maxSpeed: 4
+  attackRadius: 5
   attackCooldown: 1
   attackDuration: 0.3
   projectilePrefab: {fileID: 4613009161659550289, guid: 08ee7e1c219801d4fb42d617737dc3d7, type: 3}

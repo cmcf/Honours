@@ -902,13 +902,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneTransition: {fileID: 443214370}
+  playerHealth: {fileID: 2143930543}
   availableWeapons:
   - {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   - {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
   - {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   availableRooms:
-  - {fileID: 11400000, guid: 488f124bc8f0661488e8b39bdf0eccb4, type: 2}
   - {fileID: 11400000, guid: 474799996ba018446b2c021c6da9c450, type: 2}
+  - {fileID: 11400000, guid: 488f124bc8f0661488e8b39bdf0eccb4, type: 2}
   - {fileID: 11400000, guid: 82587c4b4285c054582679655737b35a, type: 2}
   - {fileID: 11400000, guid: 0dee4c4d86f76c2448219d9cedfde7fa, type: 2}
   - {fileID: 11400000, guid: 458c19de674a2f247a16c5cb08f5fc21, type: 2}
@@ -923,6 +924,7 @@ MonoBehaviour:
   roomsCompleted: 0
   roomsBeforeBoss: 8
   startBossAttack: 0
+  healthThreshold: 0.3
 --- !u!4 &2019253176
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,8 +1003,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseDifficultyLevel: -1
-  currentDifficultyLevel: 0
+  currentDifficulty: 2
+  isChallengeMode: 0
+  damageTakenThisRoom: 0
   difficultyIncreaseRate: 1
+  maxDeathsBeforeLowering: 3
+  damageThreshold: 0.5
 --- !u!114 &2143930543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1017,7 +1023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   healthText: {fileID: 1210541548}
-  maxHealth: 225
+  maxHealth: 200
   currentHealth: 200
   reloadDelay: 2
 --- !u!4 &181472975548114405

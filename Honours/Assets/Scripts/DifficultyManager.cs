@@ -6,10 +6,20 @@ public class DifficultyManager : MonoBehaviour
 {
     public static DifficultyManager Instance;
 
-    public int baseDifficultyLevel = -1;  
-    public int currentDifficultyLevel;
+    public int baseDifficultyLevel = 0;  
+    public int currentDifficulty;
+    public bool isChallengeMode = false;
+    [SerializeField] int damageTakenThisRoom = 0;
 
-    public int difficultyIncreaseRate = 1; 
+    int minDifficulty = 2;
+    int maxDifficulty = 6;
+    public int difficultyIncreaseRate = 1;
+    public int maxDeathsBeforeLowering = 3;
+
+    public float damageThreshold = 0.5f;
+    int decreaseDamageAmount = 30;
+    int increaseDamageAmount = 40;
+
 
     void Awake()
     {
@@ -22,33 +32,91 @@ public class DifficultyManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
     {
         // Initialize the current difficulty level to the base level
-        currentDifficultyLevel = baseDifficultyLevel;
+        currentDifficulty = baseDifficultyLevel;
     }
 
     public int GetCurrentDifficultyLevel()
     {
-        return currentDifficultyLevel;
+        return currentDifficulty;
+    }
+
+    public void RegisterDamageTaken(int damage)
+    {
+        damageTakenThisRoom += damage;
+    }
+
+    public void OnRoomStart()
+    {
+        damageTakenThisRoom = 0;
     }
 
     public void IncreaseDifficulty()
     {
-        // Increase the difficulty level
-        currentDifficultyLevel += difficultyIncreaseRate;
-
-        // Cap difficulty
-        if (currentDifficultyLevel > 10) 
+        if (currentDifficulty < maxDifficulty)
         {
-            currentDifficultyLevel = 10;
+            currentDifficulty++;
+            ApplyDifficultyScaling();
+        }
+        Debug.Log("Increased level - current diffiuclty is " + currentDifficulty);
+    }
+
+    public void DecreaseDifficulty()
+    {
+
+        if (currentDifficulty > minDifficulty)
+        {
+            currentDifficulty--;
+        }
+        Debug.Log("Difficulty decreased to: " + currentDifficulty);
+    }
+
+    public void AdjustDifficultyAfterRoom()
+    {
+        if (damageTakenThisRoom < increaseDamageAmount) 
+        {
+            // Increase difficulty if little damage was taken
+            if (currentDifficulty < maxDifficulty)
+            {
+                IncreaseDifficulty(); 
+            }
+        }
+        else if (damageTakenThisRoom > decreaseDamageAmount && currentDifficulty > minDifficulty)
+        {
+            // Decrease difficulty if too much damage was taken
+            DecreaseDifficulty(); 
         }
 
+        damageTakenThisRoom = 0; // Reset for the next room
+    }
+
+    void ApplyDifficultyScaling()
+    {
         // Increase enemy spawn rate
         SpawnRateManager.Instance.IncreaseAmountOfEnemies();
+        float healthMultiplier = 1.0f + (0.1f * (currentDifficulty - 1));
 
-        Debug.Log("Current Difficulty Level: " + currentDifficultyLevel);
+        // Notify all enemies to update their health
+        foreach (Enemy enemy in FindObjectsOfType<Enemy>())
+        {
+            enemy.UpdateHealthScaling(healthMultiplier);
+        }
+    }
+
+    public bool IsChallengeMode()
+    {
+        return isChallengeMode;
+    }
+
+    public void ResetDifficultyLevel()
+    {
+        currentDifficulty = baseDifficultyLevel;
+        SpawnRateManager.Instance.ResetSpawnerValues();
     }
 }

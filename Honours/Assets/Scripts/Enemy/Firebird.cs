@@ -267,4 +267,9 @@ public class Firebird : MonoBehaviour, IDamageable
         animator.SetFloat("velocityY", directionToPlayer.y);
         animator.SetFloat("speed", 0f); // Stop the movement animation when still
     }
+
+    public void Damage(int damage)
+    {
+        throw new System.NotImplementedException();
+    }
 }

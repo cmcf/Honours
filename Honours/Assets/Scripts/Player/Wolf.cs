@@ -36,7 +36,10 @@ public class Wolf : MonoBehaviour, IDamageable
     [SerializeField] int minBiteDamage = 15;
     [SerializeField] int maxBiteDamage = 20;
     int biteDamage;  // Damage dealt by the bite attack
+
     [SerializeField] LayerMask enemyLayer;  // Layer of enemies
+    [SerializeField] LayerMask shellLayer;
+    LayerMask combinedLayerMask;
 
     [Header("Movement")]
     [SerializeField] float lungeDistance = 0.5f;
@@ -63,6 +66,9 @@ public class Wolf : MonoBehaviour, IDamageable
         currentSpeed = defaultSpeed;
         biteDamage = Random.Range(minBiteDamage, maxBiteDamage + 1);
         playerHealth = FindObjectOfType<PlayerHealth>();
+
+        // Combine the Enemy and Shell layers into one mask
+        combinedLayerMask = enemyLayer | shellLayer;
     }
 
     void Update()
@@ -270,7 +276,7 @@ public class Wolf : MonoBehaviour, IDamageable
 
     public void BiteDamage()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, enemyLayer);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange, combinedLayerMask);
 
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -349,7 +355,7 @@ public class Wolf : MonoBehaviour, IDamageable
         }
     }
 
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         if (isDead) { return; }
         // Current health is decreased by the damage received

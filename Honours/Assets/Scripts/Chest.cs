@@ -16,6 +16,8 @@ public class Chest : MonoBehaviour
     public bool isRewardRoom = false;
     bool pickupSpawned = false;
 
+    float itemSpawnDelay = 0.6f;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +36,7 @@ public class Chest : MonoBehaviour
 
                 if (!pickupSpawned)
                 {
-                    Invoke("SpawnRandomPickup", 0.6f);
+                    Invoke("SpawnRandomPickup", itemSpawnDelay);
                 }
             }
             else if (!isRewardRoom && room.AreAllEnemiesDefeated())
@@ -45,7 +47,7 @@ public class Chest : MonoBehaviour
                     animator.SetTrigger("openChest");
                     if (!pickupSpawned)
                     {
-                        Invoke("SpawnRandomPickup", 0.6f);
+                        Invoke("SpawnRandomPickup", itemSpawnDelay);
                     }
                 }
             }
@@ -79,17 +81,38 @@ public class Chest : MonoBehaviour
         GameObject pickupPrefabToSpawn;
         float randomValue = Random.value;
 
-        if (randomValue < 0.5f) // 50% chance
+
+        if (isRewardRoom)
         {
-            pickupPrefabToSpawn = weaponPickupPrefab;
+            // Higher chance for health pickups in reward rooms
+            if (randomValue < 0.4f) // 40% chance health
+            {
+                pickupPrefabToSpawn = healthPrefab;
+            }
+            else if (randomValue < 0.7f) // 30% chance weapon
+            {
+                pickupPrefabToSpawn = weaponPickupPrefab;
+            }
+            else // 30% chance bite modifier
+            {
+                pickupPrefabToSpawn = biteModifierPrefab;
+            }
         }
-        else if (randomValue < 0.8f) // 30% chance 
+        else
         {
-            pickupPrefabToSpawn = biteModifierPrefab;
-        }
-        else // 20% chance
-        {
-            pickupPrefabToSpawn = healthPrefab;
+            // Normal spawn chances
+            if (randomValue < 0.5f) // 50% chance weapon
+            {
+                pickupPrefabToSpawn = weaponPickupPrefab;
+            }
+            else if (randomValue < 0.8f) // 30% chance bite modifier
+            {
+                pickupPrefabToSpawn = biteModifierPrefab;
+            }
+            else // 20% chance health
+            {
+                pickupPrefabToSpawn = healthPrefab;
+            }
         }
         // Spawns the selected pickup
         GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);

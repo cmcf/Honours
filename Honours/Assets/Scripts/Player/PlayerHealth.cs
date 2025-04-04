@@ -35,11 +35,18 @@ public class PlayerHealth : MonoBehaviour
         healthText.text = "Health: " + currentHealth.ToString("0");
     }
 
-    public void TakeDamage(float amount)
+    public float GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+
+    public void TakeDamage(int amount)
     {
         if (isDead) return;
 
         currentHealth -= amount;
+        DifficultyManager.Instance.RegisterDamageTaken(amount);
         ShowFloatingText(amount, Color.red);
         UpdateHealthText();  // Update health text
         if (currentHealth <= 0)
@@ -142,6 +149,8 @@ public class PlayerHealth : MonoBehaviour
                 if (wolfAnimator != null) wolfAnimator.SetTrigger("isDead");
             }
         }
+
+        DifficultyManager.Instance.ResetDifficultyLevel();
 
         Invoke("ReloadGame", 0.8f);
     }

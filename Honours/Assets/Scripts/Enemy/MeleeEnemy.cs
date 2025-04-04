@@ -20,7 +20,7 @@ public class MeleeEnemy : Enemy
     [SerializeField] float stoppingDistance = 5f;
 
     [Header("Attack")]
-    public float damageAmount = 10f;
+    public int damageAmount = 10;
     bool hitPlayer = false;
 
     [Header("Animation Timing")]
