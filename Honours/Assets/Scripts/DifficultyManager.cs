@@ -19,7 +19,8 @@ public class DifficultyManager : MonoBehaviour
     float roomStartHealth;
 
     public float damageThreshold = 0.5f;
-    int damageAmountBeforeAdjustment = 40;
+    int decreaseDamageAmount = 30;
+    int increaseDamageAmount = 40;
 
 
     void Awake()
@@ -81,7 +82,7 @@ public class DifficultyManager : MonoBehaviour
 
     public void AdjustDifficultyAfterRoom()
     {
-        if (damageTakenThisRoom < damageAmountBeforeAdjustment) 
+        if (damageTakenThisRoom < increaseDamageAmount) 
         {
             // Increase difficulty if little damage was taken
             if (currentDifficulty < maxDifficulty)
@@ -89,7 +90,7 @@ public class DifficultyManager : MonoBehaviour
                 IncreaseDifficulty(); 
             }
         }
-        else if (damageTakenThisRoom > damageAmountBeforeAdjustment && currentDifficulty > minDifficulty)
+        else if (damageTakenThisRoom > decreaseDamageAmount && currentDifficulty > minDifficulty)
         {
             // Decrease difficulty if too much damage was taken
             DecreaseDifficulty(); 
