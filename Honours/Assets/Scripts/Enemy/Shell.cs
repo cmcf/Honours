@@ -66,10 +66,9 @@ public class Shell : Enemy
         if (player != null)
         {
             float directionX = player.position.x - transform.position.x;
-            if (directionX > 0)
-                transform.localScale = new Vector3(-1, 1, 1);
-            else if (directionX < 0)
-                transform.localScale = new Vector3(1, 1, 1);
+            Vector3 scale = transform.localScale;
+            scale.x = directionX > 0 ? -Mathf.Abs(scale.x) : Mathf.Abs(scale.x);
+            transform.localScale = scale;
         }
     }
 
@@ -267,7 +266,7 @@ public class Shell : Enemy
 
         while (Vector2.Distance(transform.position, targetPosition) > 0.1f)
         {
-            // **New Fix:** Exit early if player moves out of range
+            // Exit early if player moves out of range
             if (Vector2.Distance(transform.position, player.position) > attackRadius)
             {
                 animator.SetBool("isMoving", false);

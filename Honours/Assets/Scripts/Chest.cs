@@ -36,6 +36,7 @@ public class Chest : MonoBehaviour
 
                 if (!pickupSpawned)
                 {
+                    pickupSpawned = true;
                     Invoke("SpawnRandomPickup", itemSpawnDelay);
                 }
             }
@@ -47,6 +48,7 @@ public class Chest : MonoBehaviour
                     animator.SetTrigger("openChest");
                     if (!pickupSpawned)
                     {
+                        pickupSpawned = true;
                         Invoke("SpawnRandomPickup", itemSpawnDelay);
                     }
                 }
