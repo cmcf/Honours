@@ -2,7 +2,6 @@ using TMPro;
 using System.Collections;
 using UnityEngine;
 using static Damage;
-
 public class Firebird : MonoBehaviour, IDamageable
 {
     Transform player;
@@ -63,7 +62,7 @@ public class Firebird : MonoBehaviour, IDamageable
         StartCoroutine(BossRoutine());
     }
 
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         if (currentState == EnemyState.Dead) { return; }
         // Current health is decreased by the damage received
@@ -266,10 +265,5 @@ public class Firebird : MonoBehaviour, IDamageable
         animator.SetFloat("velocityX", directionToPlayer.x);
         animator.SetFloat("velocityY", directionToPlayer.y);
         animator.SetFloat("speed", 0f); // Stop the movement animation when still
-    }
-
-    public void Damage(int damage)
-    {
-        throw new System.NotImplementedException();
     }
 }

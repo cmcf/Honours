@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Damage;
 
 public class BossEnemy : MonoBehaviour
 {
@@ -34,7 +33,7 @@ public class BossEnemy : MonoBehaviour
         return currentHealth / maxHealth;
     }
 
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         Panther panther = GetComponentInChildren<Panther>(); 
 

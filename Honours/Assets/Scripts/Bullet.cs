@@ -37,6 +37,11 @@ public class Bullet : MonoBehaviour
             // Destroy the bullet on impact
             Destroy(gameObject, 0.5f);
         }
+
+        if (collision.CompareTag("Wall"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void ApplyIceEffect(Collider2D collision)

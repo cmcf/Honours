@@ -425,7 +425,7 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("posY", playerDirection.x);
     }
 
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         if (currentState == EnemyState.Dead) { return; }
 
@@ -436,10 +436,5 @@ public class Panther : MonoBehaviour, IDamageable
     public bool IsShieldActive()
     {
         return shieldActive;
-    }
-
-    public void Damage(int damage)
-    {
-        throw new NotImplementedException();
     }
 }

@@ -199,17 +199,39 @@ public class Wolf : MonoBehaviour, IDamageable
 
     public void BiteAttack()
     {
-        // Only allow the bite attack if the cooldown has passed
         if (Time.time > lastBiteTime + biteCooldown && !isBiting)
         {
             lastBiteTime = Time.time;
-            StartCoroutine(BiteLunge());
-           
-            SetBiteDirection();
 
+            // Find closest enemy within detection range
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange * 2f, combinedLayerMask);
+            Transform closestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (Collider2D enemy in enemies)
+            {
+                float distance = Vector2.Distance(transform.position, enemy.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestEnemy = enemy.transform;
+                }
+            }
+
+            // Always bite, but only lunge if enemy is far
+            if (closestEnemy == null || closestDistance > lungeDistance)
+            {
+                StartCoroutine(BiteLunge());
+            }
+
+            SetBiteDirection();
             StartCoroutine(EndBiteAttackCoroutine());
+            animator.SetBool("isBiting", true);
+            isBiting = true;
         }
     }
+
+
 
     IEnumerator BiteLunge()
     {
