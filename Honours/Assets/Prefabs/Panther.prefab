@@ -17,11 +17,11 @@ GameObject:
   - component: {fileID: 2834042001106705526}
   m_Layer: 0
   m_Name: Panther
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4340094830958518983
 Transform:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -205,25 +205,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentRoom: {fileID: 0}
-  chargeSpeed: 8
-  chargeCooldown: 0.2
-  chargeDuration: 1
-  moveSpeed: 6.6
-  attackSpeed: 2
-  attackRange: 0.84
-  stopAttackRange: 6
-  attackDamage: 4
+  chargeSpeed: 7.5
+  chargeCooldown: 4
+  chargeDuration: 1.5
+  moveSpeed: 5
+  attackSpeed: 2.5
+  attackRange: 0.85
+  stopAttackRange: 2
+  attackDamage: 2
   attackCooldown: 2
-  shieldPrefab: {fileID: 0}
-  shieldSpawnPoint: {fileID: 0}
+  shieldPrefab: {fileID: 4040207891986179867, guid: 7f56e55fb035b6a4ebbb271a68a1a371, type: 3}
+  shieldSpawnPoint: {fileID: 4340094830958518983}
   shieldActive: 0
-  shieldDuration: 6
-  respawnShieldDelay: 2
+  shieldDuration: 5
+  respawnShieldDelay: 4
   defendStateDuration: 5
+  vulnerabilityTime: 8
   target: {fileID: 0}
-  orbitRadius: 0.5
-  orbitSpeed: 100
-  projectileSpeed: 5
+  orbitRadius: 0.8
+  orbitSpeed: 115
+  projectileSpeed: 8.5
   canActivateShield: 1
   shieldCount: 5
   currentState: 0

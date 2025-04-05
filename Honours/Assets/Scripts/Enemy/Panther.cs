@@ -9,6 +9,7 @@ using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class Panther : MonoBehaviour, IDamageable
 {
+    [Header("References")]
     public Transform player;
     public Transform[] boundaryPoints;
     private Animator animator;
@@ -16,25 +17,25 @@ public class Panther : MonoBehaviour, IDamageable
     public Room currentRoom;
     TrailRenderer trailRenderer;
 
-    // Movement Variables
+    [Header("Movement")]
     public float chargeSpeed = 8f;
     public float chargeCooldown = 5f;
     public float chargeDuration = 1f;
     [SerializeField] float moveSpeed = 7f;
     [SerializeField] float attackSpeed = 2f;
     float chargeStartTime;
-    private bool isCharging = false;
+    bool isCharging = false;
 
-    // Melee Attack Variables
+    [Header("Melee")]
     public float attackRange = 2f;
     public float stopAttackRange = 4f;
     public int attackDamage = 10;
     public float attackCooldown = 1f;
-    bool canAttack = true;
 
+    bool canAttack = true;
     bool isAttacking = false;
 
-    // Shield Variables
+    [Header("Shield")]
     public GameObject shieldPrefab;
     public Transform shieldSpawnPoint;
     private List<GameObject> activeShields = new List<GameObject>();
@@ -42,6 +43,7 @@ public class Panther : MonoBehaviour, IDamageable
     public float shieldDuration = 8f; // Time before the shield projectiles fire
     [SerializeField] float respawnShieldDelay = 2f;
     [SerializeField] float defendStateDuration = 25f;
+    [SerializeField] float vulnerabilityTime = 8f;
 
     public Transform target;
     public float orbitRadius = 0.5f;
@@ -350,13 +352,11 @@ public class Panther : MonoBehaviour, IDamageable
 
     IEnumerator ShieldVulnerabilityPhase()
     {
-        float vulnerabilityTime = 3f; 
-
         // Wait for a short time where the panther is vulnerable
         yield return new WaitForSeconds(vulnerabilityTime);
 
         canActivateShield = true;
-        // Now allow shield to be reactivated
+        // Allow shield to be reactivated after a delay
         StartCoroutine(RespawnShieldDelayed());
     }
 
