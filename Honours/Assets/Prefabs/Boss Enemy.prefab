@@ -321,26 +321,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panther
       objectReference: {fileID: 0}
-    - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113800554246943173, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_Size.x
-      value: 1.0843523
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113800554246943173, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_Size.y
-      value: 0.44262606
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113800554246943173, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_Offset.x
-      value: 0.018950343
-      objectReference: {fileID: 0}
-    - target: {fileID: 3113800554246943173, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.11714095
-      objectReference: {fileID: 0}
     - target: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -381,17 +361,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: attackDamage
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5273702894542844992}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
 --- !u!4 &930319498867157771 stripped
 Transform:
@@ -403,39 +376,3 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
   m_PrefabInstance: {fileID: 3517933524031244748}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &5273702894542844992
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3241009952511098558}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 128
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.57

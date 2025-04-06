@@ -5,35 +5,33 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR;
 using static Damage;
-using static UnityEngine.Rendering.VirtualTexturing.Debugging;
+using Random = UnityEngine.Random;
 
 public class Panther : MonoBehaviour, IDamageable
 {
     [Header("References")]
     public Transform player;
     public Transform[] boundaryPoints;
-    private Animator animator;
-    private Rigidbody2D rb;
+    Animator animator;
+    Rigidbody2D rb;
     public Room currentRoom;
     public Transform target;
     TrailRenderer trailRenderer;
 
-    [Header("Movement")]
-    public float chargeSpeed = 8f;
-    public float chargeCooldown = 5f;
-    public float chargeDuration = 1f;
-    [SerializeField] float moveSpeed = 7f;
+    [Header("Charge")]
+    [SerializeField] float chargeSpeed = 8f;
+    [SerializeField] float chargeCooldown = 5f;
+    [SerializeField] float chargeDuration = 1f;
     [SerializeField] float attackSpeed = 2f;
     float chargeStartTime;
     bool isCharging = false;
 
     [Header("Melee")]
-    public float attackRange = 2f;
-    public float stopAttackRange = 4f;
-    public int attackDamage = 10;
-    public float attackCooldown = 1f;
+    [SerializeField] float attackRange = 2f;
+    [SerializeField] float stopAttackRange = 4f;
+    [SerializeField] int attackDamage = 10;
+    [SerializeField] float attackCooldown = 1f;
 
-    bool canAttack = true;
     bool isAttacking = false;
     bool canAttackAgain = true;
 
@@ -42,25 +40,24 @@ public class Panther : MonoBehaviour, IDamageable
     public Transform shieldSpawnPoint;
     List<GameObject> activeShields = new List<GameObject>();
     public bool shieldActive = false;
-    public float shieldDuration = 8f; // Time before the shield projectiles fire
-    public float orbitRadius = 0.5f;
-    public float orbitSpeed = 100f; // Degrees per second
-    public float projectileSpeed = 5f; // Speed of the fired shield projectiles
+    [SerializeField] float minShieldDuration = 5.5f;
+    [SerializeField] float maxShieldDuration = 8.5f;
+    [SerializeField] float orbitRadius = 0.5f;
+    [SerializeField] float orbitSpeed = 100f; // Degrees per second
+    [SerializeField] float projectileSpeed = 6.5f; // Speed of the fired shield projectiles
     [SerializeField] float respawnShieldDelay = 2f;
     [SerializeField] float defendStateDuration = 25f;
     [SerializeField] float vulnerabilityTime = 8f;
     [SerializeField] float shieldCooldown = 2f;
     [SerializeField] bool canActivateShield = true;
-
-    public float shieldCount = 5;
-
+    [SerializeField] float shieldCount = 5;
+    float shieldDuration;
+    
     bool shieldScheduledThisPhase = false;
     float lastShieldTime;
-    float angle; // Tracks rotation angle
     float defendStateStartTime;
-
     Vector2 chargeDirection; // Stores the direction during the charge
-     
+
     public EnemyState currentState;
     public enum PantherState { Defend, Charge, Attack }
     public PantherState currentPhase = PantherState.Defend;
@@ -68,6 +65,7 @@ public class Panther : MonoBehaviour, IDamageable
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
@@ -152,6 +150,7 @@ public class Panther : MonoBehaviour, IDamageable
         StartCoroutine(PerformCharge());
     }
 
+
     IEnumerator PerformCharge()
     {
         float elapsed = 0f;
@@ -196,12 +195,12 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("speed", 0);
         isCharging = false;
         trailRenderer.emitting = false;
-        currentPhase = PantherState.Defend;
+        currentPhase = PantherState.Defend; // Transition to Defend state
         defendStateStartTime = Time.time; // Reset defend timer
-        shieldScheduledThisPhase = false; // Allow shield again
+
+        // Activate shield after dash finishes
+        ActivateShield();
     }
-
-
 
 
     void AttackPlayer()
@@ -268,44 +267,145 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator ReturnToDefendState()
-    {
-        yield return new WaitForSeconds(3f);
-        currentPhase = PantherState.Defend;
-        shieldScheduledThisPhase = false; // Reset on state return
-    }
-
     public void ActivateShield()
     {
-        if (shieldActive) return;
+        if (shieldActive || Time.time < lastShieldTime + shieldCooldown) return;
 
-        canActivateShield = false;
-        shieldScheduledThisPhase = false;
+        // Prevent reactivating shield
+        lastShieldTime = Time.time;
 
-        if (Time.time > lastShieldTime + shieldCooldown)
+        // If shields are already active, stop the current ones first
+        DeactivateShields();
+
+        // Instantiate new shields around the Panther
+        float angleStep = 360f / shieldCount;
+        for (int i = 0; i < shieldCount; i++)
         {
-            lastShieldTime = Time.time;
-            float angleStep = 360f / shieldCount;
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector3 shieldPos = new Vector3(
+                transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                0f
+            );
+            GameObject shield = Instantiate(shieldPrefab, shieldPos, Quaternion.identity, transform);
+            activeShields.Add(shield);
+        }
 
-            for (int i = 0; i < shieldCount; i++)
+        shieldActive = true;
+
+        // Start the shield orbiting
+        StartCoroutine(UpdateShieldOrbit());
+
+        // Start firing projectiles from shields
+        StartCoroutine(FireProjectilesFromShields());
+
+        // Set a timer to deactivate shield after duration
+        StartCoroutine(EndShieldAfterDuration());
+    }
+
+    void DeactivateShields()
+    {
+        // Remove all active shields and stop them from orbiting
+        foreach (GameObject shield in activeShields)
+        {
+            if (shield != null)
             {
-                float angle = i * angleStep * Mathf.Deg2Rad;
+                Destroy(shield); // Destroy the shield objects
+            }
+        }
+        activeShields.Clear(); // Clear the list of active shields
+        shieldActive = false;
+    }
 
+    IEnumerator EndShieldAfterDuration()
+    {
+        // Wait for the specified duration of the shield
+        yield return new WaitForSeconds(shieldDuration);
+
+        // Deactivate the shield after the duration
+        DeactivateShields();
+
+        // Transition to Defend state
+        currentPhase = PantherState.Defend;
+        defendStateStartTime = Time.time; // Reset defend timer
+    }
+
+    IEnumerator UpdateShieldOrbit()
+    {
+        // Keep updating the orbit positions while the shield is active
+        while (shieldActive)
+        {
+            for (int i = 0; i < activeShields.Count; i++)
+            {
+                if (activeShields[i] == null) continue;
+
+                // Update the shield's orbit position
+                float angle = (Time.time * orbitSpeed + (360f / activeShields.Count) * i) * Mathf.Deg2Rad;
                 Vector3 shieldPos = new Vector3(
                     transform.position.x + Mathf.Cos(angle) * orbitRadius,
                     transform.position.y + Mathf.Sin(angle) * orbitRadius,
                     0f
                 );
-                GameObject shield = Instantiate(shieldPrefab, shieldPos, Quaternion.identity, transform);
-                activeShields.Add(shield);
+
+                activeShields[i].transform.position = shieldPos;
             }
 
-            shieldActive = true;
-
-            // Break shield after duration
-            Invoke(nameof(BreakShield), shieldDuration);
+            yield return null;
         }
     }
+
+    IEnumerator FireProjectilesFromShields()
+    {
+        while (shieldActive)
+        {
+            // Decide how many shields will fire and which shields will fire
+            int shieldsToFire = Random.Range(1, activeShields.Count + 1); // Randomly pick how many shields to fire
+            List<int> selectedShields = new List<int>(); // Keeps track of which shields are selected
+
+            // Randomly select shields to fire from
+            while (selectedShields.Count < shieldsToFire)
+            {
+                int shieldIndex = Random.Range(0, activeShields.Count);
+                if (!selectedShields.Contains(shieldIndex))
+                {
+                    selectedShields.Add(shieldIndex);
+                }
+            }
+
+            // Fire projectiles from the selected shields
+            foreach (int shieldIndex in selectedShields)
+            {
+                GameObject shield = activeShields[shieldIndex];
+                if (shield != null)
+                {
+                    Vector3 spawnPosition = shield.transform.position;
+                    FireProjectile(spawnPosition);
+                }
+            }
+
+            // Delay before the next round of firing
+            yield return new WaitForSeconds(Random.Range(0.5f, 2.5f)); // Random delay between shots
+        }
+    }
+
+    void FireProjectile(Vector3 spawnPosition)
+    {
+        GameObject projectile = Instantiate(shieldPrefab, spawnPosition, Quaternion.identity);
+
+        // Calculate direction towards the player
+        Vector2 direction = (player.position - spawnPosition).normalized;
+
+        // Set the projectile's velocity to move it towards the player
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * projectileSpeed;
+        }
+
+        // Destroy the projectile after some time
+        Destroy(projectile, 5f);
+    }
+
 
 
     public void OnShieldDestroyed(GameObject destroyedShield)
@@ -370,26 +470,6 @@ public class Panther : MonoBehaviour, IDamageable
         canActivateShield = true;
     }
 
-
-    void UpdateShieldOrbit()
-    {
-        if (!shieldActive) return;
-
-        for (int i = 0; i < activeShields.Count; i++)
-        {
-            if (activeShields[i] == null) continue;
-
-            float angle = (Time.time * orbitSpeed + (360f / activeShields.Count) * i) * Mathf.Deg2Rad;
-
-            Vector3 shieldPos = new Vector3(
-                transform.position.x + Mathf.Cos(angle) * orbitRadius,
-                transform.position.y + Mathf.Sin(angle) * orbitRadius,
-                0f
-            );
-
-            activeShields[i].transform.position = shieldPos;
-        }
-    }
 
     void FacePlayer()
     {
