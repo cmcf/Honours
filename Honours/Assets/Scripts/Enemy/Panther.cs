@@ -193,6 +193,7 @@ public class Panther : MonoBehaviour, IDamageable
 
         // End of dash
         rb.velocity = Vector2.zero;
+        animator.SetFloat("speed", 0);
         isCharging = false;
         trailRenderer.emitting = false;
         currentPhase = PantherState.Defend;
@@ -245,6 +246,7 @@ public class Panther : MonoBehaviour, IDamageable
         isAttacking = false;
         animator.SetBool("isAttacking", false);
         rb.velocity = Vector2.zero; // Stop any movement during attack
+        animator.SetFloat("speed", 0);
 
         // Reset attack cooldown and allow another attack after the cooldown
         canAttackAgain = true;
