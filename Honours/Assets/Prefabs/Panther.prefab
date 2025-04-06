@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3113800554246943173}
   - component: {fileID: 5616187240354279013}
   - component: {fileID: 2834042001106705526}
+  - component: {fileID: 763788872586819737}
   m_Layer: 0
   m_Name: Panther
   m_TagString: Enemy
@@ -174,7 +175,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.171612, y: -0.033870935}
+  m_Offset: {x: 0.018950343, y: -0.11714095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -184,7 +185,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.77902895, y: 0.65774024}
+  m_Size: {x: 1.0843523, y: 0.44262606}
   m_EdgeRadius: 0
 --- !u!114 &5616187240354279013
 MonoBehaviour:
@@ -205,26 +206,27 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   currentRoom: {fileID: 0}
-  chargeSpeed: 7.5
+  target: {fileID: 0}
+  chargeSpeed: 8
   chargeCooldown: 4
   chargeDuration: 1.5
-  moveSpeed: 5
   attackSpeed: 2.5
   attackRange: 0.85
   stopAttackRange: 2
-  attackDamage: 2
+  attackDamage: 1
   attackCooldown: 2
   shieldPrefab: {fileID: 4040207891986179867, guid: 7f56e55fb035b6a4ebbb271a68a1a371, type: 3}
   shieldSpawnPoint: {fileID: 4340094830958518983}
   shieldActive: 0
-  shieldDuration: 5
-  respawnShieldDelay: 4
-  defendStateDuration: 5
-  vulnerabilityTime: 8
-  target: {fileID: 0}
+  minShieldDuration: 5.5
+  maxShieldDuration: 8.5
   orbitRadius: 0.8
   orbitSpeed: 115
   projectileSpeed: 8.5
+  respawnShieldDelay: 4
+  defendStateDuration: 5
+  vulnerabilityTime: 8
+  shieldCooldown: 2
   canActivateShield: 1
   shieldCount: 5
   currentState: 0
@@ -344,3 +346,39 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 0
   m_ApplyActiveColorSpace: 1
+--- !u!58 &763788872586819737
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028964574950061938}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.57

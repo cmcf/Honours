@@ -5,35 +5,33 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR;
 using static Damage;
-using static UnityEngine.Rendering.VirtualTexturing.Debugging;
+using Random = UnityEngine.Random;
 
 public class Panther : MonoBehaviour, IDamageable
 {
     [Header("References")]
     public Transform player;
     public Transform[] boundaryPoints;
-    private Animator animator;
-    private Rigidbody2D rb;
+    Animator animator;
+    Rigidbody2D rb;
     public Room currentRoom;
     public Transform target;
     TrailRenderer trailRenderer;
 
-    [Header("Movement")]
-    public float chargeSpeed = 8f;
-    public float chargeCooldown = 5f;
-    public float chargeDuration = 1f;
-    [SerializeField] float moveSpeed = 7f;
+    [Header("Charge")]
+    [SerializeField] float chargeSpeed = 8f;
+    [SerializeField] float chargeCooldown = 5f;
+    [SerializeField] float chargeDuration = 1f;
     [SerializeField] float attackSpeed = 2f;
     float chargeStartTime;
     bool isCharging = false;
 
     [Header("Melee")]
-    public float attackRange = 2f;
-    public float stopAttackRange = 4f;
-    public int attackDamage = 10;
-    public float attackCooldown = 1f;
+    [SerializeField] float attackRange = 2f;
+    [SerializeField] float stopAttackRange = 4f;
+    [SerializeField] int attackDamage = 10;
+    [SerializeField] float attackCooldown = 1f;
 
-    bool canAttack = true;
     bool isAttacking = false;
     bool canAttackAgain = true;
 
@@ -42,44 +40,35 @@ public class Panther : MonoBehaviour, IDamageable
     public Transform shieldSpawnPoint;
     List<GameObject> activeShields = new List<GameObject>();
     public bool shieldActive = false;
-    public float shieldDuration = 8f; // Time before the shield projectiles fire
-    public float orbitRadius = 0.5f;
-    public float orbitSpeed = 100f; // Degrees per second
-    public float projectileSpeed = 5f; // Speed of the fired shield projectiles
+    [SerializeField] float minShieldDuration = 5.5f;
+    [SerializeField] float maxShieldDuration = 8.5f;
+    [SerializeField] float orbitRadius = 0.5f;
+    [SerializeField] float orbitSpeed = 100f; // Degrees per second
+    [SerializeField] float projectileSpeed = 6.5f; // Speed of the fired shield projectiles
     [SerializeField] float respawnShieldDelay = 2f;
     [SerializeField] float defendStateDuration = 25f;
     [SerializeField] float vulnerabilityTime = 8f;
     [SerializeField] float shieldCooldown = 2f;
     [SerializeField] bool canActivateShield = true;
-
-    public float shieldCount = 5;
-
+    [SerializeField] float shieldCount = 5;
+    float shieldDuration;
+    
     bool shieldScheduledThisPhase = false;
     float lastShieldTime;
-    float angle; // Tracks rotation angle
     float defendStateStartTime;
-
     Vector2 chargeDirection; // Stores the direction during the charge
-     
+
     public EnemyState currentState;
-    public enum PantherState { Defend, Charge, Attack, Follow }
+    public enum PantherState { Defend, Charge, Attack }
     public PantherState currentPhase = PantherState.Defend;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
-    }
-
-    void FixedUpdate()
-    {
-        if (currentPhase == PantherState.Follow)
-        {
-            FollowPlayer();
-        }
-
     }
 
     void OnEnable()
@@ -89,46 +78,53 @@ public class Panther : MonoBehaviour, IDamageable
         currentPhase = PantherState.Defend;
     }
 
+    float nextDashTime;
+
     void Update()
     {
-        if (currentState == EnemyState.Dead) { return; }
+        if (currentState == EnemyState.Dead) return;
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        FacePlayer();
 
-        // If the shield is active, stop charging and movement
         if (shieldActive)
         {
-            animator.SetFloat("speed", 0);
             rb.velocity = Vector2.zero;
             UpdateShieldOrbit();
-            return; 
+            return;
         }
 
-        // Handle Charge Phase
-        if (currentPhase == PantherState.Charge)
+        if (currentPhase != PantherState.Charge)
         {
-            StartChargePhase();
-        }
+            float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (currentPhase == PantherState.Defend)
-        {
-            FacePlayer();
+            // If vulnerable and in range, try melee
+            if (distToPlayer <= attackRange && canAttackAgain)
+            {
+                AttackPlayer();
+            }
+            // Otherwise, dash occasionally if shield is down
+            else if (Time.time >= nextDashTime && !isCharging)
+            {
+                // Only dash if the shield is down and panther has been idle for a bit
+                if (!shieldActive && Time.time - defendStateStartTime >= shieldCooldown)
+                {
+                    StartChargePhase();
+                    nextDashTime = Time.time + chargeCooldown; // Set next dash time
+                }
+            }
 
-            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase)
+            // Start shield again after defend duration
+            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase && Time.time - defendStateStartTime >= shieldCooldown)
             {
                 ActivateShield();
                 shieldScheduledThisPhase = true;
-            }
-
-            // Transition to Charge after the defend duration ends
-            if (Time.time - defendStateStartTime >= defendStateDuration)
-            {
-                currentPhase = PantherState.Charge;
             }
         }
 
         animator.SetFloat("speed", rb.velocity.magnitude);
     }
+
+
 
     public void StartAttacking()
     {
@@ -140,98 +136,72 @@ public class Panther : MonoBehaviour, IDamageable
 
     void StartChargePhase()
     {
-        if (Time.time >= chargeCooldown)
-        {
-            isCharging = true;
-            animator.SetFloat("speed", chargeSpeed);  // Set speed for animation
-            chargeDirection = (player.position - transform.position).normalized;
-            animator.SetFloat("posX", chargeDirection.y);
-            animator.SetFloat("posY", chargeDirection.x);
-            trailRenderer.emitting = true;
+        if (isCharging) return;
 
-            // Record the time when the charge starts
-            chargeStartTime = Time.time;
-            PerformCharge();
-        }
+        isCharging = true;
+        chargeStartTime = Time.time;
+
+        chargeDirection = (player.position - transform.position).normalized;
+        animator.SetFloat("speed", chargeSpeed);
+        animator.SetFloat("posX", chargeDirection.y);
+        animator.SetFloat("posY", chargeDirection.x);
+        trailRenderer.emitting = true;
+
+        StartCoroutine(PerformCharge());
     }
 
-    void PerformCharge()
+
+    IEnumerator PerformCharge()
     {
-        // Check if the Panther is near a wall
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, chargeDirection, 1f);
+        float elapsed = 0f;
+        bool hasHitPlayer = false;  // Flag to check if player has already been hit
 
-        if (hit.collider != null && hit.collider.CompareTag("Wall"))
+        // Apply dash movement while checking for wall collisions
+        while (elapsed < chargeDuration)
         {
-            // If the Panther is blocked by a wall, stop moving
-            rb.velocity = Vector2.zero;
-        }
-
-        rb.velocity = chargeDirection * chargeSpeed;
-
-        // Check if the charge duration has passed
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
-            rb.velocity = Vector2.zero;
-            animator.SetBool("isAttacking", true);
-            AttackPlayer();
-        }
-
-        if (Time.time - chargeStartTime >= chargeDuration)
-        {
-            rb.velocity = Vector2.zero;
-            currentPhase = PantherState.Defend;
-        }
-    }
-
-    void FollowPlayer()
-    {
-        if (currentPhase != PantherState.Follow)
-        {
-            return; // Don't follow if not in Follow state
-        }
-
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        Vector2 moveDirection = (player.position - transform.position).normalized;
-
-        // Check if the Panther is near a wall
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, 1f);
-
-        if (hit.collider != null && hit.collider.CompareTag("Wall"))
-        {
-            // If the Panther is blocked by a wall, stop moving
-            rb.velocity = Vector2.zero;
-            return; // Stop moving towards the player
-        }
-
-        // Prevent jittering by not re-entering attack state constantly
-        if (distanceToPlayer <= attackRange)
-        {
-            if (!isAttacking && canAttackAgain)
+            // Stop if panther hit a wall
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, chargeDirection, 0.5f);
+            if (hit.collider != null && hit.collider.CompareTag("Wall"))
             {
-                currentPhase = PantherState.Attack;
-                AttackPlayer();
+                rb.velocity = Vector2.zero; // Stop panther when hitting wall
+                animator.SetFloat("speed", 0);
+                break; // Exit the charge when hitting the wall
             }
-            rb.velocity = Vector2.zero; // Stop moving when attacking
-        }
-        else
-        {
-            // Move towards the player if no wall is blocking
-            rb.velocity = moveDirection * moveSpeed;
+
+            // Apply velocity to the Panther for dashing
+            rb.velocity = chargeDirection * chargeSpeed;
+
+            // Check for collision with player during dash
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
+            foreach (Collider2D h in hits)
+            {
+                if (h.CompareTag("Player") && !hasHitPlayer) // Check if not already hit
+                {
+                    IDamageable damageable = h.GetComponent<IDamageable>();
+                    if (damageable != null)
+                    {
+                        damageable.Damage(attackDamage); // Apply damage only once
+                        hasHitPlayer = true; // Set flag to true after hitting player
+                    }
+                }
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null;
         }
 
-        // If the Panther is too far, go back to Defend state
-        if (distanceToPlayer > stopAttackRange)
-        {
-            currentPhase = PantherState.Defend;
-            rb.velocity = Vector2.zero;
-            ActivateShield();
-        }
+        // End of dash
+        rb.velocity = Vector2.zero;
+        animator.SetFloat("speed", 0);
+        isCharging = false;
+        trailRenderer.emitting = false;
+        currentPhase = PantherState.Defend; // Transition to Defend state
+        defendStateStartTime = Time.time; // Reset defend timer
 
-        // Update animation direction
-        animator.SetFloat("posX", moveDirection.y);
-        animator.SetFloat("posY", moveDirection.x);
-        animator.SetBool("speed", rb.velocity != Vector2.zero);
+        // Activate shield after dash finishes
+        ActivateShield();
     }
+
 
     void AttackPlayer()
     {
@@ -275,9 +245,7 @@ public class Panther : MonoBehaviour, IDamageable
         isAttacking = false;
         animator.SetBool("isAttacking", false);
         rb.velocity = Vector2.zero; // Stop any movement during attack
-
-        // After attack, continue following the player
-        currentPhase = PantherState.Follow;
+        animator.SetFloat("speed", 0);
 
         // Reset attack cooldown and allow another attack after the cooldown
         canAttackAgain = true;
@@ -299,44 +267,145 @@ public class Panther : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator ReturnToDefendState()
-    {
-        yield return new WaitForSeconds(3f);
-        currentPhase = PantherState.Defend;
-        shieldScheduledThisPhase = false; // Reset on state return
-    }
-
     public void ActivateShield()
     {
-        if (shieldActive) return;
+        if (shieldActive || Time.time < lastShieldTime + shieldCooldown) return;
 
-        canActivateShield = false;
-        shieldScheduledThisPhase = false;
+        // Prevent reactivating shield
+        lastShieldTime = Time.time;
 
-        if (Time.time > lastShieldTime + shieldCooldown)
+        // If shields are already active, stop the current ones first
+        DeactivateShields();
+
+        // Instantiate new shields around the Panther
+        float angleStep = 360f / shieldCount;
+        for (int i = 0; i < shieldCount; i++)
         {
-            lastShieldTime = Time.time;
-            float angleStep = 360f / shieldCount;
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector3 shieldPos = new Vector3(
+                transform.position.x + Mathf.Cos(angle) * orbitRadius,
+                transform.position.y + Mathf.Sin(angle) * orbitRadius,
+                0f
+            );
+            GameObject shield = Instantiate(shieldPrefab, shieldPos, Quaternion.identity, transform);
+            activeShields.Add(shield);
+        }
 
-            for (int i = 0; i < shieldCount; i++)
+        shieldActive = true;
+
+        // Start the shield orbiting
+        StartCoroutine(UpdateShieldOrbit());
+
+        // Start firing projectiles from shields
+        StartCoroutine(FireProjectilesFromShields());
+
+        // Set a timer to deactivate shield after duration
+        StartCoroutine(EndShieldAfterDuration());
+    }
+
+    void DeactivateShields()
+    {
+        // Remove all active shields and stop them from orbiting
+        foreach (GameObject shield in activeShields)
+        {
+            if (shield != null)
             {
-                float angle = i * angleStep * Mathf.Deg2Rad;
+                Destroy(shield); // Destroy the shield objects
+            }
+        }
+        activeShields.Clear(); // Clear the list of active shields
+        shieldActive = false;
+    }
 
+    IEnumerator EndShieldAfterDuration()
+    {
+        // Wait for the specified duration of the shield
+        yield return new WaitForSeconds(shieldDuration);
+
+        // Deactivate the shield after the duration
+        DeactivateShields();
+
+        // Transition to Defend state
+        currentPhase = PantherState.Defend;
+        defendStateStartTime = Time.time; // Reset defend timer
+    }
+
+    IEnumerator UpdateShieldOrbit()
+    {
+        // Keep updating the orbit positions while the shield is active
+        while (shieldActive)
+        {
+            for (int i = 0; i < activeShields.Count; i++)
+            {
+                if (activeShields[i] == null) continue;
+
+                // Update the shield's orbit position
+                float angle = (Time.time * orbitSpeed + (360f / activeShields.Count) * i) * Mathf.Deg2Rad;
                 Vector3 shieldPos = new Vector3(
                     transform.position.x + Mathf.Cos(angle) * orbitRadius,
                     transform.position.y + Mathf.Sin(angle) * orbitRadius,
                     0f
                 );
-                GameObject shield = Instantiate(shieldPrefab, shieldPos, Quaternion.identity, transform);
-                activeShields.Add(shield);
+
+                activeShields[i].transform.position = shieldPos;
             }
 
-            shieldActive = true;
-
-            // Break shield after duration
-            Invoke(nameof(BreakShield), shieldDuration);
+            yield return null;
         }
     }
+
+    IEnumerator FireProjectilesFromShields()
+    {
+        while (shieldActive)
+        {
+            // Decide how many shields will fire and which shields will fire
+            int shieldsToFire = Random.Range(1, activeShields.Count + 1); // Randomly pick how many shields to fire
+            List<int> selectedShields = new List<int>(); // Keeps track of which shields are selected
+
+            // Randomly select shields to fire from
+            while (selectedShields.Count < shieldsToFire)
+            {
+                int shieldIndex = Random.Range(0, activeShields.Count);
+                if (!selectedShields.Contains(shieldIndex))
+                {
+                    selectedShields.Add(shieldIndex);
+                }
+            }
+
+            // Fire projectiles from the selected shields
+            foreach (int shieldIndex in selectedShields)
+            {
+                GameObject shield = activeShields[shieldIndex];
+                if (shield != null)
+                {
+                    Vector3 spawnPosition = shield.transform.position;
+                    FireProjectile(spawnPosition);
+                }
+            }
+
+            // Delay before the next round of firing
+            yield return new WaitForSeconds(Random.Range(0.5f, 2.5f)); // Random delay between shots
+        }
+    }
+
+    void FireProjectile(Vector3 spawnPosition)
+    {
+        GameObject projectile = Instantiate(shieldPrefab, spawnPosition, Quaternion.identity);
+
+        // Calculate direction towards the player
+        Vector2 direction = (player.position - spawnPosition).normalized;
+
+        // Set the projectile's velocity to move it towards the player
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * projectileSpeed;
+        }
+
+        // Destroy the projectile after some time
+        Destroy(projectile, 5f);
+    }
+
 
 
     public void OnShieldDestroyed(GameObject destroyedShield)
@@ -401,26 +470,6 @@ public class Panther : MonoBehaviour, IDamageable
         canActivateShield = true;
     }
 
-
-    void UpdateShieldOrbit()
-    {
-        if (!shieldActive) return;
-
-        for (int i = 0; i < activeShields.Count; i++)
-        {
-            if (activeShields[i] == null) continue;
-
-            float angle = (Time.time * orbitSpeed + (360f / activeShields.Count) * i) * Mathf.Deg2Rad;
-
-            Vector3 shieldPos = new Vector3(
-                transform.position.x + Mathf.Cos(angle) * orbitRadius,
-                transform.position.y + Mathf.Sin(angle) * orbitRadius,
-                0f
-            );
-
-            activeShields[i].transform.position = shieldPos;
-        }
-    }
 
     void FacePlayer()
     {
