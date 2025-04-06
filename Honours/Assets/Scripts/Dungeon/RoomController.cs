@@ -22,6 +22,7 @@ public class RoomController : MonoBehaviour
 
     [Header("Rooms")]
     public List<RoomSO> availableRooms;
+    public List<RoomSO> advancedRooms;
     public RoomSO bossRoom;
     public RoomSO spawnRoom;
     public RoomSO rewardRoom;
@@ -79,7 +80,19 @@ public class RoomController : MonoBehaviour
 
     public void LoadNextRoom(Door door)
     {
-        if (availableRooms.Count == 0)
+        List<RoomSO> roomPool;
+
+        // Decide which pool to use based on difficulty level
+        if (DifficultyManager.Instance.currentDifficulty >= 3 && advancedRooms != null && advancedRooms.Count > 0)
+        {
+            roomPool = advancedRooms;
+        }
+        else
+        {
+            roomPool = availableRooms;
+        }
+
+        if (roomPool.Count == 0)
         {
             return;
         }
@@ -87,7 +100,6 @@ public class RoomController : MonoBehaviour
         // Check if it's time to spawn a reward room
         if (roomsCompleted % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
         {
-            // Check if player health is low
             if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
             {
                 LoadRoom(rewardRoom, door.doorType);
@@ -96,15 +108,15 @@ public class RoomController : MonoBehaviour
         }
 
         RoomSO nextRoomSO;
-        // Loads a room from the list that is not the current room
         do
         {
-            nextRoomSO = availableRooms[Random.Range(0, availableRooms.Count)];
+            nextRoomSO = roomPool[Random.Range(0, roomPool.Count)];
         }
-        while (nextRoomSO == currentRoom.roomSO && availableRooms.Count > 1);
+        while (nextRoomSO == currentRoom.roomSO && roomPool.Count > 1);
 
         LoadRoom(nextRoomSO, door.doorType);
     }
+
 
 
 

@@ -22569,7 +22569,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f098e7088feadd545aa81106eb06fd0a, type: 2}
   - {fileID: 11400000, guid: a983f8ddd266b1748bb27475b9634651, type: 2}
   - {fileID: 11400000, guid: d23216ed62350e74e8e672cb80df0dec, type: 2}
-  delayBetweenSpawns: 0.6
+  delayBetweenSpawns: 1
 --- !u!1 &6599381710550977620
 GameObject:
   m_ObjectHideFlags: 0
