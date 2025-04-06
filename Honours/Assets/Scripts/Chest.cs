@@ -5,6 +5,7 @@ public class Chest : MonoBehaviour
 {
     Animator animator;
     public Room room;
+    PlayerHealth playerHealth;
     public Transform spawnPoint;
     public GameObject weaponPickupPrefab;
     public GameObject biteModifierPrefab;
@@ -21,7 +22,8 @@ public class Chest : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        room = GetComponentInParent<Room>();    
+        room = GetComponentInParent<Room>();
+        playerHealth= FindObjectOfType<PlayerHealth>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -71,7 +73,7 @@ public class Chest : MonoBehaviour
         if (enemiesDefeated && playerInRange)
         {
             animator.SetTrigger("openChest");
-            
+
         }
     }
 
@@ -83,11 +85,17 @@ public class Chest : MonoBehaviour
         GameObject pickupPrefabToSpawn;
         float randomValue = Random.value;
 
+        // Get player's current and max health
+        float playerCurrentHealth = playerHealth.currentHealth;  
+        float playerMaxHealth = playerHealth.maxHealth;
+
+        // Condition to only spawn health if current health is 50 less than max health
+        bool canSpawnHealth = (playerMaxHealth - playerCurrentHealth) >= 50;
 
         if (isRewardRoom)
         {
             // Higher chance for health pickups in reward rooms
-            if (randomValue < 0.4f) // 40% chance health
+            if (randomValue < 0.4f && canSpawnHealth) // 40% chance health 
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
@@ -102,7 +110,6 @@ public class Chest : MonoBehaviour
         }
         else
         {
-            // Normal spawn chances
             if (randomValue < 0.5f) // 50% chance weapon
             {
                 pickupPrefabToSpawn = weaponPickupPrefab;
@@ -111,15 +118,19 @@ public class Chest : MonoBehaviour
             {
                 pickupPrefabToSpawn = biteModifierPrefab;
             }
-            else // 20% chance health
+            else if (canSpawnHealth) // 20% chance health 
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
+            else
+            {
+                pickupPrefabToSpawn = weaponPickupPrefab;
+            }
         }
+
         // Spawns the selected pickup
         GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
-
         pickup.transform.SetParent(room.transform);
-    }
 
+    }
 }
