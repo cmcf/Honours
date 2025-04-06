@@ -62,7 +62,7 @@ public class Panther : MonoBehaviour, IDamageable
     Vector2 chargeDirection; // Stores the direction during the charge
      
     public EnemyState currentState;
-    public enum PantherState { Defend, Charge, Attack, Follow }
+    public enum PantherState { Defend, Charge, Attack }
     public PantherState currentPhase = PantherState.Defend;
 
     void Start()
@@ -73,15 +73,6 @@ public class Panther : MonoBehaviour, IDamageable
         trailRenderer = GetComponent<TrailRenderer>();
     }
 
-    void FixedUpdate()
-    {
-        if (currentPhase == PantherState.Follow)
-        {
-            FollowPlayer();
-        }
-
-    }
-
     void OnEnable()
     {
         canActivateShield = true;
@@ -89,46 +80,53 @@ public class Panther : MonoBehaviour, IDamageable
         currentPhase = PantherState.Defend;
     }
 
+    float nextDashTime;
+
     void Update()
     {
-        if (currentState == EnemyState.Dead) { return; }
+        if (currentState == EnemyState.Dead) return;
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        FacePlayer();
 
-        // If the shield is active, stop charging and movement
         if (shieldActive)
         {
-            animator.SetFloat("speed", 0);
             rb.velocity = Vector2.zero;
             UpdateShieldOrbit();
-            return; 
+            return;
         }
 
-        // Handle Charge Phase
-        if (currentPhase == PantherState.Charge)
+        if (currentPhase != PantherState.Charge)
         {
-            StartChargePhase();
-        }
+            float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (currentPhase == PantherState.Defend)
-        {
-            FacePlayer();
+            // If vulnerable and in range, try melee
+            if (distToPlayer <= attackRange && canAttackAgain)
+            {
+                AttackPlayer();
+            }
+            // Otherwise, dash occasionally if shield is down
+            else if (Time.time >= nextDashTime && !isCharging)
+            {
+                // Only dash if the shield is down and panther has been idle for a bit
+                if (!shieldActive && Time.time - defendStateStartTime >= shieldCooldown)
+                {
+                    StartChargePhase();
+                    nextDashTime = Time.time + chargeCooldown; // Set next dash time
+                }
+            }
 
-            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase)
+            // Start shield again after defend duration
+            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase && Time.time - defendStateStartTime >= shieldCooldown)
             {
                 ActivateShield();
                 shieldScheduledThisPhase = true;
-            }
-
-            // Transition to Charge after the defend duration ends
-            if (Time.time - defendStateStartTime >= defendStateDuration)
-            {
-                currentPhase = PantherState.Charge;
             }
         }
 
         animator.SetFloat("speed", rb.velocity.magnitude);
     }
+
+
 
     public void StartAttacking()
     {
@@ -140,98 +138,70 @@ public class Panther : MonoBehaviour, IDamageable
 
     void StartChargePhase()
     {
-        if (Time.time >= chargeCooldown)
-        {
-            isCharging = true;
-            animator.SetFloat("speed", chargeSpeed);  // Set speed for animation
-            chargeDirection = (player.position - transform.position).normalized;
-            animator.SetFloat("posX", chargeDirection.y);
-            animator.SetFloat("posY", chargeDirection.x);
-            trailRenderer.emitting = true;
+        if (isCharging) return;
 
-            // Record the time when the charge starts
-            chargeStartTime = Time.time;
-            PerformCharge();
-        }
+        isCharging = true;
+        chargeStartTime = Time.time;
+
+        chargeDirection = (player.position - transform.position).normalized;
+        animator.SetFloat("speed", chargeSpeed);
+        animator.SetFloat("posX", chargeDirection.y);
+        animator.SetFloat("posY", chargeDirection.x);
+        trailRenderer.emitting = true;
+
+        StartCoroutine(PerformCharge());
     }
 
-    void PerformCharge()
+    IEnumerator PerformCharge()
     {
-        // Check if the Panther is near a wall
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, chargeDirection, 1f);
+        float elapsed = 0f;
+        bool hasHitPlayer = false;  // Flag to check if player has already been hit
 
-        if (hit.collider != null && hit.collider.CompareTag("Wall"))
+        // Apply dash movement while checking for wall collisions
+        while (elapsed < chargeDuration)
         {
-            // If the Panther is blocked by a wall, stop moving
-            rb.velocity = Vector2.zero;
-        }
-
-        rb.velocity = chargeDirection * chargeSpeed;
-
-        // Check if the charge duration has passed
-        if (Vector2.Distance(transform.position, player.position) <= attackRange)
-        {
-            rb.velocity = Vector2.zero;
-            animator.SetBool("isAttacking", true);
-            AttackPlayer();
-        }
-
-        if (Time.time - chargeStartTime >= chargeDuration)
-        {
-            rb.velocity = Vector2.zero;
-            currentPhase = PantherState.Defend;
-        }
-    }
-
-    void FollowPlayer()
-    {
-        if (currentPhase != PantherState.Follow)
-        {
-            return; // Don't follow if not in Follow state
-        }
-
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        Vector2 moveDirection = (player.position - transform.position).normalized;
-
-        // Check if the Panther is near a wall
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, 1f);
-
-        if (hit.collider != null && hit.collider.CompareTag("Wall"))
-        {
-            // If the Panther is blocked by a wall, stop moving
-            rb.velocity = Vector2.zero;
-            return; // Stop moving towards the player
-        }
-
-        // Prevent jittering by not re-entering attack state constantly
-        if (distanceToPlayer <= attackRange)
-        {
-            if (!isAttacking && canAttackAgain)
+            // Stop if panther hit a wall
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, chargeDirection, 0.5f);
+            if (hit.collider != null && hit.collider.CompareTag("Wall"))
             {
-                currentPhase = PantherState.Attack;
-                AttackPlayer();
+                rb.velocity = Vector2.zero; // Stop panther when hitting wall
+                animator.SetFloat("speed", 0);
+                break; // Exit the charge when hitting the wall
             }
-            rb.velocity = Vector2.zero; // Stop moving when attacking
-        }
-        else
-        {
-            // Move towards the player if no wall is blocking
-            rb.velocity = moveDirection * moveSpeed;
+
+            // Apply velocity to the Panther for dashing
+            rb.velocity = chargeDirection * chargeSpeed;
+
+            // Check for collision with player during dash
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
+            foreach (Collider2D h in hits)
+            {
+                if (h.CompareTag("Player") && !hasHitPlayer) // Check if not already hit
+                {
+                    IDamageable damageable = h.GetComponent<IDamageable>();
+                    if (damageable != null)
+                    {
+                        damageable.Damage(attackDamage); // Apply damage only once
+                        hasHitPlayer = true; // Set flag to true after hitting player
+                    }
+                }
+            }
+
+            elapsed += Time.deltaTime;
+            yield return null;
         }
 
-        // If the Panther is too far, go back to Defend state
-        if (distanceToPlayer > stopAttackRange)
-        {
-            currentPhase = PantherState.Defend;
-            rb.velocity = Vector2.zero;
-            ActivateShield();
-        }
-
-        // Update animation direction
-        animator.SetFloat("posX", moveDirection.y);
-        animator.SetFloat("posY", moveDirection.x);
-        animator.SetBool("speed", rb.velocity != Vector2.zero);
+        // End of dash
+        rb.velocity = Vector2.zero;
+        isCharging = false;
+        trailRenderer.emitting = false;
+        currentPhase = PantherState.Defend;
+        defendStateStartTime = Time.time; // Reset defend timer
+        shieldScheduledThisPhase = false; // Allow shield again
     }
+
+
+
 
     void AttackPlayer()
     {
@@ -275,9 +245,6 @@ public class Panther : MonoBehaviour, IDamageable
         isAttacking = false;
         animator.SetBool("isAttacking", false);
         rb.velocity = Vector2.zero; // Stop any movement during attack
-
-        // After attack, continue following the player
-        currentPhase = PantherState.Follow;
 
         // Reset attack cooldown and allow another attack after the cooldown
         canAttackAgain = true;
