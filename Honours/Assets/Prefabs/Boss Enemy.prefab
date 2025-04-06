@@ -321,18 +321,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panther
       objectReference: {fileID: 0}
-    - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 2898602058593776748, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: m_Interpolate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -372,74 +360,6 @@ PrefabInstance:
     - target: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: orbitSpeed
-      value: 115
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: attackRange
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: attackSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: chargeSpeed
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: orbitRadius
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: shieldCount
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: attackDamage
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: shieldPrefab
-      value: 
-      objectReference: {fileID: 4040207891986179867, guid: 7f56e55fb035b6a4ebbb271a68a1a371, type: 3}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: chargeCooldown
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: chargeDuration
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: shieldDuration
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: projectileSpeed
-      value: 8.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: stopAttackRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: shieldSpawnPoint
-      value: 
-      objectReference: {fileID: 930319498867157771}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: respawnShieldDelay
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616187240354279013, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
-      propertyPath: defendStateDuration
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,56 +9,58 @@ using static UnityEngine.Rendering.VirtualTexturing.Debugging;
 
 public class Panther : MonoBehaviour, IDamageable
 {
+    [Header("References")]
     public Transform player;
     public Transform[] boundaryPoints;
     private Animator animator;
     private Rigidbody2D rb;
     public Room currentRoom;
+    public Transform target;
     TrailRenderer trailRenderer;
 
-    // Movement Variables
+    [Header("Movement")]
     public float chargeSpeed = 8f;
     public float chargeCooldown = 5f;
     public float chargeDuration = 1f;
     [SerializeField] float moveSpeed = 7f;
     [SerializeField] float attackSpeed = 2f;
     float chargeStartTime;
-    private bool isCharging = false;
+    bool isCharging = false;
 
-    // Melee Attack Variables
+    [Header("Melee")]
     public float attackRange = 2f;
     public float stopAttackRange = 4f;
     public int attackDamage = 10;
     public float attackCooldown = 1f;
+
     bool canAttack = true;
-
     bool isAttacking = false;
+    bool canAttackAgain = true;
 
-    // Shield Variables
+    [Header("Shield")]
     public GameObject shieldPrefab;
     public Transform shieldSpawnPoint;
-    private List<GameObject> activeShields = new List<GameObject>();
+    List<GameObject> activeShields = new List<GameObject>();
     public bool shieldActive = false;
     public float shieldDuration = 8f; // Time before the shield projectiles fire
-    [SerializeField] float respawnShieldDelay = 2f;
-    [SerializeField] float defendStateDuration = 25f;
-
-    public Transform target;
     public float orbitRadius = 0.5f;
     public float orbitSpeed = 100f; // Degrees per second
     public float projectileSpeed = 5f; // Speed of the fired shield projectiles
-
-    float angle; // Tracks rotation angle
-
-    Vector2 chargeDirection; // Stores the direction during the charge
-
-    bool canAttackAgain = true;
+    [SerializeField] float respawnShieldDelay = 2f;
+    [SerializeField] float defendStateDuration = 25f;
+    [SerializeField] float vulnerabilityTime = 8f;
+    [SerializeField] float shieldCooldown = 2f;
     [SerializeField] bool canActivateShield = true;
+
+    public float shieldCount = 5;
+
+    bool shieldScheduledThisPhase = false;
+    float lastShieldTime;
+    float angle; // Tracks rotation angle
     float defendStateStartTime;
 
-    float shieldCooldown = 1f;
-    float lastShieldTime;
-    public float shieldCount = 5;
+    Vector2 chargeDirection; // Stores the direction during the charge
+     
     public EnemyState currentState;
     public enum PantherState { Defend, Charge, Attack, Follow }
     public PantherState currentPhase = PantherState.Defend;
@@ -112,9 +114,10 @@ public class Panther : MonoBehaviour, IDamageable
         {
             FacePlayer();
 
-            if (canActivateShield)
+            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase)
             {
                 ActivateShield();
+                shieldScheduledThisPhase = true;
             }
 
             // Transition to Charge after the defend duration ends
@@ -298,8 +301,9 @@ public class Panther : MonoBehaviour, IDamageable
 
     IEnumerator ReturnToDefendState()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         currentPhase = PantherState.Defend;
+        shieldScheduledThisPhase = false; // Reset on state return
     }
 
     public void ActivateShield()
@@ -307,6 +311,7 @@ public class Panther : MonoBehaviour, IDamageable
         if (shieldActive) return;
 
         canActivateShield = false;
+        shieldScheduledThisPhase = false;
 
         if (Time.time > lastShieldTime + shieldCooldown)
         {
@@ -337,6 +342,7 @@ public class Panther : MonoBehaviour, IDamageable
     public void OnShieldDestroyed(GameObject destroyedShield)
     {
         canActivateShield = false;
+        shieldScheduledThisPhase = false;
         activeShields.Remove(destroyedShield);
 
         if (activeShields.Count == 0)
@@ -350,13 +356,11 @@ public class Panther : MonoBehaviour, IDamageable
 
     IEnumerator ShieldVulnerabilityPhase()
     {
-        float vulnerabilityTime = 3f; 
-
         // Wait for a short time where the panther is vulnerable
         yield return new WaitForSeconds(vulnerabilityTime);
 
         canActivateShield = true;
-        // Now allow shield to be reactivated
+        // Allow shield to be reactivated after a delay
         StartCoroutine(RespawnShieldDelayed());
     }
 
