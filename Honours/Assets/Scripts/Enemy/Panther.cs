@@ -15,6 +15,7 @@ public class Panther : MonoBehaviour, IDamageable
     private Animator animator;
     private Rigidbody2D rb;
     public Room currentRoom;
+    public Transform target;
     TrailRenderer trailRenderer;
 
     [Header("Movement")]
@@ -34,33 +35,32 @@ public class Panther : MonoBehaviour, IDamageable
 
     bool canAttack = true;
     bool isAttacking = false;
+    bool canAttackAgain = true;
 
     [Header("Shield")]
     public GameObject shieldPrefab;
     public Transform shieldSpawnPoint;
-    private List<GameObject> activeShields = new List<GameObject>();
+    List<GameObject> activeShields = new List<GameObject>();
     public bool shieldActive = false;
     public float shieldDuration = 8f; // Time before the shield projectiles fire
-    [SerializeField] float respawnShieldDelay = 2f;
-    [SerializeField] float defendStateDuration = 25f;
-    [SerializeField] float vulnerabilityTime = 8f;
-
-    public Transform target;
     public float orbitRadius = 0.5f;
     public float orbitSpeed = 100f; // Degrees per second
     public float projectileSpeed = 5f; // Speed of the fired shield projectiles
-
-    float angle; // Tracks rotation angle
-
-    Vector2 chargeDirection; // Stores the direction during the charge
-
-    bool canAttackAgain = true;
+    [SerializeField] float respawnShieldDelay = 2f;
+    [SerializeField] float defendStateDuration = 25f;
+    [SerializeField] float vulnerabilityTime = 8f;
+    [SerializeField] float shieldCooldown = 2f;
     [SerializeField] bool canActivateShield = true;
+
+    public float shieldCount = 5;
+
+    bool shieldScheduledThisPhase = false;
+    float lastShieldTime;
+    float angle; // Tracks rotation angle
     float defendStateStartTime;
 
-    float shieldCooldown = 1f;
-    float lastShieldTime;
-    public float shieldCount = 5;
+    Vector2 chargeDirection; // Stores the direction during the charge
+     
     public EnemyState currentState;
     public enum PantherState { Defend, Charge, Attack, Follow }
     public PantherState currentPhase = PantherState.Defend;
@@ -114,9 +114,10 @@ public class Panther : MonoBehaviour, IDamageable
         {
             FacePlayer();
 
-            if (canActivateShield)
+            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase)
             {
                 ActivateShield();
+                shieldScheduledThisPhase = true;
             }
 
             // Transition to Charge after the defend duration ends
@@ -300,8 +301,9 @@ public class Panther : MonoBehaviour, IDamageable
 
     IEnumerator ReturnToDefendState()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         currentPhase = PantherState.Defend;
+        shieldScheduledThisPhase = false; // Reset on state return
     }
 
     public void ActivateShield()
@@ -309,6 +311,7 @@ public class Panther : MonoBehaviour, IDamageable
         if (shieldActive) return;
 
         canActivateShield = false;
+        shieldScheduledThisPhase = false;
 
         if (Time.time > lastShieldTime + shieldCooldown)
         {
@@ -339,6 +342,7 @@ public class Panther : MonoBehaviour, IDamageable
     public void OnShieldDestroyed(GameObject destroyedShield)
     {
         canActivateShield = false;
+        shieldScheduledThisPhase = false;
         activeShields.Remove(destroyedShield);
 
         if (activeShields.Count == 0)
