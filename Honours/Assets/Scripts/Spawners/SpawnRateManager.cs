@@ -11,6 +11,7 @@ public class SpawnRateManager : MonoBehaviour
     public int maxAmountOfEnemiesInRoom = 2;
     public int spawnMultiplier = 2;
     int maxEnemiesPerRoomCap = 8;
+    int minEnemiesPerRoomCap = 6;
 
     void Awake()
     {
@@ -24,18 +25,32 @@ public class SpawnRateManager : MonoBehaviour
         }
     }
 
-    public void IncreaseAmountOfEnemies()
+    public void IncreaseAmountOfEnemies(bool isHardMode)
     {
-        // Increases the amount of enemies
-        minAmountOfEnemies++;
-        maxAmountOfEnemies++;
+        // Set spawn rate boost based on difficulty mode
+        int spawnRateBoost = 1;
 
-        // Increase maxAmountOfEnemiesInRoom by 2, and make sure it doesn't exceed the cap
-        maxAmountOfEnemiesInRoom = Mathf.Min(maxAmountOfEnemiesInRoom + spawnMultiplier, maxEnemiesPerRoomCap);
+        if (isHardMode)
+        {
+            spawnRateBoost = 2;
+        }
+        // Increase the amount of enemies based on the spawn rate amount
+        minAmountOfEnemies += spawnRateBoost;
+        maxAmountOfEnemies += spawnRateBoost;
+        maxAmountOfEnemiesInRoom += spawnMultiplier * spawnRateBoost;
 
-        // Caps the amount of enemies
-        minAmountOfEnemies = Mathf.Min(minAmountOfEnemies, 4);
-        maxAmountOfEnemies = Mathf.Min(maxAmountOfEnemies, 5);
+        // Do not allow max amount of enemies to increase above the cap
+        if (maxAmountOfEnemiesInRoom > maxEnemiesPerRoomCap)
+        {
+            maxAmountOfEnemiesInRoom = maxEnemiesPerRoomCap;
+        }
+
+        // Clamps the min amount of enemies
+
+        if (minAmountOfEnemies > minEnemiesPerRoomCap)
+        {
+            minAmountOfEnemies = minEnemiesPerRoomCap;
+        }
     }
 
     public void ResetSpawnerValues()
