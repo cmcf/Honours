@@ -206,7 +206,6 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   maxHealth: 60
   currentHealth: 60
-  moveSpeed: 0
   freezeTimer: 0
   level: 0
   isActive: 1
@@ -218,7 +217,7 @@ MonoBehaviour:
   - {fileID: 2754076012062586194}
   - {fileID: 8006267881494338271}
   - {fileID: 5650198022586891155}
-  attackRadius: 3
+  attackRadius: 3.5
   attackCooldown: 1.5
   attackPause: 1.5
   projectileSpeed: 10
