@@ -147,7 +147,7 @@ public class DifficultyManager : MonoBehaviour
     }
 
 
-    public bool IsChallengeMode()
+    public bool IsHardMode()
     {
         return hardModeEnabled;
     }

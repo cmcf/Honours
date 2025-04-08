@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
         maxHealth *= healthMultiplier;
 
-        if (DifficultyManager.Instance.IsChallengeMode())
+        if (DifficultyManager.Instance.IsHardMode())
         {
             maxHealth = Mathf.CeilToInt(maxHealth * 1.1f); // +10% boost
         }

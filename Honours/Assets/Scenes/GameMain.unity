@@ -666,7 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDifficultyLevel: -1
   currentDifficulty: 2
-  hardModeEnabled: 0
+  hardModeEnabled: 1
   damageTakenThisRoom: 0
   difficultyIncreaseRate: 1
   maxDeathsBeforeLowering: 3
