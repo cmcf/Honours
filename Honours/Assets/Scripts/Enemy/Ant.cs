@@ -90,6 +90,8 @@ public class Ant : Enemy
 
     void FireProjectile()
     {
+        if (currentState == EnemyState.Dead) return;
+
         if (projectilePrefab && projectileSpawnPoint && player)
         {
             // Fire the first projectile at the player
@@ -107,6 +109,8 @@ public class Ant : Enemy
     // Handles shooting a single projectile at the player
     void ShootProjectileAtPlayer()
     {
+        if (currentState == EnemyState.Dead) return;
+
         // Instantiate the projectile at the correct fire point
         GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
 

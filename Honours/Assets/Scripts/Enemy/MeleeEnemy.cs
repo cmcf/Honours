@@ -45,8 +45,8 @@ public class MeleeEnemy : Enemy
         currentHealth = maxHealth;
         if (DifficultyManager.Instance.IsHardMode())
         {
-            minDamageAmount =+ hardModeDamageIncrease;
-            moveSpeed =+ moveSpeedIncrease;
+            minDamageAmount += hardModeDamageIncrease;
+            moveSpeed += moveSpeedIncrease;
         }
 
         damageAmount = Random.Range(minDamageAmount, maxDamageAmount);

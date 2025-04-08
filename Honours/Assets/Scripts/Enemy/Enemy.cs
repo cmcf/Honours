@@ -17,7 +17,6 @@ public class Enemy : MonoBehaviour, IDamageable
     public bool isActive = true;
     bool hit = false;
     bool isFrozen = false;
-    float destroyDelay = 0.6f;
 
     public EnemyState currentState = EnemyState.Idle;
 
@@ -34,7 +33,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if (DifficultyManager.Instance.IsHardMode())
         {
-            maxHealth = Mathf.CeilToInt(maxHealth * 1.1f); // +10% boost
+            maxHealth = Mathf.CeilToInt(maxHealth * 1.5f); // +10% boost
         }
 
         currentHealth = maxHealth;
