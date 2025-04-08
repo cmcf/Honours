@@ -22,6 +22,11 @@ public class Shell : Enemy
     public float speed;
     float waitTimeBeforeMoveCheck = 1.5f;
     bool lastAttackHit = false;
+    bool lastAttackHitPreviously = false;
+
+    bool isHardMode;
+
+    FirePattern lastUsedPattern;
     enum FirePattern
     {
         Blast,
@@ -32,6 +37,14 @@ public class Shell : Enemy
     {
         rb = GetComponent<Rigidbody2D>();
         speed = Random.Range(minSpeed, maxSpeed);
+
+        isHardMode = DifficultyManager.Instance.IsHardMode();
+
+        if (isHardMode)
+        {
+            attackPause -= 0.2f;
+        }
+
     }
 
     void Update()
@@ -57,8 +70,8 @@ public class Shell : Enemy
         {
             AdjustMovement(); // Move  when not attacking
         }
-    }
 
+    }
 
 
     void FlipSprite()
@@ -124,15 +137,21 @@ public class Shell : Enemy
     public void FireSpikes()
     {
         lastAttackHit = false; // Reset before firing
+        FirePattern firePattern;
 
-        // Directly get the current difficulty level
-        int currentDifficultyLevel = DifficultyManager.Instance.GetCurrentDifficultyLevel();
-
-        // Always select a random fire pattern 
-        FirePattern firePattern = GetRandomFirePattern();
+        // Repeat the last attack if the previous one hit
+        if (lastAttackHitPreviously && currentState == EnemyState.Attacking)
+        {
+            firePattern = lastUsedPattern;
+        }
+        else
+        {
+            firePattern = GetRandomFirePattern();
+            lastUsedPattern = firePattern;
+        }
 
         // Stop moving while firing
-        rb.velocity = Vector2.zero; // Ensure the enemy stops moving
+        rb.velocity = Vector2.zero; // Ensure the shell enemy stops moving
 
         // Execute the fire pattern
         switch (firePattern)
@@ -175,7 +194,7 @@ public class Shell : Enemy
 
             if (rb != null)
             {
-                rb.velocity = firePoint.up * projectileSpeed; // Adjust speed as needed
+                rb.velocity = firePoint.up * projectileSpeed;
             }
 
             Spike spikeScript = spike.GetComponent<Spike>();
@@ -223,7 +242,18 @@ public class Shell : Enemy
                 spikeScript.SetShellOwner(this);
             }
 
-            yield return new WaitForSeconds(0.2f); // Wait before firing the next projectile
+            float waitBeforeNextProjectile;
+
+            if (isHardMode)
+            {
+                waitBeforeNextProjectile = 0.1f;
+            }
+            else
+            {
+                waitBeforeNextProjectile = 0.2f;
+            }
+
+            yield return new WaitForSeconds(waitBeforeNextProjectile);
         }
     }
 
@@ -235,10 +265,13 @@ public class Shell : Enemy
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        if (!lastAttackHit && distanceToPlayer <= attackRadius) // Missed & player still in range
+        if (!lastAttackHit && distanceToPlayer <= attackRadius)
         {
+            // Shell can pick another attack pattern if missed
+            lastAttackHitPreviously = false;
             StartCoroutine(MoveToBetterPosition());
         }
+
         else
         {
             currentState = EnemyState.Idle; // Stop adjusting if player left range
@@ -247,7 +280,8 @@ public class Shell : Enemy
 
     public void RegisterHit()
     {
-        lastAttackHit = true; 
+        lastAttackHit = true;
+        lastAttackHitPreviously = true;
     }
 
     IEnumerator MoveToBetterPosition()
