@@ -135,7 +135,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8561932971203901866}
   rb: {fileID: 2956526659463315321}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 20
+  maxHealth: 18
   currentHealth: 0
   moveSpeed: 1.7
   freezeTimer: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8561932971203901866}
   rb: {fileID: 2956526659463315321}
   floatingTextPrefab: {fileID: 0}
-  maxHealth: 45
+  maxHealth: 18
   currentHealth: 0
   moveSpeed: 1.7
   freezeTimer: 0.5

@@ -27,23 +27,20 @@ public class Enemy : MonoBehaviour, IDamageable
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        // Start with a base health multiplier
-        float healthMultiplier = 1f;
 
-        if (DifficultyManager.Instance != null)
-        {
-            // Increase health based on current difficulty level
-            healthMultiplier += 0.1f * (DifficultyManager.Instance.currentDifficulty - 1);
-            // If Hard Mode is enabled, add an additional 10% health boost
-            if (DifficultyManager.Instance.IsChallengeMode())
-            {
-                healthMultiplier += 0.1f; 
-            }
-        }
+        int difficulty = Mathf.Max(DifficultyManager.Instance.currentDifficulty, 1);
+        int healthMultiplier = 1 + (difficulty - 1);
 
         maxHealth *= healthMultiplier;
+
+        if (DifficultyManager.Instance.IsChallengeMode())
+        {
+            maxHealth = Mathf.CeilToInt(maxHealth * 1.1f); // +10% boost
+        }
+
         currentHealth = maxHealth;
     }
+
 
     // Method to change the state
     public void ChangeState(EnemyState newState)
