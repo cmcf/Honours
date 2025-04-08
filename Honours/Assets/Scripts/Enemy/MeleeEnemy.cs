@@ -1,16 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using static Damage;
-using static UnityEngine.GraphicsBuffer;
 
 public class MeleeEnemy : Enemy
 {
-
     Transform playerLocation;
-    public int damage;
-
     [Header("State Control")]
     bool reachedPlayer = false;
     bool isDisappearing = false;
@@ -18,9 +13,14 @@ public class MeleeEnemy : Enemy
 
     [Header("Movement")]
     [SerializeField] float stoppingDistance = 5f;
+    [SerializeField] float moveSpeed = 6f;
+    [SerializeField] float moveSpeedIncrease = 1f;
 
     [Header("Attack")]
-    public int damageAmount = 10;
+    [SerializeField] int minDamageAmount = 6;
+    [SerializeField] int maxDamageAmount = 15;
+    [SerializeField] int hardModeDamageIncrease = 2;
+    int damageAmount;
     bool hitPlayer = false;
 
     [Header("Animation Timing")]
@@ -41,8 +41,15 @@ public class MeleeEnemy : Enemy
         {
             playerLocation = player.transform;
         }
-        animator = GetComponent<Animator>();
+        
         currentHealth = maxHealth;
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            minDamageAmount =+ hardModeDamageIncrease;
+            moveSpeed =+ moveSpeedIncrease;
+        }
+
+        damageAmount = Random.Range(minDamageAmount, maxDamageAmount);
         StartCoroutine(UpdatePlayerLocation());
         StartCoroutine(HandleAppearance());
     }
