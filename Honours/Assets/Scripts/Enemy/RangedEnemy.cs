@@ -59,44 +59,101 @@ public class RangedEnemy : Enemy
 
     void FireProjectilesBasedOnDifficulty()
     {
-        // Generates a random number between 0 and 1 for chance-based firing
         float chance = Random.value;
 
-        // Check difficulty level and adjust the chance of firing more projectiles
-        if (DifficultyManager.Instance.currentDifficulty >= 3)
+        bool isChallenge = false;
+        int difficulty = 0; // Default value
+
+        // Check if DifficultyManager is available and set challenge mode and difficulty
+        if (DifficultyManager.Instance != null)
         {
-            // At level 3 or above, there's a high chance of firing 3 projectiles
-            if (chance <= 0.75f) // 75% chance to fire 3 projectiles
+            isChallenge = DifficultyManager.Instance.IsHardMode();
+            difficulty = DifficultyManager.Instance.currentDifficulty;
+        }
+
+        // Difficulty level 3 or above
+        if (difficulty >= 3)
+        {
+            if (isChallenge)
             {
-                StartCoroutine(FireThreeProjectiles(spawnPoint.right));
-            }
-            else if (chance <= 0.90f) // 15% chance to fire 2 projectiles
-            {
-                StartCoroutine(FireTwoProjectiles(spawnPoint.right));
+                // In Challenge Mode, increase chance for firing 3 projectiles to 85%
+                if (chance <= 0.85f)
+                {
+                    StartCoroutine(FireThreeProjectiles(spawnPoint.right));
+                }
+                else
+                {
+                    // 15% chance for firing 2 projectiles
+                    if (chance <= 0.97f)
+                    {
+                        StartCoroutine(FireTwoProjectiles(spawnPoint.right));
+                    }
+                    else
+                    {
+                        // 3% chance for firing 1 projectile
+                        FireProjectile(spawnPoint.right);
+                    }
+                }
             }
             else
             {
-                FireProjectile(spawnPoint.right); // 10% chance to fire 1 projectile
+                // Normal difficulty level 3+: 75% chance for firing 3 projectiles
+                if (chance <= 0.75f)
+                {
+                    StartCoroutine(FireThreeProjectiles(spawnPoint.right));
+                }
+                else
+                {
+                    // 15% chance for firing 2 projectiles
+                    if (chance <= 0.90f)
+                    {
+                        StartCoroutine(FireTwoProjectiles(spawnPoint.right));
+                    }
+                    else
+                    {
+                        // 10% chance for firing 1 projectile
+                        FireProjectile(spawnPoint.right);
+                    }
+                }
             }
         }
-        else if (DifficultyManager.Instance.currentDifficulty >= 2)
+        // Difficulty level 2
+        else if (difficulty >= 2)
         {
-            // At level 2, there's a higher chance of firing 2 projectiles
-            if (chance <= 0.50f) // 50% chance to fire 2 projectiles
+            if (isChallenge)
             {
-                StartCoroutine(FireTwoProjectiles(spawnPoint.right));
+                // In Challenge Mode, 75% chance for firing 2 projectiles
+                if (chance <= 0.75f)
+                {
+                    StartCoroutine(FireTwoProjectiles(spawnPoint.right));
+                }
+                else
+                {
+                    // 25% chance for firing 1 projectile
+                    FireProjectile(spawnPoint.right);
+                }
             }
             else
             {
-                FireProjectile(spawnPoint.right); // 50% chance to fire 1 projectile
+                // Normal difficulty level 2: 50% chance for firing 2 projectiles
+                if (chance <= 0.50f)
+                {
+                    StartCoroutine(FireTwoProjectiles(spawnPoint.right));
+                }
+                else
+                {
+                    // 50% chance for firing 1 projectile
+                    FireProjectile(spawnPoint.right);
+                }
             }
         }
+        // Difficulty level 1 or below: always fire 1 projectile
         else
         {
-            // Below level 2, fire 1 projectile only
             FireProjectile(spawnPoint.right);
         }
     }
+
 
     void FireProjectile(Vector3 direction)
     {
