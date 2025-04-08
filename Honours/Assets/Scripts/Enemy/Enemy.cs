@@ -11,14 +11,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public float maxHealth = 45f;
     public float currentHealth;
-    public float moveSpeed;
     public float freezeTimer;
     public int level;
 
     public bool isActive = true;
     bool hit = false;
     bool isFrozen = false;
-    float destroyDelay = 0.6f;
 
     public EnemyState currentState = EnemyState.Idle;
 
@@ -27,8 +25,20 @@ public class Enemy : MonoBehaviour, IDamageable
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        int difficulty = Mathf.Max(DifficultyManager.Instance.currentDifficulty, 1);
+        int healthMultiplier = 1 + (difficulty - 1);
+
+        maxHealth *= healthMultiplier;
+
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            maxHealth = Mathf.CeilToInt(maxHealth * 1.5f); // +10% boost
+        }
+
         currentHealth = maxHealth;
     }
+
 
     // Method to change the state
     public void ChangeState(EnemyState newState)
@@ -73,28 +83,6 @@ public class Enemy : MonoBehaviour, IDamageable
     public bool IsActive()
     {
         return isActive;
-    }
-
-    public void SetDifficultyLevel(int difficulty)
-    {
-        level = Mathf.Min(difficulty, 4);
-        // Enemy stats are adjusted based on difficulty setting
-        switch (level)
-        {
-            case 1:
-                moveSpeed += 0.1f;
-                break;
-            case 2:
-                moveSpeed += 0.1f;
-                break;
-            case 3:
-                moveSpeed += 0.2f;
-                break;
-            case 4:
-                moveSpeed += 0.2f;
-                break;
-
-        }
     }
 
     public void Damage(int damage)

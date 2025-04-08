@@ -22,11 +22,20 @@ public class Ant : Enemy
     [SerializeField] Transform projectileSpawnPoint; 
     [SerializeField] float projectileSpeed = 8f;
     [SerializeField] float projectileLife = 1.5f;
+    [SerializeField] float doubleShotChance = 0.2f;
 
     void Start()
     {
         speed = Random.Range(minSpeed, maxSpeed);
+
+        if (DifficultyManager.Instance != null && DifficultyManager.Instance.IsHardMode())
+        {
+            speed *= 1.25f; // 25% faster move speed
+            attackCooldown *= 0.85f; // 15% faster attacks
+            doubleShotChance = 0.5f; // Higher chance to fire double shots
+        }
     }
+
 
     void Update()
     {
@@ -81,26 +90,53 @@ public class Ant : Enemy
 
     void FireProjectile()
     {
+        if (currentState == EnemyState.Dead) return;
+
         if (projectilePrefab && projectileSpawnPoint && player)
         {
-            // Instantiate the projectile at the correct fire point
-            GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+            // Fire the first projectile at the player
+            ShootProjectileAtPlayer();
 
-            // Calculate direction immediately
-            Vector2 direction = (player.position - projectile.transform.position).normalized;
-
-            // Rotate projectile to face movement direction
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
-
-            // Apply velocity 
-            projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
-
-            // Destroy projectile
-            Destroy(projectile, projectileLife);
+            // Possibly fire a second projectile based on chance
+            if (Random.value < doubleShotChance)
+            {
+                // Delay to make the second shot feel staggered
+                StartCoroutine(ShootDelayed(0.15f));
+            }
         }
     }
 
+    // Handles shooting a single projectile at the player
+    void ShootProjectileAtPlayer()
+    {
+        if (currentState == EnemyState.Dead) return;
+
+        // Instantiate the projectile at the correct fire point
+        GameObject projectile = Instantiate(projectilePrefab, projectileSpawnPoint.position, Quaternion.identity);
+
+        // Calculate direction 
+        Vector2 direction = (player.position - projectile.transform.position).normalized;
+
+        // Rotate projectile to face movement direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Apply velocity 
+        projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
+
+        // Destroy projectile after a set time
+        Destroy(projectile, projectileLife);
+    }
+
+    // Coroutine to shoot a second projectile after a short delay
+    IEnumerator ShootDelayed(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (player != null) 
+        {
+            ShootProjectileAtPlayer();
+        }
+    }
 
     void FlipSprite()
     {

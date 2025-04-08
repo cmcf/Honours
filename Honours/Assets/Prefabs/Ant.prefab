@@ -185,7 +185,7 @@ MonoBehaviour:
   attackDuration: 0.3
   projectilePrefab: {fileID: 4613009161659550289, guid: 08ee7e1c219801d4fb42d617737dc3d7, type: 3}
   projectileSpawnPoint: {fileID: 692992179035292846}
-  projectileSpeed: 6.8
+  projectileSpeed: 5
   projectileLife: 1
 --- !u!95 &8557555593478873894
 Animator:

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1164709598715183366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: 3.76, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -163,6 +163,8 @@ MonoBehaviour:
   currentState: 0
   bulletPrefab: {fileID: 4040207891986179867, guid: a1779c5a7f85cff43858f51b4dbc37a0, type: 3}
   spawnPoint: {fileID: 8346416027446157132}
+  minFireRate: 2
+  maxFireRate: 2.5
   attackRange: 6
   fireRate: 2
   projectileSpeed: 8

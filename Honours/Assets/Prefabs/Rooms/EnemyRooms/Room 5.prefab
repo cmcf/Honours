@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 193951389146520808}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.19, y: 0, z: 0}
+  m_LocalPosition: {x: 1.75, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1470,7 +1470,7 @@ Transform:
   m_GameObject: {fileID: 1910950294332417822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.51, y: 2.9, z: 0}
+  m_LocalPosition: {x: -10.37, y: -3.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28150,7 +28150,7 @@ Transform:
   m_GameObject: {fileID: 3158059845522279456}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9, y: 2.94, z: 0}
+  m_LocalPosition: {x: -8.03, y: 1.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28186,6 +28186,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6088611463763887817}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4397334935999519281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2739834585197474642}
+  m_Layer: 0
+  m_Name: SpawnPoint (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2739834585197474642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4397334935999519281}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.62, y: -4.03, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6965546110172447018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4516782955901256896
 GameObject:
@@ -28225,6 +28256,7 @@ Transform:
   - {fileID: 2305066166525920151}
   - {fileID: 2670469809925794779}
   - {fileID: 4948249032244282118}
+  - {fileID: 2739834585197474642}
   m_Father: {fileID: 1016031596203368019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4661107050611901229
@@ -28550,6 +28582,10 @@ MonoBehaviour:
   - {fileID: 8639410908461024269}
   - {fileID: 2305066166525920151}
   - {fileID: 2670469809925794779}
+  - {fileID: 4948249032244282118}
+  - {fileID: 8002913059516131938}
+  - {fileID: 7781489746346384832}
+  - {fileID: 2739834585197474642}
   availableSpawnPoints: []
   doorList: []
 --- !u!61 &4711066184213293826

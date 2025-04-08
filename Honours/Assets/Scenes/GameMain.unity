@@ -664,9 +664,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9801206178c4a304bb4bc733ee112f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDifficultyLevel: -1
+  baseDifficultyLevel: 0
   currentDifficulty: 2
-  isChallengeMode: 0
+  hardModeEnabled: 1
   damageTakenThisRoom: 0
   difficultyIncreaseRate: 1
   maxDeathsBeforeLowering: 3

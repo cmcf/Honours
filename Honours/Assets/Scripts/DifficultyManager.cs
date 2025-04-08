@@ -8,7 +8,7 @@ public class DifficultyManager : MonoBehaviour
 
     public int baseDifficultyLevel = 0;  
     public int currentDifficulty;
-    public bool isChallengeMode = false;
+    public bool hardModeEnabled = false;
     [SerializeField] int damageTakenThisRoom = 0;
 
     int minDifficulty = 2;
@@ -38,8 +38,23 @@ public class DifficultyManager : MonoBehaviour
 
     void Start()
     {
-        // Initialize the current difficulty level to the base level
-        currentDifficulty = baseDifficultyLevel;
+        if (hardModeEnabled)
+        {
+            // Increase the starting diffiuclty level if hard mode is enabled
+            currentDifficulty = baseDifficultyLevel + 1;
+        }
+        else
+        {
+            // Initialize the current difficulty level to the base level
+            currentDifficulty = baseDifficultyLevel;
+        }
+
+        // Hard mode min and max difficulty is increased
+        if (hardModeEnabled)
+        {
+            minDifficulty += 2;
+            maxDifficulty += 2;
+        }
     }
 
     public int GetCurrentDifficultyLevel()
@@ -79,39 +94,62 @@ public class DifficultyManager : MonoBehaviour
 
     public void AdjustDifficultyAfterRoom()
     {
-        if (damageTakenThisRoom < increaseDamageAmount) 
+        // Gradually scale thresholds based on current difficulty
+        int increaseThreshold = 40 - (currentDifficulty * 2);
+        int decreaseThreshold = 30 + (currentDifficulty * 3);
+
+        // Clamp to reasonable ranges
+        if (increaseThreshold < 10)
         {
-            // Increase difficulty if little damage was taken
-            if (currentDifficulty < maxDifficulty)
-            {
-                IncreaseDifficulty(); 
-            }
-        }
-        else if (damageTakenThisRoom > decreaseDamageAmount && currentDifficulty > minDifficulty)
-        {
-            // Decrease difficulty if too much damage was taken
-            DecreaseDifficulty(); 
+            increaseThreshold = 10;
         }
 
-        damageTakenThisRoom = 0; // Reset for the next room
+        if (decreaseThreshold > 60)
+        {
+            decreaseThreshold = 60;
+        }
+
+        if (damageTakenThisRoom < increaseThreshold)
+        {
+            if (currentDifficulty < maxDifficulty)
+            {
+                IncreaseDifficulty();
+            }
+        }
+        else if (damageTakenThisRoom > decreaseThreshold && currentDifficulty > minDifficulty)
+        {
+            DecreaseDifficulty();
+        }
+        // Reset room damage taken
+        damageTakenThisRoom = 0;
     }
 
     void ApplyDifficultyScaling()
     {
-        // Increase enemy spawn rate
-        SpawnRateManager.Instance.IncreaseAmountOfEnemies();
-        float healthMultiplier = 1.0f + (0.1f * (currentDifficulty - 1));
+        float scalingFactor;
 
-        // Notify all enemies to update their health
+        if (hardModeEnabled)
+        {
+            scalingFactor = 0.15f;
+        }
+        else
+        {
+            scalingFactor = 0.1f;
+        }
+        // Increase enemy spawn rate
+        SpawnRateManager.Instance.IncreaseAmountOfEnemies(hardModeEnabled);
+        float healthMultiplier = 1.0f + (scalingFactor * (currentDifficulty - 1));
+
         foreach (Enemy enemy in FindObjectsOfType<Enemy>())
         {
             enemy.UpdateHealthScaling(healthMultiplier);
         }
     }
 
-    public bool IsChallengeMode()
+
+    public bool IsHardMode()
     {
-        return isChallengeMode;
+        return hardModeEnabled;
     }
 
     public void ResetDifficultyLevel()
