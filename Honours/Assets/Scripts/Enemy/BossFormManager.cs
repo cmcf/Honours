@@ -25,10 +25,18 @@ public class BossFormManager : MonoBehaviour
 
     public void StartBossBattle()
     {
-        // Randomly start as Firebird or Panther
-        //currentForm = (Random.value > 0.5f) ? BossForm.Firebird : BossForm.Panther;
+
+        // Ensure both forms are assigned
+        if (firebirdForm == null || pantherForm == null)
+        {
+            Debug.LogError("Firebird or Panther form is not assigned!");
+            return;
+        }
+
+        // Activate the current form
         ActivateForm(currentForm, transform.position);
     }
+
 
     void Update()
     {
@@ -48,29 +56,41 @@ public class BossFormManager : MonoBehaviour
         }
     }
 
-    bool ShouldSwitchBasedOnPlayerDistance()
-    {
-        Transform player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        if (player == null) return false;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        if (currentForm == BossForm.Firebird && distance < 3f) return true; // Player is too close
-        if (currentForm == BossForm.Panther && distance > 6f) return true; // Player is too far
-
-        return false;
-    }
-
     void SwitchForm()
     {
         lastSwitchTime = Time.time;
 
+        // Check if the forms are assigned to avoid NullReferenceException
+        if (firebirdForm == null || pantherForm == null)
+        {
+            return;
+        }
+
         // Get the current active form's position before switching
-        Vector3 lastPosition = (currentForm == BossForm.Firebird) ? firebirdForm.transform.position : pantherForm.transform.position;
+        Vector3 lastPosition;
+        if (currentForm == BossForm.Firebird)
+        {
+            lastPosition = firebirdForm.transform.position;
+        }
+        else
+        {
+            lastPosition = pantherForm.transform.position;
+        }
 
         // Swap to the other form
-        currentForm = (currentForm == BossForm.Firebird) ? BossForm.Panther : BossForm.Firebird;
+        if (currentForm == BossForm.Firebird)
+        {
+            currentForm = BossForm.Panther;
+        }
+        else
+        {
+            currentForm = BossForm.Firebird;
+        }
+
+        // Call ActivateForm with the new form and the position
         ActivateForm(currentForm, lastPosition);
+
+        // Update animator and Rigidbody2D references
         GetCurrentAnimator();
         GetCurrentRb();
     }

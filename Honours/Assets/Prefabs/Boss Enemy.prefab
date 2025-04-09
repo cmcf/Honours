@@ -290,7 +290,7 @@ MonoBehaviour:
   pantherForm: {fileID: 3241009952511098558}
   switchCooldown: 50
   boss: {fileID: 8991972665906897161}
-  currentForm: 1
+  currentForm: 0
 --- !u!114 &3430006399220710628
 MonoBehaviour:
   m_ObjectHideFlags: 0
