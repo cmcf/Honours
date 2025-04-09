@@ -223,18 +223,17 @@ public class Firebird : MonoBehaviour, IDamageable
         return new Vector2(x, y);
     }
 
-    // Coroutine to fire at the player
     IEnumerator FireAtPlayerRoutine()
     {
         // Ensure the Firebird is facing the player
         UpdateAnimationDirectionTowardsPlayer();
         while (true)
         {
-            // Higher chance to fire flare projectile pattern in hard mode
-            float flareChance = 0.2f;
+            // Adjust chance to fire flare scatter pattern based on difficulty
+            float flareChance = 0.1f;
             if (DifficultyManager.Instance.IsHardMode())
             {
-                flareChance = 0.5f;
+                flareChance = 0.3f; // Increased chance on hard mode
             }
 
             // Decide if firebird should fire the FlareScatter
@@ -260,6 +259,7 @@ public class Firebird : MonoBehaviour, IDamageable
             yield return new WaitForSeconds(fireRate);
         }
     }
+
 
 
     void FireRapidShots()
