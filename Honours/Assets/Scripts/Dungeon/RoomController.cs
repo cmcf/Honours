@@ -311,29 +311,10 @@ public class RoomController : MonoBehaviour
     public void OnEnterRoom(Room room)
     {
         currentRoom = room;
-        if (room.isBossRoom)
-        {
-            Invoke(nameof(DelayedActivateBoss), 1.6f);
-        }
-
+        
         StartCoroutine(RoomCoroutine());
     }
 
-
-    void DelayedActivateBoss()
-    {
-        ActivateBoss(currentRoom);
-    }
-
-    void ActivateBoss(Room bossRoom)
-    {
-        BossFormManager boss = bossRoom.GetComponentInChildren<BossFormManager>();
-        if (boss != null)
-        {
-            boss.gameObject.SetActive(true);
-            boss.StartBossBattle();
-        }
-    }
 
     IEnumerator RoomCoroutine()
     {

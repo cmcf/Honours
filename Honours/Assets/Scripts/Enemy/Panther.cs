@@ -23,6 +23,7 @@ public class Panther : MonoBehaviour, IDamageable
     [SerializeField] float attackSpeed = 2f;
     float chargeStartTime;
     bool isCharging = false;
+    float nextDashTime;
 
     [Header("Melee")]
     [SerializeField] float attackRange = 2f;
@@ -55,10 +56,9 @@ public class Panther : MonoBehaviour, IDamageable
     float lastShieldTime;
     float defendStateStartTime;
     Vector2 chargeDirection; // Stores the direction during the charge
-
-    public EnemyState currentState;
     public enum PantherState { Defend, Charge, Attack }
-    public PantherState currentPhase = PantherState.Defend;
+    public PantherState currentPhase = PantherState.Attack;
+    public EnemyState currentBossState;
 
     int difficultyLevel;
     bool isHardMode;
@@ -72,10 +72,13 @@ public class Panther : MonoBehaviour, IDamageable
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
 
+
         // Get current difficulty
         difficultyLevel = DifficultyManager.Instance.currentDifficulty;
         isHardMode = DifficultyManager.Instance.IsHardMode();
         ApplyDifficultySettings();
+
+        currentPhase = PantherState.Attack;
 
     }
 
@@ -122,61 +125,96 @@ public class Panther : MonoBehaviour, IDamageable
         shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
     }
 
-    void OnEnable()
-    {
-        canActivateShield = true;
-        defendStateStartTime = Time.time;
-        currentPhase = PantherState.Defend;
-    }
-
-    float nextDashTime;
-
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        if (currentState == EnemyState.Dead) return;
+        if (currentBossState == EnemyState.Dead) return;
 
+        // If not charging, allow movement
         if (!isCharging)
         {
             FacePlayer();
         }
 
+        // Handle shield separately, don't freeze movement if charging or attacking
         if (shieldActive)
         {
-            rb.velocity = Vector2.zero;
+            rb.velocity = Vector2.zero; // Stop movement if shield is active
             UpdateShieldOrbit();
             return;
         }
 
         if (currentPhase != PantherState.Charge)
         {
+            DeactivateShields();
             float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // If vulnerable and in range, try melee
+            // If in range and can attack, try melee attack
             if (distToPlayer <= attackRange && canAttackAgain)
             {
                 AttackPlayer();
             }
-            // Otherwise, dash occasionally if shield is down
+            // Otherwise, dash if shield is down
             else if (Time.time >= nextDashTime && !isCharging)
             {
-                // Only dash if the shield is down and panther has been idle for a bit
+                // Only dash if the shield is down and panther has been idle
                 if (!shieldActive && Time.time - defendStateStartTime >= shieldCooldown)
                 {
                     StartChargePhase();
                     nextDashTime = Time.time + chargeCooldown; // Set next dash time
                 }
             }
-
-            // Start shield again after defend duration
-            if (canActivateShield && !shieldActive && !shieldScheduledThisPhase && Time.time - defendStateStartTime >= shieldCooldown)
-            {
-                ActivateShield();
-                shieldScheduledThisPhase = true;
-            }
         }
 
         animator.SetFloat("speed", rb.velocity.magnitude);
+    }
+
+    void AttackPlayer()
+    {
+        if (!isAttacking && canAttackAgain)
+        {
+            currentPhase = PantherState.Attack;
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
+
+            // Prevent further attacks for a short duration
+            canAttackAgain = false;
+
+            StartCoroutine(AttackRoutine());
+        }
+    }
+
+    IEnumerator AttackRoutine()
+    {
+        float attackElapsed = 0f;
+
+        // Perform the attack for the set cooldown time
+        while (attackElapsed < attackCooldown)
+        {
+            attackElapsed += Time.deltaTime;
+
+            // If the player moves out of range during the attack, stop attack
+            if (Vector2.Distance(transform.position, player.position) > attackRange)
+            {
+                StopAttack();
+                yield break;
+            }
+
+            yield return null;
+        }
+
+        StopAttack();
+    }
+
+    void StopAttack()
+    {
+        isAttacking = false;
+        animator.SetBool("isAttacking", false);
+        rb.velocity = Vector2.zero; // Stop any movement during attack
+        animator.SetFloat("speed", 0);
+
+        // Reset attack cooldown and allow another attack after the cooldown
+        canAttackAgain = true;
     }
 
 
@@ -200,10 +238,11 @@ public class Panther : MonoBehaviour, IDamageable
         animator.SetFloat("speed", chargeSpeed);
         animator.SetFloat("posX", chargeDirection.y);
         animator.SetFloat("posY", chargeDirection.x);
-        trailRenderer.emitting = true;
+        trailRenderer.emitting = true; // Add debug statement here
 
         StartCoroutine(PerformCharge());
     }
+
 
 
     IEnumerator PerformCharge()
@@ -258,55 +297,6 @@ public class Panther : MonoBehaviour, IDamageable
     }
 
 
-    void AttackPlayer()
-    {
-        if (!isAttacking && canAttackAgain)
-        {
-            currentPhase = PantherState.Attack;
-            isAttacking = true;
-            animator.SetBool("isAttacking", true);
-
-            // Prevent further attacks for a short duration
-            canAttackAgain = false;
-
-            StartCoroutine(AttackRoutine());
-        }
-    }
-
-    IEnumerator AttackRoutine()
-    {
-        float attackElapsed = 0f;
-
-        // Perform the attack for the set cooldown time
-        while (attackElapsed < attackCooldown)
-        {
-            attackElapsed += Time.deltaTime;
-
-            // If the player moves out of range during the attack, cancel attack
-            if (Vector2.Distance(transform.position, player.position) > attackRange)
-            {
-                StopAttack();
-                yield break;
-            }
-
-            yield return null;
-        }
-
-        StopAttack();
-    }
-
-    void StopAttack()
-    {
-        isAttacking = false;
-        animator.SetBool("isAttacking", false);
-        rb.velocity = Vector2.zero; // Stop any movement during attack
-        animator.SetFloat("speed", 0);
-
-        // Reset attack cooldown and allow another attack after the cooldown
-        canAttackAgain = true;
-    }
-
-
     void AttackDamage()
     {
         Collider2D[] hitObjects = Physics2D.OverlapCircleAll(transform.position, attackRange);
@@ -351,12 +341,29 @@ public class Panther : MonoBehaviour, IDamageable
         // Start the shield orbiting
         StartCoroutine(UpdateShieldOrbit());
 
-        // Start firing projectiles from shields
-        StartCoroutine(FireProjectilesFromShields());
+        // Randomly select a projectile firing pattern
+        IEnumerator selectedPattern = null;
+        int patternIndex = Random.Range(0, 2); 
+
+        switch (patternIndex)
+        {
+            case 0:
+                selectedPattern = FireProjectilesFromShields();
+                break;
+            case 1:
+                selectedPattern = FireProjectilesSpiralling();
+                break;
+        }
+
+        if (selectedPattern != null)
+        {
+            StartCoroutine(selectedPattern);
+        }
 
         // Set a timer to deactivate shield after duration
         StartCoroutine(EndShieldAfterDuration());
     }
+
 
     void DeactivateShields()
     {
@@ -411,10 +418,11 @@ public class Panther : MonoBehaviour, IDamageable
 
     IEnumerator FireProjectilesFromShields()
     {
+        float firingTime = 0f;
         while (shieldActive)
         {
-            // Decide how many shields will fire and which shields will fire
-            int shieldsToFire = Random.Range(1, activeShields.Count + 1); // Randomly pick how many shields to fire
+            // Randomize the number of shields that will fire this round
+            int shieldsToFire = Mathf.Min(Random.Range(1, 4), activeShields.Count); // Random between 1 and 3 shields
             List<int> selectedShields = new List<int>(); // Keeps track of which shields are selected
 
             // Randomly select shields to fire from
@@ -438,8 +446,9 @@ public class Panther : MonoBehaviour, IDamageable
                 }
             }
 
-            // Delay before the next round of firing
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.5f)); // Random delay between shots
+            // Random delay between shots
+            firingTime += Random.Range(0.5f, 1.5f); // Varying the time for next shot
+            yield return new WaitForSeconds(firingTime); // Vary the wait time to make the attack less predictable
         }
     }
 
@@ -459,6 +468,30 @@ public class Panther : MonoBehaviour, IDamageable
 
         // Destroy the projectile after some time
         Destroy(projectile, 5f);
+    }
+
+    IEnumerator FireProjectilesSpiralling()
+    {
+        int lastShieldIndex = 0;
+
+        while (shieldActive)
+        {
+            if (activeShields.Count > 0)
+            {
+                // Get the current shield in the spiral
+                GameObject shield = activeShields[lastShieldIndex % activeShields.Count];
+
+                if (shield != null)
+                {
+                    FireProjectile(shield.transform.position);
+                }
+
+                // Move to the next shield for next time
+                lastShieldIndex++;
+            }
+
+            yield return new WaitForSeconds(0.4f); // Controls speed
+        }
     }
 
 
@@ -535,7 +568,7 @@ public class Panther : MonoBehaviour, IDamageable
 
     public void Damage(int damage)
     {
-        if (currentState == EnemyState.Dead) { return; }
+        if (currentBossState == EnemyState.Dead) { return; }
 
         BossEnemy enemy = GetComponentInParent<BossEnemy>();
         enemy.Damage(damage);
@@ -545,4 +578,13 @@ public class Panther : MonoBehaviour, IDamageable
     {
         return shieldActive;
     }
+
+    public void RestartBossRoutine()
+    {
+        StopAllCoroutines();
+        isCharging = false;
+        shieldActive = false;
+        currentPhase = PantherState.Attack;
+    }
+
 }

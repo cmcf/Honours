@@ -9,10 +9,8 @@ public class BossFormManager : MonoBehaviour
     Panther pantherScript;
     public float switchCooldown = 10f; // Prevents instant switching
     float lastSwitchTime;
-    public GameObject boss;
-    float bossStartDelay = 0.2f;
     public enum BossForm { Firebird, Panther }
-    public BossForm currentForm = BossForm.Firebird;
+    public BossForm currentForm = BossForm.Panther;
 
     BossEnemy enemy;
 
@@ -20,32 +18,27 @@ public class BossFormManager : MonoBehaviour
     {
         enemy = GetComponent<BossEnemy>();
         pantherScript= GetComponentInChildren<Panther>();
-        boss.gameObject.SetActive(true);
-    }
 
-    public void StartBossBattle()
-    {
         // Ensure both forms are assigned
-        if (firebirdForm == null || pantherForm == null)
-        {
-            return;
-        }
+        // if (firebirdForm == null || pantherForm == null)
+        // {
+        //     return;
+        // }
 
         // Randomly choose between Firebird or Panther form
-        float randomValue = Random.value;
-        if (randomValue > 0.5f)
-        {
-            currentForm = BossForm.Firebird;
-        }
-        else
-        {
-            currentForm = BossForm.Panther;
-        }
+        // float randomValue = Random.value;
+        // if (randomValue > 0.5f)
+        // {
+        //     currentForm = BossForm.Firebird;
+        // }
+        // else
+        // {
+        //     currentForm = BossForm.Panther;
+        // }
 
         // Activate the chosen form
         ActivateForm(currentForm, transform.position);
     }
-
 
 
     void Update()
@@ -59,11 +52,6 @@ public class BossFormManager : MonoBehaviour
         }
 
         SwitchBasedOnHealth();
-
-        if (RoomController.Instance.startBossAttack)
-        {
-            boss.gameObject.SetActive(true);
-        }
     }
 
     void SwitchForm()
@@ -97,8 +85,11 @@ public class BossFormManager : MonoBehaviour
             currentForm = BossForm.Firebird;
         }
 
-        // Call ActivateForm with the new form and the position
-        ActivateForm(currentForm, lastPosition);
+        if (lastPosition != null)
+        {
+            // Call ActivateForm with the new form and the position
+            ActivateForm(currentForm, lastPosition);
+        } 
 
         // Update animator and Rigidbody2D references
         GetCurrentAnimator();
@@ -123,9 +114,15 @@ public class BossFormManager : MonoBehaviour
         else
         {
             pantherForm.transform.position = position;
-            pantherScript.StartAttacking();
+            Panther pantherScript = pantherForm.GetComponent<Panther>();
+            if (pantherScript != null)
+            {
+                StopAllCoroutines(); // Stop any lingering coroutines
+                pantherScript.RestartBossRoutine(); // Restart Firebird's behaviour
+            }
         }
     }
+
 
 
     public Animator GetCurrentAnimator()

@@ -230,7 +230,7 @@ MonoBehaviour:
   canActivateShield: 1
   shieldCount: 5
   currentState: 0
-  currentPhase: 0
+  currentPhase: 2
 --- !u!96 &2834042001106705526
 TrailRenderer:
   serializedVersion: 3
