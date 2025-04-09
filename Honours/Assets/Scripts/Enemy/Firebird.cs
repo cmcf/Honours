@@ -65,7 +65,8 @@ public class Firebird : MonoBehaviour, IDamageable
     public void RestartBossRoutine()
     {
         StopAllCoroutines();
-        hasAppeared = true;  
+        hasAppeared = true;
+        currentState = EnemyState.Attacking;
         StartCoroutine(BossRoutine());
     }
 

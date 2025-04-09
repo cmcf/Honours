@@ -24,6 +24,7 @@ public class RoomController : MonoBehaviour
     public List<RoomSO> availableRooms;
     public List<RoomSO> advancedRooms;
     public RoomSO bossRoom;
+    public RoomSO advancedBossRoom;
     public RoomSO spawnRoom;
     public RoomSO rewardRoom;
     public Room currentRoom;
@@ -251,25 +252,19 @@ public class RoomController : MonoBehaviour
 
     void ReplaceWithBossRoom(Door.DoorType previousDoor)
     {
-        if (bossRoom == null || bossRoom.roomPrefab == null)
+        if (roomsCompleted >= roomsBeforeBoss && !hasBossRoomSpawned)
         {
-            Debug.LogError("Boss room or its prefab is missing!");
-            return;
+            if (DifficultyManager.Instance.currentDifficulty >= 4 && advancedBossRoom != null && advancedBossRoom.roomPrefab != null)
+            {
+                // Spawn the advanced boss room if difficulty is 4 or higher
+                SpawnAdvancedBossRoom(previousDoor);
+            }
+            else if (bossRoom != null && bossRoom.roomPrefab != null)
+            {
+                // Otherwise, spawn the regular boss room
+                SpawnBossRoom(previousDoor);
+            }
         }
-
-        // Set the boss room to spawn where the next room should be
-        Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
-
-        Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
-        newRoom.roomSO = bossRoom;
-        newRoom.InitializeRoom(roomsCompleted);
-
-        previousRoom = currentRoom.gameObject;
-        nextRoom = newRoom.gameObject;
-        currentRoom = newRoom;
-        hasBossRoomSpawned = true;
-
-        Invoke("StartBossBattle", 1f);
     }
 
     Vector3 GetSpawnPosition(Door.DoorType previousDoor)
@@ -362,7 +357,7 @@ public class RoomController : MonoBehaviour
         newRoom.gameObject.SetActive(true); 
     }
 
-    void SpawnBossRoom()
+    void SpawnBossRoom(Door.DoorType previousDoor)
     {
         if (bossRoom == null || bossRoom.roomPrefab == null)
         {
@@ -370,36 +365,43 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        // Spawn position based on last used door direction
-        Vector3 bossRoomPosition = currentRoom.transform.position;
+        // Set the boss room to spawn where the next room should be
+        Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
 
-        switch (currentDirection) // Use the last movement direction
-        {
-            case RoomDirection.Up: bossRoomPosition += new Vector3(0, currentRoom.height, 0); break;
-            case RoomDirection.Down: bossRoomPosition += new Vector3(0, -currentRoom.height, 0); break;
-            case RoomDirection.Left: bossRoomPosition += new Vector3(-currentRoom.width, 0, 0); break;
-            case RoomDirection.Right: bossRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
-        }
-
-        // Instantiate the boss room
         Room newRoom = Instantiate(bossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
         newRoom.roomSO = bossRoom;
         newRoom.InitializeRoom(roomsCompleted);
-        newRoom.isBossRoom = true;
 
-        // Set up previous and current room references
         previousRoom = currentRoom.gameObject;
         nextRoom = newRoom.gameObject;
         currentRoom = newRoom;
-        currentRoomPosition = newRoom.transform.position;
         hasBossRoomSpawned = true;
 
-        newRoom.gameObject.SetActive(true);
-
-        Invoke("StartBossBattle", 0.5f);
+        Invoke("StartBossBattle", 1f);
     }
 
+    void SpawnAdvancedBossRoom(Door.DoorType previousDoor)
+    {
+        if (advancedBossRoom == null || advancedBossRoom.roomPrefab == null)
+        {
+            Debug.LogError("Advanced Boss room or its prefab is missing!");
+            return;
+        }
 
+        // Set the advanced boss room to spawn where the next room should be
+        Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
+
+        Room newRoom = Instantiate(advancedBossRoom.roomPrefab, bossRoomPosition, Quaternion.identity).GetComponent<Room>();
+        newRoom.roomSO = advancedBossRoom;
+        newRoom.InitializeRoom(roomsCompleted);
+
+        previousRoom = currentRoom.gameObject;
+        nextRoom = newRoom.gameObject;
+        currentRoom = newRoom;
+        hasBossRoomSpawned = true;
+
+        Invoke("StartBossBattle", 1f);
+    }
 
     void StartBossBattle()
     {
