@@ -25,17 +25,27 @@ public class BossFormManager : MonoBehaviour
 
     public void StartBossBattle()
     {
-
         // Ensure both forms are assigned
         if (firebirdForm == null || pantherForm == null)
         {
-            Debug.LogError("Firebird or Panther form is not assigned!");
             return;
         }
 
-        // Activate the current form
+        // Randomly choose between Firebird or Panther form
+        float randomValue = Random.value;
+        if (randomValue > 0.5f)
+        {
+            currentForm = BossForm.Firebird;
+        }
+        else
+        {
+            currentForm = BossForm.Panther;
+        }
+
+        // Activate the chosen form
         ActivateForm(currentForm, transform.position);
     }
+
 
 
     void Update()

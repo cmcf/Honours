@@ -66,7 +66,7 @@ public class Panther : MonoBehaviour, IDamageable
     void Start()
     {
         // References to components
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
         shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -133,9 +133,13 @@ public class Panther : MonoBehaviour, IDamageable
 
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         if (currentState == EnemyState.Dead) return;
 
-        FacePlayer();
+        if (!isCharging)
+        {
+            FacePlayer();
+        }
 
         if (shieldActive)
         {
