@@ -26,6 +26,7 @@ public class Firebird : MonoBehaviour, IDamageable
     Coroutine firingCoroutine;
     bool isMoving = false;
     bool hasAppeared = false;
+    int movesPerPhase = 2;
 
     // Enum for different phases of the boss
     public enum FirebirdPhase { Phase1, Phase2, Phase3 }
@@ -48,6 +49,12 @@ public class Firebird : MonoBehaviour, IDamageable
             // First-time appearance
             StartCoroutine(WaitForAppearanceAndStartRoutine());
         }
+
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            movesPerPhase = -1;
+            baseProjectileSpeed += 0.2f;
+        }
     }
 
     void Update()
@@ -58,7 +65,8 @@ public class Firebird : MonoBehaviour, IDamageable
     public void RestartBossRoutine()
     {
         StopAllCoroutines();
-        hasAppeared = true;  
+        hasAppeared = true;
+        currentState = EnemyState.Attacking;
         StartCoroutine(BossRoutine());
     }
 
@@ -111,7 +119,7 @@ public class Firebird : MonoBehaviour, IDamageable
                 yield return MoveToSetPosition(point.position);
                 moveCount++;
 
-                if (moveCount % 2 == 0 && currentPhase != FirebirdPhase.Phase3)
+                if (moveCount % movesPerPhase == 0 && currentPhase != FirebirdPhase.Phase3)
                 {
                     currentPhase++;
                 }
@@ -216,22 +224,44 @@ public class Firebird : MonoBehaviour, IDamageable
         return new Vector2(x, y);
     }
 
-    // Coroutine to fire at the player
     IEnumerator FireAtPlayerRoutine()
     {
-
         // Ensure the Firebird is facing the player
         UpdateAnimationDirectionTowardsPlayer();
         while (true)
         {
-            int attackType = Random.Range(0, 2);
-            if (attackType == 0)
-                FireSpreadAtPlayer();
+            // Adjust chance to fire flare scatter pattern based on difficulty
+            float flareChance = 0.1f;
+            if (DifficultyManager.Instance.IsHardMode())
+            {
+                flareChance = 0.3f; // Increased chance on hard mode
+            }
+
+            // Decide if firebird should fire the FlareScatter
+            if (Random.value < flareChance)
+            {
+                FlareScatter();
+            }
             else
-                FireRapidShots();
+            {
+                // Otherwise, pick one of the other attacks to fire
+                int attackType = Random.Range(0, 2);
+                if (attackType == 0)
+                {
+                    FireSpreadAtPlayer();
+                }
+                else
+                {
+                    FireRapidShots();
+                }
+            }
+
+            // Wait for the next attack cycle
             yield return new WaitForSeconds(fireRate);
         }
     }
+
+
 
     void FireRapidShots()
     {
@@ -254,6 +284,20 @@ public class Firebird : MonoBehaviour, IDamageable
         if (projRb != null)
         {
             projRb.velocity = direction * baseProjectileSpeed;
+        }
+    }
+
+    void FlareScatter()
+    {
+        int projectileCount = 15;
+        float angleStep = 360f / projectileCount;
+
+        for (int i = 0; i < projectileCount; i++)
+        {
+            float randomOffset = Random.Range(-10f, 10f);
+            float angle = i * angleStep + randomOffset;
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+            FireProjectile(dir);
         }
     }
 

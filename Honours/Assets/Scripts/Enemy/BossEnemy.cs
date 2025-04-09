@@ -20,13 +20,20 @@ public class BossEnemy : MonoBehaviour
     void Awake()
     {
         formManager = GetComponent<BossFormManager>();
+
+        // Increase health in Hard Mode
+        if (DifficultyManager.Instance != null && DifficultyManager.Instance.IsHardMode())
+        {
+            maxHealth += 50f;
+        }
+
         currentHealth = maxHealth;
     }
 
     void Start()
     {
        currentAnimator = formManager.GetCurrentAnimator();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+       spriteRenderer = GetComponent<SpriteRenderer>();
     }
     public float GetHealthPercentage()
     {

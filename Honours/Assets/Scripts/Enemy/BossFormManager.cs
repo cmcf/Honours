@@ -9,10 +9,8 @@ public class BossFormManager : MonoBehaviour
     Panther pantherScript;
     public float switchCooldown = 10f; // Prevents instant switching
     float lastSwitchTime;
-    public GameObject boss;
-    float bossStartDelay = 0.2f;
     public enum BossForm { Firebird, Panther }
-    public BossForm currentForm = BossForm.Firebird;
+    public BossForm currentForm = BossForm.Panther;
 
     BossEnemy enemy;
 
@@ -20,15 +18,28 @@ public class BossFormManager : MonoBehaviour
     {
         enemy = GetComponent<BossEnemy>();
         pantherScript= GetComponentInChildren<Panther>();
-        boss.gameObject.SetActive(true);
-    }
 
-    public void StartBossBattle()
-    {
-        // Randomly start as Firebird or Panther
-        //currentForm = (Random.value > 0.5f) ? BossForm.Firebird : BossForm.Panther;
+        // Ensure both forms are assigned
+        // if (firebirdForm == null || pantherForm == null)
+        // {
+        //     return;
+        // }
+
+        // Randomly choose between Firebird or Panther form
+        // float randomValue = Random.value;
+        // if (randomValue > 0.5f)
+        // {
+        //     currentForm = BossForm.Firebird;
+        // }
+        // else
+        // {
+        //     currentForm = BossForm.Panther;
+        // }
+
+        // Activate the chosen form
         ActivateForm(currentForm, transform.position);
     }
+
 
     void Update()
     {
@@ -41,36 +52,46 @@ public class BossFormManager : MonoBehaviour
         }
 
         SwitchBasedOnHealth();
-
-        if (RoomController.Instance.startBossAttack)
-        {
-            boss.gameObject.SetActive(true);
-        }
-    }
-
-    bool ShouldSwitchBasedOnPlayerDistance()
-    {
-        Transform player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        if (player == null) return false;
-
-        float distance = Vector2.Distance(transform.position, player.position);
-
-        if (currentForm == BossForm.Firebird && distance < 3f) return true; // Player is too close
-        if (currentForm == BossForm.Panther && distance > 6f) return true; // Player is too far
-
-        return false;
     }
 
     void SwitchForm()
     {
         lastSwitchTime = Time.time;
 
+        // Check if the forms are assigned to avoid NullReferenceException
+        if (firebirdForm == null || pantherForm == null)
+        {
+            return;
+        }
+
         // Get the current active form's position before switching
-        Vector3 lastPosition = (currentForm == BossForm.Firebird) ? firebirdForm.transform.position : pantherForm.transform.position;
+        Vector3 lastPosition;
+        if (currentForm == BossForm.Firebird)
+        {
+            lastPosition = firebirdForm.transform.position;
+        }
+        else
+        {
+            lastPosition = pantherForm.transform.position;
+        }
 
         // Swap to the other form
-        currentForm = (currentForm == BossForm.Firebird) ? BossForm.Panther : BossForm.Firebird;
-        ActivateForm(currentForm, lastPosition);
+        if (currentForm == BossForm.Firebird)
+        {
+            currentForm = BossForm.Panther;
+        }
+        else
+        {
+            currentForm = BossForm.Firebird;
+        }
+
+        if (lastPosition != null)
+        {
+            // Call ActivateForm with the new form and the position
+            ActivateForm(currentForm, lastPosition);
+        } 
+
+        // Update animator and Rigidbody2D references
         GetCurrentAnimator();
         GetCurrentRb();
     }
@@ -93,9 +114,15 @@ public class BossFormManager : MonoBehaviour
         else
         {
             pantherForm.transform.position = position;
-            pantherScript.StartAttacking();
+            Panther pantherScript = pantherForm.GetComponent<Panther>();
+            if (pantherScript != null)
+            {
+                StopAllCoroutines(); // Stop any lingering coroutines
+                pantherScript.RestartBossRoutine(); // Restart Firebird's behaviour
+            }
         }
     }
+
 
 
     public Animator GetCurrentAnimator()
