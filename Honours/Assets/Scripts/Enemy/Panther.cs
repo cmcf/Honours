@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.XR;
 using static Damage;
 using Random = UnityEngine.Random;
 
@@ -62,13 +60,66 @@ public class Panther : MonoBehaviour, IDamageable
     public enum PantherState { Defend, Charge, Attack }
     public PantherState currentPhase = PantherState.Defend;
 
+    int difficultyLevel;
+    bool isHardMode;
+
     void Start()
     {
+        // References to components
         player = GameObject.FindGameObjectWithTag("Player").transform;
         shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
+
+        // Get current difficulty
+        difficultyLevel = DifficultyManager.Instance.currentDifficulty;
+        isHardMode = DifficultyManager.Instance.IsHardMode();
+        ApplyDifficultySettings();
+
+    }
+
+    void ApplyDifficultySettings()
+    {
+        if (difficultyLevel >= 4)
+        {
+            chargeSpeed += 2f;
+            chargeCooldown -= 1f;
+
+            attackDamage += 2;
+            attackCooldown -= 0.25f;
+
+            projectileSpeed += 1.5f;
+            orbitSpeed += 20f;
+            shieldCount += 1;
+
+            minShieldDuration -= 1f;
+            maxShieldDuration -= 1.5f;
+        }
+
+        if (isHardMode)
+        {
+            chargeSpeed += 2.5f;
+            chargeCooldown -= 1f;
+
+            attackDamage += 4;
+            attackCooldown -= 0.25f;
+
+            projectileSpeed += 2f;
+            orbitSpeed += 40f;
+            shieldCount += 1;
+
+            minShieldDuration -= 1.5f;
+            maxShieldDuration -= 2f;
+        }
+
+        // Clamp to sensible values
+        chargeCooldown = Mathf.Max(1f, chargeCooldown);
+        attackCooldown = Mathf.Max(0.3f, attackCooldown);
+        minShieldDuration = Mathf.Max(1f, minShieldDuration);
+        maxShieldDuration = Mathf.Max(minShieldDuration + 0.5f, maxShieldDuration);
+
+        shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
     }
 
     void OnEnable()

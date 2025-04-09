@@ -24,7 +24,7 @@ public class BossEnemy : MonoBehaviour
         // Increase health in Hard Mode
         if (DifficultyManager.Instance != null && DifficultyManager.Instance.IsHardMode())
         {
-            maxHealth *= 1f;
+            maxHealth += 50f;
         }
 
         currentHealth = maxHealth;
