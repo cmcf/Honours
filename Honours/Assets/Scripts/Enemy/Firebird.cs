@@ -26,6 +26,7 @@ public class Firebird : MonoBehaviour, IDamageable
     Coroutine firingCoroutine;
     bool isMoving = false;
     bool hasAppeared = false;
+    int movesPerPhase = 2;
 
     // Enum for different phases of the boss
     public enum FirebirdPhase { Phase1, Phase2, Phase3 }
@@ -47,6 +48,11 @@ public class Firebird : MonoBehaviour, IDamageable
         {
             // First-time appearance
             StartCoroutine(WaitForAppearanceAndStartRoutine());
+        }
+
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            movesPerPhase = -1;
         }
     }
 
@@ -111,7 +117,7 @@ public class Firebird : MonoBehaviour, IDamageable
                 yield return MoveToSetPosition(point.position);
                 moveCount++;
 
-                if (moveCount % 2 == 0 && currentPhase != FirebirdPhase.Phase3)
+                if (moveCount % movesPerPhase == 0 && currentPhase != FirebirdPhase.Phase3)
                 {
                     currentPhase++;
                 }
