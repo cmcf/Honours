@@ -53,6 +53,7 @@ public class Firebird : MonoBehaviour, IDamageable
         if (DifficultyManager.Instance.IsHardMode())
         {
             movesPerPhase = -1;
+            baseProjectileSpeed += 0.2f;
         }
     }
 
@@ -225,19 +226,41 @@ public class Firebird : MonoBehaviour, IDamageable
     // Coroutine to fire at the player
     IEnumerator FireAtPlayerRoutine()
     {
-
         // Ensure the Firebird is facing the player
         UpdateAnimationDirectionTowardsPlayer();
         while (true)
         {
-            int attackType = Random.Range(0, 2);
-            if (attackType == 0)
-                FireSpreadAtPlayer();
+            // Higher chance to fire flare projectile pattern in hard mode
+            float flareChance = 0.2f;
+            if (DifficultyManager.Instance.IsHardMode())
+            {
+                flareChance = 0.5f;
+            }
+
+            // Decide if firebird should fire the FlareScatter
+            if (Random.value < flareChance)
+            {
+                FlareScatter();
+            }
             else
-                FireRapidShots();
+            {
+                // Otherwise, pick one of the other attacks to fire
+                int attackType = Random.Range(0, 2);
+                if (attackType == 0)
+                {
+                    FireSpreadAtPlayer();
+                }
+                else
+                {
+                    FireRapidShots();
+                }
+            }
+
+            // Wait for the next attack cycle
             yield return new WaitForSeconds(fireRate);
         }
     }
+
 
     void FireRapidShots()
     {
@@ -260,6 +283,20 @@ public class Firebird : MonoBehaviour, IDamageable
         if (projRb != null)
         {
             projRb.velocity = direction * baseProjectileSpeed;
+        }
+    }
+
+    void FlareScatter()
+    {
+        int projectileCount = 15;
+        float angleStep = 360f / projectileCount;
+
+        for (int i = 0; i < projectileCount; i++)
+        {
+            float randomOffset = Random.Range(-10f, 10f);
+            float angle = i * angleStep + randomOffset;
+            Vector2 dir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+            FireProjectile(dir);
         }
     }
 
