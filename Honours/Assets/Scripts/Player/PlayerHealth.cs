@@ -32,7 +32,7 @@ public class PlayerHealth : MonoBehaviour
     void UpdateHealthText()
     {
         // Update the health text to display current health
-        healthText.text = "Health: " + currentHealth.ToString("0");
+        healthText.text = "HEALTH: " + currentHealth.ToString("0");
     }
 
     public float GetCurrentHealth()
