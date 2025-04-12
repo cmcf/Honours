@@ -218,19 +218,19 @@ MonoBehaviour:
   shieldPrefab: {fileID: 4040207891986179867, guid: 7f56e55fb035b6a4ebbb271a68a1a371, type: 3}
   shieldSpawnPoint: {fileID: 4340094830958518983}
   shieldActive: 0
-  minShieldDuration: 5.5
-  maxShieldDuration: 8.5
+  minShieldDuration: 5
+  maxShieldDuration: 8
   orbitRadius: 0.8
   orbitSpeed: 115
-  projectileSpeed: 8.5
+  projectileSpeed: 8
   respawnShieldDelay: 4
   defendStateDuration: 5
   vulnerabilityTime: 8
-  shieldCooldown: 2
+  shieldCooldown: 3
   canActivateShield: 1
   shieldCount: 5
-  currentState: 0
   currentPhase: 2
+  currentBossState: 0
 --- !u!96 &2834042001106705526
 TrailRenderer:
   serializedVersion: 3
