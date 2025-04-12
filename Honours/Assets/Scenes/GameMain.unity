@@ -644,7 +644,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1480376461}
   - component: {fileID: 1480376460}
-  - component: {fileID: 1480376459}
   m_Layer: 0
   m_Name: DifficultyManager
   m_TagString: Untagged
@@ -652,25 +651,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1480376459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480376458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9801206178c4a304bb4bc733ee112f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDifficultyLevel: 0
-  currentDifficulty: 2
-  hardModeEnabled: 1
-  damageTakenThisRoom: 0
-  difficultyIncreaseRate: 1
-  maxDeathsBeforeLowering: 3
-  damageThreshold: 0.5
 --- !u!114 &1480376460
 MonoBehaviour:
   m_ObjectHideFlags: 0
