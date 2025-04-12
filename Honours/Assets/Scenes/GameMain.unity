@@ -457,7 +457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110, y: -30}
+  m_AnchoredPosition: {x: 110, y: -35}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210541548
@@ -482,8 +482,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}
+  m_sharedMaterial: {fileID: 7650530073226646864, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -644,7 +644,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1480376461}
   - component: {fileID: 1480376460}
-  - component: {fileID: 1480376459}
   m_Layer: 0
   m_Name: DifficultyManager
   m_TagString: Untagged
@@ -652,25 +651,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1480376459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480376458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9801206178c4a304bb4bc733ee112f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseDifficultyLevel: 0
-  currentDifficulty: 2
-  hardModeEnabled: 1
-  damageTakenThisRoom: 0
-  difficultyIncreaseRate: 1
-  maxDeathsBeforeLowering: 3
-  damageThreshold: 0.5
 --- !u!114 &1480376460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,7 +1040,7 @@ MonoBehaviour:
   healthText: {fileID: 1210541548}
   maxHealth: 250
   currentHealth: 250
-  reloadDelay: 2
+  reloadDelay: 2.5
 --- !u!4 &181472975548114405
 Transform:
   m_ObjectHideFlags: 0
