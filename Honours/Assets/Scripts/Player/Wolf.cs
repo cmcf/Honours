@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static Damage;
 
-public class Wolf : MonoBehaviour, IDamageable
+public class Wolf : MonoBehaviour
 {
     [Header("References")]
     Rigidbody2D rb;
@@ -385,13 +385,7 @@ public class Wolf : MonoBehaviour, IDamageable
         }
     }
 
-    public void Damage(int damage)
-    {
-        if (isDead) { return; }
-        // Current health is decreased by the damage received
-        playerHealth.TakeDamage(damage);
-    }
-
+   
     public void DestroyKnives()
     {
         // Loop through all the orbiting knives and destroy them
