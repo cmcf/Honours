@@ -23,6 +23,8 @@ public class RoomController : MonoBehaviour
     [Header("Rooms")]
     public List<RoomSO> availableRooms;
     public List<RoomSO> advancedRooms;
+    List<RoomSO> usedRooms = new List<RoomSO>();
+
     public RoomSO bossRoom;
     public RoomSO advancedBossRoom;
     public RoomSO spawnRoom;
@@ -108,14 +110,19 @@ public class RoomController : MonoBehaviour
             }
         }
 
-        RoomSO nextRoomSO;
-        do
-        {
-            nextRoomSO = roomPool[Random.Range(0, roomPool.Count)];
-        }
-        while (nextRoomSO == currentRoom.roomSO && roomPool.Count > 1);
+        // Create a filtered pool that excludes already used rooms
+        List<RoomSO> filteredPool = roomPool.FindAll(room => !usedRooms.Contains(room));
 
+        if (filteredPool.Count == 0)
+        {
+            Debug.LogWarning("All rooms have been used");
+            filteredPool = new List<RoomSO>(roomPool); // Reset if needed
+            usedRooms.Clear(); 
+        }
+
+        RoomSO nextRoomSO = filteredPool[Random.Range(0, filteredPool.Count)];
         LoadRoom(nextRoomSO, door.doorType);
+        usedRooms.Add(nextRoomSO);
     }
 
 

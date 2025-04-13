@@ -1515,7 +1515,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 82587c4b4285c054582679655737b35a, type: 2}
   - {fileID: 11400000, guid: 0dee4c4d86f76c2448219d9cedfde7fa, type: 2}
   - {fileID: 11400000, guid: 458c19de674a2f247a16c5cb08f5fc21, type: 2}
-  - {fileID: 11400000, guid: 58b76c291c8817045bb54db75fd325f8, type: 2}
   - {fileID: 11400000, guid: f47f95bbfbb8bb2409232d0a3934007b, type: 2}
   - {fileID: 11400000, guid: 53986a9a7c502b5468a285f70e82e99d, type: 2}
   - {fileID: 11400000, guid: 28fc17251622e214789ce5a02e9bcba7, type: 2}
@@ -1525,6 +1524,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 13e67cf276d1dbb4fa272cb940ce3da2, type: 2}
   - {fileID: 11400000, guid: 3a69bd04dde4da74cb8c6dea95e89b02, type: 2}
   - {fileID: 11400000, guid: bfb21c82b1ae09a459706c3ce9895708, type: 2}
+  - {fileID: 11400000, guid: 58b76c291c8817045bb54db75fd325f8, type: 2}
   bossRoom: {fileID: 11400000, guid: 80502975e89c90b44a9a36edb9a6c775, type: 2}
   advancedBossRoom: {fileID: 11400000, guid: 1bd0aa412ecbabb4d8a3cfa2a398956a, type: 2}
   spawnRoom: {fileID: 11400000, guid: c99e7c48c13536f43bdfc3bd2a3c479d, type: 2}
@@ -1533,7 +1533,7 @@ MonoBehaviour:
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
   roomsCompleted: 0
-  roomsBeforeBoss: 8
+  roomsBeforeBoss: 9
   startBossAttack: 0
   healthThreshold: 0.3
 --- !u!4 &2019253176
@@ -1597,7 +1597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   healthText: {fileID: 1210541548}
-  healthSlider: {fileID: 0}
+  healthSlider: {fileID: 1551868746}
   maxHealth: 250
   currentHealth: 250
   reloadDelay: 2.5
