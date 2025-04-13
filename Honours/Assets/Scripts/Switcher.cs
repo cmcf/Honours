@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class CharacterInfo
@@ -21,9 +22,11 @@ public class Switcher : MonoBehaviour
     public PlayerInput playerInput; // Reference to PlayerInput component
     public CinemachineVirtualCamera virtualCamera;
 
+    [SerializeField] Slider wolfSlider;
+
     public List<CharacterInfo> characters = new List<CharacterInfo>();
-    private int currentCharacterIndex = 0;
-    private Vector3 previousCharacterPosition = Vector3.zero; // Store the previous character's position
+    int currentCharacterIndex = 0;
+    Vector3 previousCharacterPosition = Vector3.zero; // Store the previous character's position
     public  CharacterState currentCharacterState;
 
     [SerializeField] float switchVFXDuration = 0.2f;
@@ -44,6 +47,13 @@ public class Switcher : MonoBehaviour
     public bool canMoveWolf = false;
 
     public int currentSpawnPointIndex = 0;
+
+    [SerializeField] float wolfFormDuration = 10f; // seconds allowed in wolf form
+    [SerializeField] float wolfCooldownTime = 15f; // cooldown after using wolf
+
+    float currentWolfTime = 0f;
+    float currentCooldown = 0f;
+    bool wolfOnCooldown = false;
 
 
     public void UpdateSpawnIndex(int newIndex)
@@ -99,10 +109,48 @@ public class Switcher : MonoBehaviour
             canMovePlayer = true;
 
         }
+        // Handles wolf cooldown and UI values
+
+        if (currentCharacterState == CharacterState.Wolf)
+        {
+            currentWolfTime += Time.deltaTime;
+            float timeLeft = Mathf.Clamp(wolfFormDuration - currentWolfTime, 0, wolfFormDuration);
+
+            wolfSlider.gameObject.SetActive(true);
+            wolfSlider.maxValue = wolfFormDuration;
+            wolfSlider.value = timeLeft;
+
+            if (currentWolfTime >= wolfFormDuration)
+            {
+                ForceSwitchToPlayer(); 
+            }
+        }
+        else if (wolfOnCooldown)
+        {
+            currentCooldown -= Time.deltaTime;
+            float fillAmount = Mathf.Clamp(wolfCooldownTime - currentCooldown, 0, wolfCooldownTime);
+
+            wolfSlider.gameObject.SetActive(true);
+            wolfSlider.maxValue = wolfCooldownTime;
+            wolfSlider.value = fillAmount;
+
+            if (currentCooldown <= 0f)
+            {
+                wolfOnCooldown = false;
+            }
+        }
+        else
+        {
+            // Wolf ability ready
+            wolfSlider.gameObject.SetActive(true);
+            wolfSlider.maxValue = 1f;
+            wolfSlider.value = 1f;
+        }
     }
     void OnSwitch(InputAction.CallbackContext context)
     {
-        if (!canSwitch) return; // Prevent switching if locked
+        if (!canSwitch || isSwitching || (currentCharacterState == CharacterState.Player && wolfOnCooldown))
+            return; // Prevent switching if cooldown has not passed
 
         // Disable movement for the current character during switching
         canMovePlayer = false;
@@ -135,6 +183,7 @@ public class Switcher : MonoBehaviour
         // Stop previous and current character movement
         if (currentCharacterState == CharacterState.Player)
         {
+            currentWolfTime = 0f; // Reset wolf duration
             PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>();
             playerMovement.DisableInput();
 
@@ -146,6 +195,9 @@ public class Switcher : MonoBehaviour
             // Disable wolf input and stop movement
             Wolf wolfMovement = wolfObject.GetComponent<Wolf>();
             wolfMovement.DisableInput();
+
+            currentCooldown = wolfCooldownTime;
+            wolfOnCooldown = true;
 
             // Destroy wolf's orbiting knives when switching to player
             wolfMovement.DestroyKnives();  
@@ -179,6 +231,29 @@ public class Switcher : MonoBehaviour
             Invoke("EnableSwitch", 1f);  
         }
     }
+
+    void ForceSwitchToPlayer()
+    {
+        if (currentCharacterState != CharacterState.Wolf) return;
+
+        // Deactivate Wolf
+        wolfObject.SetActive(false);
+        currentCharacterIndex = characters.FindIndex(c => c.character == playerObject);
+        currentCharacterState = CharacterState.Player;
+
+        // Activate Player
+        playerObject.SetActive(true);
+        playerTransform = playerObject.transform;
+        playerTransform.position = wolfObject.transform.position;
+
+        // Camera follow
+        SwitchCameraFollow(playerTransform);
+
+        currentCooldown = wolfCooldownTime;
+        wolfOnCooldown = true;
+        currentWolfTime = 0f;
+    }
+
 
     void SwitchCameraFollow(Transform newTarget)
     {
