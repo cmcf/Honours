@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro; 
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
     public TextMeshProUGUI healthText;
+    public Slider healthSlider;
 
     public float maxHealth = 50f;
     public float currentHealth;
@@ -31,8 +33,21 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthText()
     {
-        // Update the health text to display current health
-        healthText.text = "HEALTH: " + currentHealth.ToString("0");
+        // Clamp health
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // Update slider
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
+        }
+
+        // Update text
+        if (healthText != null)
+        {
+            healthText.text = Mathf.CeilToInt(currentHealth) + " / " + Mathf.CeilToInt(maxHealth);
+        }
     }
 
     public float GetCurrentHealth()
