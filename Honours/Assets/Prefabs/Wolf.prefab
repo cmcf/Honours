@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2838fcfee23ff24cb54a6398c27ffba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  biteModifier: {fileID: 11400000, guid: 1d265812f3f8b284db12d3a36a96a1ad, type: 2}
+  biteModifier: {fileID: 11400000, guid: 0f62b6787b111d64dbb41159daf465ff, type: 2}
   firePoint: {fileID: 3152275633236677545}
   knifePrefab: {fileID: 4040207891986179867, guid: a76f47dc5e7064b4e9b3f8b8256cc770, type: 3}
   defaultSpeed: 6
@@ -112,7 +112,7 @@ MonoBehaviour:
   knifeSpeed: 7
   orbitRadius: 0.7
   orbitSpeed: 225
-  knifeCount: 8
+  knifeCount: 6
   shieldDuration: 1.5
   knifeCooldown: 0.5
   bitePoint: {fileID: 3152275633236677545}

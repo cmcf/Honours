@@ -84,7 +84,7 @@ public class RoomController : MonoBehaviour
         List<RoomSO> roomPool;
 
         // Decide which pool to use based on difficulty level
-        if (DifficultyManager.Instance.currentDifficulty >= 3 && advancedRooms != null && advancedRooms.Count > 0)
+        if (DifficultyManager.Instance.currentDifficulty >= 4 && advancedRooms != null && advancedRooms.Count > 0)
         {
             roomPool = advancedRooms;
         }
