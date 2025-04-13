@@ -8,7 +8,6 @@ public class Chest : MonoBehaviour
     PlayerHealth playerHealth;
     public Transform spawnPoint;
     public GameObject weaponPickupPrefab;
-    public GameObject biteModifierPrefab;
     public GameObject healthPrefab;
 
     bool playerInRange = false;
@@ -99,14 +98,11 @@ public class Chest : MonoBehaviour
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
-            else if (randomValue < 0.7f) // 30% chance weapon
+            else 
             {
                 pickupPrefabToSpawn = weaponPickupPrefab;
             }
-            else // 30% chance bite modifier
-            {
-                pickupPrefabToSpawn = biteModifierPrefab;
-            }
+
         }
         else
         {
@@ -114,10 +110,7 @@ public class Chest : MonoBehaviour
             {
                 pickupPrefabToSpawn = weaponPickupPrefab;
             }
-            else if (randomValue < 0.8f) // 30% chance bite modifier
-            {
-                pickupPrefabToSpawn = biteModifierPrefab;
-            }
+
             else if (canSpawnHealth) // 20% chance health 
             {
                 pickupPrefabToSpawn = healthPrefab;

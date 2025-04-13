@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   promptPrefab: {fileID: 2006215450016454609}
-  healAmount: 20
+  minHealAmount: 20
+  maxHealAmount: 55
 --- !u!1001 &2373085618715294502
 PrefabInstance:
   m_ObjectHideFlags: 0

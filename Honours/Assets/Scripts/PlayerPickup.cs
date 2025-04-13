@@ -22,6 +22,12 @@ public class PlayerPickup : MonoBehaviour
         PlayerInput playerInput = FindObjectOfType<PlayerInput>();
         interactAction = playerInput.actions["Interact"];
 
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            maxHealAmount -= 15;
+            minHealAmount -= 5;
+        }
+
         // Ensure the prompt starts hidden
         if (promptPrefab != null)
         {
