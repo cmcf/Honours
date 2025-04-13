@@ -342,14 +342,22 @@ public class Wolf : MonoBehaviour, IDamageable
     {
         int direction = 0; // Default to Down
 
-        // Set direction based on last move direction
-        if (lastMoveDirection.y > 0) direction = 1;  // Up
-        else if (lastMoveDirection.y < 0) direction = 0;  // Down
-        else if (lastMoveDirection.x < 0) direction = 2;  // Left
-        else if (lastMoveDirection.x > 0) direction = 3;  // Right
+        if (Mathf.Abs(lastMoveDirection.x) > Mathf.Abs(lastMoveDirection.y))
+        {
+            // Horizontal direction dominates
+            if (lastMoveDirection.x > 0) direction = 3; // Right
+            else direction = 2; // Left
+        }
+        else
+        {
+            // Vertical direction dominates
+            if (lastMoveDirection.y > 0) direction = 1; // Up
+            else direction = 0; // Down
+        }
 
-        animator.SetInteger("BiteDirection", direction); // Set the BiteDirection parameter
+        animator.SetInteger("BiteDirection", direction);
     }
+
 
     void UpdateAnimation()
     {
