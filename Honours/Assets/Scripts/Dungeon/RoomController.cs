@@ -85,6 +85,16 @@ public class RoomController : MonoBehaviour
     {
         List<RoomSO> roomPool;
 
+        // Check if it's time to spawn a reward room
+        if ((roomsCompleted + 1) % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
+        {
+            if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
+            {
+                LoadRoom(rewardRoom, door.doorType);
+                return;
+            }
+        }
+
         // Decide which pool to use based on difficulty level
         if (DifficultyManager.Instance.currentDifficulty >= 4 && advancedRooms != null && advancedRooms.Count > 0)
         {
@@ -99,17 +109,7 @@ public class RoomController : MonoBehaviour
         {
             return;
         }
-
-        // Check if it's time to spawn a reward room
-        if (roomsCompleted % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
-        {
-            if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
-            {
-                LoadRoom(rewardRoom, door.doorType);
-                return;
-            }
-        }
-
+   
         // Create a filtered pool that excludes already used rooms
         List<RoomSO> filteredPool = roomPool.FindAll(room => !usedRooms.Contains(room));
 

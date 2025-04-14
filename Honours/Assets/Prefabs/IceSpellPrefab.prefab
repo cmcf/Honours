@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1297281602065459045}
   m_Layer: 0
   m_Name: IceSpellPrefab
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78be3471fa3841e4d865e8b2346914ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 20
   freezeDuration: 0.5
   isIce: 1
 --- !u!70 &1297281602065459045
