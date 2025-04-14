@@ -27,35 +27,31 @@ public class Chest : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player")) return;
+
+        playerInRange = true;
+
+        if (isRewardRoom)
         {
-            playerInRange = true;
-
-            if (isRewardRoom)
-            {
-                animator.SetTrigger("openChest");
-
-                if (!pickupSpawned)
-                {
-                    pickupSpawned = true;
-                    Invoke("SpawnRandomPickup", itemSpawnDelay);
-                }
-            }
-            else if (!isRewardRoom && room.AreAllEnemiesDefeated())
-            {
-                enemiesDefeated = room.AreAllEnemiesDefeated();
-                if (enemiesDefeated && playerInRange)
-                {
-                    animator.SetTrigger("openChest");
-                    if (!pickupSpawned)
-                    {
-                        pickupSpawned = true;
-                        Invoke("SpawnRandomPickup", itemSpawnDelay);
-                    }
-                }
-            }
+            OpenChest();
+        }
+        else if (room.hasSpawnedEnemies && room.AreAllEnemiesDefeated())
+        {
+            enemiesDefeated = true;
+            OpenChest();
         }
     }
+
+    void OpenChest()
+    {
+        if (!pickupSpawned)
+        {
+            animator.SetTrigger("openChest");
+            pickupSpawned = true;
+            Invoke("SpawnRandomPickup", itemSpawnDelay);
+        }
+    }
+
 
     void OnTriggerExit2D(Collider2D other)
     {
@@ -71,7 +67,7 @@ public class Chest : MonoBehaviour
         // Only attempt to open chest if player is in range
         if (enemiesDefeated && playerInRange)
         {
-            animator.SetTrigger("openChest");
+            OpenChest();
 
         }
     }

@@ -23,6 +23,8 @@ public class RoomController : MonoBehaviour
     [Header("Rooms")]
     public List<RoomSO> availableRooms;
     public List<RoomSO> advancedRooms;
+    List<RoomSO> usedRooms = new List<RoomSO>();
+
     public RoomSO bossRoom;
     public RoomSO advancedBossRoom;
     public RoomSO spawnRoom;
@@ -83,6 +85,16 @@ public class RoomController : MonoBehaviour
     {
         List<RoomSO> roomPool;
 
+        // Check if it's time to spawn a reward room
+        if ((roomsCompleted + 1) % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
+        {
+            if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
+            {
+                LoadRoom(rewardRoom, door.doorType);
+                return;
+            }
+        }
+
         // Decide which pool to use based on difficulty level
         if (DifficultyManager.Instance.currentDifficulty >= 4 && advancedRooms != null && advancedRooms.Count > 0)
         {
@@ -97,25 +109,20 @@ public class RoomController : MonoBehaviour
         {
             return;
         }
+   
+        // Create a filtered pool that excludes already used rooms
+        List<RoomSO> filteredPool = roomPool.FindAll(room => !usedRooms.Contains(room));
 
-        // Check if it's time to spawn a reward room
-        if (roomsCompleted % 3 == 0 && rewardRoom != null && rewardRoom.roomPrefab != null)
+        if (filteredPool.Count == 0)
         {
-            if (playerHealth != null && playerHealth.currentHealth <= playerHealth.maxHealth * healthThreshold)
-            {
-                LoadRoom(rewardRoom, door.doorType);
-                return;
-            }
+            Debug.LogWarning("All rooms have been used");
+            filteredPool = new List<RoomSO>(roomPool); // Reset if needed
+            usedRooms.Clear(); 
         }
 
-        RoomSO nextRoomSO;
-        do
-        {
-            nextRoomSO = roomPool[Random.Range(0, roomPool.Count)];
-        }
-        while (nextRoomSO == currentRoom.roomSO && roomPool.Count > 1);
-
+        RoomSO nextRoomSO = filteredPool[Random.Range(0, filteredPool.Count)];
         LoadRoom(nextRoomSO, door.doorType);
+        usedRooms.Add(nextRoomSO);
     }
 
 

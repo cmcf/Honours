@@ -14,6 +14,9 @@ public class ObjectRoomSpawner : MonoBehaviour
     public int minEnemies => SpawnRateManager.Instance.minAmountOfEnemies;
     public int maxEnemies => SpawnRateManager.Instance.maxAmountOfEnemies;
 
+    public int maxRangedEnemiesAlive = 2;
+    private int currentRangedEnemiesAlive = 0;
+
     public int maxWaves = 2; // Number of waves in a room
     public int currentWave = 0;
 
@@ -21,11 +24,13 @@ public class ObjectRoomSpawner : MonoBehaviour
 
     public List<SpawnerData> meleeEnemies; // List of melee enemies
     public List<SpawnerData> rangedEnemies; // List of ranged enemies
+    Dictionary<Enemy, bool> spawnedRangedEnemies = new Dictionary<Enemy, bool>(); // Tracks if an enemy is ranged
+
 
     [SerializeField] float delayBetweenSpawns = 0.6f;
 
     public int maxEnemiesPerRoom => SpawnRateManager.Instance.maxAmountOfEnemiesInRoom; // Maximum enemies allowed per room
-    private int totalEnemiesSpawnedInRoom = 0; // Tracks the total number of enemies spawned in the current room
+    int totalEnemiesSpawnedInRoom = 0; // Tracks the total number of enemies spawned in the current room
 
     public void StartSpawningEnemies(Room room)
     {
@@ -116,20 +121,38 @@ public class ObjectRoomSpawner : MonoBehaviour
         SpawnerData enemyToSpawn;
         bool hasMeleeEnemies = meleeEnemies.Count > 0;
         bool hasRangedEnemies = rangedEnemies.Count > 0;
+        bool isRanged = false; // Used to track if the spawned enemy is ranged
 
         if (!hasMeleeEnemies && !hasRangedEnemies) return;
-
+        // Selectes any melee or ranged enemy from the lists
         if (hasMeleeEnemies && hasRangedEnemies)
         {
-            enemyToSpawn = Random.value > 0.5f ?
-                meleeEnemies[Random.Range(0, meleeEnemies.Count)] :
-                rangedEnemies[Random.Range(0, rangedEnemies.Count)];
+            bool chooseRanged = Random.value > 0.5f;
+
+            if (chooseRanged && currentRangedEnemiesAlive < maxRangedEnemiesAlive)
+            {
+                enemyToSpawn = rangedEnemies[Random.Range(0, rangedEnemies.Count)];
+                currentRangedEnemiesAlive++;
+                isRanged = true;
+            }
+            else
+            {
+                enemyToSpawn = meleeEnemies[Random.Range(0, meleeEnemies.Count)];
+            }
+        }
+        else if (hasRangedEnemies && currentRangedEnemiesAlive < maxRangedEnemiesAlive)
+        {
+            enemyToSpawn = rangedEnemies[Random.Range(0, rangedEnemies.Count)];
+            currentRangedEnemiesAlive++;
+            isRanged = true;
+        }
+        else if (hasMeleeEnemies)
+        {
+            enemyToSpawn = meleeEnemies[Random.Range(0, meleeEnemies.Count)];
         }
         else
         {
-            enemyToSpawn = hasRangedEnemies ?
-                rangedEnemies[Random.Range(0, rangedEnemies.Count)] :
-                meleeEnemies[Random.Range(0, meleeEnemies.Count)];
+            return; // No enemies can be spawned
         }
 
         // Instantiate enemy
@@ -140,7 +163,10 @@ public class ObjectRoomSpawner : MonoBehaviour
         Enemy enemyScript = enemy.GetComponent<Enemy>();
         if (enemyScript != null)
         {
-            enemyScript.OnDeathEvent += () => OnEnemyDefeated(room);
+            // Track whether this enemy was ranged
+            spawnedRangedEnemies[enemyScript] = isRanged;
+
+            enemyScript.OnDeathEvent += () => OnEnemyDefeated(room, enemyScript);
         }
 
         currentEnemies++;
@@ -149,11 +175,18 @@ public class ObjectRoomSpawner : MonoBehaviour
 
 
     // Called when an enemy is defeated
-    public void OnEnemyDefeated(Room room)
+    public void OnEnemyDefeated(Room room, Enemy enemyScript)
     {
         currentEnemies--; // Reduce the current enemy count
 
-        // If all enemies are defeated, check if another wave should start
+        // If the defeated enemy was ranged, reduce the ranged count
+        if (spawnedRangedEnemies.TryGetValue(enemyScript, out bool wasRanged) && wasRanged)
+        {
+            currentRangedEnemiesAlive--;
+            spawnedRangedEnemies.Remove(enemyScript);
+        }
+
+        // If all enemies in the current wave are defeated, check what to do next
         if (currentEnemies <= 0)
         {
             // If there's still another wave to spawn, do not check for room completion yet
@@ -165,12 +198,14 @@ public class ObjectRoomSpawner : MonoBehaviour
             else
             {
                 // Ensure room is checked after all enemies have spawned
-                if (totalEnemiesSpawnedInRoom == currentWave) 
+                if (totalEnemiesSpawnedInRoom == currentWave)
                 {
-                    room.CheckRoomCompletion(); 
+                    room.CheckRoomCompletion();
                 }
             }
         }
     }
+
+
 }
 

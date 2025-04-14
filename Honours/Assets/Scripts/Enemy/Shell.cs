@@ -49,6 +49,7 @@ public class Shell : Enemy
 
     void Update()
     {
+        if (!isActive) { return; }; 
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         if (player == null) return;
 

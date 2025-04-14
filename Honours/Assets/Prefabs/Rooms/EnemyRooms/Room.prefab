@@ -28330,6 +28330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5d9e4866adc8458f5759e0b0164cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRangedEnemiesAlive: 6
   maxWaves: 2
   currentWave: 0
   currentEnemies: 0

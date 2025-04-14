@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 8715443538501394403, guid: 01a52dc4d279cc74c853379e0048ae1f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -173,7 +173,6 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   maxHealth: 25
   currentHealth: 25
-  moveSpeed: 0
   freezeTimer: 0
   level: 0
   isActive: 1
@@ -187,6 +186,7 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 692992179035292846}
   projectileSpeed: 5
   projectileLife: 1
+  doubleShotChance: 0.2
 --- !u!95 &8557555593478873894
 Animator:
   serializedVersion: 7

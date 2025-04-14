@@ -142,7 +142,7 @@ MonoBehaviour:
   isActive: 1
   currentState: 1
   stoppingDistance: 0.3
-  moveSpeed: 3
+  moveSpeed: 2.8
   moveSpeedIncrease: 1
   minDamageAmount: 6
   maxDamageAmount: 15
