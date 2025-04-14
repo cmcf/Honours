@@ -154,6 +154,7 @@ public class Room : MonoBehaviour
     {
         if (spawner != null)
         {
+            hasSpawnedEnemies = true;
             spawner.StartSpawningEnemies(this);
         }
     }
