@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Poison
   m_EditorClassIdentifier: 
   weaponName: Poison
-  weaponType: 3
+  weaponType: 4
   weaponSprite: {fileID: -3174258823303706468, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
-  bulletPrefab: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
+  bulletPrefab: {fileID: 2477896251280384620, guid: 58c1666a53fff3248ac482cf3065f4e6, type: 3}
   bulletSpeed: 10
-  bulletLifetime: 1.5
+  bulletLifetime: 1
   fireDelay: 0.6
-  minDamage: 5
-  maxDamage: 15
+  minDamage: 4
+  maxDamage: 8

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IDamageable
     public SpriteRenderer weaponRenderer;
     Switcher characterSwitcher;
     PlayerHealth playerHealth;
+    public Transform poisonBulletSpawn;
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
@@ -179,6 +180,9 @@ public class Player : MonoBehaviour, IDamageable
             case Weapon.WeaponType.Ice:
                 FireIceBullet(direction);
                 break;
+            case Weapon.WeaponType.Poison:
+                FirePoisonBullet(direction);
+                break;
             case Weapon.WeaponType.Automatic:
                 if (!isAutoFiring)
                 {
@@ -209,6 +213,32 @@ public class Player : MonoBehaviour, IDamageable
             bullet.isIce = false;
         }
     }
+
+    void FirePoisonBullet(Vector3 direction)
+    {
+        direction.Normalize();
+        Vector3 bulletSpawnPosition = poisonBulletSpawn.position;
+        GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
+
+        projectile.transform.position = bulletSpawnPosition;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
+
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * currentWeapon.bulletSpeed;
+        }
+
+        Bullet bullet = projectile.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(currentWeapon.GetRandomDamage());
+            bullet.isPoison = true; 
+        }
+    }
+
 
     IEnumerator FireRapid(Vector3 direction)
     {

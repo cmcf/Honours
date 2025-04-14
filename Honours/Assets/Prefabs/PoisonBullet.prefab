@@ -100,7 +100,7 @@ Animator:
   m_GameObject: {fileID: 2477896251280384620}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a0f7eed236fe98e498b140af31a4d58b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7c5a8f8547f5bd647a5a7059b994ba2d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -152,7 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   freezeDuration: 0.5
-  isIce: 1
+  isIce: 0
+  isPoison: 1
+  poisonDuration: 4
+  poisonTickInterval: 1
+  poisonDamagePerTick: 1
+  poisonEffectPrefab: {fileID: 5457993127205109815, guid: 82a872fbe81d7514ba2b7bdab80374e0, type: 3}
 --- !u!70 &1297281602065459045
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -187,6 +192,6 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03931863, y: -0.023382036}
-  m_Size: {x: 0.81491446, y: 0.35093686}
-  m_Direction: 1
+  m_Offset: {x: -0.009521008, y: -0.023382053}
+  m_Size: {x: 0.19100583, y: 0.35094357}
+  m_Direction: 0

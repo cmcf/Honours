@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     PlayerAim playerAim;
     TrailRenderer trailRenderer;
     public Transform weapon;
-    public Transform bulletSpawn;
 
     [Header("Speed Settings")]
     [SerializeField] float defaultSpeed = 3f;

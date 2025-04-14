@@ -5,7 +5,6 @@ public class PlayerAim : MonoBehaviour
 {
     public Transform weaponTransform;
     public Transform playerTransform;
-    public Transform bulletSpawn;
     public GameObject crosshair;
 
     PlayerInput playerInput;
