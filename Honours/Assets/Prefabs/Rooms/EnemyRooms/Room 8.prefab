@@ -5041,7 +5041,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -22326,10 +22326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5d9e4866adc8458f5759e0b0164cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRangedEnemiesAlive: 6
   maxWaves: 2
   currentWave: 0
   currentEnemies: 0
-  meleeEnemies: []
+  meleeEnemies:
+  - {fileID: 11400000, guid: efac36071043fd242b140f2ed07bafec, type: 2}
   rangedEnemies:
   - {fileID: 11400000, guid: f098e7088feadd545aa81106eb06fd0a, type: 2}
   - {fileID: 11400000, guid: a983f8ddd266b1748bb27475b9634651, type: 2}

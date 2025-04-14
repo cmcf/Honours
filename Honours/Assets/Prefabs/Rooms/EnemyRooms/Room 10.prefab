@@ -28767,7 +28767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5d9e4866adc8458f5759e0b0164cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWaves: 2
+  maxRangedEnemiesAlive: 6
+  maxWaves: 3
   currentWave: 0
   currentEnemies: 0
   meleeEnemies:
