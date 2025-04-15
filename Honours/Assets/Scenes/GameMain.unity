@@ -1597,6 +1597,7 @@ MonoBehaviour:
   roomsCompleted: 0
   roomsBeforeBoss: 9
   startBossAttack: 0
+  canSpawnUpgrade: 1
   healthThreshold: 0.3
 --- !u!4 &2019253176
 Transform:
@@ -1623,6 +1624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2143930541}
   - component: {fileID: 2143930543}
+  - component: {fileID: 2143930544}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1663,6 +1665,18 @@ MonoBehaviour:
   maxHealth: 250
   currentHealth: 250
   reloadDelay: 2.5
+--- !u!114 &2143930544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143930539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bba3598182ae84a88c7d963e360171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &181472975548114405
 Transform:
   m_ObjectHideFlags: 0
@@ -2316,7 +2330,7 @@ MonoBehaviour:
   beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: e2326b84c36ca1f4480fbccfcff527a5, type: 2}
+  currentWeapon: {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:

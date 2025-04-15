@@ -44,6 +44,7 @@ public class RoomController : MonoBehaviour
     bool hasBossRoomSpawned = false;
     public bool startBossAttack = false;
 
+    public bool canSpawnUpgrade = true;
     public float healthThreshold = 0.4f; // 40% of max health
 
     void Awake()

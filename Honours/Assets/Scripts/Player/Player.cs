@@ -49,6 +49,8 @@ public class Player : MonoBehaviour, IDamageable
         // Subscribe to events
         fireAction.performed += OnFirePressed;
         fireAction.canceled += OnFireReleased;
+
+        ResetWeaponStats();
     }
     void Start()
     {
@@ -67,6 +69,11 @@ public class Player : MonoBehaviour, IDamageable
             weaponRenderer = hands.Find("Weapon")?.GetComponent<SpriteRenderer>();
         }
         UpdateWeaponSprite();
+
+        if (currentWeapon != null)
+        {
+            currentWeapon.InitialiseStats();
+        }
     }
 
 
@@ -114,6 +121,18 @@ public class Player : MonoBehaviour, IDamageable
         currentWeapon = newWeapon;
         UpdateWeaponSprite();
     }
+
+    public void ApplyWeaponUpgrade(WeaponUpgrade upgrade)
+    {
+        if (currentWeapon != null)
+        {
+            // Find the WeaponUpgradePickup to pass to the Apply method
+            WeaponUpgradePickup pickup = FindObjectOfType<WeaponUpgradePickup>();  // Or pass the pickup directly if needed
+
+            upgrade.Apply(currentWeapon, pickup);  // Apply the upgrade and also show the UI feedback
+        }
+    }
+
 
 
     void UpdateWeaponSprite()
@@ -196,8 +215,8 @@ public class Player : MonoBehaviour, IDamageable
             case Weapon.WeaponType.RapidFire:
                 StartCoroutine(FireRapid(direction));
                 break;
-            case Weapon.WeaponType.SpreadShot:
-                FireSpreadBullets(direction, 5, 30f);
+           case Weapon.WeaponType.SpreadShot:
+                FireSpreadBullets(direction, currentWeapon.spreadCount, 30f);
                 break;
             case Weapon.WeaponType.Ice:
                 FireIceBullet(direction);
@@ -393,6 +412,26 @@ public class Player : MonoBehaviour, IDamageable
     public Weapon GetCurrentWeapon()
     {
         return currentWeapon; // Replace with your actual variable for the current weapon
+    }
+
+    public bool IsWeaponMaxedOut()
+    {
+        // Check if the weapon has reached its max upgrades for all stats
+        if (currentWeapon.spreadCount >= currentWeapon.maxSpreadCount &&
+            currentWeapon.bulletSpeed >= currentWeapon.maxBulletSpeed &&
+            currentWeapon.minDamage >= currentWeapon.maxMinDamage &&
+            currentWeapon.maxDamage >= currentWeapon.maxMaxDamage)
+        {
+            return true; // Weapon is maxed out
+        }
+
+        return false; // Weapon is not maxed out
+    }
+
+    void ResetWeaponStats()
+    {
+        currentWeapon.spreadCount = currentWeapon.baseSpreadCount;
+        currentWeapon.bulletSpeed = currentWeapon.baseBulletSpeed;
     }
 
 }
