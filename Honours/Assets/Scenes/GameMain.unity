@@ -1597,6 +1597,7 @@ MonoBehaviour:
   roomsCompleted: 0
   roomsBeforeBoss: 9
   startBossAttack: 0
+  canSpawnUpgrade: 1
   healthThreshold: 0.3
 --- !u!4 &2019253176
 Transform:
@@ -2271,83 +2272,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6624806211218104826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &3282772350563027487
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.378
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6726325293705208861, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: m_Name
-      value: WeaponUpgrade
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: upgrade
-      value: 
-      objectReference: {fileID: 11400000, guid: d5d8418848c58fb4aa86fcddd78bea4c, type: 2}
-    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: possibleUpgrades.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: 'possibleUpgrades.Array.data[0]'
-      value: 
-      objectReference: {fileID: 11400000, guid: abe2409ee38ca3b459638034a784bcfd, type: 2}
-    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: 'possibleUpgrades.Array.data[1]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 7aed4178f8515e74b836a71ab4d02403, type: 2}
-    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
-      propertyPath: 'possibleUpgrades.Array.data[2]'
-      value: 
-      objectReference: {fileID: 11400000, guid: d5d8418848c58fb4aa86fcddd78bea4c, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 920964095863ae242a3cf292c954bedb, type: 3}
 --- !u!114 &3558879170942795698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2777,4 +2701,3 @@ SceneRoots:
   - {fileID: 632094315}
   - {fileID: 443214369}
   - {fileID: 1480376461}
-  - {fileID: 3282772350563027487}

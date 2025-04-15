@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Chest : MonoBehaviour
 {
@@ -19,32 +20,61 @@ public class Chest : MonoBehaviour
 
     float itemSpawnDelay = 0.6f;
 
+    public GameObject promptImage;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         room = GetComponentInParent<Room>();
         playerHealth= FindObjectOfType<PlayerHealth>();
+
+        // Hide prompt image
+        if (promptImage != null)
+        {
+            promptImage.gameObject.SetActive(false); 
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
 
+        // Get the Switcher instance to check the character state
+        Switcher switcher = FindObjectOfType<Switcher>();
+
+        // Check if the player is in human form
+        bool isPlayerInHumanForm = switcher.currentCharacterState == CharacterState.Player;
+
+        // When the player is in range of the chest in the reward room, it automatically opens
         playerInRange = true;
 
-        if (isRewardRoom)
+        if (isRewardRoom && isPlayerInHumanForm)
         {
             OpenChest();
         }
-        else if (room.hasSpawnedEnemies && room.AreAllEnemiesDefeated())
+        // Chest only opens when all enemies in the room are defeated and player is in range
+        else if (room.hasSpawnedEnemies &&  isPlayerInHumanForm && room.AreAllEnemiesDefeated())
         {
             enemiesDefeated = true;
             OpenChest();
+        }
+
+        if (!isPlayerInHumanForm && promptImage != null)
+        {
+            bool shouldShowPrompt =
+                (isRewardRoom) ||
+                (room.hasSpawnedEnemies && room.AreAllEnemiesDefeated());
+
+            if (shouldShowPrompt)
+            {
+                promptImage.gameObject.SetActive(true);
+            }
         }
     }
 
     void OpenChest()
     {
+        // Chest plays open animation and a pickup is spawned inside the chest
         if (!pickupSpawned)
         {
             animator.SetTrigger("openChest");
@@ -59,6 +89,7 @@ public class Chest : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+            promptImage.gameObject.SetActive(false);
         }
     }
 
@@ -77,7 +108,6 @@ public class Chest : MonoBehaviour
     void SpawnRandomPickup()
     {
         pickupSpawned = true;
-        // Selects random pickup
         GameObject pickupPrefabToSpawn = null;
         float randomValue = Random.value;
 
@@ -86,10 +116,13 @@ public class Chest : MonoBehaviour
         float playerMaxHealth = playerHealth.maxHealth;
         bool canSpawnHealth = (playerMaxHealth - playerCurrentHealth) >= 50;
 
-        int roomsCompleted = RoomController.Instance.roomsCompleted; 
+        int roomsCompleted = RoomController.Instance.roomsCompleted;
 
-        // Check if player can spawn weapon pickups based on rooms completed
         bool canSpawnWeaponPickup = roomsCompleted > 4;
+
+        // Get the Player instance to check the weapon max status
+        Player player = FindObjectOfType<Player>();
+        bool isWeaponMaxedOut = player.IsWeaponMaxedOut();
 
         // Reward room logic
         if (isRewardRoom)
@@ -98,16 +131,13 @@ public class Chest : MonoBehaviour
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
+            else if (randomValue < 0.5f && !isWeaponMaxedOut) // 50% chance to spawn weapon upgrade
+            {
+                pickupPrefabToSpawn = weaponUpgradePrefab;
+            }
             else
             {
-                if (randomValue < 0.5f && RoomController.Instance.canSpawnUpgrade) // 50% chance to spawn weapon upgrade
-                {
-                    pickupPrefabToSpawn = weaponUpgradePrefab;
-                }
-                else
-                {
-                    pickupPrefabToSpawn = weaponPickupPrefab; // Default to weapon pickup if no health or upgrade chance
-                }
+                pickupPrefabToSpawn = weaponPickupPrefab; // Default to weapon pickup
             }
         }
         else
@@ -121,7 +151,7 @@ public class Chest : MonoBehaviour
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
-            else if (randomValue < 0.8f && RoomController.Instance.canSpawnUpgrade) // 30% chance to spawn weapon upgrade if no weapon pickup or health is eligible
+            else if (randomValue < 0.8f && !isWeaponMaxedOut) // 30% chance to spawn weapon upgrade if no weapon pickup or health is eligible
             {
                 pickupPrefabToSpawn = weaponUpgradePrefab;
             }

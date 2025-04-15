@@ -414,6 +414,20 @@ public class Player : MonoBehaviour, IDamageable
         return currentWeapon; // Replace with your actual variable for the current weapon
     }
 
+    public bool IsWeaponMaxedOut()
+    {
+        // Check if the weapon has reached its max upgrades for all stats
+        if (currentWeapon.spreadCount >= currentWeapon.maxSpreadCount &&
+            currentWeapon.bulletSpeed >= currentWeapon.maxBulletSpeed &&
+            currentWeapon.minDamage >= currentWeapon.maxMinDamage &&
+            currentWeapon.maxDamage >= currentWeapon.maxMaxDamage)
+        {
+            return true; // Weapon is maxed out
+        }
+
+        return false; // Weapon is not maxed out
+    }
+
     void ResetWeaponStats()
     {
         currentWeapon.spreadCount = currentWeapon.baseSpreadCount;

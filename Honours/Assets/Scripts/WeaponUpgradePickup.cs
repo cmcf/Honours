@@ -35,9 +35,6 @@ public class WeaponUpgradePickup : MonoBehaviour
                 // Apply the upgrade to the player's weapon
                 player.ApplyWeaponUpgrade(upgrade);
 
-                // Prevent further upgrades after the max value is reached
-                CheckMaxUpgrades();
-
                 // Destroy the pickup object
                 Destroy(gameObject);
             }
@@ -101,19 +98,6 @@ public class WeaponUpgradePickup : MonoBehaviour
 
             // Apply the chosen upgrade if it passed all checks
             upgrade = chosenUpgrade;
-        }
-    }
-
-    public void CheckMaxUpgrades()
-    {
-        // Check if the weapon has reached its max upgrades for any stat
-        if (weapon.spreadCount >= weapon.maxSpreadCount &&
-            weapon.bulletSpeed >= weapon.maxBulletSpeed &&
-            weapon.minDamage >= weapon.maxMinDamage &&
-            weapon.maxDamage >= weapon.maxMaxDamage)
-        {
-            hasMaxUpgrade = true;
-            RoomController.Instance.canSpawnUpgrade = false;
         }
     }
 }
