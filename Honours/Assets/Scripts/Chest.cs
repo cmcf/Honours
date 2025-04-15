@@ -9,6 +9,7 @@ public class Chest : MonoBehaviour
     public Transform spawnPoint;
     public GameObject weaponPickupPrefab;
     public GameObject healthPrefab;
+    public GameObject weaponUpgradePrefab;
 
     bool playerInRange = false;
     public bool enemiesDefeated = false;
@@ -77,49 +78,67 @@ public class Chest : MonoBehaviour
     {
         pickupSpawned = true;
         // Selects random pickup
-        GameObject pickupPrefabToSpawn;
+        GameObject pickupPrefabToSpawn = null;
         float randomValue = Random.value;
 
         // Get player's current and max health
-        float playerCurrentHealth = playerHealth.currentHealth;  
+        float playerCurrentHealth = playerHealth.currentHealth;
         float playerMaxHealth = playerHealth.maxHealth;
-
-        // Condition to only spawn health if current health is 50 less than max health
         bool canSpawnHealth = (playerMaxHealth - playerCurrentHealth) >= 50;
 
+        int roomsCompleted = RoomController.Instance.roomsCompleted; 
+
+        // Check if player can spawn weapon pickups based on rooms completed
+        bool canSpawnWeaponPickup = roomsCompleted > 4;
+
+        // Reward room logic
         if (isRewardRoom)
         {
-            // Higher chance for health pickups in reward rooms
-            if (randomValue < 0.4f && canSpawnHealth) // 40% chance health 
-            {
-                pickupPrefabToSpawn = healthPrefab;
-            }
-            else 
-            {
-                pickupPrefabToSpawn = weaponPickupPrefab;
-            }
-
-        }
-        else
-        {
-            if (randomValue < 0.5f) // 50% chance weapon
-            {
-                pickupPrefabToSpawn = weaponPickupPrefab;
-            }
-
-            else if (canSpawnHealth) // 20% chance health 
+            if (randomValue < 0.4f && canSpawnHealth) // 40% chance health
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
             else
             {
+                if (randomValue < 0.5f && RoomController.Instance.canSpawnUpgrade) // 50% chance to spawn weapon upgrade
+                {
+                    pickupPrefabToSpawn = weaponUpgradePrefab;
+                }
+                else
+                {
+                    pickupPrefabToSpawn = weaponPickupPrefab; // Default to weapon pickup if no health or upgrade chance
+                }
+            }
+        }
+        else
+        {
+            // Normal room logic
+            if (randomValue < 0.5f && canSpawnWeaponPickup) // 50% chance to spawn weapon pickup if conditions are met
+            {
                 pickupPrefabToSpawn = weaponPickupPrefab;
+            }
+            else if (canSpawnHealth) // 20% chance to spawn health
+            {
+                pickupPrefabToSpawn = healthPrefab;
+            }
+            else if (randomValue < 0.8f && RoomController.Instance.canSpawnUpgrade) // 30% chance to spawn weapon upgrade if no weapon pickup or health is eligible
+            {
+                pickupPrefabToSpawn = weaponUpgradePrefab;
+            }
+            else
+            {
+                pickupPrefabToSpawn = weaponPickupPrefab; // Default to weapon pickup if all else fails
             }
         }
 
-        // Spawns the selected pickup
+        // If no valid pickup to spawn, exit
+        if (pickupPrefabToSpawn == null)
+        {
+            return;
+        }
+
+        // Spawn selected pickup
         GameObject pickup = Instantiate(pickupPrefabToSpawn, spawnPoint.position, Quaternion.identity);
         pickup.transform.SetParent(room.transform);
-
     }
 }

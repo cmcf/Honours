@@ -1623,6 +1623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2143930541}
   - component: {fileID: 2143930543}
+  - component: {fileID: 2143930544}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1663,6 +1664,18 @@ MonoBehaviour:
   maxHealth: 250
   currentHealth: 250
   reloadDelay: 2.5
+--- !u!114 &2143930544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143930539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bba3598182ae84a88c7d963e360171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &181472975548114405
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,6 +2323,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeaponUpgrade
       objectReference: {fileID: 0}
+    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: upgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: d5d8418848c58fb4aa86fcddd78bea4c, type: 2}
+    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: possibleUpgrades.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: 'possibleUpgrades.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: abe2409ee38ca3b459638034a784bcfd, type: 2}
+    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: 'possibleUpgrades.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7aed4178f8515e74b836a71ab4d02403, type: 2}
+    - target: {fileID: 8409586669592870886, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: 'possibleUpgrades.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: d5d8418848c58fb4aa86fcddd78bea4c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2373,7 +2406,7 @@ MonoBehaviour:
   beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
+  currentWeapon: {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:

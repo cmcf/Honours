@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cc214059748d9c4c90e689ef996a3bb, type: 3}
-  m_Name: Fire rate
+  m_Name: Speed
   m_EditorClassIdentifier: 
   customFont: {fileID: 11400000, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}
   upgradeType: 1
   spreadIncreaseAmount: 0
-  fireRateMultiplier: 0.1
-  bulletSpeedMultiplier: 0
+  fireRateMultiplier: 0
+  bulletSpeedMultiplier: 1.2
+  damageMultiplier: 0
