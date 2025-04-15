@@ -821,6 +821,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210541546}
   m_CullTransparentMesh: 1
+--- !u!1 &1317673963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317673964}
+  m_Layer: 7
+  m_Name: BeamSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317673964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317673963}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.161, y: 0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3067323940327294350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361869092
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,7 +2045,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3174258823303706468, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
+  m_Sprite: {fileID: -581583225694507638, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2208,6 +2239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 181472975548114405}
+  - {fileID: 1317673964}
   - {fileID: 1827447465}
   m_Father: {fileID: 5510960653169552189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2277,13 +2309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e2663fd32751e438618b08c6c93190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 181472975548114405}
   currentEnemy: {fileID: 0}
   weaponRenderer: {fileID: 0}
+  spawnPoint: {fileID: 181472975548114405}
   poisonBulletSpawn: {fileID: 1827447465}
+  beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
+  currentWeapon: {fileID: 11400000, guid: e2326b84c36ca1f4480fbccfcff527a5, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:
