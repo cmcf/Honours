@@ -2258,6 +2258,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6624806211218104826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3282772350563027487
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.378
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6076203939854214061, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6726325293705208861, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+      propertyPath: m_Name
+      value: WeaponUpgrade
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 920964095863ae242a3cf292c954bedb, type: 3}
 --- !u!114 &3558879170942795698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,7 +2373,7 @@ MonoBehaviour:
   beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: c9c4080e55692ef46957d37183c64c0b, type: 2}
+  currentWeapon: {fileID: 11400000, guid: 37deb8918ea76a940a3fee5ecbb7aeb2, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:
@@ -2687,3 +2744,4 @@ SceneRoots:
   - {fileID: 632094315}
   - {fileID: 443214369}
   - {fileID: 1480376461}
+  - {fileID: 3282772350563027487}

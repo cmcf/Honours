@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        Destroy(gameObject, player.currentWeapon.bulletLifetime);
+        Destroy(gameObject, player.currentWeapon.baseBulletLifetime);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {

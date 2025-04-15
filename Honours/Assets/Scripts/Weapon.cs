@@ -7,12 +7,22 @@ public class Weapon : ScriptableObject
     public WeaponType weaponType;
     public Sprite weaponSprite;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 10f;
-    public float bulletLifetime = 2f;
-    public float fireDelay = 0.5f;
 
+    // Default values
+    public float baseBulletSpeed = 10f;
+    public float baseBulletLifetime = 2f;
+    public float baseFireDelay = 0.5f;
+    public int baseSpreadCount = 2;
+    public int baseMinDamage;  // Minimum damage
+    public int baseMaxDamage; // Maximum damage
+
+    // Current values
+    public float bulletSpeed;
+    public float bulletLifetime;
+    public int spreadCount;
     public int minDamage;  // Minimum damage
     public int maxDamage; // Maximum damage
+
 
     public enum WeaponType
     {
@@ -25,8 +35,16 @@ public class Weapon : ScriptableObject
         Automatic     // Autofire projectiles
     }
 
+    public void InitialiseStats()
+    {
+        bulletSpeed = baseBulletSpeed;
+        spreadCount = baseSpreadCount;
+        minDamage = baseMinDamage;
+        maxDamage = baseMaxDamage;
+    }
+
     public int GetRandomDamage()
     {
-        return Random.Range(minDamage, maxDamage + 1);
+        return Random.Range(baseMinDamage, baseMaxDamage + 1);
     }
 }
