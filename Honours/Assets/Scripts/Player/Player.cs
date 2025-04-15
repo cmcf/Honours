@@ -156,7 +156,7 @@ public class Player : MonoBehaviour, IDamageable
     void OnFire()
     {
 
-        if (Time.time > lastFireTime + currentWeapon.baseFireDelay)
+        if (Time.time > lastFireTime + currentWeapon.fireDelay)
         {
             lastFireTime = Time.time;
             Vector3 fireDirection = GetFireDirection();
@@ -314,7 +314,7 @@ public class Player : MonoBehaviour, IDamageable
         for (int i = 0; i < 3; i++)
         {
             FireSingleBullet(direction);
-            yield return new WaitForSeconds(currentWeapon.baseFireDelay / 3);
+            yield return new WaitForSeconds(currentWeapon.fireDelay / 3);
         }
     }
 
@@ -322,7 +322,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         while (isAutoFiring)
         {
-            if (Time.time > lastFireTime + currentWeapon.baseFireDelay)
+            if (Time.time > lastFireTime + currentWeapon.fireDelay)
             {
                 lastFireTime = Time.time;
                 FireBeamProjectile(GetFireDirection());
@@ -335,7 +335,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         while (isAutoFiring)
         {
-            if (Time.time > lastFireTime + currentWeapon.baseFireDelay)
+            if (Time.time > lastFireTime + currentWeapon.fireDelay)
             {
                 lastFireTime = Time.time;
                 FireSingleBullet(GetFireDirection());
