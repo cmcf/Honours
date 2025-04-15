@@ -20,6 +20,8 @@ public class Weapon : ScriptableObject
         RapidFire,  // Fires bullets with a faster rate
         SpreadShot, // Fires multiple bullets in a spread
         Ice,        // Fires an ice projectile
+        Poison,     // Fires poisonous projectiles
+        Beam,       // Single beam projectile
         Automatic     // Autofire projectiles
     }
 

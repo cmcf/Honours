@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c91b6bd6f0ef12e4e8ef60845e0e89dc, type: 3}
-  m_Name: Auto
+  m_Name: Poison
   m_EditorClassIdentifier: 
-  weaponName: Auto Rifle
-  weaponType: 5
-  weaponSprite: {fileID: 6866815247170767786, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
-  bulletPrefab: {fileID: 1454507353135745339, guid: b611d265b86212345885bd78b5fa79d4, type: 3}
-  bulletSpeed: 12
-  bulletLifetime: 2
-  fireDelay: 0.5
+  weaponName: Poison
+  weaponType: 4
+  weaponSprite: {fileID: -3174258823303706468, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
+  bulletPrefab: {fileID: 2477896251280384620, guid: 58c1666a53fff3248ac482cf3065f4e6, type: 3}
+  bulletSpeed: 10
+  bulletLifetime: 1
+  fireDelay: 0.6
   minDamage: 4
-  maxDamage: 18
+  maxDamage: 8

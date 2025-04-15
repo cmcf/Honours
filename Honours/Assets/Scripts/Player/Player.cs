@@ -7,16 +7,22 @@ using static Damage;
 public class Player : MonoBehaviour, IDamageable
 {
     [Header("References")]
-    public Transform spawnPoint;
+    
     public Enemy currentEnemy;
     PlayerAim playerAim;
     public SpriteRenderer weaponRenderer;
     Switcher characterSwitcher;
     PlayerHealth playerHealth;
+    
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
     Animator animator;
+
+    [Header("Spawn Points")]
+    public Transform spawnPoint;
+    public Transform poisonBulletSpawn;
+    public Transform beamSpawnPoint;
 
     [Header("Health")]
     
@@ -86,10 +92,10 @@ public class Player : MonoBehaviour, IDamageable
         }
 
         // Rest of the human form firing logic
-        if (currentWeapon.weaponType == Weapon.WeaponType.Automatic)
+        if (currentWeapon.weaponType == Weapon.WeaponType.Automatic ||currentWeapon.weaponType == Weapon.WeaponType.Beam)
         {
             isAutoFiring = true;
-            StartCoroutine(AutoFireWeapon());
+            StartCoroutine(AutoFireRifle());
         }
         else
         {
@@ -142,13 +148,28 @@ public class Player : MonoBehaviour, IDamageable
 
     Vector3 GetFireDirection()
     {
+        Transform relevantSpawnPoint = spawnPoint;
+
+        if (currentWeapon != null)
+        {
+            switch (currentWeapon.weaponType)
+            {
+                case Weapon.WeaponType.Poison:
+                    relevantSpawnPoint = poisonBulletSpawn;
+                    break;
+                case Weapon.WeaponType.Beam:
+                    relevantSpawnPoint = beamSpawnPoint;
+                    break;
+            }
+        }
+
         Vector3 fireDirection;
         if (playerAim.usingController)
         {
             fireDirection = playerAim.aimDirection.normalized;
             if (fireDirection.magnitude < 0.1f)
             {
-                fireDirection = Vector3.left; // Default direction if stick is not moved
+                fireDirection = Vector3.left;
             }
         }
         else
@@ -158,10 +179,12 @@ public class Player : MonoBehaviour, IDamageable
                 Input.mousePosition.y,
                 Mathf.Abs(Camera.main.transform.position.z)
             ));
-            fireDirection = (mousePosition - spawnPoint.position).normalized;
+            fireDirection = (mousePosition - relevantSpawnPoint.position).normalized;
         }
+
         return fireDirection;
     }
+
 
     void FireWeapon(Vector3 direction)
     {
@@ -179,16 +202,47 @@ public class Player : MonoBehaviour, IDamageable
             case Weapon.WeaponType.Ice:
                 FireIceBullet(direction);
                 break;
+            case Weapon.WeaponType.Poison:
+                FirePoisonBullet(direction);
+                break;
+            case Weapon.WeaponType.Beam:
+                if (!isAutoFiring)
+                {
+                    isAutoFiring = true;
+                    StartCoroutine(AutoFireBeam());
+                }
+                break;
+        
             case Weapon.WeaponType.Automatic:
                 if (!isAutoFiring)
                 {
                     isAutoFiring = true;
-                    StartCoroutine(AutoFireWeapon());
+                    StartCoroutine(AutoFireRifle());
                 }
                 break;
         }
     }
 
+
+    void FireBeamProjectile(Vector3 direction)
+    {
+        direction.Normalize();
+        Vector3 bulletSpawnPosition = beamSpawnPoint.position;
+        GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * currentWeapon.bulletSpeed;
+        }
+        Bullet bullet = projectile.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(currentWeapon.GetRandomDamage());
+            bullet.isIce = false;
+        }
+    }
 
     void FireSingleBullet(Vector3 direction)
     {
@@ -210,6 +264,32 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
+    void FirePoisonBullet(Vector3 direction)
+    {
+        direction.Normalize();
+        Vector3 bulletSpawnPosition = poisonBulletSpawn.position;
+        GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
+
+        projectile.transform.position = bulletSpawnPosition;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0, 0, angle + 90f);
+
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.velocity = direction * currentWeapon.bulletSpeed;
+        }
+
+        Bullet bullet = projectile.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.SetDamage(currentWeapon.GetRandomDamage());
+            bullet.isPoison = true; 
+        }
+    }
+
+
     IEnumerator FireRapid(Vector3 direction)
     {
         for (int i = 0; i < 3; i++)
@@ -219,7 +299,20 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator AutoFireWeapon()
+    IEnumerator AutoFireBeam()
+    {
+        while (isAutoFiring)
+        {
+            if (Time.time > lastFireTime + currentWeapon.fireDelay)
+            {
+                lastFireTime = Time.time;
+                FireBeamProjectile(GetFireDirection());
+            }
+            yield return null; 
+        }
+    }
+
+    IEnumerator AutoFireRifle()
     {
         while (isAutoFiring)
         {
@@ -228,10 +321,9 @@ public class Player : MonoBehaviour, IDamageable
                 lastFireTime = Time.time;
                 FireSingleBullet(GetFireDirection());
             }
-            yield return null; 
+            yield return null;
         }
     }
-
 
     void FireSpreadBullets(Vector3 direction, int bulletCount, float spreadAngle)
     {

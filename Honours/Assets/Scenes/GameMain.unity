@@ -821,6 +821,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1210541546}
   m_CullTransparentMesh: 1
+--- !u!1 &1317673963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1317673964}
+  m_Layer: 7
+  m_Name: BeamSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1317673964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317673963}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.161, y: 0.028, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3067323940327294350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361869092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1506,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3152275633236677545, guid: 7e87adb03f0159044a29db2c78c6f88c, type: 3}
   m_PrefabInstance: {fileID: 8337776183824409481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1827447464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827447465}
+  m_Layer: 7
+  m_Name: PoisonSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1827447465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827447464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.196, y: 0.0249, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3067323940327294350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019253174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 1821578464605920457}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.284, y: 0.028, z: 0}
+  m_LocalPosition: {x: -0.122, y: 0.028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1810,7 +1872,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponTransform: {fileID: 5510960653169552189}
   playerTransform: {fileID: 6624806211218104826}
-  bulletSpawn: {fileID: 181472975548114405}
   crosshair: {fileID: 8828860589474585412}
   aimDirection: {x: 0, y: 0}
   usingController: 0
@@ -1984,7 +2045,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3776783329477156521, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
+  m_Sprite: {fileID: -581583225694507638, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2173,11 +2234,13 @@ Transform:
   m_GameObject: {fileID: 1191244181427377224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.114, y: 0.009, z: 0}
+  m_LocalPosition: {x: -0.1146, y: 0.009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 181472975548114405}
+  - {fileID: 1317673964}
+  - {fileID: 1827447465}
   m_Father: {fileID: 5510960653169552189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3245743100452508633
@@ -2208,7 +2271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3067323940327294350}
-  bulletSpawn: {fileID: 181472975548114405}
   defaultSpeed: 5.5
   currentSpeed: 0
   increasedSpeed: 5.5
@@ -2247,12 +2309,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e2663fd32751e438618b08c6c93190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 181472975548114405}
   currentEnemy: {fileID: 0}
   weaponRenderer: {fileID: 0}
+  spawnPoint: {fileID: 181472975548114405}
+  poisonBulletSpawn: {fileID: 1827447465}
+  beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: e069490a8ff00fd4797515a0bfc0413d, type: 2}
+  currentWeapon: {fileID: 11400000, guid: e2326b84c36ca1f4480fbccfcff527a5, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:

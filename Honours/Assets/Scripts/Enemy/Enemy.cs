@@ -163,7 +163,7 @@ public class Enemy : MonoBehaviour, IDamageable
             if (rb != null)
             {
                 rb.velocity = Vector2.zero;
-                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition | RigidbodyConstraints2D.FreezeRotation;
             }
 
             // Freeze the animator by setting its speed to 0
@@ -220,7 +220,8 @@ public class Enemy : MonoBehaviour, IDamageable
         // Remove position constraints 
         if (rb != null)
         {
-            rb.constraints = RigidbodyConstraints2D.None;  
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
 
     }
