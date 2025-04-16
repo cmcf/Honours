@@ -13,7 +13,7 @@ public class Player : MonoBehaviour, IDamageable
     public SpriteRenderer weaponRenderer;
     Switcher characterSwitcher;
     PlayerHealth playerHealth;
-    
+
 
     SpriteRenderer spriteRenderer;
     PlayerMovement playerMovement;
