@@ -2,11 +2,14 @@ using UnityEngine;
 using TMPro; 
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject floatingTextPrefab;
     public TextMeshProUGUI healthText;
     public Slider healthSlider;
+    public GameObject winPanel;
 
     public float maxHealth = 50f;
     public float currentHealth;
@@ -48,6 +51,9 @@ public class PlayerHealth : MonoBehaviour
         {
             healthText.text = Mathf.CeilToInt(currentHealth) + " / " + Mathf.CeilToInt(maxHealth);
         }
+
+        // Disable win panel 
+        winPanel.SetActive(false);
     }
 
     public float GetCurrentHealth()
@@ -167,11 +173,42 @@ public class PlayerHealth : MonoBehaviour
 
         DifficultyManager.Instance.ResetDifficultyLevel();
 
-        Invoke("ReloadGame", 0.8f);
+        Invoke("ReloadGame", reloadDelay);
     }
 
     public void ReloadGame()
     {
         SceneManager.LoadScene("GameMain");
+    }
+
+    public void WinGame()
+    {
+        winPanel.SetActive(true);
+        // Disable player and wolf control
+        DisableCharacterControl();
+    }
+
+    void DisableCharacterControl()
+    {
+        if (player != null)
+        {
+            PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+            PlayerAim playerAim = player.GetComponent<PlayerAim>();
+
+            if (playerMovement != null) playerMovement.enabled = false;
+            if (playerAim != null) playerAim.enabled = false;
+        }
+
+        if (wolf != null)
+        {
+            Wolf wolfMovement = wolf.GetComponent<Wolf>();
+            if (wolfMovement != null) wolfMovement.enabled = false;
+        }
+
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.enabled = false; // Disables input
+        }
     }
 }
