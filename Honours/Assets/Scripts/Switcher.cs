@@ -48,8 +48,8 @@ public class Switcher : MonoBehaviour
 
     public int currentSpawnPointIndex = 0;
 
-    [SerializeField] float wolfFormDuration = 10f; // seconds allowed in wolf form
-    [SerializeField] float wolfCooldownTime = 15f; // cooldown after using wolf
+    public float wolfFormDuration = 10f; // seconds allowed in wolf form
+    public float wolfCooldownTime = 15f; // cooldown after using wolf
 
     float currentWolfTime = 0f;
     float currentCooldown = 0f;
@@ -91,6 +91,13 @@ public class Switcher : MonoBehaviour
         playerInput = GetComponentInChildren<PlayerInput>();
         playerInput.currentActionMap.Enable();
         playerInput.actions["Switch"].performed += ctx => OnSwitch(ctx);
+
+        // Switch cooldown is increase and duration is decreased on hard mode
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            wolfCooldownTime += 5f;
+            wolfFormDuration -= 2f;
+        }
     }
 
 
