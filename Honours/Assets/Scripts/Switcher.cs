@@ -91,6 +91,13 @@ public class Switcher : MonoBehaviour
         playerInput = GetComponentInChildren<PlayerInput>();
         playerInput.currentActionMap.Enable();
         playerInput.actions["Switch"].performed += ctx => OnSwitch(ctx);
+
+        // Switch cooldown is increase and duration is decreased on hard mode
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            wolfCooldownTime += 5f;
+            wolfFormDuration -= 2f;
+        }
     }
 
 

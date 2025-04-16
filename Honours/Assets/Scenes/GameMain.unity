@@ -1477,8 +1477,8 @@ MonoBehaviour:
   canMovePlayer: 1
   canMoveWolf: 0
   currentSpawnPointIndex: 0
-  wolfFormDuration: 10
-  wolfCooldownTime: 100
+  wolfFormDuration: 12
+  wolfCooldownTime: 90
 --- !u!4 &1760543578
 Transform:
   m_ObjectHideFlags: 0
