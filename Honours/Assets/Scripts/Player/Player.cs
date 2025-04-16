@@ -113,7 +113,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public void PickupWeapon(Weapon newWeapon)
     {
-        EquipWeapon(newWeapon);  
+        EquipWeapon(newWeapon);
+        ResetWeaponStats();
     }
 
     public void EquipWeapon(Weapon newWeapon)
@@ -405,6 +406,8 @@ public class Player : MonoBehaviour, IDamageable
         // Increase death counter
         numberOfDeaths++;
 
+        ResetWeaponStats();
+
         // Play death animation
         animator.SetTrigger("isDead");
     }
@@ -432,6 +435,8 @@ public class Player : MonoBehaviour, IDamageable
     {
         currentWeapon.spreadCount = currentWeapon.baseSpreadCount;
         currentWeapon.bulletSpeed = currentWeapon.baseBulletSpeed;
+        currentWeapon.minDamage = currentWeapon.baseMinDamage;
+        currentWeapon.maxDamage = currentWeapon.baseMaxDamage;
     }
 
 }

@@ -20552,6 +20552,7 @@ Transform:
   - {fileID: 8700758279346145749}
   - {fileID: 3552753854124467330}
   - {fileID: 6207012615897453041}
+  - {fileID: 730226623330268347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8920805025549199830
@@ -20654,6 +20655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5d9e4866adc8458f5759e0b0164cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRangedEnemiesAlive: 2
   maxWaves: 2
   currentWave: 0
   currentEnemies: 0
@@ -22542,4 +22544,70 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5493440833956072045, guid: 1e94172b93a5ba4439a88a2e33f7c19f, type: 3}
   m_PrefabInstance: {fileID: 5662464342746929666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8013201339204263296
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1016031596203368019}
+    m_Modifications:
+    - target: {fileID: 4912697717491367652, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: room
+      value: 
+      objectReference: {fileID: 8920805025549199830}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.7874928
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3638113
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7284243742915455293, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+      propertyPath: m_Name
+      value: WoodenChestDarker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+--- !u!4 &730226623330268347 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7284243742915455291, guid: e39ab1cbaf617284e9683a88dbdd79db, type: 3}
+  m_PrefabInstance: {fileID: 8013201339204263296}
   m_PrefabAsset: {fileID: 0}

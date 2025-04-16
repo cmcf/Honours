@@ -48,8 +48,8 @@ public class Switcher : MonoBehaviour
 
     public int currentSpawnPointIndex = 0;
 
-    [SerializeField] float wolfFormDuration = 10f; // seconds allowed in wolf form
-    [SerializeField] float wolfCooldownTime = 15f; // cooldown after using wolf
+    public float wolfFormDuration = 10f; // seconds allowed in wolf form
+    public float wolfCooldownTime = 15f; // cooldown after using wolf
 
     float currentWolfTime = 0f;
     float currentCooldown = 0f;

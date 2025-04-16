@@ -11,6 +11,7 @@ public class Chest : MonoBehaviour
     public GameObject weaponPickupPrefab;
     public GameObject healthPrefab;
     public GameObject weaponUpgradePrefab;
+    public GameObject wolfUpgradePrefab;
 
     bool playerInRange = false;
     public bool enemiesDefeated = false;
@@ -119,6 +120,7 @@ public class Chest : MonoBehaviour
         int roomsCompleted = RoomController.Instance.roomsCompleted;
 
         bool canSpawnWeaponPickup = roomsCompleted > 4;
+        bool canSpawnWolfUpgrade = roomsCompleted > 3;
 
         // Get the Player instance to check the weapon max status
         Player player = FindObjectOfType<Player>();
@@ -127,37 +129,54 @@ public class Chest : MonoBehaviour
         // Reward room logic
         if (isRewardRoom)
         {
-            if (randomValue < 0.4f && canSpawnHealth) // 40% chance health
+            float wolfRoll = Random.value;
+            float healthRoll = Random.value;
+            float weaponUpgradeRoll = Random.value;
+
+            if (healthRoll < 0.3f && canSpawnHealth)
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
-            else if (randomValue < 0.5f && !isWeaponMaxedOut) // 50% chance to spawn weapon upgrade
+            else if (weaponUpgradeRoll < 0.5f && !isWeaponMaxedOut)
             {
                 pickupPrefabToSpawn = weaponUpgradePrefab;
             }
-            else
+            else if (wolfRoll < 0.5f && canSpawnWolfUpgrade)
             {
-                pickupPrefabToSpawn = weaponPickupPrefab; // Default to weapon pickup
+                pickupPrefabToSpawn = wolfUpgradePrefab;
             }
-        }
-        else
-        {
-            // Normal room logic
-            if (randomValue < 0.5f && canSpawnWeaponPickup) // 50% chance to spawn weapon pickup if conditions are met
+            else
             {
                 pickupPrefabToSpawn = weaponPickupPrefab;
             }
-            else if (canSpawnHealth) // 20% chance to spawn health
+        }
+
+        else
+        {
+            float wolfRoll = Random.value;
+            float healthRoll = Random.value;
+            float weaponUpgradeRoll = Random.value;
+            float weaponPickupRoll = Random.value;
+
+            if (weaponPickupRoll < 0.5f && canSpawnWeaponPickup)
+            {
+                pickupPrefabToSpawn = weaponPickupPrefab;
+            }
+            else if (healthRoll < 0.3f && canSpawnHealth)
             {
                 pickupPrefabToSpawn = healthPrefab;
             }
-            else if (randomValue < 0.8f && !isWeaponMaxedOut) // 30% chance to spawn weapon upgrade if no weapon pickup or health is eligible
+            else if (weaponUpgradeRoll < 0.3f && !isWeaponMaxedOut)
             {
                 pickupPrefabToSpawn = weaponUpgradePrefab;
             }
+            else if (wolfRoll < 0.3f && canSpawnWolfUpgrade)
+            {
+                pickupPrefabToSpawn = wolfUpgradePrefab;
+            }
             else
             {
-                pickupPrefabToSpawn = weaponPickupPrefab; // Default to weapon pickup if all else fails
+                pickupPrefabToSpawn = weaponPickupPrefab; // fallback
             }
         }
 

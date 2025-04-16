@@ -177,6 +177,7 @@ MonoBehaviour:
   weaponPickupPrefab: {fileID: 8278573925337004562, guid: 432978fdb9a9e8d40a10c6a9c56d3f4c, type: 3}
   healthPrefab: {fileID: 368283942065414147, guid: 1ed169a608c9136418d3f9941dfba557, type: 3}
   weaponUpgradePrefab: {fileID: 6726325293705208861, guid: 920964095863ae242a3cf292c954bedb, type: 3}
+  wolfUpgradePrefab: {fileID: 6726325293705208861, guid: 4f436177be9efe44495853883713fcf3, type: 3}
   enemiesDefeated: 0
   isRewardRoom: 0
   promptImage: {fileID: 5698245442921222667}
