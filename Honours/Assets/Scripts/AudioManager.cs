@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [Header("Weapon SFX")]
     public AudioClip shotgunFire;
     public AudioClip pistolFire;
+    public AudioClip beamFire;
     public AudioClip poisonFire;
 
     [Header("Enemy SFX")]
