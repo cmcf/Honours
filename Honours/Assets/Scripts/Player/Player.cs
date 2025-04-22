@@ -211,6 +211,7 @@ public class Player : MonoBehaviour, IDamageable
         switch (currentWeapon.weaponType)
         {
             case Weapon.WeaponType.Default:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.pistolFire);
                 FireSingleBullet(direction);
                 break;
             case Weapon.WeaponType.RapidFire:
@@ -414,7 +415,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public Weapon GetCurrentWeapon()
     {
-        return currentWeapon; // Replace with your actual variable for the current weapon
+        return currentWeapon;
     }
 
     public bool IsWeaponMaxedOut()
