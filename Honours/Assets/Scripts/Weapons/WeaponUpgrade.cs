@@ -92,7 +92,7 @@ public class WeaponUpgrade : ScriptableObject
             case UpgradeType.IncreaseBulletSpeed:
                 return "BULLET SPEED INCREASED";
             default:
-                return "Upgrade applied!";
+                return "UPGRADE APPLIED TO CURRENT GUN!";
         }
     }
 }
