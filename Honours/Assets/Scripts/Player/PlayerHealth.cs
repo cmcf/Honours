@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
+
+        Cursor.visible = false;
     }
 
     void Start()
@@ -184,6 +186,7 @@ public class PlayerHealth : MonoBehaviour
     public void WinGame()
     {
         winPanel.SetActive(true);
+        Cursor.visible = true;
         // Disable player and wolf control
         DisableCharacterControl();
     }

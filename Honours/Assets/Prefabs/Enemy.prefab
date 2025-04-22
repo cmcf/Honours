@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: -3781910019033479378, guid: fa153e39638bfc24c9282ca445aee51f, type: 3}
   m_Color: {r: 0.94716984, g: 0.94716984, b: 0.94716984, a: 1}
   m_FlipX: 0
@@ -156,7 +156,6 @@ MonoBehaviour:
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
   maxHealth: 20
   currentHealth: 0
-  moveSpeed: 0
   freezeTimer: 0
   level: 0
   isActive: 0
