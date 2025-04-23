@@ -6,8 +6,8 @@ public class BossEnemy : MonoBehaviour
 {
     public Animator currentAnimator;
     public BossFormManager formManager;
-    SpriteRenderer spriteRenderer;
-    Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
+    public Rigidbody2D rb;
 
     public GameObject floatingTextPrefab;
     Rigidbody2D activeRb;
@@ -16,9 +16,7 @@ public class BossEnemy : MonoBehaviour
     bool hit = false;
 
     public EnemyState currentState;
-    bool isFrozen = false;
-    float freezeTimer;
-    bool isActive = true;
+
     void Awake()
     {
         formManager = GetComponent<BossFormManager>();
@@ -168,63 +166,4 @@ public class BossEnemy : MonoBehaviour
         currentAnimator.SetBool("isHurt", false);
     }
 
-    public void Freeze(float duration)
-    {
-        if (!isFrozen)
-        {
-            isFrozen = true;
-            freezeTimer = duration;
-
-            AudioManager.Instance.PlaySFX(AudioManager.Instance.iceHitEffect);
-
-            // Stop movement
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.velocity = Vector2.zero;
-                rb.constraints = RigidbodyConstraints2D.FreezePosition;
-            }
-
-            // Freeze the animator by setting its speed to 0
-            Animator animator = GetComponent<Animator>();
-            if (animator != null)
-            {
-                animator.speed = 0;
-            }
-
-            // Set colour to cyan to indicate frozen state
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.color = Color.cyan;
-            }
-
-            Invoke("Unfreeze", freezeTimer);
-        }
-    }
-
-    void Unfreeze()
-    {
-        isFrozen = false;
-        isActive = true;
-
-        // Restore the colour to white to indicate the enemy is no longer frozen
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = Color.white;
-        }
-
-        // Restore animator speed
-        Animator animator = GetComponent<Animator>();
-        if (animator != null)
-        {
-            animator.speed = 1;
-        }
-
-        // Remove position constraints 
-        if (rb != null)
-        {
-            rb.constraints = RigidbodyConstraints2D.None;
-            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-        }
-    }
 }

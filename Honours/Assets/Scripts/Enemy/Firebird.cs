@@ -6,8 +6,9 @@ public class Firebird : MonoBehaviour, IDamageable
 {
     Transform player;
     BoxCollider2D boxCollider2D;
-    Animator animator;
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
+    Animator animator;
     public Transform[] movementPoints;
 
     public float pauseDuration = 1.5f; // Time spent at each position
@@ -28,16 +29,20 @@ public class Firebird : MonoBehaviour, IDamageable
     bool hasAppeared = false;
     int movesPerPhase = 2;
 
+    bool isFrozen = false;
+    float freezeTimer;
+    bool isActive = true;
+
     // Enum for different phases of the boss
     public enum FirebirdPhase { Phase1, Phase2, Phase3 }
     public FirebirdPhase currentPhase = FirebirdPhase.Phase1;
 
     void Start()
     {
-        // References 
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (hasAppeared)
         {
@@ -309,5 +314,65 @@ public class Firebird : MonoBehaviour, IDamageable
         animator.SetFloat("velocityX", directionToPlayer.x);
         animator.SetFloat("velocityY", directionToPlayer.y);
         animator.SetFloat("speed", 0f); // Stop the movement animation when still
+    }
+
+    public void Freeze(float duration)
+    {
+        if (!isFrozen)
+        {
+            isFrozen = true;
+            freezeTimer = duration;
+
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.iceHitEffect);
+
+            // Stop movement
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            }
+
+            // Freeze the animator by setting its speed to 0
+            Animator animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.speed = 0;
+            }
+
+            // Set colour to cyan to indicate frozen state
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.cyan;
+            }
+
+            Invoke("Unfreeze", freezeTimer);
+        }
+    }
+
+    void Unfreeze()
+    {
+        isFrozen = false;
+        isActive = true;
+
+        // Restore the colour to white to indicate the enemy is no longer frozen
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white;
+        }
+
+        // Restore animator speed
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.speed = 1;
+        }
+
+        // Remove position constraints 
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 }
