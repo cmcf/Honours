@@ -10,6 +10,7 @@ public class Firebird : MonoBehaviour, IDamageable
     SpriteRenderer spriteRenderer;
     Animator animator;
     public Transform[] movementPoints;
+    AudioSource flapAudioSource;
 
     public float pauseDuration = 1.5f; // Time spent at each position
     [SerializeField] float moveDuration = 2f; // Time to move between sides
@@ -60,6 +61,13 @@ public class Firebird : MonoBehaviour, IDamageable
             movesPerPhase = -1;
             baseProjectileSpeed += 0.2f;
         }
+
+        flapAudioSource = GetComponent<AudioSource>();
+
+        if (flapAudioSource != null && !flapAudioSource.isPlaying)
+        {
+            flapAudioSource.Play();
+        }
     }
 
     void Update()
@@ -73,6 +81,11 @@ public class Firebird : MonoBehaviour, IDamageable
         hasAppeared = true;
         currentState = EnemyState.Attacking;
         StartCoroutine(BossRoutine());
+
+        if (flapAudioSource != null && !flapAudioSource.isPlaying)
+        {
+            flapAudioSource.Play();
+        }
     }
 
     public void Damage(int damage)
@@ -171,7 +184,7 @@ public class Firebird : MonoBehaviour, IDamageable
 
     void FireSpreadAtPlayer()
     {
-        if (projectilePrefab == null || firePoint == null) return;
+        if (projectilePrefab == null || firePoint == null || isFrozen) return;
 
         int numberOfProjectiles;
         float spreadAngle;

@@ -2097,7 +2097,7 @@ MonoBehaviour:
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
   roomsCompleted: 0
-  roomsBeforeBoss: 2
+  roomsBeforeBoss: 5
   startBossAttack: 0
   canSpawnUpgrade: 1
   healthThreshold: 0.3
@@ -2298,11 +2298,16 @@ MonoBehaviour:
   beamFire: {fileID: 8300000, guid: 4f8ddf234df456c47ae30f5de3dcf53c, type: 3}
   poisonFire: {fileID: 8300000, guid: 8aab249eb8138d14abde171da255d1c6, type: 3}
   iceFire: {fileID: 8300000, guid: 57313658a098b9f46a5ab0a72b45224f, type: 3}
-  enemyHit: {fileID: 0}
-  playerHit: {fileID: 0}
+  enemyHit: {fileID: 8300000, guid: 0ba5755d639172e4dbcc37e509d0cfd5, type: 3}
   iceHitEffect: {fileID: 8300000, guid: 65aeee9ba9bd4154ba2ed3f026bd5e71, type: 3}
+  fireBall: {fileID: 8300000, guid: c30a0c902a3043446882485525e00e06, type: 3}
+  fireAppear: {fileID: 8300000, guid: e7eef96b6fae15e4aa5d3b09701455ce, type: 3}
+  fireDeath: {fileID: 8300000, guid: 44ff444c119930342b6fc9fba8cad07c, type: 3}
+  bossSwitch: {fileID: 8300000, guid: c5e404973d0010a40922750f5387f47a, type: 3}
+  playerHit: {fileID: 0}
+  dashSFX: {fileID: 8300000, guid: fee44725db20302408225a8b6f251bde, type: 3}
   pickup: {fileID: 0}
-  explosion: {fileID: 0}
+  switchSFX: {fileID: 8300000, guid: 69b8ad4e398fb6842b96d4118f237317, type: 3}
 --- !u!81 &2143930547
 AudioListener:
   m_ObjectHideFlags: 0

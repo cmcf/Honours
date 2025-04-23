@@ -18,11 +18,17 @@ public class AudioManager : MonoBehaviour
 
     [Header("Enemy SFX")]
     public AudioClip enemyHit;
-    public AudioClip playerHit;
     public AudioClip iceHitEffect;
+    public AudioClip fireBall;
+    public AudioClip fireAppear;
+    public AudioClip fireDeath;
+    public AudioClip bossSwitch;
 
+    [Header("Player SFX")]
+    public AudioClip playerHit;
+    public AudioClip dashSFX;
     public AudioClip pickup;
-    public AudioClip explosion;
+    public AudioClip switchSFX;
 
     void Awake()
     {

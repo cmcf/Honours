@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour, IDamageable
     public Rigidbody2D rb;
     public GameObject floatingTextPrefab;
 
+    public AudioClip deathSFX;
+
     public float maxHealth = 45f;
     public float currentHealth;
     public float freezeTimer;
@@ -95,8 +97,7 @@ public class Enemy : MonoBehaviour, IDamageable
             // Show amount of damage taken
             ShowFloatingText(damage, Color.white, gameObject);
             // Play hurt animation
-            PlayHitEffect();
-
+            PlayHitEffect(); 
             // healthBar.UpdateHealthBar(currentHealth, maxHealth);
 
             // If health is zero or below, the enemy dies
@@ -108,6 +109,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
             // Mark as hit so that damage does not process more than once
             hit = true;
+
+            // Play hit effect if not hit with ice
+            if (!isFrozen)
+            {
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyHit);
+            }
 
             // Allow hit after a short delay
             StartCoroutine(ResetHitFlag());
@@ -232,7 +239,7 @@ public class Enemy : MonoBehaviour, IDamageable
         animator.SetBool("isHurt", false);
         // Start the death animation
         animator.SetTrigger("isDead");
-
+        AudioManager.Instance.PlaySFX(deathSFX);
         OnDeathEvent?.Invoke();
 
         // Call a coroutine to delay destruction of the game object

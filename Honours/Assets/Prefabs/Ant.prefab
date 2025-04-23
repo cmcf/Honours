@@ -172,6 +172,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   rb: {fileID: 6287335384057938245}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
+  deathSFX: {fileID: 8300000, guid: 9063d5c1120863044b663ab6bd098174, type: 3}
   maxHealth: 25
   currentHealth: 25
   freezeTimer: 0
@@ -188,11 +189,6 @@ MonoBehaviour:
   projectileSpeed: 5
   projectileLife: 1
   doubleShotChance: 0.2
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  wallDetectionDistance: 1
-  avoidanceTurnStrength: 0.5
 --- !u!95 &8557555593478873894
 Animator:
   serializedVersion: 7

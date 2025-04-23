@@ -163,6 +163,9 @@ public class Switcher : MonoBehaviour
         canMovePlayer = false;
         canMoveWolf = false;
 
+        // Play switch SFX
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.switchSFX);
+
         // Store the position of the currently equipped character before deactivating them
         CharacterInfo currentCharacter = characters[currentCharacterIndex];
         previousCharacterPosition = currentCharacter.character.transform.position;

@@ -63,7 +63,7 @@ public class BossFormManager : MonoBehaviour
         {
             return;
         }
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.bossSwitch);
         // Get the current active form's position before switching
         Vector3 lastPosition;
         if (currentForm == BossForm.Firebird)
