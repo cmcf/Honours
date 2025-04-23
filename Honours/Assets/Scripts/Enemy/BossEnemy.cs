@@ -7,6 +7,7 @@ public class BossEnemy : MonoBehaviour
     public Animator currentAnimator;
     public BossFormManager formManager;
     SpriteRenderer spriteRenderer;
+    Rigidbody2D rb;
 
     public GameObject floatingTextPrefab;
     Rigidbody2D activeRb;
@@ -17,6 +18,7 @@ public class BossEnemy : MonoBehaviour
     public EnemyState currentState;
     bool isFrozen = false;
     float freezeTimer;
+    bool isActive = true;
     void Awake()
     {
         formManager = GetComponent<BossFormManager>();
@@ -34,6 +36,7 @@ public class BossEnemy : MonoBehaviour
     {
        currentAnimator = formManager.GetCurrentAnimator();
        spriteRenderer = GetComponent<SpriteRenderer>();
+       rb = GetComponent<Rigidbody2D>();
     }
     public float GetHealthPercentage()
     {
@@ -172,6 +175,8 @@ public class BossEnemy : MonoBehaviour
             isFrozen = true;
             freezeTimer = duration;
 
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.iceHitEffect);
+
             // Stop movement
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -194,6 +199,32 @@ public class BossEnemy : MonoBehaviour
             }
 
             Invoke("Unfreeze", freezeTimer);
+        }
+    }
+
+    void Unfreeze()
+    {
+        isFrozen = false;
+        isActive = true;
+
+        // Restore the colour to white to indicate the enemy is no longer frozen
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white;
+        }
+
+        // Restore animator speed
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.speed = 1;
+        }
+
+        // Remove position constraints 
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
 }

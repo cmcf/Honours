@@ -157,7 +157,7 @@ public class Enemy : MonoBehaviour, IDamageable
             isFrozen = true;
             isActive = false;
             freezeTimer = duration;
-
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.iceHitEffect);
             // Stop movement
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             if (rb != null)

@@ -2296,9 +2296,11 @@ MonoBehaviour:
   shotgunFire: {fileID: 8300000, guid: b5edf9a24fe3fd24698c96d9c28e223b, type: 3}
   pistolFire: {fileID: 8300000, guid: fd6e681f31254ef479813016ff51a6cc, type: 3}
   beamFire: {fileID: 8300000, guid: 4f8ddf234df456c47ae30f5de3dcf53c, type: 3}
-  poisonFire: {fileID: 8300000, guid: fd6e681f31254ef479813016ff51a6cc, type: 3}
+  poisonFire: {fileID: 8300000, guid: 8aab249eb8138d14abde171da255d1c6, type: 3}
+  iceFire: {fileID: 8300000, guid: 57313658a098b9f46a5ab0a72b45224f, type: 3}
   enemyHit: {fileID: 0}
   playerHit: {fileID: 0}
+  iceHitEffect: {fileID: 8300000, guid: 65aeee9ba9bd4154ba2ed3f026bd5e71, type: 3}
   pickup: {fileID: 0}
   explosion: {fileID: 0}
 --- !u!81 &2143930547
@@ -2962,7 +2964,7 @@ MonoBehaviour:
   beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: e2326b84c36ca1f4480fbccfcff527a5, type: 2}
+  currentWeapon: {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:

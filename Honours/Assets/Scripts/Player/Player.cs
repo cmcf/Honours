@@ -226,6 +226,7 @@ public class Player : MonoBehaviour, IDamageable
                 FireSpreadBullets(direction, currentWeapon.spreadCount, 30f);
                 break;
             case Weapon.WeaponType.Ice:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.iceFire);
                 FireIceBullet(direction);
                 break;
             case Weapon.WeaponType.Poison:

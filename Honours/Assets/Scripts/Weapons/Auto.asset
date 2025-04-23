@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Auto
   m_EditorClassIdentifier: 
   weaponName: Auto Rifle
-  weaponType: 5
+  weaponType: 6
   weaponSprite: {fileID: 6866815247170767786, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
   bulletPrefab: {fileID: 1454507353135745339, guid: b611d265b86212345885bd78b5fa79d4, type: 3}
   baseBulletSpeed: 10
@@ -22,11 +22,11 @@ MonoBehaviour:
   baseSpreadCount: 2
   baseMinDamage: 4
   baseMaxDamage: 12
-  bulletSpeed: 12
+  bulletSpeed: 10
   bulletLifetime: 2
-  spreadCount: 0
+  spreadCount: 2
   minDamage: 4
-  maxDamage: 18
+  maxDamage: 12
   maxSpreadCount: 5
   maxMinDamage: 18
   maxMaxDamage: 28

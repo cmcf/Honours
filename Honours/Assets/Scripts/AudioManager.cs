@@ -14,10 +14,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip pistolFire;
     public AudioClip beamFire;
     public AudioClip poisonFire;
+    public AudioClip iceFire;
 
     [Header("Enemy SFX")]
     public AudioClip enemyHit;
     public AudioClip playerHit;
+    public AudioClip iceHitEffect;
 
     public AudioClip pickup;
     public AudioClip explosion;
