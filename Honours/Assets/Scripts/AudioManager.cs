@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip fireAppear;
     public AudioClip fireDeath;
     public AudioClip bossSwitch;
+    public AudioClip pantherProjectile;
 
     [Header("Player SFX")]
     public AudioClip playerHit;

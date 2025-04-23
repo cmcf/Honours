@@ -458,6 +458,7 @@ public class Panther : MonoBehaviour, IDamageable
 
     void FireProjectile(Vector3 spawnPosition)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pantherProjectile);
         GameObject projectile = Instantiate(shieldPrefab, spawnPosition, Quaternion.identity);
 
         // Calculate direction towards the player
