@@ -29,6 +29,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip dashSFX;
     public AudioClip switchSFX;
     public AudioClip playerDeath;
+    public AudioClip wolfBite;
+    public AudioClip knifeSpawn;
+    public AudioClip knifeThrow;
 
     void Awake()
     {

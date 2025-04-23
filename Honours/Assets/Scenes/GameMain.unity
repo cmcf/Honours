@@ -2308,6 +2308,9 @@ MonoBehaviour:
   dashSFX: {fileID: 8300000, guid: fee44725db20302408225a8b6f251bde, type: 3}
   switchSFX: {fileID: 8300000, guid: 69b8ad4e398fb6842b96d4118f237317, type: 3}
   playerDeath: {fileID: 8300000, guid: d773dd026d0833c428df5777ffc6548b, type: 3}
+  wolfBite: {fileID: 8300000, guid: dfc9d7aa8514c1f499661ef8db23f51e, type: 3}
+  knifeSpawn: {fileID: 8300000, guid: 3447965dc4466804191110ca163eb22b, type: 3}
+  knifeThrow: {fileID: 8300000, guid: a3dee71f555eaf842a98a62007c3a3bf, type: 3}
 --- !u!81 &2143930547
 AudioListener:
   m_ObjectHideFlags: 0

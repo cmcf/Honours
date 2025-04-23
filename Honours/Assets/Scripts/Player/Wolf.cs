@@ -124,6 +124,8 @@ public class Wolf : MonoBehaviour
             lastKnifeTime = Time.time;
             float angleStep = 360f / knifeCount;
 
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.knifeSpawn);
+
             for (int i = 0; i < knifeCount; i++)
             {
                 float angle = i * angleStep * Mathf.Deg2Rad;
@@ -182,6 +184,7 @@ public class Wolf : MonoBehaviour
         {
             if (knife == null) continue;
 
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.knifeThrow);
             // Get the Knife script and call Fire function
             KnifeProjectile knifeScript = knife.GetComponent<KnifeProjectile>();
             if (knifeScript != null)
@@ -202,6 +205,8 @@ public class Wolf : MonoBehaviour
         if (Time.time > lastBiteTime + biteCooldown && !isBiting)
         {
             lastBiteTime = Time.time;
+
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.wolfBite);
 
             // Find closest enemy within detection range
             Collider2D[] enemies = Physics2D.OverlapCircleAll(bitePoint.position, biteRange * 2f, combinedLayerMask);
