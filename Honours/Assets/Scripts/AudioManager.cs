@@ -27,8 +27,8 @@ public class AudioManager : MonoBehaviour
     [Header("Player SFX")]
     public AudioClip playerHit;
     public AudioClip dashSFX;
-    public AudioClip pickup;
     public AudioClip switchSFX;
+    public AudioClip playerDeath;
 
     void Awake()
     {

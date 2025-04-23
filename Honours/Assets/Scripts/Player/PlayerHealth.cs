@@ -71,6 +71,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         DifficultyManager.Instance.RegisterDamageTaken(amount);
         ShowFloatingText(amount, Color.red);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.playerHit);
         UpdateHealthText();  // Update health text
         if (currentHealth <= 0)
         {
@@ -135,6 +136,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.playerDeath);
 
         // Reference the Switcher script to check the current character state
         Switcher switcher = FindObjectOfType<Switcher>();

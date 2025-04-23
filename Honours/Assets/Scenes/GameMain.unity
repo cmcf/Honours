@@ -2304,10 +2304,10 @@ MonoBehaviour:
   fireAppear: {fileID: 8300000, guid: e7eef96b6fae15e4aa5d3b09701455ce, type: 3}
   fireDeath: {fileID: 8300000, guid: 44ff444c119930342b6fc9fba8cad07c, type: 3}
   bossSwitch: {fileID: 8300000, guid: c5e404973d0010a40922750f5387f47a, type: 3}
-  playerHit: {fileID: 0}
+  playerHit: {fileID: 8300000, guid: ebf7b06744654b54385cee4679371a9d, type: 3}
   dashSFX: {fileID: 8300000, guid: fee44725db20302408225a8b6f251bde, type: 3}
-  pickup: {fileID: 0}
   switchSFX: {fileID: 8300000, guid: 69b8ad4e398fb6842b96d4118f237317, type: 3}
+  playerDeath: {fileID: 8300000, guid: d773dd026d0833c428df5777ffc6548b, type: 3}
 --- !u!81 &2143930547
 AudioListener:
   m_ObjectHideFlags: 0
