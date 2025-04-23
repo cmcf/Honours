@@ -298,6 +298,7 @@ public class Firebird : MonoBehaviour, IDamageable
     void FireProjectile(Vector2 direction)
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.fireBall);
         Rigidbody2D projRb = projectile.GetComponent<Rigidbody2D>();
         if (projRb != null)
         {
