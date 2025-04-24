@@ -119,7 +119,7 @@ public class Chest : MonoBehaviour
 
         int roomsCompleted = RoomController.Instance.roomsCompleted;
 
-        bool canSpawnWeaponPickup = roomsCompleted > 4;
+        bool canSpawnWeaponPickup = roomsCompleted >= 5;
         bool canSpawnWolfUpgrade = roomsCompleted > 3;
 
         // Get the Player instance to check the weapon max status
@@ -176,7 +176,7 @@ public class Chest : MonoBehaviour
             }
             else
             {
-                pickupPrefabToSpawn = weaponPickupPrefab; // fallback
+                pickupPrefabToSpawn = weaponUpgradePrefab; // fallback
             }
         }
 
