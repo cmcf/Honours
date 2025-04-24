@@ -2097,7 +2097,7 @@ MonoBehaviour:
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
   roomsCompleted: 0
-  roomsBeforeBoss: 3
+  roomsBeforeBoss: 8
   startBossAttack: 0
   canSpawnUpgrade: 1
   healthThreshold: 0.3
