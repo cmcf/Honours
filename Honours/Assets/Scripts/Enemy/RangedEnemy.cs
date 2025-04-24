@@ -24,6 +24,7 @@ public class RangedEnemy : Enemy
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         Invoke("SetToActive", 0.3f);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.fireAppear);
         fireRate = Random.Range(minFireRate, maxFireRate);
     }
 
@@ -161,7 +162,7 @@ public class RangedEnemy : Enemy
 
         // Use the spawn point's direction to fire the projectile
         direction = spawnPoint.right;
-
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.fireBall);
         // Instantiate the projectile at the spawn point
         GameObject projectile = Instantiate(bulletPrefab, spawnPoint.position, spawnPoint.rotation);
 
@@ -182,7 +183,6 @@ public class RangedEnemy : Enemy
         {
             // Fire a single bullet in the given direction
             FireProjectile(direction);
-
             // Wait until the delay has passed before firing again
             yield return new WaitForSeconds(0.3f);
         }

@@ -10,8 +10,9 @@ public class Panther : MonoBehaviour, IDamageable
     [Header("References")]
     public Transform player;
     public Transform[] boundaryPoints;
-    Animator animator;
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
+    Animator animator;
     public Room currentRoom;
     public Transform target;
     TrailRenderer trailRenderer;
@@ -63,15 +64,18 @@ public class Panther : MonoBehaviour, IDamageable
     int difficultyLevel;
     bool isHardMode;
 
+    bool isFrozen = false;
+    float freezeTimer;
+    bool isActive = true;
+
     void Start()
     {
         // References to components
-        
+        rb = GetComponent<Rigidbody2D>();   
         shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
         animator = GetComponent<Animator>();
-        rb = GetComponent<Rigidbody2D>();
         trailRenderer = GetComponent<TrailRenderer>();
-
+        spriteRenderer= GetComponent<SpriteRenderer>();
 
         // Get current difficulty
         difficultyLevel = DifficultyManager.Instance.currentDifficulty;
@@ -454,6 +458,7 @@ public class Panther : MonoBehaviour, IDamageable
 
     void FireProjectile(Vector3 spawnPosition)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.pantherProjectile);
         GameObject projectile = Instantiate(shieldPrefab, spawnPosition, Quaternion.identity);
 
         // Calculate direction towards the player
@@ -585,6 +590,66 @@ public class Panther : MonoBehaviour, IDamageable
         isCharging = false;
         shieldActive = false;
         currentPhase = PantherState.Attack;
+    }
+
+    public void Freeze(float duration)
+    {
+        if (!isFrozen)
+        {
+            isFrozen = true;
+            freezeTimer = duration;
+
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.iceHitEffect);
+
+            // Stop movement
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+            }
+
+            // Freeze the animator by setting its speed to 0
+            Animator animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.speed = 0;
+            }
+
+            // Set colour to cyan to indicate frozen state
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = Color.cyan;
+            }
+
+            Invoke("Unfreeze", freezeTimer);
+        }
+    }
+
+    void Unfreeze()
+    {
+        isFrozen = false;
+        isActive = true;
+
+        // Restore the colour to white to indicate the enemy is no longer frozen
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white;
+        }
+
+        // Restore animator speed
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.speed = 1;
+        }
+
+        // Remove position constraints 
+        if (rb != null)
+        {
+            rb.constraints = RigidbodyConstraints2D.None;
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
     }
 
 }

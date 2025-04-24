@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6287335384057938245}
   - component: {fileID: 4601210581479405267}
   - component: {fileID: 8557555593478873894}
+  - component: {fileID: 7689190717047790660}
   m_Layer: 6
   m_Name: Ant
   m_TagString: Enemy
@@ -171,6 +172,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   rb: {fileID: 6287335384057938245}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
+  deathSFX: {fileID: 8300000, guid: 9063d5c1120863044b663ab6bd098174, type: 3}
   maxHealth: 25
   currentHealth: 25
   freezeTimer: 0
@@ -209,6 +211,52 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &7689190717047790660
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3676589472758329687}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0029507205, y: 0.012001947}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3, y: 0.23}
+    newSize: {x: 0.35, y: 0.23}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.15118687, y: 0.12679544}
+  m_EdgeRadius: 0
 --- !u!1 &7550380101345025122
 GameObject:
   m_ObjectHideFlags: 0

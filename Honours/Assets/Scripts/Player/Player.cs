@@ -98,11 +98,15 @@ public class Player : MonoBehaviour, IDamageable
             return; // Stop further processing of the fire action
         }
 
-        // Rest of the human form firing logic
-        if (currentWeapon.weaponType == Weapon.WeaponType.Automatic ||currentWeapon.weaponType == Weapon.WeaponType.Beam)
+        if (currentWeapon.weaponType == Weapon.WeaponType.Automatic)
         {
             isAutoFiring = true;
             StartCoroutine(AutoFireRifle());
+        }
+        else if (currentWeapon.weaponType == Weapon.WeaponType.Beam)
+        {
+            isAutoFiring = true;
+            StartCoroutine(AutoFireBeam());
         }
         else
         {
@@ -211,18 +215,22 @@ public class Player : MonoBehaviour, IDamageable
         switch (currentWeapon.weaponType)
         {
             case Weapon.WeaponType.Default:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.pistolFire);
                 FireSingleBullet(direction);
                 break;
             case Weapon.WeaponType.RapidFire:
                 StartCoroutine(FireRapid(direction));
                 break;
            case Weapon.WeaponType.SpreadShot:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.shotgunFire);
                 FireSpreadBullets(direction, currentWeapon.spreadCount, 30f);
                 break;
             case Weapon.WeaponType.Ice:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.iceFire);
                 FireIceBullet(direction);
                 break;
             case Weapon.WeaponType.Poison:
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.poisonFire);
                 FirePoisonBullet(direction);
                 break;
             case Weapon.WeaponType.Beam:
@@ -246,6 +254,7 @@ public class Player : MonoBehaviour, IDamageable
 
     void FireBeamProjectile(Vector3 direction)
     {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.beamFire);
         direction.Normalize();
         Vector3 bulletSpawnPosition = beamSpawnPoint.position;
         GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
@@ -315,6 +324,7 @@ public class Player : MonoBehaviour, IDamageable
         for (int i = 0; i < 3; i++)
         {
             FireSingleBullet(direction);
+
             yield return new WaitForSeconds(currentWeapon.fireDelay / 3);
         }
     }
@@ -326,6 +336,7 @@ public class Player : MonoBehaviour, IDamageable
             if (Time.time > lastFireTime + currentWeapon.fireDelay)
             {
                 lastFireTime = Time.time;
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.beamFire);
                 FireBeamProjectile(GetFireDirection());
             }
             yield return null; 
@@ -339,6 +350,7 @@ public class Player : MonoBehaviour, IDamageable
             if (Time.time > lastFireTime + currentWeapon.fireDelay)
             {
                 lastFireTime = Time.time;
+                AudioManager.Instance.PlaySFX(AudioManager.Instance.pistolFire);
                 FireSingleBullet(GetFireDirection());
             }
             yield return null;
@@ -414,7 +426,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public Weapon GetCurrentWeapon()
     {
-        return currentWeapon; // Replace with your actual variable for the current weapon
+        return currentWeapon;
     }
 
     public bool IsWeaponMaxedOut()

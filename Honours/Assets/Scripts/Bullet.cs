@@ -89,10 +89,16 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        BossEnemy bossEnemy = collision.GetComponent<BossEnemy>();
-        if (bossEnemy != null)
+        Panther pantherEnemy = collision.GetComponent<Panther>();
+        if (pantherEnemy != null)
         {
-            bossEnemy.Freeze(freezeDuration);
+            pantherEnemy.Freeze(freezeDuration);
+        }
+
+        Firebird firebirdEnemy = collision.GetComponent<Firebird>();
+        if (firebirdEnemy != null)
+        {
+            firebirdEnemy.Freeze(freezeDuration);
         }
     }
 

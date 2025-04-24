@@ -154,6 +154,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7440780272706730979}
   rb: {fileID: 0}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
+  deathSFX: {fileID: 8300000, guid: 44ff444c119930342b6fc9fba8cad07c, type: 3}
   maxHealth: 20
   currentHealth: 0
   freezeTimer: 0

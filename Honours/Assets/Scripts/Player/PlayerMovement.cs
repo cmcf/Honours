@@ -72,16 +72,16 @@ public class PlayerMovement : MonoBehaviour
         float speed = moveDirection.magnitude;
         Vector2 normalizedDirection = (speed > 0) ? moveDirection.normalized : Vector2.zero;
 
-        // Update blend tree parameters for horizontal movement (animMoveX)
+        // Update blend tree parameters for horizontal movement 
         animator.SetFloat("animMoveX", normalizedDirection.x);
 
-        // Save the player's last movement direction (for idle state)
+        // Save the player's last movement direction 
         lastMoveDirection = normalizedDirection;
 
-        // Update the speed parameter for animation states (run/idle)
+        // Update the speed parameter for animation states 
         animator.SetFloat("speed", speed);
 
-        // Neutral vertical aim (no up/down aiming)
+        // Neutral vertical aim 
         if (speed == 0)
         {
             // If idle, keep the last vertical direction
@@ -108,6 +108,8 @@ public class PlayerMovement : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.dashSFX);
 
         // Determine the dash direction
         Vector2 dashDirection = moveDirection != Vector2.zero ? moveDirection : playerAim.lastFireDirection;

@@ -273,6 +273,9 @@ public class RoomController : MonoBehaviour
                 SpawnBossRoom(previousDoor);
             }
         }
+
+        AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.bossMusic);
     }
 
     Vector3 GetSpawnPosition(Door.DoorType previousDoor)
@@ -331,38 +334,6 @@ public class RoomController : MonoBehaviour
         {
             currentRoom.CheckRoomCompletion();
         }
-    }
-
-    void SpawnRewardRoom()
-    {
-        if (rewardRoom == null || rewardRoom.roomPrefab == null)
-        {
-            return;
-        }
-
-        // Spawn position based on last used door direction
-        Vector3 spawnRoomPosition = currentRoom.transform.position;
-
-        switch (currentDirection) // Use the last movement direction
-        {
-            case RoomDirection.Up: spawnRoomPosition += new Vector3(0, currentRoom.height, 0); break;
-            case RoomDirection.Down: spawnRoomPosition += new Vector3(0, -currentRoom.height, 0); break;
-            case RoomDirection.Left: spawnRoomPosition += new Vector3(-currentRoom.width, 0, 0); break;
-            case RoomDirection.Right: spawnRoomPosition += new Vector3(currentRoom.width, 0, 0); break;
-        }
-
-        // Instantiate the reward room
-        Room newRoom = Instantiate(rewardRoom.roomPrefab, spawnRoomPosition, Quaternion.identity).GetComponent<Room>();
-        newRoom.roomSO = rewardRoom;
-        newRoom.InitializeRoom(roomsCompleted);
-
-        // Set up previous and current room references
-        previousRoom = currentRoom.gameObject;
-        nextRoom = newRoom.gameObject;
-        currentRoom = newRoom;
-        currentRoomPosition = newRoom.transform.position;
-
-        newRoom.gameObject.SetActive(true); 
     }
 
     void SpawnBossRoom(Door.DoorType previousDoor)
