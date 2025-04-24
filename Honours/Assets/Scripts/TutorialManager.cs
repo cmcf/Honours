@@ -14,7 +14,7 @@ public class TutorialManager : MonoBehaviour
 
     string humanKeyboardText =
         "MOUSE - AIM GUN\n" +
-        "LEFT MOUSE BUTTON - FIRE\n" +
+        "LEFT MOUSE BUTTON OR F - FIRE\n" +
         "SHIFT - DASH \n" +
         "SPACE - CHANGE FORM";
 
@@ -25,7 +25,7 @@ public class TutorialManager : MonoBehaviour
     string humanControllerText =
         "RIGHT STICK - AIM\n" +
         "RT - FIRE\n" +
-        "B OR RB - DASH\n" +
+        "RB - DASH\n" +
         "Y - CHANGE FORM";
 
     string wolfControllerText =
