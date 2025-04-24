@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Sources")]
     [SerializeField] AudioSource sfxSource;
+    [SerializeField] AudioSource musicSource;
 
     [Header("Weapon SFX")]
     public AudioClip shotgunFire;
@@ -34,6 +35,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip knifeSpawn;
     public AudioClip knifeThrow;
 
+    [Header("Music")]
+    public AudioClip backgroundMusic;
+    public AudioClip bossMusic;
+
     void Awake()
     {
         if (Instance == null)
@@ -45,6 +50,8 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        PlayMusic(backgroundMusic);
     }
 
     public void PlaySFX(AudioClip clip, float volume = 1f)
@@ -53,5 +60,20 @@ public class AudioManager : MonoBehaviour
         {
             sfxSource.PlayOneShot(clip, volume);
         }
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            musicSource.clip = clip;
+            musicSource.loop = true;
+            musicSource.Play();
+        }
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
     }
 }
