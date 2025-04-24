@@ -55,7 +55,10 @@ public class PlayerHealth : MonoBehaviour
         }
 
         // Disable win panel 
-        winPanel.SetActive(false);
+        if (winPanel!= null)
+        {
+            winPanel.SetActive(false);
+        }
     }
 
     public float GetCurrentHealth()
@@ -69,7 +72,11 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= amount;
-        DifficultyManager.Instance.RegisterDamageTaken(amount);
+        if (DifficultyManager.Instance != null)
+        {
+            DifficultyManager.Instance.RegisterDamageTaken(amount);
+        }
+        
         ShowFloatingText(amount, Color.red);
         AudioManager.Instance.PlaySFX(AudioManager.Instance.playerHit);
         UpdateHealthText();  // Update health text

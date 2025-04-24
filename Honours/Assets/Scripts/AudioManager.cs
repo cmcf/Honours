@@ -41,15 +41,14 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null)
+        // If there is already an instance of AudioManager, destroy this one
+        if (Instance != null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);  // Destroy the duplicate instance
+            return;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        Instance = this;
 
         PlayMusic(backgroundMusic);
     }

@@ -55,6 +55,8 @@ public class DifficultyManager : MonoBehaviour
             minDifficulty += 2;
             maxDifficulty += 2;
         }
+
+        Cursor.visible = true;
     }
 
     public int GetCurrentDifficultyLevel()
