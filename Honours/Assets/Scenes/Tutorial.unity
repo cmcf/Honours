@@ -2944,6 +2944,7 @@ MonoBehaviour:
   winPanel: {fileID: 978269862}
   maxHealth: 1000
   currentHealth: 250
+  inTutorial: 0
   reloadDelay: 2.5
 --- !u!1 &1792642502
 GameObject:

@@ -13,7 +13,9 @@ public class PlayerHealth : MonoBehaviour
 
     public float maxHealth = 50f;
     public float currentHealth;
-    private bool isDead = false;
+
+    public bool inTutorial = false;
+    bool isDead = false;
 
     Player player;
     Wolf wolf;
@@ -182,15 +184,26 @@ public class PlayerHealth : MonoBehaviour
                 if (wolfAnimator != null) wolfAnimator.SetTrigger("isDead");
             }
         }
-
-        DifficultyManager.Instance.ResetDifficultyLevel();
+        if (!inTutorial)
+        {
+            DifficultyManager.Instance.ResetDifficultyLevel();
+        }
+        
 
         Invoke("ReloadGame", reloadDelay);
     }
 
     public void ReloadGame()
     {
-        SceneManager.LoadScene("GameMain");
+        if (inTutorial)
+        {
+            SceneManager.LoadScene("Tutorial");
+        }
+        else
+        {
+            SceneManager.LoadScene("GameMain");
+        }
+        
     }
 
     public void WinGame()
