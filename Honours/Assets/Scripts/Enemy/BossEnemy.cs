@@ -57,6 +57,8 @@ public class BossEnemy : MonoBehaviour
             PlayHitEffect();
             ShowFloatingText(damage, Color.white);
 
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyHit);
+
             if (currentHealth <= 0)
             {
                 Die();
