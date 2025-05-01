@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Damage;
 
 public class Shell : Enemy
 {
@@ -9,6 +10,7 @@ public class Shell : Enemy
     [SerializeField] Transform[] firePoints;
 
     [SerializeField] float attackRadius = 10f;
+    [SerializeField] int hitDamageAmount = 5;
     
     [SerializeField] float attackCooldown = 0.5f;
     [SerializeField] float attackPause = 2f;
@@ -25,6 +27,7 @@ public class Shell : Enemy
     bool lastAttackHitPreviously = false;
 
     bool isHardMode;
+    bool hitPlayer = false;
 
     FirePattern lastUsedPattern;
     enum FirePattern
@@ -319,5 +322,34 @@ public class Shell : Enemy
         animator.SetBool("isMoving", false);
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            // Deals damage to player if hit
+            hitPlayer = true;
+            DealDamage(collision.transform);
+            Destroy(gameObject);
+        }
+    }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        hitPlayer = false;
+    }
+
+    void DealDamage(Transform target)
+    {
+        // Check if the target has a damageable component
+        IDamageable damageable = target.GetComponent<IDamageable>();
+        if (damageable != null)
+        {
+            // Deal damage to the player
+            damageable.Damage(hitDamageAmount);
+        }
+    }
 }
+    
+
+
+
