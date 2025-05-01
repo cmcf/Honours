@@ -75,6 +75,7 @@ public class RoomController : MonoBehaviour
 
         currentRoom = newRoom;
         currentRoomPosition = newRoom.transform.position;
+        leftSpawnRoom = true;
     }
 
     public void SetLastUsedDoor(Door.DoorType doorType)
@@ -231,6 +232,11 @@ public class RoomController : MonoBehaviour
 
     public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
     {
+        if (leftSpawnRoom)
+        {
+            GameTimer.Instance.StartTimer();
+        }
+        
         if (roomsCompleted >= roomsBeforeBoss && !hasBossRoomSpawned)
         {
             ReplaceWithBossRoom(previousDoor);

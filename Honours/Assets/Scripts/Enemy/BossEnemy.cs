@@ -142,14 +142,14 @@ public class BossEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         activeRb = formManager.GetCurrentRb();
         Destroy(activeRb);
-        PlayerHealth player = FindObjectOfType<PlayerHealth>();
-        player.WinGame();
         Invoke("DestroyGameObject", 0.4f);
     }
 
     void DestroyGameObject()
     {
         Destroy(gameObject);
+        PlayerHealth player = FindObjectOfType<PlayerHealth>();
+        player.WinGame();
     }
 
 
