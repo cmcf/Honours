@@ -420,6 +420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panther
       objectReference: {fileID: 0}
+    - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

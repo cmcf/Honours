@@ -19,22 +19,21 @@ public class BossFormManager : MonoBehaviour
         enemy = GetComponent<BossEnemy>();
         pantherScript= GetComponentInChildren<Panther>();
 
-        // Ensure both forms are assigned
-        // if (firebirdForm == null || pantherForm == null)
-        // {
-        //     return;
-        // }
+         if (firebirdForm == null || pantherForm == null)
+         {
+             return;
+         }
 
         // Randomly choose between Firebird or Panther form
-        // float randomValue = Random.value;
-        // if (randomValue > 0.5f)
-        // {
-        //     currentForm = BossForm.Firebird;
-        // }
-        // else
-        // {
-        //     currentForm = BossForm.Panther;
-        // }
+         float randomValue = Random.value;
+         if (randomValue > 0.5f)
+         {
+             currentForm = BossForm.Firebird;
+         }
+         else
+         {
+             currentForm = BossForm.Panther;
+         }
 
         // Activate the chosen form
         ActivateForm(currentForm, transform.position);

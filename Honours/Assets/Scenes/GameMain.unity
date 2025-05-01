@@ -2097,7 +2097,7 @@ MonoBehaviour:
   currentRoomPosition: {x: 0, y: 0, z: 0}
   currentDirection: 0
   roomsCompleted: 0
-  roomsBeforeBoss: 8
+  roomsBeforeBoss: 9
   startBossAttack: 0
   canSpawnUpgrade: 1
   healthThreshold: 0.3
@@ -2171,6 +2171,7 @@ MonoBehaviour:
   winPanel: {fileID: 1680410144}
   maxHealth: 250
   currentHealth: 250
+  inTutorial: 0
   reloadDelay: 2.5
 --- !u!114 &2143930544
 MonoBehaviour:
