@@ -9,6 +9,7 @@ public class WeaponUpgrade : ScriptableObject
         IncreaseSpreadCount,
         IncreaseBulletSpeed,
         IncreaseDamage,
+        IncreasedFireRate,
     }
 
     public UpgradeType upgradeType;
@@ -36,6 +37,11 @@ public class WeaponUpgrade : ScriptableObject
             case UpgradeType.IncreaseBulletSpeed:
                 weapon.bulletSpeed *= bulletSpeedMultiplier;
                 break;
+
+            case UpgradeType.IncreasedFireRate:
+                weapon.fireDelay -= fireRateMultiplier;
+                break;
+
         }
 
         // Show the upgrade UI feedback above the pickup
@@ -86,11 +92,13 @@ public class WeaponUpgrade : ScriptableObject
         switch (upgradeType)
         {
             case UpgradeType.IncreaseSpreadCount:
-                return "BULLETS INCREASED BY " + spreadIncreaseAmount + "!";
+                return "BULLET SPREAD INCREASED!";
             case UpgradeType.IncreaseDamage:
-                return "GUN DAMAGE INCREASED";
+                return "BULLET DAMAGE INCREASED!";
             case UpgradeType.IncreaseBulletSpeed:
-                return "BULLET SPEED INCREASED";
+                return "BULLET SPEED INCREASED!";
+            case UpgradeType.IncreasedFireRate:
+                return "FIRE RATE INCREASED!";
             default:
                 return "UPGRADE APPLIED TO CURRENT GUN!";
         }

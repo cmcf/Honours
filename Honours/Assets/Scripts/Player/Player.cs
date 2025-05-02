@@ -131,10 +131,8 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (currentWeapon != null)
         {
-            // Find the WeaponUpgradePickup to pass to the Apply method
-            WeaponUpgradePickup pickup = FindObjectOfType<WeaponUpgradePickup>();  // Or pass the pickup directly if needed
-
-            upgrade.Apply(currentWeapon, pickup);  // Apply the upgrade and also show the UI feedback
+            WeaponUpgradePickup pickup = FindObjectOfType<WeaponUpgradePickup>();  
+            upgrade.Apply(currentWeapon, pickup);  // Apply the upgrade
         }
     }
 

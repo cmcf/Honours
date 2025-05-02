@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
     }
     public void PlayGame()
     {
+        Time.timeScale = 1f; // Ensure game time is resumed
         // Load the difficulty selection scene 
-        SceneManager.LoadScene("DisfficultySelection");
+        SceneManager.LoadScene("DifficultySelection");
     }
 
     public void ResumeGame()
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         DifficultyManager.Instance.hardModeEnabled = false;
         // Load the game scene 
         SceneManager.LoadScene("GameMain");
+
     }
 
     public void Hard()
@@ -55,6 +57,7 @@ public class GameManager : MonoBehaviour
         // Load the game scene 
         SceneManager.LoadScene("GameMain");
     }
+
 
 
     public void Back()

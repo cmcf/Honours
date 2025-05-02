@@ -17,16 +17,16 @@ MonoBehaviour:
   weaponSprite: {fileID: -3776783329477156521, guid: a93ec72e18d6f844f9d8635099a910b9, type: 3}
   bulletPrefab: {fileID: 1454507353135745339, guid: b611d265b86212345885bd78b5fa79d4, type: 3}
   baseBulletSpeed: 10
-  baseBulletLifetime: 2
+  baseBulletLifetime: 1
   fireDelay: 0.6
-  baseSpreadCount: 2
-  baseMinDamage: 2
-  baseMaxDamage: 8
-  bulletSpeed: 9
+  baseSpreadCount: 0
+  baseMinDamage: 6
+  baseMaxDamage: 12
+  bulletSpeed: 10
   bulletLifetime: 1.5
   spreadCount: 0
-  minDamage: 5
-  maxDamage: 10
+  minDamage: 6
+  maxDamage: 12
   maxSpreadCount: 5
   maxMinDamage: 45
   maxMaxDamage: 55

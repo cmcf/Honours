@@ -283,6 +283,7 @@ public class RoomController : MonoBehaviour
             }
         }
 
+        bossHealthBarUI.SetActive(true);
         AudioManager.Instance.StopMusic();
         AudioManager.Instance.PlayMusic(AudioManager.Instance.bossMusic);
     }
@@ -348,9 +349,6 @@ public class RoomController : MonoBehaviour
             Debug.LogError("Boss room or its prefab is missing!");
             return;
         }
-
-        // Enable boss health bar
-        bossHealthBarUI.SetActive(true);
 
         // Set the boss room to spawn where the next room should be
         Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
