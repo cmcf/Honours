@@ -1561,7 +1561,7 @@ Transform:
   m_GameObject: {fileID: 1317673963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.161, y: 0.028, z: 0}
+  m_LocalPosition: {x: -0.176, y: 0.028, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3415,7 +3415,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.985
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4026,7 +4026,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.13}
+  m_Size: {x: 0.325, y: 0.175}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -4292,7 +4292,7 @@ MonoBehaviour:
   beamSpawnPoint: {fileID: 1317673964}
   health: 150
   isDead: 0
-  currentWeapon: {fileID: 11400000, guid: b8d98725c4af6824e9e8f9babd6a5910, type: 2}
+  currentWeapon: {fileID: 11400000, guid: e069490a8ff00fd4797515a0bfc0413d, type: 2}
   numberOfDeaths: 0
 --- !u!114 &4666233365963825656
 MonoBehaviour:
