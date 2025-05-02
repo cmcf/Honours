@@ -4,13 +4,40 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject pauseMenu;
+    bool isPaused = false;
+
+    void Start()
+    {
+        if (pauseMenu!= null)
+        {
+            pauseMenu.SetActive(false);
+        }
+        
+    }
     public void PlayGame()
     {
         // Load the difficulty selection scene 
-        SceneManager.LoadScene("DifficultySelection");
+        SceneManager.LoadScene("DisfficultySelection");
+    }
+
+    public void ResumeGame()
+    {
+        // Resumes time and hides pause menu
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+
+        // Enables input
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.enabled = true;
+        }
+
     }
 
     public void Normal()
@@ -47,6 +74,56 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+
+    void OnEnable()
+    {
+        var playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.actions["Pause"].performed += OnPausePressed;
+        }
+    }
+
+    void OnDisable()
+    {
+        var playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.actions["Pause"].performed -= OnPausePressed;
+        }
+    }
+
+    void OnPausePressed(InputAction.CallbackContext context)
+    {
+        TogglePause();
+    }
+
+    void TogglePause()
+    {
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            GameTimer.Instance.PauseTimer();
+            pauseMenu.SetActive(true);
+            Cursor.visible = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            GameTimer.Instance.StartTimer();
+            pauseMenu.SetActive(false);
+            Cursor.visible = false;
+        }
+
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.enabled = !isPaused;
+        }
+    }
+
 
 
 }
