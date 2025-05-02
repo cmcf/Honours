@@ -237,8 +237,22 @@ public class Shell : Enemy
 
             if (rb != null)
             {
-                rb.velocity = firePoint.up * 10f;
+                Vector2 direction = (player.position - firePoint.position).normalized;
+                // Set off set based on difficulty
+                float angleOffset;
+                if (isHardMode)
+                {
+                    angleOffset = Random.Range(-2f, 2f);
+                }
+                else
+                {
+                    angleOffset = Random.Range(-5f, 5f);
+                }
+
+                direction = Quaternion.Euler(0, 0, angleOffset) * direction;
+                rb.velocity = direction * projectileSpeed;
             }
+
 
             Spike spikeScript = spike.GetComponent<Spike>();
             if (spikeScript != null)

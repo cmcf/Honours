@@ -220,9 +220,10 @@ MonoBehaviour:
   - {fileID: 8006267881494338271}
   - {fileID: 5650198022586891155}
   attackRadius: 3.5
+  hitDamageAmount: 5
   attackCooldown: 1.5
   attackPause: 1.5
-  projectileSpeed: 10
+  projectileSpeed: 8
   minDistance: 2
   strafeDistance: 2
   minSpeed: 2
