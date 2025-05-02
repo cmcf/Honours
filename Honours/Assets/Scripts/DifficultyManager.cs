@@ -81,7 +81,7 @@ public class DifficultyManager : MonoBehaviour
             currentDifficulty++;
             ApplyDifficultyScaling();
         }
-        Debug.Log("Increased level - current diffiuclty is " + currentDifficulty);
+        Debug.Log(currentDifficulty);
     }
 
     public void DecreaseDifficulty()

@@ -123,9 +123,6 @@ public class Ant : Enemy
 
         // Apply velocity 
         projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
-
-        // Destroy projectile after a set time
-        Destroy(projectile, projectileLife);
     }
 
     // Coroutine to shoot a second projectile after a short delay
