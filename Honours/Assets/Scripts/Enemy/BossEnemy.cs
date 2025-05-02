@@ -115,7 +115,7 @@ public class BossEnemy : MonoBehaviour
             if (activeCharacter != null)
             {
                 // Spawn the text slightly in front of the active character
-                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0.5f, 2f);
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0.2f, 1f);
 
                 // Instantiate the floating text prefab
                 GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
