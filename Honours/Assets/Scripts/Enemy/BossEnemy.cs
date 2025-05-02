@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BossEnemy : MonoBehaviour
 {
     public Animator currentAnimator;
     public BossFormManager formManager;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
+    public Slider healthSlider;
 
     public GameObject floatingTextPrefab;
     Rigidbody2D activeRb;
@@ -35,6 +36,12 @@ public class BossEnemy : MonoBehaviour
        currentAnimator = formManager.GetCurrentAnimator();
        spriteRenderer = GetComponent<SpriteRenderer>();
        rb = GetComponent<Rigidbody2D>();
+
+        if (healthSlider == null)
+        {
+            healthSlider = GameObject.Find("BossHealthBar").GetComponent<Slider>();
+        }
+        UpdateHealth();
     }
     public float GetHealthPercentage()
     {
@@ -59,6 +66,8 @@ public class BossEnemy : MonoBehaviour
 
             AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyHit);
 
+            UpdateHealth();
+
             if (currentHealth <= 0)
             {
                 Die();
@@ -66,6 +75,19 @@ public class BossEnemy : MonoBehaviour
  
             hit = true;
             StartCoroutine(ResetHitFlag());
+        }
+    }
+
+    void UpdateHealth()
+    {
+        // Clamp health
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // Update slider
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
         }
     }
 

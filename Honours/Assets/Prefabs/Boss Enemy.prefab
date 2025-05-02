@@ -404,8 +404,9 @@ MonoBehaviour:
   formManager: {fileID: 2727881887632806977}
   spriteRenderer: {fileID: 0}
   rb: {fileID: 0}
+  healthSlider: {fileID: 0}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 50
+  maxHealth: 450
   currentHealth: 0
   currentState: 0
 --- !u!1001 &3517933524031244748

@@ -16,7 +16,8 @@ public class RoomController : MonoBehaviour
     public SceneTransition sceneTransition;
     public static RoomController Instance;
     public PlayerHealth playerHealth;
-    
+    public GameObject bossHealthBarUI;
+
     [Header("Weapons")]
     public List<Weapon> availableWeapons;
 
@@ -50,6 +51,8 @@ public class RoomController : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        bossHealthBarUI.SetActive(false);
 
         // Load the spawn room when the game starts
         LoadSpawnRoom();
@@ -349,6 +352,9 @@ public class RoomController : MonoBehaviour
             Debug.LogError("Boss room or its prefab is missing!");
             return;
         }
+
+        // Enable boss health bar
+        bossHealthBarUI.SetActive(true);
 
         // Set the boss room to spawn where the next room should be
         Vector3 bossRoomPosition = GetSpawnPosition(previousDoor);
