@@ -277,7 +277,7 @@ public class Player : MonoBehaviour, IDamageable
     void FireSingleBullet(Vector3 direction)
     {
         direction.Normalize();
-        Vector3 bulletSpawnPosition = spawnPoint.position + direction * 0.5f;
+        Vector3 bulletSpawnPosition = spawnPoint.position;
         GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
