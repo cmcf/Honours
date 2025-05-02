@@ -311,10 +311,6 @@ public class RoomController : MonoBehaviour
         {
             DifficultyManager.Instance.AdjustDifficultyAfterRoom();
         }
-        else
-        {
-            Debug.Log(" skipping difficulty adjustment.");
-        }
     }
 
 
