@@ -98,28 +98,35 @@ public class MeleeEnemy : Enemy
 
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 
+        // Stop movement and trigger disappearance
         if (distanceToPlayer <= stoppingDistance)
         {
-            // Stop movement and trigger disappearance
-            rb.velocity = Vector2.zero; 
+            rb.velocity = Vector2.zero;
             reachedPlayer = true;
             AttackPlayer();
         }
         else
         {
             reachedPlayer = false;
-            Vector2 direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
-            rb.velocity = direction * moveSpeed;
 
-            // Ensure the enemy is in the "attacking" state while moving
+            // Raycast to check if there's a wall between enemy and player
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, playerLocation.position - transform.position, distanceToPlayer, LayerMask.GetMask("Wall"));
+
+            if (hit.collider == null)
+            {
+                Vector2 direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
+                rb.velocity = direction * moveSpeed;
+            }
+            else
+            {
+                rb.velocity = Vector2.zero;
+            }
+
             animator.SetBool("isAttacking", true);
-
-            // Update last known position
             lastKnownPosition = transform.position;
-    
-
         }
     }
+
 
     void AttackPlayer()
     {
@@ -178,15 +185,11 @@ public class MeleeEnemy : Enemy
     {
         if (currentRoom == null) return;
 
-        // Get room boundaries
         Vector3 roomCentre = currentRoom.GetRoomCentre();
         float roomWidth = currentRoom.width;
         float roomHeight = currentRoom.height;
+        Vector3 roomPosition = currentRoom.transform.position;
 
-        // Get room's position in the scene
-        Vector3 roomPosition = currentRoom.transform.position; 
-
-        // Define spawn area bounds with a margin
         float margin = 1.5f;
 
         float minX = roomPosition.x - roomWidth / 2f + margin;
@@ -194,14 +197,25 @@ public class MeleeEnemy : Enemy
         float minY = roomPosition.y - roomHeight / 2f + margin;
         float maxY = roomPosition.y + roomHeight / 2f - margin;
 
-        // Generates a random spawn position within the room bounds
-        Vector2 spawnPosition = new Vector2(
-            Random.Range(minX, maxX),
-            Random.Range(minY, maxY)
-        );
+        int maxAttempts = 10;
+        for (int i = 0; i < maxAttempts; i++)
+        {
+            Vector2 spawnPosition = new Vector2(
+                Random.Range(minX, maxX),
+                Random.Range(minY, maxY)
+            );
 
-        // Update enemy position to the new spawn position
-        transform.position = spawnPosition;
+            // Check for overlap with walls
+            Collider2D hit = Physics2D.OverlapCircle(spawnPosition, 0.3f, LayerMask.GetMask("Wall"));
+            if (hit == null)
+            {
+                transform.position = spawnPosition;
+                return;
+            }
+        }
+
+        // Use room centre if all attempts fail
+        transform.position = roomCentre;
     }
 
 }
