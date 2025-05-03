@@ -170,7 +170,11 @@ public class Panther : MonoBehaviour, IDamageable
             }
         }
 
-        animator.SetFloat("speed", rb.velocity.magnitude);
+        if (rb != null)
+        {
+            animator.SetFloat("speed", rb.velocity.magnitude);
+        }
+        
     }
 
     void AttackPlayer()
@@ -265,10 +269,12 @@ public class Panther : MonoBehaviour, IDamageable
                 animator.SetFloat("speed", 0);
                 break; // Exit the charge when hitting the wall
             }
-
-            // Apply velocity to the Panther for dashing
-            rb.velocity = chargeDirection * chargeSpeed;
-
+            if (rb != null)
+            {
+                // Apply velocity to the Panther for dashing
+                rb.velocity = chargeDirection * chargeSpeed;
+            }
+            
             // Check for collision with player during dash
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
             foreach (Collider2D h in hits)
@@ -288,13 +294,17 @@ public class Panther : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        // End of dash
-        rb.velocity = Vector2.zero;
-        animator.SetFloat("speed", 0);
-        isCharging = false;
-        trailRenderer.emitting = false;
-        currentPhase = PantherState.Defend; // Transition to Defend state
-        defendStateStartTime = Time.time; // Reset defend timer
+        if (rb != null)
+        {
+            // End of dash
+            rb.velocity = Vector2.zero;
+            animator.SetFloat("speed", 0);
+            isCharging = false;
+            trailRenderer.emitting = false;
+            currentPhase = PantherState.Defend; // Transition to Defend state
+            defendStateStartTime = Time.time; // Reset defend timer
+
+        }
 
         // Activate shield after dash finishes
         ActivateShield();

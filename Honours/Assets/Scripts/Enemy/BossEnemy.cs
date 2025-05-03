@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BossEnemy : MonoBehaviour
 {
     public Animator currentAnimator;
     public BossFormManager formManager;
     public SpriteRenderer spriteRenderer;
     public Rigidbody2D rb;
+    public Slider healthSlider;
 
     public GameObject floatingTextPrefab;
     Rigidbody2D activeRb;
@@ -35,6 +36,12 @@ public class BossEnemy : MonoBehaviour
        currentAnimator = formManager.GetCurrentAnimator();
        spriteRenderer = GetComponent<SpriteRenderer>();
        rb = GetComponent<Rigidbody2D>();
+
+        if (healthSlider == null)
+        {
+            healthSlider = GameObject.Find("BossHealthBar").GetComponent<Slider>();
+        }
+        UpdateHealth();
     }
     public float GetHealthPercentage()
     {
@@ -59,6 +66,8 @@ public class BossEnemy : MonoBehaviour
 
             AudioManager.Instance.PlaySFX(AudioManager.Instance.enemyHit);
 
+            UpdateHealth();
+
             if (currentHealth <= 0)
             {
                 Die();
@@ -66,6 +75,19 @@ public class BossEnemy : MonoBehaviour
  
             hit = true;
             StartCoroutine(ResetHitFlag());
+        }
+    }
+
+    void UpdateHealth()
+    {
+        // Clamp health
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        // Update slider
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
         }
     }
 
@@ -93,7 +115,7 @@ public class BossEnemy : MonoBehaviour
             if (activeCharacter != null)
             {
                 // Spawn the text slightly in front of the active character
-                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0.5f, 2f);
+                Vector3 spawnPosition = activeCharacter.transform.position + new Vector3(0f, 0.2f, 1f);
 
                 // Instantiate the floating text prefab
                 GameObject textInstance = Instantiate(floatingTextPrefab, spawnPosition, Quaternion.identity);
@@ -142,14 +164,14 @@ public class BossEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         activeRb = formManager.GetCurrentRb();
         Destroy(activeRb);
-        PlayerHealth player = FindObjectOfType<PlayerHealth>();
-        player.WinGame();
         Invoke("DestroyGameObject", 0.4f);
     }
 
     void DestroyGameObject()
     {
         Destroy(gameObject);
+        PlayerHealth player = FindObjectOfType<PlayerHealth>();
+        player.WinGame();
     }
 
 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectName: Leech
   duration: 2.5
-  tickInterval: 2
-  damagePerTick: 2
+  tickInterval: 3
+  damagePerTick: 1
   biteSprite: {fileID: 21300000, guid: 4e6bec458fb46cf4e9e0491d82ad088c, type: 3}
   effectAnimationPrefab: {fileID: 0}
   isLeechEffect: 1

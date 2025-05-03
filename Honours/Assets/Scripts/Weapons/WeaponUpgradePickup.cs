@@ -59,45 +59,55 @@ public class WeaponUpgradePickup : MonoBehaviour
 
     void ChooseRandomUpgrade()
     {
-        // Filter out the IncreaseSpreadCount upgrade if the player doesn't have a shotgun equipped
-        if (weapon.weaponType != Weapon.WeaponType.SpreadShot)
+        // Create a filtered list of upgrades that are valid for the current weapon
+        List<WeaponUpgrade> validUpgrades = new List<WeaponUpgrade>();
+
+        foreach (WeaponUpgrade upgradeOption in possibleUpgrades)
         {
-            possibleUpgrades.RemoveAll(upgrade => upgrade.upgradeType == WeaponUpgrade.UpgradeType.IncreaseSpreadCount);
+            // Skip SpreadCount if not using a shotgun
+            if (upgradeOption.upgradeType == WeaponUpgrade.UpgradeType.IncreaseSpreadCount &&
+                weapon.weaponType != Weapon.WeaponType.SpreadShot)
+            {
+                continue;
+            }
+
+            // Check maxed conditions
+            if (upgradeOption.upgradeType == WeaponUpgrade.UpgradeType.IncreaseSpreadCount &&
+                weapon.spreadCount >= weapon.maxSpreadCount)
+            {
+                continue;
+            }
+
+            if (upgradeOption.upgradeType == WeaponUpgrade.UpgradeType.IncreaseDamage &&
+                weapon.minDamage >= weapon.maxMinDamage && weapon.maxDamage >= weapon.maxMaxDamage)
+            {
+                continue;
+            }
+
+            if (upgradeOption.upgradeType == WeaponUpgrade.UpgradeType.IncreaseBulletSpeed &&
+                weapon.bulletSpeed >= weapon.maxBulletSpeed)
+            {
+                continue;
+            }
+
+            if (upgradeOption.upgradeType == WeaponUpgrade.UpgradeType.IncreasedFireRate &&
+                weapon.fireDelay <= weapon.minFireRate)
+            {
+                continue;
+            }
+
+            // If it passed all checks, add to valid list
+            validUpgrades.Add(upgradeOption);
         }
 
-        if (possibleUpgrades.Count > 0)
+        if (validUpgrades.Count > 0)
         {
-            int randomIndex = Random.Range(0, possibleUpgrades.Count);
-            WeaponUpgrade chosenUpgrade = possibleUpgrades[randomIndex];
-
-            // Ensure the upgrade is applicable based on the weapon's stats
-            if (chosenUpgrade.upgradeType == WeaponUpgrade.UpgradeType.IncreaseSpreadCount)
-            {
-                // Only apply if spread count is not maxed
-                if (weapon.spreadCount >= weapon.maxSpreadCount)
-                {
-                    return; // Skip if spread count is maxed
-                }
-            }
-            else if (chosenUpgrade.upgradeType == WeaponUpgrade.UpgradeType.IncreaseDamage)
-            {
-                // Skip if damage is already maxed
-                if (weapon.minDamage >= weapon.maxMinDamage && weapon.maxDamage >= weapon.maxMaxDamage)
-                {
-                    return; // Skip if damage is already at max
-                }
-            }
-            else if (chosenUpgrade.upgradeType == WeaponUpgrade.UpgradeType.IncreaseBulletSpeed)
-            {
-                // Skip if bullet speed is already maxed
-                if (weapon.bulletSpeed >= weapon.maxBulletSpeed)
-                {
-                    return; // Skip if bullet speed is already maxed
-                }
-            }
-
-            // Apply the chosen upgrade if it passed all checks
-            upgrade = chosenUpgrade;
+            int randomIndex = Random.Range(0, validUpgrades.Count);
+            upgrade = validUpgrades[randomIndex];
+        }
+        else
+        {
+            upgrade = null; // All upgrades are maxed
         }
     }
 }

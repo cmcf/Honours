@@ -16,7 +16,8 @@ public class RoomController : MonoBehaviour
     public SceneTransition sceneTransition;
     public static RoomController Instance;
     public PlayerHealth playerHealth;
-    
+    public GameObject bossHealthBarUI;
+
     [Header("Weapons")]
     public List<Weapon> availableWeapons;
 
@@ -51,6 +52,8 @@ public class RoomController : MonoBehaviour
     {
         Instance = this;
 
+        bossHealthBarUI.SetActive(false);
+
         // Load the spawn room when the game starts
         LoadSpawnRoom();
     }
@@ -75,6 +78,7 @@ public class RoomController : MonoBehaviour
 
         currentRoom = newRoom;
         currentRoomPosition = newRoom.transform.position;
+        leftSpawnRoom = true;
     }
 
     public void SetLastUsedDoor(Door.DoorType doorType)
@@ -231,6 +235,11 @@ public class RoomController : MonoBehaviour
 
     public void LoadRoom(RoomSO roomSO, Door.DoorType previousDoor)
     {
+        if (leftSpawnRoom)
+        {
+            GameTimer.Instance.StartTimer();
+        }
+        
         if (roomsCompleted >= roomsBeforeBoss && !hasBossRoomSpawned)
         {
             ReplaceWithBossRoom(previousDoor);
@@ -274,6 +283,7 @@ public class RoomController : MonoBehaviour
             }
         }
 
+        bossHealthBarUI.SetActive(true);
         AudioManager.Instance.StopMusic();
         AudioManager.Instance.PlayMusic(AudioManager.Instance.bossMusic);
     }
@@ -301,10 +311,6 @@ public class RoomController : MonoBehaviour
         if (currentRoom != null && currentRoom.roomSO != rewardRoom && roomsCompleted > 2)
         {
             DifficultyManager.Instance.AdjustDifficultyAfterRoom();
-        }
-        else
-        {
-            Debug.Log(" skipping difficulty adjustment.");
         }
     }
 

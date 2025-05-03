@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
         {
             // Check if the target has a damageable component
             IDamageable damageable = collision.GetComponent<IDamageable>();
+            
             if (damageable != null)
             {
                 // Deal immediate damage to the enemy

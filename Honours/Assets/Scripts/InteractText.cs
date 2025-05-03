@@ -7,14 +7,14 @@ using UnityEngine.InputSystem.Utilities;
 
 public class InteractText : MonoBehaviour
 {
-    public TextMeshProUGUI promptText; // UI text for "E" or "A"
+    public TextMeshProUGUI promptText;
 
     private PlayerInput playerInput;
 
     void Start()
     {
         InputSystem.onAnyButtonPress.Call(OnAnyInput);
-        UpdatePrompts(); // fallback if no input yet
+        UpdatePrompts(); 
     }
 
     void OnAnyInput(InputControl control)

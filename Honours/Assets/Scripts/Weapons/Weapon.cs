@@ -12,7 +12,7 @@ public class Weapon : ScriptableObject
     [Header("Base Values")]
     public float baseBulletSpeed = 10f;
     public float baseBulletLifetime = 2f;
-    public float fireDelay = 0.5f;
+    public float baseFireDelay = 0.5f;
     public int baseSpreadCount = 2;
     public int baseMinDamage;  // Minimum damage
     public int baseMaxDamage; // Maximum damage
@@ -20,6 +20,7 @@ public class Weapon : ScriptableObject
     [Header("Current Values")]
     public float bulletSpeed;
     public float bulletLifetime;
+    public float fireDelay;
     public int spreadCount;
     public int minDamage;  // Minimum damage
     public int maxDamage; // Maximum damage
@@ -30,6 +31,7 @@ public class Weapon : ScriptableObject
     public int maxMaxDamage = 28;
     public float maxBulletSpeed = 25;
     public float maxBulletLifeTime = 2.5f;
+    public float minFireRate = 0.4f;
 
 
 
@@ -50,10 +52,11 @@ public class Weapon : ScriptableObject
         spreadCount = baseSpreadCount;
         minDamage = baseMinDamage;
         maxDamage = baseMaxDamage;
+        fireDelay = baseFireDelay;
     }
 
     public int GetRandomDamage()
     {
-        return Random.Range(baseMinDamage, baseMaxDamage + 1);
+        return Random.Range(minDamage, maxDamage + 1);
     }
 }

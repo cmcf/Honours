@@ -208,14 +208,29 @@ public class PlayerHealth : MonoBehaviour
 
     public void WinGame()
     {
+        // Disable player and wolf control
+        DisableCharacterControl();   
+        GameTimer gameTimer = FindObjectOfType<GameTimer>();
+        gameTimer.PauseTimer();
+
+        Invoke("DisplayWinPanel", 1f);
+
+    }
+
+    void DisplayWinPanel()
+    {
         winPanel.SetActive(true);
         Cursor.visible = true;
-        // Disable player and wolf control
-        DisableCharacterControl();
     }
 
     void DisableCharacterControl()
     {
+
+        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
+        if (playerInput != null)
+        {
+            playerInput.enabled = false; // Disables input
+        }
         if (player != null)
         {
             PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
@@ -231,10 +246,6 @@ public class PlayerHealth : MonoBehaviour
             if (wolfMovement != null) wolfMovement.enabled = false;
         }
 
-        PlayerInput playerInput = FindObjectOfType<PlayerInput>();
-        if (playerInput != null)
-        {
-            playerInput.enabled = false; // Disables input
-        }
+        
     }
 }

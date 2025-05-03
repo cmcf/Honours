@@ -404,9 +404,10 @@ MonoBehaviour:
   formManager: {fileID: 2727881887632806977}
   spriteRenderer: {fileID: 0}
   rb: {fileID: 0}
+  healthSlider: {fileID: 0}
   floatingTextPrefab: {fileID: 5361475802735139668, guid: cfb7ed56694519241bda0989ed915148, type: 3}
-  maxHealth: 450
-  currentHealth: 0
+  maxHealth: 650
+  currentHealth: 650
   currentState: 0
 --- !u!1001 &3517933524031244748
 PrefabInstance:
@@ -419,6 +420,10 @@ PrefabInstance:
     - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_Name
       value: Panther
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028964574950061938, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4340094830958518983, guid: 4f64740d540dca447996c1444629ce2b, type: 3}
       propertyPath: m_LocalPosition.x

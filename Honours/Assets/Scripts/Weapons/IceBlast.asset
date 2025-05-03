@@ -18,17 +18,19 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2477896251280384620, guid: f3e955db7762d2c4a90fa308c8508790, type: 3}
   baseBulletSpeed: 10
   baseBulletLifetime: 2
-  fireDelay: 0.6
+  baseFireDelay: 0.5
   baseSpreadCount: 2
   baseMinDamage: 4
   baseMaxDamage: 12
   bulletSpeed: 0
   bulletLifetime: 1.5
+  fireDelay: 0.6
   spreadCount: 2
   minDamage: 4
   maxDamage: 12
   maxSpreadCount: 5
-  maxMinDamage: 18
-  maxMaxDamage: 28
+  maxMinDamage: 20
+  maxMaxDamage: 30
   maxBulletSpeed: 25
   maxBulletLifeTime: 2.5
+  minFireRate: 0.4

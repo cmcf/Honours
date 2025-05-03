@@ -12,6 +12,7 @@ public class HomingProjectile : MonoBehaviour
     [SerializeField] float rotationSpeed = 200f; // Controls how fast it turns
     [SerializeField] int minDamage = 5;
     [SerializeField] int maxDamage = 20;
+    [SerializeField] float projectileLifetime = 1.8f;
 
     bool hitPlayer = false;
     int damageAmount;
@@ -20,6 +21,8 @@ public class HomingProjectile : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player")?.transform;
         damageAmount = Random.Range(minDamage, maxDamage);
+
+        StartCoroutine(ShrinkOverTime(projectileLifetime));
     }
 
     void FixedUpdate()
@@ -55,6 +58,23 @@ public class HomingProjectile : MonoBehaviour
             DealDamage(collision.transform);
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator ShrinkOverTime(float duration)
+    {
+        // Projectie reduces in size over time
+        Vector3 originalScale = transform.localScale;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            transform.localScale = Vector3.Lerp(originalScale, Vector3.zero, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        Destroy(gameObject);
     }
 
     void OnTriggerExit2D(Collider2D other)

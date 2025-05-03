@@ -131,10 +131,8 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (currentWeapon != null)
         {
-            // Find the WeaponUpgradePickup to pass to the Apply method
-            WeaponUpgradePickup pickup = FindObjectOfType<WeaponUpgradePickup>();  // Or pass the pickup directly if needed
-
-            upgrade.Apply(currentWeapon, pickup);  // Apply the upgrade and also show the UI feedback
+            WeaponUpgradePickup pickup = FindObjectOfType<WeaponUpgradePickup>();  
+            upgrade.Apply(currentWeapon, pickup);  // Apply the upgrade
         }
     }
 
@@ -254,10 +252,11 @@ public class Player : MonoBehaviour, IDamageable
 
     void FireBeamProjectile(Vector3 direction)
     {
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.beamFire);
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.beamFire, 0.2f);
         direction.Normalize();
         Vector3 bulletSpawnPosition = beamSpawnPoint.position;
         GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
+
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
@@ -276,7 +275,7 @@ public class Player : MonoBehaviour, IDamageable
     void FireSingleBullet(Vector3 direction)
     {
         direction.Normalize();
-        Vector3 bulletSpawnPosition = spawnPoint.position + direction * 0.5f;
+        Vector3 bulletSpawnPosition = spawnPoint.position;
         GameObject projectile = Instantiate(currentWeapon.bulletPrefab, bulletSpawnPosition, Quaternion.identity);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0, 0, angle);

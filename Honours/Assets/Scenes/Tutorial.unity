@@ -2709,8 +2709,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "THE WOLF IS IMMUNE TO DAMAGE \nAND CAN GAIN HEALTH FROM ENEMIES BY BITING
-    THEM!"
+  m_text: 'THE WOLF IS IMMUNE TO ENEMY ATTACKS
+
+    AND CAN GAIN HEALTH FROM ENEMIES
+    BY BITING THEM!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}
   m_sharedMaterial: {fileID: 7650530073226646864, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}

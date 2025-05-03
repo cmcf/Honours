@@ -165,7 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f10397429349664fb16c068d4efeae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4.8
   rotationSpeed: 150
   minDamage: 5
-  maxDamage: 20
+  maxDamage: 16
+  projectileLifetime: 2

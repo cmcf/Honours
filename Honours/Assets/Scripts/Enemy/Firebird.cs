@@ -72,6 +72,7 @@ public class Firebird : MonoBehaviour, IDamageable
 
     void Update()
     {
+        if (currentState == EnemyState.Dead) { return; }
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
