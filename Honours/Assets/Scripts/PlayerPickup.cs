@@ -12,12 +12,12 @@ public class PlayerPickup : MonoBehaviour
     GameObject promptInstance;
     [SerializeField] int  minHealAmount = 20;
     [SerializeField] int maxHealAmount = 50;
-    int healAmount = 20;
+    int healAmount;
 
     bool playerInRange = false;
     void Start()
     {
-        healAmount = Random.Range(healAmount, maxHealAmount);
+        healAmount = Random.Range(minHealAmount, maxHealAmount);
         playerHealth = FindObjectOfType<PlayerHealth>();
         PlayerInput playerInput = FindObjectOfType<PlayerInput>();
         interactAction = playerInput.actions["Interact"];
