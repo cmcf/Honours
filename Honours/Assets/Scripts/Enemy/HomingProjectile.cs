@@ -16,12 +16,15 @@ public class HomingProjectile : MonoBehaviour
 
     bool hitPlayer = false;
     int damageAmount;
+
+    [SerializeField] float homingDuration = 0.5f;
+    float homingTimer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player")?.transform;
         damageAmount = Random.Range(minDamage, maxDamage);
-
+        homingTimer = homingDuration;
         StartCoroutine(ShrinkOverTime(projectileLifetime));
     }
 
@@ -29,18 +32,22 @@ public class HomingProjectile : MonoBehaviour
     {
         if (target == null) return;
 
-        target = GameObject.FindGameObjectWithTag("Player")?.transform;
+        if (homingTimer > 0f)
+        {
+            homingTimer -= Time.fixedDeltaTime;
+            // // Adjust rotation
+            Vector2 toTarget = (target.position - transform.position).normalized;
 
-        // Calculate direction
-        Vector2 direction = (target.position - transform.position).normalized;
+            // Calculate direction
+            float angle = Mathf.Atan2(toTarget.y, toTarget.x) * Mathf.Rad2Deg;
+            Quaternion desiredRotation = Quaternion.Euler(0, 0, angle);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRotation, rotationSpeed * Time.fixedDeltaTime);
 
-        // Rotate smoothly towards the target
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion targetRotation = Quaternion.Euler(0, 0, angle);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime);
+        }
 
-        // Apply movement
-        rb.velocity = direction * speed;
+        // Move in the direction the projectile is currently facing
+        Vector2 forward = transform.right;
+        rb.velocity = forward * speed;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
