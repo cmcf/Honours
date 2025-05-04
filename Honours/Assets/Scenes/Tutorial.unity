@@ -2709,10 +2709,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'THE WOLF IS IMMUNE TO ENEMY ATTACKS
+  m_text: 'THE WOLF IS IMMUNE TO ATTACKS
 
-    AND CAN GAIN HEALTH FROM ENEMIES
-    BY BITING THEM!'
+    HAS A CHANCE TO HEAL WHEN BITING ENEMIES'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}
   m_sharedMaterial: {fileID: 7650530073226646864, guid: 7357c54b3791f6c4b8c82e74e461f967, type: 2}
@@ -2947,6 +2946,7 @@ MonoBehaviour:
   maxHealth: 1000
   currentHealth: 250
   inTutorial: 0
+  isDead: 0
   reloadDelay: 2.5
 --- !u!1 &1792642502
 GameObject:
