@@ -139,6 +139,9 @@ public class BossEnemy : MonoBehaviour
 
     void Die()
     {
+        // Player cannot win if the have died before the boss enemy
+        PlayerHealth player = FindObjectOfType<PlayerHealth>();
+        if (player.isDead) { return; }
         // Get the animator from the active form and play hit animation
         currentAnimator = formManager.GetCurrentAnimator();
         currentState = EnemyState.Dead;

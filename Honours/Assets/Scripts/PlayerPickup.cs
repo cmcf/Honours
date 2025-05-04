@@ -24,7 +24,7 @@ public class PlayerPickup : MonoBehaviour
 
         if (DifficultyManager.Instance.IsHardMode())
         {
-            maxHealAmount -= 15;
+            maxHealAmount -= 10;
             minHealAmount -= 5;
         }
 
