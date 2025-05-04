@@ -42,15 +42,14 @@ public class BossFormManager : MonoBehaviour
 
     void Update()
     {
-        if (Time.time - lastSwitchTime < switchCooldown) return;
-
-        // Random Switching After Some Time
-        if (Random.Range(0f, 1f) < 0.02f) // ~1% chance per frame to switch
+        // Allow random switching only if cooldown has passed
+        if (Time.time - lastSwitchTime >= switchCooldown)
         {
-            SwitchForm();
+            if (Random.Range(0f, 1f) < 0.05f) 
+            {
+                SwitchForm();
+            }
         }
-
-        SwitchBasedOnHealth();
     }
 
     void SwitchForm()
@@ -145,19 +144,4 @@ public class BossFormManager : MonoBehaviour
         return currentForm;
     }
 
-    void SwitchBasedOnHealth()
-    {
-        if (enemy != null)
-        {
-            float healthPercent = enemy.GetHealthPercentage();
-
-            // Health-Based Switching
-            if (healthPercent <= 0.65f && currentForm == BossForm.Firebird)
-                SwitchForm();
-            else if (healthPercent <= 0.50f && currentForm == BossForm.Panther)
-                SwitchForm();
-            else if (healthPercent <= 0.25f && currentForm == BossForm.Firebird)
-                SwitchForm();
-        }
-    }
 }
