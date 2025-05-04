@@ -3384,8 +3384,8 @@ MonoBehaviour:
   healthText: {fileID: 1210541548}
   healthSlider: {fileID: 1551868746}
   winPanel: {fileID: 1680410144}
-  maxHealth: 220
-  currentHealth: 220
+  maxHealth: 200
+  currentHealth: 200
   inTutorial: 0
   isDead: 0
   reloadDelay: 2.5
