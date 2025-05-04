@@ -6,9 +6,17 @@ using static Damage;
 public class ShieldOrbit : MonoBehaviour
 {
     public float speed = 5f;
-    [SerializeField] int shieldDamage = 2;
+    [SerializeField] int minDamage = 2;
+    [SerializeField] int maxDamage = 8;
+    int shieldDamage;
     [SerializeField] float knockbackForce = 5f;
-    private Vector2 moveDirection;
+
+    Vector2 moveDirection;
+
+    void Start()
+    {
+        shieldDamage = Random.Range(minDamage, maxDamage);
+    }
 
     public void SetDirection(Vector2 direction)
     {
