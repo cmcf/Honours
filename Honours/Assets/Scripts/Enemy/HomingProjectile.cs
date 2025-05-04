@@ -26,6 +26,13 @@ public class HomingProjectile : MonoBehaviour
         damageAmount = Random.Range(minDamage, maxDamage);
         homingTimer = homingDuration;
         StartCoroutine(ShrinkOverTime(projectileLifetime));
+
+        if (DifficultyManager.Instance.IsHardMode())
+        {
+            speed += 0.5f;
+            minDamage += 2;
+            homingDuration += 0.5f;
+        }
     }
 
     void FixedUpdate()
