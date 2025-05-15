@@ -9,6 +9,7 @@ public class TutDoor : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            Cursor.visible = true;
             SceneManager.LoadScene("DifficultySelection");;
         }
     }

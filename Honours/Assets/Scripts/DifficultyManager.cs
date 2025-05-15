@@ -58,6 +58,10 @@ public class DifficultyManager : MonoBehaviour
 
         Cursor.visible = true;
     }
+    void OnEnable()
+    {
+        Cursor.visible = true;
+    }
 
     public int GetCurrentDifficultyLevel()
     {
