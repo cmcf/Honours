@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
 
     public bool inTutorial = false;
-    bool isDead = false;
+    public bool isDead = false;
 
     Player player;
     Wolf wolf;

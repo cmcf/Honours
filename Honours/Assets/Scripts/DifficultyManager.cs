@@ -58,6 +58,10 @@ public class DifficultyManager : MonoBehaviour
 
         Cursor.visible = true;
     }
+    void OnEnable()
+    {
+        Cursor.visible = true;
+    }
 
     public int GetCurrentDifficultyLevel()
     {
@@ -79,7 +83,8 @@ public class DifficultyManager : MonoBehaviour
         if (currentDifficulty < maxDifficulty)
         {
             currentDifficulty++;
-            ApplyDifficultyScaling();
+            // Increase enemy spawn rate
+            SpawnRateManager.Instance.IncreaseAmountOfEnemies(hardModeEnabled);
         }
         Debug.Log(currentDifficulty);
     }
@@ -91,14 +96,14 @@ public class DifficultyManager : MonoBehaviour
         {
             currentDifficulty--;
         }
-        Debug.Log("Difficulty decreased to: " + currentDifficulty);
+        Debug.Log(currentDifficulty);
     }
 
     public void AdjustDifficultyAfterRoom()
     {
-        // Gradually scale thresholds based on current difficulty
-        int increaseThreshold = 40 - (currentDifficulty * 2);
-        int decreaseThreshold = 30 + (currentDifficulty * 3);
+        // Gradually scale thresholds based on current difficulty 
+        int increaseThreshold = 40 - (currentDifficulty * 2);  
+        int decreaseThreshold = 35 + (currentDifficulty * 4); 
 
         // Clamp to reasonable ranges
         if (increaseThreshold < 10)
@@ -111,6 +116,7 @@ public class DifficultyManager : MonoBehaviour
             decreaseThreshold = 60;
         }
 
+        // If damage is below the increase threshold, increase difficulty
         if (damageTakenThisRoom < increaseThreshold)
         {
             if (currentDifficulty < maxDifficulty)
@@ -118,34 +124,14 @@ public class DifficultyManager : MonoBehaviour
                 IncreaseDifficulty();
             }
         }
+        // If damage is above the decrease threshold, decrease difficulty
         else if (damageTakenThisRoom > decreaseThreshold && currentDifficulty > minDifficulty)
         {
             DecreaseDifficulty();
         }
+
         // Reset room damage taken
         damageTakenThisRoom = 0;
-    }
-
-    void ApplyDifficultyScaling()
-    {
-        float scalingFactor;
-
-        if (hardModeEnabled)
-        {
-            scalingFactor = 0.15f;
-        }
-        else
-        {
-            scalingFactor = 0.1f;
-        }
-        // Increase enemy spawn rate
-        SpawnRateManager.Instance.IncreaseAmountOfEnemies(hardModeEnabled);
-        float healthMultiplier = 1.0f + (scalingFactor * (currentDifficulty - 1));
-
-        foreach (Enemy enemy in FindObjectsOfType<Enemy>())
-        {
-            enemy.UpdateHealthScaling(healthMultiplier);
-        }
     }
 
 

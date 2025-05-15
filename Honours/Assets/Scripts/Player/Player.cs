@@ -448,6 +448,7 @@ public class Player : MonoBehaviour, IDamageable
         currentWeapon.bulletSpeed = currentWeapon.baseBulletSpeed;
         currentWeapon.minDamage = currentWeapon.baseMinDamage;
         currentWeapon.maxDamage = currentWeapon.baseMaxDamage;
+        currentWeapon.fireDelay = currentWeapon.baseFireDelay;
     }
 
 }

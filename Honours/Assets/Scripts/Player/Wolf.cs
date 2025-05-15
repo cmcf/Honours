@@ -109,6 +109,12 @@ public class Wolf : MonoBehaviour
         rb.velocity = moveDirection * currentSpeed;
     }
 
+    void OnEnable()
+    {
+        currentSpeed = defaultSpeed;
+        isBiting = false;
+    }
+
     public void EquipBiteEffect(BiteModifier newBiteEffect)
     {
         biteModifier = newBiteEffect;

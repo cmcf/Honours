@@ -35,7 +35,8 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         InputSystem.onAnyButtonPress.Call(OnAnyInput);
-        UpdatePrompts(); 
+        UpdatePrompts();
+        Time.timeScale = 1;
     }
 
     void OnAnyInput(InputControl control)

@@ -12,6 +12,8 @@ public class BiteModifier : ScriptableObject
     public Sprite biteSprite;
     public GameObject effectAnimationPrefab;
 
+    float leechChance = 0.2f;
+
     // Health Leech Specific
     public bool isLeechEffect = false; 
 
@@ -46,13 +48,14 @@ public class BiteModifier : ScriptableObject
                 break;
             }
 
-            // Apply damage every tickInterval
-            target.Damage(damagePerTick);
 
-            // If it's a leech effect, heal the player based on damage dealt
             if (isLeechEffect)
             {
-                playerHealth.Heal(damagePerTick); // Heal the same amount as damage dealt
+                // Chance-based healing
+                if (Random.value <= leechChance)
+                {
+                    playerHealth.Heal(damagePerTick);
+                }
             }
 
             yield return new WaitForSeconds(tickInterval);

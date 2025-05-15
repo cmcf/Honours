@@ -98,9 +98,9 @@ public class MeleeEnemy : Enemy
 
         float distanceToPlayer = Vector2.Distance(transform.position, playerLocation.position);
 
-        // Stop movement and trigger disappearance
         if (distanceToPlayer <= stoppingDistance)
         {
+            // Stop movement and trigger disappearance
             rb.velocity = Vector2.zero;
             reachedPlayer = true;
             AttackPlayer();
@@ -108,24 +108,17 @@ public class MeleeEnemy : Enemy
         else
         {
             reachedPlayer = false;
+            Vector2 direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
+            rb.velocity = direction * moveSpeed;
 
-            // Raycast to check if there's a wall between enemy and player
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, playerLocation.position - transform.position, distanceToPlayer, LayerMask.GetMask("Wall"));
-
-            if (hit.collider == null)
-            {
-                Vector2 direction = ((Vector2)playerLocation.position - (Vector2)transform.position).normalized;
-                rb.velocity = direction * moveSpeed;
-            }
-            else
-            {
-                rb.velocity = Vector2.zero;
-            }
-
+            // Ensure the enemy is in the "attacking" state while moving
             animator.SetBool("isAttacking", true);
+
+            // Update last known position
             lastKnownPosition = transform.position;
         }
     }
+
 
 
     void AttackPlayer()
