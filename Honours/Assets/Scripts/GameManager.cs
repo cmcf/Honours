@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
     {
         isPaused = !isPaused;
 
+        Cursor.visible = true;
+
         if (isPaused)
         {
             Time.timeScale = 0f;
