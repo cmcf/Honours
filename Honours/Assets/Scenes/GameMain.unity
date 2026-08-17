@@ -3102,6 +3102,7 @@ MonoBehaviour:
   startBossAttack: 0
   canSpawnUpgrade: 1
   healthThreshold: 0.3
+  bossBattleStartDelay: 4
 --- !u!4 &2019253176
 Transform:
   m_ObjectHideFlags: 0

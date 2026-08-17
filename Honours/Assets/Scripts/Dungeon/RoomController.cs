@@ -48,6 +48,10 @@ public class RoomController : MonoBehaviour
     public bool canSpawnUpgrade = true;
     public float healthThreshold = 0.4f; // 40% of max health
 
+    [Header("Boss")]
+    [SerializeField] float bossBattleStartDelay = 2f;
+    bool bossBattleTriggered = false;
+
     void Awake()
     {
         Instance = this;
@@ -130,9 +134,6 @@ public class RoomController : MonoBehaviour
         usedRooms.Add(nextRoomSO);
     }
 
-
-
-
     public void StartRoomTransition(GameObject player)
     {
         Switcher switcher = FindObjectOfType<Switcher>();
@@ -164,7 +165,13 @@ public class RoomController : MonoBehaviour
                 if (currentRoom != null)
                 {
                     currentRoom.SpawnEnemies();
+
+                    if (hasBossRoomSpawned &&
+                    (currentRoom.roomSO == bossRoom || currentRoom.roomSO == advancedBossRoom))
+                {
+                    Invoke(nameof(StartBossBattle), bossBattleStartDelay);
                 }
+            }
 
                 if (switcher != null)
                 {
@@ -181,9 +188,6 @@ public class RoomController : MonoBehaviour
             });
         });
     }
-
-
-
 
     void PlacePlayerAtSpawnPoint(GameObject player, Door.DoorType lastUsedDoor)
     {
@@ -362,7 +366,6 @@ public class RoomController : MonoBehaviour
         currentRoom = newRoom;
         hasBossRoomSpawned = true;
 
-        Invoke("StartBossBattle", 1f);
     }
 
     void SpawnAdvancedBossRoom(Door.DoorType previousDoor)
@@ -384,13 +387,27 @@ public class RoomController : MonoBehaviour
         nextRoom = newRoom.gameObject;
         currentRoom = newRoom;
         hasBossRoomSpawned = true;
-
-        Invoke("StartBossBattle", 1f);
     }
 
-    void StartBossBattle()
+   void StartBossBattle()
     {
         startBossAttack = true;
+
+        BossFormManager boss = FindObjectOfType<BossFormManager>();
+        if (boss != null)
+        {
+            boss.BeginBossFight();
+        }
     }
+
+    public void TriggerBossBattleDelayed()
+    {
+        if (bossBattleTriggered) return;
+        bossBattleTriggered = true;
+
+        CancelInvoke(nameof(StartBossBattle));
+        Invoke(nameof(StartBossBattle), bossBattleStartDelay);
+    }
+
 
 }

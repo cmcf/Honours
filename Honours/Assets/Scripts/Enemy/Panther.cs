@@ -52,7 +52,7 @@ public class Panther : MonoBehaviour, IDamageable
     [SerializeField] bool canActivateShield = true;
     [SerializeField] float shieldCount = 5;
     float shieldDuration;
-    
+
     bool shieldScheduledThisPhase = false;
     float lastShieldTime;
     float defendStateStartTime;
@@ -67,15 +67,16 @@ public class Panther : MonoBehaviour, IDamageable
     bool isFrozen = false;
     float freezeTimer;
     bool isActive = true;
+    bool canAttack = false;
 
     void Start()
     {
         // References to components
-        rb = GetComponent<Rigidbody2D>();   
+        rb = GetComponent<Rigidbody2D>();
         shieldDuration = Random.Range(minShieldDuration, maxShieldDuration);
         animator = GetComponent<Animator>();
         trailRenderer = GetComponent<TrailRenderer>();
-        spriteRenderer= GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         // Get current difficulty
         difficultyLevel = DifficultyManager.Instance.currentDifficulty;
@@ -134,7 +135,7 @@ public class Panther : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player").transform;
         if (currentBossState == EnemyState.Dead) return;
 
-        // If not charging, allow movement
+        // Allow movement if the Panther is not charging
         if (!isCharging)
         {
             FacePlayer();
@@ -148,20 +149,19 @@ public class Panther : MonoBehaviour, IDamageable
             return;
         }
 
+        if (!canAttack) return;
+
         if (currentPhase != PantherState.Charge)
         {
             DeactivateShields();
             float distToPlayer = Vector2.Distance(transform.position, player.position);
 
-            // If in range and can attack, try melee attack
             if (distToPlayer <= attackRange && canAttackAgain)
             {
                 AttackPlayer();
             }
-            // Otherwise, dash if shield is down
             else if (Time.time >= nextDashTime && !isCharging)
             {
-                // Only dash if the shield is down and panther has been idle
                 if (!shieldActive && Time.time - defendStateStartTime >= shieldCooldown)
                 {
                     StartChargePhase();
@@ -174,7 +174,7 @@ public class Panther : MonoBehaviour, IDamageable
         {
             animator.SetFloat("speed", rb.velocity.magnitude);
         }
-        
+
     }
 
     void AttackPlayer()
@@ -274,7 +274,7 @@ public class Panther : MonoBehaviour, IDamageable
                 // Apply velocity to the Panther for dashing
                 rb.velocity = chargeDirection * chargeSpeed;
             }
-            
+
             // Check for collision with player during dash
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
             foreach (Collider2D h in hits)
@@ -357,7 +357,7 @@ public class Panther : MonoBehaviour, IDamageable
 
         // Randomly select a projectile firing pattern
         IEnumerator selectedPattern = null;
-        int patternIndex = Random.Range(0, 2); 
+        int patternIndex = Random.Range(0, 2);
 
         switch (patternIndex)
         {
@@ -594,12 +594,13 @@ public class Panther : MonoBehaviour, IDamageable
         return shieldActive;
     }
 
-    public void RestartBossRoutine()
+    public void BeginAttacking()
     {
         StopAllCoroutines();
         isCharging = false;
         shieldActive = false;
         currentPhase = PantherState.Attack;
+        canAttack = true;
     }
 
     public void Freeze(float duration)

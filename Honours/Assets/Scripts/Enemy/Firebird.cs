@@ -76,7 +76,7 @@ public class Firebird : MonoBehaviour, IDamageable
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    public void RestartBossRoutine()
+    public void BeginAttacking()
     {
         StopAllCoroutines();
         hasAppeared = true;

@@ -37,8 +37,7 @@ public class Room : MonoBehaviour
 
     void Start()
     {
-        SetDimensions();
-       
+        SetDimensions(); 
     }
 
     public Transform GetSpawnPoint(Door.DoorType enteringFrom)
@@ -183,12 +182,17 @@ public class Room : MonoBehaviour
     {
         return new Vector3(x * width, y * height);
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             RoomController.Instance.OnEnterRoom(this);
+
+            if (isBossRoom)
+            {
+                RoomController.Instance.TriggerBossBattleDelayed();
+            }
         }
     }
+
 }

@@ -14,30 +14,25 @@ public class BossFormManager : MonoBehaviour
 
     BossEnemy enemy;
 
-    void Start()
-    {
-        enemy = GetComponent<BossEnemy>();
-        pantherScript= GetComponentInChildren<Panther>();
+void Start()
+{
+    enemy = GetComponent<BossEnemy>();
+    pantherScript = GetComponentInChildren<Panther>();
 
-         if (firebirdForm == null || pantherForm == null)
-         {
-             return;
-         }
+    if (firebirdForm == null || pantherForm == null) return;
+    
+    // Randomly select Firebird or Panther form
+    float randomValue = Random.value;
+    currentForm = randomValue > 0.5f ? BossForm.Firebird : BossForm.Panther;
 
-        // Randomly choose between Firebird or Panther form
-         float randomValue = Random.value;
-         if (randomValue > 0.5f)
-         {
-             currentForm = BossForm.Firebird;
-         }
-         else
-         {
-             currentForm = BossForm.Panther;
-         }
+    firebirdForm.SetActive(currentForm == BossForm.Firebird);
+    pantherForm.SetActive(currentForm == BossForm.Panther);
 
-        // Activate the chosen form
-        ActivateForm(currentForm, transform.position);
-    }
+    if (currentForm == BossForm.Firebird)
+        firebirdForm.transform.position = transform.position;
+    else
+        pantherForm.transform.position = transform.position;
+}
 
 
     void Update()
@@ -50,6 +45,11 @@ public class BossFormManager : MonoBehaviour
                 SwitchForm();
             }
         }
+    }
+
+    public void BeginBossFight()
+    {
+        ActivateForm(currentForm, transform.position);
     }
 
     void SwitchForm()
@@ -94,34 +94,30 @@ public class BossFormManager : MonoBehaviour
         GetCurrentRb();
     }
 
-    void ActivateForm(BossForm newForm, Vector3 position)
-    {
-        firebirdForm.SetActive(newForm == BossForm.Firebird);
-        pantherForm.SetActive(newForm == BossForm.Panther);
+ void ActivateForm(BossForm newForm, Vector3 position)
+{
+    firebirdForm.SetActive(newForm == BossForm.Firebird);
+    pantherForm.SetActive(newForm == BossForm.Panther);
 
-        if (newForm == BossForm.Firebird)
+    if (newForm == BossForm.Firebird)
+    {
+        firebirdForm.transform.position = position;
+        Firebird firebirdScript = firebirdForm.GetComponent<Firebird>();
+        if (firebirdScript != null)
         {
-            firebirdForm.transform.position = position;
-            Firebird firebirdScript = firebirdForm.GetComponent<Firebird>();
-            if (firebirdScript != null)
-            {
-                StopAllCoroutines(); // Stop any lingering coroutines
-                firebirdScript.RestartBossRoutine(); // Restart Firebird's behaviour
-            }
-        }
-        else
-        {
-            pantherForm.transform.position = position;
-            Panther pantherScript = pantherForm.GetComponent<Panther>();
-            if (pantherScript != null)
-            {
-                StopAllCoroutines(); // Stop any lingering coroutines
-                pantherScript.RestartBossRoutine(); // Restart Firebird's behaviour
-            }
+            firebirdScript.BeginAttacking();
         }
     }
-
-
+    else
+    {
+        pantherForm.transform.position = position;
+        Panther pantherScript = pantherForm.GetComponent<Panther>();
+        if (pantherScript != null)
+        {
+            pantherScript.BeginAttacking(); 
+        }
+    }
+}
 
     public Animator GetCurrentAnimator()
     {
